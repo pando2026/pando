@@ -1,0 +1,314 @@
+{
+ "AF:haybatullahakhundzada": {
+  "label": "독재",
+  "note": "2016년 탈레반 최고지도자, 2021년 무력 장악 뒤 칙령으로 통치한다. 여성의 중등·대학 교육을 금지했다.",
+  "basis": "Freedom House 2026 Not Free (점수 8/100)",
+  "source": "https://freedomhouse.org/country/afghanistan/freedom-world/2026"
+ },
+ "DZ:abdelmadjidtebboune": {
+  "label": "권위주의",
+  "note": "2019년 대선으로 집권, 2024년 84% 득표로 재선. 히라크 시위 관련 활동가·언론인을 다수 기소·투옥했다.",
+  "basis": "Freedom House 2026 Not Free (점수 31/100)",
+  "source": "https://freedomhouse.org/country/algeria/freedom-world/2026"
+ },
+ "AO:joaomanuelgoncalveslourenco": {
+  "label": "권위주의",
+  "note": "2017년 취임. 1975년 독립 이후 집권해 온 MPLA 대표. 2025년 7월 연료값 인상 반대 시위 진압 중 약 30명이 숨졌다.",
+  "basis": "Freedom House 2026 Not Free (점수 28/100)",
+  "source": "https://freedomhouse.org/country/angola/freedom-world/2026"
+ },
+ "AZ:ilhamheydaroglualiyev": {
+  "label": "독재",
+  "note": "2003년 부친에게서 권력을 물려받았다. 2009년 국민투표로 임기 제한을 없앴고 독립언론 기자들을 투옥했다.",
+  "basis": "Freedom House 2026 Not Free (점수 6/100)",
+  "source": "https://freedomhouse.org/country/azerbaijan/freedom-world/2026"
+ },
+ "BH:kinghamadbinisaalkhalifa": {
+  "label": "독재",
+  "note": "1999년 즉위한 세습 군주. 2011년 민주화 시위를 진압했고 2016년 최대 야당 알웨파크를 해산했다.",
+  "basis": "Freedom House 2026 Not Free (점수 12/100)",
+  "source": "https://freedomhouse.org/country/bahrain/freedom-world/2026"
+ },
+ "BY:aleksandrlukashenko": {
+  "label": "독재",
+  "note": "1994년부터 32년째 집권. 2020년 대선 부정 논란 뒤 시위대·야권을 대거 투옥했다.",
+  "basis": "Freedom House 2026 Not Free (점수 7/100)",
+  "source": "https://freedomhouse.org/country/belarus/freedom-world/2026"
+ },
+ "BN:sultanhajihassanalbolkiahmuizzaddinwaddaulah": {
+  "label": "독재",
+  "note": "1967년 즉위한 절대군주로 총리를 겸한다. 1962년부터 비상사태령을 유지하며 국회 직선제가 없다.",
+  "basis": "Freedom House 2026 Not Free (점수 27/100)",
+  "source": "https://freedomhouse.org/country/brunei/freedom-world/2026"
+ },
+ "BF:capitaineibrahimtraore": {
+  "label": "독재",
+  "note": "2022년 9월 쿠데타로 집권한 군정 수반. 2024년 과도기간을 5년 연장했고 비판적 인사를 강제 징집했다.",
+  "basis": "Freedom House 2026 Not Free (점수 20/100)",
+  "source": "https://freedomhouse.org/country/burkina-faso/freedom-world/2026"
+ },
+ "BI:evaristendayishimiye": {
+  "label": "권위주의",
+  "note": "2020년 집권당 CNDD-FDD 후보로 당선. 2025년 총선에서 제1야당 지도자 르와사가 배제됐고 여당이 전 의석을 차지했다.",
+  "basis": "Freedom House 2026 Not Free (점수 13/100)",
+  "source": "https://freedomhouse.org/country/burundi/freedom-world/2026"
+ },
+ "KH:samdechmohaborvorthipadeimanethun": {
+  "label": "권위주의",
+  "note": "2023년 부친 훈센에게서 총리직을 넘겨받았다. 2023년 총선 전 주요 야당 촛불당의 등록이 거부됐다.",
+  "basis": "Freedom House 2026 Not Free (점수 22/100)",
+  "source": "https://freedomhouse.org/country/cambodia/freedom-world/2026"
+ },
+ "CM:paulbiya": {
+  "label": "독재",
+  "note": "1982년부터 집권. 2008년 개헌으로 임기 제한을 없앴고 2025년 대선에선 주요 야권 후보 캄토의 출마가 막혔다.",
+  "basis": "Freedom House 2026 Not Free (점수 15/100)",
+  "source": "https://freedomhouse.org/country/cameroon/freedom-world/2026"
+ },
+ "CF:faustinarchangetouadera": {
+  "label": "권위주의",
+  "note": "2016년 취임. 2023년 국민투표로 임기 제한을 없앴고 2025년 12월 대선에서 3선했다.",
+  "basis": "Freedom House 2026 Not Free (점수 5/100)",
+  "source": "https://freedomhouse.org/country/central-african-republic/freedom-world/2026"
+ },
+ "TD:marechalmahamatidrissdebyitno": {
+  "label": "권위주의",
+  "note": "2021년 부친 사망 뒤 군사위원회 수반으로 집권, 2024년 대선 당선. 2025년 야권 지도자 마스라가 징역 20년을 받았다.",
+  "basis": "Freedom House 2026 Not Free (점수 15/100)",
+  "source": "https://freedomhouse.org/country/chad/freedom-world/2026"
+ },
+ "CN:xijinping": {
+  "label": "독재",
+  "note": "2012년 공산당 총서기, 2013년 국가주석. 2018년 개헌으로 주석 연임 제한을 없앴고 신장에서 위구르인을 대규모 구금했다.",
+  "basis": "Freedom House 2026 Not Free (점수 9/100)",
+  "source": "https://freedomhouse.org/country/china/freedom-world/2026"
+ },
+ "CU:migueldiazcanelbermudez": {
+  "label": "독재",
+  "note": "2018년 국가평의회 의장, 2021년 공산당 제1서기. 2021년 7월 반정부 시위 참가자 수백 명이 징역형을 받았다.",
+  "basis": "Freedom House 2026 Not Free (점수 9/100)",
+  "source": "https://freedomhouse.org/country/cuba/freedom-world/2026"
+ },
+ "CD:felixantoinetshisekeditshilombo": {
+  "label": "권위주의",
+  "note": "2019년 취임, 2023년 재선. 대선은 투표소 운영 부실·부정 논란 속에 치러졌고 2024년 사형 집행 유예를 해제했다.",
+  "basis": "Freedom House 2026 Not Free (점수 18/100)",
+  "source": "https://freedomhouse.org/country/democratic-republic-congo/freedom-world/2026"
+ },
+ "DJ:ismaelomarguelleh": {
+  "label": "독재",
+  "note": "1999년부터 집권. 2010년 임기 제한을, 2025년 대통령 나이 상한(75세)을 헌법에서 없앴다.",
+  "basis": "Freedom House 2026 Not Free (점수 24/100)",
+  "source": "https://freedomhouse.org/country/djibouti/freedom-world/2026"
+ },
+ "EG:abdelfattahalsisi": {
+  "label": "독재",
+  "note": "2013년 군을 이끌고 무르시 대통령을 축출, 2014년 취임. 2019년 개헌으로 2030년까지 집권 길을 열었다.",
+  "basis": "Freedom House 2026 Not Free (점수 18/100)",
+  "source": "https://freedomhouse.org/country/egypt/freedom-world/2026"
+ },
+ "GQ:teodoroobiangnguemambasogo": {
+  "label": "독재",
+  "note": "1979년 쿠데타로 집권해 47년째 통치. 2018년 유일한 원내 야당 CI가 법원 명령으로 해산됐다.",
+  "basis": "Freedom House 2026 Not Free (점수 5/100)",
+  "source": "https://freedomhouse.org/country/equatorial-guinea/freedom-world/2026"
+ },
+ "ER:isaiasafwerki": {
+  "label": "독재",
+  "note": "1993년 독립 이후 집권. 전국 선거를 한 번도 치르지 않았고 2001년 체포된 언론인들은 지금도 소재 불명이다.",
+  "basis": "Freedom House 2026 Not Free (점수 3/100)",
+  "source": "https://freedomhouse.org/country/eritrea/freedom-world/2026"
+ },
+ "SZ:kingmswatiiii": {
+  "label": "독재",
+  "note": "1986년 즉위한 절대군주. 1973년부터 정당의 선거 참여가 금지됐고 2021년 민주화 시위 진압으로 수십 명이 숨졌다.",
+  "basis": "Freedom House 2026 Not Free (점수 17/100)",
+  "source": "https://freedomhouse.org/country/eswatini/freedom-world/2026"
+ },
+ "ET:abiyahmed": {
+  "label": "권위주의",
+  "note": "2018년 총리 취임. 2020~22년 티그라이 전쟁 중 통신을 차단했고 비판적 언론인을 다수 구금했다.",
+  "basis": "Freedom House 2026 Not Free (점수 18/100)",
+  "source": "https://freedomhouse.org/country/ethiopia/freedom-world/2026"
+ },
+ "GA:briceclotaireoliguinguema": {
+  "label": "권위주의",
+  "note": "2023년 쿠데타로 봉고 정권을 무너뜨렸다. 2025년 4월 대선에서 90% 득표로 대통령에 당선됐다.",
+  "basis": "Freedom House 2026 Not Free (점수 25/100)",
+  "source": "https://freedomhouse.org/country/gabon/freedom-world/2026"
+ },
+ "GN:mamadidoumbouya": {
+  "label": "권위주의",
+  "note": "2021년 쿠데타로 집권, 2025년 12월 대선에서 86% 득표. 주요 야권 지도자들은 출마하지 못했다.",
+  "basis": "Freedom House 2026 Not Free (점수 28/100)",
+  "source": "https://freedomhouse.org/country/guinea/freedom-world/2026"
+ },
+ "KZ:kassymjomarttokayev": {
+  "label": "권위주의",
+  "note": "2019년 취임. 2022년 1월 소요 때 무경고 발포를 지시했고 진압 과정에서 238명이 숨졌다.",
+  "basis": "Freedom House 2026 Not Free (점수 23/100)",
+  "source": "https://freedomhouse.org/country/kazakhstan/freedom-world/2026"
+ },
+ "KW:sheikhmeshalalahmadaljaberalsabah": {
+  "label": "독재",
+  "note": "2023년 12월 즉위한 세습 군주. 2024년 5월 의회를 해산하고 일부 헌법 조항을 최대 4년간 정지했다.",
+  "basis": "Freedom House 2026 Not Free (점수 30/100)",
+  "source": "https://freedomhouse.org/country/kuwait/freedom-world/2026"
+ },
+ "KG:sadyrzhaparov": {
+  "label": "권위주의",
+  "note": "2020년 총선 불복 시위 속에 권력을 잡고 2021년 대선 당선. 2024년 탐사보도 매체 기자들을 체포·기소했다.",
+  "basis": "Freedom House 2026 Not Free (점수 25/100)",
+  "source": "https://freedomhouse.org/country/kyrgyzstan/freedom-world/2026"
+ },
+ "LA:thonglounsisoulith": {
+  "label": "독재",
+  "note": "2021년 국가주석 취임. 인민혁명당 일당체제로 다른 정당은 허용되지 않는다.",
+  "basis": "Freedom House 2026 Not Free (점수 13/100)",
+  "source": "https://freedomhouse.org/country/laos/freedom-world/2026"
+ },
+ "ML:legeneraldarmeeassimigoita": {
+  "label": "독재",
+  "note": "2020·2021년 두 차례 쿠데타로 집권한 군정 수반. 2025년 모든 정당을 해산하고 선거 없이 5년 임기를 받았다.",
+  "basis": "Freedom House 2026 Not Free (점수 21/100)",
+  "source": "https://freedomhouse.org/country/mali/freedom-world/2026"
+ },
+ "MM:minaunghlaing": {
+  "label": "독재",
+  "note": "2021년 쿠데타를 이끈 군 최고사령관. NLD를 배제한 2025~26년 총선 뒤 2026년 4월 대통령에 올랐다.",
+  "basis": "Freedom House 2026 Not Free (점수 4/100)",
+  "source": "https://freedomhouse.org/country/myanmar/freedom-world/2026"
+ },
+ "NI:danielortegasaavedra": {
+  "label": "독재",
+  "note": "2007년부터 집권. 2021년 대선 전 경쟁 후보 7명을 체포했고 2025년 개헌으로 부인과 공동대통령이 됐다.",
+  "basis": "Freedom House 2026 Not Free (점수 14/100)",
+  "source": "https://freedomhouse.org/country/nicaragua/freedom-world/2026"
+ },
+ "NI:rosariomurillozambrana": {
+  "label": "독재",
+  "note": "2017년 부통령, 2025년 개헌으로 남편 오르테가와 공동대통령. 2023년 정치범 222명을 추방하고 국적을 박탈했다.",
+  "basis": "Freedom House 2026 Not Free (점수 14/100)",
+  "source": "https://freedomhouse.org/country/nicaragua/freedom-world/2026"
+ },
+ "NE:legeneraldarmeeabdourahamanetiani": {
+  "label": "독재",
+  "note": "2023년 7월 쿠데타로 바줌 대통령을 축출·구금했다. 2025년 정당을 해산하고 5년 과도기를 선포했다.",
+  "basis": "Freedom House 2026 Not Free (점수 27/100)",
+  "source": "https://freedomhouse.org/country/niger/freedom-world/2026"
+ },
+ "KP:kimjongun": {
+  "label": "독재",
+  "note": "2011년 부친 김정일 사망 뒤 3대 세습. 유엔 조사위는 정치범수용소 수감자를 8만~12만 명으로 추산했다.",
+  "basis": "Freedom House 2026 Not Free (점수 3/100)",
+  "source": "https://freedomhouse.org/country/north-korea/freedom-world/2026"
+ },
+ "OM:sultanhaithambintarik": {
+  "label": "독재",
+  "note": "2020년 카부스 국왕 사망 뒤 즉위한 절대군주로 총리를 겸한다. 정당은 금지돼 있다.",
+  "basis": "Freedom House 2026 Not Free (점수 24/100)",
+  "source": "https://freedomhouse.org/country/oman/freedom-world/2026"
+ },
+ "QA:sheikhtamimbinhamadalthani": {
+  "label": "독재",
+  "note": "2013년 부친의 양위로 즉위. 2024년 국민투표로 슈라위원회 의원 선거를 폐지했다.",
+  "basis": "Freedom House 2026 Not Free (점수 25/100)",
+  "source": "https://freedomhouse.org/country/qatar/freedom-world/2026"
+ },
+ "CG:denissassounguesso": {
+  "label": "독재",
+  "note": "1979~92년 집권 뒤 1997년 내전 끝에 복귀. 2015년 개헌으로 임기·나이 제한을 없앴고 대선 경쟁자들을 투옥했다.",
+  "basis": "Freedom House 2026 Not Free (점수 17/100)",
+  "source": "https://freedomhouse.org/country/republic-congo/freedom-world/2026"
+ },
+ "RU:vladimirvputin": {
+  "label": "독재",
+  "note": "2000년부터 대통령·총리로 집권. 2020년 개헌으로 2036년까지 연임 길을 열었고 야권 지도자 나발니는 2024년 옥중 사망했다.",
+  "basis": "Freedom House 2026 Not Free (점수 12/100)",
+  "source": "https://freedomhouse.org/country/russia/freedom-world/2026"
+ },
+ "RW:paulkagame": {
+  "label": "독재",
+  "note": "2000년 대통령 취임. 2015년 개헌으로 2034년까지 집권 길을 열었고 2024년 대선에서 99% 득표했다.",
+  "basis": "Freedom House 2026 Not Free (점수 21/100)",
+  "source": "https://freedomhouse.org/country/rwanda/freedom-world/2026"
+ },
+ "SA:salmanbinabdulazizalsaud": {
+  "label": "독재",
+  "note": "2015년 즉위한 절대군주. 정당·국정선거가 없으며 2018년 반정부 언론인 카슈끄지가 영사관에서 살해됐다.",
+  "basis": "Freedom House 2026 Not Free (점수 9/100)",
+  "source": "https://freedomhouse.org/country/saudi-arabia/freedom-world/2026"
+ },
+ "SA:mohammedbinsalmanalsaud": {
+  "label": "독재",
+  "note": "2017년 왕세자, 2022년 총리로 실권을 쥐었다. 미 정보당국은 2018년 카슈끄지 살해 작전을 그가 승인했다고 평가했다.",
+  "basis": "Freedom House 2026 Not Free (점수 9/100)",
+  "source": "https://freedomhouse.org/country/saudi-arabia/freedom-world/2026"
+ },
+ "SS:salvakiirmayardit": {
+  "label": "독재",
+  "note": "2011년 독립 이후 집권했으나 대선을 한 번도 치르지 않았다. 2025년 제1부통령 마차르를 가택연금하고 반역 혐의로 기소했다.",
+  "basis": "Freedom House 2026 Not Free (점수 0/100)",
+  "source": "https://freedomhouse.org/country/south-sudan/freedom-world/2026"
+ },
+ "SD:firstltgeneralabdelfattahalburhanabdelrahmanalburhan": {
+  "label": "독재",
+  "note": "2019년부터 주권위원회 의장. 2021년 쿠데타로 민군 공동정부를 해체했고 2023년부터 RSF와 내전 중이다.",
+  "basis": "Freedom House 2026 Not Free (점수 1/100)",
+  "source": "https://freedomhouse.org/country/sudan/freedom-world/2026"
+ },
+ "TJ:emomalirahmon": {
+  "label": "독재",
+  "note": "1992년부터 집권. 2016년 개헌으로 연임 제한을 없앴고 2015년 최대 야당 이슬람부흥당을 금지했다.",
+  "basis": "Freedom House 2026 Not Free (점수 5/100)",
+  "source": "https://freedomhouse.org/country/tajikistan/freedom-world/2026"
+ },
+ "TZ:samiasuluhuhassan": {
+  "label": "권위주의",
+  "note": "2021년 전임자 사망으로 승계. 2025년 대선에서 제1야당 차데마가 배제된 채 98% 득표했고 항의 시위에서 다수가 숨졌다.",
+  "basis": "Freedom House 2026 Not Free (점수 28/100)",
+  "source": "https://freedomhouse.org/country/tanzania/freedom-world/2026"
+ },
+ "TR:receptayyiperdogan": {
+  "label": "권위주의",
+  "note": "2003년 총리, 2014년 대통령. 2017년 개헌으로 대통령중심제를 도입했고 2025년 경쟁자 이마모을루 시장이 구속됐다.",
+  "basis": "Freedom House 2026 Not Free (점수 32/100)",
+  "source": "https://freedomhouse.org/country/turkey/freedom-world/2026"
+ },
+ "TM:serdarberdimuhamedov": {
+  "label": "독재",
+  "note": "2022년 부친 구르반굴리에게서 대통령직을 물려받았다. 야당과 독립 언론은 허용되지 않는다.",
+  "basis": "Freedom House 2026 Not Free (점수 1/100)",
+  "source": "https://freedomhouse.org/country/turkmenistan/freedom-world/2026"
+ },
+ "UG:yowerikagutamuseveni": {
+  "label": "독재",
+  "note": "1986년 무장투쟁으로 집권. 2005년 임기, 2017년 나이 제한을 없앴고 2020년 야권 탄압 항의 시위 진압으로 54명이 숨졌다.",
+  "basis": "Freedom House 2026 Not Free (점수 33/100)",
+  "source": "https://freedomhouse.org/country/uganda/freedom-world/2026"
+ },
+ "AE:mohamedbinzayedalnahyan": {
+  "label": "독재",
+  "note": "2022년 연방 대통령(2014년부터 실권). 2024년 반정부 인사 43명에게 테러 혐의로 종신형이 선고됐다.",
+  "basis": "Freedom House 2026 Not Free (점수 18/100)",
+  "source": "https://freedomhouse.org/country/united-arab-emirates/freedom-world/2026"
+ },
+ "UZ:shavkatmirziyoyev": {
+  "label": "독재",
+  "note": "2016년 집권, 2023년 개헌으로 연임 횟수를 초기화했다. 2022년 카라칼팍스탄 시위 진압 중 21명이 숨졌다.",
+  "basis": "Freedom House 2026 Not Free (점수 12/100)",
+  "source": "https://freedomhouse.org/country/uzbekistan/freedom-world/2026"
+ },
+ "VN:tolam": {
+  "label": "독재",
+  "note": "2024년 공산당 총서기, 2026년 국가주석 겸임. 공안부장 재임 중 언론인 팜도안짱이 반국가선전죄로 징역 9년을 받았다.",
+  "basis": "Freedom House 2026 Not Free (점수 20/100)",
+  "source": "https://freedomhouse.org/country/vietnam/freedom-world/2026"
+ },
+ "ZW:emmersondambudzomnangagwa": {
+  "label": "권위주의",
+  "note": "2017년 군의 무가베 축출 뒤 집권. 2023년 대선은 SADC 감시단이 헌법·지역 기준에 못 미쳤다고 평가했다.",
+  "basis": "Freedom House 2026 Not Free (점수 25/100)",
+  "source": "https://freedomhouse.org/country/zimbabwe/freedom-world/2026"
+ }
+}
