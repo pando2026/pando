@@ -848,6 +848,26 @@ html.lang-en-loading body{visibility:hidden}
 .trend-key{display:inline-block;width:16px;height:0;border-top:2.5px solid #c8102e}
 .trend-key--kr{border-top:2px dashed #8a96a0;margin-left:6px}
 
+/* 결정은 어떻게 내려지나 */
+.decision-map .dm-summary{font-size:14.5px;line-height:1.7;color:#15232d;font-weight:600;margin:6px 0 4px}
+.dm-sub{margin:14px 0 6px;font-size:12.5px;color:#6a7c88;letter-spacing:.02em}
+.dm-powers{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.dm-power{border:1px solid #d9dee2;border-top:3px solid #15232d;padding:8px 10px;display:grid;gap:2px;background:#fff}
+.dm-power:first-child{border-top-color:#c8102e}
+.dm-power b{font-size:14px;color:#15232d}.dm-power small{font-size:11.5px;color:#6a7c88}.dm-power span{font-size:13px;line-height:1.5;color:#33434e}
+.dm-tabs{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+.dm-tabs button{border:1px solid #d9dee2;background:#fff;border-radius:999px;padding:4px 12px;font-size:12.5px;font-weight:700;color:#4b5a64;cursor:pointer}
+.dm-tabs button[aria-selected="true"]{background:#15232d;border-color:#15232d;color:#fff}
+.dm-flow{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}
+.dm-flow li{position:relative;display:flex;gap:7px;align-items:flex-start;background:#f4f6f8;border-radius:4px;padding:8px 22px 8px 9px;font-size:13px;line-height:1.5;color:#2f3e48;flex:1 1 170px;min-width:0}
+.dm-flow li:not(:last-child)::after{content:"→";position:absolute;right:6px;top:50%;transform:translateY(-50%);color:#c8102e;font-weight:900}
+.dm-flow li i{font-style:normal;flex:none;width:18px;height:18px;border-radius:50%;background:#15232d;color:#fff;font-size:11px;font-weight:800;display:grid;place-items:center;margin-top:1px}
+.dm-checks{margin:0;padding-left:18px;font-size:13.5px;line-height:1.65;color:#33434e}
+.dm-informal{margin-top:12px;border-left:3px solid #c8102e;background:#fbeef0;padding:9px 12px}
+.dm-informal b{font-size:12.5px;color:#b3122a}.dm-informal p{margin:4px 0 0;font-size:13.5px;line-height:1.65;color:#2f3e48}
+.dm-src{margin-top:10px;font-size:12px;color:#6a7c88}
+.dm-flow[hidden]{display:none}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -1342,6 +1362,7 @@ html,body{background:#fff;color:var(--ink)}
  const cpiStore=()=>once("cpi",()=>json("data/cpi.json")).catch(()=>null);
  const fightStore=()=>once("fights",()=>json("data/fights.json")).catch(()=>({}));
  const allyStore=()=>once("allies",()=>json("data/allies.json")).catch(()=>({}));
+ const decisionStore=()=>once("decisions",()=>json("data/decisions.json")).catch(()=>({}));
  const regionStore=()=>once("regions",()=>json("data/regions.json")).catch(()=>({}));
  const partyPhotoStore=()=>once("partyPhotos",()=>json("data/party-photos.json")).catch(()=>({}));
  const photoIndex=()=>once("photoIndex",()=>json("data/photo-index.json")).catch(()=>({}));
@@ -1399,7 +1420,7 @@ html,body{background:#fff;color:var(--ink)}
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -2081,6 +2102,18 @@ html,body{background:#fff;color:var(--ink)}
    (a.with&&/^[A-Z]{2}$/.test(a.with)&&a.with!=="EU"?'<button type="button" class="conflict-open" data-country="'+esc(a.with)+'">'+esc(a.withName)+' 국가 정보 보기 →</button>':"")+'</article>').join("");
   return '<section class="conflicts allies" aria-label="우방 관계"><div class="conflicts-head"><h3>우방 관계</h3><span>마우스를 올리면 겹치는 이해관계, 누르면 자세히</span></div><div class="conflict-chips">'+chips+'</div>'+details+'</section>';
  }
+ const flowNames={law:"법률",budget:"예산",war:"전쟁·파병·조약"};
+ function decisionBlock(d){
+  if(!d||!d.summary)return "";
+  const power=(d.power||[]).map(x=>'<li class="dm-power"><b>'+esc(x.who||"")+'</b>'+(x.how?'<small>'+esc(x.how)+'</small>':"")+(x.holds?'<span>'+esc(x.holds)+'</span>':"")+'</li>').join("");
+  const flows=Object.keys(flowNames).filter(k=>Array.isArray(d.flows?.[k])&&d.flows[k].length);
+  const tabs=flows.length>1?'<div class="dm-tabs" role="tablist">'+flows.map((k,i)=>'<button type="button" role="tab" data-dm-tab="'+k+'" aria-selected="'+(i===0)+'">'+flowNames[k]+'</button>').join("")+'</div>':"";
+  const panes=flows.map((k,i)=>'<ol class="dm-flow" data-dm-pane="'+k+'"'+(i?' hidden':"")+'>'+d.flows[k].map((t,j)=>'<li><i>'+(j+1)+'</i><span>'+esc(t)+'</span></li>').join("")+'</ol>').join("");
+  const checks=(d.checks||[]).length?'<h5 class="dm-sub">견제 장치</h5><ul class="dm-checks">'+d.checks.map(c=>'<li>'+esc(c)+'</li>').join("")+'</ul>':"";
+  const informal=d.informal?'<div class="dm-informal"><b>공식 절차 밖의 힘</b><p>'+esc(d.informal)+'</p></div>':"";
+  const src=(d.sources||[]).length?'<p class="dm-src">출처 '+d.sources.map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</p>':"";
+  return '<section class="section decision-map"><h3>결정은 어떻게 내려지나</h3><p class="dm-summary">'+esc(d.summary)+'</p>'+(power?'<h5 class="dm-sub">누가 쥐고 있나</h5><ul class="dm-powers">'+power+'</ul>':"")+(flows.length?'<h5 class="dm-sub">거치는 단계</h5>'+tabs+panes:"")+checks+informal+src+'</section>';
+ }
  function countryConflicts(data){
   const list=Array.isArray(data.civics?.conflicts)?data.civics.conflicts.filter(c=>c&&c.withName&&c.brief):[];
   if(!list.length)return "";
@@ -2129,7 +2162,7 @@ html,body{background:#fff;color:var(--ink)}
   const civSeats=civHasSeats?civChambers.filter(c=>Array.isArray(c.groups)&&c.groups.length).map(c=>hemicycle({name:c.name,label:(civ.asOf?civ.asOf+" 기준":"현재 의석"),entity:"정당·교섭단체",groups:c.groups,partyNames:data.partyNames})).join(""):"";
   const seats=civSeats?civSeats:chambers.length?chambers.map(c=>hemicycle({...c,partyNames:data.partyNames})).join("")+(data.code==="US"?'<p class="data-caption">하원·상원 공식 의석은 '+sourceLink(p.source,"2026년 10월 1일 명부")+' · 무소속의 상원 코커스 소속은 '+sourceLink(p.caucusSource,"상원 취재단 현황")+'</p>':""):"";
   const orientation=chambers.some(chamber=>/정당|정치그룹/.test(chamber.entity||"")&&!/아님/.test(chamber.entity||""))&&data.code!=="US"?'<p>정당 성향은 해당 시기의 강령·정책과 의회 분류를 바탕으로 한 간략한 설명이며, 이념 범위의 확정적 판정이 아닙니다. '+sourceLink(p.orientationSource||p.source||links.ipu,"정당 성향 근거")+'</p>':"";
-  const decisions=Array.isArray(p.decision)&&p.decision.length?'<section class="section"><h3>의사결정의 흐름</h3><ol class="decision-steps">'+p.decision.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ol></section>':"";
+  const decisions=data.decisions?decisionBlock(data.decisions):Array.isArray(p.decision)&&p.decision.length?'<section class="section"><h3>의사결정의 흐름</h3><ol class="decision-steps">'+p.decision.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ol></section>':"";
   const politicsFine=(political.note?'<p>'+esc(political.note)+'</p>':"")+(legislature.note?'<p>'+esc(legislature.note)+'</p>':"")+(!chambers.length&&headcounts?'<p>위 숫자는 의원 현원이며 정당별 의석이 아닙니다. 정당별 현재 의석은 검증된 자료가 없어 표시하지 않습니다.</p>':"")+orientation+(p.note?'<p>'+esc(p.note)+'</p>':"")+
    '<p>'+(political.provider?esc(political.provider)+' ':"")+(political.asOf?esc(political.asOf)+' 조회 ':"")+sourceLink(p.source||political.source||links.ipu,"제도 출처")+'</p>';
   const chinaFiscal=data.code==="CN"?'<div class="budget-scope-warning"><strong>별도 범위의 공식 자료로 계산 · 2025년</strong><p>중국 국가통계국의 전국 일반공공예산 세입 21.6045조 위안, 세출 28.7395조 위안을 2025년 명목 GDP 140.1879조 위안으로 나누면 각각 GDP의 약 15.41%, 20.50%입니다. 단순 세입·세출 차액은 GDP의 약 −5.09%입니다.</p><p>중앙정부만의 세계은행 재정 지표와 집계 범위가 달라 위 카드의 값이나 국제 순위에 대입하지 않았습니다. '+sourceLink("https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html","중국 국가통계국 2026-02-28 발표")+'</p></div>':"";
@@ -2353,6 +2386,7 @@ html,body{background:#fff;color:var(--ink)}
   const bc=e.target.closest("#bloc-bar [data-bloc]");if(bc){selectBloc(bc.dataset.bloc);return}
   const bo=e.target.closest("[data-bloc-open]");if(bo){const k=bo.dataset.blocOpen;close();setTimeout(()=>{selectBloc(k);document.getElementById("map")?.scrollIntoView({behavior:"smooth",block:"center"})},60);return}
   const pclose=e.target.closest(".party-close");if(pclose){const chart=pclose.closest(".chamber-chart");delete chart.dataset.focus;chart.querySelectorAll("[data-g]").forEach(n=>n.classList.remove("seat-dim"));pclose.closest(".party-detail").hidden=true;return}
+  const dmt=e.target.closest("[data-dm-tab]");if(dmt){const box=dmt.closest(".decision-map");box.querySelectorAll("[data-dm-tab]").forEach(b=>b.setAttribute("aria-selected",String(b===dmt)));box.querySelectorAll("[data-dm-pane]").forEach(p=>p.hidden=p.dataset.dmPane!==dmt.dataset.dmTab);return}
   const ally=e.target.closest("[data-ally]");if(ally){
    const box=ally.closest(".allies"),i=ally.dataset.ally,open=ally.getAttribute("aria-expanded")!=="true";
    box.querySelectorAll("[data-ally]").forEach(b=>b.setAttribute("aria-expanded",String(open&&b===ally)));

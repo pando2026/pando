@@ -14,3 +14,7 @@ _tools/regions/out/
 _tools/regions/in-*.json
 _tools/allies/out/
 _tools/allies/in-*.json
+_tools/decisions/out/
+_tools/decisions/in-*.json
+_tools/conflicts/out/
+_tools/conflicts/in-*.json
