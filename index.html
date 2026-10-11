@@ -664,6 +664,148 @@ html,body{overflow-x:clip}
 html.lang-en-loading body{visibility:hidden}
 @media (max-width:640px){.lang-toggle button{padding:4px 9px;min-height:28px;font-size:11.5px}}
 
+/* ── 갈등도 (conflict board) ── deliberate dark map panel in both themes */
+.board-slot{margin:14px 0 6px}
+.board-loading{color:var(--muted,#667);font-size:13px}
+.board{--bd-bg:#16191d;--bd-sea:#1b1f24;--bd-land:#353a41;--bd-edge:#4a5058;--bd-ink:#f2f2ef;--bd-mute:#a3a9b0;
+ --bd-a:#d52832;--bd-b:#4f7cac;--bd-attack:#ff5262;--bd-mil:#f2b134;--bd-money:#e9d36b;--bd-sanction:#e8e8e8;--bd-talk:#7fd1c2;--bd-claim:#c7a4ff;--bd-support:#9fb3c8;
+ background:var(--bd-bg);color:var(--bd-ink);border-radius:6px;padding:16px;display:grid;gap:12px}
+.board-head h4{font-size:19px;margin:2px 0 6px;color:var(--bd-ink)}
+.board-kicker{font:600 11px/1 ui-monospace,Menlo,monospace;letter-spacing:.1em;text-transform:uppercase;color:#ff7b86}
+.board-hook{font-weight:700;margin:0 0 6px;line-height:1.55}
+.board-summary{color:var(--bd-mute);margin:0;font-size:14px;line-height:1.65}
+.board-stage{border-radius:4px;overflow:hidden;background:var(--bd-sea)}
+.board-svg{display:block;width:100%;height:auto;aspect-ratio:1.6}
+.board-sea{fill:var(--bd-sea)}
+.board-country{fill:var(--bd-land);stroke:var(--bd-edge);stroke-width:.25}
+.board-side-a{fill:color-mix(in srgb,var(--bd-a) 62%,var(--bd-land))}
+.board-side-b{fill:color-mix(in srgb,var(--bd-b) 62%,var(--bd-land))}
+.board-side-a2{fill:color-mix(in srgb,var(--bd-a) 28%,var(--bd-land))}
+.board-side-b2{fill:color-mix(in srgb,var(--bd-b) 30%,var(--bd-land))}
+.board-side-n{fill:color-mix(in srgb,#8a9099 22%,var(--bd-land))}
+.board-line{fill:none;stroke-linecap:round}
+.board-hit{fill:none;stroke:transparent;stroke-width:6;cursor:pointer}
+.board-flow{fill:none;stroke-linecap:round;stroke:#fff;opacity:.85;animation:boardflow 1.6s linear infinite}
+@keyframes boardflow{to{stroke-dashoffset:-12}}
+@media (prefers-reduced-motion:reduce){.board-flow{animation:none}}
+.board-link--attack .board-line{stroke:var(--bd-attack)}.board-link--attack .board-flow{stroke:#ffd0d4}
+.board-link--mil .board-line{stroke:var(--bd-mil);stroke-dasharray:1.6 1.1}.board-link--mil .board-flow{stroke:#fff3cf}
+.board-link--money .board-line{stroke:var(--bd-money);stroke-dasharray:2.4 1.2}.board-link--money .board-flow{stroke:#fffbe0}
+.board-link--sanction .board-line{stroke:var(--bd-sanction);stroke-dasharray:2 1.4}
+.board-link--talk .board-line{stroke:var(--bd-talk);stroke-dasharray:.8 1.2}
+.board-link--claim .board-line{stroke:var(--bd-claim);stroke-dasharray:2.6 1.6}
+.board-link--support .board-line{stroke:var(--bd-support);stroke-dasharray:1 1.4}
+.board-arrow--attack{fill:var(--bd-attack)}.board-arrow--mil{fill:var(--bd-mil)}.board-arrow--money{fill:var(--bd-money)}.board-arrow--sanction{fill:var(--bd-sanction)}.board-arrow--talk{fill:var(--bd-talk)}.board-arrow--claim{fill:var(--bd-claim)}.board-arrow--support{fill:var(--bd-support)}
+.board-faint{opacity:.38}
+.board-link,.board-node{cursor:pointer;outline:none}
+.board-node:focus-visible .board-ring,.board-node:focus-visible .board-tile{stroke:#ffd34d;stroke-width:1}
+.board-ring{fill:#fff}
+.board-tile{fill:#23272d;stroke:#fff;stroke-width:.5}
+.board-icon{fill:#fff}
+.board-name rect{fill:rgba(14,16,19,.86)}
+.board-name text{fill:#fff;font-weight:700;font-family:inherit}
+.board-link-label rect{fill:rgba(14,16,19,.82);stroke:currentColor;stroke-width:.18}
+.board-link-label text{fill:#fff;font-weight:600;font-family:inherit}
+.board-link-label--attack{color:var(--bd-attack)}.board-link-label--mil{color:var(--bd-mil)}.board-link-label--money{color:var(--bd-money)}.board-link-label--sanction{color:var(--bd-sanction)}.board-link-label--talk{color:var(--bd-talk)}.board-link-label--claim{color:var(--bd-claim)}.board-link-label--support{color:var(--bd-support)}
+.board-credit{fill:rgba(255,255,255,.62);font-family:inherit}
+.board-brand{fill:rgba(255,255,255,.55);font-weight:800;letter-spacing:.02em;font-family:inherit}
+.board-focus .board-link:not(.on),.board-focus .board-link-label:not(.on){opacity:.16}
+.board-focus .board-node:not(.on){opacity:.45}
+.board-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--bd-mute)}
+.board-legend span{display:inline-flex;align-items:center;gap:6px}
+.board-sw{width:11px;height:11px;border-radius:2px;display:inline-block}
+.board-sw--a{background:var(--bd-a)}.board-sw--b{background:var(--bd-b)}.board-sw--a2{background:color-mix(in srgb,var(--bd-a) 45%,var(--bd-land))}.board-sw--b2{background:color-mix(in srgb,var(--bd-b) 45%,var(--bd-land))}.board-sw--n{background:#6b7179}
+.board-ln{width:18px;height:0;border-top:2px solid;display:inline-block}
+.board-ln--attack{border-color:var(--bd-attack)}.board-ln--mil{border-color:var(--bd-mil);border-top-style:dotted}.board-ln--money{border-color:var(--bd-money);border-top-style:dashed}.board-ln--sanction{border-color:var(--bd-sanction);border-top-style:dashed}.board-ln--talk{border-color:var(--bd-talk);border-top-style:dotted}.board-ln--claim{border-color:var(--bd-claim);border-top-style:dashed}.board-ln--support{border-color:var(--bd-support);border-top-style:dotted}
+.board-detail{min-height:48px}
+.board-tip{color:var(--bd-mute);font-size:13px;margin:0}
+.board-card{background:#20242a;border-radius:4px;padding:12px 14px}
+.board-card h5{font-size:15px;margin:6px 0;color:var(--bd-ink)}
+.board-card p{margin:0 0 8px;font-size:14px;line-height:1.65;color:#d9dcdf}
+.board-dispute{border-left:2px solid var(--bd-claim);padding-left:10px}
+.board-dispute b{color:var(--bd-claim);margin-right:4px}
+.board-src{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px}
+.board-src a{color:#ffb3ba;text-decoration:underline;text-underline-offset:3px}
+.board-tier{font:600 10.5px/1.6 ui-monospace,Menlo,monospace;padding:0 6px;border-radius:2px;background:#3a3f46;color:#fff}
+.board-tier--official{background:#f2f2ef;color:#16191d}.board-tier--counter{background:#4f7cac}.board-tier--research{background:#b7791f}
+.board-chip{font:600 11px/1 inherit;padding:4px 7px;border-radius:999px;color:#16191d;white-space:nowrap}
+.board-chip--attack{background:var(--bd-attack)}.board-chip--mil{background:var(--bd-mil)}.board-chip--money{background:var(--bd-money)}.board-chip--sanction{background:var(--bd-sanction)}.board-chip--talk{background:var(--bd-talk)}.board-chip--claim{background:var(--bd-claim)}.board-chip--support{background:var(--bd-support)}
+.board-rows{list-style:none;margin:0;padding:0;display:grid;gap:2px;max-height:300px;overflow:auto}
+.board-rows button{all:unset;box-sizing:border-box;display:flex;gap:10px;align-items:center;width:100%;padding:7px 8px;border-radius:3px;cursor:pointer;font-size:13.5px;color:var(--bd-ink)}
+.board-rows button:hover,.board-rows button.on{background:#262b31}
+.board-rows button:focus-visible{outline:2px solid #ffd34d}
+.board-row-text small{color:var(--bd-mute)}
+.board-others,.board-auto-note{color:var(--bd-mute);font-size:12.5px;margin:0}
+.board-bg summary{cursor:pointer;font-weight:700;font-size:14px}
+.board-bg ol{list-style:none;margin:10px 0 0;padding:0 0 0 12px;border-left:2px solid #3a3f46;display:grid;gap:8px}
+.board-bg li{display:grid;grid-template-columns:78px minmax(0,1fr);gap:10px;font-size:13.5px;line-height:1.6;color:#d9dcdf}
+.board-bg time{font:600 12px ui-monospace,Menlo,monospace;color:#ff8a94}
+.board-bg a{color:var(--bd-mute)}
+.board-videos h5{font-size:14px;margin:0 0 6px;color:var(--bd-ink)}
+.board-videos ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.board-videos li{display:grid;gap:2px;font-size:13.5px}
+.board-videos a{color:#ffb3ba;font-weight:600}
+.board-videos span{color:var(--bd-mute);font-size:12.5px}
+.board-videos p{color:var(--bd-mute);font-size:12px;margin:8px 0 0}
+.board-goto{all:unset;cursor:pointer;color:#ffb3ba;font-weight:600;font-size:13px}
+@media (max-width:560px){.board{padding:12px}.board-bg li{grid-template-columns:64px minmax(0,1fr)}}
+.board-quiet .board-link-label:not(.on){opacity:0;transition:opacity .15s}
+.board-quiet.board-focus .board-link-label.on{opacity:1}
+.board-quiet .board-link:hover~.board-link-label{opacity:1}
+.fx-note{display:block;font-size:12.5px;color:var(--muted,#5d636b);margin-top:2px;font-variant-numeric:tabular-nums}
+.fx-note small{opacity:.8}
+.budget-total{margin:4px 0 0}
+/* 국제기구 */
+.bloc-bar{padding:12px 16px;border-top:1px solid var(--line,#e2e3e1);display:grid;gap:8px}
+.bloc-head{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline}
+.bloc-head strong{font-size:14px}.bloc-head span{font-size:12px;color:var(--muted,#667)}
+.bloc-chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.bloc-chip{flex:none;font:600 12.5px/1 inherit;padding:7px 10px;border-radius:999px;border:1px solid var(--line,#d9dbd8);background:var(--card,#fff);color:inherit;cursor:pointer}
+.bloc-chip[aria-pressed="true"]{background:#16181b;color:#fff;border-color:#16181b}
+.bloc-info p{margin:0 0 4px;font-size:13.5px;line-height:1.6}
+.bloc-kind{font-size:11.5px;padding:1px 6px;border-radius:3px;background:#f3e3e5;color:#b0172a}
+.bloc-notes{color:var(--muted,#667);font-size:12.5px!important}
+.vmap-bloc-on .vmap-country{opacity:.55}
+.vmap-bloc-on .vmap-country.vmap-bloc{fill:#d52832!important;opacity:1}
+.vmap-bloc-on .vmap-country.vmap-bloc-partner{fill:#f0a5ab!important;opacity:1}
+.country-blocs .bloc-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:6px}
+.bloc-list li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 8px;align-items:center;padding:8px 10px;border:1px solid var(--line,#e2e3e1);border-radius:4px}
+.bloc-li{all:unset;cursor:pointer;display:grid;min-width:0}
+.bloc-li b{font-size:14px}.bloc-li span{font-size:12px;color:var(--muted,#667);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bloc-li:hover b{color:#d52832}
+.bloc-role{font-size:11.5px;font-weight:700;color:#b0172a}.bloc-role--partner{color:#8a6d1f}
+.bloc-list time{grid-column:2;font:12px ui-monospace,Menlo,monospace;color:var(--muted,#667);text-align:right}
+.bloc-foot{font-size:12px;color:var(--muted,#667);margin:8px 0 0}
+.leader-ordinal{margin:2px 0 4px;font-size:12.5px;color:#b0172a}.leader-ordinal b{font-weight:800}
+/* 피드백 */
+.feedback-link{font:700 13px/1 inherit;padding:9px 12px;border:1.5px solid #16181b;background:#fff;color:#16181b;border-radius:3px;cursor:pointer;margin-left:6px}
+.feedback-link:hover{background:#16181b;color:#fff}
+.feedback-dialog{position:fixed;inset:0;z-index:200;background:rgba(14,16,19,.45);display:grid;place-items:center;padding:16px}
+.feedback-dialog[hidden]{display:none}
+.feedback-box{width:min(520px,100%);background:#fff;color:#16181b;border-radius:6px;padding:20px;display:grid;gap:8px;box-shadow:0 18px 50px rgba(0,0,0,.25)}
+.feedback-top{display:flex;justify-content:space-between;align-items:center}
+.feedback-top h2{margin:0;font-size:20px}
+.feedback-x{all:unset;cursor:pointer;font-size:26px;line-height:1;padding:0 6px}
+.feedback-lede{margin:0 0 6px;color:#5d636b;font-size:14px}
+.feedback-box label{font-weight:700;font-size:13px}
+.feedback-box textarea,.feedback-box input{font:15px/1.5 inherit;padding:10px;border:1px solid #cfd2d6;border-radius:4px;width:100%;box-sizing:border-box;background:#fff;color:#16181b}
+.feedback-actions{display:flex;align-items:center;gap:12px;margin-top:6px;flex-wrap:wrap}
+.feedback-send{font:700 14px inherit;padding:10px 18px;background:#d52832;color:#fff;border:0;border-radius:3px;cursor:pointer}
+.feedback-send:disabled{opacity:.6}
+.feedback-status{font-size:13px;color:#5d636b}
+@media (max-width:720px){.feedback-link{padding:8px 9px;font-size:12px}}
+
+.regions{margin:22px 0 6px}
+.region-parties{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:10px}
+.region-party{border-left:3px solid #d9dee2;padding:2px 0 2px 12px}
+.region-party-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.region-where{font-size:13px;font-weight:700;color:#15232d}
+.region-kind{font-size:11px;padding:2px 7px;border-radius:999px;background:#f3e5e7;color:#b3122a}
+.region-party p{margin:6px 0 0;font-size:13.5px;line-height:1.6;color:#33434e}
+.region-sub{margin:16px 0 6px;font-size:13px}
+.region-holds{margin:0;padding-left:18px;font-size:13.5px;line-height:1.65;color:#33434e}
+.party-region{margin:8px 0 0;font-size:13px;color:#33434e}.party-region b{color:#b3122a}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -705,9 +847,9 @@ html,body{background:#fff;color:var(--ink)}
 
 </style>
 <div class="shell">
- <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#watch">변화 관찰</a><a href="#countries">국가 탐색</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
+ <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#watch">변화 관찰</a><a href="#countries">국가 탐색</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
  <section class="top"><div><div class="eyebrow">Global intelligence · Daily brief</div><h1>세계의 변화를<br><em>맥락까지</em> 읽다.</h1><p>정치 제도와 경제·군사 지표를 바탕으로, 분쟁부터 재정안과 선거까지 중요한 변화를 추적합니다. 확인된 사실과 주장을 구분해 보여드립니다.</p><a class="hero-guide" href="#guide" data-guide-open>처음이라면 · 판도 사용법 보기 →</a></div><aside class="edition-box"><strong id="edition-title">브리핑을 불러오는 중</strong><div id="edition-note">매시간 새로운 변화를 점검합니다. 통계는 각 발표 시점을 따릅니다.</div><div class="small" id="edition-time"></div><span class="live-note" id="live-note"></span></aside></section>
- <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="dot-key country-key"></i>주목 국가</span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치이며 전선이나 영토 경계가 아닙니다.</span></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
+ <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="dot-key country-key"></i>주목 국가</span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치이며 전선이나 영토 경계가 아닙니다.</span></div><div class="bloc-bar" id="bloc-bar" aria-label="국제기구 회원국 보기"></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
  <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
  <section aria-labelledby="feed-title"><div class="section-head"><div><div class="eyebrow">The latest / 주요 현장</div><h2 id="feed-title">국제 현장</h2></div><p>기사 발행일과 사건 시점을 구분합니다</p></div><div class="filters" id="filters" role="group" aria-label="지역별 필터"></div><div class="feed" id="feed"></div></section>
  <section id="countries" aria-labelledby="countries-title"><div class="section-head"><div><div class="eyebrow">Country atlas / 국가 탐색</div><h2 id="countries-title">세계 국가·지역 정보</h2></div><p id="country-count">목록을 불러오는 중</p></div><div class="country-tools"><label class="country-search-label" for="country-search">국가·지역 검색</label><input id="country-search" type="search" autocomplete="off" placeholder="국가명이나 영문 이름으로 검색"><label class="country-region-label" for="country-region">지역</label><select id="country-region" aria-label="지역 필터"><option value="">전 지역</option></select></div><div class="country-list" id="country-list" aria-live="polite"></div><p class="country-method">국가·지역 250곳의 탐색 목록입니다. 통계·정책금리·예산안·의회 구성은 원문과 기준 시점을 지표마다 표시합니다. 모든 지역에 독립 정책금리나 공개된 예산안이 있는 것은 아닙니다.</p></section></main>
@@ -943,13 +1085,167 @@ html,body{background:#fff;color:var(--ink)}
 
   fetch("data/world.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
    world=data;frame.querySelector(".vmap-loading")?.remove();
-   drawLand();fitHome();
+   drawLand();fitHome();if(typeof paintBloc==="function")setTimeout(()=>{try{paintBloc()}catch(e){}},0);
    setView(home);drawPins();
   }).catch(()=>{const p=frame.querySelector(".vmap-loading");if(p)p.textContent="지도 자료를 불러오지 못했습니다. 아래 목록에서 항목을 고르세요."});
 
-  return {setItems(next){items=Array.isArray(next)?next:[];drawPins()},destroy(){frame.replaceChildren()}};
+  let bloc=null;
+  function paintBloc(){land.querySelectorAll(".vmap-country").forEach(p=>{const r=bloc&&bloc[p.dataset.code];p.classList.toggle("vmap-bloc",r==="member");p.classList.toggle("vmap-bloc-partner",r==="partner")});frame.classList.toggle("vmap-bloc-on",!!bloc)}
+  return {setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
  }
  global.FrontlineAtlas={mount};
+})(window);
+
+</script>
+<script>
+/* PANDO conflict board ("갈등도"): draws who is involved in a conflict and how,
+   on a desaturated map with round flag badges, labelled links and a source credit,
+   in the spirit of map explainers. Data: data/boards.json (researched boards) or an
+   automatic board built from civics conflicts. Projection matches map.js. */
+(function(global){
+ "use strict";
+ const NS="http://www.w3.org/2000/svg";
+ const el=(n,a={})=>{const x=document.createElementNS(NS,n);for(const k in a)x.setAttribute(k,a[k]);return x};
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const safe=u=>/^https?:\/\//.test(String(u||""))?String(u):"#";
+ const raw=(lon,lat)=>{const l=lon*Math.PI/180,p=lat*Math.PI/180,p2=p*p,p4=p2*p2;
+  return [l*(0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))),p*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)))]};
+ let worldP=null,anchorP=null;
+ const getWorld=()=>worldP||(worldP=fetch("data/world.json").then(r=>r.json()));
+ const getAnchors=()=>anchorP||(anchorP=fetch("data/anchors.json").then(r=>r.json()).catch(()=>({})));
+ const TYPES={
+  attack:{ko:"공격·교전",cls:"attack"},troops:{ko:"병력",cls:"mil"},arms:{ko:"무기·부품",cls:"mil"},
+  finance:{ko:"자금·원조",cls:"money"},trade:{ko:"거래",cls:"money"},sanction:{ko:"제재·단교",cls:"sanction"},
+  mediate:{ko:"중재",cls:"talk"},talks:{ko:"협상·합의",cls:"talk"},claim:{ko:"주장·의혹",cls:"claim"},support:{ko:"지지",cls:"support"},
+  high:{ko:"무력 충돌",cls:"attack"},medium:{ko:"긴장·제재",cls:"sanction"},low:{ko:"외교·무역 마찰",cls:"support"}
+ };
+ const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구기관"};
+ const ICON={ // 24x24 glyphs, drawn white
+  armed:"M4 13h11l2-2h3v2h-2l-1 2H9l-1 3H6l1-3H4z",
+  org:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 2c1 1.3 1.8 3.5 2 6h-4c.2-2.5 1-4.7 2-6zm-6.8 6a7 7 0 0 1 3-4.6c-.6 1.3-1 3-1.2 4.6zm0 2h1.8c.2 1.7.6 3.3 1.2 4.6a7 7 0 0 1-3-4.6zm4.8 0h4c-.2 2.5-1 4.7-2 6-1-1.3-1.8-3.5-2-6zm5.8 4.6c.6-1.3 1-2.9 1.2-4.6h1.8a7 7 0 0 1-3 4.6zm1.2-6.6c-.2-1.7-.6-3.3-1.2-4.6a7 7 0 0 1 3 4.6z",
+  company:"M4 20V8l6-3v4l6-3v14zm3-3h2v-2H7zm0-4h2v-2H7zm5 4h2v-2h-2zm0-4h2v-2h-2z",
+  person:"M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm-7 16c0-3.9 3.1-6 7-6s7 2.1 7 6z",
+  item:"M12 3l8 9-8 9-8-9z"
+ };
+
+ // Automatic board from civics conflicts when no researched board exists.
+ function autoBoard(code,conflict,civics,names){
+  const name=c=>names?.(c)||c;
+  const actors=[{id:code,code,label:name(code),side:"a"}];
+  const other=conflict.with||("ns:"+conflict.withName);
+  actors.push(conflict.with?{id:other,code:conflict.with,label:conflict.withName,side:"b"}:{id:other,label:short(conflict.withName),icon:"armed",near:code,side:"b",note:conflict.withName});
+  const links=[{from:other,to:code,type:conflict.level||"low",label:short(conflict.kind||"갈등",12),detail:conflict.detail||conflict.brief,source:(conflict.sources||[])[0]||null,tier:"press",main:true}];
+  const add=(from,list)=>{for(const c of (list||[]).slice(0,6)){if(!c.with||c.with===code||c.with===conflict.with)continue;
+   if(!actors.find(a=>a.id===c.with))actors.push({id:c.with,code:c.with,label:c.withName,side:"n",faint:true});
+   links.push({from,to:c.with,type:c.level||"low",label:short(c.brief||c.kind,12),detail:c.detail||c.brief,source:(c.sources||[])[0]||null,tier:"press",faint:true})}};
+  add(code,civics?.[code]?.conflicts);if(conflict.with)add(conflict.with,civics?.[conflict.with]?.conflicts);
+  return {id:"auto",auto:true,title:name(code)+" ↔ "+conflict.withName,hook:"",summary:conflict.brief||"",actors:actors.slice(0,12),links:links.filter(l=>actors.find(a=>a.id===l.to)&&actors.find(a=>a.id===l.from)),background:[],videos:[]};
+ }
+ function short(s,n=10){s=String(s||"");return s.length>n?s.slice(0,n-1)+"…":s}
+
+ async function render(slot,board,opts={}){
+  slot.innerHTML='<p class="board-loading">갈등도를 그리는 중…</p>';
+  let world,anchors;try{[world,anchors]=await Promise.all([getWorld(),getAnchors()])}catch(e){slot.innerHTML='<p class="board-loading">지도 자료를 불러오지 못했습니다.</p>';return}
+  const project=(lon,lat)=>{const [x,y]=raw(lon,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
+  const flags=global.__FLAGS||{};
+  // positions
+  const pos={};const nodes=board.actors.map(a=>({...a}));
+  for(const a of nodes){let p=null;if(a.code&&anchors[a.code])p=anchors[a.code];else if(Number.isFinite(a.lat)&&Number.isFinite(a.lon))p=project(a.lon,a.lat);
+   if(!p&&a.near&&anchors[a.near])p=[anchors[a.near][0]+6,anchors[a.near][1]+5];if(!p)p=[500,200];a.x=p[0];a.y=p[1];a.hx=p[0];a.hy=p[1]}
+  // view box: fit the core (both sides and nearby actors); far actors sit on the rim pointing home
+  const core0=nodes.filter(n=>n.side==="a"||n.side==="b");const base=core0.length?core0:nodes;
+  const bx=base.reduce((a,n)=>a+n.x,0)/base.length,by=base.reduce((a,n)=>a+n.y,0)/base.length;
+  const spread=Math.max(40,...base.map(n=>Math.hypot(n.x-bx,n.y-by)));const near=Math.max(spread*2.2,110);
+  const core=nodes.filter(n=>base.includes(n)||Math.hypot(n.x-bx,n.y-by)<=near);
+  let x0=Math.min(...core.map(n=>n.x)),x1=Math.max(...core.map(n=>n.x)),y0=Math.min(...core.map(n=>n.y)),y1=Math.max(...core.map(n=>n.y));
+  const ASP=1.6;let w=Math.max(x1-x0,90)*1.4,h=Math.max(y1-y0,40)*1.55;if(w/h<ASP)w=h*ASP;else h=w/ASP;w=Math.min(w,1000);h=Math.min(h,w/ASP);
+  let cx=(x0+x1)/2,cy=(y0+y1)/2+h*0.03;const vb=[cx-w/2,cy-h/2,w,h];
+  for(const n of nodes){if(core.includes(n))continue;const dx=n.x-cx,dy=n.y-cy;const hw=w/2-w*0.06,hh=h/2-h*0.1;const t=Math.min(hw/Math.abs(dx||1e-6),hh/Math.abs(dy||1e-6));n.x=cx+dx*t;n.y=cy+dy*t;n.rim=true}
+  const r=w*0.026;
+  // relax overlapping badges
+  for(let it=0;it<80;it++){let moved=false;for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const A=nodes[i],B=nodes[j];let dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||0.01;const min=r*2.9;if(d<min){const push=(min-d)/2;dx/=d;dy/=d;if(!dx&&!dy){dx=1}A.x-=dx*push;A.y-=dy*push;B.x+=dx*push;B.y+=dy*push;moved=true}}
+   for(const n of nodes){n.x=Math.max(vb[0]+r*1.6,Math.min(vb[0]+w-r*1.6,n.x));n.y=Math.max(vb[1]+r*1.4,Math.min(vb[1]+h-r*2.2,n.y))}if(!moved)break}
+  for(const n of nodes)pos[n.id]=n;
+  const svg=el("svg",{class:"board-svg"+(board.links.filter(l=>!l.faint).length>6?" board-quiet":""),viewBox:vb.map(v=>v.toFixed(2)).join(" "),role:"img","aria-label":board.title+" 갈등도"});
+  const defs=el("defs");svg.appendChild(defs);
+  const clip=el("clipPath",{id:"bclip-"+(opts.uid||"x"),clipPathUnits:"objectBoundingBox"});clip.appendChild(el("circle",{cx:.5,cy:.5,r:.5}));defs.appendChild(clip);
+  for(const c of ["attack","mil","money","sanction","talk","claim","support"]){const m=el("marker",{id:"barrow-"+c+"-"+(opts.uid||"x"),viewBox:"0 0 10 10",refX:"9",refY:"5",markerWidth:"5",markerHeight:"5",orient:"auto-start-reverse"});m.appendChild(el("path",{d:"M0 0L10 5L0 10z",class:"board-arrow board-arrow--"+c}));defs.appendChild(m)}
+  svg.appendChild(el("rect",{x:vb[0]-w,y:vb[1]-h,width:w*3,height:h*3,class:"board-sea"}));
+  const land=el("g",{class:"board-land"});const sideOf={};for(const n of nodes)if(n.code)sideOf[n.code]=n.side;
+  for(const c of world.countries){const p=el("path",{d:c.d,class:"board-country"+(c.c&&sideOf[c.c]?" board-side-"+sideOf[c.c]:"")});land.appendChild(p)}
+  svg.appendChild(land);
+  // links
+  const linkG=el("g",{class:"board-links"}),labelG=el("g",{class:"board-link-labels"});
+  const pairCount={};
+  board.links.forEach((l,i)=>{const A=pos[l.from],B=pos[l.to];if(!A||!B)return;const key=[l.from,l.to].sort().join("|");const k=pairCount[key]=(pairCount[key]||0)+1;
+   const t=TYPES[l.type]||TYPES.support;const dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||1;const sign=(k%2?1:-1)*(l.from<l.to?1:-1);const bend=(0.18+0.14*Math.floor((k-1)/2))*sign;
+   const mx=(A.x+B.x)/2-dy*bend,my=(A.y+B.y)/2+dx*bend;
+   // trim ends to badge edges
+   const ux1=(mx-A.x),uy1=(my-A.y),n1=Math.hypot(ux1,uy1)||1,ux2=(mx-B.x),uy2=(my-B.y),n2=Math.hypot(ux2,uy2)||1;
+   const sx=A.x+ux1/n1*r*1.12,sy=A.y+uy1/n1*r*1.12,ex=B.x+ux2/n2*r*1.25,ey=B.y+uy2/n2*r*1.25;
+   const dpath="M"+sx.toFixed(2)+" "+sy.toFixed(2)+"Q"+mx.toFixed(2)+" "+my.toFixed(2)+" "+ex.toFixed(2)+" "+ey.toFixed(2);
+   const g=el("g",{class:"board-link board-link--"+t.cls+(l.faint?" board-faint":"")+(l.main?" board-main":""),"data-link":i,tabindex:"0",role:"button","aria-label":(nameOf(board,l.from)+" → "+nameOf(board,l.to)+" "+l.label)});
+   g.appendChild(el("path",{d:dpath,class:"board-hit"}));
+   g.appendChild(el("path",{d:dpath,class:"board-line","marker-end":l.type==="mediate"||l.type==="talks"||l.type==="support"?"":"url(#barrow-"+t.cls+"-"+(opts.uid||"x")+")",style:"stroke-width:"+(r*(l.main?0.13:l.faint?0.05:0.085)).toFixed(3)}));
+   if(t.cls==="attack"||t.cls==="mil"||t.cls==="money")g.appendChild(el("path",{d:dpath,class:"board-flow",style:"stroke-width:"+(r*0.16).toFixed(3)+";stroke-dasharray:0 "+(r*0.55).toFixed(2)}));
+   linkG.appendChild(g);
+   const lx=0.25*sx+0.5*mx+0.25*ex,ly=0.25*sy+0.5*my+0.25*ey;
+   if(!l.faint){const lab=el("g",{class:"board-link-label board-link-label--"+t.cls,"data-link":i,transform:"translate("+lx.toFixed(2)+" "+ly.toFixed(2)+")"});
+    const fs=r*0.42,tw=Math.max(2,[...String(l.label)].reduce((a,ch)=>a+(/[ㄱ-힝]/.test(ch)?1:0.58),0))*fs+fs*0.9;
+    lab.appendChild(el("rect",{x:-tw/2,y:-fs*0.85,width:tw,height:fs*1.7,rx:fs*0.3}));const tx=el("text",{"font-size":fs.toFixed(2),"text-anchor":"middle","dominant-baseline":"central"});tx.textContent=l.label;lab.appendChild(tx);labelG.appendChild(lab)}
+  });
+  svg.appendChild(linkG);
+  // nodes
+  const nodeG=el("g",{class:"board-nodes"});
+  for(const n of nodes){const g=el("g",{class:"board-node board-node--"+(n.side||"n")+(n.faint?" board-faint":""),"data-node":n.id,transform:"translate("+n.x.toFixed(2)+" "+n.y.toFixed(2)+")",tabindex:"0",role:"button","aria-label":n.label});
+   const rr=n.faint?r*0.72:r;
+   if(n.code&&flags[n.code]){g.appendChild(el("circle",{r:rr*1.08,class:"board-ring"}));const im=el("image",{href:flags[n.code],x:-rr,y:-rr,width:rr*2,height:rr*2,preserveAspectRatio:"xMidYMid slice","clip-path":"url(#bclip-"+(opts.uid||"x")+")"});g.appendChild(im)}
+   else{g.appendChild(el("rect",{x:-rr,y:-rr,width:rr*2,height:rr*2,rx:rr*0.28,class:"board-tile"}));const ic=el("path",{d:ICON[n.icon]||ICON.item,class:"board-icon",transform:"translate("+(-rr*0.62)+" "+(-rr*0.62)+") scale("+(rr*1.24/24).toFixed(4)+")"});g.appendChild(ic)}
+   const fs=rr*0.5,tw=[...String(n.label)].reduce((a,ch)=>a+(/[ㄱ-힝]/.test(ch)?1:0.6),0)*fs+fs;
+   const lg=el("g",{class:"board-name",transform:"translate(0 "+(rr*1.62).toFixed(2)+")"});lg.appendChild(el("rect",{x:-tw/2,y:-fs*0.8,width:tw,height:fs*1.6,rx:fs*0.2}));const t=el("text",{"font-size":fs.toFixed(2),"text-anchor":"middle","dominant-baseline":"central"});t.textContent=n.label;lg.appendChild(t);g.appendChild(lg);
+   nodeG.appendChild(g)}
+  svg.appendChild(nodeG);svg.appendChild(labelG);
+  // credit
+  const credit=el("text",{class:"board-credit",x:(vb[0]+w-r*0.4).toFixed(2),y:(vb[1]+r*0.75).toFixed(2),"text-anchor":"end","font-size":(r*0.4).toFixed(2)});credit.textContent=board.auto?"출처 : 판도 갈등 관계 자료":"출처 : 관계를 누르면 표시";svg.appendChild(credit);
+  const brand=el("text",{class:"board-brand",x:(vb[0]+r*0.5).toFixed(2),y:(vb[1]+r*0.95).toFixed(2),"font-size":(r*0.62).toFixed(2)});brand.textContent="판도 갈등도";svg.appendChild(brand);
+
+  const legendTypes=[...new Set(board.links.filter(l=>!l.faint).map(l=>(TYPES[l.type]||TYPES.support).cls))];
+  const legendNames={attack:"공격·교전",mil:"병력·무기",money:"자금·거래",sanction:"제재·긴장",talk:"중재·협상",claim:"주장·의혹",support:"지지·마찰"};
+  const sides=[["a",nameOf(board,(board.actors.find(a=>a.side==="a")||{}).id)],["b",nameOf(board,(board.actors.find(a=>a.side==="b")||{}).id)],["a2","앞쪽을 돕는 쪽"],["b2","맞은편을 돕는 쪽"],["n","중재·제3자"]].filter(([s])=>board.actors.some(a=>a.side===s));
+  const rows=board.links.map((l,i)=>l.faint?"":'<li><button type="button" data-link-row="'+i+'"><span class="board-chip board-chip--'+(TYPES[l.type]||TYPES.support).cls+'">'+esc((TYPES[l.type]||{}).ko||l.type)+'</span><span class="board-row-text"><b>'+esc(nameOf(board,l.from))+' → '+esc(nameOf(board,l.to))+'</b> · '+esc(l.label)+(l.since?' <small>'+esc(l.since)+'~</small>':"")+'</span></button></li>').join("");
+  const others=board.links.filter(l=>l.faint);
+  const bg=(board.background||[]).length?'<details class="board-bg" open><summary>어떻게 여기까지 왔나</summary><ol>'+board.background.map(b=>'<li><time>'+esc(b.date)+'</time><span>'+esc(b.text)+' '+(b.source?'<a href="'+esc(safe(b.source[2]))+'" target="_blank" rel="noopener noreferrer">'+esc(b.source[0])+' ↗</a>':"")+'</span></li>').join("")+'</ol></details>':"";
+  const vids=(board.videos||[]).length?'<div class="board-videos"><h5>날리지식에서 더 깊이 보기</h5><ul>'+board.videos.map(v=>'<li><a href="https://www.youtube.com/watch?v='+esc(v.id)+'" target="_blank" rel="noopener noreferrer">'+esc(v.title||"영상")+' ↗</a><span>'+esc(v.why||"")+'</span></li>').join("")+'</ul><p>유튜브 영상은 단서입니다. 판도는 영상이 인용한 원문을 직접 확인한 내용만 위 관계·경위에 실었습니다.</p></div>':"";
+  slot.innerHTML='<div class="board">'+
+   '<header class="board-head"><span class="board-kicker">'+(board.auto?"갈등도 · 자동 구성":"갈등도 · "+esc(board.asOf||""))+'</span><h4>'+esc(board.title)+'</h4>'+(board.hook?'<p class="board-hook">'+esc(board.hook)+'</p>':"")+(board.summary&&!board.auto?'<p class="board-summary">'+esc(board.summary)+'</p>':"")+'</header>'+
+   '<div class="board-stage"></div>'+
+   '<div class="board-legend">'+sides.map(([s,l])=>'<span><i class="board-sw board-sw--'+s+'"></i>'+esc(l)+'</span>').join("")+legendTypes.map(c=>'<span><i class="board-ln board-ln--'+c+'"></i>'+esc(legendNames[c])+'</span>').join("")+'</div>'+
+   '<div class="board-detail" aria-live="polite"><p class="board-tip">선이나 아래 목록을 누르면 근거가 나옵니다.</p></div>'+
+   '<ul class="board-rows">'+rows+'</ul>'+
+   (others.length?'<p class="board-others">흐린 선: 두 나라가 따로 겪는 다른 갈등 '+others.length+'건</p>':"")+
+   bg+vids+(board.auto?'<p class="board-auto-note">이 갈등은 아직 주체별 조사 전이라 판도 갈등 관계 자료로 자동 구성했습니다.</p>':"")+'</div>';
+  slot.querySelector(".board-stage").appendChild(svg);
+  const detail=slot.querySelector(".board-detail");
+  const select=i=>{const l=board.links[i];if(!l)return;svg.classList.add("board-focus");
+   svg.querySelectorAll("[data-link]").forEach(n=>n.classList.toggle("on",n.dataset.link===String(i)));
+   svg.querySelectorAll("[data-node]").forEach(n=>n.classList.toggle("on",n.dataset.node===l.from||n.dataset.node===l.to));
+   slot.querySelectorAll("[data-link-row]").forEach(b=>b.classList.toggle("on",b.dataset.linkRow===String(i)));
+   const s=l.source;credit.textContent=s?("출처 : "+s[0]+(s[1]?"("+short(s[1],46)+")":"")):"출처 : 판도 갈등 관계 자료";
+   detail.innerHTML='<div class="board-card"><span class="board-chip board-chip--'+(TYPES[l.type]||TYPES.support).cls+'">'+esc((TYPES[l.type]||{}).ko||l.type)+'</span><h5>'+esc(nameOf(board,l.from))+' → '+esc(nameOf(board,l.to))+' · '+esc(l.label)+'</h5><p>'+esc(l.detail||"")+'</p>'+(l.dispute?'<p class="board-dispute"><b>반론</b> '+esc(l.dispute)+'</p>':"")+(s?'<p class="board-src">'+(l.tier&&TIER[l.tier]?'<span class="board-tier board-tier--'+esc(l.tier)+'">'+TIER[l.tier]+'</span>':"")+'<a href="'+esc(safe(s[2]))+'" target="_blank" rel="noopener noreferrer">'+esc(s[0])+' · '+esc(s[1]||"")+' ↗</a></p>':"")+'</div>'};
+  const selectNode=id=>{const ls=board.links.map((l,i)=>[l,i]).filter(([l])=>l.from===id||l.to===id);svg.classList.add("board-focus");
+   svg.querySelectorAll("[data-link]").forEach(n=>n.classList.toggle("on",ls.some(([,i])=>String(i)===n.dataset.link)));
+   svg.querySelectorAll("[data-node]").forEach(n=>n.classList.toggle("on",n.dataset.node===id||ls.some(([l])=>l.from===n.dataset.node||l.to===n.dataset.node)));
+   const a=board.actors.find(x=>x.id===id);detail.innerHTML='<div class="board-card"><h5>'+esc(a?.label||id)+'</h5>'+(a?.note?'<p>'+esc(a.note)+'</p>':"")+'<p>관계 '+ls.length+'개: '+ls.map(([l])=>esc(l.label)).join(" · ")+'</p>'+(a?.code&&opts.onCountry?'<button type="button" class="board-goto" data-board-country="'+esc(a.code)+'">'+esc(a.label)+' 국가 정보 →</button>':"")+'</div>'};
+  slot.addEventListener("click",e=>{const row=e.target.closest("[data-link-row]");if(row){select(+row.dataset.linkRow);return}
+   const lk=e.target.closest("[data-link]");if(lk){select(+lk.dataset.link);return}
+   const nd=e.target.closest("[data-node]");if(nd){selectNode(nd.dataset.node);return}
+   const bc=e.target.closest("[data-board-country]");if(bc&&opts.onCountry){opts.onCountry(bc.dataset.boardCountry);return}});
+  slot.addEventListener("keydown",e=>{if(e.key!=="Enter"&&e.key!==" ")return;const lk=e.target.closest("[data-link]");if(lk){e.preventDefault();select(+lk.dataset.link)}const nd=e.target.closest("[data-node]");if(nd){e.preventDefault();selectNode(nd.dataset.node)}});
+  const first=board.links.findIndex(l=>l.main)>=0?board.links.findIndex(l=>l.main):board.links.findIndex(l=>!l.faint);
+  if(first>=0&&opts.preselect!==false)select(first);
+ }
+ function nameOf(board,id){const a=board.actors.find(x=>x.id===id);return a?a.label:id}
+ global.PandoBoard={render,autoBoard};
 })(window);
 
 </script>
@@ -967,6 +1263,7 @@ html,body{background:#fff;color:var(--ink)}
  const photoStore=()=>once("photos",()=>json("data/photos.json")).catch(()=>({}));
  const cpiStore=()=>once("cpi",()=>json("data/cpi.json")).catch(()=>null);
  const fightStore=()=>once("fights",()=>json("data/fights.json")).catch(()=>({}));
+ const regionStore=()=>once("regions",()=>json("data/regions.json")).catch(()=>({}));
  const partyPhotoStore=()=>once("partyPhotos",()=>json("data/party-photos.json")).catch(()=>({}));
  const photoIndex=()=>once("photoIndex",()=>json("data/photo-index.json")).catch(()=>({}));
  const base=()=>once("base",()=>Promise.all([json("data/countries.json"),json("data/edition.json"),json("data/contexts.json"),json("data/changewatch.json"),
@@ -1006,6 +1303,9 @@ html,body{background:#fff;color:var(--ink)}
    const u=new URL(url,"https://x.invalid"),path=u.pathname,code=(u.searchParams.get("code")||"").toUpperCase();
    const b=await base();const codes=new Set(b.countries.countries.map(c=>c.code));
    if(path==="/api/edition")return ok(await currentEdition());
+   if(path==="/api/boards")return ok(await once("boards",()=>json("data/boards.json")).catch(()=>({})));
+   if(path==="/api/blocs")return ok(await once("blocs",()=>json("data/blocs.json")).catch(()=>({})));
+   if(path==="/api/civics")return ok((await base()).civics);
    if(path==="/api/explainers")return ok(await once("explainers",()=>json("data/explainers.json")).catch(()=>[]));
    if(path==="/api/countries"){
     const edition=await currentEdition();
@@ -1020,7 +1320,7 @@ html,body{background:#fff;color:var(--ink)}
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -1128,6 +1428,8 @@ html,body{background:#fff;color:var(--ink)}
  function explainerCard(x){
   return '<button type="button" class="explain-card" data-explain="'+esc(x.id)+'"><span class="explain-kicker">'+esc(x.kicker||"해설")+' · '+esc(x.date||"")+'</span><strong>'+esc(x.title)+'</strong><p>'+esc(x.hook||x.summary||"")+'</p><span class="explain-flags">'+(x.countries||[]).map(c=>flag(c,"mini")).join("")+'<em>읽기 →</em></span></button>';
  }
+ loadBlocs().then(renderBlocBar);
+ fetch("data/fx.json").then(r=>r.ok?r.json():null).then(j=>{state.fx=j}).catch(()=>{});
  async function loadExplainers(){
   try{const r=await api("/api/explainers");state.explainers=await r.json()}catch{state.explainers=[]}
   const box=$("#explain-list");if(box)box.innerHTML=(state.explainers||[]).length?state.explainers.map(explainerCard).join(""):'<p class="data-caption">첫 해설을 준비하고 있습니다.</p>';
@@ -1407,6 +1709,14 @@ html,body{background:#fff;color:var(--ink)}
  }
  const budgetColors=["#c72a34","#123f5b","#75b6d5","#eeac69","#608e91","#a38db8","#c4d7df","#8cb68d","#9a6e64","#d9a961","#527eae","#a7b8c1"];
  const budgetColor=(index,count)=>count<=budgetColors.length?budgetColors[index]:`hsl(${(index*137.508)%360} 54% ${40+(index%3)*10}%)`;
+ const FXCUR=[[/포클랜드\s*파운드/,"FKP"],[/동카리브\s*달러/,"XCD"],[/호주\s*달러/,"AUD"],[/뉴질랜드\s*달러/,"NZD"],[/홍콩\s*달러/,"HKD"],[/대만\s*달러/,"TWD"],[/가이아나\s*달러/,"GYD"],[/브루나이\s*달러/,"BND"],[/케이맨\s*달러/,"KYD"],[/버뮤다\s*달러/,"BMD"],[/수리남\s*달러/,"SRD"],[/미국\s*달러/,"USD"],[/덴마크\s*크로네/,"DKK"],[/CFP\s*프랑/,"XPF"],[/카리브\s*길더/,"XCG"],[/스위스\s*프랑/,"CHF"],[/지부티\s*프랑/,"DJF"],[/튀니지\s*디나르/,"TND"],[/쿠웨이트\s*디나르/,"KWD"],[/리비아\s*디나르/,"LYD"],[/알제리\s*디나르/,"DZD"],[/파키스탄\s*루피/,"PKR"],[/세이셸\s*루피/,"SCR"],[/크로어\s*루피|루피/,"INR"],[/우기야/,"MRU"],[/쿠바\s*페소/,"CUP"],[/파타카/,"MOP"],[/도브라/,"STN"],[/남수단\s*파운드/,"SSP"],[/시리아\s*파운드/,"SYP"],[/파운드/,"GBP"],[/디르함/,"AED"],[/리온/,"SLE"],[/마나트/,"TMT"],[/볼리비아노/,"BOB"],[/플로린/,"AWG"],[/달라시/,"GMD"],[/위안/,"CNY"],[/엔/,"JPY"],[/유로/,"EUR"],[/원/,"KRW"],[/달러/,"USD"]];
+ const FXMUL=u=>/라크\s*크로어/.test(u)?1e12:/^\s*조/.test(u)?1e12:/^\s*십억/.test(u)?1e9:/^\s*억/.test(u)?1e8:/^\s*백만/.test(u)?1e6:/^\s*천/.test(u)?1e3:1;
+ const krUnits=v=>{const a=Math.abs(v);return a>=1e12?number(v/1e12,a>=1e14?0:a>=1e13?1:2)+"조":a>=1e8?number(v/1e8,0)+"억":a>=1e4?number(v/1e4,0)+"만":number(v,0)};
+ function fxNote(value,unit){const fx=state.fx;if(!fx||!Number.isFinite(Number(value)))return "";const u=String(unit||"");if(/%/.test(u))return "";
+  const hit=FXCUR.find(([re])=>re.test(u));if(!hit)return "";const cur=hit[1],rate=fx.rates?.[cur],krw=fx.rates?.KRW;if(!rate||!krw)return "";
+  const local=Number(value)*FXMUL(u),usd=local/rate,won=usd*krw;
+  return (cur==="USD"?"":"약 US$"+krUnits(usd)+(cur==="KRW"?"":" · "))+(cur==="KRW"?"":"약 "+krUnits(won)+"원")}
+ function fxLine(value,unit){const t=fxNote(value,unit);return t?'<span class="fx-note" title="'+esc((state.fx?.provider||"")+" "+(state.fx?.asOf||"")+" 기준")+'">'+esc(t)+' <small>('+esc(state.fx?.asOf||"")+' 환율)</small></span>':""}
  const budgetMoney=(value,unit)=>unit==="십억 엔"?number(value/1000,2)+"조 엔":unit==="십억 유로"?number(value*10,1)+"억 유로":unit==="십억 디르함"?number(value*10,2)+"억 디르함":unit==="억 위안"?number(value,2)+"억 위안":unit==="조 원"?number(value,1)+"조 원":number(value,1)+" "+unit;
  function budgetComposition(b,heading,militaryGov=null){
   if(!b)return "";
@@ -1430,7 +1740,7 @@ html,body{background:#fff;color:var(--ink)}
   const warning=fold("이 구성표 읽는 법",referenceWarning+comparison+(b.note?'<p>'+esc(b.note)+'</p>':""));
   const list=items.map((item,i)=>'<li><span class="budget-category-name"><i style="background:'+budgetColor(i,items.length)+'"></i>'+esc(item.label)+'</span><span class="budget-category-value">'+esc(budgetMoney(Number(item.value),b.unit))+'</span><b>'+(donutTotal?share(item.value):pct(item.value)).toFixed(1)+'%</b>'+(donutTotal?"":'<span class="budget-bar"><i style="width:'+Math.min(100,pct(item.value)).toFixed(2)+'%;background:'+budgetColor(i,items.length)+'"></i></span>')+'</li>').join("");
   const sub=b.details?.categories?.length?'<details class="budget-details"><summary>'+esc(b.details.label||"기타 세부 내역")+'</summary><ul>'+b.details.categories.map(x=>'<li><span>'+esc(x.label)+'</span><strong>'+esc(budgetMoney(Number(x.value),b.unit))+'</strong><small>'+pct(x.value).toFixed(2)+'%</small></li>').join("")+'</ul><p>'+esc(b.details.note||"")+'</p></details>':"";
-  return '<article class="budget-visual"><header><h4>'+esc(heading)+'</h4><p>'+esc(b.fiscalYear||"")+" · "+esc(b.status||"")+(estimatedBudget?' · 비공식 추정':'')+'</p><p>'+esc(b.scope||"")+'</p></header>'+chart+'<ul class="budget-legend">'+list+'</ul>'+sub+warning+'<p class="budget-source">'+(estimatedBudget?'추정 자료':'자료 기준')+' '+esc(b.asOf||"확인 필요")+' · '+sourceLink(b.source,b.provider||"원문")+'</p></article>';
+  return '<article class="budget-visual"><header><h4>'+esc(heading)+'</h4><p>'+esc(b.fiscalYear||"")+" · "+esc(b.status||"")+(estimatedBudget?' · 비공식 추정':'')+'</p><p>'+esc(b.scope||"")+'</p>'+(Number.isFinite(total)&&total>0?'<p class="budget-total"><b>총액 '+esc(budgetMoney(total,b.unit))+'</b> '+fxLine(total,b.unit)+'</p>':"")+'</header>'+chart+'<ul class="budget-legend">'+list+'</ul>'+sub+warning+'<p class="budget-source">'+(estimatedBudget?'추정 자료':'자료 기준')+' '+esc(b.asOf||"확인 필요")+' · '+sourceLink(b.source,b.provider||"원문")+'</p></article>';
  }
  function budgetAlternativeEstimates(estimate){
   if(!estimate?.metrics)return "";
@@ -1475,6 +1785,14 @@ html,body{background:#fff;color:var(--ink)}
    '<div class="cpi-card"><div class="cpi-main"><div class="cpi-score"><strong style="color:'+band[1]+'">'+e.score+'</strong><span>/ 100</span></div><div class="cpi-meta"><b style="background:'+band[1]+'">'+band[0]+'</b><span>'+e.rank+'위 / '+(c.total||182)+'개국</span>'+(delta!=null?'<span class="cpi-delta">전년 대비 '+(delta>0?"▲"+delta:delta<0?"▼"+(-delta):"변화 없음")+'</span>':"")+(k?'<span class="cpi-korea">한국 '+k.score+'점 · '+k.rank+'위</span>':"")+'</div></div>'+scale+spark+
    (k&&spark?'<p class="cpi-legend"><i style="background:'+band[1]+'"></i>'+esc(namedCountry(data.code))+' <i class="cpi-legend-k"></i>한국</p>':"")+
    '<p class="cpi-note">공공부문 부패에 대해 전문가·기업인이 어떻게 느끼는지를 0~100으로 매긴 지수로, 높을수록 청렴합니다. 실제 부패 사건 수를 센 값은 아닙니다. '+sourceLink(c.source,"국제투명성기구")+' · '+sourceLink(c.wiki,"연도별 표")+'</p></div></section>';
+ }
+ function partyRegions(data){
+  const r=data.regions;if(!r||(!r.summary&&!Object.keys(r.parties||{}).length))return "";
+  const groups={};(data.civics?.parliament?.chambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(!groups[g[0]])groups[g[0]]=g}));
+  const chip=label=>{const g=groups[label],col=g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3";return '<button type="button" class="fight-party" data-party-open="'+esc(label)+'"><i style="background:'+col+'"></i>'+esc(label)+(g?'<small>'+number(g[1],0)+'석</small>':"")+'</button>'};
+  const parties=Object.entries(r.parties||{}).map(([label,p])=>'<li class="region-party"><div class="region-party-head">'+chip(label)+'<span class="region-where">'+esc(p.region||"")+'</span>'+(p.kind?'<span class="region-kind">'+esc(p.kind)+'</span>':"")+'</div>'+(p.note?'<p>'+esc(p.note)+(Array.isArray(p.source)&&p.source[2]?' '+sourceLink(p.source[2],p.source[0]||"출처"):"")+'</p>':"")+'</li>').join("");
+  const holds=(r.strongholds||[]).map(h=>'<li><b>'+esc(h.party)+'</b> · '+esc(h.region||"")+(h.note?' — '+esc(h.note):"")+(Array.isArray(h.source)&&h.source[2]?' '+sourceLink(h.source[2],h.source[0]||"출처"):"")+'</li>').join("");
+  return '<section class="regions"><div class="fights-head"><h4>지역과 정당</h4><span>지역 기반 정당 '+Object.keys(r.parties||{}).length+'곳</span></div>'+(r.summary?'<p class="fights-note">'+esc(r.summary)+'</p>':"")+(parties?'<ul class="region-parties">'+parties+'</ul>':"")+(holds?'<h5 class="region-sub">전국 정당의 지역 기반</h5><ul class="region-holds">'+holds+'</ul>':"")+(Array.isArray(r.source)&&r.source[2]?'<small class="fight-source">출처 '+sourceLink(r.source[2],(r.source[0]||"")+(r.source[1]?" · "+r.source[1]:""))+'</small>':"")+'</section>';
  }
  function partyFights(data){
   const f=data.fights;if(!f||(!Array.isArray(f.items)||!f.items.length)&&!f.note)return "";
@@ -1579,11 +1897,12 @@ html,body{background:#fff;color:var(--ink)}
   const lead=L.name?'<div class="party-leader">'+portrait({name:L.name,photo:photo?{url:photo.d}:null},"party-leader-photo")+'<div><span class="party-leader-title">'+esc(L.title||"대표")+(L.since?' · '+esc(String(L.since))+'년부터':"")+'</span><strong>'+esc(L.nameKo||L.name)+'</strong>'+(L.nameKo&&L.nameKo!==L.name?'<small>'+esc(L.name)+'</small>':"")+(L.office?'<small>'+esc(L.office)+'</small>':"")+
    (Array.isArray(prof.coLeaders)&&prof.coLeaders.length?'<small class="party-co">'+prof.coLeaders.map(c=>esc((c.title?c.title+' ':"")+(c.nameKo||c.name))).join(" · ")+'</small>':"")+
    (photo?'<small class="party-photo-credit">사진 '+sourceLink(photo.source,photo.license||"원본")+'</small>':"")+'</div></div>':"";
+  const rg=state.regions?.parties?.[label];const region=rg?'<p class="party-region"><b>'+esc(rg.kind||"지역 정당")+'</b> · '+esc(rg.region||"")+'</p>':"";
   const ideology=Array.isArray(prof.ideology)&&prof.ideology.length?'<div class="party-tags">'+prof.ideology.map(t=>'<span>'+esc(t)+'</span>').join("")+'</div>':"";
   const positions=Array.isArray(prof.positions)&&prof.positions.length?'<h5>주요 주장</h5><ul class="party-positions">'+prof.positions.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
   const now=prof.now?'<h5>지금 목소리</h5><p class="party-now">'+esc(prof.now)+'</p>':"";
   const src=Array.isArray(prof.sources)&&prof.sources.length?'<p class="party-sources">출처 '+prof.sources.slice(0,3).map(x=>sourceLink(x[2],x[0]||"원문")).join(" · ")+'</p>':"";
-  return '<header><strong dir="auto">'+esc(name.orig||label)+'</strong>'+(name.orig&&name.orig!==label?'<span>'+esc(name.ko||label)+'</span>':"")+'<button type="button" class="party-close" aria-label="닫기">×</button></header>'+lead+ideology+positions+now+src;
+  return '<header><strong dir="auto">'+esc(name.orig||label)+'</strong>'+(name.orig&&name.orig!==label?'<span>'+esc(name.ko||label)+'</span>':"")+'<button type="button" class="party-close" aria-label="닫기">×</button></header>'+lead+region+ideology+positions+now+src;
  }
  function chamberHeadcounts(legislature){
   const chambers=Array.isArray(legislature?.chambers)?legislature.chambers:[];
@@ -1619,14 +1938,55 @@ html,body{background:#fff;color:var(--ink)}
   }
   return html;
  }
+
+ // ── 국제기구(블록) ──
+ const BLOC_ORDER=["NATO","EU","BRICS","SCO","BRI","G7","G20","OECD","CSTO","OPEC","OPEC+","ASEAN","AU","GCC","ArabLeague","EAEU","AES","ECOWAS","Mercosur","CPTPP","RCEP","USMCA","Quad","AUKUS","Five Eyes","Commonwealth"];
+ const blocName=(k,b)=>b?.short||({ArabLeague:"아랍연맹",Commonwealth:"영연방",BRI:"일대일로",AU:"아프리카연합",AES:"사헬국가동맹",EAEU:"유라시아경제연합",Mercosur:"메르코수르"}[k])||k;
+ async function loadBlocs(){if(state.blocs)return state.blocs;try{const r=await api("/api/blocs");state.blocs=await r.json()}catch{state.blocs={}}return state.blocs}
+ async function renderBlocBar(){const bar=$("#bloc-bar");if(!bar)return;const B=await loadBlocs();const keys=BLOC_ORDER.filter(k=>B[k]);if(!keys.length)return;
+  bar.innerHTML='<div class="bloc-head"><strong>국제기구로 보기</strong><span>누르면 회원국을 지도에 칠합니다</span></div><div class="bloc-chips"><button type="button" class="bloc-chip" data-bloc="" aria-pressed="true">끄기</button>'+keys.map(k=>'<button type="button" class="bloc-chip" data-bloc="'+esc(k)+'" aria-pressed="false">'+esc(blocName(k,B[k]))+'</button>').join("")+'</div><div class="bloc-info" id="bloc-info" aria-live="polite"></div>'}
+ function selectBloc(k){const B=state.blocs||{},b=B[k];document.querySelectorAll("#bloc-bar [data-bloc]").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.bloc===(k||""))));
+  const info=$("#bloc-info");if(!b){atlas.setBloc&&atlas.setBloc(null);if(info)info.innerHTML="";return}
+  const m={};for(const c of Object.keys(b.members||{}))m[c]="member";for(const c of Object.keys(b.partners||{}))if(!m[c])m[c]="partner";atlas.setBloc&&atlas.setBloc(m);
+  const pc=Object.keys(b.partners||{}).length;
+  if(info)info.innerHTML='<p><b>'+esc(b.ko||k)+'</b> '+(b.kind?'<span class="bloc-kind">'+esc(b.kind)+'</span> ':"")+'· 회원 '+Object.keys(b.members||{}).length+'개국'+(pc?' · 파트너·옵서버 '+pc+'곳(옅은 색)':"")+(b.founded?' · '+esc(String(b.founded).slice(0,4))+'년 출범':"")+'</p>'+(b.about?'<p>'+esc(b.about)+'</p>':"")+(b.notes?'<p class="bloc-notes">'+esc(b.notes)+'</p>':"")+'<p class="bloc-src">'+sourceLink(b.source,"회원국 원문")+'</p>'}
+ function countryBlocs(code){const B=state.blocs||{};const rows=[];for(const k of BLOC_ORDER){const b=B[k];if(!b)continue;const since=b.members?.[code];const p=b.partners?.[code];
+   if(since!==undefined)rows.push({k,b,since:String(since||""),role:"회원"+((/정지/.test(b.notes||"")&&new RegExp(namedCountry(code)).test(b.notes||""))?"(자격 정지 언급)":"")});else if(p)rows.push({k,b,since:String(p.since||""),role:p.label||"파트너"})}
+  if(!rows.length)return "";rows.sort((x,y)=>(x.since||"9999").localeCompare(y.since||"9999"));
+  return '<section class="section country-blocs"><h3>가입한 국제기구</h3><ul class="bloc-list">'+rows.map(r=>'<li><button type="button" class="bloc-li" data-bloc-open="'+esc(r.k)+'"><b>'+esc(blocName(r.k,r.b))+'</b><span>'+esc(r.b.ko||"")+'</span></button><span class="bloc-role'+(r.role==="회원"?"":" bloc-role--partner")+'">'+esc(r.role)+'</span><time>'+(r.since?esc(r.since.length===4?r.since+"년":r.since):"가입일 미확인")+'</time></li>').join("")+'</ul><p class="bloc-foot">기구 이름을 누르면 첫 화면 지도에서 회원국을 볼 수 있습니다. 가입일은 각 기구 공식 회원국 목록·위키백과 회원국 표 기준(2026-10-11 확인).</p></section>'}
+
+ // ── 피드백 ──
+ const FEEDBACK_TO="andy9741@naver.com";
+ function feedbackSheet(){let d=$("#feedback-dialog");if(d){d.hidden=false;d.querySelector("textarea")?.focus();return}
+  d=document.createElement("div");d.id="feedback-dialog";d.className="feedback-dialog";d.setAttribute("role","dialog");d.setAttribute("aria-modal","true");d.setAttribute("aria-labelledby","feedback-title");
+  d.innerHTML='<form class="feedback-box" id="feedback-form"><div class="feedback-top"><h2 id="feedback-title">피드백 보내기</h2><button type="button" class="feedback-x" data-feedback-close aria-label="닫기">×</button></div><p class="feedback-lede">틀린 정보, 원하는 기능, 아무 의견이나 적어 주세요. 판도 운영자에게 바로 전달됩니다.</p><label for="feedback-msg">내용</label><textarea id="feedback-msg" name="message" rows="6" required maxlength="5000" placeholder="예: 일본 예산을 원화로도 보고 싶어요"></textarea><label for="feedback-email">답장 받을 이메일 <small>(선택)</small></label><input id="feedback-email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><div class="feedback-actions"><button type="submit" class="feedback-send">보내기</button><span class="feedback-status" id="feedback-status" aria-live="polite"></span></div></form>';
+  document.body.appendChild(d);d.querySelector("textarea").focus();
+  d.addEventListener("click",e=>{if(e.target===d||e.target.closest("[data-feedback-close]"))d.hidden=true});
+  d.addEventListener("keydown",e=>{if(e.key==="Escape")d.hidden=true});
+  d.querySelector("form").addEventListener("submit",async e=>{e.preventDefault();const f=e.target,st=$("#feedback-status"),btn=f.querySelector(".feedback-send");const msg=f.message.value.trim();if(!msg){st.textContent="내용을 적어 주세요.";return}
+   btn.disabled=true;st.textContent="보내는 중…";
+   try{const r=await fetch("https://formsubmit.co/ajax/"+FEEDBACK_TO,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({_subject:"[판도 피드백] "+msg.slice(0,40),message:msg,email:f.email.value.trim()||"(없음)",page:location.href,_template:"table",_captcha:"false"})});
+    const j=await r.json().catch(()=>({}));if(!r.ok||String(j.success)==="false")throw Error(j.message||r.status);
+    st.textContent="보냈습니다. 고맙습니다!";f.reset();setTimeout(()=>{d.hidden=true;st.textContent=""},1800)}
+   catch(err){st.innerHTML="보내지 못했습니다. 이메일로 직접 보내 주세요: <b>"+esc(FEEDBACK_TO)+"</b>"}
+   finally{btn.disabled=false}})}
+ async function drawBoard(slot,i){
+  const ctx=state.conflictCtx;if(!ctx||!global_PB())return;const c=ctx.list[i];if(!c)return;
+  let boards={},civics={};try{[boards,civics]=await Promise.all([api("/api/boards").then(r=>r.json()),api("/api/civics").then(r=>r.json())])}catch{}
+  const key=c.with||c.withName;
+  const board=Object.values(boards||{}).find(b=>(b.pairs||[]).some(p=>p[0]===ctx.code&&p[1]===key))||window.PandoBoard.autoBoard(ctx.code,c,civics,code=>namedCountry(code));
+  window.PandoBoard.render(slot,board,{uid:ctx.code+"-"+i,onCountry:code=>openCountry(code)});
+ }
+ const global_PB=()=>!!window.PandoBoard;
  const conflictLevel={high:"무력 충돌",medium:"긴장·제재",low:"외교·무역 마찰"};
  function countryConflicts(data){
   const list=Array.isArray(data.civics?.conflicts)?data.civics.conflicts.filter(c=>c&&c.withName&&c.brief):[];
   if(!list.length)return "";
+  state.conflictCtx={code:data.code,list};
   const chips=list.map((c,i)=>'<button type="button" class="conflict-chip conflict-chip--'+esc(c.level||"low")+'" data-conflict="'+i+'" aria-expanded="false" aria-describedby="conflict-tip-'+i+'">'+
    (c.with?flag(c.with,"flag-chip"):'<span class="conflict-nonstate" aria-hidden="true">◆</span>')+'<span>'+esc(c.withName)+'</span>'+
    '<span class="conflict-tip" role="tooltip" id="conflict-tip-'+i+'"><b>'+esc(c.kind||"갈등")+' · '+esc(conflictLevel[c.level]||"")+'</b>'+esc(c.brief)+'</span></button>').join("");
-  const details=list.map((c,i)=>'<article class="conflict-detail" data-conflict-detail="'+i+'" hidden><header><span class="conflict-level conflict-level--'+esc(c.level||"low")+'">'+esc(conflictLevel[c.level]||"")+'</span><h4>'+esc(namedCountry(data.code))+' ↔ '+esc(c.withName)+'</h4><small>'+esc(c.kind||"")+(c.since?' · '+esc(String(c.since))+'년부터':"")+'</small></header><p class="conflict-brief">'+esc(c.brief)+'</p><p>'+esc(c.detail||"")+'</p>'+
+  const details=list.map((c,i)=>'<article class="conflict-detail" data-conflict-detail="'+i+'" hidden><header><span class="conflict-level conflict-level--'+esc(c.level||"low")+'">'+esc(conflictLevel[c.level]||"")+'</span><h4>'+esc(namedCountry(data.code))+' ↔ '+esc(c.withName)+'</h4><small>'+esc(c.kind||"")+(c.since?' · '+esc(String(c.since))+'년부터':"")+'</small></header><p class="conflict-brief">'+esc(c.brief)+'</p><div class="board-slot" data-board-idx="'+i+'"></div><p>'+esc(c.detail||"")+'</p>'+
    (Array.isArray(c.sources)&&c.sources.length?'<ul class="conflict-sources">'+c.sources.map(s=>'<li>'+sourceLink(s[2],(s[0]||"")+(s[1]?" — "+s[1]:""))+'</li>').join("")+'</ul>':"")+
    (c.with?'<button type="button" class="conflict-open" data-country="'+esc(c.with)+'">'+esc(c.withName)+' 국가 정보 보기 →</button>':"")+'</article>').join("");
   return '<section class="conflicts" aria-label="갈등 관계"><div class="conflicts-head"><h3>갈등 관계</h3><span>마우스를 올리면 이유, 누르면 자세히</span></div><div class="conflict-chips">'+chips+'</div>'+details+'</section>';
@@ -1639,7 +1999,7 @@ html,body{background:#fff;color:var(--ink)}
   const label=hasValue?(/%\s*$/.test(unit)?unit.replace(/%\s*$/,"").trim()+" "+number(row.value,2)+"%":number(row.value,2)+" "+unit).trim():row.kind==="not_applicable"?"단일 독립 예산 없음":"예산액 미공개";
   const fine=(row.scope?'<p><b>집계 범위</b> '+esc(row.scope)+'</p>':"")+(row.note?'<p>'+esc(row.note)+'</p>':"")+
    '<p>'+esc(row.provider||"")+' '+sourceLink(row.source,"예산·재정 근거")+(row.secondarySource?' · '+sourceLink(row.secondarySource,"동년 GDP 원문"):"")+(Array.isArray(row.secondarySources)?row.secondarySources.map(item=>' · '+sourceLink(item.url,item.label||"추가 원문")).join(""):"")+'</p>';
-  return '<article class="budget-overview"><div class="budget-overview-heading"><span>'+esc(row.label||"예산·재정")+'</span><small>'+esc(row.fiscalYear||"")+'</small></div><strong>'+esc(label)+'</strong>'+
+  return '<article class="budget-overview"><div class="budget-overview-heading"><span>'+esc(row.label||"예산·재정")+'</span><small>'+esc(row.fiscalYear||"")+'</small></div><strong>'+esc(label)+'</strong>'+(hasValue?fxLine(row.value,unit):"")+
    '<p class="budget-overview-status">'+esc(row.status||"")+'</p>'+
    (Number.isFinite(row.referenceGrowthPercent)&&Number.isFinite(row.referenceDefenseSharePercent)?'<div class="budget-reference-chips"><span>2026년 세출 증가 계획 <b>+'+number(row.referenceGrowthPercent,1)+'%</b></span><span>전체 예산 중 국방 비중 <b>'+number(row.referenceDefenseSharePercent,1)+'%</b></span><small>총지출 금액은 미공개</small></div>':"")+
    (row.administeringName?'<p><b>연계 관할</b> '+esc(row.administeringName)+'</p>':"")+fold("기준·출처",fine)+'</article>';
@@ -1675,9 +2035,9 @@ html,body{background:#fff;color:var(--ink)}
   const koreaBreakdown=compare?budgetComposition(budget.koreaBreakdown,"한국 예산·지출 구성",data.comparison?.metrics?.militaryGovPct):"";
   const doc=budget.document?'<article class="budget-document"><span>예산 문서 · '+esc(budget.document.fiscalYear||"")+'</span><h3>'+esc(budget.document.title||"예산 자료")+'</h3><p>'+esc(budget.document.status||"")+' · '+esc(budget.document.provider||"")+'</p>'+sourceLink(budget.document.source,"공식 예산 문서")+'</article>':"";
   return {
-   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
+   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
     cpiBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
-   economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["policyRate","정책금리",metrics.policyRate]])+
+   economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["unemployment","실업률",metrics.unemployment],["policyRate","정책금리",metrics.policyRate]])+
     economyAlternativeEstimates(data.economyAlternatives)+
     fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),
    budget:budgetOverviewCard(budget.overview)+doc+
@@ -1701,7 +2061,7 @@ html,body{background:#fff;color:var(--ink)}
  function leaderCard(person,roster=false){
   // UN-roster entries carry a generic "listed as X" sentence; it adds nothing, so skip it.
   const why=!roster&&person.whyMatters&&!/명단에 .*등재/.test(person.whyMatters)?'<p class="leader-description">'+esc(person.whyMatters)+'</p>':"";
-  return '<article class="leader-card"><div class="leader-card-image">'+portrait(person)+'</div><div class="leader-card-body"><span class="leader-role">'+esc(leaderRoleLabels[person.role]||"공직자")+'</span><h4>'+esc(leaderDisplayName(person))+'</h4>'+(leaderNamesKo[person.name]?'<span class="leader-original-name">'+esc(person.name)+'</span>':"")+(person.office&&person.office!==leaderRoleLabels[person.role]?'<p class="leader-office">'+esc(person.office)+'</p>':"")+(person.regime?.note?'<p class="leader-regime"><b class="leader-regime-tag leader-regime-tag--'+(person.regime.label==="독재"?"dict":"auth")+'">'+esc(person.regime.label||"")+'</b>'+esc(person.regime.note)+' '+sourceLink(person.regime.source,person.regime.basis||"근거")+'</p>':"")+why+(person.photo?'<div class="leader-photo-credit">사진 '+sourceLink(person.photo.source,esc(person.photo.license||"라이선스"))+(person.photo.credit?' · '+esc(person.photo.credit):"")+'</div>':"")+'</div></article>';
+  return '<article class="leader-card"><div class="leader-card-image">'+portrait(person)+'</div><div class="leader-card-body"><span class="leader-role">'+esc(leaderRoleLabels[person.role]||"공직자")+'</span><h4>'+esc(leaderDisplayName(person))+'</h4>'+(leaderNamesKo[person.name]?'<span class="leader-original-name">'+esc(person.name)+'</span>':"")+(person.ordinal&&(person.ordinal.label||person.ordinal.since)?'<p class="leader-ordinal">'+(person.ordinal.label?'<b>'+esc(person.ordinal.label)+'</b>':"")+(person.ordinal.since?(person.ordinal.label?' · ':"")+esc(person.ordinal.since)+' 취임':"")+'</p>':"")+(person.office&&person.office!==leaderRoleLabels[person.role]?'<p class="leader-office">'+esc(person.office)+'</p>':"")+(person.regime?.note?'<p class="leader-regime"><b class="leader-regime-tag leader-regime-tag--'+(person.regime.label==="독재"?"dict":"auth")+'">'+esc(person.regime.label||"")+'</b>'+esc(person.regime.note)+' '+sourceLink(person.regime.source,person.regime.basis||"근거")+'</p>':"")+why+(person.photo?'<div class="leader-photo-credit">사진 '+sourceLink(person.photo.source,esc(person.photo.license||"라이선스"))+(person.photo.credit?' · '+esc(person.photo.credit):"")+'</div>':"")+'</div></article>';
  }
  function relationshipSources(rel){return sourceLink(rel.source,"인물·관계 원문")+(rel.contextSource?' · '+sourceLink(rel.contextSource,"정책·제도 근거"):"")+(rel.contextSource2?' · '+sourceLink(rel.contextSource2,"추가 근거"):"")}
  function relationshipRow(rel,persons){
@@ -1758,11 +2118,11 @@ html,body{background:#fff;color:var(--ink)}
   const previousTab=$("#detail [data-country-tab][aria-selected=true]")?.dataset.countryTab;
   const previousLeaders=$("#country-leaders")?.innerHTML;
   const scrollTop=$(".drawer")?.scrollTop||0;
-  state.partyProfiles=data.partyProfiles||{};state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
+  state.partyProfiles=data.partyProfiles||{};state.regions=data.regions||null;state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
   const panels=countryPanels(data);
   $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
-   countryConflicts(data)+relatedExplainers(data.code)+countryNow(data)+
+   countryConflicts(data)+relatedExplainers(data.code)+countryBlocs(data.code)+countryNow(data)+
    '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div></section>'+
    '<div class="country-tabs" role="tablist" aria-label="'+esc(name)+' 자료 분류">'+
     [["politics","정치·의회"],["economy","경제"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
@@ -1887,11 +2247,15 @@ html,body{background:#fff;color:var(--ink)}
   installGuide();
  });
  document.addEventListener("click",e=>{
+  if(e.target.closest("#feedback-open")){feedbackSheet();return}
+  const bc=e.target.closest("#bloc-bar [data-bloc]");if(bc){selectBloc(bc.dataset.bloc);return}
+  const bo=e.target.closest("[data-bloc-open]");if(bo){const k=bo.dataset.blocOpen;close();setTimeout(()=>{selectBloc(k);document.getElementById("map")?.scrollIntoView({behavior:"smooth",block:"center"})},60);return}
   const pclose=e.target.closest(".party-close");if(pclose){const chart=pclose.closest(".chamber-chart");delete chart.dataset.focus;chart.querySelectorAll("[data-g]").forEach(n=>n.classList.remove("seat-dim"));pclose.closest(".party-detail").hidden=true;return}
   const chip=e.target.closest("[data-conflict]");if(chip){
    const box=chip.closest(".conflicts"),i=chip.dataset.conflict,open=chip.getAttribute("aria-expanded")!=="true";
    box.querySelectorAll("[data-conflict]").forEach(b=>b.setAttribute("aria-expanded",String(open&&b===chip)));
    box.querySelectorAll("[data-conflict-detail]").forEach(d=>d.hidden=!(open&&d.dataset.conflictDetail===i));
+   if(open){const slot=box.querySelector('[data-conflict-detail="'+i+'"] .board-slot');if(slot&&!slot.dataset.drawn){slot.dataset.drawn="1";drawBoard(slot,+i)}}
    return;
   }
   const fp=e.target.closest("[data-party-open]");if(fp){

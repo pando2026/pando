@@ -4,3 +4,11 @@ _tools/tr/work-*/
 _tools/tr/batch*-keys.json
 _src/out/
 __pycache__/
+_tools/*-series.json
+_tools/heads.json
+_tools/boards/out/
+_tools/boards/plan.json
+_tools/extra/out/
+_tools/extra/heads-*.json
+_tools/regions/out/
+_tools/regions/in-*.json

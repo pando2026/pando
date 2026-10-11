@@ -24,7 +24,7 @@ client=replaceOnce(client,' loadEdition();loadCountries();',' loadEdition();load
 
 let body=read(HERE+"body.html");
 body=body.slice(body.indexOf("<body>")+6,body.lastIndexOf("<script"));
-body=replaceOnce(body,'<button id="install-open" class="install-link" type="button">앱 설치 ↗</button>','<button id="guide-open" class="guide-link" type="button">판도 사용법</button>',"install");
+body=replaceOnce(body,'<button id="install-open" class="install-link" type="button">앱 설치 ↗</button>','<button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button>',"install");
 body=replaceOnce(body,'<span>표식은 사건의 위치 또는 국가 수도를 가리키며, 전선·영토 주장과는 다릅니다</span>','<span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치이며 전선이나 영토 경계가 아닙니다.</span>',"legend");
 body=replaceOnce(body,'<span class="map-legend"><i class="dot-key"></i>현장 <i class="dot-key country-key"></i>주목 국가</span>','<span class="map-legend"><i class="dot-key"></i>현장 <i class="dot-key country-key"></i>주목 국가</span>',"legend2");
 body=replaceOnce(body,'· 국기 <a href="https://flagcdn.com/" target="_blank" rel="noopener noreferrer">FlagCDN</a> · 지도 © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap 기여자</a>',
@@ -54,6 +54,9 @@ ${read(A+"i18n.js")}
 </script>
 <script>
 ${read(A+"map.js")}
+</script>
+<script>
+${read(A+"board.js")}
 </script>
 <script>
 ${read(A+"data.js")}

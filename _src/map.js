@@ -161,11 +161,13 @@
 
   fetch("data/world.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
    world=data;frame.querySelector(".vmap-loading")?.remove();
-   drawLand();fitHome();
+   drawLand();fitHome();if(typeof paintBloc==="function")setTimeout(()=>{try{paintBloc()}catch(e){}},0);
    setView(home);drawPins();
   }).catch(()=>{const p=frame.querySelector(".vmap-loading");if(p)p.textContent="지도 자료를 불러오지 못했습니다. 아래 목록에서 항목을 고르세요."});
 
-  return {setItems(next){items=Array.isArray(next)?next:[];drawPins()},destroy(){frame.replaceChildren()}};
+  let bloc=null;
+  function paintBloc(){land.querySelectorAll(".vmap-country").forEach(p=>{const r=bloc&&bloc[p.dataset.code];p.classList.toggle("vmap-bloc",r==="member");p.classList.toggle("vmap-bloc-partner",r==="partner")});frame.classList.toggle("vmap-bloc-on",!!bloc)}
+  return {setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
  }
  global.FrontlineAtlas={mount};
 })(window);
