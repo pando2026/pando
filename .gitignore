@@ -12,3 +12,5 @@ _tools/extra/out/
 _tools/extra/heads-*.json
 _tools/regions/out/
 _tools/regions/in-*.json
+_tools/allies/out/
+_tools/allies/in-*.json

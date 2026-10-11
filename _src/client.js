@@ -609,6 +609,20 @@
  }
  const global_PB=()=>!!window.PandoBoard;
  const conflictLevel={high:"무력 충돌",medium:"긴장·제재",low:"외교·무역 마찰"};
+ const allyTie={"동맹":"alliance","전략적 동반자":"strategic","우호·협력":"friendly","후원":"patron"};
+ function countryAllies(data){
+  const list=Array.isArray(data.allies)?data.allies.filter(a=>a&&a.withName&&a.brief):[];
+  if(!list.length)return "";
+  const fl=c=>c&&/^[A-Z]{2}$/.test(c)&&c!=="EU"?flag(c,"flag-chip"):'<span class="conflict-nonstate" aria-hidden="true">'+(c==="EU"?"EU":"◆")+'</span>';
+  const interests=a=>(a.interests||[]).map(x=>'<li><b>'+esc(x.area||"")+'</b>'+esc(x.text||"")+'</li>').join("");
+  const chips=list.map((a,i)=>'<button type="button" class="ally-chip ally-chip--'+(allyTie[a.tie]||"friendly")+'" data-ally="'+i+'" aria-expanded="false" aria-describedby="ally-tip-'+i+'">'+fl(a.with)+'<span>'+esc(a.withName)+'</span>'+
+   '<span class="conflict-tip ally-tip" role="tooltip" id="ally-tip-'+i+'"><b>'+esc(a.tie||"우방")+(a.basis?' · '+esc(a.basis):"")+'</b>'+esc(a.brief)+(a.interests?.length?'<ul>'+interests(a)+'</ul>':"")+'</span></button>').join("");
+  const details=list.map((a,i)=>'<article class="conflict-detail ally-detail" data-ally-detail="'+i+'" hidden><header><span class="ally-tie ally-tie--'+(allyTie[a.tie]||"friendly")+'">'+esc(a.tie||"우방")+'</span><h4>'+esc(namedCountry(data.code))+' ↔ '+esc(a.withName)+'</h4><small>'+(a.basis?esc(a.basis):"")+(a.since?(a.basis?" · ":"")+esc(String(a.since))+'년부터':"")+'</small></header><p class="conflict-brief">'+esc(a.brief)+'</p>'+
+   (a.interests?.length?'<h5 class="ally-sub">겹치는 이해관계</h5><ul class="ally-interests">'+interests(a)+'</ul>':"")+(a.detail?'<p>'+esc(a.detail)+'</p>':"")+
+   (Array.isArray(a.sources)&&a.sources.length?'<ul class="conflict-sources">'+a.sources.map(s=>'<li>'+sourceLink(s[2],(s[0]||"")+(s[1]?" — "+s[1]:""))+'</li>').join("")+'</ul>':"")+
+   (a.with&&/^[A-Z]{2}$/.test(a.with)&&a.with!=="EU"?'<button type="button" class="conflict-open" data-country="'+esc(a.with)+'">'+esc(a.withName)+' 국가 정보 보기 →</button>':"")+'</article>').join("");
+  return '<section class="conflicts allies" aria-label="우방 관계"><div class="conflicts-head"><h3>우방 관계</h3><span>마우스를 올리면 겹치는 이해관계, 누르면 자세히</span></div><div class="conflict-chips">'+chips+'</div>'+details+'</section>';
+ }
  function countryConflicts(data){
   const list=Array.isArray(data.civics?.conflicts)?data.civics.conflicts.filter(c=>c&&c.withName&&c.brief):[];
   if(!list.length)return "";
@@ -752,7 +766,7 @@
   const panels=countryPanels(data);
   $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
-   countryConflicts(data)+relatedExplainers(data.code)+countryBlocs(data.code)+countryNow(data)+
+   countryConflicts(data)+countryAllies(data)+relatedExplainers(data.code)+countryBlocs(data.code)+countryNow(data)+
    '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div></section>'+
    '<div class="country-tabs" role="tablist" aria-label="'+esc(name)+' 자료 분류">'+
     [["politics","정치·의회"],["economy","경제"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
@@ -880,6 +894,12 @@
   const bc=e.target.closest("#bloc-bar [data-bloc]");if(bc){selectBloc(bc.dataset.bloc);return}
   const bo=e.target.closest("[data-bloc-open]");if(bo){const k=bo.dataset.blocOpen;close();setTimeout(()=>{selectBloc(k);document.getElementById("map")?.scrollIntoView({behavior:"smooth",block:"center"})},60);return}
   const pclose=e.target.closest(".party-close");if(pclose){const chart=pclose.closest(".chamber-chart");delete chart.dataset.focus;chart.querySelectorAll("[data-g]").forEach(n=>n.classList.remove("seat-dim"));pclose.closest(".party-detail").hidden=true;return}
+  const ally=e.target.closest("[data-ally]");if(ally){
+   const box=ally.closest(".allies"),i=ally.dataset.ally,open=ally.getAttribute("aria-expanded")!=="true";
+   box.querySelectorAll("[data-ally]").forEach(b=>b.setAttribute("aria-expanded",String(open&&b===ally)));
+   box.querySelectorAll("[data-ally-detail]").forEach(d=>d.hidden=!(open&&d.dataset.allyDetail===i));
+   return;
+  }
   const chip=e.target.closest("[data-conflict]");if(chip){
    const box=chip.closest(".conflicts"),i=chip.dataset.conflict,open=chip.getAttribute("aria-expanded")!=="true";
    box.querySelectorAll("[data-conflict]").forEach(b=>b.setAttribute("aria-expanded",String(open&&b===chip)));

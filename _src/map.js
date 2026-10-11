@@ -21,7 +21,7 @@
    '<div class="vmap-tip" hidden></div><p class="vmap-loading">지도를 그리는 중…</p>';
   const svg=frame.querySelector("svg"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip");
   let focused=false,scaleNow=1,world=null,items=Array.isArray(options.items)?options.items:[],view=null,home=null;
-  const project=(lon,lat)=>{const [x,y]=raw(lon,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
+  const project=(lon,lat)=>{const [x,y]=raw(((lon-(world.lon0||0))%360+540)%360-180,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
 
   function setView(v){
    // Keep at least part of the map on screen and the zoom within sensible bounds.

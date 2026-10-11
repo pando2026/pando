@@ -1,7 +1,10 @@
-/* PANDO conflict board ("갈등도"): draws who is involved in a conflict and how,
-   on a desaturated map with round flag badges, labelled links and a source credit,
-   in the spirit of map explainers. Data: data/boards.json (researched boards) or an
-   automatic board built from civics conflicts. Projection matches map.js. */
+/* PANDO conflict board ("갈등도").
+   Who is involved in a conflict and how, drawn on a light map:
+   - camps first (which side each actor is on), then one line per pair of actors,
+     coloured by relation (적대 red · 지원 green · 중재 grey), arrows for direction;
+   - line labels stay hidden until a line or actor is hovered, focused or clicked;
+   - below the map, the camps and a relation table grouped by kind, each with its source.
+   Data: data/boards.json (researched) or an automatic board from civics conflicts. */
 (function(global){
  "use strict";
  const NS="http://www.w3.org/2000/svg";
@@ -13,137 +16,163 @@
  let worldP=null,anchorP=null;
  const getWorld=()=>worldP||(worldP=fetch("data/world.json").then(r=>r.json()));
  const getAnchors=()=>anchorP||(anchorP=fetch("data/anchors.json").then(r=>r.json()).catch(()=>({})));
+
+ // relation kinds → three classes the reader can tell apart at a glance
  const TYPES={
-  attack:{ko:"공격·교전",cls:"attack"},troops:{ko:"병력",cls:"mil"},arms:{ko:"무기·부품",cls:"mil"},
-  finance:{ko:"자금·원조",cls:"money"},trade:{ko:"거래",cls:"money"},sanction:{ko:"제재·단교",cls:"sanction"},
-  mediate:{ko:"중재",cls:"talk"},talks:{ko:"협상·합의",cls:"talk"},claim:{ko:"주장·의혹",cls:"claim"},support:{ko:"지지",cls:"support"},
-  high:{ko:"무력 충돌",cls:"attack"},medium:{ko:"긴장·제재",cls:"sanction"},low:{ko:"외교·무역 마찰",cls:"support"}
+  attack:{ko:"공격·교전",cls:"hostile"},sanction:{ko:"제재·단교",cls:"hostile"},claim:{ko:"주장·의혹",cls:"hostile"},
+  high:{ko:"무력 충돌",cls:"hostile"},medium:{ko:"긴장·제재",cls:"hostile"},low:{ko:"외교·무역 마찰",cls:"hostile"},
+  troops:{ko:"병력 지원",cls:"support"},arms:{ko:"무기·부품",cls:"support"},finance:{ko:"자금·원조",cls:"support"},
+  trade:{ko:"거래",cls:"support"},support:{ko:"정치적 지지",cls:"support"},
+  mediate:{ko:"중재",cls:"talk"},talks:{ko:"협상·합의",cls:"talk"}
  };
+ const CLASS={hostile:{ko:"적대",desc:"공격·제재·비난"},support:{ko:"지원",desc:"병력·무기·자금·지지"},talk:{ko:"중재·협상",desc:"회담·중재"}};
  const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구기관"};
- const ICON={ // 24x24 glyphs, drawn white
-  armed:"M4 13h11l2-2h3v2h-2l-1 2H9l-1 3H6l1-3H4z",
-  org:"M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zm0 2c1 1.3 1.8 3.5 2 6h-4c.2-2.5 1-4.7 2-6zm-6.8 6a7 7 0 0 1 3-4.6c-.6 1.3-1 3-1.2 4.6zm0 2h1.8c.2 1.7.6 3.3 1.2 4.6a7 7 0 0 1-3-4.6zm4.8 0h4c-.2 2.5-1 4.7-2 6-1-1.3-1.8-3.5-2-6zm5.8 4.6c.6-1.3 1-2.9 1.2-4.6h1.8a7 7 0 0 1-3 4.6zm1.2-6.6c-.2-1.7-.6-3.3-1.2-4.6a7 7 0 0 1 3 4.6z",
-  company:"M4 20V8l6-3v4l6-3v14zm3-3h2v-2H7zm0-4h2v-2H7zm5 4h2v-2h-2zm0-4h2v-2h-2z",
-  person:"M12 4a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm-7 16c0-3.9 3.1-6 7-6s7 2.1 7 6z",
-  item:"M12 3l8 9-8 9-8-9z"
+ const KIND={armed:"무장단체",org:"국제기구·연합",company:"기업",person:"인물",item:"시설·자원"};
+ const ICON={ // 24×24 glyphs, drawn in white on a dark disc
+  armed:"M1 9.6L5.2 10v2.6L2 13.8zM5.2 9.4h10v2.8h-10zM15.2 10h7.6v1.1h-7.6zM10.6 12.2h2.1l1.1 4.3-1.9.6zM7 12.2h1.7l-.9 3.4-1.5-.4zM16.5 9.4h1v-.8h-1z",
+  org:"M12 2.5L2.5 7.5h19zM4.5 9h2.4v8.2H4.5zm4.4 0h2.4v8.2H8.9zm4.4 0h2.4v8.2h-2.4zm4.4 0h2.4v8.2h-2.4zM2.5 18.6h19v2.4h-19z",
+  company:"M2.5 21V11l5.5 3v-3l5.5 3V5h3.5v3H20v13zM5 18h2v-2H5zm4.5 0h2v-2h-2zm4.5 0h2v-2h-2z",
+  person:"M12 3.5a4.2 4.2 0 1 1 0 8.4 4.2 4.2 0 0 1 0-8.4zM4.5 21c0-4.2 3.3-6.8 7.5-6.8s7.5 2.6 7.5 6.8z",
+  item:"M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.6a2.6 2.6 0 1 1 0-5.2 2.6 2.6 0 0 1 0 5.2z"
  };
+ const textW=(s,fs)=>[...String(s)].reduce((a,ch)=>a+(/[ㄱ-힝]/.test(ch)?1:0.6),0)*fs;
+ function short(s,n=10){s=String(s||"");return s.length>n?s.slice(0,n-1)+"…":s}
+ function nameOf(board,id){const a=board.actors.find(x=>x.id===id);return a?a.label:id}
 
  // Automatic board from civics conflicts when no researched board exists.
  function autoBoard(code,conflict,civics,names){
   const name=c=>names?.(c)||c;
   const actors=[{id:code,code,label:name(code),side:"a"}];
   const other=conflict.with||("ns:"+conflict.withName);
-  actors.push(conflict.with?{id:other,code:conflict.with,label:conflict.withName,side:"b"}:{id:other,label:short(conflict.withName),icon:"armed",near:code,side:"b",note:conflict.withName});
-  const links=[{from:other,to:code,type:conflict.level||"low",label:short(conflict.kind||"갈등",12),detail:conflict.detail||conflict.brief,source:(conflict.sources||[])[0]||null,tier:"press",main:true}];
-  const add=(from,list)=>{for(const c of (list||[]).slice(0,6)){if(!c.with||c.with===code||c.with===conflict.with)continue;
-   if(!actors.find(a=>a.id===c.with))actors.push({id:c.with,code:c.with,label:c.withName,side:"n",faint:true});
-   links.push({from,to:c.with,type:c.level||"low",label:short(c.brief||c.kind,12),detail:c.detail||c.brief,source:(c.sources||[])[0]||null,tier:"press",faint:true})}};
-  add(code,civics?.[code]?.conflicts);if(conflict.with)add(conflict.with,civics?.[conflict.with]?.conflicts);
-  return {id:"auto",auto:true,title:name(code)+" ↔ "+conflict.withName,hook:"",summary:conflict.brief||"",actors:actors.slice(0,12),links:links.filter(l=>actors.find(a=>a.id===l.to)&&actors.find(a=>a.id===l.from)),background:[],videos:[]};
+  actors.push(conflict.with?{id:other,code:conflict.with,label:conflict.withName,side:"b"}:{id:other,label:short(conflict.withName,12),icon:"armed",near:code,side:"b",note:conflict.withName});
+  const links=[{from:other,to:code,type:conflict.level||"low",label:short(conflict.kind||"갈등",14),detail:conflict.detail||conflict.brief,source:(conflict.sources||[])[0]||null,tier:"press",main:true}];
+  return {id:"auto",auto:true,title:name(code)+" ↔ "+conflict.withName,hook:"",summary:conflict.brief||"",actors,links,background:[],videos:[]};
  }
- function short(s,n=10){s=String(s||"");return s.length>n?s.slice(0,n-1)+"…":s}
 
  async function render(slot,board,opts={}){
   slot.innerHTML='<p class="board-loading">갈등도를 그리는 중…</p>';
   let world,anchors;try{[world,anchors]=await Promise.all([getWorld(),getAnchors()])}catch(e){slot.innerHTML='<p class="board-loading">지도 자료를 불러오지 못했습니다.</p>';return}
-  const project=(lon,lat)=>{const [x,y]=raw(lon,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
+  const uid=String(opts.uid||"x").replace(/[^\w-]/g,"");
+  const project=(lon,lat)=>{const [x,y]=raw(((lon-(world.lon0||0))%360+540)%360-180,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
   const flags=global.__FLAGS||{};
-  // positions
-  const pos={};const nodes=board.actors.map(a=>({...a}));
+  const camp=s=>s==="a"||s==="a2"?"A":s==="b"||s==="b2"?"B":"N";
+  const nodes=board.actors.map(a=>({...a}));
   for(const a of nodes){let p=null;if(a.code&&anchors[a.code])p=anchors[a.code];else if(Number.isFinite(a.lat)&&Number.isFinite(a.lon))p=project(a.lon,a.lat);
-   if(!p&&a.near&&anchors[a.near])p=[anchors[a.near][0]+6,anchors[a.near][1]+5];if(!p)p=[500,200];a.x=p[0];a.y=p[1];a.hx=p[0];a.hy=p[1]}
-  // view box: fit the core (both sides and nearby actors); far actors sit on the rim pointing home
-  const core0=nodes.filter(n=>n.side==="a"||n.side==="b");const base=core0.length?core0:nodes;
-  const bx=base.reduce((a,n)=>a+n.x,0)/base.length,by=base.reduce((a,n)=>a+n.y,0)/base.length;
-  const spread=Math.max(40,...base.map(n=>Math.hypot(n.x-bx,n.y-by)));const near=Math.max(spread*2.2,110);
-  const core=nodes.filter(n=>base.includes(n)||Math.hypot(n.x-bx,n.y-by)<=near);
+   if(!p&&a.near&&anchors[a.near])p=[anchors[a.near][0]+8,anchors[a.near][1]+6];if(!p)p=[500,200];a.x=p[0];a.y=p[1]}
+  // view: fit both main sides and nearby actors; far ones sit on the rim, pointing home
+  const base=nodes.filter(n=>n.side==="a"||n.side==="b");const core0=base.length?base:nodes;
+  const bx=core0.reduce((s,n)=>s+n.x,0)/core0.length,by=core0.reduce((s,n)=>s+n.y,0)/core0.length;
+  const spread=Math.max(40,...core0.map(n=>Math.hypot(n.x-bx,n.y-by)));const near=Math.max(spread*2.3,120);
+  const core=nodes.filter(n=>core0.includes(n)||Math.hypot(n.x-bx,n.y-by)<=near);
   let x0=Math.min(...core.map(n=>n.x)),x1=Math.max(...core.map(n=>n.x)),y0=Math.min(...core.map(n=>n.y)),y1=Math.max(...core.map(n=>n.y));
-  const ASP=1.6;let w=Math.max(x1-x0,90)*1.4,h=Math.max(y1-y0,40)*1.55;if(w/h<ASP)w=h*ASP;else h=w/ASP;w=Math.min(w,1000);h=Math.min(h,w/ASP);
-  let cx=(x0+x1)/2,cy=(y0+y1)/2+h*0.03;const vb=[cx-w/2,cy-h/2,w,h];
-  for(const n of nodes){if(core.includes(n))continue;const dx=n.x-cx,dy=n.y-cy;const hw=w/2-w*0.06,hh=h/2-h*0.1;const t=Math.min(hw/Math.abs(dx||1e-6),hh/Math.abs(dy||1e-6));n.x=cx+dx*t;n.y=cy+dy*t;n.rim=true}
-  const r=w*0.026;
-  // relax overlapping badges
-  for(let it=0;it<80;it++){let moved=false;for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const A=nodes[i],B=nodes[j];let dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||0.01;const min=r*2.9;if(d<min){const push=(min-d)/2;dx/=d;dy/=d;if(!dx&&!dy){dx=1}A.x-=dx*push;A.y-=dy*push;B.x+=dx*push;B.y+=dy*push;moved=true}}
-   for(const n of nodes){n.x=Math.max(vb[0]+r*1.6,Math.min(vb[0]+w-r*1.6,n.x));n.y=Math.max(vb[1]+r*1.4,Math.min(vb[1]+h-r*2.2,n.y))}if(!moved)break}
-  for(const n of nodes)pos[n.id]=n;
-  const svg=el("svg",{class:"board-svg"+(board.links.filter(l=>!l.faint).length>6?" board-quiet":""),viewBox:vb.map(v=>v.toFixed(2)).join(" "),role:"img","aria-label":board.title+" 갈등도"});
+  const ASP=1.7;let w=Math.max(x1-x0,100)*1.5,h=Math.max(y1-y0,50)*1.7;if(w/h<ASP)w=h*ASP;else h=w/ASP;w=Math.min(w,1000);h=Math.min(h,w/ASP);
+  const cx=(x0+x1)/2,cy=(y0+y1)/2+h*0.04;const vb=[cx-w/2,cy-h/2,w,h];
+  for(const n of nodes){if(core.includes(n))continue;const dx=n.x-cx,dy=n.y-cy;const hw=w/2-w*0.07,hh=h/2-h*0.14;const t=Math.min(hw/Math.abs(dx||1e-6),hh/Math.abs(dy||1e-6));n.x=cx+dx*t;n.y=cy+dy*t;n.rim=true}
+  const r=w*0.024,fs=r*0.62;
+  // box = badge + name (+ kind) below; push overlapping boxes apart
+  for(const n of nodes){const lines=n.code?1:2;n.bw=Math.max(r*2.3,textW(n.label,fs)+fs*1.1);n.bt=r*1.15;n.bb=r*1.35+fs*1.5*lines}
+  for(let it=0;it<160;it++){let moved=false;
+   for(let i=0;i<nodes.length;i++)for(let j=i+1;j<nodes.length;j++){const A=nodes[i],B=nodes[j];
+    const ox=(A.bw+B.bw)/2+r*0.25-Math.abs(B.x-A.x);const oyA=B.y>=A.y?A.bb+B.bt:B.bb+A.bt;const oy=oyA+r*0.2-Math.abs(B.y-A.y);
+    if(ox>0&&oy>0){moved=true;if(ox<oy){const s=(B.x>=A.x?1:-1)*ox/2;A.x-=s;B.x+=s}else{const s=(B.y>=A.y?1:-1)*oy/2;A.y-=s;B.y+=s}}}
+   for(const n of nodes){n.x=Math.max(vb[0]+n.bw/2+r*0.3,Math.min(vb[0]+w-n.bw/2-r*0.3,n.x));n.y=Math.max(vb[1]+n.bt+r*1.5,Math.min(vb[1]+h-n.bb-r*0.2,n.y))}
+   if(!moved)break}
+  const pos={};for(const n of nodes)pos[n.id]=n;
+
+  // one edge per pair of actors
+  const pairs=new Map();
+  board.links.forEach((l,i)=>{if(!pos[l.from]||!pos[l.to])return;const key=[l.from,l.to].sort().join("|");if(!pairs.has(key))pairs.set(key,{key,a:l.from,b:l.to,items:[]});pairs.get(key).items.push(i)});
+  const clsOf=i=>(TYPES[board.links[i].type]||TYPES.support).cls;
+  for(const p of pairs.values()){const c=p.items.map(clsOf);p.cls=c.includes("hostile")?"hostile":c.includes("support")?"support":"talk";
+   const froms=new Set(p.items.map(i=>board.links[i].from));p.dir=froms.size===1?[...froms][0]:null;if(p.dir){p.a=p.dir;p.b=board.links[p.items[0]].to}}
+
+  const svg=el("svg",{class:"board-svg",viewBox:vb.map(v=>v.toFixed(2)).join(" "),role:"img","aria-label":board.title+" 갈등도"});
   const defs=el("defs");svg.appendChild(defs);
-  const clip=el("clipPath",{id:"bclip-"+(opts.uid||"x"),clipPathUnits:"objectBoundingBox"});clip.appendChild(el("circle",{cx:.5,cy:.5,r:.5}));defs.appendChild(clip);
-  for(const c of ["attack","mil","money","sanction","talk","claim","support"]){const m=el("marker",{id:"barrow-"+c+"-"+(opts.uid||"x"),viewBox:"0 0 10 10",refX:"9",refY:"5",markerWidth:"5",markerHeight:"5",orient:"auto-start-reverse"});m.appendChild(el("path",{d:"M0 0L10 5L0 10z",class:"board-arrow board-arrow--"+c}));defs.appendChild(m)}
+  const clip=el("clipPath",{id:"bclip-"+uid,clipPathUnits:"objectBoundingBox"});clip.appendChild(el("circle",{cx:.5,cy:.5,r:.5}));defs.appendChild(clip);
+  for(const c of Object.keys(CLASS)){const m=el("marker",{id:"barrow-"+c+"-"+uid,viewBox:"0 0 10 10",refX:"8.5",refY:"5",markerWidth:"4.2",markerHeight:"4.2",orient:"auto"});m.appendChild(el("path",{d:"M0 0L10 5L0 10z",class:"board-arrow board-arrow--"+c}));defs.appendChild(m)}
   svg.appendChild(el("rect",{x:vb[0]-w,y:vb[1]-h,width:w*3,height:h*3,class:"board-sea"}));
   const land=el("g",{class:"board-land"});const sideOf={};for(const n of nodes)if(n.code)sideOf[n.code]=n.side;
-  for(const c of world.countries){const p=el("path",{d:c.d,class:"board-country"+(c.c&&sideOf[c.c]?" board-side-"+sideOf[c.c]:"")});land.appendChild(p)}
+  for(const c of world.countries)land.appendChild(el("path",{d:c.d,class:"board-country"+(c.c&&sideOf[c.c]?" board-side-"+sideOf[c.c]:"")}));
   svg.appendChild(land);
-  // links
-  const linkG=el("g",{class:"board-links"}),labelG=el("g",{class:"board-link-labels"});
-  const pairCount={};
-  board.links.forEach((l,i)=>{const A=pos[l.from],B=pos[l.to];if(!A||!B)return;const key=[l.from,l.to].sort().join("|");const k=pairCount[key]=(pairCount[key]||0)+1;
-   const t=TYPES[l.type]||TYPES.support;const dx=B.x-A.x,dy=B.y-A.y,d=Math.hypot(dx,dy)||1;const sign=(k%2?1:-1)*(l.from<l.to?1:-1);const bend=(0.18+0.14*Math.floor((k-1)/2))*sign;
-   const mx=(A.x+B.x)/2-dy*bend,my=(A.y+B.y)/2+dx*bend;
-   // trim ends to badge edges
-   const ux1=(mx-A.x),uy1=(my-A.y),n1=Math.hypot(ux1,uy1)||1,ux2=(mx-B.x),uy2=(my-B.y),n2=Math.hypot(ux2,uy2)||1;
-   const sx=A.x+ux1/n1*r*1.12,sy=A.y+uy1/n1*r*1.12,ex=B.x+ux2/n2*r*1.25,ey=B.y+uy2/n2*r*1.25;
+  const linkG=el("g",{class:"board-links"});
+  let pi=0;
+  for(const p of pairs.values()){const A=pos[p.a],B=pos[p.b];const dx=B.x-A.x,dy=B.y-A.y;const d=Math.hypot(dx,dy)||1;
+   const bend=0.12*((pi++%2)?1:-1);const mx=(A.x+B.x)/2-dy*bend,my=(A.y+B.y)/2+dx*bend;
+   const u1=Math.hypot(mx-A.x,my-A.y)||1,u2=Math.hypot(mx-B.x,my-B.y)||1;
+   const sx=A.x+(mx-A.x)/u1*r*1.2,sy=A.y+(my-A.y)/u1*r*1.2,ex=B.x+(mx-B.x)/u2*r*1.35,ey=B.y+(my-B.y)/u2*r*1.35;
    const dpath="M"+sx.toFixed(2)+" "+sy.toFixed(2)+"Q"+mx.toFixed(2)+" "+my.toFixed(2)+" "+ex.toFixed(2)+" "+ey.toFixed(2);
-   const g=el("g",{class:"board-link board-link--"+t.cls+(l.faint?" board-faint":"")+(l.main?" board-main":""),"data-link":i,tabindex:"0",role:"button","aria-label":(nameOf(board,l.from)+" → "+nameOf(board,l.to)+" "+l.label)});
+   p.mid=[0.25*sx+0.5*mx+0.25*ex,0.25*sy+0.5*my+0.25*ey];
+   const main=p.items.some(i=>board.links[i].main)||(camp((pos[p.a]||{}).side)!==camp((pos[p.b]||{}).side)&&(pos[p.a].side==="a"||pos[p.a].side==="b")&&(pos[p.b].side==="a"||pos[p.b].side==="b"));
+   const g=el("g",{class:"board-pair board-pair--"+p.cls+(main?" board-main":""),"data-pair":p.key,tabindex:"0",role:"button","aria-label":nameOf(board,p.a)+(p.dir?" → ":" ↔ ")+nameOf(board,p.b)+": "+p.items.map(i=>board.links[i].label).join(", ")});
    g.appendChild(el("path",{d:dpath,class:"board-hit"}));
-   g.appendChild(el("path",{d:dpath,class:"board-line","marker-end":l.type==="mediate"||l.type==="talks"||l.type==="support"?"":"url(#barrow-"+t.cls+"-"+(opts.uid||"x")+")",style:"stroke-width:"+(r*(l.main?0.13:l.faint?0.05:0.085)).toFixed(3)}));
-   if(t.cls==="attack"||t.cls==="mil"||t.cls==="money")g.appendChild(el("path",{d:dpath,class:"board-flow",style:"stroke-width:"+(r*0.16).toFixed(3)+";stroke-dasharray:0 "+(r*0.55).toFixed(2)}));
-   linkG.appendChild(g);
-   const lx=0.25*sx+0.5*mx+0.25*ex,ly=0.25*sy+0.5*my+0.25*ey;
-   if(!l.faint){const lab=el("g",{class:"board-link-label board-link-label--"+t.cls,"data-link":i,transform:"translate("+lx.toFixed(2)+" "+ly.toFixed(2)+")"});
-    const fs=r*0.42,tw=Math.max(2,[...String(l.label)].reduce((a,ch)=>a+(/[ㄱ-힝]/.test(ch)?1:0.58),0))*fs+fs*0.9;
-    lab.appendChild(el("rect",{x:-tw/2,y:-fs*0.85,width:tw,height:fs*1.7,rx:fs*0.3}));const tx=el("text",{"font-size":fs.toFixed(2),"text-anchor":"middle","dominant-baseline":"central"});tx.textContent=l.label;lab.appendChild(tx);labelG.appendChild(lab)}
-  });
+   g.appendChild(el("path",{d:dpath,class:"board-line"+(p.cls==="talk"?" board-line--dash":""),style:"stroke-width:"+(r*(main?0.17:0.11)*Math.min(1.6,1+0.15*(p.items.length-1))).toFixed(3),"marker-end":p.dir&&p.cls!=="talk"?"url(#barrow-"+p.cls+"-"+uid+")":""}));
+   g.appendChild(el("path",{d:dpath,class:"board-flow",style:"stroke-width:"+(r*0.12).toFixed(3)+";stroke-dasharray:"+(r*0.05).toFixed(2)+" "+(r*0.9).toFixed(2)}));
+   if(p.items.length>1){const b=el("g",{class:"board-count",transform:"translate("+p.mid[0].toFixed(2)+" "+p.mid[1].toFixed(2)+")"});b.appendChild(el("circle",{r:(r*0.42).toFixed(2)}));const t=el("text",{"font-size":(r*0.5).toFixed(2),"text-anchor":"middle","dominant-baseline":"central"});t.textContent=p.items.length;b.appendChild(t);g.appendChild(b)}
+   linkG.appendChild(g)}
   svg.appendChild(linkG);
-  // nodes
   const nodeG=el("g",{class:"board-nodes"});
-  for(const n of nodes){const g=el("g",{class:"board-node board-node--"+(n.side||"n")+(n.faint?" board-faint":""),"data-node":n.id,transform:"translate("+n.x.toFixed(2)+" "+n.y.toFixed(2)+")",tabindex:"0",role:"button","aria-label":n.label});
-   const rr=n.faint?r*0.72:r;
-   if(n.code&&flags[n.code]){g.appendChild(el("circle",{r:rr*1.08,class:"board-ring"}));const im=el("image",{href:flags[n.code],x:-rr,y:-rr,width:rr*2,height:rr*2,preserveAspectRatio:"xMidYMid slice","clip-path":"url(#bclip-"+(opts.uid||"x")+")"});g.appendChild(im)}
-   else{g.appendChild(el("rect",{x:-rr,y:-rr,width:rr*2,height:rr*2,rx:rr*0.28,class:"board-tile"}));const ic=el("path",{d:ICON[n.icon]||ICON.item,class:"board-icon",transform:"translate("+(-rr*0.62)+" "+(-rr*0.62)+") scale("+(rr*1.24/24).toFixed(4)+")"});g.appendChild(ic)}
-   const fs=rr*0.5,tw=[...String(n.label)].reduce((a,ch)=>a+(/[ㄱ-힝]/.test(ch)?1:0.6),0)*fs+fs;
-   const lg=el("g",{class:"board-name",transform:"translate(0 "+(rr*1.62).toFixed(2)+")"});lg.appendChild(el("rect",{x:-tw/2,y:-fs*0.8,width:tw,height:fs*1.6,rx:fs*0.2}));const t=el("text",{"font-size":fs.toFixed(2),"text-anchor":"middle","dominant-baseline":"central"});t.textContent=n.label;lg.appendChild(t);g.appendChild(lg);
+  for(const n of nodes){const g=el("g",{class:"board-node board-camp-"+camp(n.side)+(n.side==="a"||n.side==="b"?" board-node--main":""),"data-node":n.id,transform:"translate("+n.x.toFixed(2)+" "+n.y.toFixed(2)+")",tabindex:"0",role:"button","aria-label":n.label+(n.code?"":" ("+(KIND[n.icon]||"주체")+")")});
+   g.appendChild(el("circle",{r:(r*1.12).toFixed(2),class:"board-ring"}));
+   if(n.code&&flags[n.code])g.appendChild(el("image",{href:flags[n.code],x:-r,y:-r,width:r*2,height:r*2,preserveAspectRatio:"xMidYMid slice","clip-path":"url(#bclip-"+uid+")"}));
+   else{g.appendChild(el("circle",{r:r.toFixed(2),class:"board-disc"}));g.appendChild(el("path",{d:ICON[n.icon]||ICON.item,class:"board-icon",transform:"translate("+(-r*0.66).toFixed(2)+" "+(-r*0.66).toFixed(2)+") scale("+(r*1.32/24).toFixed(4)+")"}))}
+   const nm=el("g",{class:"board-name",transform:"translate(0 "+(r*1.35+fs*0.75).toFixed(2)+")"});const tw=textW(n.label,fs)+fs*0.9;
+   nm.appendChild(el("rect",{x:(-tw/2).toFixed(2),y:(-fs*0.78).toFixed(2),width:tw.toFixed(2),height:(fs*1.56).toFixed(2),rx:(fs*0.25).toFixed(2)}));
+   const t=el("text",{"font-size":fs.toFixed(2),"text-anchor":"middle","dominant-baseline":"central"});t.textContent=n.label;nm.appendChild(t);g.appendChild(nm);
+   if(!n.code){const k=el("text",{class:"board-kind","font-size":(fs*0.8).toFixed(2),"text-anchor":"middle","dominant-baseline":"central",y:(r*1.35+fs*2.25).toFixed(2)});k.textContent=KIND[n.icon]||"주체";g.appendChild(k)}
    nodeG.appendChild(g)}
-  svg.appendChild(nodeG);svg.appendChild(labelG);
-  // credit
-  const credit=el("text",{class:"board-credit",x:(vb[0]+w-r*0.4).toFixed(2),y:(vb[1]+r*0.75).toFixed(2),"text-anchor":"end","font-size":(r*0.4).toFixed(2)});credit.textContent=board.auto?"출처 : 판도 갈등 관계 자료":"출처 : 관계를 누르면 표시";svg.appendChild(credit);
-  const brand=el("text",{class:"board-brand",x:(vb[0]+r*0.5).toFixed(2),y:(vb[1]+r*0.95).toFixed(2),"font-size":(r*0.62).toFixed(2)});brand.textContent="판도 갈등도";svg.appendChild(brand);
+  svg.appendChild(nodeG);
 
-  const legendTypes=[...new Set(board.links.filter(l=>!l.faint).map(l=>(TYPES[l.type]||TYPES.support).cls))];
-  const legendNames={attack:"공격·교전",mil:"병력·무기",money:"자금·거래",sanction:"제재·긴장",talk:"중재·협상",claim:"주장·의혹",support:"지지·마찰"};
-  const sides=[["a",nameOf(board,(board.actors.find(a=>a.side==="a")||{}).id)],["b",nameOf(board,(board.actors.find(a=>a.side==="b")||{}).id)],["a2","앞쪽을 돕는 쪽"],["b2","맞은편을 돕는 쪽"],["n","중재·제3자"]].filter(([s])=>board.actors.some(a=>a.side===s));
-  const rows=board.links.map((l,i)=>l.faint?"":'<li><button type="button" data-link-row="'+i+'"><span class="board-chip board-chip--'+(TYPES[l.type]||TYPES.support).cls+'">'+esc((TYPES[l.type]||{}).ko||l.type)+'</span><span class="board-row-text"><b>'+esc(nameOf(board,l.from))+' → '+esc(nameOf(board,l.to))+'</b> · '+esc(l.label)+(l.since?' <small>'+esc(l.since)+'~</small>':"")+'</span></button></li>').join("");
-  const others=board.links.filter(l=>l.faint);
-  const bg=(board.background||[]).length?'<details class="board-bg" open><summary>어떻게 여기까지 왔나</summary><ol>'+board.background.map(b=>'<li><time>'+esc(b.date)+'</time><span>'+esc(b.text)+' '+(b.source?'<a href="'+esc(safe(b.source[2]))+'" target="_blank" rel="noopener noreferrer">'+esc(b.source[0])+' ↗</a>':"")+'</span></li>').join("")+'</ol></details>':"";
+  // ── HTML around the map
+  const campsOf={A:[],B:[],N:[]};for(const a of board.actors)campsOf[camp(a.side)].push(a);
+  const lead=s=>{const all=board.actors.filter(a=>a.side===s),st=all.filter(a=>a.code);return (st.length?st:all).map(a=>a.label).join("·")};
+  const campName={A:(lead("a")||"한쪽")+" 쪽",B:(lead("b")||"맞은편")+" 쪽",N:"중재·제3자"};
+  const chip=a=>'<button type="button" class="board-who" data-who="'+esc(a.id)+'">'+(a.code&&flags[a.code]?'<img src="'+flags[a.code]+'" alt="">':'<i class="board-who-ic" aria-hidden="true"></i>')+'<span>'+esc(a.label)+'</span>'+(a.code?"":'<small>'+esc(KIND[a.icon]||"주체")+'</small>')+((a.side==="a2"||a.side==="b2")?'<em>돕는 쪽</em>':"")+'</button>';
+  const camps='<div class="board-camps">'+["A","B","N"].filter(k=>campsOf[k].length).map(k=>'<div class="board-camp board-camp--'+k+'"><h5><i></i>'+esc(campName[k])+'</h5><div>'+campsOf[k].map(chip).join("")+'</div></div>').join("")+'</div>';
+  const legend='<div class="board-legend">'+Object.entries(CLASS).filter(([c])=>[...pairs.values()].some(p=>p.cls===c)).map(([c,v])=>'<span><i class="board-ln board-ln--'+c+'"></i><b>'+v.ko+'</b> '+v.desc+'</span>').join("")+'<span class="board-legend-tip">선·주체에 마우스를 올리거나 누르면 내용이 보여요</span></div>';
+  const row=i=>{const l=board.links[i],t=TYPES[l.type]||TYPES.support,s=l.source;return '<li><button type="button" data-link-row="'+i+'"><span class="board-rel"><b>'+esc(nameOf(board,l.from))+'</b><span class="board-arw board-arw--'+t.cls+'">→</span><b>'+esc(nameOf(board,l.to))+'</b></span><span class="board-what"><span class="board-chip board-chip--'+t.cls+'">'+esc(t.ko)+'</span>'+esc(l.label)+(l.since?' <small>'+esc(String(l.since))+'~</small>':"")+'</span></button></li>'};
+  const groups=Object.keys(CLASS).map(c=>{const ids=board.links.map((l,i)=>i).filter(i=>pos[board.links[i].from]&&pos[board.links[i].to]&&clsOf(i)===c);return ids.length?'<section class="board-group board-group--'+c+'"><h5>'+CLASS[c].ko+' <small>'+ids.length+'</small></h5><ul>'+ids.map(row).join("")+'</ul></section>':""}).join("");
+  const bg=(board.background||[]).length?'<details class="board-bg"><summary>어떻게 여기까지 왔나 <small>'+board.background.length+'</small></summary><ol>'+board.background.map(b=>'<li><time>'+esc(b.date)+'</time><span>'+esc(b.text)+' '+(b.source?'<a href="'+esc(safe(b.source[2]))+'" target="_blank" rel="noopener noreferrer">'+esc(b.source[0])+' ↗</a>':"")+'</span></li>').join("")+'</ol></details>':"";
   const vids=(board.videos||[]).length?'<div class="board-videos"><h5>날리지식에서 더 깊이 보기</h5><ul>'+board.videos.map(v=>'<li><a href="https://www.youtube.com/watch?v='+esc(v.id)+'" target="_blank" rel="noopener noreferrer">'+esc(v.title||"영상")+' ↗</a><span>'+esc(v.why||"")+'</span></li>').join("")+'</ul><p>유튜브 영상은 단서입니다. 판도는 영상이 인용한 원문을 직접 확인한 내용만 위 관계·경위에 실었습니다.</p></div>':"";
   slot.innerHTML='<div class="board">'+
-   '<header class="board-head"><span class="board-kicker">'+(board.auto?"갈등도 · 자동 구성":"갈등도 · "+esc(board.asOf||""))+'</span><h4>'+esc(board.title)+'</h4>'+(board.hook?'<p class="board-hook">'+esc(board.hook)+'</p>':"")+(board.summary&&!board.auto?'<p class="board-summary">'+esc(board.summary)+'</p>':"")+'</header>'+
-   '<div class="board-stage"></div>'+
-   '<div class="board-legend">'+sides.map(([s,l])=>'<span><i class="board-sw board-sw--'+s+'"></i>'+esc(l)+'</span>').join("")+legendTypes.map(c=>'<span><i class="board-ln board-ln--'+c+'"></i>'+esc(legendNames[c])+'</span>').join("")+'</div>'+
-   '<div class="board-detail" aria-live="polite"><p class="board-tip">선이나 아래 목록을 누르면 근거가 나옵니다.</p></div>'+
-   '<ul class="board-rows">'+rows+'</ul>'+
-   (others.length?'<p class="board-others">흐린 선: 두 나라가 따로 겪는 다른 갈등 '+others.length+'건</p>':"")+
-   bg+vids+(board.auto?'<p class="board-auto-note">이 갈등은 아직 주체별 조사 전이라 판도 갈등 관계 자료로 자동 구성했습니다.</p>':"")+'</div>';
-  slot.querySelector(".board-stage").appendChild(svg);
-  const detail=slot.querySelector(".board-detail");
-  const select=i=>{const l=board.links[i];if(!l)return;svg.classList.add("board-focus");
-   svg.querySelectorAll("[data-link]").forEach(n=>n.classList.toggle("on",n.dataset.link===String(i)));
-   svg.querySelectorAll("[data-node]").forEach(n=>n.classList.toggle("on",n.dataset.node===l.from||n.dataset.node===l.to));
-   slot.querySelectorAll("[data-link-row]").forEach(b=>b.classList.toggle("on",b.dataset.linkRow===String(i)));
-   const s=l.source;credit.textContent=s?("출처 : "+s[0]+(s[1]?"("+short(s[1],46)+")":"")):"출처 : 판도 갈등 관계 자료";
-   detail.innerHTML='<div class="board-card"><span class="board-chip board-chip--'+(TYPES[l.type]||TYPES.support).cls+'">'+esc((TYPES[l.type]||{}).ko||l.type)+'</span><h5>'+esc(nameOf(board,l.from))+' → '+esc(nameOf(board,l.to))+' · '+esc(l.label)+'</h5><p>'+esc(l.detail||"")+'</p>'+(l.dispute?'<p class="board-dispute"><b>반론</b> '+esc(l.dispute)+'</p>':"")+(s?'<p class="board-src">'+(l.tier&&TIER[l.tier]?'<span class="board-tier board-tier--'+esc(l.tier)+'">'+TIER[l.tier]+'</span>':"")+'<a href="'+esc(safe(s[2]))+'" target="_blank" rel="noopener noreferrer">'+esc(s[0])+' · '+esc(s[1]||"")+' ↗</a></p>':"")+'</div>'};
-  const selectNode=id=>{const ls=board.links.map((l,i)=>[l,i]).filter(([l])=>l.from===id||l.to===id);svg.classList.add("board-focus");
-   svg.querySelectorAll("[data-link]").forEach(n=>n.classList.toggle("on",ls.some(([,i])=>String(i)===n.dataset.link)));
-   svg.querySelectorAll("[data-node]").forEach(n=>n.classList.toggle("on",n.dataset.node===id||ls.some(([l])=>l.from===n.dataset.node||l.to===n.dataset.node)));
-   const a=board.actors.find(x=>x.id===id);detail.innerHTML='<div class="board-card"><h5>'+esc(a?.label||id)+'</h5>'+(a?.note?'<p>'+esc(a.note)+'</p>':"")+'<p>관계 '+ls.length+'개: '+ls.map(([l])=>esc(l.label)).join(" · ")+'</p>'+(a?.code&&opts.onCountry?'<button type="button" class="board-goto" data-board-country="'+esc(a.code)+'">'+esc(a.label)+' 국가 정보 →</button>':"")+'</div>'};
-  slot.addEventListener("click",e=>{const row=e.target.closest("[data-link-row]");if(row){select(+row.dataset.linkRow);return}
-   const lk=e.target.closest("[data-link]");if(lk){select(+lk.dataset.link);return}
+   '<header class="board-head"><span class="board-kicker">'+(board.auto?"갈등도 · 자동 구성":"갈등도 · "+esc(board.asOf||"")+" 기준")+'</span><h4>'+esc(board.title)+'</h4>'+(board.hook?'<p class="board-hook">'+esc(board.hook)+'</p>':"")+(board.summary&&!board.auto?'<p class="board-summary">'+esc(board.summary)+'</p>':"")+'</header>'+
+   camps+legend+'<div class="board-stage"><div class="board-tip" hidden></div></div>'+
+   '<div class="board-detail" aria-live="polite"></div>'+
+   '<div class="board-groups">'+groups+'</div>'+bg+vids+
+   (board.auto?'<p class="board-auto-note">이 갈등은 아직 주체별 조사 전이라 판도 갈등 관계 자료로 자동 구성했습니다.</p>':"")+'</div>';
+  const stage=slot.querySelector(".board-stage"),tip=stage.querySelector(".board-tip"),detail=slot.querySelector(".board-detail");
+  stage.insertBefore(svg,tip);
+
+  const linkHtml=i=>{const l=board.links[i],t=TYPES[l.type]||TYPES.support,s=l.source;
+   return '<article class="board-card"><header><span class="board-chip board-chip--'+t.cls+'">'+esc(t.ko)+'</span><h5>'+esc(nameOf(board,l.from))+' → '+esc(nameOf(board,l.to))+' · '+esc(l.label)+'</h5>'+(l.since?'<small>'+esc(String(l.since))+'부터</small>':"")+'</header>'+(l.detail?'<p>'+esc(l.detail)+'</p>':"")+(l.dispute?'<p class="board-dispute"><b>반론</b> '+esc(l.dispute)+'</p>':"")+(s?'<p class="board-src">'+(l.tier&&TIER[l.tier]?'<span class="board-tier board-tier--'+esc(l.tier)+'">'+TIER[l.tier]+'</span>':"")+'<a href="'+esc(safe(s[2]))+'" target="_blank" rel="noopener noreferrer">'+esc(s[0])+(s[1]?' · '+esc(s[1]):"")+' ↗</a></p>':"")+'</article>'};
+  const highlight=(pairKeys,nodeIds)=>{svg.classList.toggle("board-focus",!!pairKeys);
+   svg.querySelectorAll("[data-pair]").forEach(n=>n.classList.toggle("on",!!pairKeys&&pairKeys.includes(n.dataset.pair)));
+   svg.querySelectorAll("[data-node]").forEach(n=>n.classList.toggle("on",!!nodeIds&&nodeIds.includes(n.dataset.node)))};
+  const showTip=(html,x,y)=>{const box=stage.getBoundingClientRect(),pt=svg.createSVGPoint();pt.x=x;pt.y=y;const m=svg.getScreenCTM();if(!m)return;const q=pt.matrixTransform(m);
+   tip.innerHTML=html;tip.hidden=false;const tx=Math.max(8,Math.min(box.width-tip.offsetWidth-8,q.x-box.left-tip.offsetWidth/2));const ty=q.y-box.top-tip.offsetHeight-12;tip.style.left=tx+"px";tip.style.top=(ty<6?q.y-box.top+18:ty)+"px"};
+  const pairTip=p=>'<b>'+esc(nameOf(board,p.a))+(p.dir?" → ":" ↔ ")+esc(nameOf(board,p.b))+'</b>'+p.items.map(i=>{const l=board.links[i],t=TYPES[l.type]||TYPES.support;return '<span><i class="board-dot board-dot--'+t.cls+'"></i>'+esc(l.label)+'</span>'}).join("");
+  const nodeTip=id=>{const a=board.actors.find(x=>x.id===id)||{};const ps=[...pairs.values()].filter(p=>p.a===id||p.b===id);
+   return '<b>'+esc(a.label||id)+'</b><small>'+esc(a.code?{A:campName.A,B:campName.B,N:"중재·제3자"}[camp(a.side)]:(KIND[a.icon]||"주체")+" · "+{A:campName.A,B:campName.B,N:"중재·제3자"}[camp(a.side)])+'</small>'+ps.map(p=>{const o=p.a===id?p.b:p.a;return '<span><i class="board-dot board-dot--'+p.cls+'"></i>'+esc(nameOf(board,o))+' · '+esc(CLASS[p.cls].ko)+'</span>'}).join("")};
+  const selectPair=(key,soft)=>{const p=pairs.get(key);if(!p)return;if(!soft)highlight([key],[p.a,p.b]);detail.innerHTML=p.items.map(linkHtml).join("");
+   slot.querySelectorAll("[data-link-row]").forEach(b=>b.classList.toggle("on",p.items.includes(+b.dataset.linkRow)))};
+  const selectNode=id=>{const ps=[...pairs.values()].filter(p=>p.a===id||p.b===id);highlight(ps.map(p=>p.key),[id,...ps.flatMap(p=>[p.a,p.b])]);
+   const a=board.actors.find(x=>x.id===id)||{};
+   detail.innerHTML='<article class="board-card"><header><h5>'+esc(a.label||id)+'</h5><small>'+esc(a.code?"국가":(KIND[a.icon]||"주체"))+' · '+esc({A:campName.A,B:campName.B,N:"중재·제3자"}[camp(a.side)])+((a.side==="a2"||a.side==="b2")?" (돕는 쪽)":"")+'</small></header>'+(a.note?'<p>'+esc(a.note)+'</p>':"")+'<ul class="board-node-rel">'+ps.flatMap(p=>p.items).map(i=>{const l=board.links[i],t=TYPES[l.type]||TYPES.support;return '<li><button type="button" data-link-row="'+i+'"><span class="board-chip board-chip--'+t.cls+'">'+esc(t.ko)+'</span>'+esc(nameOf(board,l.from))+' → '+esc(nameOf(board,l.to))+' · '+esc(l.label)+'</button></li>'}).join("")+'</ul>'+(a.code&&opts.onCountry?'<button type="button" class="board-goto" data-board-country="'+esc(a.code)+'">'+esc(a.label)+' 국가 정보 →</button>':"")+'</article>'};
+  const selectLink=i=>{const l=board.links[i];if(!l)return;const key=[l.from,l.to].sort().join("|");highlight([key],[l.from,l.to]);detail.innerHTML=linkHtml(i);
+   slot.querySelectorAll("[data-link-row]").forEach(b=>b.classList.toggle("on",+b.dataset.linkRow===i))};
+  svg.addEventListener("pointerover",e=>{const pg=e.target.closest("[data-pair]"),nd=e.target.closest("[data-node]");
+   if(nd){const n=pos[nd.dataset.node];showTip(nodeTip(nd.dataset.node),n.x,n.y-r*1.2)}else if(pg){const p=pairs.get(pg.dataset.pair);showTip(pairTip(p),p.mid[0],p.mid[1])}});
+  svg.addEventListener("pointerleave",()=>{tip.hidden=true});
+  svg.addEventListener("pointerout",e=>{if(!e.relatedTarget||!svg.contains(e.relatedTarget))tip.hidden=true});
+  slot.addEventListener("click",e=>{const rw=e.target.closest("[data-link-row]");if(rw){selectLink(+rw.dataset.linkRow);return}
+   const who=e.target.closest("[data-who]");if(who){selectNode(who.dataset.who);return}
+   const pg=e.target.closest("[data-pair]");if(pg){selectPair(pg.dataset.pair);return}
    const nd=e.target.closest("[data-node]");if(nd){selectNode(nd.dataset.node);return}
-   const bc=e.target.closest("[data-board-country]");if(bc&&opts.onCountry){opts.onCountry(bc.dataset.boardCountry);return}});
-  slot.addEventListener("keydown",e=>{if(e.key!=="Enter"&&e.key!==" ")return;const lk=e.target.closest("[data-link]");if(lk){e.preventDefault();select(+lk.dataset.link)}const nd=e.target.closest("[data-node]");if(nd){e.preventDefault();selectNode(nd.dataset.node)}});
-  const first=board.links.findIndex(l=>l.main)>=0?board.links.findIndex(l=>l.main):board.links.findIndex(l=>!l.faint);
-  if(first>=0&&opts.preselect!==false)select(first);
+   const bc=e.target.closest("[data-board-country]");if(bc&&opts.onCountry){opts.onCountry(bc.dataset.boardCountry)}});
+  slot.addEventListener("keydown",e=>{if(e.key!=="Enter"&&e.key!==" ")return;const pg=e.target.closest("[data-pair]"),nd=e.target.closest("[data-node]");if(pg){e.preventDefault();selectPair(pg.dataset.pair)}else if(nd){e.preventDefault();selectNode(nd.dataset.node)}});
+  svg.addEventListener("focusin",e=>{const pg=e.target.closest("[data-pair]"),nd=e.target.closest("[data-node]");if(pg){const p=pairs.get(pg.dataset.pair);showTip(pairTip(p),p.mid[0],p.mid[1])}else if(nd){const n=pos[nd.dataset.node];showTip(nodeTip(nd.dataset.node),n.x,n.y-r*1.2)}});
+  svg.addEventListener("focusout",()=>{tip.hidden=true});
+  const mainPair=[...pairs.values()].find(p=>p.items.some(i=>board.links[i].main))||[...pairs.values()].find(p=>{const A=pos[p.a],B=pos[p.b];return (A.side==="a"&&B.side==="b")||(A.side==="b"&&B.side==="a")});
+  if(mainPair&&opts.preselect!==false)selectPair(mainPair.key,true);
  }
- function nameOf(board,id){const a=board.actors.find(x=>x.id===id);return a?a.label:id}
  global.PandoBoard={render,autoBoard};
 })(window);
