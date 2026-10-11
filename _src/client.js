@@ -205,6 +205,8 @@
   if(!Number.isFinite(value))return "자료 없음";
   if(key==="gdp"||key==="militaryUsd")return money(value);
   if(key==="gdpPc")return "US$"+number(value,0);
+  if(key==="militaryPersonnel")return value>=1e4?number(value/1e4,1)+"만 명":number(value,0)+"명";
+  if(key==="armsImports"||key==="armsExports")return number(value/1e6,0)+"백만 TIV";
   return number(value,2)+"%";
  }
  function metricEvidence(item){
@@ -697,7 +699,7 @@
     budgetAlternativeEstimates(budget.alternativeEstimates)+budgetReferenceShares(budget.referenceShares)+
     (koreaBreakdown?'<details class="compare-fold"><summary>한국 예산 구성과 비교하기</summary>'+koreaBreakdown+'<p class="data-caption">두 나라 예산은 회계연도, 정부 범위, 정부안·의결 상태가 다를 수 있어 비중을 그대로 비교하지 마세요.</p></details>':"")+
     fold("예산 자료 읽는 법",'<p>정부안·의회 통과안·IMF 전망·과거 실적을 서로 다른 상태로 표시합니다. 재정 지표는 세계은행의 중앙정부 범위 과거 관측치로, 지금 제출된 예산안 합계가 아닙니다.</p><p>'+sourceLink(links.worldBank,"세계은행 재정 데이터")+'</p>'),
-   military:grid([["militaryUsd","연간 군사비",metrics.militaryUsd],["militaryPct","군사비 / GDP",metrics.militaryPct],["militaryGovPct","군사비 / 정부 총지출",metrics.militaryGovPct]])+
+   military:grid([["militaryUsd","연간 군사비",metrics.militaryUsd],["militaryPct","군사비 / GDP",metrics.militaryPct],["militaryGovPct","군사비 / 정부 총지출",metrics.militaryGovPct],["militaryPersonnel","군 병력",metrics.militaryPersonnel],["militaryLaborPct","군 병력 / 노동력",metrics.militaryLaborPct],["armsImports","무기 수입(SIPRI TIV)",metrics.armsImports],["armsExports","무기 수출(SIPRI TIV)",metrics.armsExports]])+
     budgetReferenceShares(budget.referenceShares)+
     fold("군사 지표 읽는 법",'<p>SIPRI 원자료를 인용한 세계은행 WDI 관측치가 기본입니다. 지출액은 병력이나 전력 규모를 뜻하지 않습니다. 군사비/GDP는 달력연도, 군사비/정부 총지출은 회계연도 기준입니다. 분쟁국은 공식 집계가 끊긴 경우가 많아 오래된 연도가 표시될 수 있습니다.</p><p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+' · '+sourceLink("https://www.sipri.org/databases/milex","SIPRI")+'</p>')
   };
