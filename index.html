@@ -585,6 +585,84 @@ html,body{overflow-x:clip}
 .guide-list code{background:#f2f5f7;padding:1px 5px;border-radius:3px;font-size:12px}
 .guide-foot{font-size:12.5px;color:#55666f;margin-top:16px}
 @media (max-width:640px){.guide-grid{grid-template-columns:1fr}.mastnav .guide-link{min-height:30px;padding:4px 8px}}
+/* 판도 해설 */
+#explain{margin-top:44px}
+.explain-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px}
+.explain-card{display:flex;flex-direction:column;gap:7px;text-align:left;border:0;border-top:4px solid #15232d;background:#fff;box-shadow:0 0 0 1px #d9e2e7 inset;border-radius:2px;padding:16px 16px 14px;cursor:pointer;color:#15232d}
+.explain-card:hover{border-top-color:#d52832}
+.explain-kicker{font-size:11px;font-weight:850;letter-spacing:.06em;color:#b8202b}
+.explain-card strong{font-size:18px;line-height:1.35}
+.explain-card p{margin:0;font-size:13.5px;line-height:1.6;color:#37505f}
+.explain-flags{display:flex;align-items:center;gap:5px;margin-top:4px}
+.explain-flags em{margin-left:auto;font-style:normal;font-size:12px;font-weight:800;color:#b8202b}
+.explain-hook{font-size:17px;line-height:1.55;font-weight:750;color:#15232d;border-left:4px solid #d52832;padding:4px 0 4px 14px;margin:10px 0 12px}
+.explain-sec{margin:26px 0 0}
+.explain-sec h3{font-size:16px;margin:0 0 12px;padding-bottom:7px;border-bottom:2px solid #15232d}
+.purpose dl{margin:0;display:grid;gap:8px}
+.purpose dl div{display:grid;grid-template-columns:76px 1fr;gap:10px;font-size:14px;line-height:1.6}
+.purpose dt{font-weight:850;color:#b8202b}
+.purpose dd{margin:0;color:#2f3e48}
+.cast-group{display:flex;gap:10px;align-items:flex-start;margin:0 0 10px}
+.cast-group>span{flex:none;width:34px;font-size:11.5px;font-weight:850;color:#6a7c88;padding-top:9px}
+.cast-group>div{display:flex;flex-wrap:wrap;gap:8px}
+.actor{display:inline-flex;align-items:center;gap:7px;min-width:0}
+.actor-face{position:relative;flex:none;width:34px;height:34px;border-radius:50%;background:#15232d;color:#fff;font-weight:900;font-size:14px;display:flex;align-items:center;justify-content:center}
+.actor-flag{position:absolute;right:-9px;bottom:-5px;transform:scale(.48);transform-origin:bottom right}
+.actor-text{display:flex;flex-direction:column;line-height:1.25;min-width:0}
+.actor-text b{font-size:13px}
+.actor-text small{font-size:11.5px;color:#6a7c88}
+.xchg{border:1px solid #d9e2e7;border-radius:4px;padding:14px;margin:0 0 14px;background:#fff}
+.xchg header{display:flex;align-items:center;gap:8px;margin-bottom:10px}
+.xchg-n{width:22px;height:22px;border-radius:50%;background:#d52832;color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.xchg header b{font-size:14.5px}
+.bubble{border-radius:10px;padding:10px 12px;margin:0 0 8px;max-width:92%}
+.bubble p{margin:7px 0 0;font-size:13.5px;line-height:1.6;color:#15232d}
+.bubble-q{background:#f2f5f7;border-top-left-radius:2px}
+.bubble-a{background:#fdf1f1;margin-left:auto;border-top-right-radius:2px}
+.bubble blockquote{margin:8px 0 0;padding:6px 10px;border-left:3px solid #d52832;font-size:13.5px;font-weight:750;color:#15232d;background:#fff}
+.xchg-ctx,.xchg-basis{display:grid;grid-template-columns:62px 1fr;gap:8px;margin-top:8px;font-size:13px;line-height:1.6}
+.xchg-ctx span,.xchg-basis span{font-size:11.5px;font-weight:900;padding-top:2px}
+.xchg-ctx span{color:#b8202b}.xchg-basis span{color:#37505f}
+.xchg-ctx p,.xchg-basis p{margin:0;color:#2f3e48}
+.cite-n{display:inline-block;min-width:16px;height:16px;line-height:16px;text-align:center;font-size:10px;font-weight:900;color:#fff;background:#6a7c88;border-radius:3px;margin-left:2px;text-decoration:none;vertical-align:1px}
+.xtimeline{list-style:none;margin:0;padding:0 0 0 14px;border-left:2px solid #d9e2e7}
+.xtimeline li{position:relative;padding:0 0 12px 12px}
+.xtimeline li:before{content:"";position:absolute;left:-20px;top:5px;width:10px;height:10px;border-radius:50%;background:#d52832;border:2px solid #fff}
+.xtimeline time{font-size:12px;font-weight:850;color:#b8202b}
+.xtimeline p{margin:2px 0 0;font-size:13.5px;line-height:1.6;color:#2f3e48}
+.terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.term{border:1px solid #d9e2e7;border-radius:4px;padding:11px 12px;background:#fff}
+.term header{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.term b{font-size:14px}
+.term-kind{font-size:10.5px;font-weight:850;color:#6a7c88;border:1px solid #c9d5dc;border-radius:99px;padding:1px 7px}
+.term-official{color:#fff;background:#15232d;border-color:#15232d}
+.term p{margin:6px 0 4px;font-size:13px;line-height:1.55;color:#2f3e48}
+.term small{font-size:11.5px;color:#6a7c88}
+.bg-item h4{margin:0 0 4px;font-size:14px}
+.bg-item p{margin:0 0 12px;font-size:13.5px;line-height:1.6;color:#2f3e48}
+.takeaways,.open-q{margin:0;padding-left:18px}
+.takeaways li,.open-q li{font-size:14px;line-height:1.6;margin-bottom:5px;color:#15232d}
+.open-q li{color:#37505f}
+.explain-method{margin:22px 0 0;font-size:12.5px;line-height:1.6;color:#55666f;background:#f6f8f9;padding:10px 12px;border-radius:3px}
+.explain-method b{color:#15232d;margin-right:6px}
+.xsources{list-style:none;padding:0;margin:0}
+.xsources li{display:flex;gap:9px;padding:8px 0;border-bottom:1px solid #eef2f4;font-size:12.5px;line-height:1.5;color:#2f3e48}
+.xsources li:target{background:#fff6d8}
+.xs-n{flex:none;width:20px;height:20px;border-radius:3px;background:#6a7c88;color:#fff;font-size:10.5px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.xsources a{color:#b8202b;font-weight:700}
+.xsources small{display:block;color:#6a7c88}
+.tier{display:inline-block;font-size:10.5px;font-weight:900;border-radius:3px;padding:1px 6px;color:#fff;background:#6a7c88}
+.tier-official{background:#15232d}.tier-counter{background:#7a4a8c}.tier-press{background:#4b6476}.tier-research{background:#2f7a5f}
+.related-explain{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0 0}
+.related-explain span{font-size:11.5px;font-weight:900;color:#b8202b;letter-spacing:.04em}
+.related-explain button{border:1px solid #d5dee4;background:#fff;border-radius:99px;padding:5px 11px;font-size:12.5px;font-weight:750;color:#15232d;cursor:pointer}
+@media (max-width:640px){.bubble{max-width:100%}.xchg-ctx,.xchg-basis{grid-template-columns:1fr;gap:2px}.purpose dl div{grid-template-columns:1fr;gap:2px}}
+/* Language switch */
+.lang-toggle{display:inline-flex;border:1.5px solid #15232d;border-radius:99px;overflow:hidden;flex:none}
+.lang-toggle button{border:0;background:#fff;color:#15232d;font-size:12px;font-weight:850;padding:6px 11px;min-height:32px;cursor:pointer;letter-spacing:.02em}
+.lang-toggle button[aria-pressed="true"]{background:#15232d;color:#fff}
+html.lang-en-loading body{visibility:hidden}
+@media (max-width:640px){.lang-toggle button{padding:4px 9px;min-height:28px;font-size:11.5px}}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -627,15 +705,80 @@ html,body{background:#fff;color:var(--ink)}
 
 </style>
 <div class="shell">
- <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#watch">변화 관찰</a><a href="#countries">국가 탐색</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
+ <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#watch">변화 관찰</a><a href="#countries">국가 탐색</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
  <section class="top"><div><div class="eyebrow">Global intelligence · Daily brief</div><h1>세계의 변화를<br><em>맥락까지</em> 읽다.</h1><p>정치 제도와 경제·군사 지표를 바탕으로, 분쟁부터 재정안과 선거까지 중요한 변화를 추적합니다. 확인된 사실과 주장을 구분해 보여드립니다.</p><a class="hero-guide" href="#guide" data-guide-open>처음이라면 · 판도 사용법 보기 →</a></div><aside class="edition-box"><strong id="edition-title">브리핑을 불러오는 중</strong><div id="edition-note">매시간 새로운 변화를 점검합니다. 통계는 각 발표 시점을 따릅니다.</div><div class="small" id="edition-time"></div><span class="live-note" id="live-note"></span></aside></section>
  <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="dot-key country-key"></i>주목 국가</span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치이며 전선이나 영토 경계가 아닙니다.</span></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
- <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section>
+ <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
  <section aria-labelledby="feed-title"><div class="section-head"><div><div class="eyebrow">The latest / 주요 현장</div><h2 id="feed-title">국제 현장</h2></div><p>기사 발행일과 사건 시점을 구분합니다</p></div><div class="filters" id="filters" role="group" aria-label="지역별 필터"></div><div class="feed" id="feed"></div></section>
  <section id="countries" aria-labelledby="countries-title"><div class="section-head"><div><div class="eyebrow">Country atlas / 국가 탐색</div><h2 id="countries-title">세계 국가·지역 정보</h2></div><p id="country-count">목록을 불러오는 중</p></div><div class="country-tools"><label class="country-search-label" for="country-search">국가·지역 검색</label><input id="country-search" type="search" autocomplete="off" placeholder="국가명이나 영문 이름으로 검색"><label class="country-region-label" for="country-region">지역</label><select id="country-region" aria-label="지역 필터"><option value="">전 지역</option></select></div><div class="country-list" id="country-list" aria-live="polite"></div><p class="country-method">국가·지역 250곳의 탐색 목록입니다. 통계·정책금리·예산안·의회 구성은 원문과 기준 시점을 지표마다 표시합니다. 모든 지역에 독립 정책금리나 공개된 예산안이 있는 것은 아닙니다.</p></section></main>
  <section class="method"><div><b>어떤 주체를 표시하나요?</b><p>교전 당사자, 지원·연루 주장, 피해 기업과 투자자를 각자의 역할로 분리합니다. 공개 자료에서 연결이 확인된 주체만 싣고, 이름이 확인되지 않은 기업은 추측해 채우지 않습니다.</p></div><div><b>어떻게 읽으면 되나요?</b><p>매시간 새로운 변화를 점검하지만 GDP와 군사비는 주로 연간 자료입니다. 카드의 사건 시점과 기사 발행일을 구분하고, 각 지표의 기준 연도를 확인하세요. <a href="#" id="about-open">편집 원칙 보기 →</a></p></div></section>
  <footer class="foot">판도 / PANDO · 한국시간 기준 · 각 카드에서 원문 확인 · 지도 경계 <a href="https://github.com/johan/world.geo.json" target="_blank" rel="noopener noreferrer">world.geo.json</a>(Natural Earth 기반, 퍼블릭 도메인)</footer></div>
  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="상세 정보" aria-hidden="true"><div class="drawer"><div class="drawer-head"><span>PANDO / DOSSIER</span><button class="close" id="close" type="button" aria-label="닫기">×</button></div><div class="detail" id="detail"></div></div></div>
+<script>
+// 판도 Korean/English switch. Korean is the source; English comes from data/en/strings.json,
+// a dictionary of every Korean string shown on screen (digits replaced by {0},{1}...).
+(function(){
+ const KEY="pando-lang",H=/[가-힣]/,NUM=/\d[\d,.]*\d|\d/g;
+ const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ let lang="ko";
+ try{lang=(new URLSearchParams(location.search).get("lang")||localStorage.getItem(KEY)||"ko").toLowerCase()==="en"?"en":"ko"}catch{}
+ window.PANDO_LANG=lang;
+ let dict=null;
+ const big=x=>{const a=Math.abs(x);const f=(v,u)=>(Math.round(v*10)/10).toLocaleString("en-US")+" "+u;return a>=1e12?f(x/1e12,"trillion"):a>=1e9?f(x/1e9,"billion"):a>=1e6?f(x/1e6,"million"):Math.round(x).toLocaleString("en-US")};
+ const UNIT={man:1e4,eok:1e8,jo:1e12};
+ const ORD=v=>{const n=parseInt(String(v).replace(/,/g,""),10);if(isNaN(n))return v;const t=n%100,u=n%10;return v+(t>=11&&t<=13?"th":u===1?"st":u===2?"nd":u===3?"rd":"th")};
+ const SING={years:'year',months:'month',days:'day',weeks:'week',hours:'hour',seats:'seat',countries:'country',people:'person',times:'time',votes:'vote',members:'member',parties:'party',soldiers:'soldier'};
+ const sing=t=>t.replace(/(^|[^\d.,])1 (years|months|days|weeks|hours|seats|countries|people|times|votes|members|parties|soldiers)\b/g,(m,a,w)=>a+'1 '+SING[w]);
+ const fill=(tpl,nums)=>sing(tpl.replace(/\{(\d+)(?::(mon|man|eok|jo|ord|hide))?\}/g,(m,i,mod)=>{const v=nums[+i];if(v==null)return m;if(mod==="hide")return"";if(mod==="ord")return ORD(v);if(mod==="mon")return MON[parseInt(v,10)-1]||v;if(mod)return big(parseFloat(String(v).replace(/,/g,""))*UNIT[mod]);return v}));
+ function tr(s){
+  if(!dict||!s||!H.test(s))return s;
+  const lead=s.match(/^\s*/)[0],trail=s.match(/\s*$/)[0],core=s.trim();
+  if(dict[core]!=null)return lead+dict[core]+trail;
+  const nums=[];const key=core.replace(NUM,m=>{nums.push(m);return "{"+(nums.length-1)+"}"});
+  if(dict[key]!=null)return lead+fill(dict[key],nums)+trail;
+  for(const sep of [" · "," / ",", "," | ",": "]){
+   if(core.includes(sep)){const parts=core.split(sep),t=parts.map(p=>tr(p));if(t.some((x,i)=>x!==parts[i]))return lead+t.join(sep)+trail}
+  }
+  return s;
+ }
+ window.PANDO_TR=tr;
+ const ATTRS=["title","aria-label","placeholder","alt"];
+ function skip(el){return el&&(el.closest("script,style,[translate=no]"))}
+ function walk(root){
+  if(!dict)return;
+  if(root.nodeType===3){if(!skip(root.parentElement)&&H.test(root.nodeValue)){const t=tr(root.nodeValue);if(t!==root.nodeValue)root.nodeValue=t}return}
+  if(root.nodeType!==1||skip(root))return;
+  const w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);let n;const L=[];while(n=w.nextNode())L.push(n);
+  for(const t of L){if(skip(t.parentElement))continue;const v=t.nodeValue;if(H.test(v)){const x=tr(v);if(x!==v)t.nodeValue=x}}
+  for(const el of [root,...root.querySelectorAll("[title],[aria-label],[placeholder],[alt]")]){
+   if(skip(el))continue;
+   for(const a of ATTRS){const v=el.getAttribute(a);if(v&&H.test(v)){const x=tr(v);if(x!==v)el.setAttribute(a,x)}}
+  }
+ }
+ function toggle(){
+  const box=document.createElement("div");box.className="lang-toggle";box.setAttribute("translate","no");box.setAttribute("role","group");box.setAttribute("aria-label","Language");
+  box.innerHTML='<button type="button" data-lang="ko"'+(lang==="ko"?' aria-pressed="true"':'')+'>한국어</button><button type="button" data-lang="en"'+(lang==="en"?' aria-pressed="true"':'')+'>EN</button>';
+  box.addEventListener("click",e=>{const b=e.target.closest("[data-lang]");if(!b||b.dataset.lang===lang)return;try{localStorage.setItem(KEY,b.dataset.lang)}catch{}const u=new URL(location.href);u.searchParams.delete("lang");if(b.dataset.lang==="en")u.searchParams.set("lang","en");location.href=u.toString()});
+  const nav=document.querySelector(".mastnav");if(nav)nav.prepend(box);else document.body.prepend(box);
+ }
+ function start(){
+  toggle();
+  if(lang!=="en")return;
+  document.documentElement.lang="en";
+  document.documentElement.classList.add("lang-en-loading");
+  fetch("data/en/strings.json").then(r=>r.ok?r.json():{}).catch(()=>({})).then(d=>{
+   dict=d||{};
+   walk(document.body);document.title=tr(document.title);
+   new MutationObserver(ms=>{for(const m of ms){if(m.type==="characterData")walk(m.target);else{m.addedNodes.forEach(walk);if(m.type==="attributes")walk(m.target)}}})
+    .observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:ATTRS});
+   document.documentElement.classList.remove("lang-en-loading");
+  });
+  setTimeout(()=>document.documentElement.classList.remove("lang-en-loading"),2500);
+ }
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start);else start();
+})();
+
+</script>
 <script>
 /* Frontline atlas for the artifact: a self-contained vector world map.
    No tile servers (the artifact sandbox blocks them). Natural Earth I projection,
@@ -863,6 +1006,7 @@ html,body{background:#fff;color:var(--ink)}
    const u=new URL(url,"https://x.invalid"),path=u.pathname,code=(u.searchParams.get("code")||"").toUpperCase();
    const b=await base();const codes=new Set(b.countries.countries.map(c=>c.code));
    if(path==="/api/edition")return ok(await currentEdition());
+   if(path==="/api/explainers")return ok(await once("explainers",()=>json("data/explainers.json")).catch(()=>[]));
    if(path==="/api/countries"){
     const edition=await currentEdition();
     const all=editionWatch(edition,b.changeWatch,codes),latest=Date.parse(all[0]?.date||"1970-01-01");
@@ -978,6 +1122,51 @@ html,body{background:#fff;color:var(--ink)}
  }
  function entries(items,s){
   return items.map(a=>'<div class="entry"><div class="entry-head"><strong>'+esc(a[0])+'</strong><span class="badge '+(/주장|전|논쟁|안 됨/.test(a[3])?"warn":"")+'">'+esc(a[3])+'</span></div><div class="role">'+esc(a[1])+'</div><p>'+esc(a[2])+cited(a,s)+"</p></div>").join("");
+ }
+ // ---- 판도 해설 (explainers) ----
+ const TIER={official:"공식 문서",counter:"상대국 공식",press:"언론",research:"연구기관"};
+ function explainerCard(x){
+  return '<button type="button" class="explain-card" data-explain="'+esc(x.id)+'"><span class="explain-kicker">'+esc(x.kicker||"해설")+' · '+esc(x.date||"")+'</span><strong>'+esc(x.title)+'</strong><p>'+esc(x.hook||x.summary||"")+'</p><span class="explain-flags">'+(x.countries||[]).map(c=>flag(c,"mini")).join("")+'<em>읽기 →</em></span></button>';
+ }
+ async function loadExplainers(){
+  try{const r=await api("/api/explainers");state.explainers=await r.json()}catch{state.explainers=[]}
+  const box=$("#explain-list");if(box)box.innerHTML=(state.explainers||[]).length?state.explainers.map(explainerCard).join(""):'<p class="data-caption">첫 해설을 준비하고 있습니다.</p>';
+ }
+ function openExplainer(id){
+  const x=(state.explainers||[]).find(e=>e.id===id);if(!x)return;
+  const src=x.sources||[],A={};(x.actors||[]).forEach(a=>A[a.id]=a);
+  const cite=ids=>(ids||[]).filter(i=>src[i]).map(i=>'<a class="cite-n" href="#xs-'+i+'" data-cite="'+i+'">'+(i+1)+'</a>').join("");
+  const badge=a=>{if(!a)return "";const ini=(a.name||"?").slice(0,1);return '<span class="actor"><span class="actor-face">'+esc(ini)+(a.country?'<span class="actor-flag">'+flag(a.country,"mini")+'</span>':"")+'</span><span class="actor-text"><b>'+esc(a.name)+'</b><small>'+esc([a.party,a.role].filter(Boolean).join(" · "))+'</small></span></span>'};
+  const sides={"질의":[],"답변":[],"증인":[],"관련":[]};(x.actors||[]).forEach(a=>(sides[a.side]||sides["관련"]).push(a));
+  const cast=Object.entries(sides).filter(([,v])=>v.length).map(([k,v])=>'<div class="cast-group"><span>'+esc(k)+'</span><div>'+v.map(badge).join("")+'</div></div>').join("");
+  const ex=(x.exchanges||[]).map((e,i)=>'<article class="xchg"><header><span class="xchg-n">'+(i+1)+'</span><b>'+esc(e.topic||"")+'</b></header>'+
+   '<div class="bubble bubble-q">'+badge(A[e.asker])+'<p>'+esc(e.q)+'</p></div>'+
+   '<div class="bubble bubble-a">'+badge(A[e.answerer])+'<p>'+esc(e.a)+'</p>'+(e.quote?'<blockquote>“'+esc(e.quote)+'”</blockquote>':"")+'</div>'+
+   (e.context?'<div class="xchg-ctx"><span>숨은 맥락</span><p>'+esc(e.context)+'</p></div>':"")+
+   (e.basis?'<div class="xchg-basis"><span>근거</span><p>'+esc(e.basis)+' '+cite(e.src)+'</p></div>':"")+'</article>').join("");
+  const tl=(x.timeline||[]).map(t=>'<li><time>'+esc(t.date)+'</time><p>'+esc(t.text)+' '+cite(t.src)+'</p></li>').join("");
+  const terms=(x.terms||[]).map(t=>'<div class="term"><header><b>'+esc(t.term)+'</b><span class="term-kind'+(/공식/.test(t.kind||"")&&!/비공식/.test(t.kind||"")?" term-official":"")+'">'+esc(t.kind||"")+'</span></header><p>'+esc(t.text)+'</p>'+(t.who?'<small>'+esc(t.who)+'</small>':"")+'</div>').join("");
+  const bg=(x.background||[]).map(b=>'<div class="bg-item"><h4>'+esc(b.title)+'</h4><p>'+esc(b.text)+' '+cite(b.src)+'</p></div>').join("");
+  const list=(arr,cls)=>arr&&arr.length?'<ul class="'+cls+'">'+arr.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
+  const srcs=src.map((s,i)=>'<li id="xs-'+i+'"><span class="xs-n">'+(i+1)+'</span><div><span class="tier tier-'+esc(s.tier||"press")+'">'+esc(TIER[s.tier]||"언론")+'</span> <b>'+esc(s.outlet)+'</b> · '+esc(s.date||"")+'<br>'+sourceLink(s.url,s.title)+(s.titleKo&&s.titleKo!==s.title?'<small>'+esc(s.titleKo)+'</small>':"")+'</div></li>').join("");
+  const P=x.purpose||{};
+  $("#detail").innerHTML='<div class="detail-kicker">PANDO / '+esc(x.kicker||"해설")+'</div><h2>'+esc(x.title)+'</h2>'+
+   '<p class="explain-hook">'+esc(x.hook||"")+'</p><p class="lead">'+esc(x.summary||"")+'</p>'+
+   (P.what||P.why?'<section class="explain-sec purpose"><h3>이 자리는</h3><dl>'+(P.what?'<div><dt>무슨 자리</dt><dd>'+esc(P.what)+'</dd></div>':"")+(P.why?'<div><dt>왜 열렸나</dt><dd>'+esc(P.why)+'</dd></div>':"")+(P.stakes?'<div><dt>걸린 것</dt><dd>'+esc(P.stakes)+'</dd></div>':"")+'</dl></section>':"")+
+   (cast?'<section class="explain-sec"><h3>등장인물</h3>'+cast+'</section>':"")+
+   (ex?'<section class="explain-sec"><h3>오간 말</h3>'+ex+'</section>':"")+
+   (tl?'<section class="explain-sec"><h3>어떻게 여기까지 왔나</h3><ol class="xtimeline">'+tl+'</ol></section>':"")+
+   (terms?'<section class="explain-sec"><h3>용어 정리</h3><div class="terms">'+terms+'</div></section>':"")+
+   (bg?'<section class="explain-sec"><h3>배경</h3>'+bg+'</section>':"")+
+   (x.takeaways?.length?'<section class="explain-sec"><h3>읽어야 할 것</h3>'+list(x.takeaways,"takeaways")+'</section>':"")+
+   (x.open?.length?'<section class="explain-sec"><h3>아직 모르는 것</h3>'+list(x.open,"open-q")+'</section>':"")+
+   (x.method?'<p class="explain-method"><b>취재 방식</b> '+esc(x.method)+'</p>':"")+
+   '<section class="explain-sec"><h3>출처 '+src.length+'</h3><ol class="xsources">'+srcs+'</ol></section>';
+  activateDrawer(x.title);
+ }
+ function relatedExplainers(code){
+  const L=(state.explainers||[]).filter(x=>(x.countries||[]).includes(code));
+  return L.length?'<div class="related-explain"><span>판도 해설</span>'+L.map(x=>'<button type="button" data-explain="'+esc(x.id)+'">'+esc(x.title)+' →</button>').join("")+'</div>':"";
  }
  function renderWatch(){
   const el=$("#watch-list");if(!el)return;
@@ -1573,7 +1762,7 @@ html,body{background:#fff;color:var(--ink)}
   const panels=countryPanels(data);
   $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
-   countryConflicts(data)+countryNow(data)+
+   countryConflicts(data)+relatedExplainers(data.code)+countryNow(data)+
    '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div></section>'+
    '<div class="country-tabs" role="tablist" aria-label="'+esc(name)+' 자료 분류">'+
     [["politics","정치·의회"],["economy","경제"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
@@ -1687,6 +1876,8 @@ html,body{background:#fff;color:var(--ink)}
  }
  $("#guide-open")?.addEventListener("click",guideSheet);
  document.addEventListener("click",e=>{if(e.target.closest("[data-guide-open]")){e.preventDefault();guideSheet()}});
+ document.addEventListener("click",e=>{const b=e.target.closest("[data-explain]");if(b){e.preventDefault();openExplainer(b.dataset.explain);return}const c=e.target.closest("[data-cite]");if(c){e.preventDefault();document.getElementById("xs-"+c.dataset.cite)?.scrollIntoView({behavior:"smooth",block:"center"})}});
+ if(/^#explain=/.test(location.hash)){const id=decodeURIComponent(location.hash.slice(9));const t=setInterval(()=>{if(state.explainers){clearInterval(t);openExplainer(id)}},200)}
  if(location.hash==="#guide")setTimeout(guideSheet,300);
  window.addEventListener("beforeinstallprompt",event=>{event.preventDefault();installPrompt=event});
  window.addEventListener("appinstalled",()=>{installPrompt=null;$("#install-open")?.remove()});
@@ -1782,7 +1973,7 @@ html,body{background:#fff;color:var(--ink)}
   }
  }
  loadEdition();loadCountries();
- window.FrontlineData.onChange(async()=>{lastEditionCheck=0;if(await loadEdition(true))await loadCountries(true)});
+ window.FrontlineData.onChange(async()=>{lastEditionCheck=0;if(await loadEdition(true))await loadCountries(true)});loadExplainers();
  async function refreshEdition(){
   if(document.visibilityState!=="visible"||!state.edition||editionBusy||Date.now()-lastEditionCheck<30000)return;
   editionBusy=true;lastEditionCheck=Date.now();

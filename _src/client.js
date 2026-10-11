@@ -1,0 +1,913 @@
+(()=>{
+ const $=s=>document.querySelector(s);
+ const state={edition:null,countries:[],watch:[],filter:"전체",query:"",countryQuery:"",countryRegion:"전체",active:null,previousFocus:null,countryRequest:0,feedAll:false,watchAll:false,countriesAll:false};
+ const FEED_PREVIEW=6,WATCH_PREVIEW=4;
+ let installPrompt=null,lastEditionCheck=0,editionBusy=false;
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const safeUrl=u=>{try{const p=new URL(u);return p.protocol==="https:"?esc(p.href):"#"}catch{return "#"}};
+ const regionNames={"East Asia & Pacific":"동아시아·태평양","Europe & Central Asia":"유럽·중앙아시아","Latin America & Caribbean":"중남미·카리브","Middle East & North Africa":"중동·북아프리카","North America":"북아메리카","South Asia":"남아시아","Sub-Saharan Africa":"사하라 이남 아프리카"};
+ const koreanNames={XK:"코소보"};
+ const regionDisplay=new Intl.DisplayNames(["ko"],{type:"region"});
+ const countryName=c=>{try{return koreanNames[c.code]||regionDisplay.of(c.code)||c.name||c.code}catch{return c.name||c.code}};
+ const flagEmoji=code=>/^[A-Z]{2}$/.test(code)?[...code].map(ch=>String.fromCodePoint(127397+ch.charCodeAt(0))).join(""):"🌐";
+ const flag=(code,kind="")=>/^[A-Z]{2}$/.test(code)?'<span class="flag '+esc(kind)+'"><img loading="lazy" src="https://flagcdn.com/w80/'+code.toLowerCase()+'.png" alt="'+esc(code)+' 국기" onerror="this.style.display=\'none\'"/><span aria-hidden="true">'+flagEmoji(code)+'</span></span>':"";
+ const namedCountry=code=>{const c=state.countries.find(v=>v.code===code);return c?countryName(c):countryName({code,name:code})};
+ const regionLabel=s=>regionNames[s]||s||"지역 정보 없음";
+ const number=(value,digits=1)=>new Intl.NumberFormat("ko-KR",{maximumFractionDigits:digits}).format(value);
+ const day=s=>{try{return new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",month:"long",day:"numeric",weekday:"long"}).format(new Date(s+"T12:00:00+09:00"))}catch{return s}};
+ const time=s=>{try{return new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(s))}catch{return s}};
+ const watchCapitals={ET:[38.75,9.03],ER:[38.93,15.33],FR:[2.35,48.86],DE:[13.41,52.52],LV:[24.1,56.95],JP:[139.69,35.69]};
+ const atlas=window.FrontlineAtlas.mount("#map",{items:[],onSelect:item=>item.type==="country"?openCountry(item.id):openStory(item.id)});
+ function drawMap(){
+  const stories=(state.edition?.stories||[]).filter(s=>Number.isFinite(s.lon)&&Number.isFinite(s.lat))
+   .map(s=>({type:"story",id:s.id,lon:s.lon,lat:s.lat,label:s.label||s.place,subtitle:s.headline}));
+  const countries=[...new Set(state.watch.map(w=>w.code))].map(code=>{
+   const country=state.countries.find(c=>c.code===code);
+   const coord=Number.isFinite(country?.capitalLon)&&Number.isFinite(country?.capitalLat)?[country.capitalLon,country.capitalLat]:watchCapitals[code];
+   return coord?{type:"country",id:code,lon:coord[0],lat:coord[1],label:namedCountry(code),subtitle:"국가 자료 · 수도 위치"}:null;
+  }).filter(Boolean);
+  atlas.setItems([...stories,...countries]);
+  renderMapQuickList();
+ }
+ function renderMapQuickList(){
+  const element=$("#map-quick-list");if(!element)return;
+  const articles=(state.edition?.stories||[]).map(s=>'<button type="button" class="map-quick-link" data-open="'+esc(s.id)+'"><i class="map-mini-dot"></i><span>'+esc(s.label||s.place)+'</span><small>현장</small></button>');
+  const countries=state.watch.map(w=>'<button type="button" class="map-quick-link" data-country="'+esc(w.code)+'"><i class="map-mini-dot country-key"></i><span>'+flag(w.code,"flag-quick")+esc(namedCountry(w.code))+'</span><small>국가</small></button>');
+  element.innerHTML=[...articles,...countries].join("");
+ }
+ function drawFilters(){
+  const names=["전체",...new Set(state.edition.stories.map(s=>s.region))];
+  $("#filters").innerHTML=names.map(v=>'<button type="button" class="filter '+(state.filter===v?"active":"")+'" data-filter="'+esc(v)+'" aria-pressed="'+(state.filter===v)+'">'+esc(v)+"</button>").join("")+'<input class="search" id="search" type="search" placeholder="지역·주체 검색" aria-label="뉴스 검색" value="'+esc(state.query)+'">';
+  $("#search").addEventListener("input",e=>{state.query=e.target.value;drawFeed()});
+ }
+ function drawFeed(){
+  const stories=state.edition.stories.filter(s=>(state.filter==="전체"||s.region===state.filter)&&(!state.query||[s.place,s.headline,s.summary,...s.actors.map(a=>a[0]),...s.economy.map(a=>a[0])].join(" ").toLowerCase().includes(state.query.toLowerCase())));
+  const limited=!state.feedAll&&state.filter==="전체"&&!state.query&&stories.length>FEED_PREVIEW;
+  const visible=limited?stories.slice(0,FEED_PREVIEW):stories;
+  $("#feed").innerHTML=(visible.length?visible.map(s=>'<button class="story-card" data-open="'+esc(s.id)+'" type="button"><div class="meta-line"><span>'+esc(s.region)+" / "+esc(s.place)+'</span><span class="status">● '+esc(s.level)+'</span></div><div class="story-card-flags">'+(s.countryCodes||[]).slice(0,4).map(code=>flag(code,"flag-story")).join("")+'</div><h3>'+esc(s.headline)+'</h3><p>'+esc(s.summary)+'</p><div class="story-bottom"><span>'+esc(s.eventDate)+" · "+esc(s.topic)+'</span><b>사건 읽기 ↗</b></div></button>').join(""):'<div class="empty">해당 조건에 맞는 사건이 없습니다.</div>')+
+   (limited?'<button type="button" class="more-button" data-more="feed">나머지 '+(stories.length-FEED_PREVIEW)+'건 더 보기</button>':"");
+ }
+ function cited(item,s){
+  return item[4].map(i=>s.sources[i]?'<a class="cite" href="'+safeUrl(s.sources[i][3])+'" target="_blank" rel="noopener noreferrer">['+(i+1)+"]</a>":"").join("");
+ }
+ function entries(items,s){
+  return items.map(a=>'<div class="entry"><div class="entry-head"><strong>'+esc(a[0])+'</strong><span class="badge '+(/주장|전|논쟁|안 됨/.test(a[3])?"warn":"")+'">'+esc(a[3])+'</span></div><div class="role">'+esc(a[1])+'</div><p>'+esc(a[2])+cited(a,s)+"</p></div>").join("");
+ }
+ // ---- 판도 해설 (explainers) ----
+ const TIER={official:"공식 문서",counter:"상대국 공식",press:"언론",research:"연구기관"};
+ function explainerCard(x){
+  return '<button type="button" class="explain-card" data-explain="'+esc(x.id)+'"><span class="explain-kicker">'+esc(x.kicker||"해설")+' · '+esc(x.date||"")+'</span><strong>'+esc(x.title)+'</strong><p>'+esc(x.hook||x.summary||"")+'</p><span class="explain-flags">'+(x.countries||[]).map(c=>flag(c,"mini")).join("")+'<em>읽기 →</em></span></button>';
+ }
+ async function loadExplainers(){
+  try{const r=await api("/api/explainers");state.explainers=await r.json()}catch{state.explainers=[]}
+  const box=$("#explain-list");if(box)box.innerHTML=(state.explainers||[]).length?state.explainers.map(explainerCard).join(""):'<p class="data-caption">첫 해설을 준비하고 있습니다.</p>';
+ }
+ function openExplainer(id){
+  const x=(state.explainers||[]).find(e=>e.id===id);if(!x)return;
+  const src=x.sources||[],A={};(x.actors||[]).forEach(a=>A[a.id]=a);
+  const cite=ids=>(ids||[]).filter(i=>src[i]).map(i=>'<a class="cite-n" href="#xs-'+i+'" data-cite="'+i+'">'+(i+1)+'</a>').join("");
+  const badge=a=>{if(!a)return "";const ini=(a.name||"?").slice(0,1);return '<span class="actor"><span class="actor-face">'+esc(ini)+(a.country?'<span class="actor-flag">'+flag(a.country,"mini")+'</span>':"")+'</span><span class="actor-text"><b>'+esc(a.name)+'</b><small>'+esc([a.party,a.role].filter(Boolean).join(" · "))+'</small></span></span>'};
+  const sides={"질의":[],"답변":[],"증인":[],"관련":[]};(x.actors||[]).forEach(a=>(sides[a.side]||sides["관련"]).push(a));
+  const cast=Object.entries(sides).filter(([,v])=>v.length).map(([k,v])=>'<div class="cast-group"><span>'+esc(k)+'</span><div>'+v.map(badge).join("")+'</div></div>').join("");
+  const ex=(x.exchanges||[]).map((e,i)=>'<article class="xchg"><header><span class="xchg-n">'+(i+1)+'</span><b>'+esc(e.topic||"")+'</b></header>'+
+   '<div class="bubble bubble-q">'+badge(A[e.asker])+'<p>'+esc(e.q)+'</p></div>'+
+   '<div class="bubble bubble-a">'+badge(A[e.answerer])+'<p>'+esc(e.a)+'</p>'+(e.quote?'<blockquote>“'+esc(e.quote)+'”</blockquote>':"")+'</div>'+
+   (e.context?'<div class="xchg-ctx"><span>숨은 맥락</span><p>'+esc(e.context)+'</p></div>':"")+
+   (e.basis?'<div class="xchg-basis"><span>근거</span><p>'+esc(e.basis)+' '+cite(e.src)+'</p></div>':"")+'</article>').join("");
+  const tl=(x.timeline||[]).map(t=>'<li><time>'+esc(t.date)+'</time><p>'+esc(t.text)+' '+cite(t.src)+'</p></li>').join("");
+  const terms=(x.terms||[]).map(t=>'<div class="term"><header><b>'+esc(t.term)+'</b><span class="term-kind'+(/공식/.test(t.kind||"")&&!/비공식/.test(t.kind||"")?" term-official":"")+'">'+esc(t.kind||"")+'</span></header><p>'+esc(t.text)+'</p>'+(t.who?'<small>'+esc(t.who)+'</small>':"")+'</div>').join("");
+  const bg=(x.background||[]).map(b=>'<div class="bg-item"><h4>'+esc(b.title)+'</h4><p>'+esc(b.text)+' '+cite(b.src)+'</p></div>').join("");
+  const list=(arr,cls)=>arr&&arr.length?'<ul class="'+cls+'">'+arr.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
+  const srcs=src.map((s,i)=>'<li id="xs-'+i+'"><span class="xs-n">'+(i+1)+'</span><div><span class="tier tier-'+esc(s.tier||"press")+'">'+esc(TIER[s.tier]||"언론")+'</span> <b>'+esc(s.outlet)+'</b> · '+esc(s.date||"")+'<br>'+sourceLink(s.url,s.title)+(s.titleKo&&s.titleKo!==s.title?'<small>'+esc(s.titleKo)+'</small>':"")+'</div></li>').join("");
+  const P=x.purpose||{};
+  $("#detail").innerHTML='<div class="detail-kicker">PANDO / '+esc(x.kicker||"해설")+'</div><h2>'+esc(x.title)+'</h2>'+
+   '<p class="explain-hook">'+esc(x.hook||"")+'</p><p class="lead">'+esc(x.summary||"")+'</p>'+
+   (P.what||P.why?'<section class="explain-sec purpose"><h3>이 자리는</h3><dl>'+(P.what?'<div><dt>무슨 자리</dt><dd>'+esc(P.what)+'</dd></div>':"")+(P.why?'<div><dt>왜 열렸나</dt><dd>'+esc(P.why)+'</dd></div>':"")+(P.stakes?'<div><dt>걸린 것</dt><dd>'+esc(P.stakes)+'</dd></div>':"")+'</dl></section>':"")+
+   (cast?'<section class="explain-sec"><h3>등장인물</h3>'+cast+'</section>':"")+
+   (ex?'<section class="explain-sec"><h3>오간 말</h3>'+ex+'</section>':"")+
+   (tl?'<section class="explain-sec"><h3>어떻게 여기까지 왔나</h3><ol class="xtimeline">'+tl+'</ol></section>':"")+
+   (terms?'<section class="explain-sec"><h3>용어 정리</h3><div class="terms">'+terms+'</div></section>':"")+
+   (bg?'<section class="explain-sec"><h3>배경</h3>'+bg+'</section>':"")+
+   (x.takeaways?.length?'<section class="explain-sec"><h3>읽어야 할 것</h3>'+list(x.takeaways,"takeaways")+'</section>':"")+
+   (x.open?.length?'<section class="explain-sec"><h3>아직 모르는 것</h3>'+list(x.open,"open-q")+'</section>':"")+
+   (x.method?'<p class="explain-method"><b>취재 방식</b> '+esc(x.method)+'</p>':"")+
+   '<section class="explain-sec"><h3>출처 '+src.length+'</h3><ol class="xsources">'+srcs+'</ol></section>';
+  activateDrawer(x.title);
+ }
+ function relatedExplainers(code){
+  const L=(state.explainers||[]).filter(x=>(x.countries||[]).includes(code));
+  return L.length?'<div class="related-explain"><span>판도 해설</span>'+L.map(x=>'<button type="button" data-explain="'+esc(x.id)+'">'+esc(x.title)+' →</button>').join("")+'</div>':"";
+ }
+ function renderWatch(){
+  const el=$("#watch-list");if(!el)return;
+  // One story often names several countries (e.g. China and Taiwan). Show it once
+  // with every country as a chip instead of repeating the identical card.
+  const groups=[];
+  for(const w of state.watch){
+   const same=groups.find(g=>g.title===w.title&&g.detail===w.detail);
+   if(same){if(!same.codes.includes(w.code))same.codes.push(w.code)}else groups.push({...w,codes:[w.code]});
+  }
+  const limited=!state.watchAll&&groups.length>WATCH_PREVIEW;
+  const visible=limited?groups.slice(0,WATCH_PREVIEW):groups;
+  el.innerHTML=groups.length?visible.map(w=>
+   '<article class="watch-card"><div class="watch-meta"><span>'+esc(w.topic)+'</span><span>'+esc(w.dateLabel||"자료일 "+w.date)+'</span></div>'+
+   '<button type="button" class="watch-open" data-country="'+esc(w.codes[0])+'"><strong>'+esc(w.title)+'</strong><span class="watch-detail">'+esc(w.detail)+'</span></button>'+
+   '<div class="watch-countries">'+w.codes.map(code=>'<button type="button" class="country-chip" data-country="'+esc(code)+'">'+flag(code,"flag-watch")+esc(namedCountry(code))+'</button>').join("")+'</div>'+
+   '<div class="watch-foot"><span class="watch-status">'+esc(w.status)+'</span><a href="'+safeUrl(w.url)+'" target="_blank" rel="noopener noreferrer">원문 ↗</a></div></article>').join("")+
+   (limited?'<button type="button" class="more-button" data-more="watch">나머지 '+(groups.length-WATCH_PREVIEW)+'건 더 보기</button>':""):
+   '<div class="empty">관찰 국가 자료를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>';
+ }
+ function renderCountryFilters(){
+  const select=$("#country-region");if(!select)return;
+  const groups=[...new Set(state.countries.map(c=>c.region).filter(Boolean))].sort((a,b)=>regionLabel(a).localeCompare(regionLabel(b),"ko"));
+  select.innerHTML='<option value="전체">모든 지역</option>'+groups.map(group=>'<option value="'+esc(group)+'">'+esc(regionLabel(group))+'</option>').join("");
+  if(!groups.includes(state.countryRegion))state.countryRegion="전체";
+  select.value=state.countryRegion;
+  select.hidden=!groups.length;
+ }
+ function renderCountries(){
+  const el=$("#country-list");if(!el)return;
+  const q=state.countryQuery.trim().toLocaleLowerCase("ko");
+  const filtered=state.countries.filter(c=>(state.countryRegion==="전체"||c.region===state.countryRegion)&&(!q||[countryName(c),c.name,c.code,c.capital].some(s=>String(s||"").toLocaleLowerCase("ko").includes(q))));
+  const browsing=state.countriesAll||q||state.countryRegion!=="전체";
+  if(!browsing&&state.countries.length){
+   el.innerHTML='<button type="button" class="more-button" data-more="countries">전체 '+state.countries.length+'개 국가·지역 펼치기</button>';
+   const count=$("#country-count");if(count)count.textContent="이름으로 검색하거나 지역을 고르세요";
+   return;
+  }
+  el.innerHTML=filtered.length?filtered.map(c=>
+   '<button class="country-row" data-country="'+esc(c.code)+'" type="button">'+flag(c.code,"flag-row")+'<span class="country-text"><strong>'+esc(countryName(c))+'</strong><small>'+esc(c.name)+'</small></span><span class="country-arrow" aria-hidden="true">↗</span></button>').join(""):
+   '<div class="empty">검색 결과가 없습니다. 영문 국명이나 국가 코드도 검색해 보세요.</div>';
+  const count=$("#country-count");if(count)count.textContent=filtered.length===state.countries.length?state.countries.length+"개 국가·지역":filtered.length+" / "+state.countries.length+"개 국가·지역";
+ }
+ function sourceLink(url,text){
+  return safeUrl(url)==="#"?"":'<a href="'+safeUrl(url)+'" target="_blank" rel="noopener noreferrer">'+esc(text||"원문 확인")+" ↗</a>";
+ }
+ const nowYear=()=>Number(String(state.edition?.editionDate||"").slice(0,4))||new Date().getFullYear();
+ const shortProvider=s=>String(s||"").split(" · ")[0];
+ // Method notes, definitions and caveats: kept for anyone who wants them, folded by default.
+ function fold(summary,body,cls=""){
+  return body&&String(body).trim()?'<details class="fine-print'+(cls?" "+cls:"")+'"><summary>'+esc(summary)+'</summary><div class="fine-print-body">'+body+'</div></details>':"";
+ }
+ function countryFacts(data){
+  const demographics=data.demographics||{},population=demographics.population,capital=demographics.capital;
+  const popNumber=population?.value;
+  const inhabited=typeof popNumber==="number"&&Number.isFinite(popNumber)&&popNumber>=0;
+  const popValue=inhabited?(popNumber>=100000000?number(popNumber/100000000,2)+"억 명":
+   popNumber>=10000?number(popNumber/10000,1)+"만 명":number(popNumber,0)+"명"):
+   /상주.*없|no.permanent|uninhabited|비해당|not.applicable/i.test(population?.status||"")?"상주 인구 없음":"인구 자료 확인 중";
+  const capitalName=capital?.name||(/비해당|not.applicable|no.capital/i.test(capital?.status||"")?"수도 비해당":data.capital||"수도 확인 중");
+  const capNote=capital?.note||"";
+  const derived=population?.status==="derived_reference"||/역산|추산|추정/.test(population?.provider||"");
+  const p=data.profile||{},political=data.political||{},metrics=data.metrics||{};
+  const system=p.system||political.system||"";
+  const gdpPc=metrics.gdpPc,gdpPcOk=gdpPc&&Number.isFinite(Number(gdpPc.value))&&gdpPc.year;
+  const fact=(label,value,sub,cls="")=>'<div class="fact'+cls+'"><dt>'+esc(label)+'</dt><dd>'+esc(value)+(sub?'<small>'+sub+'</small>':"")+'</dd></div>';
+  const strip='<dl class="fact-strip">'+
+   fact("인구",popValue,inhabited?esc(String(population.year||""))+(derived?" · 추산":"")+ageTag(population.year):"")+
+   fact("수도",capitalName,"")+
+   (system?fact("정치 체제",system,""):"")+
+   (gdpPcOk?fact("1인당 GDP",metricValue("gdpPc",Number(gdpPc.value)),esc(String(gdpPc.year))+ageTag(gdpPc.year)):"")+
+   '</dl>';
+  // Explanations stay available but folded: the reader sees the facts first.
+  const notes=[
+   population?.note||population?.provider?'<p><b>인구</b> '+esc(population?.provider||"")+(population?.note?" — "+esc(population.note.replace(/\s*두 지표 원문:.*$/,"")):"")+' '+sourceLink(population?.source,"원문")+'</p>':"",
+   capital?.source?'<p><b>수도</b> '+esc(capital.provider||"")+' '+sourceLink(capital.source,"원문")+'</p>':"",
+   system?'<p><b>정치 체제</b> '+esc(political.provider||"")+(political.asOf?" · "+esc(political.asOf)+" 조회":"")+' '+sourceLink(p.source||political.source,"원문")+'</p>':""
+  ].join("");
+  return strip+(capNote?'<p class="fact-note">'+esc(capNote)+'</p>':"")+fold("수치 기준·출처",notes);
+ }
+ // Years that are much older than today get a visible flag. This is the one
+ // caveat a reader genuinely needs at a glance; the rest lives in fine print.
+ function ageTag(year){
+  const y=Number(String(year||"").slice(0,4));
+  if(!Number.isFinite(y)||y<1900)return "";
+  const gap=nowYear()-y;
+  return gap>=4?' <em class="age-tag">'+gap+'년 전 자료</em>':"";
+ }
+ function activateDrawer(label){
+  if(!$("#overlay").classList.contains("open"))state.previousFocus=document.activeElement;
+  $("#overlay").classList.add("open");
+  $("#overlay").setAttribute("aria-hidden","false");
+  $("#overlay").setAttribute("aria-label",label);
+  document.body.style.overflow="hidden";
+  $(".drawer").scrollTop=0;
+  $("#close").focus();
+ }
+ function money(value){
+  if(value>=1e12)return "US$"+number(value/1e12,2)+"조";
+  if(value>=1e8)return "US$"+number(value/1e8,1)+"억";
+  return "US$"+number(value,0);
+ }
+ function metricValue(key,value){
+  if(!Number.isFinite(value))return "자료 없음";
+  if(key==="gdp"||key==="militaryUsd")return money(value);
+  if(key==="gdpPc")return "US$"+number(value,0);
+  return number(value,2)+"%";
+ }
+ function metricEvidence(item){
+  const kind=String(item?.estimateKind||"");
+  if(item?.sourceFamily==="NATIONAL_STATS"||String(item?.sourceFamily||"").startsWith("NATIONAL_TERRITORY"))
+   return {text:(item.sourceFamily==="NATIONAL_TERRITORY_FISCAL_ESTIMATE"?"해당 지역 공식 추정":"해당 국가·지역 공식 통계")+(kind?" · "+kind:""),type:"national"};
+  if(!item?.approximate)return null;
+  if(item.sourceFamily==="UN_STATISTICAL_YEARBOOK")
+   return {text:"유엔 통계연감 추계"+(kind&&kind!=="유엔 통계연감 추계"?" · "+kind:""),type:"institutional"};
+  if(item.sourceFamily==="UN_NATIONAL_ACCOUNTS_ESTIMATE")
+   return {text:"유엔 국민계정 추계"+(kind&&kind!=="유엔 국민계정 추계"?" · "+kind:""),type:"institutional"};
+  if(String(item.sourceFamily||"").startsWith("CIA_FACTBOOK_"))
+   return {text:"CIA 추정"+(kind&&kind!=="CIA 추정"?" · "+kind:""),type:"unofficial"};
+  if(item.sourceFamily==="THIRD_PARTY_ESTIMATE"&&/재게시|인용/.test(kind)&&!/추정|전망/.test(kind))
+   return {text:"2차 출처 확인 · "+kind,type:"republished"};
+  if(item.sourceFamily==="THIRD_PARTY_ESTIMATE"||/비공식|민간기관 추정/.test(kind))
+   return {text:"비공식 추정"+(kind&&kind!=="비공식 추정"?" · "+kind:""),type:"unofficial"};
+  if(String(item.sourceFamily||"").startsWith("IMF_"))
+   return {text:kind||"IMF 추정·잠정",type:"institutional"};
+  if(/추정|전망|잠정/.test(kind))
+   return {text:kind,type:"institutional"};
+  if(item.sourceFamily==="SIPRI_FACT_SHEET")
+   return {text:kind||"SIPRI 발표 반올림 값",type:"rounded"};
+  return {text:kind||"공개표 반올림 값",type:"rounded"};
+ }
+ function metricEvidenceBadge(item){
+  const evidence=metricEvidence(item);
+  return evidence?'<em class="metric-estimate metric-estimate--'+evidence.type+'">'+esc(evidence.text)+'</em>':"";
+ }
+ // Short badge for the card face. Rounded official figures and national
+ // statistics need no badge; estimates do. Full wording is in the tooltip.
+ function metricBadgeShort(item){
+  const evidence=metricEvidence(item);
+  if(!evidence||evidence.type==="rounded"||evidence.type==="national")return "";
+  const label=evidence.type==="unofficial"?"비공식 추정":evidence.type==="republished"?"재인용":/전망/.test(evidence.text)?"전망":/잠정/.test(evidence.text)?"잠정":"추정";
+  return '<em class="metric-estimate metric-estimate--'+evidence.type+'" title="'+esc(evidence.text)+'">'+label+'</em>';
+ }
+ function metricTrend(key,points,korea=null){
+  const series=(Array.isArray(points)?points:[]).filter(p=>p&&Number.isFinite(Number(p.value))&&p.year).sort((a,b)=>String(a.year).localeCompare(String(b.year))).slice(-24);
+  if(series.length<2)return '<p class="trend-empty">과거 값이 하나뿐이라 추이 그래프를 그리지 않았습니다.</p>';
+  const values=series.map(p=>Number(p.value));
+  let lo=Math.min(...values),hi=Math.max(...values);
+  // Rates start the axis near the data; money and counts start from zero so bar heights are honest.
+  const fromZero=["gdp","gdpPc","militaryUsd"].includes(key)&&lo>0;
+  if(fromZero)lo=0;
+  const pad=(hi-lo)*.12||Math.max(1,Math.abs(hi)*.1);hi+=pad*2.2;if(!fromZero)lo-=pad;
+  const L=74,R=380,T=22,B=128,px=i=>L+i*(R-L)/(series.length-1),py=v=>B-(v-lo)/(hi-lo)*(B-T);
+  const ticks=[lo,(lo+hi)/2,hi];
+  const grid=ticks.map(t=>'<path class="trend-grid" d="M'+L+' '+py(t).toFixed(1)+'H'+R+'"/><text class="trend-ytick" x="'+(L-6)+'" y="'+(py(t)+3.5).toFixed(1)+'" text-anchor="end">'+esc(metricValue(key,t))+'</text>').join("");
+  const path=series.map((p,i)=>(i?"L":"M")+px(i).toFixed(1)+" "+py(values[i]).toFixed(1)).join(" ");
+  const labelEvery=series.length<=8?1:Math.ceil(series.length/6);
+  const dots=series.map((p,i)=>{
+   const show=i%labelEvery===0||i===series.length-1;
+   const x=px(i),y=py(values[i]),anchor=i===0?"start":i===series.length-1?"end":"middle";
+   return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(i===series.length-1?4:3)+'"><title>'+esc(String(p.year))+' · '+esc(metricValue(key,values[i]))+'</title></circle>'+
+    (show?'<text class="trend-val" x="'+x.toFixed(1)+'" y="'+(y-8).toFixed(1)+'" text-anchor="'+anchor+'">'+esc(metricValue(key,values[i]))+'</text><text class="trend-x" x="'+x.toFixed(1)+'" y="'+(B+16)+'" text-anchor="'+anchor+'">'+esc(String(p.year))+'</text>':"");
+  }).join("");
+  return '<div class="trend-head"><b>'+esc(String(series[0].year))+' — '+esc(String(series.at(-1).year))+'</b><span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 152" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,Number(p.value))).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/><path class="trend-line" d="'+path+'"/><g class="trend-points">'+dots+'</g></svg>';
+ }
+ function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
+  const valid=item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.year;
+  if(!valid)return "";
+  const vintage=String(item.year);
+  const unofficial=["unofficial","republished"].includes(metricEvidence(item)?.type);
+  const nonRanked=item?.rankEligible===false||["THIRD_PARTY_ESTIMATE","CIA_FACTBOOK_ESTIMATE","UN_STATISTICAL_YEARBOOK"].includes(item?.sourceFamily);
+  const displayValue=(observation,value)=>{
+   if(key==="policyRate"&&Array.isArray(observation.range)&&observation.range.length===2)
+    return number(Number(observation.range[0]),2)+"–"+number(Number(observation.range[1]),2)+"%";
+   if(observation?.estimateKind?.includes("0.1%p")&&!['gdp','gdpPc','militaryUsd'].includes(key))
+    return number(value,1)+"%";
+   return metricValue(key,value);
+  };
+  const display=displayValue(item,Number(item.value));
+  const family=entry=>String(entry?.sourceFamily||"WDI").startsWith("WDI")?"WDI":entry?.sourceFamily||"WDI";
+  const koreanAvailable=korea&&korea.value!==null&&Number.isFinite(Number(korea.value))&&korea.year;
+  const sameYear=koreanAvailable&&(key==="policyRate"||String(korea.year)===vintage&&korea.samePeriod!==false&&family(item)===family(korea)&&(!unofficial||korea.samePeriod===true&&item.provider&&item.provider===korea.provider&&(!item.indicatorId||item.indicatorId===korea.indicatorId)&&(!item.definition||item.definition===korea.definition)));
+  const referenceAvailable=!sameYear&&koreaReference?.year===vintage&&koreaReference?.sourceFamily==="THIRD_PARTY_ESTIMATE"&&koreaReference.approximate===true&&Number.isFinite(koreaReference.value)&&koreaReference.source;
+  // Korea is shown only when a like-for-like figure exists; otherwise nothing.
+  const latestOk=koreaLatest&&koreaLatest.value!==null&&Number.isFinite(Number(koreaLatest.value))&&koreaLatest.year;
+  const koreaObs=sameYear?korea:referenceAvailable?koreaReference:latestOk?koreaLatest:null;
+  const loose=!sameYear&&koreaObs;
+  const koreaLine=compare&&koreaObs?'<span class="metric-korea-line'+(loose?' metric-korea-line--loose':'')+'"'+(loose?' title="출처·연도·정의가 달라 같은 기준의 비교가 아닙니다. 크기를 가늠하는 참고용입니다."':'')+'>한국 <b>'+esc(displayValue(koreaObs,Number(koreaObs.value)))+'</b>'+(key==="policyRate"?"":" · "+esc(String(koreaObs.year)))+(loose?' · 참고':'')+'</span>':"";
+  const rankYear=key==="policyRate"?"":vintage;
+  const meta=esc(vintage)+(/^\d{4}$/.test(vintage)?"년":"")+(item.fiscalYear?" · 회계연도 "+esc(item.fiscalYear):"")+metricBadgeShort(item)+ageTag(vintage);
+  const sources=[item.source?sourceLink(item.source,shortProvider(item.provider)||"출처"):"",item.originalSource&&item.originalSource!==item.source?sourceLink(item.originalSource,"기초 원자료"):"",compare&&koreaObs?.source?sourceLink(koreaObs.source,"한국 값 출처"):""].filter(Boolean).join(" · ");
+  const details=(item.label?'<p class="metric-def">'+esc(item.label)+(item.provider?" · "+esc(item.provider):"")+'</p>':"")+(item.note?'<p>'+esc(item.note)+'</p>':"")+(sources?'<p class="metric-links">'+sources+'</p>':"");
+  return '<div class="metric-card'+(unofficial?' metric-card--unofficial':'')+'"><button type="button" class="metric-open" data-metric="'+esc(key)+'" aria-expanded="false"><span class="metric-title">'+esc(label)+'<span class="metric-expand" aria-hidden="true">⌄</span></span><strong class="metric-value">'+esc(display)+'</strong><span class="metric-meta">'+meta+'</span>'+koreaLine+'<span class="metric-rank" data-rank-key="'+esc(key)+'" data-rank-year="'+esc(rankYear)+'" data-rank-source="'+esc(item?.sourceFamily==="SIPRI_FACT_SHEET"?"sipri":"wdi")+'"></span></button><div class="metric-expand-content" hidden>'+metricTrend(key,item?.series)+(compare&&koreaObs?'<p class="metric-korea-note">한국 같은 지표: <b>'+esc(displayValue(koreaObs,Number(koreaObs.value)))+'</b> ('+esc(String(koreaObs.year))+(koreaObs.provider?' · '+esc(shortProvider(koreaObs.provider)):"")+')'+(loose?' — 출처나 연도가 달라 참고용입니다.':' — 같은 연도·원자료입니다.')+'</p>':"")+details+'</div></div>';
+ }
+ // Grid of available figures, then one quiet line naming what has no data.
+ // Missing values are not drawn as cards full of "확인 중" text.
+ function metricGrid(rows,compare,reference={},koreaReferences={},koreaLatest={}){
+  const cards=[],missing=[];
+  for(const [key,label,item] of rows){
+   const html=metricCard(key,label,item,reference[key]||null,compare,koreaReferences[key]||null,koreaLatest[key]||null);
+   if(html)cards.push(html);else missing.push(label);
+  }
+  return (cards.length?'<div class="metric-grid">'+cards.join("")+'</div>':"")+
+   (missing.length?'<p class="metric-missing"><span>공개 자료 없음</span> '+missing.map(esc).join(" · ")+'</p>':"");
+ }
+ let activeRankRequests=0;
+ const pendingRankRequests=[];
+ function runPendingRanks(){
+  while(activeRankRequests<2&&pendingRankRequests.length){
+   const task=pendingRankRequests.shift();
+   activeRankRequests++;
+   fetch(task.url,{cache:"no-store"}).then(task.resolve,task.reject).finally(()=>{activeRankRequests--;runPendingRanks()});
+  }
+ }
+ function limitedRankFetch(url){return new Promise((resolve,reject)=>{pendingRankRequests.push({url,resolve,reject});runPendingRanks()})}
+ async function loadMetricRank(code,node){
+  if(!node||node.dataset.rankLoaded||!node.dataset.rankYear||!/^\d{4}$/.test(node.dataset.rankYear))return;
+  node.dataset.rankLoaded="true";
+  try{
+   const r=await limitedRankFetch("/api/rank?"+new URLSearchParams({code,key:node.dataset.rankKey,year:node.dataset.rankYear,source:node.dataset.rankSource||"wdi"}));
+   if(!r.ok)throw Error("순위 조회 실패");const body=await r.json();
+   if(state.active!=="country:"+code||!node.isConnected)return;
+   const rank=body.rank;
+   const kr=body.korea;
+   if(rank&&Number.isInteger(rank.position)){
+    const sipri=/SIPRI/i.test(rank.provider||"");
+    const basis=sipri?"SIPRI 순위":"세계";
+    node.textContent=basis+" "+number(rank.position,0)+"위"+(!sipri&&Number.isInteger(rank.total)?" / "+number(rank.total,0):"")+(code!=="KR"&&Number.isInteger(kr?.position)?" · 한국 "+number(kr.position,0)+"위":"");
+    node.title=String(rank.year)+"년 같은 연도 관측치가 있는 국가·지역 중 값이 높은 순서. 순위가 우수성을 뜻하지 않습니다.";
+   }else if(body.reason==="World Bank ranking temporarily unavailable"){
+    delete node.dataset.rankLoaded;
+   }
+  }catch{delete node.dataset.rankLoaded}
+ }
+ function loadTabRanks(code,key){
+  if(!["economy","military","budget"].includes(key))return;
+  document.querySelectorAll("#panel-"+key+" [data-rank-key]").forEach(node=>{if(node.dataset.rankKey!=="policyRate")loadMetricRank(code,node)});
+ }
+ const budgetColors=["#c72a34","#123f5b","#75b6d5","#eeac69","#608e91","#a38db8","#c4d7df","#8cb68d","#9a6e64","#d9a961","#527eae","#a7b8c1"];
+ const budgetColor=(index,count)=>count<=budgetColors.length?budgetColors[index]:`hsl(${(index*137.508)%360} 54% ${40+(index%3)*10}%)`;
+ const budgetMoney=(value,unit)=>unit==="십억 엔"?number(value/1000,2)+"조 엔":unit==="십억 유로"?number(value*10,1)+"억 유로":unit==="십억 디르함"?number(value*10,2)+"억 디르함":unit==="억 위안"?number(value,2)+"억 위안":unit==="조 원"?number(value,1)+"조 원":number(value,1)+" "+unit;
+ function budgetComposition(b,heading,militaryGov=null){
+  if(!b)return "";
+  const estimatedBudget=b.sourceFamily==="THIRD_PARTY_ESTIMATE"||/비공식|민간기관 추정/.test(b.estimateKind||"");
+  const items=(Array.isArray(b.categories)?b.categories:[]).filter(x=>x&&x.label&&Number.isFinite(Number(x.value))&&Number(x.value)>=0);
+  const total=Number(b.total),sum=items.reduce((n,x)=>n+Number(x.value),0);
+  const partition=b.kind==="partition"&&Number.isFinite(total)&&total>0&&items.length>0&&Math.abs(sum-total)<=Math.max(.2,total*(b.unit==="십억 유로"?.0005:.00001));
+  const referenceOnly=b.kind==="nonadditive"&&Number.isFinite(total)&&total>0&&sum>0;
+  const chartTotal=partition?total:0;
+  const denominator=partition||referenceOnly?total:0;
+  const pct=value=>denominator>0?100*Number(value)/denominator:0;
+  const donutTotal=partition?total:referenceOnly?sum:0;
+  const share=value=>donutTotal>0?100*Number(value)/donutTotal:0;
+  let progress=0;
+  const stops=items.map((item,i)=>{const start=progress;progress+=share(item.value);return budgetColor(i,items.length)+" "+start.toFixed(4)+"% "+Math.min(100,progress).toFixed(4)+"%"}).join(",");
+  const chart=donutTotal?'<div class="budget-donut-wrap"><div class="budget-donut" role="img" aria-label="'+esc(heading+" 구성: "+items.map(x=>x.label+" "+share(x.value).toFixed(1)+"%").join(", "))+'" style="background:conic-gradient('+stops+')"><div class="budget-donut-hole"><small>'+(partition?'총액':items.length+'개 분야 합계')+'</small><strong>'+esc(budgetMoney(donutTotal,b.unit))+'</strong></div></div></div>':'<p class="budget-no-pie">'+(referenceOnly?'항목 합계가 총지출과 달라 총지출 대비 막대로 표시':'분야가 서로 겹쳐 막대로 표시')+'</p>';
+  const referenceWarning=referenceOnly?'<p class="budget-approx-warning"><strong>'+(estimatedBudget?'추정':'발표')+' 총지출 기준 항목별 비율</strong> · 발표된 '+items.length+'개 항목 합계 '+esc(budgetMoney(sum,b.unit))+'와 총지출 '+esc(budgetMoney(total,b.unit))+'의 차이는 '+esc(budgetMoney(Math.abs(sum-total),b.unit))+'입니다. 항목별 막대는 총지출을 분모로 하나씩 계산했으며, 서로 더해 100% 구성으로 해석할 수 없습니다.</p>':"";
+  const defence=items.find(x=>/국방|방위|군사|defen[sc]/i.test(x.label));
+  const militaryValue=militaryGov&&militaryGov.value!==null&&Number.isFinite(Number(militaryGov.value))?Number(militaryGov.value):null;
+  const comparison=defence&&denominator?'<p class="budget-scope-warning"><strong>국방 비중과 군사비 지표의 기준</strong> · '+(partition?'이 도넛':'이 항목')+'의 국방 금액은 '+esc(b.fiscalYear||"기준연도 확인 중")+' '+esc(b.scope||"표시 범위")+'의 총지출 중 '+pct(defence.value).toFixed(1)+'%입니다. 군사 탭의 군사비/일반정부 총지출'+(militaryValue!==null?'은 '+esc(String(militaryGov.year||"연도 미상"))+'년 '+number(militaryValue,2)+'%':'은 현재 같은 기준의 수치가 없습니다')+'. SIPRI 군사비와 예산의 국방 기능은 포함 항목이 다르고, 지출 실적과 편성안·정부 범위 및 기준연도도 확인해야 합니다. 두 비율이 일치할 필요가 없습니다.</p>':"";
+  const warning=fold("이 구성표 읽는 법",referenceWarning+comparison+(b.note?'<p>'+esc(b.note)+'</p>':""));
+  const list=items.map((item,i)=>'<li><span class="budget-category-name"><i style="background:'+budgetColor(i,items.length)+'"></i>'+esc(item.label)+'</span><span class="budget-category-value">'+esc(budgetMoney(Number(item.value),b.unit))+'</span><b>'+(donutTotal?share(item.value):pct(item.value)).toFixed(1)+'%</b>'+(donutTotal?"":'<span class="budget-bar"><i style="width:'+Math.min(100,pct(item.value)).toFixed(2)+'%;background:'+budgetColor(i,items.length)+'"></i></span>')+'</li>').join("");
+  const sub=b.details?.categories?.length?'<details class="budget-details"><summary>'+esc(b.details.label||"기타 세부 내역")+'</summary><ul>'+b.details.categories.map(x=>'<li><span>'+esc(x.label)+'</span><strong>'+esc(budgetMoney(Number(x.value),b.unit))+'</strong><small>'+pct(x.value).toFixed(2)+'%</small></li>').join("")+'</ul><p>'+esc(b.details.note||"")+'</p></details>':"";
+  return '<article class="budget-visual"><header><h4>'+esc(heading)+'</h4><p>'+esc(b.fiscalYear||"")+" · "+esc(b.status||"")+(estimatedBudget?' · 비공식 추정':'')+'</p><p>'+esc(b.scope||"")+'</p></header>'+chart+'<ul class="budget-legend">'+list+'</ul>'+sub+warning+'<p class="budget-source">'+(estimatedBudget?'추정 자료':'자료 기준')+' '+esc(b.asOf||"확인 필요")+' · '+sourceLink(b.source,b.provider||"원문")+'</p></article>';
+ }
+ function budgetAlternativeEstimates(estimate){
+  if(!estimate?.metrics)return "";
+  const labels={governmentRevenue:"보고서의 정부 세입 / GDP",governmentExpenditure:"보고서의 정부 지출 / GDP",cashBalance:"보고서의 재정수지 / GDP",debt:"보고서의 정부 부채 / GDP"};
+  const keys=Object.keys(labels).filter(key=>estimate.metrics[key]?.value!==null&&Number.isFinite(Number(estimate.metrics[key]?.value))&&estimate.metrics[key]?.year);
+  if(!keys.length)return "";
+  const fiscalYear=String(estimate.year||"");
+  const cards=keys.map(key=>metricCard(key,labels[key],estimate.metrics[key],null,false)).join("");
+  const source=estimate.source?sourceLink(estimate.source,estimate.provider||"IMF 보고서 원문"):"";
+  return '<section class="section budget-alternative"><h3>IMF 재정 추정·집계 · '+esc(estimate.scope||"정부 범위 확인 필요")+'</h3><details class="fine-print"><summary>기준·출처</summary><div class="fine-print-body"><p>'+(fiscalYear?esc(fiscalYear)+' · ':"")+esc(estimate.estimateKind||"IMF 집계")+' · 각 카드의 자료 연도와 정부 범위를 확인하세요. 세계은행 중앙정부 지표와 회계 범위가 다를 수 있습니다.</p></div></details><div class="metric-grid">'+cards+'</div><details class="fine-print"><summary>기준·출처</summary><div class="fine-print-body"><p>'+(estimate.asOf?'자료 확인일 '+esc(estimate.asOf)+' · ':"")+source+'</p></div></details></section>';
+ }
+ function budgetReferenceShares(shares){
+  const rows=(Array.isArray(shares)?shares:[]).filter(item=>item?.value!==null&&Number.isFinite(Number(item?.value))&&Number(item.value)>=0&&Number(item.value)<=100&&item.year&&item.source&&item.label);
+  if(!rows.length)return "";
+  return '<section class="section budget-reference"><h3>예산 범위별 참고 수치</h3><details class="fine-print"><summary>기준·출처</summary><div class="fine-print-body"><p>발표기관별 국방·안보 예산 비중입니다. 계획과 집행, 분모의 정부 범위가 다르므로 군사 탭의 SIPRI 군사비/일반정부 총지출 수치에 대입하거나 한국 값과 직접 비교하지 않습니다.</p></div></details><div class="budget-reference-grid">'+rows.map(item=>'<article class="budget-reference-card"><span class="budget-reference-heading">'+esc(item.label)+'</span><strong>'+number(Number(item.value),1)+'%</strong>'+(item.estimateKind?'<em class="metric-estimate metric-estimate--'+(item.sourceFamily==="THIRD_PARTY_ESTIMATE"||/비공식|민간/.test(item.estimateKind)?'unofficial':'institutional')+'">'+esc(item.estimateKind)+'</em>':"")+'<p>'+esc(String(item.year))+(item.status?' · '+esc(item.status):"")+'</p>'+(item.scope?'<p>범위: '+esc(item.scope)+'</p>':"")+(item.note?'<p>'+esc(item.note)+'</p>':"")+'<small>'+sourceLink(item.source,item.provider||"원문 확인")+'</small></article>').join("")+'</div></section>';
+ }
+ function economyAlternativeEstimates(items){
+  const rows=(Array.isArray(items)?items:[]).filter(item=>item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.value>=0&&item.year&&item.unit&&item.label&&item.source);
+  if(!rows.length)return "";
+  const money=item=>{
+   const value=Number(item.value),unit=item.unit==="KRW"?"원":item.unit==="NZD"?"뉴질랜드 달러":item.unit==="USD"?"미 달러":item.unit==="GBP"?"영국 파운드":item.unit==="EUR"?"유로":item.unit;
+   return value>=1e12?number(value/1e12,2)+"조 "+unit:value>=1e8?number(value/1e8,3)+"억 "+unit:number(value,0)+" "+unit;
+  };
+  return '<section class="section budget-reference economy-reference"><h3>별도 기준의 경제 참고 수치</h3><details class="fine-print"><summary>기준·출처</summary><div class="fine-print-body"><p>통화·회계 연도·환율 산출법은 항목마다 다릅니다. 위의 국제 비교 GDP, 한국 값, 세계 순위에는 합산하지 않습니다.</p></div></details><div class="budget-reference-grid">'+rows.map(item=>'<article class="budget-reference-card"><span class="budget-reference-heading">'+esc(item.label)+'</span><strong>'+esc(money(item))+'</strong>'+(item.estimateKind?'<em class="metric-estimate metric-estimate--institutional">'+esc(item.estimateKind)+'</em>':"")+'<p>'+esc(String(item.year))+(String(item.year).includes('/')?' 회계연도':'년')+(item.fiscalYear?' · 회계연도 '+esc(item.fiscalYear):'')+' · '+esc(item.unit)+'</p>'+(item.note?'<p>'+esc(item.note)+'</p>':"")+'<small>'+sourceLink(item.source,item.provider||"원문 확인")+'</small></article>').join("")+'</div></section>';
+ }
+ // Party disputes: which parties are fighting over what, shown under the seat charts.
+ // Corruption Perceptions Index (Transparency International): score, rank, Korea, 2020–2025 trend.
+ function cpiBlock(data){
+  const c=data.cpi;if(!c)return "";
+  const e=c.entry,k=c.korea;
+  if(!e)return '<section class="section cpi"><h3>부패인식지수</h3><p class="metric-missing"><span>평가 대상 아님</span> '+esc(c.edition||"CPI")+'에 포함되지 않은 국가·지역입니다.</p></section>';
+  const band=e.score>=70?["매우 청렴","#1f7a5a"]:e.score>=50?["대체로 청렴","#5f9a3c"]:e.score>=30?["부패 심각","#d08a1e"]:["부패 매우 심각","#c62b33"];
+  const yrs=Object.keys(e.history||{}).sort();const pts=yrs.map(y=>e.history[y]);
+  const W=360,H=70,pad=10,min=Math.min(...pts,...(k?yrs.map(y=>k.history?.[y]).filter(v=>v!=null):[]))-4,max=Math.max(...pts,...(k?yrs.map(y=>k.history?.[y]).filter(v=>v!=null):[]))+4;
+  const x=i=>pad+i*(W-2*pad)/Math.max(1,yrs.length-1),y=v=>H-pad-(v-min)/(max-min||1)*(H-2*pad);
+  const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
+  const kv=k?yrs.map(y2=>k.history?.[y2]??null):[];
+  const spark=yrs.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(yrs[0]+"–"+yrs.at(-1)+" 점수 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:'+band[1]+'"/>'+pts.map((v,i)=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(v).toFixed(1)+'" r="2.6" style="fill:'+band[1]+'"/>'+((i===0||i===pts.length-1)?'<text x="'+x(i).toFixed(1)+'" y="'+(y(v)-6).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+v+'</text>':"")).join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+yrs[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+yrs.at(-1)+'</text></svg>':"";
+  const prev=e.history?.[String(Number(yrs.at(-1))-1)],delta=prev!=null?e.score-prev:null;
+  const scale='<div class="cpi-scale"><span class="cpi-track"></span>'+(k?'<i class="cpi-k" style="left:'+k.score+'%" title="한국 '+k.score+'"><b>한국 '+k.score+'</b></i>':"")+'<i class="cpi-me" style="left:'+e.score+'%;background:'+band[1]+'"></i><span class="cpi-ends"><em>0 부패 심각</em><em>100 매우 청렴</em></span></div>';
+  return '<section class="section cpi"><h3>부패인식지수 <small>'+esc(c.edition||"CPI")+'</small></h3>'+
+   '<div class="cpi-card"><div class="cpi-main"><div class="cpi-score"><strong style="color:'+band[1]+'">'+e.score+'</strong><span>/ 100</span></div><div class="cpi-meta"><b style="background:'+band[1]+'">'+band[0]+'</b><span>'+e.rank+'위 / '+(c.total||182)+'개국</span>'+(delta!=null?'<span class="cpi-delta">전년 대비 '+(delta>0?"▲"+delta:delta<0?"▼"+(-delta):"변화 없음")+'</span>':"")+(k?'<span class="cpi-korea">한국 '+k.score+'점 · '+k.rank+'위</span>':"")+'</div></div>'+scale+spark+
+   (k&&spark?'<p class="cpi-legend"><i style="background:'+band[1]+'"></i>'+esc(namedCountry(data.code))+' <i class="cpi-legend-k"></i>한국</p>':"")+
+   '<p class="cpi-note">공공부문 부패에 대해 전문가·기업인이 어떻게 느끼는지를 0~100으로 매긴 지수로, 높을수록 청렴합니다. 실제 부패 사건 수를 센 값은 아닙니다. '+sourceLink(c.source,"국제투명성기구")+' · '+sourceLink(c.wiki,"연도별 표")+'</p></div></section>';
+ }
+ function partyFights(data){
+  const f=data.fights;if(!f||(!Array.isArray(f.items)||!f.items.length)&&!f.note)return "";
+  const groups={};(data.civics?.parliament?.chambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(!groups[g[0]])groups[g[0]]=g}));
+  const names=data.partyNames||{};
+  const chip=label=>{const g=groups[label],col=g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3",n=names[label];
+   return '<button type="button" class="fight-party" data-party-open="'+esc(label)+'"'+(n&&n.orig&&n.orig!==label?' title="'+esc(n.orig)+'"':"")+'><i style="background:'+col+'"></i>'+esc(label)+(g?'<small>'+number(g[1],0)+'석</small>':"")+'</button>'};
+  const items=(f.items||[]).filter(it=>it&&it.topic&&Array.isArray(it.sides)&&it.sides.length).map(it=>
+   '<article class="fight"><header>'+(it.kind?'<span class="fight-kind">'+esc(it.kind)+'</span>':"")+'<h5>'+esc(it.topic)+'</h5></header>'+
+   (it.summary?'<p class="fight-summary">'+esc(it.summary)+'</p>':"")+
+   '<div class="fight-sides'+(it.sides.length>2?" fight-sides--multi":"")+'">'+it.sides.map((sd,i)=>(i?'<span class="fight-vs" aria-hidden="true">VS</span>':"")+'<div class="fight-side"><div class="fight-parties">'+(sd.parties||[]).map(chip).join("")+(sd.label&&!(sd.parties||[]).length?'<b class="fight-camp">'+esc(sd.label)+'</b>':"")+'</div>'+(sd.stance?'<p>'+esc(sd.stance)+'</p>':"")+'</div>').join("")+'</div>'+
+   (it.status?'<p class="fight-status"><b>지금</b>'+esc(it.status)+'</p>':"")+
+   (Array.isArray(it.sources)&&it.sources.length?'<small class="fight-source">출처 '+it.sources.map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</small>':"")+'</article>').join("");
+  return '<section class="fights"><div class="fights-head"><h4>정당 간 쟁점</h4>'+(f.asOf?'<span>'+esc(f.asOf)+' 기준</span>':"")+'</div>'+(f.note?'<p class="fights-note">'+esc(f.note)+'</p>':"")+items+'</section>';
+ }
+ function hemicycle(chamber){
+  if(!chamber||!Array.isArray(chamber.groups))return "";
+  const groups=chamber.groups.filter(g=>Array.isArray(g)&&Number.isInteger(g[1])&&g[1]>=0);
+  const total=groups.reduce((n,g)=>n+g[1],0);
+  if(!total||total>1000)return "";
+  // Small chambers: fewer, wider-spaced rows with bigger seats so the arc stays readable.
+  let rows,radii,dotR;
+  if(total<120){
+   const R=188,pick=[1,2,3,4,5,6].map(n=>{const d=n===1?0:Math.min(Math.PI*n*R/(total+Math.PI*n*(n-1)/2),(R-40)/(n-1));return {n,d,inner:R-(n-1)*d}}).filter(o=>o.n===1?total<=8:true);
+   const best=pick.sort((a,b)=>Math.abs(a.inner-(total<=8?188:92))-Math.abs(b.inner-(total<=8?188:92)))[0];
+   rows=best.n;radii=Array.from({length:rows},(_,i)=>R-(rows-1-i)*best.d);
+   const arc=Math.PI*R/Math.max(1,Math.ceil(total*R/radii.reduce((a,b)=>a+b,0)));
+   dotR=Math.max(3.5,Math.min(10,(rows>1?Math.min(best.d,arc):arc)*0.34));
+  }else{
+   rows=Math.max(6,Math.min(16,Math.round(Math.sqrt(total)/1.7)));
+   radii=Array.from({length:rows},(_,i)=>48+i*140/(rows-1));
+   dotR=total>300?2.35:3.5;
+  }
+  const weightSum=radii.reduce((a,b)=>a+b,0);
+  const counts=radii.map(r=>Math.floor(total*r/weightSum));
+  const fractional=radii.map((r,i)=>({index:i,part:total*r/weightSum-counts[i]})).sort((a,b)=>b.part-a.part);
+  const remainder=total-counts.reduce((a,b)=>a+b,0);
+  for(let i=0;i<remainder;i++)counts[fractional[i].index]++;
+  const dots=[];
+  radii.forEach((r,row)=>{const count=counts[row];for(let n=0;n<count;n++)dots.push({r,row,angle:Math.PI*(n+.5)/count})});
+  dots.sort((a,b)=>b.angle-a.angle||a.r-b.r);
+  const color=g=>/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3";
+  // Give each group a clean wedge: in every row, a group takes the share of seats its
+  // total implies (largest remainder), so boundaries run close to radial lines.
+  const assignWedges=()=>{
+   let cum=0;const bounds=[];
+   for(const g of groups){
+    cum+=g[1];
+    const ideal=counts.map(c=>c*cum/total),base=ideal.map(Math.floor);
+    let deficit=cum-base.reduce((a,b)=>a+b,0);
+    ideal.map((v,i)=>({i,f:v-base[i]})).sort((a,b)=>b.f-a.f).forEach(({i})=>{if(deficit>0&&base[i]<counts[i]){base[i]++;deficit--}});
+    bounds.push(base);
+   }
+   for(let k=1;k<bounds.length;k++)for(let r=0;r<rows;r++)if(bounds[k][r]<bounds[k-1][r])return null;
+   const rowDots=radii.map((_,row)=>dots.filter(d=>d.row===row).sort((a,b)=>b.angle-a.angle));
+   rowDots.forEach((list,row)=>list.forEach((d,n)=>{d.g=bounds.findIndex(b=>n<b[row])}));
+   const tally=groups.map(()=>0);dots.forEach(d=>tally[d.g]++);
+   return tally.every((t,i)=>t===groups[i][1]);
+  };
+  if(!assignWedges()){const owner=groups.flatMap((g,gi)=>Array(g[1]).fill(gi));dots.forEach((d,i)=>d.g=owner[i])}
+  const circles=dots.map(p=>'<circle data-g="'+p.g+'" cx="'+(215+p.r*Math.cos(p.angle)).toFixed(1)+'" cy="'+(213-p.r*Math.sin(p.angle)).toFixed(1)+'" r="'+dotR+'" fill="'+color(groups[p.g])+'"/>').join("");
+  // Party boundaries: in every row, a point midway between the last seat of one group and the first of the next.
+  const xy=(r,a)=>(215+r*Math.cos(a)).toFixed(1)+" "+(213-r*Math.sin(a)).toFixed(1);
+  const byRow=radii.map((r,row)=>dots.filter(d=>d.row===row).sort((a,b)=>b.angle-a.angle));
+  const seps=[];
+  for(let k=0;k<(total<40||rows<3?0:groups.length-1);k++){
+   // Lines around 1–2 seat groups only add clutter; their colour and the legend identify them.
+   if(!groups[k][1]||groups[k][1]<3&&groups[k+1][1]<3||groups[k][1]<3&&k>0&&groups[k-1][1]<3)continue;
+   const pts=[];
+   byRow.forEach((list,row)=>{
+    const r=radii[row];let left=null,right=null;
+    for(const d of list){if(d.g<=k)left=d;else{right=d;break}}
+    const a=left&&right?(left.angle+right.angle)/2:left?0:right?Math.PI:null;
+    if(a!==null)pts.push([r,a]);
+   });
+   if(pts.length<2)continue;
+   const step=(radii[1]-radii[0])/2;
+   const path="M"+xy(pts[0][0]-step,pts[0][1])+pts.map(p=>" L"+xy(p[0],p[1])).join("")+" L"+xy(pts.at(-1)[0]+step,pts.at(-1)[1]);
+   seps.push('<path class="seat-sep" d="'+path+'"/>');
+  }
+  // A proportional strip below the arc: every group gets its own boxed segment.
+  let acc=0;
+  const strip=groups.filter(g=>g[1]>0).map(g=>{const gi=groups.indexOf(g),w=g[1]/total*100,html='<span class="seat-strip-seg" data-g="'+gi+'" style="width:'+w.toFixed(3)+'%;background:'+color(g)+'" title="'+esc(g[0])+' '+g[1]+'석"></span>';acc+=w;return html}).join("");
+  const majority=Math.floor(total/2)+1;
+  // Party name: original-language name first, then Korean translation and pronunciation.
+  const names=chamber.partyNames||{};
+  const partyLabel=g=>{
+   const n=names[g[0]];
+   if(!n||!n.orig||n.orig===g[0])return '<strong>'+esc(g[0])+'</strong>';
+   const sub=[n.ko||g[0],n.pron].filter(Boolean).filter((v,i,a)=>a.indexOf(v)===i);
+   return '<strong dir="auto" lang="und">'+esc(n.orig)+(n.abbr&&n.abbr!==n.orig?'<em class="party-abbr">'+esc(n.abbr)+'</em>':"")+'</strong><span class="party-ko">'+sub.map((v,i)=>i===1?'<span class="party-pron">['+esc(v)+']</span>':esc(v)).join(" ")+'</span>';
+  };
+  const legend=groups.map((g,gi)=>'<li data-g="'+gi+'" data-party="'+esc(g[0])+'" tabindex="0"><i style="background:'+color(g)+'"></i><span>'+partyLabel(g)+'<small>'+esc(g[3]||"성향 자료 없음")+'</small></span><b>'+number(g[1],0)+'석</b></li>').join("");
+  return '<div class="chamber-chart"><div class="chamber-heading"><b>'+esc(chamber.name||"의회")+'</b><span>'+esc(chamber.label||"의석 자료")+'</span></div><svg viewBox="0 0 430 232" aria-hidden="true" class="seat-svg"><path d="M16 214H414" stroke="#dce3de" stroke-width="1"/>'+circles+seps.join("")+'</svg><div class="seat-strip" aria-hidden="true">'+strip+'<em class="seat-majority" style="left:'+(majority/total*100).toFixed(2)+'%" title="과반 '+majority+'석"></em></div><p class="chart-count">'+number(total,0)+'석 · 과반 '+number(majority,0)+'석 · '+esc(chamber.entity||"분류별 의석")+' · 정당을 누르면 대표자와 주장이 열립니다</p><ul class="seat-legend">'+legend+'</ul><div class="party-detail" hidden></div></div>';
+ }
+ // Party card: leader, ideology, positions and latest stance. Opens under the legend.
+ function partyCard(label){
+  const prof=(state.partyProfiles||{})[label],name=(state.partyNames||{})[label]||{};
+  if(!prof)return '<p class="party-empty">이 그룹의 대표자·주장 자료는 아직 없습니다.</p>';
+  const L=prof.leader||{};
+  const photo=L.name&&state.partyPhotos?.[label];
+  const lead=L.name?'<div class="party-leader">'+portrait({name:L.name,photo:photo?{url:photo.d}:null},"party-leader-photo")+'<div><span class="party-leader-title">'+esc(L.title||"대표")+(L.since?' · '+esc(String(L.since))+'년부터':"")+'</span><strong>'+esc(L.nameKo||L.name)+'</strong>'+(L.nameKo&&L.nameKo!==L.name?'<small>'+esc(L.name)+'</small>':"")+(L.office?'<small>'+esc(L.office)+'</small>':"")+
+   (Array.isArray(prof.coLeaders)&&prof.coLeaders.length?'<small class="party-co">'+prof.coLeaders.map(c=>esc((c.title?c.title+' ':"")+(c.nameKo||c.name))).join(" · ")+'</small>':"")+
+   (photo?'<small class="party-photo-credit">사진 '+sourceLink(photo.source,photo.license||"원본")+'</small>':"")+'</div></div>':"";
+  const ideology=Array.isArray(prof.ideology)&&prof.ideology.length?'<div class="party-tags">'+prof.ideology.map(t=>'<span>'+esc(t)+'</span>').join("")+'</div>':"";
+  const positions=Array.isArray(prof.positions)&&prof.positions.length?'<h5>주요 주장</h5><ul class="party-positions">'+prof.positions.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
+  const now=prof.now?'<h5>지금 목소리</h5><p class="party-now">'+esc(prof.now)+'</p>':"";
+  const src=Array.isArray(prof.sources)&&prof.sources.length?'<p class="party-sources">출처 '+prof.sources.slice(0,3).map(x=>sourceLink(x[2],x[0]||"원문")).join(" · ")+'</p>':"";
+  return '<header><strong dir="auto">'+esc(name.orig||label)+'</strong>'+(name.orig&&name.orig!==label?'<span>'+esc(name.ko||label)+'</span>':"")+'<button type="button" class="party-close" aria-label="닫기">×</button></header>'+lead+ideology+positions+now+src;
+ }
+ function chamberHeadcounts(legislature){
+  const chambers=Array.isArray(legislature?.chambers)?legislature.chambers:[];
+  if(!chambers.length)return "";
+  const reason={suspended:"운영 중지",not_applicable:"비적용",not_reported:"미보고",zero_reported:"0명 보고"};
+  const rows=chambers.map(c=>{
+   const count=Number.isInteger(c.currentMembers)&&c.currentMembers>0;
+   return '<li><strong>'+esc(c.name||"의회")+'</strong><span>'+(count?number(c.currentMembers,0)+"명":
+    esc(c.suspended?reason.suspended:reason[c.availability]||"미확인"))+(count&&c.estimated?'<em class="headcount-estimate"'+(c.estimateKind?' title="'+esc(c.estimateKind)+'"':"")+'>추산</em>':"")+'</span></li>';
+  }).join("");
+  return '<div class="chamber-headcounts"><div><strong>의원 수'+(legislature.asOf?' · '+esc(legislature.asOf):"")+'</strong>'+sourceLink(legislature.source,shortProvider(legislature.provider)||"원문")+'</div><ul>'+rows+'</ul></div>';
+ }
+ // "지금 상황": curated situation summary (who holds what), then this
+ // edition's stories for the country. This is what a reader opens a dossier for.
+ function countryNow(data){
+  const c=data.context;
+  const stories=(state.edition?.stories||[]).filter(s=>s.countryCodes?.includes(data.code));
+  const watch=(data.watch||[]).filter(w=>!stories.some(s=>s.headline===w.title));
+  let html="";
+  if(c&&c.summary){
+   const control=Array.isArray(c.control)&&c.control.length?'<ul class="control-list">'+c.control.map(r=>'<li><div><b>'+esc(r.actor)+'</b>'+(r.backers?'<small>'+(c.kind==="politics"?"":"후원·연계 ")+esc(r.backers)+'</small>':"")+'</div><span>'+esc(r.holds)+'</span></li>').join("")+'</ul>':"";
+   const points=Array.isArray(c.points)&&c.points.length?'<ul class="now-points">'+c.points.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
+   const sources=Array.isArray(c.sources)?c.sources.map(s=>'<li>'+sourceLink(s[2],s[0]+(s[1]?" — "+s[1]:""))+'</li>').join(""):"";
+   html+='<section class="now" aria-label="지금 상황"><div class="now-head"><span>지금 상황</span>'+(c.asOf?'<time>'+esc(c.asOf)+' 기준</time>':"")+'</div>'+
+    (c.headline?'<h3>'+esc(c.headline)+'</h3>':"")+'<p class="now-summary">'+esc(c.summary)+'</p>'+
+    (control?'<h4>'+(c.kind==="politics"?"권력 구도":"누가 무엇을 쥐고 있나")+'</h4>'+control:"")+(points?'<h4>지켜볼 점</h4>'+points:"")+
+    fold("출처 "+(Array.isArray(c.sources)?c.sources.length:0)+"건",sources?'<ul class="now-sources">'+sources+'</ul>'+(c.note?'<p>'+esc(c.note)+'</p>':""):"")+'</section>';
+  }
+  if(stories.length||watch.length){
+   html+='<section class="recent" aria-label="최근 변화"><h3 class="recent-title">최근 변화 <small>'+esc(state.edition?.editionDate||"")+' 판</small></h3>'+
+    stories.map(s=>'<button type="button" class="recent-card" data-open="'+esc(s.id)+'"><span class="recent-meta"><b>'+esc(s.level)+'</b> · '+esc(s.changeDate||s.eventDate)+'</span><strong>'+esc(s.headline)+'</strong><span class="recent-summary">'+esc(s.summary)+'</span><span class="recent-more">자세히 ↗</span></button>').join("")+
+    watch.map(w=>'<article class="recent-card"><span class="recent-meta"><b>'+esc(w.status)+'</b> · '+esc(w.dateLabel||w.date)+'</span><strong>'+esc(w.title)+'</strong><span class="recent-summary">'+esc(w.detail)+'</span>'+sourceLink(w.url,"원문")+'</article>').join("")+'</section>';
+  }
+  return html;
+ }
+ const conflictLevel={high:"무력 충돌",medium:"긴장·제재",low:"외교·무역 마찰"};
+ function countryConflicts(data){
+  const list=Array.isArray(data.civics?.conflicts)?data.civics.conflicts.filter(c=>c&&c.withName&&c.brief):[];
+  if(!list.length)return "";
+  const chips=list.map((c,i)=>'<button type="button" class="conflict-chip conflict-chip--'+esc(c.level||"low")+'" data-conflict="'+i+'" aria-expanded="false" aria-describedby="conflict-tip-'+i+'">'+
+   (c.with?flag(c.with,"flag-chip"):'<span class="conflict-nonstate" aria-hidden="true">◆</span>')+'<span>'+esc(c.withName)+'</span>'+
+   '<span class="conflict-tip" role="tooltip" id="conflict-tip-'+i+'"><b>'+esc(c.kind||"갈등")+' · '+esc(conflictLevel[c.level]||"")+'</b>'+esc(c.brief)+'</span></button>').join("");
+  const details=list.map((c,i)=>'<article class="conflict-detail" data-conflict-detail="'+i+'" hidden><header><span class="conflict-level conflict-level--'+esc(c.level||"low")+'">'+esc(conflictLevel[c.level]||"")+'</span><h4>'+esc(namedCountry(data.code))+' ↔ '+esc(c.withName)+'</h4><small>'+esc(c.kind||"")+(c.since?' · '+esc(String(c.since))+'년부터':"")+'</small></header><p class="conflict-brief">'+esc(c.brief)+'</p><p>'+esc(c.detail||"")+'</p>'+
+   (Array.isArray(c.sources)&&c.sources.length?'<ul class="conflict-sources">'+c.sources.map(s=>'<li>'+sourceLink(s[2],(s[0]||"")+(s[1]?" — "+s[1]:""))+'</li>').join("")+'</ul>':"")+
+   (c.with?'<button type="button" class="conflict-open" data-country="'+esc(c.with)+'">'+esc(c.withName)+' 국가 정보 보기 →</button>':"")+'</article>').join("");
+  return '<section class="conflicts" aria-label="갈등 관계"><div class="conflicts-head"><h3>갈등 관계</h3><span>마우스를 올리면 이유, 누르면 자세히</span></div><div class="conflict-chips">'+chips+'</div>'+details+'</section>';
+ }
+ function budgetOverviewCard(row){
+  if(!row)return "";
+  const hasValue=typeof row.value==="number"&&Number.isFinite(row.value);
+  if(!hasValue&&!row.status)return "";
+  const unit=String(row.unit||"");
+  const label=hasValue?(/%\s*$/.test(unit)?unit.replace(/%\s*$/,"").trim()+" "+number(row.value,2)+"%":number(row.value,2)+" "+unit).trim():row.kind==="not_applicable"?"단일 독립 예산 없음":"예산액 미공개";
+  const fine=(row.scope?'<p><b>집계 범위</b> '+esc(row.scope)+'</p>':"")+(row.note?'<p>'+esc(row.note)+'</p>':"")+
+   '<p>'+esc(row.provider||"")+' '+sourceLink(row.source,"예산·재정 근거")+(row.secondarySource?' · '+sourceLink(row.secondarySource,"동년 GDP 원문"):"")+(Array.isArray(row.secondarySources)?row.secondarySources.map(item=>' · '+sourceLink(item.url,item.label||"추가 원문")).join(""):"")+'</p>';
+  return '<article class="budget-overview"><div class="budget-overview-heading"><span>'+esc(row.label||"예산·재정")+'</span><small>'+esc(row.fiscalYear||"")+'</small></div><strong>'+esc(label)+'</strong>'+
+   '<p class="budget-overview-status">'+esc(row.status||"")+'</p>'+
+   (Number.isFinite(row.referenceGrowthPercent)&&Number.isFinite(row.referenceDefenseSharePercent)?'<div class="budget-reference-chips"><span>2026년 세출 증가 계획 <b>+'+number(row.referenceGrowthPercent,1)+'%</b></span><span>전체 예산 중 국방 비중 <b>'+number(row.referenceDefenseSharePercent,1)+'%</b></span><small>총지출 금액은 미공개</small></div>':"")+
+   (row.administeringName?'<p><b>연계 관할</b> '+esc(row.administeringName)+'</p>':"")+fold("기준·출처",fine)+'</article>';
+ }
+ function countryPanels(data){
+  const p=data.profile||{},metrics=data.metrics||{},links=data.links||{},political=data.political||{},legislature=data.legislature||{},budget=data.budget||{};
+  const compare=data.code!=="KR",reference=data.comparison?.metrics||{},koreaReferences=data.comparison?.references||{};
+  const grid=rows=>metricGrid(rows,compare,reference,koreaReferences,data.koreaLatest||{});
+  const system=p.system||political.system||"";
+  const activeChambers=Array.isArray(legislature.chambers)?legislature.chambers.filter(c=>!c.suspended&&c.availability!=="not_applicable"):[];
+  const institution=p.parliament||(activeChambers.length?activeChambers.map(c=>c.name).filter(Boolean).join(" · "):legislature.chambers?.length?"의회 활동 중지 또는 구성 미확인":"");
+  const chambers=Array.isArray(p.chambers)&&p.chambers.length?p.chambers:p.chamber?[p.chamber]:[];
+  const headcounts=chamberHeadcounts(legislature);
+  const parliamentNote=data.context?.parliamentNote?'<p class="context-note">'+esc(data.context.parliamentNote)+'</p>':"";
+  const civ=data.civics?.parliament;
+  const civChambers=Array.isArray(civ?.chambers)?civ.chambers:[];
+  const civHasSeats=civChambers.some(c=>Array.isArray(c.groups)&&c.groups.length);
+  const dateText=d=>{if(!d)return "";const m=String(d).match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);return m?m[1]+"년"+(m[2]?" "+Number(m[2])+"월":"")+(m[3]?" "+Number(m[3])+"일":""):String(d)};
+  const upcoming=d=>{const t=Date.parse(String(d||"").length===7?d+"-28":d);return Number.isFinite(t)&&t>Date.now()};
+  const electionCards=civChambers.length?'<div class="chamber-cards">'+civChambers.map(c=>'<article class="chamber-card"><header><h4>'+esc(c.name||"의회")+'</h4>'+(c.seats?'<span>'+number(c.seats,0)+'석</span>':"")+'</header>'+
+    (c.method?'<p class="chamber-method">'+esc(c.method)+'</p>':"")+
+    '<dl class="chamber-dates">'+(c.term?'<div><dt>임기</dt><dd>'+esc(c.term)+'</dd></div>':"")+(c.lastElection?'<div><dt>지난 선거</dt><dd>'+esc(dateText(c.lastElection))+'</dd></div>':"")+
+    '<div><dt>다음 선거</dt><dd'+(upcoming(c.nextElection)?' class="next-soon"':"")+'>'+(c.nextElection?esc(dateText(c.nextElection)):"미정")+(c.nextNote?'<small>'+esc(c.nextNote)+'</small>':"")+'</dd></div></dl></article>').join("")+'</div>'+
+    (civ.source?'<p class="chamber-source">의회 자료 '+(civ.asOf?esc(civ.asOf)+' 기준 · ':"")+sourceLink(civ.source[2],civ.source[0]||"원문")+'</p>':""):"";
+  const civSeats=civHasSeats?civChambers.filter(c=>Array.isArray(c.groups)&&c.groups.length).map(c=>hemicycle({name:c.name,label:(civ.asOf?civ.asOf+" 기준":"현재 의석"),entity:"정당·교섭단체",groups:c.groups,partyNames:data.partyNames})).join(""):"";
+  const seats=civSeats?civSeats:chambers.length?chambers.map(c=>hemicycle({...c,partyNames:data.partyNames})).join("")+(data.code==="US"?'<p class="data-caption">하원·상원 공식 의석은 '+sourceLink(p.source,"2026년 10월 1일 명부")+' · 무소속의 상원 코커스 소속은 '+sourceLink(p.caucusSource,"상원 취재단 현황")+'</p>':""):"";
+  const orientation=chambers.some(chamber=>/정당|정치그룹/.test(chamber.entity||"")&&!/아님/.test(chamber.entity||""))&&data.code!=="US"?'<p>정당 성향은 해당 시기의 강령·정책과 의회 분류를 바탕으로 한 간략한 설명이며, 이념 범위의 확정적 판정이 아닙니다. '+sourceLink(p.orientationSource||p.source||links.ipu,"정당 성향 근거")+'</p>':"";
+  const decisions=Array.isArray(p.decision)&&p.decision.length?'<section class="section"><h3>의사결정의 흐름</h3><ol class="decision-steps">'+p.decision.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ol></section>':"";
+  const politicsFine=(political.note?'<p>'+esc(political.note)+'</p>':"")+(legislature.note?'<p>'+esc(legislature.note)+'</p>':"")+(!chambers.length&&headcounts?'<p>위 숫자는 의원 현원이며 정당별 의석이 아닙니다. 정당별 현재 의석은 검증된 자료가 없어 표시하지 않습니다.</p>':"")+orientation+(p.note?'<p>'+esc(p.note)+'</p>':"")+
+   '<p>'+(political.provider?esc(political.provider)+' ':"")+(political.asOf?esc(political.asOf)+' 조회 ':"")+sourceLink(p.source||political.source||links.ipu,"제도 출처")+'</p>';
+  const chinaFiscal=data.code==="CN"?'<div class="budget-scope-warning"><strong>별도 범위의 공식 자료로 계산 · 2025년</strong><p>중국 국가통계국의 전국 일반공공예산 세입 21.6045조 위안, 세출 28.7395조 위안을 2025년 명목 GDP 140.1879조 위안으로 나누면 각각 GDP의 약 15.41%, 20.50%입니다. 단순 세입·세출 차액은 GDP의 약 −5.09%입니다.</p><p>중앙정부만의 세계은행 재정 지표와 집계 범위가 달라 위 카드의 값이나 국제 순위에 대입하지 않았습니다. '+sourceLink("https://www.stats.gov.cn/english/PressRelease/202602/t20260228_1962661.html","중국 국가통계국 2026-02-28 발표")+'</p></div>':"";
+  const ownBreakdown=budgetComposition(budget.breakdown,namedCountry(data.code)+" 예산·지출 구성",metrics.militaryGovPct);
+  const koreaBreakdown=compare?budgetComposition(budget.koreaBreakdown,"한국 예산·지출 구성",data.comparison?.metrics?.militaryGovPct):"";
+  const doc=budget.document?'<article class="budget-document"><span>예산 문서 · '+esc(budget.document.fiscalYear||"")+'</span><h3>'+esc(budget.document.title||"예산 자료")+'</h3><p>'+esc(budget.document.status||"")+' · '+esc(budget.document.provider||"")+'</p>'+sourceLink(budget.document.source,"공식 예산 문서")+'</article>':"";
+  return {
+   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
+    cpiBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
+   economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["policyRate","정책금리",metrics.policyRate]])+
+    economyAlternativeEstimates(data.economyAlternatives)+
+    fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),
+   budget:budgetOverviewCard(budget.overview)+doc+
+    (ownBreakdown?'<section class="section"><h3>분야별 구성</h3>'+ownBreakdown+'</section>':"")+
+    '<section class="section"><h3>재정 지표</h3>'+grid([["governmentRevenue","중앙정부 세입 / GDP",budget.metrics?.governmentRevenue||metrics.governmentRevenue],["governmentExpenditure","중앙정부 지출 / GDP",budget.metrics?.governmentExpenditure||metrics.governmentExpenditure],["cashBalance","재정수지 / GDP",budget.metrics?.cashBalance||metrics.cashBalance]])+chinaFiscal+'</section>'+
+    budgetAlternativeEstimates(budget.alternativeEstimates)+budgetReferenceShares(budget.referenceShares)+
+    (koreaBreakdown?'<details class="compare-fold"><summary>한국 예산 구성과 비교하기</summary>'+koreaBreakdown+'<p class="data-caption">두 나라 예산은 회계연도, 정부 범위, 정부안·의결 상태가 다를 수 있어 비중을 그대로 비교하지 마세요.</p></details>':"")+
+    fold("예산 자료 읽는 법",'<p>정부안·의회 통과안·IMF 전망·과거 실적을 서로 다른 상태로 표시합니다. 재정 지표는 세계은행의 중앙정부 범위 과거 관측치로, 지금 제출된 예산안 합계가 아닙니다.</p><p>'+sourceLink(links.worldBank,"세계은행 재정 데이터")+'</p>'),
+   military:grid([["militaryUsd","연간 군사비",metrics.militaryUsd],["militaryPct","군사비 / GDP",metrics.militaryPct],["militaryGovPct","군사비 / 정부 총지출",metrics.militaryGovPct]])+
+    budgetReferenceShares(budget.referenceShares)+
+    fold("군사 지표 읽는 법",'<p>SIPRI 원자료를 인용한 세계은행 WDI 관측치가 기본입니다. 지출액은 병력이나 전력 규모를 뜻하지 않습니다. 군사비/GDP는 달력연도, 군사비/정부 총지출은 회계연도 기준입니다. 분쟁국은 공식 집계가 끊긴 경우가 많아 오래된 연도가 표시될 수 있습니다.</p><p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+' · '+sourceLink("https://www.sipri.org/databases/milex","SIPRI")+'</p>')
+  };
+ }
+ const leaderRoleLabels={state:"국가원수",government:"정부 수반",finance:"경제·재정",defense:"국방",foreign:"외교",centralBank:"중앙은행",parliament:"의회",opposition:"야권",deputy:"부수반"};
+ const leaderNamesKo={"Mohamed bin Zayed Al Nahyan":"무함마드 빈 자이드 알나흐얀","Mohammed bin Rashid Al Maktoum":"무함마드 빈 라시드 알막툼","Mansour bin Zayed Al Nahyan":"만수르 빈 자이드 알나흐얀","Saqr Ghobash":"사크르 고바시","Maktoum bin Mohammed bin Rashid Al Maktoum":"막툼 빈 무함마드 알막툼","Hamdan bin Mohammed bin Rashid Al Maktoum":"함단 빈 무함마드 알막툼","Abdullah bin Zayed Al Nahyan":"압둘라 빈 자이드 알나흐얀","Xi Jinping":"시진핑","Li Qiang":"리창","Emmanuel Macron":"에마뉘엘 마크롱","Sébastien Lecornu":"세바스티앵 르코르뉘","Roland Lescure":"롤랑 레스퀴르","Catherine Vautrin":"카트린 보트랭","Jean-Noël Barrot":"장노엘 바로","Donald J. Trump":"도널드 트럼프","JD Vance":"J. D. 밴스","Lee Jae-myung":"이재명","Han Seongsook":"한성숙","Sanae Takaichi":"다카이치 사나에","Satsuki Katayama":"가타야마 사쓰키","Toshimitsu Motegi":"모테기 도시미쓰","Shinjiro Koizumi":"고이즈미 신지로","Ryosei Akazawa":"아카자와 료세이","Frank-Walter Steinmeier":"프랑크발터 슈타인마이어","Friedrich Merz":"프리드리히 메르츠","Lars Klingbeil":"라르스 클링바일","Boris Pistorius":"보리스 피스토리우스","Johann Wadephul":"요한 바데풀","Katherina Reiche":"카테리나 라이헤"};
+ const leaderDisplayName=person=>leaderNamesKo[person.name]||person.name;
+ function portrait(person,kind=""){
+  const photo=person?.photo,initials=String(person?.name||"?").split(/\s+/).filter(Boolean).slice(0,2).map(x=>x[0]).join("").toUpperCase();
+  return '<div class="person-portrait '+esc(kind)+'"><span aria-hidden="true">'+esc(initials)+'</span>'+(photo?.url?'<img loading="lazy" src="'+safeUrl(photo.url)+'" alt="'+esc(person.name)+' 인물 사진" referrerpolicy="no-referrer" onerror="this.hidden=true">':"")+'</div>';
+ }
+ function leaderCard(person,roster=false){
+  // UN-roster entries carry a generic "listed as X" sentence; it adds nothing, so skip it.
+  const why=!roster&&person.whyMatters&&!/명단에 .*등재/.test(person.whyMatters)?'<p class="leader-description">'+esc(person.whyMatters)+'</p>':"";
+  return '<article class="leader-card"><div class="leader-card-image">'+portrait(person)+'</div><div class="leader-card-body"><span class="leader-role">'+esc(leaderRoleLabels[person.role]||"공직자")+'</span><h4>'+esc(leaderDisplayName(person))+'</h4>'+(leaderNamesKo[person.name]?'<span class="leader-original-name">'+esc(person.name)+'</span>':"")+(person.office&&person.office!==leaderRoleLabels[person.role]?'<p class="leader-office">'+esc(person.office)+'</p>':"")+(person.regime?.note?'<p class="leader-regime"><b class="leader-regime-tag leader-regime-tag--'+(person.regime.label==="독재"?"dict":"auth")+'">'+esc(person.regime.label||"")+'</b>'+esc(person.regime.note)+' '+sourceLink(person.regime.source,person.regime.basis||"근거")+'</p>':"")+why+(person.photo?'<div class="leader-photo-credit">사진 '+sourceLink(person.photo.source,esc(person.photo.license||"라이선스"))+(person.photo.credit?' · '+esc(person.photo.credit):"")+'</div>':"")+'</div></article>';
+ }
+ function relationshipSources(rel){return sourceLink(rel.source,"인물·관계 원문")+(rel.contextSource?' · '+sourceLink(rel.contextSource,"정책·제도 근거"):"")+(rel.contextSource2?' · '+sourceLink(rel.contextSource2,"추가 근거"):"")}
+ function relationshipRow(rel,persons){
+  const left=persons.find(p=>p.id===rel.fromId),right=persons.find(p=>p.id===rel.toId);
+  if(!left||!right||!rel.source)return "";
+  const directed=rel.directed===true,line=rel.line==="dashed"?"dashed":"solid";
+  return '<article class="relationship-row"><div class="relationship-visual"><div class="relationship-person">'+portrait(left,"person-portrait-mini")+'<b>'+esc(leaderDisplayName(left))+'</b></div><div class="relationship-path '+line+'"><span>'+esc(rel.label||"관계")+'</span><i aria-hidden="true">'+(directed?"➜":"◆")+'</i></div><div class="relationship-person">'+portrait(right,"person-portrait-mini")+'<b>'+esc(leaderDisplayName(right))+'</b></div></div><p>'+esc(rel.description||"")+'</p><small>관계 확인 '+esc(rel.asOf||"기준일 미기재")+' · '+relationshipSources(rel)+'</small></article>';
+ }
+ function cabinetRelationshipMap(links,persons){
+  if(!links.length)return "";
+  const hub=persons.find(p=>p.id===links[0].fromId);
+  if(!hub)return "";
+  const branches=links.map(rel=>{
+   const minister=persons.find(p=>p.id===rel.toId);
+   if(!minister||!rel.source)return "";
+   return '<li class="relationship-branch"><div class="relationship-branch-title">'+portrait(minister,"person-portrait-mini")+'<div><span>'+esc(rel.label||"소관 업무")+'</span><strong>'+esc(leaderDisplayName(minister))+'</strong><small>'+esc(minister.office||"")+'</small></div></div><p>'+esc(rel.description||"")+'</p><div class="relationship-branch-source">관계 확인 '+esc(rel.asOf||"기준일 미기재")+' · '+relationshipSources(rel)+'</div></li>';
+  }).filter(Boolean);
+  if(!branches.length)return "";
+  return '<article class="relationship-map" aria-label="'+esc(leaderDisplayName(hub))+'와 장관들의 역할"><div class="relationship-hub">'+portrait(hub,"person-portrait-mini")+'<div><span>정부 수반 · 정책 방향과 부처 간 조정</span><strong>'+esc(leaderDisplayName(hub))+'</strong><small>'+esc(hub.office||"")+'</small></div></div><ol class="relationship-branches">'+branches.join("")+'</ol><p class="relationship-map-note">점선은 직책상 정책 조정과 각 부처의 분업을 나타냅니다. 친분·개인적 충성이나 단독 지휘권을 뜻하지 않습니다.</p></article>';
+ }
+ function renderLeaders(data){
+  const people=Array.isArray(data.people)?data.people:[],relations=Array.isArray(data.relationships)?data.relationships:[];
+  const standalone=relations.filter(rel=>rel.kind!=="cabinet").map(rel=>relationshipRow(rel,people)).filter(Boolean);
+  const cabinetGroups=new Map();for(const rel of relations.filter(rel=>rel.kind==="cabinet")){const group=cabinetGroups.get(rel.fromId)||[];group.push(rel);cabinetGroups.set(rel.fromId,group)}
+  const cabinet=[...cabinetGroups.values()].map(group=>cabinetRelationshipMap(group,people)).filter(Boolean);
+  const node=$("#country-leaders");if(!node)return;
+  if(!people.length){
+   const title=data.status==="not_applicable"?"이 지역에는 단일 국가수반이 없습니다":data.status==="area_office_unverified"?"현지 직책·관리 관계":"현직 핵심 인물 확인 중";
+   node.innerHTML='<div class="leaders-empty"><strong>'+esc(title)+'</strong><p>'+esc(data.note||"공식 자료에서 최근 명단을 확인하지 못했습니다.")+'</p>'+sourceLink(data.source,"관할·인물 원문")+'</div>';return;
+  }
+  const roster=data.status==="dated_roster"||data.status==="historical_snapshot";
+  const card=person=>leaderCard(person,roster);
+  const first=people.slice(0,4).map(card).join(""),extra=people.length>4?'<details class="leaders-extra"><summary>'+(people.length-4)+'명 더 보기</summary><div class="leader-grid">'+people.slice(4).map(card).join("")+'</div></details>':"";
+  const basis='<p class="leaders-source">'+(data.status==="historical_snapshot"?'<b>과거 명단</b> · 현직 여부 미확인 · ':"")+esc(data.asOf||"")+' '+esc(shortProvider(data.provider)||"명단")+' 기준 '+sourceLink(data.source,"원문")+'</p>';
+  // Relationships inferred only from a roster ("A is head of state, B is PM") say nothing new; show curated ones only.
+  const relationHtml=roster?"":(standalone.length||cabinet.length?(standalone.length?'<div class="relationship-grid">'+standalone.join("")+'</div>':"")+cabinet.join(""):"");
+  node.innerHTML='<div class="leader-grid">'+first+'</div>'+extra+basis+
+   (relationHtml?'<details class="relationships-fold"><summary>인물 관계도 보기</summary><section class="relationships"><p class="relationships-legend">실선은 공식 임명·지명, 점선은 부처 간 분업 또는 확인된 협업입니다.</p>'+relationHtml+'</section></details>':"");
+ }
+ async function loadCountryLeaders(code,request){
+  try{
+   const response=await fetch("/api/leaders?code="+encodeURIComponent(code),{cache:"no-store"});
+   if(!response.ok)throw Error("인물 명단 조회 실패");
+   const data=await response.json();
+   if(request!==state.countryRequest||state.active!=="country:"+code)return;
+   renderLeaders(data);
+  }catch{
+   if(request!==state.countryRequest||state.active!=="country:"+code)return;
+   const node=$("#country-leaders");if(node)node.innerHTML='<p class="leaders-no-relation">인물 명단 원문에 연결하지 못했습니다. 국가의 경제·정치 자료는 아래에서 계속 볼 수 있습니다.</p>';
+  }
+ }
+ function showCountry(data){
+  const name=namedCountry(data.code);
+  const previousTab=$("#detail [data-country-tab][aria-selected=true]")?.dataset.countryTab;
+  const previousLeaders=$("#country-leaders")?.innerHTML;
+  const scrollTop=$(".drawer")?.scrollTop||0;
+  state.partyProfiles=data.partyProfiles||{};state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
+  const panels=countryPanels(data);
+  $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+
+   (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
+   countryConflicts(data)+relatedExplainers(data.code)+countryNow(data)+
+   '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div></section>'+
+   '<div class="country-tabs" role="tablist" aria-label="'+esc(name)+' 자료 분류">'+
+    [["politics","정치·의회"],["economy","경제"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
+   Object.entries(panels).map(([key,content],i)=>'<section role="tabpanel" id="panel-'+key+'" aria-labelledby="tab-'+key+'" class="country-panel"'+(i?" hidden":"")+'>'+content+'</section>').join("")+
+   '<div class="detail-nav"><button id="back-to-countries" type="button">← 국가 목록</button><button id="copy-country-link" type="button">링크 복사 ↗</button></div>'+
+   '<p class="dossier-sources">기관 자료 '+sourceLink((data.profile||{}).source||(data.links||{}).ipu,"의회·정치 구조")+' · '+sourceLink((data.links||{}).worldBank,"세계은행 국가 통계")+'</p>';
+  $("#back-to-countries").addEventListener("click",close);
+  $("#copy-country-link").addEventListener("click",async e=>{const url=location.origin+location.pathname+"?country="+encodeURIComponent(data.code);try{await navigator.clipboard.writeText(url);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+url}});
+  if(previousLeaders)$("#country-leaders").innerHTML=previousLeaders;
+  if(previousTab&&panels[previousTab]){
+   $("#detail").querySelectorAll("[data-country-tab]").forEach(tab=>tab.setAttribute("aria-selected",String(tab.dataset.countryTab===previousTab)));
+   $("#detail").querySelectorAll("[role=tabpanel]").forEach(panel=>panel.hidden=panel.id!=="panel-"+previousTab);
+   loadTabRanks(data.code,previousTab);
+  }
+  $(".drawer").scrollTop=scrollTop;
+ }
+ async function openCountry(code){
+  if(!/^[A-Z]{2}$/.test(code))return;
+  const request=++state.countryRequest;
+  state.active="country:"+code;
+  $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(code)+'</div><div class="country-title">'+flag(code,"flag-hero")+'<h2>'+esc(namedCountry(code))+'</h2></div><div class="country-loading" role="status">국가 자료를 불러오는 중입니다…</div>';
+  activateDrawer("국가 정보: "+namedCountry(code));
+  history.replaceState({}, "", "?country="+encodeURIComponent(code));
+  const base="/api/country?code="+encodeURIComponent(code);
+  const load=async suffix=>{const r=await fetch(base+suffix,{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);return r.json()};
+  let shown=false;
+  try{
+   const fast=await load("&fast=1");
+   if(request!==state.countryRequest||state.active!=="country:"+code)return;
+   showCountry(fast);shown=true;
+   loadCountryLeaders(code,request);
+  }catch{}
+  try{
+   const complete=await load("");
+   if(request!==state.countryRequest||state.active!=="country:"+code)return;
+   showCountry(complete);
+   if(!shown)loadCountryLeaders(code,request);
+  }catch{
+   if(request!==state.countryRequest||state.active!=="country:"+code)return;
+   if(!shown)$("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER</div><div class="country-title">'+flag(code,"flag-hero")+'<h2>'+esc(namedCountry(code))+'</h2></div><p class="lead">국가 자료를 불러오지 못했습니다. 네트워크 상태를 확인하고 다시 시도해 주세요.</p><button class="retry-country" type="button" data-country="'+esc(code)+'">다시 시도 ↗</button>';
+  }
+ }
+ function openStory(id){
+  const s=state.edition?.stories.find(a=>a.id===id);if(!s)return;state.active=id;state.countryRequest++;
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div><div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div><div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  activateDrawer("기사 상세 정보: "+s.headline);
+  $("#back-to-feed").addEventListener("click",close);
+  $("#copy-link").addEventListener("click",async e=>{const u=location.origin+location.pathname+"?story="+encodeURIComponent(id);try{await navigator.clipboard.writeText(u);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+u}});
+  history.replaceState({}, "", "?story="+encodeURIComponent(id));
+ }
+ function close(){
+  $("#overlay").classList.remove("open");$("#overlay").setAttribute("aria-hidden","true");document.body.style.overflow="";state.active=null;state.countryRequest++;history.replaceState({}, "", location.pathname);
+  if(state.previousFocus?.isConnected)state.previousFocus.focus();
+  state.previousFocus=null;
+ }
+ function about(){
+  state.active="about";state.countryRequest++;
+  const names={
+   "ofac.treasury.gov":"미국 재무부 OFAC","apnews.com":"AP 통신","arabnews.com":"Arab News · AFP 기사 전재",
+   "radiotamazuj.org":"Radio Tamazuj","ukmto.org":"영국 해상무역기구 UKMTO",
+   "boereport.com":"BOE Report · Reuters 기사 전재","president.go.kr":"대한민국 청와대",
+   "aljazeera.com":"Al Jazeera","thestar.com.my":"The Star · Reuters 기사 전재",
+   "criticalthreats.org":"Critical Threats Project","amnesty.org":"Amnesty International",
+   "ispmyanmar.com":"ISP-Myanmar","moi.gov.mm":"미얀마 정보부",
+   "budget.gouv.fr":"프랑스 예산부","assemblee-nationale.fr":"프랑스 국민의회",
+   "bundestag.de":"독일 연방의회","dati.cvk.lv":"라트비아 중앙선거관리위원회"
+  };
+  const official=new Set(["ofac.treasury.gov","ukmto.org","president.go.kr","moi.gov.mm","budget.gouv.fr","assemblee-nationale.fr","bundestag.de","dati.cvk.lv"]);
+  const sites=new Map();
+  for(const story of state.edition?.stories||[])for(const src of story.sources||[]){
+   try{
+    const url=new URL(src?.[3]);if(url.protocol!=="https:")continue;
+    const host=url.hostname.toLowerCase().replace(/^www\./,"");
+    if(!sites.has(host))sites.set(host,{host,urls:new Set()});
+    sites.get(host).urls.add(url.href);
+   }catch{}
+  }
+  const siteList=kind=>[...sites.values()].filter(item=>official.has(item.host)===kind).sort((a,b)=>a.host.localeCompare(b.host))
+   .map(item=>'<a class="source" href="'+safeUrl('https://'+item.host+'/')+'" target="_blank" rel="noopener noreferrer"><span><strong>'+esc(names[item.host]||item.host)+'</strong>'+esc(item.host)+' · 원문 '+item.urls.size+'건</span><i>사이트 ↗</i></a>').join("");
+  const sources=sites.size?'<div class="section"><h3>이번 호에 인용한 사이트 · '+sites.size+'곳</h3><p>현재 브리핑의 기사 원문에 실제 연결된 사이트입니다. 매시간 모든 사이트를 자동 수집한다는 뜻은 아닙니다. 개별 원문과 발행일은 기사에서 확인할 수 있습니다.</p><h3>보도·현지 취재·조사</h3>'+siteList(false)+'<h3 style="margin-top:24px">정부·의회·공식 발표</h3>'+siteList(true)+'<p>공식 발표는 해당 기관의 입장을 확인하는 자료이며, 분쟁 책임 등은 독립 확인 여부를 기사에 별도로 표시합니다.</p></div>':'';
+  $("#detail").innerHTML='<div class="detail-kicker">EDITORIAL METHOD</div><h2>편집 원칙</h2><p class="lead">나라별 제도와 지표, 세계의 중요한 변화를 출처와 시점에 맞춰 읽습니다.</p><div class="section"><h3>사실과 주장의 경계</h3><p>독립적으로 확인된 사건, 당국 발표, 당사자 주장, 분석가의 해석을 각각 표시합니다. 지원 의혹은 입증된 교전 참여와 다르게 다룹니다.</p></div><div class="section"><h3>기업과 돈의 연결</h3><p>기업은 직접 피해, 운항·물류 영향, 투자·사업, 전략적 이해관계로 구분합니다. 자원과 산업에 관계가 있다는 이유로 특정 기업을 무장세력의 거래 상대라고 쓰지 않습니다.</p></div><div class="section"><h3>자료의 기준 시점</h3><p>매시간 새로운 발표와 변화를 확인합니다. GDP, 물가, 국방비, 의석수는 각각의 기관이 발표한 자료의 연도나 날짜를 따릅니다. 공식 관측치가 없는 곳은 유엔·IMF·현지 통계·공개 추정 자료를 확인해 출처와 연도가 있는 수치를 표시합니다. 추정 표기를 붙이고 동일 기준이 아니면 한국 값이나 순위와 합치지 않습니다.</p></div><div class="section"><h3>수집 범위와 지도</h3><p>국가 검색은 국가·지역을 폭넓게 다루지만 모든 국가에 독립된 정책금리나 공개된 예산안이 있는 것은 아닙니다. 사건 점은 전선이나 점령 경계를, 국가 점은 사건 위치를 뜻하지 않습니다. 지도 경계는 제3자 지도 제공자의 표시로 영토 분쟁에 대한 정치적 입장을 뜻하지 않습니다.</p></div>'+sources;
+  activateDrawer("편집 원칙");
+ }
+ function installGuide(){
+  state.active="install";state.countryRequest++;
+  $("#detail").innerHTML='<div class="detail-kicker">THE FRONT / MOBILE</div><h2>휴대폰에 전선 설치</h2><p class="lead">홈 화면의 전선 아이콘을 누르면 브리핑이 독립된 화면에서 열립니다. 비공개 사이트에 접근할 수 있는 계정이 필요하며 설치 후 로그인을 다시 해야 할 수 있습니다.</p><div class="section"><h3>안드로이드 · Chrome</h3><p>이 사이트를 Chrome으로 연 뒤 오른쪽 위 ⋮ → ‘앱 설치’ 또는 ‘설치 및 바로가기 만들기’ → ‘설치’를 누르세요.</p></div><div class="section"><h3>아이폰 · Safari</h3><p>Safari에서 이 사이트를 열고 공유 → ‘홈 화면에 추가’ → ‘웹 앱으로 열기’를 켠 다음 ‘추가’를 누르세요.</p></div><div class="section"><h3>새 소식 확인</h3><p>앱을 열거나 다시 돌아오면 새로 발행된 브리핑을 확인합니다. 중요한 변화의 휴대폰 알림은 아직 제공하지 않습니다. 인터넷 연결과 사이트 접근 권한이 필요합니다.</p></div>';
+  activateDrawer("전선 앱 설치 방법");
+ }
+ function guideSheet(){
+  const card=(n,t,d)=>'<li class="guide-card"><b>'+n+'</b><h4>'+t+'</h4><p>'+d+'</p></li>';
+  $("#detail").innerHTML='<div class="detail-kicker">PANDO / GUIDE</div><h2>판도 사용법</h2>'+
+   '<p class="lead">판도는 세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑입니다. 모든 숫자와 사건에 기준 날짜와 원문 출처를 붙이고, 확인된 사실과 각국의 주장을 구분해 보여줍니다.</p>'+
+   '<section class="guide-sec"><h3>첫 화면</h3><ol class="guide-grid">'+
+    card("1","오늘의 초점","지금 가장 중요한 변화 한 건을 맨 위에 올립니다. ‘자세히 보기’를 누르면 관련 행위자, 이해관계, 아직 불확실한 점까지 열립니다.")+
+    card("2","세계 변화 지도","빨간 점은 사건 현장, 마름모는 주목 국가입니다. 손가락이나 휠로 확대·이동하고, 점을 누르면 상세 정보가 열립니다. 겹친 점은 지도 아래 목록에서 고르세요.")+
+    card("3","지금 주목할 국가","최근 바뀐 일을 카드로 모았습니다. ‘발표·잠정·확정’ 표시로 사실이 어디까지 굳었는지 알려주고, ‘원문’ 링크로 출처를 바로 확인할 수 있습니다.")+
+    card("4","국가 탐색","250개 국가·지역을 이름으로 검색해 국가 상세를 엽니다.")+'</ol></section>'+
+   '<section class="guide-sec"><h3>국가 상세</h3><ol class="guide-grid">'+
+    card("A","지금 상황","누가 권력을 쥐고 있는지, 무엇을 지켜봐야 하는지 한 화면에 정리합니다. 맨 위 ‘갈등 관계’ 칩에 마우스를 올리면 이유가, 누르면 자세한 경과가 나옵니다.")+
+    card("B","핵심 인물","국가원수·정부수반·주요 장관의 사진과 역할입니다. 독재·권위주의로 평가받는 지도자는 근거와 함께 표시합니다.")+
+    card("C","정치·의회","선거 방식과 다음 선거일, 정당별 의석을 반원 그림으로 보여줍니다. 정당을 누르면 대표자와 주장 카드가 열리고, 아래 ‘정당 간 쟁점’에서 누가 무엇으로 맞서는지, ‘부패인식지수’에서 청렴도와 한국 비교를 볼 수 있습니다.")+
+    card("D","경제·예산·군사","지표 카드를 누르면 연도별 추이가 펼쳐집니다. 세계 순위와 한국 값을 나란히 보여주고, 예산은 분야별 원그래프로 나눕니다.")+'</ol></section>'+
+   '<section class="guide-sec"><h3>읽는 법</h3><ul class="guide-list">'+
+    '<li><b>기준일</b> 모든 수치와 요약에는 ‘○○ 기준’ 날짜가 붙습니다. 날짜가 오래됐으면 그 사이 바뀌었을 수 있습니다.</li>'+
+    '<li><b>사실과 주장</b> 정부·정당의 발표는 ‘주장’, 여러 출처로 확인된 것은 ‘사실’로 구분해 씁니다.</li>'+
+    '<li><b>출처</b> 밑줄 친 링크는 모두 원문으로 이어집니다. 의심스러우면 원문을 확인하세요.</li>'+
+    '<li><b>바로가기</b> 주소 끝에 <code>?country=KR</code>처럼 국가 코드를 붙이면 그 나라 화면이 바로 열려 공유하기 좋습니다.</li></ul></section>'+
+   '<p class="guide-foot">휴대폰에서는 브라우저 메뉴의 ‘홈 화면에 추가’로 앱처럼 쓸 수 있습니다.</p>';
+  activateDrawer("판도 사용법");
+ }
+ $("#guide-open")?.addEventListener("click",guideSheet);
+ document.addEventListener("click",e=>{if(e.target.closest("[data-guide-open]")){e.preventDefault();guideSheet()}});
+ document.addEventListener("click",e=>{const b=e.target.closest("[data-explain]");if(b){e.preventDefault();openExplainer(b.dataset.explain);return}const c=e.target.closest("[data-cite]");if(c){e.preventDefault();document.getElementById("xs-"+c.dataset.cite)?.scrollIntoView({behavior:"smooth",block:"center"})}});
+ if(/^#explain=/.test(location.hash)){const id=decodeURIComponent(location.hash.slice(9));const t=setInterval(()=>{if(state.explainers){clearInterval(t);openExplainer(id)}},200)}
+ if(location.hash==="#guide")setTimeout(guideSheet,300);
+ window.addEventListener("beforeinstallprompt",event=>{event.preventDefault();installPrompt=event});
+ window.addEventListener("appinstalled",()=>{installPrompt=null;$("#install-open")?.remove()});
+ if(window.matchMedia("(display-mode: standalone)").matches||window.navigator.standalone)$("#install-open")?.remove();
+ $("#install-open")?.addEventListener("click",async()=>{
+  if(installPrompt){const choice=installPrompt;installPrompt=null;try{await choice.prompt();await choice.userChoice;return}catch{}}
+  installGuide();
+ });
+ document.addEventListener("click",e=>{
+  const pclose=e.target.closest(".party-close");if(pclose){const chart=pclose.closest(".chamber-chart");delete chart.dataset.focus;chart.querySelectorAll("[data-g]").forEach(n=>n.classList.remove("seat-dim"));pclose.closest(".party-detail").hidden=true;return}
+  const chip=e.target.closest("[data-conflict]");if(chip){
+   const box=chip.closest(".conflicts"),i=chip.dataset.conflict,open=chip.getAttribute("aria-expanded")!=="true";
+   box.querySelectorAll("[data-conflict]").forEach(b=>b.setAttribute("aria-expanded",String(open&&b===chip)));
+   box.querySelectorAll("[data-conflict-detail]").forEach(d=>d.hidden=!(open&&d.dataset.conflictDetail===i));
+   return;
+  }
+  const fp=e.target.closest("[data-party-open]");if(fp){
+   const root=fp.closest("section,[role=tabpanel]")?.parentElement||document,label=fp.dataset.partyOpen;
+   const li=[...root.querySelectorAll(".seat-legend li[data-party]")].find(x=>x.dataset.party===label);
+   if(li){const chart=li.closest(".chamber-chart");if(chart.dataset.focus!==li.dataset.g)li.click();else chart.querySelector(".party-detail")?.scrollIntoView({block:"nearest",behavior:"smooth"})}
+   return;
+  }
+  const seatItem=e.target.closest(".seat-legend li[data-g], .seat-strip-seg[data-g]");if(seatItem){
+   const chart=seatItem.closest(".chamber-chart"),g=seatItem.dataset.g,on=chart.dataset.focus!==g;
+   if(on)chart.dataset.focus=g;else delete chart.dataset.focus;
+   chart.querySelectorAll("[data-g]").forEach(n=>n.classList.toggle("seat-dim",on&&n.dataset.g!==g));
+   const card=chart.querySelector(".party-detail"),li=chart.querySelector('.seat-legend li[data-g="'+g+'"]');
+   if(card){card.hidden=!on;if(on&&li){card.innerHTML=partyCard(li.dataset.party);card.scrollIntoView({block:"nearest",behavior:"smooth"})}}
+   return;
+  }
+  const more=e.target.closest("[data-more]");if(more){
+   const kind=more.dataset.more;
+   if(kind==="feed"){state.feedAll=true;drawFeed()}
+   else if(kind==="watch"){state.watchAll=true;renderWatch()}
+   else if(kind==="countries"){state.countriesAll=true;renderCountries()}
+   return;
+  }
+  const metric=e.target.closest("[data-metric]");if(metric){const chart=metric.closest(".metric-card")?.querySelector(".metric-expand-content");if(chart){chart.hidden=!chart.hidden;metric.setAttribute("aria-expanded",String(!chart.hidden))}return}
+  const country=e.target.closest("[data-country]");if(country){openCountry(country.dataset.country);return}
+  const story=e.target.closest("[data-open]");if(story){openStory(story.dataset.open);return}
+  const tab=e.target.closest("[data-country-tab]");if(tab){
+   const group=tab.parentElement;
+   group.querySelectorAll("[role=tab]").forEach(b=>b.setAttribute("aria-selected",String(b===tab)));
+   $("#detail").querySelectorAll("[role=tabpanel]").forEach(panel=>panel.hidden=panel.id!=="panel-"+tab.dataset.countryTab);
+   if(state.active?.startsWith("country:"))loadTabRanks(state.active.slice(8),tab.dataset.countryTab);
+   return;
+  }
+  const f=e.target.closest("[data-filter]");if(f){state.filter=f.dataset.filter;drawFilters();drawFeed()}
+ });
+ $("#close").addEventListener("click",close);$("#overlay").addEventListener("click",e=>{if(e.target.id==="overlay")close()});
+ document.addEventListener("keydown",e=>{
+  if(!$("#overlay").classList.contains("open"))return;
+  if(e.key==="Escape"){close();return}
+  if((e.key==="Enter"||e.key===" ")&&document.activeElement?.matches(".seat-legend li[data-g]")){e.preventDefault();document.activeElement.click();return}
+  if(e.key==="Tab"){
+   const focusable=[...$(".drawer").querySelectorAll("button:not([disabled]),a[href],input,select")].filter(node=>node.offsetParent!==null);
+   if(!focusable.length)return;
+   if(e.shiftKey&&document.activeElement===focusable[0]){e.preventDefault();focusable.at(-1).focus()}
+   else if(!e.shiftKey&&document.activeElement===focusable.at(-1)){e.preventDefault();focusable[0].focus()}
+  }
+  if((e.key==="ArrowRight"||e.key==="ArrowLeft")&&document.activeElement?.matches("[data-country-tab]")){
+   const tabs=[...$("#detail").querySelectorAll("[data-country-tab]")];
+   const index=tabs.indexOf(document.activeElement);
+   if(index<0)return;
+   e.preventDefault();const next=tabs[(index+(e.key==="ArrowRight"?1:-1)+tabs.length)%tabs.length];
+   next.focus();next.click();
+  }
+ });
+ $("#about-open").addEventListener("click",e=>{e.preventDefault();about()});
+ $("#country-search")?.addEventListener("input",e=>{state.countryQuery=e.target.value;renderCountries()});
+ $("#country-region")?.addEventListener("change",e=>{state.countryRegion=e.target.value;renderCountries()});
+ async function loadEdition(silent=false){
+  try{
+   const r=await fetch("/api/edition",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
+   const incoming=await r.json();
+   if(silent&&state.edition?.updatedAt===incoming.updatedAt&&state.edition?.editionDate===incoming.editionDate)return false;
+   state.edition=incoming;
+   const ed=state.edition;$("#mastdate").textContent=day(ed.editionDate)+" · KST";$("#edition-title").textContent=day(ed.editionDate)+" 브리핑";$("#edition-note").textContent=ed.editionNote||"출처와 확인 수준을 함께 표기합니다.";$("#edition-time").textContent="뉴스 자료 마지막 확인 "+time(ed.updatedAt)+" KST";$("#map-count").textContent=ed.stories.length+"개 변화";
+   const lead=ed.stories[0];$("#lead-title").textContent=lead.headline;$("#lead-copy").textContent=lead.summary;$("#lead-open").onclick=()=>openStory(lead.id);
+   drawMap();drawFilters();drawFeed();if(!silent){const id=new URLSearchParams(location.search).get("story");if(id)openStory(id)}
+   return true;
+  }catch{if(!silent){$("#edition-title").textContent="자료를 가져오지 못했습니다";$("#edition-note").textContent="잠시 후 새로고침해 주세요.";$("#feed").innerHTML='<div class="empty">브리핑을 불러오지 못했습니다.</div>'}return false}
+ }
+ async function loadCountries(silent=false){
+  try{
+   const r=await fetch("/api/countries",{cache:"no-store"});if(!r.ok)throw Error("HTTP "+r.status);
+   const result=await r.json();state.countries=Array.isArray(result.countries)?result.countries:[];state.watch=Array.isArray(result.watch)?result.watch:[];
+   state.countries.sort((a,b)=>countryName(a).localeCompare(countryName(b),"ko"));
+   renderCountryFilters();renderCountries();renderWatch();if(state.edition)drawMap();
+   if(!silent){const code=new URLSearchParams(location.search).get("country");if(code)openCountry(code.toUpperCase())}
+  }catch{
+   if(!silent){$("#country-list").innerHTML='<div class="empty">국가 목록을 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>';renderWatch()}
+  }
+ }
+ loadEdition();loadCountries();loadExplainers();
+ async function refreshEdition(){
+  if(document.visibilityState!=="visible"||!state.edition||editionBusy||Date.now()-lastEditionCheck<30000)return;
+  editionBusy=true;lastEditionCheck=Date.now();
+  try{if(await loadEdition(true))await loadCountries(true)}finally{editionBusy=false}
+ }
+ document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")refreshEdition()});
+ window.addEventListener("focus",refreshEdition);
+ setInterval(refreshEdition,5*60*1000);
+})();

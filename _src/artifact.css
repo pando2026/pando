@@ -1,0 +1,38 @@
+/* artifact.css — what changes when the site runs as a Claude artifact. */
+:root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
+html,body{background:#fff;color:var(--ink)}
+.shell{padding-inline:max(16px,env(safe-area-inset-left,0px))}
+
+/* Vector map */
+.map-card .map-frame.vmap{position:relative;overflow:hidden;background:var(--map-sea);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.map-card .map-frame.vmap.vmap-dragging{cursor:grabbing}
+.vmap-svg{display:block;width:100%;height:100%}
+.vmap-country{fill:var(--map-land);stroke:var(--map-edge);stroke-width:.7px;vector-effect:non-scaling-stroke;stroke-linejoin:round}
+.vmap-link{cursor:pointer}
+.vmap-link:hover{fill:var(--map-hover)}
+.vmap-country.vmap-watch{fill:var(--map-watch)}
+.vmap-pin{cursor:pointer}
+.vmap-pin:focus{outline:none}
+.vmap-pin:focus-visible .vmap-dot{stroke:#e69467;stroke-width:2}
+.vmap-pin--story .vmap-dot{fill:var(--map-pin);stroke:#fff;stroke-width:1.2}
+.vmap-pin--story .vmap-halo{fill:var(--map-pin);opacity:.18}
+.vmap-pin--country .vmap-dot{fill:var(--map-diamond);stroke:#fff;stroke-width:1}
+.vmap-label{font:700 11.5px/1 var(--font);fill:#15232d;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round;pointer-events:none;opacity:0;transition:opacity .15s}
+.vmap-label.vmap-label--on,.vmap-pin:hover .vmap-label,.vmap-pin:focus-visible .vmap-label{opacity:1}
+.vmap-controls{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
+.vmap-controls button{width:34px;height:34px;border:1px solid #c5d2da;border-radius:4px;background:#fff;color:#15232d;font:700 18px/1 var(--font)}
+.vmap-controls button:hover{border-color:#15232d}
+.vmap-tip{position:absolute;z-index:2;pointer-events:none;background:#15232d;color:#fff;font-size:12px;font-weight:700;padding:4px 8px;border-radius:3px;white-space:nowrap}
+.vmap-loading{position:absolute;inset:auto 0 45% 0;text-align:center;color:#55666f;font-size:13px;margin:0}
+.dot-key.country-key{border-radius:0;transform:rotate(45deg) scale(.8)}
+
+/* Flags ship with the page as small images; the code shows only if one is missing. */
+.flag .flag-code{font:800 10px/1 var(--font);color:#55666f;letter-spacing:.02em}
+
+.live-note{display:block;margin-top:8px;font-size:11px;color:#6a7c88}
+@media(max-width:600px){.map-card .map-frame.vmap{height:320px;min-height:0}}
+/* 판도 brandmark: a red tile split into territories */
+.brandmark{width:30px;height:30px;border-radius:3px;background:#d52832;border:0;overflow:hidden}
+.brandmark:before{content:"";position:absolute;left:0;top:13px;width:30px;height:2px;background:#fff;transform:rotate(-14deg);transform-origin:center}
+.brandmark:after{content:"";position:absolute;left:11px;top:0;width:2px;height:30px;background:#fff;border-radius:0;transform:rotate(9deg)}
+.brandtext small{letter-spacing:.08em}
