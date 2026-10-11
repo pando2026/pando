@@ -540,6 +540,34 @@ html,body{overflow-x:clip}
 .fight-source{display:block;margin-top:8px;font-size:11.5px;color:#6a7c88}
 .fight-source a{color:#b8202b}
 @media (max-width:640px){.fight-sides{grid-template-columns:1fr}.fight-vs{justify-self:center;margin:-2px 0}}
+/* Corruption Perceptions Index */
+.cpi h3 small{font-size:12px;font-weight:700;color:#6a7c88;margin-left:6px}
+.cpi-card{border:1px solid #d9e2e7;border-radius:4px;padding:16px 16px 12px;background:#fff}
+.cpi-main{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.cpi-score{display:flex;align-items:baseline;gap:4px}
+.cpi-score strong{font-size:44px;font-weight:900;letter-spacing:-.04em;line-height:1}
+.cpi-score span{font-size:14px;color:#6a7c88;font-weight:700}
+.cpi-meta{display:flex;flex-direction:column;gap:3px;font-size:13px;color:#2f3e48}
+.cpi-meta b{align-self:flex-start;color:#fff;font-size:12px;border-radius:3px;padding:2px 8px}
+.cpi-delta{color:#55666f}
+.cpi-korea{color:#55666f}
+.cpi-scale{position:relative;margin:34px 4px 28px;height:10px}
+.cpi-track{position:absolute;inset:0;border-radius:99px;background:linear-gradient(90deg,#c62b33 0%,#d08a1e 32%,#5f9a3c 58%,#1f7a5a 100%);opacity:.85}
+.cpi-me{position:absolute;top:-5px;width:6px;height:20px;margin-left:-3px;border-radius:2px;border:2px solid #fff;box-shadow:0 0 0 1px #15232d}
+.cpi-k{position:absolute;top:-16px;width:2px;height:26px;margin-left:-1px;background:#15232d}
+.cpi-k b{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:10.5px;white-space:nowrap;color:#15232d;font-weight:800}
+.cpi-ends{position:absolute;top:14px;left:0;right:0;display:flex;justify-content:space-between}
+.cpi-ends em{font-style:normal;font-size:10.5px;color:#6a7c88}
+.cpi-spark{width:100%;max-width:360px;height:auto;display:block;margin:4px 0 0;overflow:visible}
+.cpi-line{fill:none;stroke-width:2.4;stroke-linejoin:round}
+.cpi-kline{fill:none;stroke:#9aa7b0;stroke-width:1.6;stroke-dasharray:4 3}
+.cpi-spark text{font-size:10.5px;font-weight:800;fill:#15232d}
+.cpi-spark .cpi-yr{font-weight:600;fill:#7a8a95}
+.cpi-legend{display:flex;align-items:center;gap:6px;font-size:11.5px;color:#55666f;margin:4px 0 0}
+.cpi-legend i{display:inline-block;width:14px;height:3px;border-radius:2px}
+.cpi-legend .cpi-legend-k{background:repeating-linear-gradient(90deg,#9aa7b0 0 4px,transparent 4px 7px);margin-left:8px}
+.cpi-note{font-size:12px;line-height:1.6;color:#55666f;margin:10px 0 0}
+.cpi-note a{color:#b8202b}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -777,6 +805,7 @@ html,body{background:#fff;color:var(--ink)}
  const SHARDS=16;const shardOf=c=>(c.charCodeAt(0)*31+c.charCodeAt(1))%SHARDS;
  const shard=code=>once("s"+shardOf(code),()=>json("data/s"+String(shardOf(code)).padStart(2,"0")+".json"));
  const photoStore=()=>once("photos",()=>json("data/photos.json")).catch(()=>({}));
+ const cpiStore=()=>once("cpi",()=>json("data/cpi.json")).catch(()=>null);
  const fightStore=()=>once("fights",()=>json("data/fights.json")).catch(()=>({}));
  const partyPhotoStore=()=>once("partyPhotos",()=>json("data/party-photos.json")).catch(()=>({}));
  const photoIndex=()=>once("photoIndex",()=>json("data/photo-index.json")).catch(()=>({}));
@@ -830,7 +859,7 @@ html,body{background:#fff;color:var(--ink)}
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -1222,6 +1251,25 @@ html,body{background:#fff;color:var(--ink)}
   return '<section class="section budget-reference economy-reference"><h3>별도 기준의 경제 참고 수치</h3><details class="fine-print"><summary>기준·출처</summary><div class="fine-print-body"><p>통화·회계 연도·환율 산출법은 항목마다 다릅니다. 위의 국제 비교 GDP, 한국 값, 세계 순위에는 합산하지 않습니다.</p></div></details><div class="budget-reference-grid">'+rows.map(item=>'<article class="budget-reference-card"><span class="budget-reference-heading">'+esc(item.label)+'</span><strong>'+esc(money(item))+'</strong>'+(item.estimateKind?'<em class="metric-estimate metric-estimate--institutional">'+esc(item.estimateKind)+'</em>':"")+'<p>'+esc(String(item.year))+(String(item.year).includes('/')?' 회계연도':'년')+(item.fiscalYear?' · 회계연도 '+esc(item.fiscalYear):'')+' · '+esc(item.unit)+'</p>'+(item.note?'<p>'+esc(item.note)+'</p>':"")+'<small>'+sourceLink(item.source,item.provider||"원문 확인")+'</small></article>').join("")+'</div></section>';
  }
  // Party disputes: which parties are fighting over what, shown under the seat charts.
+ // Corruption Perceptions Index (Transparency International): score, rank, Korea, 2020–2025 trend.
+ function cpiBlock(data){
+  const c=data.cpi;if(!c)return "";
+  const e=c.entry,k=c.korea;
+  if(!e)return '<section class="section cpi"><h3>부패인식지수</h3><p class="metric-missing"><span>평가 대상 아님</span> '+esc(c.edition||"CPI")+'에 포함되지 않은 국가·지역입니다.</p></section>';
+  const band=e.score>=70?["매우 청렴","#1f7a5a"]:e.score>=50?["대체로 청렴","#5f9a3c"]:e.score>=30?["부패 심각","#d08a1e"]:["부패 매우 심각","#c62b33"];
+  const yrs=Object.keys(e.history||{}).sort();const pts=yrs.map(y=>e.history[y]);
+  const W=360,H=70,pad=10,min=Math.min(...pts,...(k?yrs.map(y=>k.history?.[y]).filter(v=>v!=null):[]))-4,max=Math.max(...pts,...(k?yrs.map(y=>k.history?.[y]).filter(v=>v!=null):[]))+4;
+  const x=i=>pad+i*(W-2*pad)/Math.max(1,yrs.length-1),y=v=>H-pad-(v-min)/(max-min||1)*(H-2*pad);
+  const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
+  const kv=k?yrs.map(y2=>k.history?.[y2]??null):[];
+  const spark=yrs.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(yrs[0]+"–"+yrs.at(-1)+" 점수 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:'+band[1]+'"/>'+pts.map((v,i)=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(v).toFixed(1)+'" r="2.6" style="fill:'+band[1]+'"/>'+((i===0||i===pts.length-1)?'<text x="'+x(i).toFixed(1)+'" y="'+(y(v)-6).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+v+'</text>':"")).join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+yrs[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+yrs.at(-1)+'</text></svg>':"";
+  const prev=e.history?.[String(Number(yrs.at(-1))-1)],delta=prev!=null?e.score-prev:null;
+  const scale='<div class="cpi-scale"><span class="cpi-track"></span>'+(k?'<i class="cpi-k" style="left:'+k.score+'%" title="한국 '+k.score+'"><b>한국 '+k.score+'</b></i>':"")+'<i class="cpi-me" style="left:'+e.score+'%;background:'+band[1]+'"></i><span class="cpi-ends"><em>0 부패 심각</em><em>100 매우 청렴</em></span></div>';
+  return '<section class="section cpi"><h3>부패인식지수 <small>'+esc(c.edition||"CPI")+'</small></h3>'+
+   '<div class="cpi-card"><div class="cpi-main"><div class="cpi-score"><strong style="color:'+band[1]+'">'+e.score+'</strong><span>/ 100</span></div><div class="cpi-meta"><b style="background:'+band[1]+'">'+band[0]+'</b><span>'+e.rank+'위 / '+(c.total||182)+'개국</span>'+(delta!=null?'<span class="cpi-delta">전년 대비 '+(delta>0?"▲"+delta:delta<0?"▼"+(-delta):"변화 없음")+'</span>':"")+(k?'<span class="cpi-korea">한국 '+k.score+'점 · '+k.rank+'위</span>':"")+'</div></div>'+scale+spark+
+   (k&&spark?'<p class="cpi-legend"><i style="background:'+band[1]+'"></i>'+esc(namedCountry(data.code))+' <i class="cpi-legend-k"></i>한국</p>':"")+
+   '<p class="cpi-note">공공부문 부패에 대해 전문가·기업인이 어떻게 느끼는지를 0~100으로 매긴 지수로, 높을수록 청렴합니다. 실제 부패 사건 수를 센 값은 아닙니다. '+sourceLink(c.source,"국제투명성기구")+' · '+sourceLink(c.wiki,"연도별 표")+'</p></div></section>';
+ }
  function partyFights(data){
   const f=data.fights;if(!f||(!Array.isArray(f.items)||!f.items.length)&&!f.note)return "";
   const groups={};(data.civics?.parliament?.chambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(!groups[g[0]])groups[g[0]]=g}));
@@ -1422,7 +1470,7 @@ html,body{background:#fff;color:var(--ink)}
   const doc=budget.document?'<article class="budget-document"><span>예산 문서 · '+esc(budget.document.fiscalYear||"")+'</span><h3>'+esc(budget.document.title||"예산 자료")+'</h3><p>'+esc(budget.document.status||"")+' · '+esc(budget.document.provider||"")+'</p>'+sourceLink(budget.document.source,"공식 예산 문서")+'</article>':"";
   return {
    politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
-    decisions+fold("정치 자료 기준·출처",politicsFine),
+    cpiBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["policyRate","정책금리",metrics.policyRate]])+
     economyAlternativeEstimates(data.economyAlternatives)+
     fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),
