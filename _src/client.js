@@ -441,10 +441,41 @@
   const W=600,H=Math.max(220,Math.min(420,W*(y1-y0)/(x1-x0||1)));const sc=Math.min((W-20)/(x1-x0||1),(H-20)/(y1-y0||1));
   const ox=(W-(x1-x0)*sc)/2,oy=(H-(y1-y0)*sc)/2;
   const P=p=>[(fix(p[0])*kx-x0)*sc+ox,(-p[1]-y0)*sc+oy];
-  const paths=units.map(u=>'<path data-unit="'+esc(u.n)+'" data-group="'+esc(u.g||"")+'" d="'+u.r.map(r=>"M"+r.map(p=>{const q=P(p);return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+"Z").join("")+'"><title>'+esc(u.ko||u.n)+(u.g?" · "+esc(u.g):"")+'</title></path>').join("");
+  const paths=units.map(u=>'<path data-unit="'+esc(u.n)+'" data-group="'+esc(u.g||"")+'" d="'+u.r.map(r=>"M"+r.map(p=>{const q=P(p);return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+"Z").join("")+'"><title>'+esc(document.documentElement.lang==='en'?u.n:(u.ko||u.n))+(u.g&&u.g!==u.n?" · "+esc(u.g):"")+'</title></path>').join("");
   box._ko={};units.forEach(u=>{if(u.ko)box._ko[u.n]=u.ko;if(u.g)box._ko[u.g]=box._ko[u.g]||u.g});
   box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'</svg>';
-  if(box.dataset.pmapParty)paintPartyMap(box,box.dataset.pmapParty);
+  box._units={};units.forEach(u=>box._units[u.n]=u);
+  if(box.dataset.mode==="income")paintIncome(box);else if(box.dataset.pmapParty)paintPartyMap(box,box.dataset.pmapParty);
+ }
+ // Regional income layer: quantile classes (≤5) so wide gaps (e.g. 10x) still show every step.
+ const INC_COL=["#dbe7f2","#b9d2e7","#7eaed3","#3f80b6","#124f86"];
+ const incFmt=v=>{const a=Math.abs(v);return a<10?String(Math.round(v*100)/100):a<1000&&v%1?String(Math.round(v*10)/10):Math.round(v).toLocaleString("ko-KR")};
+ function incomeScale(vals){
+  const s=[...new Set(vals)].sort((a,b)=>a-b);const n=Math.min(5,s.length);const br=[];
+  for(let i=1;i<n;i++)br.push(s[Math.floor(i*s.length/n)]);
+  const k=v=>br.filter(b=>v>=b).length;const idx=i=>n<2?4:Math.round(i*4/(n-1));
+  return {n,br,min:s[0],max:s.at(-1),col:v=>INC_COL[idx(k(v))],colAt:i=>INC_COL[idx(i)]};
+ }
+ function paintIncome(box){
+  const inc=state.income;if(!inc)return;const vals=inc.values||{};const en=document.documentElement.lang==='en';
+  const sc=incomeScale(Object.values(vals).filter(Number.isFinite));let missing=0;
+  box.querySelectorAll("path[data-unit]").forEach(p=>{
+   const u=p.dataset.unit,g=p.dataset.group;const key=vals[u]!=null?u:(g&&vals[g]!=null?g:null);const v=key?vals[key]:null;
+   p.classList.remove("on");p.classList.toggle("nodata",v==null);p.style.fill=v==null?"":sc.col(v);if(v==null)missing++;
+   const t=p.querySelector("title");if(t){if(t.dataset.orig==null)t.dataset.orig=t.textContent;
+    const nm=key===g&&g&&key!==u?g:(en?u:(box._units?.[u]?.ko||u));t.textContent=nm+" · "+(v==null?"자료 없음":incFmt(v)+" "+(inc.unit||""))}
+  });
+  const blk=box.closest(".pmap-block")||box.parentElement;
+  const leg=blk?.querySelector(".pmap-legend");
+  if(leg){const items=[];for(let i=0;i<sc.n;i++){const lo=i?sc.br[i-1]:sc.min,hi=i<sc.n-1?sc.br[i]:sc.max;items.push('<span><i style="background:'+sc.colAt(i)+'"></i>'+incFmt(lo)+(hi!==lo?"–"+incFmt(hi):"")+'</span>')}
+   if(missing)items.push('<span><i class="nodata"></i>자료 없음</span>');
+   leg.innerHTML='<b>'+esc(inc.metric||"")+'</b><em>'+esc(String(inc.year||""))+'</em><em>'+esc(inc.unit||"")+'</em><div>'+items.join("")+'</div>';leg.hidden=false}
+  const note=blk?.querySelector(".pmap-note");
+  if(note){const src=Array.isArray(inc.source)?inc.source:[];note.innerHTML=(inc.note?esc(inc.note)+'<br>':"")+'<small class="fight-source"><span>자료</span>: <span>'+esc(inc.provider||src[0]||"")+'</span>'+(src[2]?' · '+sourceLink(src[2],src[1]||src[0]||"출처"):"")+'</small>'}
+ }
+ function unpaintIncome(box){
+  box.querySelectorAll("path[data-unit]").forEach(p=>{p.classList.remove("nodata");p.style.fill="";const t=p.querySelector("title");if(t&&t.dataset.orig!=null)t.textContent=t.dataset.orig});
+  const leg=box.closest(".pmap-block")?.querySelector(".pmap-legend");if(leg){leg.hidden=true;leg.innerHTML=""}
  }
  function paintPartyMap(box,label){
   const pm=state.partyMap?.parties?.[label];const set=new Set(pm?.regions||[]);const col=partyColor(label);
@@ -452,9 +483,11 @@
   const note=box.parentElement?.querySelector(".pmap-note");if(note)note.innerHTML=pm?'<b style="color:'+col+'">'+esc(label)+'</b> · '+esc((pm.regions||[]).map(r=>(document.documentElement.lang==='en'?r:(box._ko||{})[r]||r)).join(", "))+(pm.note?'<br>'+esc(pm.note):""):"";
  }
  function partyMapBlock(data){
-  const pm=data.partymap;if(!pm||!Object.keys(pm.parties||{}).length)return "";
-  const first=Object.keys(pm.parties)[0];const chips=Object.keys(pm.parties).map(l=>'<button type="button" class="fight-party'+(l===first?' on':'')+'" data-pmap-party="'+esc(l)+'"><i style="background:'+partyColor(l)+'"></i>'+esc(l)+'</button>').join("");
-  return '<section class="pmap-block"><div class="fights-head"><h4>정당별 강세 지역</h4><span>정당을 누르면 강한 주·도가 칠해져요</span></div><div class="pmap-chips">'+chips+'</div><div class="pmap" data-pmap-cc="'+esc(data.code)+'"><p class="board-loading">지도를 그리는 중…</p></div><p class="pmap-note"></p><small class="fight-source">기준 '+esc(pm.basis||"")+(Array.isArray(pm.source)&&pm.source[2]?' · '+sourceLink(pm.source[2],pm.source[0]||"출처"):"")+'</small></section>';
+  const pm=data.partymap,inc=data.income&&Object.keys(data.income.values||{}).length?data.income:null;
+  const hasPm=pm&&Object.keys(pm.parties||{}).length;if(!hasPm&&!inc)return "";
+  const first=hasPm?Object.keys(pm.parties)[0]:"";const chips=hasPm?Object.keys(pm.parties).map(l=>'<button type="button" class="fight-party'+(l===first?' on':'')+'" data-pmap-party="'+esc(l)+'"><i style="background:'+partyColor(l)+'"></i>'+esc(l)+'</button>').join(""):"";
+  const tog=inc?'<button type="button" class="pmap-toggle" data-pmap-income aria-pressed="'+(hasPm?"false":"true")+'"'+(hasPm?"":" disabled")+'><span class="pmap-switch"></span>지역별 소득 수준</button>':"";
+  return '<section class="pmap-block'+(hasPm?"":" pmap-block--income")+'"><div class="fights-head"><h4>'+(hasPm?"정당별 강세 지역":"지역별 소득 수준")+'</h4><span>'+(hasPm?"정당을 누르면 강한 주·도가 칠해져요":"")+'</span></div><div class="pmap-bar"><div class="pmap-chips">'+chips+'</div>'+tog+'</div><div class="pmap" data-pmap-cc="'+esc(data.code)+'"'+(hasPm?' data-pmap-party="'+esc(first)+'"':' data-mode="income"')+'><p class="board-loading">지도를 그리는 중…</p></div><div class="pmap-legend" hidden></div><p class="pmap-note"></p>'+(hasPm?'<small class="fight-source pmap-basis">기준 '+esc(pm.basis||"")+(Array.isArray(pm.source)&&pm.source[2]?' · '+sourceLink(pm.source[2],pm.source[0]||"출처"):"")+'</small>':"")+'</section>';
  }
  function partyRegions(data){
   const r=data.regions;if(!r||(!r.summary&&!Object.keys(r.parties||{}).length))return "";
@@ -815,7 +848,7 @@
   const previousTab=$("#detail [data-country-tab][aria-selected=true]")?.dataset.countryTab;
   const previousLeaders=$("#country-leaders")?.innerHTML;
   const scrollTop=$(".drawer")?.scrollTop||0;
-  state.trendName=name;state.activeCode=data.code;state.partyMap=data.partymap||null;state.civicsChambers=data.civics?.parliament?.chambers||[];state.partyProfiles=data.partyProfiles||{};state.regions=data.regions||null;state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
+  state.trendName=name;state.activeCode=data.code;state.partyMap=data.partymap||null;state.income=data.income||null;state.civicsChambers=data.civics?.parliament?.chambers||[];state.partyProfiles=data.partyProfiles||{};state.regions=data.regions||null;state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
   const panels=countryPanels(data);
   $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
@@ -948,7 +981,11 @@
   const bc=e.target.closest("#bloc-bar [data-bloc]");if(bc){selectBloc(bc.dataset.bloc);return}
   const bo=e.target.closest("[data-bloc-open]");if(bo){const k=bo.dataset.blocOpen;close();setTimeout(()=>{selectBloc(k);document.getElementById("map")?.scrollIntoView({behavior:"smooth",block:"center"})},60);return}
   const pclose=e.target.closest(".party-close");if(pclose){const chart=pclose.closest(".chamber-chart");delete chart.dataset.focus;chart.querySelectorAll("[data-g]").forEach(n=>n.classList.remove("seat-dim"));pclose.closest(".party-detail").hidden=true;return}
-  const pmc=e.target.closest("[data-pmap-party]");if(pmc&&pmc.closest(".pmap-block")){const blk=pmc.closest(".pmap-block"),box=blk.querySelector(".pmap");blk.querySelectorAll("[data-pmap-party]").forEach(b=>b.classList.toggle("on",b===pmc));box.dataset.pmapParty=pmc.dataset.pmapParty;if(box.dataset.drawn)paintPartyMap(box,pmc.dataset.pmapParty);else drawPartyMap(box);return}
+  const pmi=e.target.closest("[data-pmap-income]");if(pmi&&!pmi.disabled){const blk=pmi.closest(".pmap-block"),box=blk.querySelector(".pmap");const on=pmi.getAttribute("aria-pressed")!=="true";pmi.setAttribute("aria-pressed",String(on));blk.classList.toggle("pmap-block--inc",on);
+   if(on){box.dataset.mode="income";if(box.dataset.drawn)paintIncome(box);else drawPartyMap(box)}else{delete box.dataset.mode;unpaintIncome(box);if(box.dataset.pmapParty)paintPartyMap(box,box.dataset.pmapParty)}return}
+  const pmc=e.target.closest("[data-pmap-party]");if(pmc&&pmc.closest(".pmap-block")){const blk=pmc.closest(".pmap-block"),box=blk.querySelector(".pmap");blk.querySelectorAll("[data-pmap-party]").forEach(b=>b.classList.toggle("on",b===pmc));box.dataset.pmapParty=pmc.dataset.pmapParty;
+   if(box.dataset.mode==="income"){delete box.dataset.mode;unpaintIncome(box);blk.classList.remove("pmap-block--inc");blk.querySelector("[data-pmap-income]")?.setAttribute("aria-pressed","false")}
+   if(box.dataset.drawn)paintPartyMap(box,pmc.dataset.pmapParty);else drawPartyMap(box);return}
   const dmt=e.target.closest("[data-dm-tab]");if(dmt){const box=dmt.closest(".decision-map");box.querySelectorAll("[data-dm-tab]").forEach(b=>b.setAttribute("aria-selected",String(b===dmt)));box.querySelectorAll("[data-dm-pane]").forEach(p=>p.hidden=p.dataset.dmPane!==dmt.dataset.dmTab);return}
   const ally=e.target.closest("[data-ally]");if(ally){
    const box=ally.closest(".allies"),i=ally.dataset.ally,open=ally.getAttribute("aria-expanded")!=="true";

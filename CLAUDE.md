@@ -24,6 +24,7 @@
   - `decisions.json` 나라별 의사결정 구조(summary, power, flows.law/budget/war, checks, informal, sources). 지침 `_tools/decisions/BRIEF.md`. 체제 변화(쿠데타·개헌·의회 해산)가 생기면 같은 커밋에서 고친다.
   - `partymap.json` + `admin1/<CC>.json` 정당별 강세 주·도(나라 자체 지도에만 그림, 세계 지도는 건드리지 않음). 지침 `_tools/partymap/BRIEF.md`. 선거 뒤 갱신.
   - `regions.json` 큰 나라의 지역 기반 정당·전국 정당의 지역 기반(의회 탭 '지역과 정당'). 키는 civics groups 이름과 같아야 한다. 지침 `_tools/regions/BRIEF.md`.
+  - `regional-income.json` 주·도별 소득 수준(정당 강세 지도의 '지역별 소득 수준' 토글). {CC:{metric,unit,year,provider,source,values:{admin1 이름 또는 그룹명:값},note}}. 키는 `admin1/CC.json`의 units `n`(또는 `g`)과 같아야 한다. 해마다 통계청 새 자료가 나오면 갱신. 지침 `_tools/income/BRIEF.md`.
   - `fx.json` 예산 금액의 원화·달러 환산용 환율(USD 기준). 국가수반의 '제○대'는 s*.json 인물의 `ordinal`(지침 `_tools/extra/ORDINAL.md`).
   - `en/strings.json` 영어 번역 사전(아래 '영어판').
 - `_tools/harvest.py` — 화면에 실제로 보이는 한국어 문자열을 모두 모은다(번역 누락 확인용).

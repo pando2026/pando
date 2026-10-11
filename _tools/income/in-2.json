@@ -1,0 +1,105 @@
+{
+ "BR": {
+  "level": "unit",
+  "names": [
+   "Rio Grande do Sul",
+   "Roraima",
+   "Pará",
+   "Acre",
+   "Amapá",
+   "Mato Grosso do Sul",
+   "Paraná",
+   "Santa Catarina",
+   "Amazonas",
+   "Rondônia",
+   "Mato Grosso",
+   "Maranhão",
+   "Piauí",
+   "Ceará",
+   "Rio Grande do Norte",
+   "Paraíba",
+   "Pernambuco",
+   "Alagoas",
+   "Sergipe",
+   "Bahia",
+   "Espírito Santo",
+   "Rio de Janeiro",
+   "São Paulo",
+   "Goiás",
+   "Federal",
+   "Minas Gerais",
+   "Tocantins"
+  ]
+ },
+ "ET": {
+  "level": "unit",
+  "names": [
+   "Southern Nations",
+   "Somali",
+   "Afar",
+   "Amhara",
+   "Tigray",
+   "Benishangul-Gumuz",
+   "Gambela",
+   "Oromia",
+   "Dire Dawa",
+   "Addis Ababa",
+   "Harari"
+  ]
+ },
+ "IQ": {
+  "level": "unit",
+  "names": [
+   "Duhok",
+   "Erbil",
+   "Basra",
+   "Al Muthanna",
+   "Sulaymaniyah",
+   "Diyala",
+   "Wasit",
+   "Maysan",
+   "Al Anbar",
+   "Najaf",
+   "Nineveh",
+   "Saladin",
+   "Kirkuk",
+   "Baghdad",
+   "Babylon",
+   "Al-Qādisiyyah",
+   "Dhi Qar",
+   "Karbala"
+  ]
+ },
+ "MM": {
+  "level": "unit",
+  "names": [
+   "Rakhine State",
+   "Chin State",
+   "Kachin State",
+   "Sagaing",
+   "Shan State",
+   "Kayah State",
+   "Kayin State",
+   "Mon State",
+   "Tanintharyi",
+   "Ayeyarwady",
+   "Yangon",
+   "Bago",
+   "Magway",
+   "Mandalay"
+  ]
+ },
+ "PK": {
+  "level": "unit",
+  "names": [
+   "Gilgit-Baltistan",
+   "Khyber Pakhtunkhwa",
+   "Federally Administered Tribal Areas",
+   "Balochistan",
+   "Punjab",
+   "Sindh",
+   "Azad Kashmir",
+   "Islamabad Capital Territory"
+  ]
+ }
+}
