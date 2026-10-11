@@ -18,3 +18,5 @@ _tools/decisions/out/
 _tools/decisions/in-*.json
 _tools/conflicts/out/
 _tools/conflicts/in-*.json
+_tools/partymap/out/
+_tools/partymap/in-*.json

@@ -21,6 +21,8 @@
   - `blocs.json` 국제기구·블록 회원국과 가입일(NATO·EU·BRICS·SCO·일대일로 등 26개). 지도 아래 토글과 국가 정보에 쓰인다. 조사 지침 `_tools/extra/BLOCS.md`.
   - `allies.json` 우방 관계(나라별 4~6곳: tie 동맹/전략적 동반자/우호·협력/후원, basis 근거 조약, interests 겹치는 이해관계, 출처). 지침 `_tools/allies/BRIEF.md`. 갈등 관계 보강 지침 `_tools/conflicts/BRIEF.md`.
   - 지도는 태평양 중심(`world.json`의 `lon0`=150). 다시 그릴 때 `_tools/reproject.py`. 좌표를 그릴 때는 경도에서 lon0를 빼고 투영한다.
+  - `decisions.json` 나라별 의사결정 구조(summary, power, flows.law/budget/war, checks, informal, sources). 지침 `_tools/decisions/BRIEF.md`. 체제 변화(쿠데타·개헌·의회 해산)가 생기면 같은 커밋에서 고친다.
+  - `partymap.json` + `admin1/<CC>.json` 정당별 강세 주·도(나라 자체 지도에만 그림, 세계 지도는 건드리지 않음). 지침 `_tools/partymap/BRIEF.md`. 선거 뒤 갱신.
   - `regions.json` 큰 나라의 지역 기반 정당·전국 정당의 지역 기반(의회 탭 '지역과 정당'). 키는 civics groups 이름과 같아야 한다. 지침 `_tools/regions/BRIEF.md`.
   - `fx.json` 예산 금액의 원화·달러 환산용 환율(USD 기준). 국가수반의 '제○대'는 s*.json 인물의 `ordinal`(지침 `_tools/extra/ORDINAL.md`).
   - `en/strings.json` 영어 번역 사전(아래 '영어판').
