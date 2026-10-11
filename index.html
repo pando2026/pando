@@ -913,7 +913,14 @@ html,body{background:#fff;color:var(--ink)}
   if(dict[core]!=null)return lead+dict[core]+trail;
   const nums=[];const key=core.replace(NUM,m=>{nums.push(m);return "{"+(nums.length-1)+"}"});
   if(dict[key]!=null)return lead+fill(dict[key],nums)+trail;
-  for(const sep of [" · "," / ",", "," | ",": "]){
+  let m;
+  if((m=core.match(/^(.*?)\s*([↗→])$/))&&m[1]&&H.test(m[1])){const x=tr(m[1]);if(x!==m[1])return lead+x+" "+m[2]+trail}
+  if((m=core.match(/^(.+) 국가 정보(?: 보기)? →$/))){const x=tr(m[1]);if(x!==m[1])return lead+x+" profile →"+trail}
+  {const d=core.replace(/\s*\([^()]*[가-힣][^()]*\)/g,"");if(d!==core&&d.trim()&&!H.test(d)&&/[A-Za-z]/.test(d))return lead+d.trim()+trail}
+  if((m=core.match(/^(.+) 쪽$/))){const x=tr(m[1]);if(x!==m[1])return lead+x+" side"+trail}
+  if((m=core.match(/^([\d-]+)(?:년)?부터$/)))return lead+"since "+m[1]+trail;
+  if((m=core.match(/^([\d-]+)~$/)))return s;
+  for(const sep of [" — "," · "," / ",", "," | ",": "," ↔ "," → "]){
    if(core.includes(sep)){const parts=core.split(sep),t=parts.map(p=>tr(p));if(t.some((x,i)=>x!==parts[i]))return lead+t.join(sep)+trail}
   }
   return s;

@@ -1,0 +1,434 @@
+{
+ "SE": [
+  {
+   "with": "RU",
+   "withName": "러시아",
+   "kind": "군사·안보",
+   "level": "medium",
+   "since": "2022",
+   "brief": "그림자 선단 유조선 나포·간첩 재판, 하이브리드 위협",
+   "detail": "스웨덴은 러시아의 우크라이나 전면 침공 뒤 2024년 3월 7일 나토에 가입했다. 군 정보보안국(MUST) 토마스 닐손 국장은 2026년 2월 17일 \"러시아가 일부 경우 행동을 늘리고 주둔을 강화했다\"며 사보타주·암살 기도·방화 위험을 경고했다. 해안경비대는 3월 12일 트렐레보리 앞바다에서 가짜 코모로 국기를 단 '그림자 선단' 유조선 Sea Owl I에 올라탔고, 러시아인 선장을 문서 위조 혐의로 체포했다. 7월 31일에는 러시아에 기밀을 넘기려 한 전직 군 컨설턴트가 간첩죄로 유죄 판결을 받았다.",
+   "sources": [
+    [
+     "The Local (AFP)",
+     "Russia increasing hybrid threats around Sweden, say military intelligence · 2026-02-17",
+     "https://www.thelocal.se/20260217/russia-increasing-hybrid-threats-around-sweden-say-military-intelligence"
+    ],
+    [
+     "The Local",
+     "Sweden arrests captain of seized Russian tanker · 2026-03-14",
+     "https://www.thelocal.se/20260314/sweden-arrests-captain-of-seized-russian-tanker"
+    ],
+    [
+     "The Local",
+     "Swedish court convicts former military consultant of espionage for Russia · 2026-07-31",
+     "https://www.thelocal.se/20260731/swedish-court-convicts-former-military-consultant-of-espionage-for-russia"
+    ]
+   ]
+  },
+  {
+   "with": "IR",
+   "withName": "이란",
+   "kind": "군사·안보·외교",
+   "level": "medium",
+   "since": "2023",
+   "brief": "갱단 청소년 동원한 표적 공격, 대사관 직원 추방",
+   "detail": "스웨덴 보안경찰(Säpo)은 이란이 갱단과 연결된 청소년을 모집해 스웨덴 내 이스라엘·유대인 관련 대상을 공격하게 한다고 본다. 이스라엘 대사관과 예테보리의 엘빗 시스템스 사건이 이란과 연결됐다고 Säpo는 밝혔다. 샤를로테 폰 에센 Säpo 청장은 2026년 6월 23일 \"미국·유대인·이스라엘 관련 이익에 대한 위협이 늘었다\"고 말했다. 스웨덴은 2026년 3월 이란이 이란계 스웨덴 이중국적자를 간첩 혐의로 처형하자 이란 대사관 직원 단기 비자 발급을 멈췄고, 9월 16일 대사관 직원 1명을 추방하고 대사를 불렀다(위키백과 정리). 이란은 2024년 스웨덴의 해킹 연루 지적을 부인한 바 있다.",
+   "sources": [
+    [
+     "The Local (TT)",
+     "Swedish security service warns Iran continues to recruit gang youth · 2026-06-23",
+     "https://www.thelocal.se/20260623/swedish-security-service-warns-iran-continues-to-recruit-gang-youth"
+    ],
+    [
+     "Wikipedia",
+     "Iran–Sweden relations",
+     "https://en.wikipedia.org/wiki/Iran%E2%80%93Sweden_relations"
+    ]
+   ]
+  }
+ ],
+ "CY": [
+  {
+   "with": "TR",
+   "withName": "튀르키예",
+   "kind": "영토·군사·안보",
+   "level": "medium",
+   "since": "1974",
+   "brief": "1974년 이후 북부 점령, 튀르키예는 '두 국가 해법' 고수",
+   "detail": "튀르키예군은 1974년 그리스 군사정권이 배후에 있던 쿠데타 직후 키프로스 북부에 들어왔고, 섬은 유엔 평화유지군이 지키는 180km 휴전선으로 나뉘어 있다. 튀르키예는 공개적으로 섬에 두 개의 별도 국가를 두자고 주장하며, 그리스계 키프로스와 그리스는 이를 거부한다. 그리스계는 통일 뒤 튀르키예의 직접 관여에 반대하고 튀르키예계는 필수라고 보는데, 이 차이가 2017년 협상 결렬의 한 원인이었다(로이터).",
+   "sources": [
+    [
+     "Reuters (Internazionale)",
+     "UN chief Guterres sounds out Cyprus sides on prospects for peace talks · 2026-07-28",
+     "https://www.internazionale.it/ultime-notizie-reuters/2026/07/28/un-chief-guterres-sounds-out-cyprus-sides-on-prospects-for-peace-talks"
+    ],
+    [
+     "Wikipedia",
+     "Cyprus problem",
+     "https://en.wikipedia.org/wiki/Cyprus_problem"
+    ]
+   ]
+  },
+  {
+   "with": null,
+   "withName": "북키프로스(튀르키예계 키프로스)",
+   "kind": "영토·외교",
+   "level": "low",
+   "since": "1974",
+   "brief": "9년 멈춘 통일 협상, 유엔 중재로 재개 준비",
+   "detail": "2025년 10월 19일 연방제 해법 모색을 내건 투판 에르휘르만이 튀르키예계 지도자로 당선돼 전임자의 두 국가 요구에서 물러섰다. 안토니우 구테흐스 유엔 사무총장은 2026년 7월 28일 처음 섬을 방문해 니코스 흐리스토둘리디스 대통령과 에르휘르만을 만났다. 두 지도자는 8월 26일 유엔 주관으로 다시 만나 '확대 회의'와 실질 협상 재개를 준비하기로 했다. 그리스계는 2017년 중단 지점에서 이중지역·이중공동체 연방 협상을 원하고, 에르휘르만은 '정치적 평등' 사전 합의 없는 무기한 협상은 받지 않겠다는 입장이다.",
+   "sources": [
+    [
+     "Reuters (Internazionale)",
+     "UN chief Guterres sounds out Cyprus sides on prospects for peace talks · 2026-07-28",
+     "https://www.internazionale.it/ultime-notizie-reuters/2026/07/28/un-chief-guterres-sounds-out-cyprus-sides-on-prospects-for-peace-talks"
+    ],
+    [
+     "SigmaLive",
+     "Christodoulides and Erhürman to meet on August 26 under UN auspices · 2026-08-05",
+     "https://en.sigmalive.com/christodoulides-and-erhurman-to-meet-on-august-26-under-un-auspices/"
+    ]
+   ]
+  }
+ ],
+ "BY": [
+  {
+   "with": "LT",
+   "withName": "리투아니아",
+   "kind": "군사·안보·외교",
+   "level": "medium",
+   "since": "2020",
+   "brief": "밀수 풍선으로 빌뉴스 공항 마비, 국경 폐쇄·항의",
+   "detail": "벨라루스에서 담배를 실은 기상 풍선이 넘어와 빌뉴스 공항이 거듭 멈추자 리투아니아는 2025년 10월 29일~11월 20일 벨라루스 국경 검문소를 모두 닫았다. 리투아니아 정부는 이를 루카셴코 정권의 '하이브리드 공격'이라 불렀고, 수천 대의 리투아니아 트럭이 벨라루스에 발이 묶였다. 루카셴코는 국경 폐쇄를 '터무니없다'고 비난했다. 2026년 1월 27~28일에도 풍선 침입으로 공항이 세 번 멈추자 리투아니아 외교부는 1월 28일 벨라루스 대리대사를 불러 항의하고 국경 통제 재도입 가능성을 경고했다.",
+   "sources": [
+    [
+     "Lithuania MFA",
+     "Lithuania issues a strong protest to Belarus · 2026-01-28",
+     "https://www.urm.lt/en/news/928/lithuania-issues-a-strong-protest-to-belarus:45513"
+    ],
+    [
+     "Kyiv Post",
+     "EU to Sanction Belarus Over Smuggler Balloon Violations of Lithuanian Airspace · 2025-12-01",
+     "https://www.kyivpost.com/post/65354"
+    ],
+    [
+     "Pozirk",
+     "Lithuania intercepts first Belarus balloon cigarette shipment in 2026 · 2026-01-06",
+     "https://pozirk.online/en/news/170703"
+    ]
+   ]
+  },
+  {
+   "with": "PL",
+   "withName": "폴란드",
+   "kind": "군사·안보·외교",
+   "level": "medium",
+   "since": "2021",
+   "brief": "이주민 밀어넣기·국경 폐쇄 뒤 외무장관 회담으로 해빙 모색",
+   "detail": "벨라루스는 2021년부터 아시아·아프리카 이주민의 폴란드 월경을 부추겨 왔고, 폴란드는 5.5m 강철 장벽과 망명 신청 금지로 맞섰다. 폴란드는 러·벨 합동훈련 '자파드 2025'를 이유로 2025년 9월 12일 국경을 닫았고, 벨라루스는 이를 지리적 위치의 '남용'이라 비난했다. 폴란드 내무부에 따르면 2026년 상반기 월경 시도는 약 235건으로 전년 동기 1만 5,500건에서 98% 넘게 줄었다. 라도스와프 시코르스키 외무장관은 2026년 9월 유엔총회에서 막심 리젠코프 벨라루스 외무장관과 10년 만에 장관 회담을 했고, 정치범 석방으로 국경 상황이 '더 정상화됐다'고 말했다.",
+   "sources": [
+    [
+     "Notes from Poland",
+     "Poland and Belarus seek thaw in relations as foreign ministers meet for first time in a decade · 2026-09-23",
+     "https://notesfrompoland.com/2026/09/23/poland-and-belarus-seek-thaw-in-relations-as-foreign-ministers-meet-for-first-time-in-a-decade/"
+    ],
+    [
+     "Notes from Poland",
+     "Attempted illegal border crossings from Belarus to Poland down over 98% this year · 2026-07-20",
+     "https://notesfrompoland.com/2026/07/20/attempted-illegal-border-crossings-from-belarus-to-poland-down-98-this-year/"
+    ],
+    [
+     "Wikipedia",
+     "Zapad 2025",
+     "https://en.wikipedia.org/wiki/Zapad_2025"
+    ]
+   ]
+  },
+  {
+   "with": "UA",
+   "withName": "우크라이나",
+   "kind": "군사·안보",
+   "level": "medium",
+   "since": "2022",
+   "brief": "러시아 침공 발진기지 제공, 외교 관계 동결",
+   "detail": "2022년 2월 러시아군은 벨라루스 영토에서도 우크라이나로 진입했고, 벨라루스는 러시아군 주둔과 공세 발진을 허용했지만 자국군 파병은 부인한다. 두 나라 외교 관계는 동결 상태다. 루카셴코는 2024년 7월 우크라이나를 '적'이라 부르며 국경 부대의 전투태세를 강조했고, 8월 10일 벨라루스 외교부는 드론 영공 침범을 이유로 우크라이나 대리대사를 불렀다. 이반 테르텔 벨라루스 국가보안위원회(KGB) 위원장은 2025년 10월 19일 전쟁 종식을 위해 우크라이나와 '합의점을 찾을' 준비가 됐다고 말했다.",
+   "sources": [
+    [
+     "Wikipedia",
+     "Belarus–Ukraine relations",
+     "https://en.wikipedia.org/wiki/Belarus%E2%80%93Ukraine_relations"
+    ]
+   ]
+  }
+ ],
+ "UZ": [
+  {
+   "with": "AF",
+   "withName": "아프가니스탄(탈레반)",
+   "kind": "외교",
+   "level": "low",
+   "since": "2022",
+   "brief": "탈레반 코시테파 운하, 아무다리야 물 20% 끌어가",
+   "detail": "탈레반 정부는 2022년 북부 관개용 코시테파 운하(길이 285km) 공사를 시작했고, 200km 넘게 파서 2028년 완공을 목표로 한다. 완공되면 아무다리야강 물의 약 20%가 운하로 빠져 하류 우즈베키스탄·투르크메니스탄이 영향을 받는다. 중앙아시아와 아프가니스탄 사이에는 물 이용 협정이 없다. 샤브카트 함라예프 우즈벡 수자원부 장관은 2025년 3월 아프간의 몫을 인정하며 \"무기를 들고 전쟁하러 가야 하나\"라고 말했고, 2026년 3월 타슈켄트 물 주간에서 아프간 차관과 협의했다. 아프간 측은 '공정하고 지속가능한 발전'을 믿는다며 이웃 권리를 고려하겠다고 했다.",
+   "sources": [
+    [
+     "The Times of Central Asia",
+     "Afghanistan Advances Qosh Tepa Canal While Urging Regional Water Cooperation · 2026-04-01",
+     "https://timesca.com/afghanistan-advances-qosh-tepa-canal-while-urging-regional-water-cooperation/"
+    ],
+    [
+     "Eurasianet",
+     "Uzbekistan pursues dialogue with Afghanistan on fraught canal project · 2023-03-24",
+     "https://eurasianet.org/uzbekistan-pursues-dialogue-with-afghanistan-on-fraught-canal-project"
+    ]
+   ]
+  }
+ ],
+ "MY": [
+  {
+   "with": "CN",
+   "withName": "중국",
+   "kind": "영토",
+   "level": "low",
+   "since": "2013",
+   "brief": "루코니아 암초 EEZ에 중국 해경선 상주, 외교 항의",
+   "detail": "중국은 남중국해 거의 전역에 주권을 주장하며, 2016년 상설중재재판소는 그 근거가 없다고 판정했다. 사라왁 앞바다 루코니아 암초(베팅 파팅기 알리)에는 2013년부터 중국 해경선이 상주해 왔고, 아시아해양투명성이니셔티브(AMTI)는 2024년 1월 1일~9월 27일 매일 최소 1척이 말레이시아 수역에서 활동했다고 집계했다. 말레이시아 해군 KD 클란탄은 2025년 12월 23일부터 중국 해경선을 따라붙었고, 칼레드 노르딘 국방장관은 정보를 외교부에 넘겨 항의하겠다고 했다. 아흐마드 자히드 하미디 부총리는 2026년 1월 의회 답변에서 루코니아 암초 '존재 과시' 작전과 외교 항의를 계속한다고 밝혔다.",
+   "sources": [
+    [
+     "Free Malaysia Today",
+     "Armed forces monitoring Chinese vessel at South Luconia Shoals · 2026-01-01",
+     "https://fmtv5.freemalaysiatoday.com/category/nation/2026/01/01/armed-forces-monitoring-chinese-vessel-at-south-luconia-shoals"
+    ],
+    [
+     "Free Malaysia Today",
+     "Govt to ensure continued 'show of presence' at Luconia Shoals · 2026-01-26",
+     "https://fmtv5.freemalaysiatoday.com/category/nation/2026/01/26/govt-to-ensure-continued-show-of-presence-at-luconia-shoals"
+    ]
+   ]
+  }
+ ],
+ "KW": [
+  {
+   "with": "IR",
+   "withName": "이란",
+   "kind": "군사·안보",
+   "level": "high",
+   "since": "2026",
+   "brief": "이란 전쟁에 휘말려 미사일·드론 공격 수백 차례",
+   "detail": "2026년 2월 28일 미국·이스라엘의 이란 공격으로 전쟁이 시작되자 이란은 쿠웨이트 내 미군 기지와 공항·정유시설·담수화 시설을 공격했다. 쿠웨이트 국방부는 6월 11일까지 탄도미사일 379발, 드론 893대, 순항미사일 15발을 요격했다고 밝혔다. 미샬 알아흐마드 국왕은 '이웃 이슬람 국가의 이유 없는 공격'이라며 자국 영토를 이란 공격에 쓰지 못하게 했다고 말했다. 4월 휴전과 6월 종전 각서가 7월 8일 깨진 뒤 7월 23일 쿠웨이트군은 다시 이란 미사일·드론을 요격 중이라고 발표했다. 이란 혁명수비대는 6월 3일 쿠웨이트 공항 피격을 부인하며 패트리엇 오작동 탓이라고 주장했다.",
+   "sources": [
+    [
+     "Gulf News",
+     "Kuwait air defences engage 24 Iranian drones in fresh wave of attacks · 2026-06-11",
+     "https://gulfnews.com/amp/story/world%2Fgulf%2Fkuwait%2Fkuwait-air-defences-engage-24-iranian-drones-in-fresh-wave-of-attacks-1.500571064"
+    ],
+    [
+     "Arab News (AFP)",
+     "Missiles and drones target Kuwait after Iraq border crossing strikes · 2026-07-23",
+     "https://www.arabnews.pk/node/2652020/middle-east"
+    ],
+    [
+     "Wikipedia",
+     "Kuwait in the 2026 Iran war",
+     "https://en.wikipedia.org/wiki/Kuwait_in_the_2026_Iran_war"
+    ]
+   ]
+  },
+  {
+   "with": "IQ",
+   "withName": "이라크",
+   "kind": "영토·외교",
+   "level": "low",
+   "since": "1990",
+   "brief": "이라크 새 해양경계 지도 유엔 제출에 항의",
+   "detail": "양국 해양 분쟁은 1990년 이라크의 쿠웨이트 침공에서 비롯됐고, 1993년 안보리 결의 833호는 일부 해양 경계를 양자 협의로 남겼다. 이라크 연방대법원은 2023년 코르 압둘라 수로 항행 협정(2012년)을 무효화했다. 이라크는 2026년 1월 19일과 2월 9일 피시트 알카이드·피시트 알아이즈 등을 포함한 해양경계 좌표를 유엔에 제출했고, 쿠웨이트는 이라크 대리대사를 불러 '부당한' 주권 침해라고 항의했다. 사우디·UAE·카타르 등과 걸프협력회의(GCC)는 쿠웨이트를 지지했고, 푸아드 후세인 이라크 외무장관은 쿠웨이트도 2014년 협의 없이 지도를 제출했다며 대화로 풀겠다고 했다.",
+   "sources": [
+    [
+     "Alhurra",
+     "Iraqi Maps Infuriate Gulf Governments · 2026-02-24",
+     "https://alhurra.com/en/13779"
+    ],
+    [
+     "Wikipedia",
+     "Khawr Abd Allah",
+     "https://en.wikipedia.org/wiki/Khawr_Abd_Allah"
+    ]
+   ]
+  }
+ ],
+ "TD": [
+  {
+   "with": "SD",
+   "withName": "수단(내전 양측)",
+   "kind": "군사·안보",
+   "level": "high",
+   "since": "2023",
+   "brief": "수단 내전 월경 교전·드론 공격, 국경 폐쇄",
+   "detail": "2023년 4월 시작된 수단 내전에서 무장세력이 국경을 넘나들며 차드가 휘말리고 있다. 차드 정부는 2026년 1월 15일 티네 인근 교전으로 군인 7명이 숨졌다고 밝혔고, 가심 셰리프 정부 대변인은 '마지막 경고'라고 했다. 신속지원군(RSF)은 '의도치 않은' 충돌이었다며 유감을 표했다. 차드는 2월 23일 국경을 닫았고, 3월 18일 국경 도시 티네에 수단발 드론 공격으로 17명이 숨지자 마하마트 이드리스 데비 대통령은 수단에서 오는 모든 공격에 반격하라고 명령했다. RSF는 이 공격을 부인하며 수단 정부군 탓으로 돌렸고, 차드는 2026년 8월 정부군이 보급 차량 행렬을 공습했다고 비난했다(크라이시스 그룹).",
+   "sources": [
+    [
+     "The Defense Post (AFP)",
+     "Chad Says Seven Soldiers Killed in Clash at Sudanese Border · 2026-01-16",
+     "https://thedefensepost.com/2026/01/16/chad-soldiers-killed-sudanese-border/"
+    ],
+    [
+     "The Defense Post (AFP)",
+     "Drone Attack From Sudan Kills 17 in Chad · 2026-03-19",
+     "https://thedefensepost.com/2026/03/19/drone-attack-sudan-chad/"
+    ],
+    [
+     "International Crisis Group",
+     "Chad (CrisisWatch, Analyst's Notebook)",
+     "https://www.crisisgroup.org/africa/central-africa/chad"
+    ]
+   ]
+  },
+  {
+   "with": null,
+   "withName": "보코하람·ISWAP",
+   "kind": "내전·무장투쟁",
+   "level": "high",
+   "since": "2015",
+   "brief": "차드호 지하디스트 소탕 공습, 민간인 피해 논란",
+   "detail": "보코하람은 2009년부터 차드호 일대에서 무장 반란을 벌여 왔고, 분파 '이슬람국가 서아프리카 지부(ISWAP)'도 활동한다. 2026년 5월 나이지리아와 차드가 각각 차드호 공습을 벌여 수십 명이 숨졌고, 현지 소식통은 어민 최대 40명이 실종됐다고 AFP에 말했다. 유엔 인권최고대표는 독립 조사를 촉구했다. 가심 셰리프 마하마트 차드 공보장관은 민간인 고의 공격 주장을 부인하며 군을 '깎아내리려는' 것이라고 했다.",
+   "sources": [
+    [
+     "The Defense Post (AFP)",
+     "Chad Denies Targeting Civilians in Operation Against Boko Haram · 2026-05-15",
+     "https://thedefensepost.com/2026/05/15/chad-denies-targeting-civilians/"
+    ]
+   ]
+  }
+ ],
+ "TZ": [
+  {
+   "with": "MW",
+   "withName": "말라위",
+   "kind": "영토",
+   "level": "low",
+   "since": "1967",
+   "brief": "말라위(니아사)호 국경선, 중재 멈춘 채 신경전",
+   "detail": "1890년 영·독 헬골란트-잔지바르 조약은 호수 전체를 말라위 쪽에 두었지만, 탄자니아는 호수 가운데 선이 국경이라고 주장한다. 남아프리카개발공동체(SADC)가 요아킹 시사노 전 모잠비크 대통령을 중재자로 세웠으나 2017년 7월 이후 협상이 멈췄다. 2024년 말라위는 탄자니아의 음밤바 베이 항구 확장을 '불법'이라 항의했고, 탄자니아는 2024년 12월 교사들에게 국경이 호수 가운데를 지나는 공식 지도를 쓰라고 지시했다. 2025~2026년 새 협상 진전은 확인되지 않았다.",
+   "sources": [
+    [
+     "Wikipedia",
+     "Lake Malawi (Lake Nyasa) territorial dispute",
+     "https://en.wikipedia.org/wiki/Lake_Malawi_(Lake_Nyasa)_territorial_dispute"
+    ],
+    [
+     "RUSI",
+     "Lake Malawi or Lake Nyasa? Malawi–Tanzania Border Dispute Slips Into Limbo · 2023-05-10",
+     "https://rusi.org/explore-our-research/publications/commentary/lake-malawi-or-lake-nyasa-malawi-tanzania-border-dispute-slips-limbo"
+    ]
+   ]
+  }
+ ],
+ "BO": [
+  {
+   "with": "CL",
+   "withName": "칠레",
+   "kind": "외교·영토",
+   "level": "low",
+   "since": "1879",
+   "brief": "바다 출구·48년 단교 문제, 정상 방문으로 해빙",
+   "detail": "볼리비아는 1879년 태평양 전쟁에서 칠레에 해안을 잃었고, 두 나라는 1978년 이후 대사급 외교 관계가 없다. 볼리비아는 2013년 국제사법재판소(ICJ)에 바다 출구 협상 의무를 다퉜다. 호세 안토니오 카스트 칠레 대통령은 2026년 3월 취임 첫날 볼리비아 접경 일부를 군사 통제 구역으로 정하고 물리적 장벽 건설을 지시했다. 그러면서도 두 나라 외무장관은 4월 무역협정 현대화와 영사·이주 위원회 구성에 합의했고, 로드리고 파스 볼리비아 대통령은 카스트가 10월 14~15일 볼리비아를 방문한다고 발표했다. 파스는 관계 정상화 의사를 밝히면서도 바다 출구 권리를 포기하지 않는다는 입장이다.",
+   "sources": [
+    [
+     "Emol",
+     "Relaciones diplomáticas, seguridad en la frontera y acuerdo comercial: Los temas pendientes que tienen Chile y Bolivia · 2026-10-02",
+     "https://www.emol.com/noticias/Nacional/2026/10/02/1213036/relacion-chile-y-bolivia.html"
+    ],
+    [
+     "Diario Panorama",
+     "Bolivia y Chile quieren mejor el vínculo entre países pero Kast ordenó el cierre de la frontera en el primer día de gestión · 2026-03-13",
+     "https://diariopanorama.com/noticia/545719/bolivia-chile-quieren-mejor-vinculo-entre-paises-pero-kast-ordeno-cierre-frontera-primer-dia-gestion"
+    ],
+    [
+     "eju.tv",
+     "Paz plantea una nueva sociedad a Chile sin renunciar al derecho marítimo: Bolivia tiene que salir al Pacífico",
+     "https://eju.tv/?p=4878374"
+    ]
+   ]
+  }
+ ],
+ "CH": [
+  {
+   "with": "US",
+   "withName": "미국",
+   "kind": "무역·경제",
+   "level": "low",
+   "since": "2025",
+   "brief": "트럼프 39% 관세 → 15%로 인하 합의, 법적 근거 무효",
+   "detail": "미국은 2025년 8월 스위스 상품에 39% 관세를 매겼고, 경제단체 이코노미스위스는 '매우 심각한 부담'이라고 반발했다. 두 나라는 2025년 11월 14일 관세를 15%로 낮추는 대신 스위스 기업이 2028년까지 미국에 2,000억 달러를 투자하는 틀에 합의했다. 제이미슨 그리어 미 무역대표는 스위스가 제약·금 제련 생산을 미국으로 옮길 것이라고 했다. 미 연방대법원은 2026년 2월 20일 국제비상경제권한법(IEEPA)에 근거한 관세가 위법이라고 판결했고, 미국은 대체 관세(무역법 122조·301조)를 도입했다.",
+   "sources": [
+    [
+     "Al Jazeera (Reuters)",
+     "US to slash tariffs on Switzerland to 15% from crippling 39% · 2025-11-14",
+     "https://www.aljazeera.com/economy/2025/11/14/us-to-slash-tariffs-on-switzerland-to-15-from-crippling-39"
+    ],
+    [
+     "Wikipedia",
+     "Switzerland–United States relations",
+     "https://en.wikipedia.org/wiki/Switzerland%E2%80%93United_States_relations"
+    ],
+    [
+     "Wikipedia",
+     "Tariffs in the second Trump administration",
+     "https://en.wikipedia.org/wiki/Tariffs_in_the_second_Trump_administration"
+    ]
+   ]
+  }
+ ],
+ "SI": [
+  {
+   "with": "HR",
+   "withName": "크로아티아",
+   "kind": "영토",
+   "level": "low",
+   "since": "1991",
+   "brief": "피란만 해양 국경 중재 판정, 크로아티아 이행 거부",
+   "detail": "두 나라는 1991년 유고 해체 뒤 피란만과 육상 국경을 두고 다퉜다. 2017년 6월 29일 중재재판소는 피란만 대부분을 슬로베니아에 주고 공해로 가는 통로를 인정했지만, 크로아티아는 2015년 슬로베니아 측 중재인의 부정 접촉 녹취가 공개된 뒤 중재에서 탈퇴했다며 판정을 따르지 않는다. 슬로베니아 정부는 판정이 '최종적이고 구속력 있다'며 2018년 7월 유럽사법재판소(ECJ)에 크로아티아를 제소했으나, 재판소는 2020년 1월 관할권이 없다며 양국에 해결을 촉구했다. 슬로베니아 정부는 2024년 8월에도 이행을 위한 대화·외교 노력을 계속한다고 밝혔다.",
+   "sources": [
+    [
+     "Government of Slovenia",
+     "Arbitration Project",
+     "https://www.gov.si/en/registries/projects/arbitraza/"
+    ],
+    [
+     "Wikipedia",
+     "Croatia–Slovenia border disputes",
+     "https://en.wikipedia.org/wiki/Croatia%E2%80%93Slovenia_border_disputes"
+    ]
+   ]
+  }
+ ],
+ "DJ": [
+  {
+   "with": "ER",
+   "withName": "에리트레아",
+   "kind": "영토",
+   "level": "low",
+   "since": "2008",
+   "brief": "라스 두메이라 국경 분쟁, 2018 관계 정상화 뒤 미해결",
+   "detail": "2008년 6월 10~13일 라스 두메이라 국경에서 교전이 벌어져 지부티 측은 군인 44명이 숨졌다고 밝혔다. 2010년 카타르 중재로 카타르 평화유지군이 배치됐지만 2017년 6월 철수했고, 지부티는 에리트레아가 분쟁 고지와 두메이라섬을 다시 점령했다고 비난했다. 두 나라는 2018년 9월 관계 정상화에 합의했다. 이후 국경 획정 합의는 확인되지 않는다.",
+   "sources": [
+    [
+     "Reuters",
+     "Djibouti, Eritrea agree to normalize ties strained since 2008 · 2018-09-06",
+     "https://www.reuters.com/article/us-eritrea-djibouti-politics/djibouti-eritrea-agree-to-normalize-ties-strained-since-2008-idUSKCN1LM2IM"
+    ],
+    [
+     "Reuters",
+     "Djibouti, Eritrea in territorial dispute after Qatar peacekeepers leave · 2017-06-16",
+     "https://www.reuters.com/article/us-djibouti-eritrea-border-idUSKBN1971JR"
+    ],
+    [
+     "Wikipedia",
+     "Djiboutian–Eritrean border conflict",
+     "https://en.wikipedia.org/wiki/Djiboutian%E2%80%93Eritrean_border_conflict"
+    ]
+   ]
+  }
+ ]
+}
