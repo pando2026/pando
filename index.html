@@ -512,6 +512,34 @@ html,body{overflow-x:clip}
 .party-sources{margin:10px 0 0;font-size:11px;color:#7a8a95}
 .party-sources a{color:#b8202b;text-decoration:underline;text-underline-offset:2px}
 .party-empty{margin:0;font-size:12.5px;color:#6a7c88}
+/* Party disputes under the seat charts */
+.fights{margin:26px 0 6px}
+.fights-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;border-bottom:2px solid #15232d;padding-bottom:7px;margin-bottom:12px}
+.fights-head h4{margin:0;font-size:16px}
+.fights-head span{font-size:12px;color:#6a7c88}
+.fights-note{font-size:13.5px;color:#37505f;background:#f6f8f9;border-left:3px solid #c9d5dc;padding:10px 12px;margin:0 0 12px}
+.fight{border:1px solid #d9e2e7;border-radius:4px;padding:14px 15px 12px;margin:0 0 12px;background:#fff}
+.fight header{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.fight-kind{font-size:11px;font-weight:850;color:#b8202b;letter-spacing:.06em}
+.fight h5{margin:0;font-size:15.5px;line-height:1.35;color:#15232d}
+.fight-summary{margin:6px 0 10px;font-size:13.5px;line-height:1.6;color:#37505f}
+.fight-sides{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}
+.fight-sides--multi{grid-template-columns:1fr}
+.fight-sides--multi .fight-vs{display:none}
+.fight-side{background:#f6f8f9;border-radius:4px;padding:10px 11px;min-width:0}
+.fight-side p{margin:7px 0 0;font-size:13px;line-height:1.55;color:#2f3e48}
+.fight-vs{align-self:center;font-size:11px;font-weight:900;color:#b8202b;letter-spacing:.08em}
+.fight-parties{display:flex;flex-wrap:wrap;gap:5px}
+.fight-party{display:inline-flex;align-items:center;gap:5px;border:1px solid #d5dee4;background:#fff;border-radius:99px;padding:3px 9px 3px 7px;font-size:12.5px;font-weight:750;color:#15232d;cursor:pointer;min-height:28px}
+.fight-party:hover{border-color:#b8202b}
+.fight-party i{width:9px;height:9px;border-radius:50%;flex:none}
+.fight-party small{font-weight:600;color:#6a7c88;font-size:11px}
+.fight-camp{font-size:12.5px;color:#15232d}
+.fight-status{margin:10px 0 0;font-size:13px;line-height:1.55;color:#2f3e48}
+.fight-status b{display:inline-block;margin-right:6px;font-size:11px;color:#fff;background:#15232d;border-radius:3px;padding:1px 6px;vertical-align:1px}
+.fight-source{display:block;margin-top:8px;font-size:11.5px;color:#6a7c88}
+.fight-source a{color:#b8202b}
+@media (max-width:640px){.fight-sides{grid-template-columns:1fr}.fight-vs{justify-self:center;margin:-2px 0}}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -749,6 +777,7 @@ html,body{background:#fff;color:var(--ink)}
  const SHARDS=16;const shardOf=c=>(c.charCodeAt(0)*31+c.charCodeAt(1))%SHARDS;
  const shard=code=>once("s"+shardOf(code),()=>json("data/s"+String(shardOf(code)).padStart(2,"0")+".json"));
  const photoStore=()=>once("photos",()=>json("data/photos.json")).catch(()=>({}));
+ const fightStore=()=>once("fights",()=>json("data/fights.json")).catch(()=>({}));
  const partyPhotoStore=()=>once("partyPhotos",()=>json("data/party-photos.json")).catch(()=>({}));
  const photoIndex=()=>once("photoIndex",()=>json("data/photo-index.json")).catch(()=>({}));
  const base=()=>once("base",()=>Promise.all([json("data/countries.json"),json("data/edition.json"),json("data/contexts.json"),json("data/changewatch.json"),
@@ -801,7 +830,7 @@ html,body{background:#fff;color:var(--ink)}
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -1192,6 +1221,21 @@ html,body{background:#fff;color:var(--ink)}
   };
   return '<section class="section budget-reference economy-reference"><h3>별도 기준의 경제 참고 수치</h3><details class="fine-print"><summary>기준·출처</summary><div class="fine-print-body"><p>통화·회계 연도·환율 산출법은 항목마다 다릅니다. 위의 국제 비교 GDP, 한국 값, 세계 순위에는 합산하지 않습니다.</p></div></details><div class="budget-reference-grid">'+rows.map(item=>'<article class="budget-reference-card"><span class="budget-reference-heading">'+esc(item.label)+'</span><strong>'+esc(money(item))+'</strong>'+(item.estimateKind?'<em class="metric-estimate metric-estimate--institutional">'+esc(item.estimateKind)+'</em>':"")+'<p>'+esc(String(item.year))+(String(item.year).includes('/')?' 회계연도':'년')+(item.fiscalYear?' · 회계연도 '+esc(item.fiscalYear):'')+' · '+esc(item.unit)+'</p>'+(item.note?'<p>'+esc(item.note)+'</p>':"")+'<small>'+sourceLink(item.source,item.provider||"원문 확인")+'</small></article>').join("")+'</div></section>';
  }
+ // Party disputes: which parties are fighting over what, shown under the seat charts.
+ function partyFights(data){
+  const f=data.fights;if(!f||(!Array.isArray(f.items)||!f.items.length)&&!f.note)return "";
+  const groups={};(data.civics?.parliament?.chambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(!groups[g[0]])groups[g[0]]=g}));
+  const names=data.partyNames||{};
+  const chip=label=>{const g=groups[label],col=g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3",n=names[label];
+   return '<button type="button" class="fight-party" data-party-open="'+esc(label)+'"'+(n&&n.orig&&n.orig!==label?' title="'+esc(n.orig)+'"':"")+'><i style="background:'+col+'"></i>'+esc(label)+(g?'<small>'+number(g[1],0)+'석</small>':"")+'</button>'};
+  const items=(f.items||[]).filter(it=>it&&it.topic&&Array.isArray(it.sides)&&it.sides.length).map(it=>
+   '<article class="fight"><header>'+(it.kind?'<span class="fight-kind">'+esc(it.kind)+'</span>':"")+'<h5>'+esc(it.topic)+'</h5></header>'+
+   (it.summary?'<p class="fight-summary">'+esc(it.summary)+'</p>':"")+
+   '<div class="fight-sides'+(it.sides.length>2?" fight-sides--multi":"")+'">'+it.sides.map((sd,i)=>(i?'<span class="fight-vs" aria-hidden="true">VS</span>':"")+'<div class="fight-side"><div class="fight-parties">'+(sd.parties||[]).map(chip).join("")+(sd.label&&!(sd.parties||[]).length?'<b class="fight-camp">'+esc(sd.label)+'</b>':"")+'</div>'+(sd.stance?'<p>'+esc(sd.stance)+'</p>':"")+'</div>').join("")+'</div>'+
+   (it.status?'<p class="fight-status"><b>지금</b>'+esc(it.status)+'</p>':"")+
+   (Array.isArray(it.sources)&&it.sources.length?'<small class="fight-source">출처 '+it.sources.map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</small>':"")+'</article>').join("");
+  return '<section class="fights"><div class="fights-head"><h4>정당 간 쟁점</h4>'+(f.asOf?'<span>'+esc(f.asOf)+' 기준</span>':"")+'</div>'+(f.note?'<p class="fights-note">'+esc(f.note)+'</p>':"")+items+'</section>';
+ }
  function hemicycle(chamber){
   if(!chamber||!Array.isArray(chamber.groups))return "";
   const groups=chamber.groups.filter(g=>Array.isArray(g)&&Number.isInteger(g[1])&&g[1]>=0);
@@ -1377,7 +1421,7 @@ html,body{background:#fff;color:var(--ink)}
   const koreaBreakdown=compare?budgetComposition(budget.koreaBreakdown,"한국 예산·지출 구성",data.comparison?.metrics?.militaryGovPct):"";
   const doc=budget.document?'<article class="budget-document"><span>예산 문서 · '+esc(budget.document.fiscalYear||"")+'</span><h3>'+esc(budget.document.title||"예산 자료")+'</h3><p>'+esc(budget.document.status||"")+' · '+esc(budget.document.provider||"")+'</p>'+sourceLink(budget.document.source,"공식 예산 문서")+'</article>':"";
   return {
-   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
+   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
     decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["policyRate","정책금리",metrics.policyRate]])+
     economyAlternativeEstimates(data.economyAlternatives)+
@@ -1567,6 +1611,12 @@ html,body{background:#fff;color:var(--ink)}
    const box=chip.closest(".conflicts"),i=chip.dataset.conflict,open=chip.getAttribute("aria-expanded")!=="true";
    box.querySelectorAll("[data-conflict]").forEach(b=>b.setAttribute("aria-expanded",String(open&&b===chip)));
    box.querySelectorAll("[data-conflict-detail]").forEach(d=>d.hidden=!(open&&d.dataset.conflictDetail===i));
+   return;
+  }
+  const fp=e.target.closest("[data-party-open]");if(fp){
+   const root=fp.closest("section,[role=tabpanel]")?.parentElement||document,label=fp.dataset.partyOpen;
+   const li=[...root.querySelectorAll(".seat-legend li[data-party]")].find(x=>x.dataset.party===label);
+   if(li){const chart=li.closest(".chamber-chart");if(chart.dataset.focus!==li.dataset.g)li.click();else chart.querySelector(".party-detail")?.scrollIntoView({block:"nearest",behavior:"smooth"})}
    return;
   }
   const seatItem=e.target.closest(".seat-legend li[data-g], .seat-strip-seg[data-g]");if(seatItem){
