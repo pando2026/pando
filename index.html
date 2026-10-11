@@ -841,6 +841,13 @@ html.lang-en-loading body{visibility:hidden}
 .ally-interests li{font-size:13px;line-height:1.55;color:#2f3e48}
 .ally-interests li b{display:inline-block;min-width:38px;margin-right:6px;font-size:11px;padding:1px 6px;border-radius:3px;background:#e7f1ec;color:#1f6f4a;text-align:center}
 
+.trend-line--kr{stroke:#8a96a0 !important;stroke-dasharray:4 3;stroke-width:1.6 !important;fill:none}
+.trend-points--kr circle{fill:#8a96a0}
+.trend-kr-end{font-size:10px;fill:#6a7c88;font-weight:700}
+.trend-legend{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;color:#4b5a64;margin-left:auto;margin-right:10px}
+.trend-key{display:inline-block;width:16px;height:0;border-top:2.5px solid #c8102e}
+.trend-key--kr{border-top:2px dashed #8a96a0;margin-left:6px}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -1572,7 +1579,7 @@ html,body{background:#fff;color:var(--ink)}
  function renderCountries(){
   const el=$("#country-list");if(!el)return;
   const q=state.countryQuery.trim().toLocaleLowerCase("ko");
-  const filtered=state.countries.filter(c=>(state.countryRegion==="전체"||c.region===state.countryRegion)&&(!q||[countryName(c),c.name,c.code,c.capital].some(s=>String(s||"").toLocaleLowerCase("ko").includes(q))));
+  const filtered=state.countries.filter(c=>(state.countryRegion==="전체"||c.region===state.countryRegion)&&(!q||[countryName(c),c.name,c.code,c.capital,...(c.aliases||[])].some(s=>String(s||"").toLocaleLowerCase("ko").includes(q))));
   const browsing=state.countriesAll||q||state.countryRegion!=="전체";
   if(!browsing&&state.countries.length){
    el.innerHTML='<button type="button" class="more-button" data-more="countries">전체 '+state.countries.length+'개 국가·지역 펼치기</button>';
@@ -1684,27 +1691,34 @@ html,body{background:#fff;color:var(--ink)}
   const label=evidence.type==="unofficial"?"비공식 추정":evidence.type==="republished"?"재인용":/전망/.test(evidence.text)?"전망":/잠정/.test(evidence.text)?"잠정":"추정";
   return '<em class="metric-estimate metric-estimate--'+evidence.type+'" title="'+esc(evidence.text)+'">'+label+'</em>';
  }
- function metricTrend(key,points,korea=null){
-  const series=(Array.isArray(points)?points:[]).filter(p=>p&&Number.isFinite(Number(p.value))&&p.year).sort((a,b)=>String(a.year).localeCompare(String(b.year))).slice(-24);
+ function metricTrend(key,points,korea=null,name=""){
+  const clean=a=>(Array.isArray(a)?a:[]).filter(p=>p&&Number.isFinite(Number(p.value))&&/^\d{4}/.test(String(p.year))).map(p=>({year:String(p.year).slice(0,4),value:Number(p.value)})).sort((a,b)=>a.year.localeCompare(b.year));
+  const series=clean(points).slice(-24);
   if(series.length<2)return '<p class="trend-empty">과거 값이 하나뿐이라 추이 그래프를 그리지 않았습니다.</p>';
-  const values=series.map(p=>Number(p.value));
-  let lo=Math.min(...values),hi=Math.max(...values);
-  // Rates start the axis near the data; money and counts start from zero so bar heights are honest.
-  const fromZero=["gdp","gdpPc","militaryUsd"].includes(key)&&lo>0;
+  const y0=series[0].year,y1=series.at(-1).year;
+  const kr=clean(korea).filter(p=>p.year>=y0&&p.year<=y1);
+  const showKr=kr.length>=2;
+  const years=[...new Set([...series.map(p=>p.year),...(showKr?kr.map(p=>p.year):[])])].sort();
+  const all=[...series.map(p=>p.value),...(showKr?kr.map(p=>p.value):[])];
+  let lo=Math.min(...all),hi=Math.max(...all);
+  // Rates start the axis near the data; money and counts start from zero so heights are honest.
+  const fromZero=["gdp","gdpPc","militaryUsd","militaryPersonnel","armsImports","armsExports"].includes(key)&&lo>0;
   if(fromZero)lo=0;
   const pad=(hi-lo)*.12||Math.max(1,Math.abs(hi)*.1);hi+=pad*2.2;if(!fromZero)lo-=pad;
-  const L=74,R=380,T=22,B=128,px=i=>L+i*(R-L)/(series.length-1),py=v=>B-(v-lo)/(hi-lo)*(B-T);
+  const L=74,R=380,T=22,B=128,xi=y=>years.indexOf(y),px=y=>L+xi(y)*(R-L)/Math.max(1,years.length-1),py=v=>B-(v-lo)/(hi-lo)*(B-T);
   const ticks=[lo,(lo+hi)/2,hi];
   const grid=ticks.map(t=>'<path class="trend-grid" d="M'+L+' '+py(t).toFixed(1)+'H'+R+'"/><text class="trend-ytick" x="'+(L-6)+'" y="'+(py(t)+3.5).toFixed(1)+'" text-anchor="end">'+esc(metricValue(key,t))+'</text>').join("");
-  const path=series.map((p,i)=>(i?"L":"M")+px(i).toFixed(1)+" "+py(values[i]).toFixed(1)).join(" ");
+  const line=a=>a.map((p,i)=>(i?"L":"M")+px(p.year).toFixed(1)+" "+py(p.value).toFixed(1)).join(" ");
   const labelEvery=series.length<=8?1:Math.ceil(series.length/6);
   const dots=series.map((p,i)=>{
    const show=i%labelEvery===0||i===series.length-1;
-   const x=px(i),y=py(values[i]),anchor=i===0?"start":i===series.length-1?"end":"middle";
-   return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(i===series.length-1?4:3)+'"><title>'+esc(String(p.year))+' · '+esc(metricValue(key,values[i]))+'</title></circle>'+
-    (show?'<text class="trend-val" x="'+x.toFixed(1)+'" y="'+(y-8).toFixed(1)+'" text-anchor="'+anchor+'">'+esc(metricValue(key,values[i]))+'</text><text class="trend-x" x="'+x.toFixed(1)+'" y="'+(B+16)+'" text-anchor="'+anchor+'">'+esc(String(p.year))+'</text>':"");
+   const x=px(p.year),y=py(p.value),anchor=i===0?"start":i===series.length-1?"end":"middle";
+   return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(i===series.length-1?4:3)+'"><title>'+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>'+
+    (show?'<text class="trend-val" x="'+x.toFixed(1)+'" y="'+(y-8).toFixed(1)+'" text-anchor="'+anchor+'">'+esc(metricValue(key,p.value))+'</text><text class="trend-x" x="'+x.toFixed(1)+'" y="'+(B+16)+'" text-anchor="'+anchor+'">'+esc(p.year)+'</text>':"");
   }).join("");
-  return '<div class="trend-head"><b>'+esc(String(series[0].year))+' — '+esc(String(series.at(-1).year))+'</b><span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 152" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,Number(p.value))).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/><path class="trend-line" d="'+path+'"/><g class="trend-points">'+dots+'</g></svg>';
+  const krLayer=showKr?'<path class="trend-line trend-line--kr" d="'+line(kr)+'"/><g class="trend-points trend-points--kr">'+kr.map(p=>'<circle cx="'+px(p.year).toFixed(1)+'" cy="'+py(p.value).toFixed(1)+'" r="2.2"><title>한국 '+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>').join("")+'</g><text class="trend-kr-end" x="'+(px(kr.at(-1).year)+4).toFixed(1)+'" y="'+(py(kr.at(-1).value)+(kr.at(-1).value>=series.at(-1).value?-14:22)).toFixed(1)+'" text-anchor="end">한국 '+esc(metricValue(key,kr.at(-1).value))+'</text>':"";
+  const legend=showKr?'<span class="trend-legend"><i class="trend-key"></i>'+esc(name||"이 나라")+' <i class="trend-key trend-key--kr"></i>한국</span>':"";
+  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 152" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g></svg>';
  }
  function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
   const valid=item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.year;
@@ -1733,7 +1747,7 @@ html,body{background:#fff;color:var(--ink)}
   const meta=esc(vintage)+(/^\d{4}$/.test(vintage)?"년":"")+(item.fiscalYear?" · 회계연도 "+esc(item.fiscalYear):"")+metricBadgeShort(item)+ageTag(vintage);
   const sources=[item.source?sourceLink(item.source,shortProvider(item.provider)||"출처"):"",item.originalSource&&item.originalSource!==item.source?sourceLink(item.originalSource,"기초 원자료"):"",compare&&koreaObs?.source?sourceLink(koreaObs.source,"한국 값 출처"):""].filter(Boolean).join(" · ");
   const details=(item.label?'<p class="metric-def">'+esc(item.label)+(item.provider?" · "+esc(item.provider):"")+'</p>':"")+(item.note?'<p>'+esc(item.note)+'</p>':"")+(sources?'<p class="metric-links">'+sources+'</p>':"");
-  return '<div class="metric-card'+(unofficial?' metric-card--unofficial':'')+'"><button type="button" class="metric-open" data-metric="'+esc(key)+'" aria-expanded="false"><span class="metric-title">'+esc(label)+'<span class="metric-expand" aria-hidden="true">⌄</span></span><strong class="metric-value">'+esc(display)+'</strong><span class="metric-meta">'+meta+'</span>'+koreaLine+'<span class="metric-rank" data-rank-key="'+esc(key)+'" data-rank-year="'+esc(rankYear)+'" data-rank-source="'+esc(item?.sourceFamily==="SIPRI_FACT_SHEET"?"sipri":"wdi")+'"></span></button><div class="metric-expand-content" hidden>'+metricTrend(key,item?.series)+(compare&&koreaObs?'<p class="metric-korea-note">한국 같은 지표: <b>'+esc(displayValue(koreaObs,Number(koreaObs.value)))+'</b> ('+esc(String(koreaObs.year))+(koreaObs.provider?' · '+esc(shortProvider(koreaObs.provider)):"")+')'+(loose?' — 출처나 연도가 달라 참고용입니다.':' — 같은 연도·원자료입니다.')+'</p>':"")+details+'</div></div>';
+  return '<div class="metric-card'+(unofficial?' metric-card--unofficial':'')+'"><button type="button" class="metric-open" data-metric="'+esc(key)+'" aria-expanded="false"><span class="metric-title">'+esc(label)+'<span class="metric-expand" aria-hidden="true">⌄</span></span><strong class="metric-value">'+esc(display)+'</strong><span class="metric-meta">'+meta+'</span>'+koreaLine+'<span class="metric-rank" data-rank-key="'+esc(key)+'" data-rank-year="'+esc(rankYear)+'" data-rank-source="'+esc(item?.sourceFamily==="SIPRI_FACT_SHEET"?"sipri":"wdi")+'"></span></button><div class="metric-expand-content" hidden>'+metricTrend(key,item?.series,compare?(koreaLatest?.series||korea?.series):null,state.trendName||"")+(compare&&koreaObs?'<p class="metric-korea-note">한국 같은 지표: <b>'+esc(displayValue(koreaObs,Number(koreaObs.value)))+'</b> ('+esc(String(koreaObs.year))+(koreaObs.provider?' · '+esc(shortProvider(koreaObs.provider)):"")+')'+(loose?' — 출처나 연도가 달라 참고용입니다.':' — 같은 연도·원자료입니다.')+'</p>':"")+details+'</div></div>';
  }
  // Grid of available figures, then one quiet line naming what has no data.
  // Missing values are not drawn as cards full of "확인 중" text.
@@ -2204,7 +2218,7 @@ html,body{background:#fff;color:var(--ink)}
   const previousTab=$("#detail [data-country-tab][aria-selected=true]")?.dataset.countryTab;
   const previousLeaders=$("#country-leaders")?.innerHTML;
   const scrollTop=$(".drawer")?.scrollTop||0;
-  state.partyProfiles=data.partyProfiles||{};state.regions=data.regions||null;state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
+  state.trendName=name;state.partyProfiles=data.partyProfiles||{};state.regions=data.regions||null;state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
   const panels=countryPanels(data);
   $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
