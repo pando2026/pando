@@ -1,0 +1,95 @@
+{
+ "GB": {
+  "level": "group",
+  "names": [
+   "England",
+   "Northern Ireland",
+   "Scotland",
+   "Wales"
+  ],
+  "parties": [
+   "유어파티·무소속연대",
+   "녹색당",
+   "신페인(등원 거부)",
+   "스코틀랜드국민당(SNP)",
+   "플라이드 컴리",
+   "SDLP·동맹당(북아일랜드)",
+   "노동당",
+   "자유민주당",
+   "보수당",
+   "북아일랜드 연합주의(DUP 등)",
+   "리폼UK",
+   "리스토어 브리튼",
+   "무소속·의장·공석",
+   "녹색당·플라이드 컴리",
+   "중립(크로스벤치)",
+   "북아일랜드 연합주의(DUP·UUP)",
+   "성공회 주교",
+   "비소속·무소속·의장"
+  ],
+  "current": "2024년 7월 총선 구성국별 의석·득표율"
+ },
+ "FR": {
+  "level": "group",
+  "names": [
+   "Auvergne-Rhône-Alpes",
+   "Bourgogne-Franche-Comté",
+   "Bretagne",
+   "Centre-Val de Loire",
+   "Corse",
+   "Grand Est",
+   "Hauts-de-France",
+   "Normandie",
+   "Nouvelle-Aquitaine",
+   "Occitanie",
+   "Pays de la Loire",
+   "Provence-Alpes-Côte-d'Azur",
+   "Île-de-France"
+  ],
+  "parties": [
+   "굴복하지않는프랑스(LFI)",
+   "민주공화좌파(GDR)",
+   "환경·사회(녹색)",
+   "사회당(SOC)",
+   "자유·독립·해외·지역(LIOT)",
+   "민주당(MoDem)",
+   "공화국을 위해 함께(EPR)",
+   "오리종",
+   "공화파(DR)",
+   "공화주의자우파연합(UDR)",
+   "국민연합(RN)",
+   "무소속"
+  ],
+  "current": "2024년 7월 하원 총선 당선자의 지역(레지옹)별 분포, 현 원내 그룹 기준(본토 539석 집계)"
+ },
+ "DE": {
+  "level": "unit",
+  "names": [
+   "Saxony",
+   "Bavaria",
+   "Rhineland-Palatinate",
+   "Saarland",
+   "Schleswig-Holstein",
+   "Lower Saxony",
+   "North Rhine-Westphalia",
+   "Baden-Württemberg",
+   "Brandenburg",
+   "Mecklenburg-Western Pomerania",
+   "Free Hanseatic Bremen",
+   "Hamburg",
+   "Hesse",
+   "Thuringia",
+   "Saxony-Anhalt",
+   "Berlin"
+  ],
+  "parties": [
+   "좌파당",
+   "사회민주당(SPD)",
+   "녹색당",
+   "기민·기사련(CDU/CSU)",
+   "독일대안당(AfD)",
+   "무소속"
+  ],
+  "current": "2025년 2월 연방 하원 선거 주별 정당명부(제2투표) 득표율"
+ }
+}

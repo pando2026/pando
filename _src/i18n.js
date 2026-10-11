@@ -10,8 +10,8 @@
  const big=x=>{const a=Math.abs(x);const f=(v,u)=>(Math.round(v*10)/10).toLocaleString("en-US")+" "+u;return a>=1e12?f(x/1e12,"trillion"):a>=1e9?f(x/1e9,"billion"):a>=1e6?f(x/1e6,"million"):Math.round(x).toLocaleString("en-US")};
  const UNIT={man:1e4,eok:1e8,jo:1e12};
  const ORD=v=>{const n=parseInt(String(v).replace(/,/g,""),10);if(isNaN(n))return v;const t=n%100,u=n%10;return v+(t>=11&&t<=13?"th":u===1?"st":u===2?"nd":u===3?"rd":"th")};
- const SING={years:'year',months:'month',days:'day',weeks:'week',hours:'hour',seats:'seat',countries:'country',people:'person',times:'time',votes:'vote',members:'member',parties:'party',soldiers:'soldier'};
- const sing=t=>t.replace(/(^|[^\d.,])1 (years|months|days|weeks|hours|seats|countries|people|times|votes|members|parties|soldiers)\b/g,(m,a,w)=>a+'1 '+SING[w]);
+ const SING={years:'year',months:'month',days:'day',weeks:'week',hours:'hour',seats:'seat',countries:'country',people:'person',times:'time',votes:'vote',members:'member',parties:'party',soldiers:'soldier',regions:'region'};
+ const sing=t=>t.replace(/(^|[^\d.,])1 (years|months|days|weeks|hours|seats|countries|people|times|votes|members|parties|soldiers|regions)\b/g,(m,a,w)=>a+'1 '+SING[w]);
  const fill=(tpl,nums)=>sing(tpl.replace(/\{(\d+)(?::(mon|man|eok|jo|ord|hide))?\}/g,(m,i,mod)=>{const v=nums[+i];if(v==null)return m;if(mod==="hide")return"";if(mod==="ord")return ORD(v);if(mod==="mon")return MON[parseInt(v,10)-1]||v;if(mod)return big(parseFloat(String(v).replace(/,/g,""))*UNIT[mod]);return v}));
  function tr(s){
   if(!dict||!s||!H.test(s))return s;

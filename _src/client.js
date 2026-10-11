@@ -425,14 +425,32 @@
    (k&&spark?'<p class="cpi-legend"><i style="background:'+band[1]+'"></i>'+esc(namedCountry(data.code))+' <i class="cpi-legend-k"></i>한국</p>':"")+
    '<p class="cpi-note">공공부문 부패에 대해 전문가·기업인이 어떻게 느끼는지를 0~100으로 매긴 지수로, 높을수록 청렴합니다. 실제 부패 사건 수를 센 값은 아닙니다. '+sourceLink(c.source,"국제투명성기구")+' · '+sourceLink(c.wiki,"연도별 표")+'</p></div></section>';
  }
- // Party → strong regions, drawn on the country's own state/province map (never on the world map).
+ // Party → regions, drawn on the country's own state/province map (never on the world map).
+ // Views: "__win" = 1st party in every region; a party = shaded by its vote/seat share; income layer on top.
  const admin1Cache={};
  const getAdmin1=cc=>admin1Cache[cc]||(admin1Cache[cc]=fetch("data/admin1/"+cc+".json").then(r=>r.json()));
- function partyColor(label){let col="#c8102e";(state.civicsChambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(g[0]===label&&/^#[\da-f]{6}$/i.test(g[2]))col=g[2]}));return col}
+ function partyColor(label){let col="#9ca7a3";(state.civicsChambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(g[0]===label&&/^#[\da-f]{6}$/i.test(g[2]))col=g[2]}));return col}
+ const isEn=()=>document.documentElement.lang==='en';
+ const pct=v=>(Math.round(v*10)/10)+"%";
+ const rv=(obj,u,g)=>!obj?null:obj[u]!=null?obj[u]:(g&&obj[g]!=null?obj[g]:null);
+ function mixHex(a,b,t){const h=x=>[1,3,5].map(i=>parseInt(x.slice(i,i+2),16));const A=h(a),B=h(b);return "#"+A.map((v,i)=>Math.round(v+(B[i]-v)*t).toString(16).padStart(2,"0")).join("")}
+ const SHARE_MAX=60,shareFill=(col,v)=>v<=0?"#f4f6f7":mixHex("#eef1f3",col,.1+.9*Math.min(1,v/SHARE_MAX));
+ function unitLabel(box,u,g){const x=box._units?.[u];const prim=x?(isEn()?x.n:(x.ko||x.n)):u;const loc=x&&x.l&&x.l!==prim?x.l:"";return {prim,loc,g:g&&g!==u?g:""}}
+ function pmapTip(box,u,g){
+  const L=unitLabel(box,u,g);let h='<b>'+esc(L.prim)+'</b>'+(L.loc?'<span class="pmap-tip-l">'+esc(L.loc)+'</span>':"")+(L.g?'<span class="pmap-tip-g">'+esc(L.g)+'</span>':"");
+  const mode=box.dataset.mode==="income"?"income":box.dataset.pmapParty||"";const vote=state.partyMap?.vote;
+  if(mode==="income"){const inc=state.income;const v=rv(inc?.values,u,g);h+='<em>'+(v==null?'<span>자료 없음</span>':esc(incFmt(v))+' <span>'+esc(inc.unit||"")+'</span>')+'</em>'}
+  else if(mode==="__win"){const w=rv(vote?.winners,u,g);h+='<em>'+(w?'<i style="background:'+partyColor(w)+'"></i><span>1위</span> <span>'+esc(w)+'</span>':'<span>자료 없음</span>')+'</em>';
+   const rows=Object.entries(vote?.shares||{}).map(([pn,o])=>[pn,rv(o,u,g)]).filter(x=>x[1]!=null).sort((x,y)=>y[1]-x[1]).slice(0,4);
+   if(rows.length)h+='<ul>'+rows.map(([pn,v])=>'<li><i style="background:'+partyColor(pn)+'"></i><span>'+esc(pn)+'</span><strong>'+pct(v)+'</strong></li>').join("")+'</ul>'}
+  else if(mode){const v=rv(vote?.shares?.[mode],u,g);const strong=new Set(state.partyMap?.parties?.[mode]?.regions||[]);
+   h+='<em><i style="background:'+partyColor(mode)+'"></i><span>'+esc(mode)+'</span> '+(v!=null?'<strong>'+pct(v)+'</strong>':(strong.has(u)||strong.has(g))?'<span>강세 지역</span>':'<span>자료 없음</span>')+'</em>'}
+  return h;
+ }
  async function drawPartyMap(box){
   if(!box||box.dataset.drawn)return;box.dataset.drawn="1";
   const cc=box.dataset.pmapCc;let data;try{data=await getAdmin1(cc)}catch(e){box.textContent="지도를 불러오지 못했습니다.";return}
-  const units=data.units||[];let pts=[];
+  const units=(data.units||[]).filter(u=>u.n);let pts=[];
   const fix=lon=>cc==="RU"&&lon<0?lon+360:cc==="US"&&lon>0?lon-360:lon;
   units.forEach(u=>u.r.forEach(r=>r.forEach(p=>pts.push([fix(p[0]),p[1]]))));
   if(cc==="US")pts=pts.filter(p=>p[0]>-170);
@@ -441,10 +459,16 @@
   const W=600,H=Math.max(220,Math.min(420,W*(y1-y0)/(x1-x0||1)));const sc=Math.min((W-20)/(x1-x0||1),(H-20)/(y1-y0||1));
   const ox=(W-(x1-x0)*sc)/2,oy=(H-(y1-y0)*sc)/2;
   const P=p=>[(fix(p[0])*kx-x0)*sc+ox,(-p[1]-y0)*sc+oy];
-  const paths=units.map(u=>'<path data-unit="'+esc(u.n)+'" data-group="'+esc(u.g||"")+'" d="'+u.r.map(r=>"M"+r.map(p=>{const q=P(p);return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+"Z").join("")+'"><title>'+esc(document.documentElement.lang==='en'?u.n:(u.ko||u.n))+(u.g&&u.g!==u.n?" · "+esc(u.g):"")+'</title></path>').join("");
+  const paths=units.map(u=>'<path data-unit="'+esc(u.n)+'" data-group="'+esc(u.g||"")+'" d="'+u.r.map(r=>"M"+r.map(p=>{const q=P(p);return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+"Z").join("")+'"></path>').join("");
   box._ko={};units.forEach(u=>{if(u.ko)box._ko[u.n]=u.ko;if(u.g)box._ko[u.g]=box._ko[u.g]||u.g});
-  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'</svg>';
   box._units={};units.forEach(u=>box._units[u.n]=u);
+  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'</svg><div class="pmap-tip" hidden></div>';
+  const tip=box.querySelector(".pmap-tip");let cur=null;
+  box.addEventListener("mousemove",e=>{const p=e.target.closest?.("path[data-unit]");if(!p){tip.hidden=true;cur=null;return}
+   if(cur!==p){cur=p;tip.innerHTML=pmapTip(box,p.dataset.unit,p.dataset.group);tip.hidden=false}
+   const r=box.getBoundingClientRect();let x=e.clientX-r.left+14,y=e.clientY-r.top+14;if(x+tip.offsetWidth>r.width-4)x=e.clientX-r.left-tip.offsetWidth-14;if(y+tip.offsetHeight>r.height-4)y=e.clientY-r.top-tip.offsetHeight-14;tip.style.left=Math.max(4,x)+"px";tip.style.top=Math.max(4,y)+"px"});
+  box.addEventListener("mouseleave",()=>{tip.hidden=true;cur=null});
+  box._refreshTip=()=>{cur=null};
   if(box.dataset.mode==="income")paintIncome(box);else if(box.dataset.pmapParty)paintPartyMap(box,box.dataset.pmapParty);
  }
  // Regional income layer: quantile classes (≤5) so wide gaps (e.g. 10x) still show every step.
@@ -456,38 +480,69 @@
   const k=v=>br.filter(b=>v>=b).length;const idx=i=>n<2?4:Math.round(i*4/(n-1));
   return {n,br,min:s[0],max:s.at(-1),col:v=>INC_COL[idx(k(v))],colAt:i=>INC_COL[idx(i)]};
  }
+ const pmapParts=box=>{const blk=box.closest(".pmap-block")||box.parentElement;return {blk,leg:blk?.querySelector(".pmap-legend"),note:blk?.querySelector(".pmap-note"),basis:blk?.querySelector(".pmap-basis")}};
+ const srcLine=(label,src)=>Array.isArray(src)&&src[2]?' · '+sourceLink(src[2],src[1]&&src[1].length<70?src[1]:(src[0]||"출처")):"";
  function paintIncome(box){
-  const inc=state.income;if(!inc)return;const vals=inc.values||{};const en=document.documentElement.lang==='en';
+  const inc=state.income;if(!inc)return;const vals=inc.values||{};box._refreshTip?.();
   const sc=incomeScale(Object.values(vals).filter(Number.isFinite));let missing=0;
-  box.querySelectorAll("path[data-unit]").forEach(p=>{
-   const u=p.dataset.unit,g=p.dataset.group;const key=vals[u]!=null?u:(g&&vals[g]!=null?g:null);const v=key?vals[key]:null;
-   p.classList.remove("on");p.classList.toggle("nodata",v==null);p.style.fill=v==null?"":sc.col(v);if(v==null)missing++;
-   const t=p.querySelector("title");if(t){if(t.dataset.orig==null)t.dataset.orig=t.textContent;
-    const nm=key===g&&g&&key!==u?g:(en?u:(box._units?.[u]?.ko||u));t.textContent=nm+" · "+(v==null?"자료 없음":incFmt(v)+" "+(inc.unit||""))}
-  });
-  const blk=box.closest(".pmap-block")||box.parentElement;
-  const leg=blk?.querySelector(".pmap-legend");
+  box.querySelectorAll("path[data-unit]").forEach(p=>{const v=rv(vals,p.dataset.unit,p.dataset.group);
+   p.classList.remove("on");p.classList.toggle("nodata",v==null);p.style.fill=v==null?"":sc.col(v);if(v==null)missing++});
+  const {leg,note,basis}=pmapParts(box);
   if(leg){const items=[];for(let i=0;i<sc.n;i++){const lo=i?sc.br[i-1]:sc.min,hi=i<sc.n-1?sc.br[i]:sc.max;items.push('<span><i style="background:'+sc.colAt(i)+'"></i>'+incFmt(lo)+(hi!==lo?"–"+incFmt(hi):"")+'</span>')}
    if(missing)items.push('<span><i class="nodata"></i>자료 없음</span>');
    leg.innerHTML='<b>'+esc(inc.metric||"")+'</b><em>'+esc(String(inc.year||""))+'</em><em>'+esc(inc.unit||"")+'</em><div>'+items.join("")+'</div>';leg.hidden=false}
-  const note=blk?.querySelector(".pmap-note");
   if(note){const src=Array.isArray(inc.source)?inc.source:[];note.innerHTML=(inc.note?esc(inc.note)+'<br>':"")+'<small class="fight-source"><span>자료</span>: <span>'+esc(inc.provider||src[0]||"")+'</span>'+(src[2]?' · '+sourceLink(src[2],src[1]||src[0]||"출처"):"")+'</small>'}
+  if(basis)basis.hidden=true;
  }
  function unpaintIncome(box){
-  box.querySelectorAll("path[data-unit]").forEach(p=>{p.classList.remove("nodata");p.style.fill="";const t=p.querySelector("title");if(t&&t.dataset.orig!=null)t.textContent=t.dataset.orig});
-  const leg=box.closest(".pmap-block")?.querySelector(".pmap-legend");if(leg){leg.hidden=true;leg.innerHTML=""}
+  box.querySelectorAll("path[data-unit]").forEach(p=>{p.classList.remove("nodata");p.style.fill=""});
+  const {leg,basis}=pmapParts(box);if(leg){leg.hidden=true;leg.innerHTML=""}if(basis)basis.hidden=false;
  }
  function paintPartyMap(box,label){
-  const pm=state.partyMap?.parties?.[label];const set=new Set(pm?.regions||[]);const col=partyColor(label);
-  box.querySelectorAll("path[data-unit]").forEach(p=>{const on=set.has(p.dataset.unit)||set.has(p.dataset.group);p.style.fill=on?col:"";p.classList.toggle("on",on)});
-  const note=box.parentElement?.querySelector(".pmap-note");if(note)note.innerHTML=pm?'<b style="color:'+col+'">'+esc(label)+'</b> · '+esc((pm.regions||[]).map(r=>(document.documentElement.lang==='en'?r:(box._ko||{})[r]||r)).join(", "))+(pm.note?'<br>'+esc(pm.note):""):"";
+  const pmAll=state.partyMap||{},vote=pmAll.vote||null,pm=pmAll.parties?.[label];box._refreshTip?.();
+  const paths=[...box.querySelectorAll("path[data-unit]")];const {leg,note,basis}=pmapParts(box);
+  const voteBasis=vote?'<span>집계 기준</span> <span>'+esc(vote.election||"")+'</span> · <span>'+esc(vote.metric||"")+'</span>'+srcLine("",vote.source):"";
+  if(label==="__win"&&vote){
+   const count={};paths.forEach(p=>{const w=rv(vote.winners,p.dataset.unit,p.dataset.group);p.classList.remove("on");p.classList.toggle("nodata",!w);p.style.fill=w?partyColor(w):"";if(w)count[w]=(count[w]||0)+1});
+   const uniq={};Object.entries(vote.winners||{}).forEach(([r,w])=>{uniq[w]=(uniq[w]||0)+1});
+   if(leg){leg.innerHTML='<b>지역별 1위</b><div>'+Object.entries(uniq).sort((a,b)=>b[1]-a[1]).map(([w,n])=>'<span><i style="background:'+partyColor(w)+'"></i>'+esc(w)+' <em>'+n+'곳</em></span>').join("")+(paths.some(p=>p.classList.contains("nodata"))?'<span><i class="nodata"></i>자료 없음</span>':"")+'</div>';leg.hidden=false}
+   if(note)note.innerHTML=vote.note?esc(vote.note):"";
+   if(basis){basis.innerHTML=voteBasis;basis.hidden=false}
+   return;
+  }
+  const col=partyColor(label),sh=vote?.shares?.[label];const hasSh=sh&&Object.keys(sh).length&&(Object.keys(sh).length>=0.5*Object.keys(vote.winners||{}).length||!pm);
+  if(hasSh){
+   paths.forEach(p=>{const v=rv(sh,p.dataset.unit,p.dataset.group);p.classList.remove("on");p.classList.toggle("nodata",v==null);p.style.fill=v==null?"":shareFill(col,v)});
+   if(leg){leg.innerHTML='<b>'+esc(label)+'</b><em>'+esc(vote.metric||"")+'</em><div><span class="pmap-grad" style="background:linear-gradient(90deg,'+shareFill(col,0.01)+','+shareFill(col,SHARE_MAX/2)+','+col+')"></span><span>0%</span><span>'+(SHARE_MAX/2)+'%</span><span>'+SHARE_MAX+'%+</span>'+(paths.some(p=>p.classList.contains("nodata"))?'<span><i class="nodata"></i>자료 없음</span>':"")+'</div>';leg.hidden=false}
+   const top=Object.entries(sh).sort((a,b)=>b[1]-a[1]).slice(0,3).map(([r,v])=>(isEn()?r:(box._ko||{})[r]||r)+" "+pct(v));
+   if(note)note.innerHTML='<b style="color:'+col+'">'+esc(label)+'</b> · <span>가장 높은 곳</span>: '+esc(top.join(", "))+(pm?.note?'<br>'+esc(pm.note):"");
+   if(basis){basis.innerHTML=voteBasis;basis.hidden=false}
+   return;
+  }
+  // No share data for this party: fall back to its listed strongholds, drawn lighter so a 1-seat party doesn't look dominant.
+  const set=new Set(pm?.regions||[]);
+  paths.forEach(p=>{const on=set.has(p.dataset.unit)||set.has(p.dataset.group);p.classList.remove("nodata");p.style.fill=on?mixHex("#eef1f3",col,.55):"";p.classList.toggle("on",on)});
+  if(leg){leg.innerHTML=pm?'<b>'+esc(label)+'</b><div><span><i style="background:'+mixHex("#eef1f3",col,.55)+'"></i>의석·득표가 눈에 띄는 지역</span><span>주별 득표율 자료 없음</span></div>':"";leg.hidden=!pm}
+  if(note)note.innerHTML=pm?'<b style="color:'+col+'">'+esc(label)+'</b> · '+esc((pm.regions||[]).map(r=>(isEn()?r:(box._ko||{})[r]||r)).join(", "))+(pm.note?'<br>'+esc(pm.note):""):"";
+  if(basis){basis.innerHTML='<span>집계 기준</span> '+esc(pmAll.basis||"")+(Array.isArray(pmAll.source)&&pmAll.source[2]?' · '+sourceLink(pmAll.source[2],pmAll.source[0]||"출처"):"");basis.hidden=false}
+ }
+ function pmapChipList(pm){
+  if(!pm)return [];const vote=pm.vote,out=[];const seen=new Set();
+  if(vote&&Object.keys(vote.winners||{}).length)out.push("__win");
+  const wins={};Object.values(vote?.winners||{}).forEach(w=>wins[w]=(wins[w]||0)+1);
+  const sum=o=>Object.values(o||{}).reduce((a,b)=>a+b,0);
+  Object.keys(vote?.shares||{}).sort((a,b)=>(wins[b]||0)-(wins[a]||0)||sum(vote.shares[b])-sum(vote.shares[a])).forEach(l=>{if(!seen.has(l)){seen.add(l);out.push(l)}});
+  Object.keys(pm.parties||{}).forEach(l=>{if(!seen.has(l)){seen.add(l);out.push(l)}});
+  return out;
  }
  function partyMapBlock(data){
   const pm=data.partymap,inc=data.income&&Object.keys(data.income.values||{}).length?data.income:null;
-  const hasPm=pm&&Object.keys(pm.parties||{}).length;if(!hasPm&&!inc)return "";
-  const first=hasPm?Object.keys(pm.parties)[0]:"";const chips=hasPm?Object.keys(pm.parties).map(l=>'<button type="button" class="fight-party'+(l===first?' on':'')+'" data-pmap-party="'+esc(l)+'"><i style="background:'+partyColor(l)+'"></i>'+esc(l)+'</button>').join(""):"";
+  const list=pmapChipList(pm);const hasPm=list.length>0;if(!hasPm&&!inc)return "";
+  const first=hasPm?list[0]:"";
+  const chips=list.map(l=>l==="__win"?'<button type="button" class="fight-party pmap-win'+(l===first?' on':'')+'" data-pmap-party="__win"><i class="pmap-win-i"></i>지역별 1위</button>':'<button type="button" class="fight-party'+(l===first?' on':'')+'" data-pmap-party="'+esc(l)+'"><i style="background:'+partyColor(l)+'"></i>'+esc(l)+'</button>').join("");
   const tog=inc?'<button type="button" class="pmap-toggle" data-pmap-income aria-pressed="'+(hasPm?"false":"true")+'"'+(hasPm?"":" disabled")+'><span class="pmap-switch"></span>지역별 소득 수준</button>':"";
-  return '<section class="pmap-block'+(hasPm?"":" pmap-block--income")+'"><div class="fights-head"><h4>'+(hasPm?"정당별 강세 지역":"지역별 소득 수준")+'</h4><span>'+(hasPm?"정당을 누르면 강한 주·도가 칠해져요":"")+'</span></div><div class="pmap-bar"><div class="pmap-chips">'+chips+'</div>'+tog+'</div><div class="pmap" data-pmap-cc="'+esc(data.code)+'"'+(hasPm?' data-pmap-party="'+esc(first)+'"':' data-mode="income"')+'><p class="board-loading">지도를 그리는 중…</p></div><div class="pmap-legend" hidden></div><p class="pmap-note"></p>'+(hasPm?'<small class="fight-source pmap-basis">기준 '+esc(pm.basis||"")+(Array.isArray(pm.source)&&pm.source[2]?' · '+sourceLink(pm.source[2],pm.source[0]||"출처"):"")+'</small>':"")+'</section>';
+  const hint=pm?.vote?"1위 정당을 보거나, 정당을 눌러 지역별 득표율을 진하기로 봐요":"정당을 누르면 강한 주·도가 칠해져요";
+  return '<section class="pmap-block'+(hasPm?"":" pmap-block--income")+'"><div class="fights-head"><h4>'+(hasPm?"정당별 지역 지지":"지역별 소득 수준")+'</h4><span>'+(hasPm?hint:"")+'</span></div><div class="pmap-bar"><div class="pmap-chips">'+chips+'</div>'+tog+'</div><div class="pmap" data-pmap-cc="'+esc(data.code)+'"'+(hasPm?' data-pmap-party="'+esc(first)+'"':' data-mode="income"')+'><p class="board-loading">지도를 그리는 중…</p></div><div class="pmap-legend" hidden></div><p class="pmap-note"></p>'+(hasPm?'<small class="fight-source pmap-basis"></small>':"")+'</section>';
  }
  function partyRegions(data){
   const r=data.regions;if(!r||(!r.summary&&!Object.keys(r.parties||{}).length))return "";
@@ -600,7 +655,7 @@
   const lead=L.name?'<div class="party-leader">'+portrait({name:L.name,photo:photo?{url:photo.d}:null},"party-leader-photo")+'<div><span class="party-leader-title">'+esc(L.title||"대표")+(L.since?' · '+esc(String(L.since))+'년부터':"")+'</span><strong>'+esc(L.nameKo||L.name)+'</strong>'+(L.nameKo&&L.nameKo!==L.name?'<small>'+esc(L.name)+'</small>':"")+(L.office?'<small>'+esc(L.office)+'</small>':"")+
    (Array.isArray(prof.coLeaders)&&prof.coLeaders.length?'<small class="party-co">'+prof.coLeaders.map(c=>esc((c.title?c.title+' ':"")+(c.nameKo||c.name))).join(" · ")+'</small>':"")+
    (photo?'<small class="party-photo-credit">사진 '+sourceLink(photo.source,photo.license||"원본")+'</small>':"")+'</div></div>':"";
-  const pmp=state.partyMap?.parties?.[label];const pmini=pmp&&pmp.regions?.length?'<h5>강세 지역</h5><div class="pmap pmap--mini" data-pmap-cc="'+esc(state.activeCode||"")+'" data-pmap-party="'+esc(label)+'"></div><p class="pmap-note"></p>':"";
+  const pmp=state.partyMap?.parties?.[label],pmsh=state.partyMap?.vote?.shares?.[label];const pmini=(pmp&&pmp.regions?.length)||(pmsh&&Object.keys(pmsh).length)?'<h5>'+(pmsh&&Object.keys(pmsh).length?"지역별 득표":"강세 지역")+'</h5><div class="pmap pmap--mini" data-pmap-cc="'+esc(state.activeCode||"")+'" data-pmap-party="'+esc(label)+'"></div><p class="pmap-note"></p>':"";
   const rg=state.regions?.parties?.[label];const region=rg?'<p class="party-region"><b>'+esc(rg.kind||"지역 정당")+'</b> · '+esc(rg.region||"")+'</p>':"";
   const ideology=Array.isArray(prof.ideology)&&prof.ideology.length?'<div class="party-tags">'+prof.ideology.map(t=>'<span>'+esc(t)+'</span>').join("")+'</div>':"";
   const positions=Array.isArray(prof.positions)&&prof.positions.length?'<h5>주요 주장</h5><ul class="party-positions">'+prof.positions.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";

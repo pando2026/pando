@@ -1,0 +1,93 @@
+{
+ "IQ": {
+  "level": "unit",
+  "names": [
+   "Duhok",
+   "Erbil",
+   "Basra",
+   "Al Muthanna",
+   "Sulaymaniyah",
+   "Diyala",
+   "Wasit",
+   "Maysan",
+   "Al Anbar",
+   "Najaf",
+   "Nineveh",
+   "Saladin",
+   "Kirkuk",
+   "Baghdad",
+   "Babylon",
+   "Al-Qādisiyyah",
+   "Dhi Qar",
+   "Karbala"
+  ],
+  "parties": [
+   "쿠르드애국연맹(PUK)",
+   "재건개발연합",
+   "국가세력연합",
+   "진보당(타카둠)",
+   "아즘 연합",
+   "쿠르드민주당(KDP)",
+   "법치국가연합",
+   "바드르 조직",
+   "사디쿤",
+   "기타 정당·소수민족 할당"
+  ],
+  "current": "2025년 11월 11일 대표의회 총선 주(州)별 의석"
+ },
+ "ET": {
+  "level": "unit",
+  "names": [
+   "Southern Nations",
+   "Somali",
+   "Afar",
+   "Amhara",
+   "Tigray",
+   "Benishangul-Gumuz",
+   "Gambela",
+   "Oromia",
+   "Dire Dawa",
+   "Addis Ababa",
+   "Harari"
+  ],
+  "parties": [
+   "에제마(EZEMA)",
+   "번영당",
+   "암하라민족운동(NaMA)",
+   "기타 야당",
+   "무소속",
+   "공석"
+  ],
+  "current": "2026년 6월 1일 총선(인민대표원). 위키백과는 정당별 지역 의석을 싣지 않아, 지역 정당만 근거지 기준으로 표시"
+ },
+ "MM": {
+  "level": "unit",
+  "names": [
+   "Rakhine State",
+   "Chin State",
+   "Kachin State",
+   "Sagaing",
+   "Shan State",
+   "Kayah State",
+   "Kayin State",
+   "Mon State",
+   "Tanintharyi",
+   "Ayeyarwady",
+   "Yangon",
+   "Bago",
+   "Magway",
+   "Mandalay"
+  ],
+  "parties": [
+   "소수민족 정당(샨민주당 등)",
+   "국민통합당(NUP)",
+   "통합단결발전당(USDP)",
+   "군 지정 의석",
+   "무소속",
+   "선거 미실시(공석)",
+   "인민당 등 신생 정당",
+   "소수민족 정당"
+  ],
+  "current": "2025년 12월~2026년 1월 3단계 총선. 위키백과는 지역별 1위를 싣지 않아 USDP는 개표표상 최다 득표 지역, 소수민족 정당은 근거지(당명·본부), 공석은 미실시 선거구 기준"
+ }
+}
