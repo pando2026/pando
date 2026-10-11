@@ -595,10 +595,10 @@
   d.addEventListener("keydown",e=>{if(e.key==="Escape")d.hidden=true});
   d.querySelector("form").addEventListener("submit",async e=>{e.preventDefault();const f=e.target,st=$("#feedback-status"),btn=f.querySelector(".feedback-send");const msg=f.message.value.trim();if(!msg){st.textContent="내용을 적어 주세요.";return}
    btn.disabled=true;st.textContent="보내는 중…";
-   try{const r=await fetch("https://formsubmit.co/ajax/"+FEEDBACK_TO,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify({_subject:"[판도 피드백] "+msg.slice(0,40),message:msg,email:f.email.value.trim()||"(없음)",page:location.href,_template:"table",_captcha:"false"})});
+   try{const r=await fetch("https://formsubmit.co/ajax/"+FEEDBACK_TO,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({_subject:"[판도 피드백] "+msg.slice(0,40),message:msg,page:location.href,_template:"table",_captcha:"false"},f.email.value.trim()?{email:f.email.value.trim(),_replyto:f.email.value.trim()}:{}))});
     const j=await r.json().catch(()=>({}));if(!r.ok||String(j.success)==="false")throw Error(j.message||r.status);
     st.textContent="보냈습니다. 고맙습니다!";f.reset();setTimeout(()=>{d.hidden=true;st.textContent=""},1800)}
-   catch(err){st.innerHTML="보내지 못했습니다. 이메일로 직접 보내 주세요: <b>"+esc(FEEDBACK_TO)+"</b>"}
+   catch(err){const m=String(err&&err.message||"");st.innerHTML=/activat/i.test(m)?"처음 한 번 인증이 필요합니다. 운영자 메일함("+esc(FEEDBACK_TO)+")에 온 FormSubmit 메일에서 <b>Activate Form</b>을 누르면 그다음부터 바로 전달됩니다.":"보내지 못했습니다"+(m?" ("+esc(m.slice(0,80))+")":"")+". 이메일로 직접 보내 주세요: <b>"+esc(FEEDBACK_TO)+"</b>"}
    finally{btn.disabled=false}})}
  async function drawBoard(slot,i){
   const ctx=state.conflictCtx;if(!ctx||!global_PB())return;const c=ctx.list[i];if(!c)return;
