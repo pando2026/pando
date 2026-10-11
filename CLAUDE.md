@@ -19,6 +19,8 @@
   - `photos.json`/`photo-index.json` 인물 사진(위키미디어 공용 자유 라이선스만, 출처·라이선스 필수).
   - `boards.json` **갈등도**(분쟁을 누르면 펼쳐지는 지도 그림). 보드마다 actors(국가·무장세력·기업, side a/b/a2/b2/n), links(from→to, type: attack·troops·arms·finance·trade·sanction·mediate·talks·claim·support, 출처 필수), background(경위 타임라인), videos(관련 날리지식 영상 id). `pairs`로 civics 갈등 항목에 붙는다. 보드가 없는 갈등은 civics 자료로 자동 그림을 그린다. 조사 지침 `_tools/boards/BRIEF.md`. 렌더러 `_src/board.js`, 국가 배지 좌표 `anchors.json`.
   - `blocs.json` 국제기구·블록 회원국과 가입일(NATO·EU·BRICS·SCO·일대일로 등 26개). 지도 아래 토글과 국가 정보에 쓰인다. 조사 지침 `_tools/extra/BLOCS.md`.
+  - `allies.json` 우방 관계(나라별 4~6곳: tie 동맹/전략적 동반자/우호·협력/후원, basis 근거 조약, interests 겹치는 이해관계, 출처). 지침 `_tools/allies/BRIEF.md`. 갈등 관계 보강 지침 `_tools/conflicts/BRIEF.md`.
+  - 지도는 태평양 중심(`world.json`의 `lon0`=150). 다시 그릴 때 `_tools/reproject.py`. 좌표를 그릴 때는 경도에서 lon0를 빼고 투영한다.
   - `regions.json` 큰 나라의 지역 기반 정당·전국 정당의 지역 기반(의회 탭 '지역과 정당'). 키는 civics groups 이름과 같아야 한다. 지침 `_tools/regions/BRIEF.md`.
   - `fx.json` 예산 금액의 원화·달러 환산용 환율(USD 기준). 국가수반의 '제○대'는 s*.json 인물의 `ordinal`(지침 `_tools/extra/ORDINAL.md`).
   - `en/strings.json` 영어 번역 사전(아래 '영어판').
@@ -50,6 +52,7 @@
 작업 후 반드시: JSON 문법 확인 → (화면 소스를 고쳤다면) `node _src/build.mjs` → 커밋(작성자 `Claude <noreply@anthropic.com>`) → `git push origin HEAD:main`.
 - **변화 점검(하루 2회)**: 최근 12~24시간 국제 정치·안보·경제 주요 사건을 확인해 `edition.json`(가장 중요한 사건을 stories[0]으로, 지도 좌표 포함), 관련 국가 `contexts.json`·`changewatch.json`·`civics.json` conflicts를 갱신. 이미 있는 스토리는 고쳐 쓰고 오래된(2주 이상) 스토리는 뺀다. 최대 20개.
 - **주간 점검(월요일)**: `contexts.json` 52개국의 asOf가 7일 넘은 것부터 다시 확인, `fights.json` 보강.
+- **주간 점검**에서 우방·갈등 관계의 큰 변화(단교·조약·전쟁)를 `allies.json`·`civics.json`에 반영.
 - **월간 점검(1일)**: 의회 구성 변화(선거·탈당), 지도자 교체(+`ordinal` 갱신), `party-profiles.json` 대표 교체, `blocs.json` 가입·탈퇴·정지, `fx.json` 환율 확인.
 - **갈등도**: 변화 점검 때 큰 사건이 생긴 분쟁은 `boards.json`의 links·background를 고친다(출처 필수, `asOf` 갱신).
 - 번역: 새로 쓴 한국어 문장은 같은 커밋에서 `data/en/strings.json`에 영어를 추가한다.
