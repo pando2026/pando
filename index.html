@@ -1005,6 +1005,17 @@ html.lang-en-loading body{visibility:hidden}
 .cap-star{fill:#b8202b;stroke:#fff}
 .cap-label{font-weight:800;fill:#15232d;paint-order:stroke;stroke:#fff;stroke-linejoin:round}
 @media (max-width:600px){.mastnav{flex-wrap:wrap;row-gap:8px;column-gap:12px;justify-content:flex-start;overflow:visible}.mastnav .guide-link,.mastnav .feedback-link{min-height:30px;padding:4px 9px}}
+.quick-search{margin-top:16px;max-width:460px}
+.quick-search label{display:block;font-size:11px;font-weight:800;letter-spacing:.06em;color:#b8202b;margin-bottom:6px}
+.qs-box{position:relative}
+.qs-box input{width:100%;box-sizing:border-box;font:inherit;font-size:15px;padding:11px 14px 11px 38px;border:1.5px solid #15232d;border-radius:4px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2315232d' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-4-4'/%3E%3C/svg%3E") no-repeat 12px center}
+.qs-box input:focus{outline:2px solid #b8202b;outline-offset:1px}
+.qs-results{position:absolute;z-index:30;left:0;right:0;top:calc(100% + 4px);list-style:none;margin:0;padding:4px;background:#fff;border:1px solid #cfd8de;border-radius:4px;box-shadow:0 8px 24px rgba(21,35,45,.15)}
+.qs-results[hidden]{display:none}
+.qs-results li{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:3px;cursor:pointer;font-size:14px}
+.qs-results li span{color:#6b7881;font-size:12.5px;margin-left:auto}
+.qs-results li[aria-selected="true"],.qs-results li:hover{background:#f1f4f6}
+.qs-results .flag{width:22px;height:15px;flex:none}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -1048,7 +1059,7 @@ html,body{background:#fff;color:var(--ink)}
 </style>
 <div class="shell">
  <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#watch">변화 관찰</a><a href="#countries">국가 탐색</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
- <section class="top"><div><div class="eyebrow">Global intelligence · Daily brief</div><h1>세계의 변화를<br><em>맥락까지</em> 읽다.</h1><p>정치 제도와 경제·군사 지표를 바탕으로, 분쟁부터 재정안과 선거까지 중요한 변화를 추적합니다. 확인된 사실과 주장을 구분해 보여드립니다.</p><a class="hero-guide" href="#guide" data-guide-open>처음이라면 · 판도 사용법 보기 →</a></div><aside class="edition-box"><strong id="edition-title">브리핑을 불러오는 중</strong><div id="edition-note">매시간 새로운 변화를 점검합니다. 통계는 각 발표 시점을 따릅니다.</div><div class="small" id="edition-time"></div><span class="live-note" id="live-note"></span></aside></section>
+ <section class="top"><div><div class="eyebrow">Global intelligence · Daily brief</div><h1>세계의 변화를<br><em>맥락까지</em> 읽다.</h1><p>정치 제도와 경제·군사 지표를 바탕으로, 분쟁부터 재정안과 선거까지 중요한 변화를 추적합니다. 확인된 사실과 주장을 구분해 보여드립니다.</p><a class="hero-guide" href="#guide" data-guide-open>처음이라면 · 판도 사용법 보기 →</a><div class="quick-search" role="search"><label for="quick-country">나라 바로 찾기</label><div class="qs-box"><input id="quick-country" type="search" autocomplete="off" placeholder="예: 튀르키예, 일본, Brazil" aria-controls="quick-results"><ul id="quick-results" class="qs-results" role="listbox" hidden></ul></div></div></div><aside class="edition-box"><strong id="edition-title">브리핑을 불러오는 중</strong><div id="edition-note">매시간 새로운 변화를 점검합니다. 통계는 각 발표 시점을 따릅니다.</div><div class="small" id="edition-time"></div><span class="live-note" id="live-note"></span></aside></section>
  <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="dot-key country-key"></i>주목 국가 <button type="button" class="occ-toggle" data-occ-toggle aria-pressed="true"><i class="occ-key"></i>무력 점령·통제 지역</button></span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치, 빗금은 무력 점령·무장세력 통제 지역(진한 빗금 = 대부분 장악, 옅은 빗금 = 일부)입니다.</span></div><div class="bloc-bar" id="bloc-bar" aria-label="국제기구 회원국 보기"></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
  <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
  <section aria-labelledby="feed-title"><div class="section-head"><div><div class="eyebrow">The latest / 주요 현장</div><h2 id="feed-title">국제 현장</h2></div><p>기사 발행일과 사건 시점을 구분합니다</p></div><div class="filters" id="filters" role="group" aria-label="지역별 필터"></div><div class="feed" id="feed"></div></section>
@@ -2728,7 +2739,7 @@ html,body{background:#fff;color:var(--ink)}
     card("2","세계 변화 지도","빨간 점은 사건 현장, 마름모는 주목 국가입니다. 빗금은 무력 점령·무장세력 통제 지역(진한 빗금 = 대부분 장악, 옅은 빗금 = 일부)이고, 누르면 누가 언제부터 쥐고 있는지와 양쪽 공식 입장이 나옵니다. 손가락이나 휠로 확대·이동하세요.")+
     card("3","국제기구로 보기","지도 아래 NATO·EU·BRICS·SCO·일대일로 등을 누르면 회원국이 칠해지고, 파트너·옵서버는 옅게 표시됩니다.")+
     card("4","지금 주목할 국가","최근 바뀐 일을 카드로 모았습니다. ‘발표·잠정·확정’ 표시로 사실이 어디까지 굳었는지 알려주고, ‘원문’ 링크로 출처를 바로 확인할 수 있습니다.")+
-    card("5","국가 탐색","250개 국가·지역을 한국어나 영어 이름으로 검색해 국가 상세를 엽니다.")+
+    card("5","나라 바로 찾기","맨 위 검색창에 한국어나 영어 이름을 몇 글자 치면 바로 그 나라 화면이 열립니다. 아래 ‘국가 탐색’에서는 250개 국가·지역을 지역별로 훑어볼 수 있습니다.")+
     card("6","판도 해설","청문회·정상회담 같은 큰 장면을 ‘왜?’에서 출발해 질의응답·숨은 맥락·용어·아직 모르는 것까지 풀어 씁니다.")+'</ol></section>'+
    '<section class="guide-sec"><h3>국가 상세 · 위에서부터</h3><ol class="guide-grid">'+
     card("A","한눈에 보는 문제","맨 위 경고등 5칸(물가·실업률·정부부채·부패인식·분쟁)이 양호·주의·위험을 색으로 보여주고, ▲▼로 작년보다 나빠졌는지 알려줍니다. 마우스를 올리면 한국 값이 나옵니다. 주요국은 지금 가장 큰 문제 카드 3장이 있고, ‘왜?’를 누르면 결과 ← 직접 원인 ← 구조 순서로 원인을 따라가며, 금리 결정·선거 같은 다음 일정은 D-day로 보여줍니다.")+
@@ -2854,6 +2865,16 @@ html,body{background:#fff;color:var(--ink)}
  });
  $("#about-open").addEventListener("click",e=>{e.preventDefault();about()});
  $("#country-search")?.addEventListener("input",e=>{state.countryQuery=e.target.value;renderCountries()});
+ // Quick country finder in the hero: type → up to 6 matches → open the dossier.
+ (function(){const inp=$("#quick-country"),ul=$("#quick-results");if(!inp||!ul)return;let hits=[],sel=0;
+  const draw=()=>{if(!hits.length){ul.hidden=true;ul.innerHTML="";return}ul.innerHTML=hits.map((c,i)=>'<li role="option" aria-selected="'+(i===sel)+'" data-qs="'+esc(c.code)+'">'+flag(c.code,"flag-mini")+'<b>'+esc(countryName(c))+'</b><span>'+esc(c.name||"")+'</span></li>').join("");ul.hidden=false};
+  inp.addEventListener("input",()=>{const q=inp.value.trim().toLocaleLowerCase("ko");sel=0;if(!q){hits=[];draw();return}
+   const score=c=>{const ns=[countryName(c),c.name,c.code,...(c.aliases||[])].map(s=>String(s||"").toLocaleLowerCase("ko"));return ns.some(s=>s===q)?0:ns.some(s=>s.startsWith(q))?1:ns.some(s=>s.includes(q))?2:9};
+   hits=state.countries.map(c=>[score(c),c]).filter(x=>x[0]<9).sort((a,b)=>a[0]-b[0]||Math.min(...[countryName(a[1]),a[1].name,...(a[1].aliases||[])].map(x=>String(x||'').length))-Math.min(...[countryName(b[1]),b[1].name,...(b[1].aliases||[])].map(x=>String(x||'').length))).slice(0,6).map(x=>x[1]);draw()});
+  inp.addEventListener("keydown",e=>{if(!hits.length)return;if(e.key==="ArrowDown"){sel=(sel+1)%hits.length;draw();e.preventDefault()}else if(e.key==="ArrowUp"){sel=(sel-1+hits.length)%hits.length;draw();e.preventDefault()}else if(e.key==="Enter"){e.preventDefault();const c=hits[sel];hits=[];draw();inp.value="";inp.blur();openCountry(c.code)}else if(e.key==="Escape"){hits=[];draw()}});
+  ul.addEventListener("mousedown",e=>{const li=e.target.closest("[data-qs]");if(!li)return;e.preventDefault();hits=[];draw();inp.value="";inp.blur();openCountry(li.dataset.qs)});
+  inp.addEventListener("blur",()=>setTimeout(()=>{hits=[];draw()},150));
+ })();
  $("#country-region")?.addEventListener("change",e=>{state.countryRegion=e.target.value;renderCountries()});
  async function loadEdition(silent=false){
   try{

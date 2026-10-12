@@ -1103,7 +1103,7 @@
     card("2","세계 변화 지도","빨간 점은 사건 현장, 마름모는 주목 국가입니다. 빗금은 무력 점령·무장세력 통제 지역(진한 빗금 = 대부분 장악, 옅은 빗금 = 일부)이고, 누르면 누가 언제부터 쥐고 있는지와 양쪽 공식 입장이 나옵니다. 손가락이나 휠로 확대·이동하세요.")+
     card("3","국제기구로 보기","지도 아래 NATO·EU·BRICS·SCO·일대일로 등을 누르면 회원국이 칠해지고, 파트너·옵서버는 옅게 표시됩니다.")+
     card("4","지금 주목할 국가","최근 바뀐 일을 카드로 모았습니다. ‘발표·잠정·확정’ 표시로 사실이 어디까지 굳었는지 알려주고, ‘원문’ 링크로 출처를 바로 확인할 수 있습니다.")+
-    card("5","국가 탐색","250개 국가·지역을 한국어나 영어 이름으로 검색해 국가 상세를 엽니다.")+
+    card("5","나라 바로 찾기","맨 위 검색창에 한국어나 영어 이름을 몇 글자 치면 바로 그 나라 화면이 열립니다. 아래 ‘국가 탐색’에서는 250개 국가·지역을 지역별로 훑어볼 수 있습니다.")+
     card("6","판도 해설","청문회·정상회담 같은 큰 장면을 ‘왜?’에서 출발해 질의응답·숨은 맥락·용어·아직 모르는 것까지 풀어 씁니다.")+'</ol></section>'+
    '<section class="guide-sec"><h3>국가 상세 · 위에서부터</h3><ol class="guide-grid">'+
     card("A","한눈에 보는 문제","맨 위 경고등 5칸(물가·실업률·정부부채·부패인식·분쟁)이 양호·주의·위험을 색으로 보여주고, ▲▼로 작년보다 나빠졌는지 알려줍니다. 마우스를 올리면 한국 값이 나옵니다. 주요국은 지금 가장 큰 문제 카드 3장이 있고, ‘왜?’를 누르면 결과 ← 직접 원인 ← 구조 순서로 원인을 따라가며, 금리 결정·선거 같은 다음 일정은 D-day로 보여줍니다.")+
@@ -1229,6 +1229,16 @@
  });
  $("#about-open").addEventListener("click",e=>{e.preventDefault();about()});
  $("#country-search")?.addEventListener("input",e=>{state.countryQuery=e.target.value;renderCountries()});
+ // Quick country finder in the hero: type → up to 6 matches → open the dossier.
+ (function(){const inp=$("#quick-country"),ul=$("#quick-results");if(!inp||!ul)return;let hits=[],sel=0;
+  const draw=()=>{if(!hits.length){ul.hidden=true;ul.innerHTML="";return}ul.innerHTML=hits.map((c,i)=>'<li role="option" aria-selected="'+(i===sel)+'" data-qs="'+esc(c.code)+'">'+flag(c.code,"flag-mini")+'<b>'+esc(countryName(c))+'</b><span>'+esc(c.name||"")+'</span></li>').join("");ul.hidden=false};
+  inp.addEventListener("input",()=>{const q=inp.value.trim().toLocaleLowerCase("ko");sel=0;if(!q){hits=[];draw();return}
+   const score=c=>{const ns=[countryName(c),c.name,c.code,...(c.aliases||[])].map(s=>String(s||"").toLocaleLowerCase("ko"));return ns.some(s=>s===q)?0:ns.some(s=>s.startsWith(q))?1:ns.some(s=>s.includes(q))?2:9};
+   hits=state.countries.map(c=>[score(c),c]).filter(x=>x[0]<9).sort((a,b)=>a[0]-b[0]||Math.min(...[countryName(a[1]),a[1].name,...(a[1].aliases||[])].map(x=>String(x||'').length))-Math.min(...[countryName(b[1]),b[1].name,...(b[1].aliases||[])].map(x=>String(x||'').length))).slice(0,6).map(x=>x[1]);draw()});
+  inp.addEventListener("keydown",e=>{if(!hits.length)return;if(e.key==="ArrowDown"){sel=(sel+1)%hits.length;draw();e.preventDefault()}else if(e.key==="ArrowUp"){sel=(sel-1+hits.length)%hits.length;draw();e.preventDefault()}else if(e.key==="Enter"){e.preventDefault();const c=hits[sel];hits=[];draw();inp.value="";inp.blur();openCountry(c.code)}else if(e.key==="Escape"){hits=[];draw()}});
+  ul.addEventListener("mousedown",e=>{const li=e.target.closest("[data-qs]");if(!li)return;e.preventDefault();hits=[];draw();inp.value="";inp.blur();openCountry(li.dataset.qs)});
+  inp.addEventListener("blur",()=>setTimeout(()=>{hits=[];draw()},150));
+ })();
  $("#country-region")?.addEventListener("change",e=>{state.countryRegion=e.target.value;renderCountries()});
  async function loadEdition(silent=false){
   try{
