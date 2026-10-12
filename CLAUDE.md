@@ -27,6 +27,7 @@
   - `regional-income.json` 주·도별 소득 수준(정당 강세 지도의 '지역별 소득 수준' 토글). {CC:{metric,unit,year,provider,source,values:{admin1 이름 또는 그룹명:값},note}}. 키는 `admin1/CC.json`의 units `n`(또는 `g`)과 같아야 한다. 해마다 통계청 새 자료가 나오면 갱신. 지침 `_tools/income/BRIEF.md`.
   - `problems.json` 국가 화면 맨 위 '한눈에 보는 문제'의 핵심 문제 카드 3장(+왜? 원인 사슬, 다음 일정). 지침 `_tools/problems/BRIEF.md`. 경고등(물가·실업·부채·부패·갈등)은 기존 자료로 자동 계산. 주간 점검 때 asOf가 7일 넘은 나라부터 갱신.
   - `occupied.json` 무력 점령·무장세력 통제 지역(메인 지도·갈등도 빗금). `_tools/occupied/build.py`로 Natural Earth 1급 행정구역 + DeepStateMap(우크라이나) 경계를 투영해 만든다. 지침 `_tools/occupied/BRIEF.md`. 변화 점검 때 점령·탈환이 있으면 갱신.
+  - `capitals.json` 나라별 수도 [한국어, 영어, 경도, 위도, 비고](Natural Earth 인구 밀집지 ADM0CAP). 주·도 지도가 없는 나라는 정치 탭에 '수도와 위치' 지도로 보여준다.
   - `fx.json` 예산 금액의 원화·달러 환산용 환율(USD 기준). 국가수반의 '제○대'는 s*.json 인물의 `ordinal`(지침 `_tools/extra/ORDINAL.md`).
   - `en/strings.json` 영어 번역 사전(아래 '영어판').
 - `_tools/harvest.py` — 화면에 실제로 보이는 한국어 문자열을 모두 모은다(번역 누락 확인용).

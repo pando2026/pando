@@ -545,6 +545,41 @@
   if(note)note.innerHTML=pm?'<b style="color:'+col+'">'+esc(label)+'</b> · '+esc((pm.regions||[]).map(r=>(isEn()?r:(box._ko||{})[r]||r)).join(", "))+(pm.note?'<br>'+esc(pm.note):""):"";
   if(basis){basis.innerHTML='<span>집계 기준</span> '+esc(pmAll.basis||"")+(Array.isArray(pmAll.source)&&pmAll.source[2]?' · '+sourceLink(pmAll.source[2],pmAll.source[0]||"출처"):"");basis.hidden=false}
  }
+ // Countries without a state/province map: the country on a small locator map with its capital(s).
+ let worldP2=null,capP=null;const getWorld2=()=>worldP2||(worldP2=fetch("data/world.json").then(r=>r.json()));const getCaps=()=>capP||(capP=fetch("data/capitals.json").then(r=>r.json()).catch(()=>({})));
+ function capitalBlock(data){return '<section class="pmap-block cap-block"><div class="fights-head"><h4>수도와 위치</h4><span>주·도 지도는 준비 중이에요</span></div><div class="capmap" data-cap-cc="'+esc(data.code)+'"><p class="board-loading">지도를 그리는 중…</p></div><p class="pmap-note cap-note"></p></section>'}
+ async function drawCapital(box){if(!box||box.dataset.drawn)return;box.dataset.drawn="1";const cc=box.dataset.capCc;
+  let world,caps;try{[world,caps]=await Promise.all([getWorld2(),getCaps()])}catch(e){box.textContent="지도를 불러오지 못했습니다.";return}
+  const mine=world.countries.filter(c=>c.c===cc);if(!mine.length){box.closest(".cap-block")?.remove();return}
+  // world.json is pre-projected (Natural Earth I, centred on lon0); invert to lon/lat and redraw with a local projection so far-off countries aren't sheared.
+  const fx=p=>{const p2=p*p,p4=p2*p2;return 0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))},fy=p=>{const p2=p*p,p4=p2*p2;return p*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)))};
+  const inv=(x,y)=>{const X=(x-world.w/2)/world.k,Y=world.top-y/world.k;let p=Y;for(let i=0;i<8;i++){const h=1e-5;p-=(fy(p)-Y)/((fy(p+h)-fy(p-h))/(2*h))}return [X/fx(p)*180/Math.PI+(world.lon0||0),p*180/Math.PI]};
+  const rings=d=>(d.match(/M[^M]+/g)||[]).map(sub=>{const n=sub.match(/-?\d+(?:\.\d+)?/g)||[];const r=[];for(let i=0;i+1<n.length;i+=2)r.push([+n[i],+n[i+1]]);return r});
+  const bb=c=>{const n=(c.d.match(/-?\d+(?:\.\d+)?/g)||[]).map(Number);let a=1e9,b=-1e9,e=1e9,f=-1e9;for(let i=0;i+1<n.length;i+=2){a=Math.min(a,n[i]);b=Math.max(b,n[i]);e=Math.min(e,n[i+1]);f=Math.max(f,n[i+1])}return [a,b,e,f]};
+  // main body of the country: the largest ring (by projected bbox area) and others near it
+  const myR=mine.flatMap(c=>rings(c.d));const area=r=>{let A=0;for(let i=0;i<r.length;i++){const j=(i+1)%r.length;A+=r[i][0]*r[j][1]-r[j][0]*r[i][1]}return Math.abs(A)/2};
+  myR.sort((a,b)=>area(b)-area(a));const big=myR[0];const bbx=r=>[Math.min(...r.map(p=>p[0])),Math.max(...r.map(p=>p[0])),Math.min(...r.map(p=>p[1])),Math.max(...r.map(p=>p[1]))];
+  let [x0,x1,y0,y1]=bbx(big);const span=Math.max(x1-x0,y1-y0,4);myR.forEach(r=>{const [a,b,e,f]=bbx(r);if(a>x0-span*.6&&b<x1+span*.6&&e>y0-span*.6&&f<y1+span*.6){x0=Math.min(x0,a);x1=Math.max(x1,b);y0=Math.min(y0,e);y1=Math.max(y1,f)}});
+  const pad=Math.max(x1-x0,y1-y0)*.5+3;const near=[x0-pad*2,x1+pad*2,y0-pad*2,y1+pad*2];
+  const [cl,ct]=inv((x0+x1)/2,(y0+y1)/2);const kx=Math.cos(ct*Math.PI/180);
+  const fixLon=lon=>{let v=lon-cl;v=((v+540)%360)-180;return v};
+  const loc=([lon,lat])=>[fixLon(lon)*kx,-lat];
+  const capList=caps[cc]||[];
+  const shapes=world.countries.filter(c=>{const [a,b,e,f]=bb(c);return !(b<near[0]||a>near[1]||f<near[2]||e>near[3])}).map(c=>({c:c.c,rs:rings(c.d).map(r=>r.map(p=>loc(inv(p[0],p[1]))))}));
+  const meL=shapes.filter(s=>s.c===cc).flatMap(s=>s.rs);let X0=1e9,X1=-1e9,Y0=1e9,Y1=-1e9;
+  const mainBox=bbx(myR[0].map(p=>loc(inv(p[0],p[1]))));[X0,X1,Y0,Y1]=mainBox;const sp=Math.max(X1-X0,Y1-Y0,1);
+  meL.forEach(r=>{const [a,b,e,f]=bbx(r);if(a>X0-sp*.6&&b<X1+sp*.6&&e>Y0-sp*.6&&f<Y1+sp*.6){X0=Math.min(X0,a);X1=Math.max(X1,b);Y0=Math.min(Y0,e);Y1=Math.max(Y1,f)}});
+  capList.forEach(c=>{const [x,y]=loc([c[2],c[3]]);X0=Math.min(X0,x);X1=Math.max(X1,x);Y0=Math.min(Y0,y);Y1=Math.max(Y1,y)});
+  const cw=Math.max(X1-X0,.6),ch=Math.max(Y1-Y0,.4),pd=Math.max(cw,ch)*.35+.3;let vx=X0-pd,vy=Y0-pd,vw=cw+pd*2,vh=ch+pd*2;
+  const ar=2;if(vw/vh<ar){const nw=vh*ar;vx-=(nw-vw)/2;vw=nw}else{const nh=vw/ar;vy-=(nh-vh)/2;vh=nh}
+  const u=vw/600;const ds=s=>s.rs.map(r=>"M"+r.map(p=>p[0].toFixed(3)+" "+p[1].toFixed(3)).join("L")+"Z").join("");
+  const paths=shapes.map(s=>'<path class="cap-land'+(s.c===cc?' cap-land--on':"")+'" d="'+ds(s)+'"/>').join("");
+  const en=isEn();const marks=capList.map(c=>{const [x,y]=loc([c[2],c[3]]);const r=6*u;
+   const pts=[];for(let k=0;k<10;k++){const ang=-Math.PI/2+k*Math.PI/5,rr=k%2?r*.42:r;pts.push((x+rr*Math.cos(ang)).toFixed(3)+" "+(y+rr*Math.sin(ang)).toFixed(3))}
+   return '<path class="cap-star" d="M'+pts.join("L")+'Z" style="stroke-width:'+(.8*u).toFixed(4)+'"/><text class="cap-label" x="'+(x+r*1.25).toFixed(3)+'" y="'+(y+r*.45).toFixed(3)+'" style="font-size:'+(12*u).toFixed(4)+'px;stroke-width:'+(3*u).toFixed(4)+'px">'+esc(en?c[1]:c[0])+'</text>'}).join("");
+  box.innerHTML='<svg class="cap-svg" viewBox="'+[vx,vy,vw,vh].map(n=>n.toFixed(3)).join(" ")+'" role="img" aria-label="'+esc(namedCountry(cc))+' 위치와 수도"><g style="stroke-width:'+(.6*u).toFixed(4)+'">'+paths+'</g>'+marks+'</svg>';
+  const note=box.parentElement?.querySelector(".cap-note");if(note)note.innerHTML=capList.length?'<span>수도</span>: '+capList.map(c=>'<b>'+esc(en?c[1]:c[0])+'</b>'+(c[4]?' <span>('+esc(c[4])+')</span>':"")).join(", "):"";
+ }
  function pmapChipList(pm){
   if(!pm)return [];const vote=pm.vote,out=[];const seen=new Set();
   if(vote&&Object.keys(vote.winners||{}).length)out.push("__win");
@@ -881,7 +916,7 @@
   const koreaBreakdown=compare?budgetComposition(budget.koreaBreakdown,"한국 예산·지출 구성",data.comparison?.metrics?.militaryGovPct):"";
   const doc=budget.document?'<article class="budget-document"><span>예산 문서 · '+esc(budget.document.fiscalYear||"")+'</span><h3>'+esc(budget.document.title||"예산 자료")+'</h3><p>'+esc(budget.document.status||"")+' · '+esc(budget.document.provider||"")+'</p>'+sourceLink(budget.document.source,"공식 예산 문서")+'</article>':"";
   return {
-   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyMapBlock(data)+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
+   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+(partyMapBlock(data)||capitalBlock(data))+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
     cpiBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["unemployment","실업률",metrics.unemployment],["policyRate","정책금리",metrics.policyRate]])+
     economyAlternativeEstimates(data.economyAlternatives)+
@@ -977,6 +1012,7 @@
    '<p class="dossier-sources">기관 자료 '+sourceLink((data.profile||{}).source||(data.links||{}).ipu,"의회·정치 구조")+' · '+sourceLink((data.links||{}).worldBank,"세계은행 국가 통계")+'</p>';
   $("#back-to-countries").addEventListener("click",close);
   document.querySelectorAll("#detail .pmap-block .pmap").forEach(b=>drawPartyMap(b));
+  document.querySelectorAll("#detail .capmap").forEach(b=>drawCapital(b));
   $("#copy-country-link").addEventListener("click",async e=>{const url=location.origin+location.pathname+"?country="+encodeURIComponent(data.code);try{await navigator.clipboard.writeText(url);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+url}});
   if(previousLeaders)$("#country-leaders").innerHTML=previousLeaders;
   if(previousTab&&panels[previousTab]){

@@ -710,3 +710,9 @@ html.lang-en-loading body{visibility:hidden}
 .pmap-label--cap{font-weight:850}
 .pmap-tip .pmap-tip-c{display:block;margin-top:3px;font-size:11.5px;color:#33434e;line-height:1.45}
 .pmap-tip-star{font-style:normal;color:#b8202b}
+.capmap{border:1px solid #e3e7ea;background:#eef3f6;min-height:120px}
+.cap-svg{display:block;width:100%;height:auto;aspect-ratio:2}
+.cap-land{fill:#f7f8f8;stroke:#c9d2d9}
+.cap-land--on{fill:#d9e2e8;stroke:#7f8f9a}
+.cap-star{fill:#b8202b;stroke:#fff}
+.cap-label{font-weight:800;fill:#15232d;paint-order:stroke;stroke:#fff;stroke-linejoin:round}
