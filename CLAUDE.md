@@ -60,6 +60,7 @@
 - **주간 점검(월요일)**: `contexts.json` 52개국의 asOf가 7일 넘은 것부터 다시 확인, `fights.json` 보강.
 - **주간 점검**에서 우방·갈등 관계의 큰 변화(단교·조약·전쟁)를 `allies.json`·`civics.json`에 반영.
 - **월간 점검(1일)**: 의회 구성 변화(선거·탈당), 지도자 교체(+`ordinal` 갱신), `party-profiles.json` 대표 교체, `blocs.json` 가입·탈퇴·정지, `fx.json` 환율 확인.
+- **분기 점검(1·4·7·10월 15일)**: 국가 지표 시계열(세계은행·IMF·SIPRI·BIS), 부패인식지수, 주·도별 소득의 새 연도를 받아 넣는다. 지침 `_tools/extra/DATA-REFRESH.md`.
 - **갈등도**: 변화 점검 때 큰 사건이 생긴 분쟁은 `boards.json`의 links·background를 고친다(출처 필수, `asOf` 갱신).
 - 번역: 새로 쓴 한국어 문장은 같은 커밋에서 `data/en/strings.json`에 영어를 추가한다.
 
