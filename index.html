@@ -990,6 +990,14 @@ html.lang-en-loading body{visibility:hidden}
 .pmap-usd{color:#6b7881;font-weight:600;font-size:11px;margin-left:3px}
 .pmap-legend .pmap-usd{margin-left:4px}
 .pmap-tip .pmap-usd{font-size:11.5px}
+.pmap-cities{pointer-events:none}
+.pmap-city{fill:#33434e;stroke:#fff;stroke-width:.6}
+.pmap-city--adm{fill:#15232d}
+.pmap-cap{fill:#15232d;stroke:#fff;stroke-width:.7}
+.pmap-label{font-size:9.5px;font-weight:700;fill:#15232d;paint-order:stroke;stroke:#fff;stroke-width:2.6px;stroke-linejoin:round}
+.pmap-label--cap{font-weight:850}
+.pmap-tip .pmap-tip-c{display:block;margin-top:3px;font-size:11.5px;color:#33434e;line-height:1.45}
+.pmap-tip-star{font-style:normal;color:#b8202b}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2056,6 +2064,7 @@ html,body{background:#fff;color:var(--ink)}
  function unitLabel(box,u,g){const x=box._units?.[u];const prim=x?(isEn()?x.n:(x.ko||x.n)):u;const loc=x&&x.l&&x.l!==prim?x.l:"";return {prim,loc,g:g&&g!==u?g:""}}
  function pmapTip(box,u,g){
   const L=unitLabel(box,u,g);let h='<b>'+esc(L.prim)+'</b>'+(L.loc?'<span class="pmap-tip-l">'+esc(L.loc)+'</span>':"")+(L.g?'<span class="pmap-tip-g">'+esc(L.g)+'</span>':"");
+  const cl=(box._units?.[u]?.c||[]);if(cl.length)h+='<span class="pmap-tip-c"><span>주요 도시</span>: '+cl.map(c=>esc(isEn()?c[1]:c[0])+(c[5]===2?' <i class="pmap-tip-star">★</i>':c[5]===1?' <small>(주도)</small>':"")).join(", ")+'</span>';
   const mode=box.dataset.mode==="income"?"income":box.dataset.pmapParty||"";const vote=state.partyMap?.vote;
   if(mode==="income"){const inc=state.income;const v=rv(inc?.values,u,g);const us=v==null||inc.currency==="USD"?null:incUsd(inc,v);h+='<em>'+(v==null?'<span>자료 없음</span>':esc(incFmt(v))+' <span>'+esc(inc.unit||"")+'</span>'+(us!=null?' <small class="pmap-usd">≈ '+usdFmt(us)+'</small>':""))+'</em>'}
   else if(mode==="__win"){const w=rv(vote?.winners,u,g);h+='<em>'+(w?'<i style="background:'+partyColor(w)+'"></i><span>1위</span> <span>'+esc(w)+'</span>':'<span>자료 없음</span>')+'</em>';
@@ -2080,7 +2089,14 @@ html,body{background:#fff;color:var(--ink)}
   const paths=units.map(u=>'<path data-unit="'+esc(u.n)+'" data-group="'+esc(u.g||"")+'" d="'+u.r.map(r=>"M"+r.map(p=>{const q=P(p);return q[0].toFixed(1)+" "+q[1].toFixed(1)}).join("L")+"Z").join("")+'"></path>').join("");
   box._ko={};units.forEach(u=>{if(u.ko)box._ko[u.n]=u.ko;if(u.g)box._ko[u.g]=box._ko[u.g]||u.g});
   box._units={};units.forEach(u=>box._units[u.n]=u);
-  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'</svg><div class="pmap-tip" hidden></div>';
+  // Major cities: a dot for each listed city; labels only for the biggest ones that don't collide.
+  const en=isEn(),mini=box.classList.contains("pmap--mini");const cs=[];units.forEach(u=>(u.c||[]).forEach(c=>cs.push(c)));
+  const dots=cs.map(c=>{const q=P([c[2],c[3]]);return c[5]===2?'<path class="pmap-cap" d="M'+q[0].toFixed(1)+' '+(q[1]-4).toFixed(1)+'l1.2 2.6 2.8.3-2.1 1.9.6 2.8-2.5-1.4-2.5 1.4.6-2.8-2.1-1.9 2.8-.3z"/>':'<circle class="pmap-city'+(c[5]===1?' pmap-city--adm':"")+'" cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="'+(c[5]===1?1.9:1.4)+'"/>'}).join("");
+  let labels="";if(!mini){const taken=[];const order=[...cs].sort((a,b)=>(b[5]===2)-(a[5]===2)||b[4]-a[4]);let n=0;
+   for(const c of order){if(n>=12)break;const q=P([c[2],c[3]]);const t=en?c[1]:c[0];const w=t.length*(en?5.2:8.6)+4,h=11;const box1={l:q[0]+3,r:q[0]+3+w,t:q[1]-h/2-1,b:q[1]+h/2-1};
+    if(box1.r>W-2)continue;if(taken.some(o=>box1.l<o.r&&box1.r>o.l&&box1.t<o.b&&box1.b>o.t))continue;taken.push(box1);n++;
+    labels+='<text class="pmap-label'+(c[5]===2?' pmap-label--cap':"")+'" x="'+(q[0]+4).toFixed(1)+'" y="'+(q[1]+3).toFixed(1)+'">'+esc(t)+'</text>'}}
+  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'<g class="pmap-cities">'+dots+labels+'</g></svg><div class="pmap-tip" hidden></div>';
   const tip=box.querySelector(".pmap-tip");let cur=null;
   box.addEventListener("mousemove",e=>{const p=e.target.closest?.("path[data-unit]");if(!p){tip.hidden=true;cur=null;return}
    if(cur!==p){cur=p;tip.innerHTML=pmapTip(box,p.dataset.unit,p.dataset.group);tip.hidden=false}
