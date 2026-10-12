@@ -15,6 +15,7 @@
   return [l*(0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))),p*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)))]};
  let worldP=null,anchorP=null;
  const getWorld=()=>worldP||(worldP=fetch("data/world.json").then(r=>r.json()));
+ let occP=null;const getOcc=()=>occP||(occP=fetch("data/occupied.json").then(r=>r.json()).then(d=>d.items||[]).catch(()=>[]));
  const getAnchors=()=>anchorP||(anchorP=fetch("data/anchors.json").then(r=>r.json()).catch(()=>({})));
 
  // relation kinds → three classes the reader can tell apart at a glance
@@ -93,6 +94,12 @@
   svg.appendChild(el("rect",{x:vb[0]-w,y:vb[1]-h,width:w*3,height:h*3,class:"board-sea"}));
   const land=el("g",{class:"board-land"});const sideOf={};for(const n of nodes)if(n.code)sideOf[n.code]=n.side;
   for(const c of world.countries)land.appendChild(el("path",{d:c.d,class:"board-country"+(c.c&&sideOf[c.c]?" board-side-"+sideOf[c.c]:"")}));
+  // Hatched occupied / armed-group-controlled areas (same data as the world map).
+  try{const occ=await getOcc();if(occ.length){
+   const pf=el("pattern",{id:"bocc-f-"+uid,patternUnits:"userSpaceOnUse",width:"2.4",height:"2.4",patternTransform:"rotate(45)"});pf.appendChild(el("rect",{width:"2.4",height:"2.4",class:"occ-bg"}));pf.appendChild(el("line",{x1:0,y1:0,x2:0,y2:2.4,class:"occ-line"}));defs.appendChild(pf);
+   const pp=el("pattern",{id:"bocc-p-"+uid,patternUnits:"userSpaceOnUse",width:"3.6",height:"3.6",patternTransform:"rotate(45)"});pp.appendChild(el("line",{x1:0,y1:0,x2:0,y2:3.6,class:"occ-line occ-line--part"}));defs.appendChild(pp);
+   for(const o of occ){if(!o.d)continue;const p=el("path",{d:o.d,class:"board-occ",fill:"url(#bocc-"+(o.extent==="partial"?"p":"f")+"-"+uid+")"});const t=el("title");t.textContent=(o.holder||"")+" "+(o.kind||"")+" · "+(o.name||"");p.appendChild(t);land.appendChild(p)}
+  }}catch(e){}
   svg.appendChild(land);
   const linkG=el("g",{class:"board-links"});
   let pi=0;

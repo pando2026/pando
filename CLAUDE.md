@@ -25,6 +25,8 @@
   - `partymap.json` + `admin1/<CC>.json` 정당별 지역 지지(나라 자체 지도에만 그림, 세계 지도는 건드리지 않음). `parties`=정당별 강세 지역(지침 `_tools/partymap/BRIEF.md`), `vote`={metric, election, winners{지역:1위 정당}, shares{정당:{지역:%}}}=지역별 1위 보기와 득표율 진하기(지침 `_tools/partymap/SHARES.md`). 득표율이 없는 정당은 강세 지역을 연하게 칠한다. admin1 units의 `l`은 현지어 지역명(툴팁: 한국어/영어 · 현지어). 선거 뒤 갱신.
   - `regions.json` 큰 나라의 지역 기반 정당·전국 정당의 지역 기반(의회 탭 '지역과 정당'). 키는 civics groups 이름과 같아야 한다. 지침 `_tools/regions/BRIEF.md`.
   - `regional-income.json` 주·도별 소득 수준(정당 강세 지도의 '지역별 소득 수준' 토글). {CC:{metric,unit,year,provider,source,values:{admin1 이름 또는 그룹명:값},note}}. 키는 `admin1/CC.json`의 units `n`(또는 `g`)과 같아야 한다. 해마다 통계청 새 자료가 나오면 갱신. 지침 `_tools/income/BRIEF.md`.
+  - `problems.json` 국가 화면 맨 위 '한눈에 보는 문제'의 핵심 문제 카드 3장(+왜? 원인 사슬, 다음 일정). 지침 `_tools/problems/BRIEF.md`. 경고등(물가·실업·부채·부패·갈등)은 기존 자료로 자동 계산. 주간 점검 때 asOf가 7일 넘은 나라부터 갱신.
+  - `occupied.json` 무력 점령·무장세력 통제 지역(메인 지도·갈등도 빗금). `_tools/occupied/build.py`로 Natural Earth 1급 행정구역 + DeepStateMap(우크라이나) 경계를 투영해 만든다. 지침 `_tools/occupied/BRIEF.md`. 변화 점검 때 점령·탈환이 있으면 갱신.
   - `fx.json` 예산 금액의 원화·달러 환산용 환율(USD 기준). 국가수반의 '제○대'는 s*.json 인물의 `ordinal`(지침 `_tools/extra/ORDINAL.md`).
   - `en/strings.json` 영어 번역 사전(아래 '영어판').
 - `_tools/harvest.py` — 화면에 실제로 보이는 한국어 문자열을 모두 모은다(번역 누락 확인용).

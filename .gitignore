@@ -20,3 +20,6 @@ _tools/conflicts/out/
 _tools/conflicts/in-*.json
 _tools/partymap/out/
 _tools/partymap/in-*.json
+_tools/problems/out/
+_tools/problems/in-*.json
+_tools/occupied/out/

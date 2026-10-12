@@ -22,7 +22,13 @@
    "Luxembourg": 28900,
    "Namur": 31900
   },
-  "note": "브뤼셀(EU 평균의 190%)이 가장 높고 에노·뤽상부르(72%)가 가장 낮다. 브뤼셀은 통근자가 만든 생산이 거주 인구로 나뉘어 높게 잡힌다."
+  "note": "브뤼셀(EU 평균의 190%)이 가장 높고 에노·뤽상부르(72%)가 가장 낮다. 브뤼셀은 통근자가 만든 생산이 거주 인구로 나뉘어 높게 잡힌다.",
+  "currency": "EUR",
+  "mult": 1,
+  "fxNote": "PPS(구매력 기준 유로)를 유로 환율로 바꾼 참고값",
+  "fxRate": 0.92389,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/EMU/indicator/PA.NUS.FCRF"
  },
  "ES": {
   "metric": "1인당 GDP",
@@ -55,7 +61,12 @@
    "País Vasco": 42492,
    "Valenciana": 28675
   },
-  "note": "마드리드(47,220유로)가 멜리야(22,302유로)의 약 2.1배. 전국 평균 34,237유로. 2025년은 1차 추정치."
+  "note": "마드리드(47,220유로)가 멜리야(22,302유로)의 약 2.1배. 전국 평균 34,237유로. 2025년은 1차 추정치.",
+  "currency": "EUR",
+  "mult": 1,
+  "fxRate": 0.884969,
+  "fxYear": "2025",
+  "fxSource": "https://api.worldbank.org/v2/country/EMU/indicator/PA.NUS.FCRF"
  },
  "IN": {
   "metric": "1인당 순주내총생산(NSDP, 경상가격)",
@@ -102,7 +113,12 @@
    "Delhi": 459408,
    "Puducherry": 267124
   },
-  "note": "시킴(587,743루피)이 비하르(60,180루피)의 약 9.8배. 전국 1인당 순국민소득은 188,892루피."
+  "note": "시킴(587,743루피)이 비하르(60,180루피)의 약 9.8배. 전국 1인당 순국민소득은 188,892루피.",
+  "currency": "INR",
+  "mult": 1,
+  "fxRate": 83.134279,
+  "fxYear": "2023~24",
+  "fxSource": "https://api.worldbank.org/v2/country/IND/indicator/PA.NUS.FCRF"
  },
  "PH": {
   "metric": "1인당 지역내총생산(GRDP, 경상가격)",
@@ -133,7 +149,12 @@
    "Bicol (Region V)": 122613,
    "Autonomous Region in Muslim Mindanao (ARMM)": 73030
   },
-  "note": "마닐라 수도권(595,768페소)이 방사모로(73,030페소)의 약 8.2배. 2024년 신설 네그로스섬 지역(167,107페소)은 따로 집계돼 서비사야·중부비사야 값에서 빠져 있다."
+  "note": "마닐라 수도권(595,768페소)이 방사모로(73,030페소)의 약 8.2배. 2024년 신설 네그로스섬 지역(167,107페소)은 따로 집계돼 서비사야·중부비사야 값에서 빠져 있다.",
+  "currency": "PHP",
+  "mult": 1,
+  "fxRate": 57.290655,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/PHL/indicator/PA.NUS.FCRF"
  },
  "BR": {
   "metric": "1인당 GDP(전국 평균 대비 배율)",
@@ -219,7 +240,12 @@
    "Saskatchewan": 90619,
    "Yukon": 91207
   },
-  "note": "누나부트(13만 6763달러)가 가장 높고 뉴브런즈윅(5만 6354달러)이 가장 낮다. 인구가 적은 준주는 광업 비중 때문에 높게 나온다."
+  "note": "누나부트(13만 6763달러)가 가장 높고 뉴브런즈윅(5만 6354달러)이 가장 낮다. 인구가 적은 준주는 광업 비중 때문에 높게 나온다.",
+  "currency": "CAD",
+  "mult": 1,
+  "fxRate": 1.36936,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/CAN/indicator/PA.NUS.FCRF"
  },
  "FR": {
   "metric": "1인당 GDP(명목)",
@@ -246,7 +272,12 @@
    "Pays de la Loire": 37541,
    "Provence-Alpes-Côte-d'Azur": 41818
   },
-  "note": "일드프랑스(6만 9514유로)가 오드프랑스(3만 2891유로)의 약 2.1배다."
+  "note": "일드프랑스(6만 9514유로)가 오드프랑스(3만 2891유로)의 약 2.1배다.",
+  "currency": "EUR",
+  "mult": 1,
+  "fxRate": 0.92389,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/EMU/indicator/PA.NUS.FCRF"
  },
  "IT": {
   "metric": "1인당 GDP(명목)",
@@ -279,7 +310,12 @@
    "Sicily": 22923,
    "Calabria": 21142
   },
-  "note": "롬바르디아(4만 9041유로)가 칼라브리아(2만 1142유로)의 2.3배다. 트렌티노알토아디제는 볼차노(5만 9774유로)·트렌토(4만 6325유로) 자치주로만 집계돼 빠졌다."
+  "note": "롬바르디아(4만 9041유로)가 칼라브리아(2만 1142유로)의 2.3배다. 트렌티노알토아디제는 볼차노(5만 9774유로)·트렌토(4만 6325유로) 자치주로만 집계돼 빠졌다.",
+  "currency": "EUR",
+  "mult": 1,
+  "fxRate": 0.92484,
+  "fxYear": "2023",
+  "fxSource": "https://api.worldbank.org/v2/country/EMU/indicator/PA.NUS.FCRF"
  },
  "MX": {
   "metric": "1인당 GDP(2018년 불변가격)",
@@ -325,7 +361,12 @@
    "Mexico": 439593,
    "Campeche": 508001
   },
-  "note": "석유 산지 캄페체(50만 8001페소)가 치아파스(6만 6075페소)의 약 7.7배다."
+  "note": "석유 산지 캄페체(50만 8001페소)가 치아파스(6만 6075페소)의 약 7.7배다.",
+  "currency": "MXN",
+  "mult": 1,
+  "fxRate": 17.758717,
+  "fxYear": "2023",
+  "fxSource": "https://api.worldbank.org/v2/country/MEX/indicator/PA.NUS.FCRF"
  },
  "RU": {
   "metric": "1인당 지역총생산(GRP, 명목)",
@@ -414,7 +455,12 @@
    "Republic of Ingushetia": 159604,
    "Moscow Oblast": 901231
   },
-  "note": "사할린(330만 루블)이 인구시(15만 9604루블)의 약 21배다. 튜멘·아르한겔스크 값은 산하 자치구를 포함한 합계라 뺐고, 크림·세바스토폴은 원표에 없다."
+  "note": "사할린(330만 루블)이 인구시(15만 9604루블)의 약 21배다. 튜멘·아르한겔스크 값은 산하 자치구를 포함한 합계라 뺐고, 크림·세바스토폴은 원표에 없다.",
+  "currency": "RUB",
+  "mult": 1,
+  "fxRate": 68.484942,
+  "fxYear": "2022",
+  "fxSource": "https://api.worldbank.org/v2/country/RUS/indicator/PA.NUS.FCRF"
  },
  "US": {
   "metric": "1인당 개인소득",
@@ -479,7 +525,9 @@
    "Indiana": 60038,
    "District of Columbia": 100909
   },
-  "note": "매사추세츠(8만 7812달러)가 미시시피(4만 8110달러)의 약 1.8배다."
+  "note": "매사추세츠(8만 7812달러)가 미시시피(4만 8110달러)의 약 1.8배다.",
+  "currency": "USD",
+  "mult": 1
  },
  "JP": {
   "metric": "1인당 현민소득",
@@ -540,7 +588,12 @@
    "Yamanashi Prefecture": 324.3,
    "Nara Prefecture": 254.9
   },
-  "note": "도쿄(576.1만 엔)가 오키나와(225.8만 엔)의 약 2.6배다."
+  "note": "도쿄(576.1만 엔)가 오키나와(225.8만 엔)의 약 2.6배다.",
+  "currency": "JPY",
+  "mult": 10000,
+  "fxRate": 109.754324,
+  "fxYear": "2021",
+  "fxSource": "https://api.worldbank.org/v2/country/JPN/indicator/PA.NUS.FCRF"
  },
  "CH": {
   "metric": "1인당 칸톤 GDP(명목)",
@@ -580,7 +633,12 @@
    "Appenzell Ausserrhoden": 67341,
    "Appenzell Innerrhoden": 75526
   },
-  "note": "바젤슈타트(20만 9782프랑)가 우리(5만 8392프랑)의 약 3.6배다."
+  "note": "바젤슈타트(20만 9782프랑)가 우리(5만 8392프랑)의 약 3.6배다.",
+  "currency": "CHF",
+  "mult": 1,
+  "fxRate": 0.954832,
+  "fxYear": "2022",
+  "fxSource": "https://api.worldbank.org/v2/country/CHE/indicator/PA.NUS.FCRF"
  },
  "GB": {
   "metric": "1인당 GDP(명목)",
@@ -598,7 +656,12 @@
    "Wales": 31484,
    "Northern Ireland": 35108
   },
-  "note": "잉글랜드(4만 2171파운드)가 웨일스(3만 1484파운드)보다 약 34% 높다."
+  "note": "잉글랜드(4만 2171파운드)가 웨일스(3만 1484파운드)보다 약 34% 높다.",
+  "currency": "GBP",
+  "mult": 1,
+  "fxRate": 0.782415,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/GBR/indicator/PA.NUS.FCRF"
  },
  "MY": {
   "metric": "가구 월 총소득 중앙값",
@@ -628,7 +691,12 @@
    "Kuala Lumpur": 10802,
    "Putrajaya": 10769
   },
-  "note": "쿠알라룸푸르(1만 802링깃)가 클란탄(4083링깃)의 약 2.6배다. 주별 1인당 GDP는 DOSM 공개 본문에 5곳만 나와 가구소득을 썼다."
+  "note": "쿠알라룸푸르(1만 802링깃)가 클란탄(4083링깃)의 약 2.6배다. 주별 1인당 GDP는 DOSM 공개 본문에 5곳만 나와 가구소득을 썼다.",
+  "currency": "MYR",
+  "mult": 1,
+  "fxRate": 4.576428,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/MYS/indicator/PA.NUS.FCRF"
  },
  "DE": {
   "metric": "1인당 국내총생산(GRDP)",
@@ -658,7 +726,12 @@
    "Schleswig-Holstein": 44344,
    "Thuringia": 38591
   },
-  "note": "함부르크(90,208유로)가 작센안할트(38,452유로)의 약 2.3배다. 옛 동독 5개 주가 모두 하위권이다."
+  "note": "함부르크(90,208유로)가 작센안할트(38,452유로)의 약 2.3배다. 옛 동독 5개 주가 모두 하위권이다.",
+  "currency": "EUR",
+  "mult": 1,
+  "fxRate": 0.884969,
+  "fxYear": "2025",
+  "fxSource": "https://api.worldbank.org/v2/country/EMU/indicator/PA.NUS.FCRF"
  },
  "ID": {
   "metric": "1인당 지역내총생산(PDRB, 경상가격)",
@@ -705,7 +778,12 @@
    "Maluku": 33652,
    "East Nusa Tenggara": 25837
   },
-  "note": "자카르타(3억 6,769만 루피아)가 동누사틍가라(2,584만 루피아)의 약 14배다. 파푸아·서파푸아 값은 2022년 분할 이후의 새 경계 기준이다."
+  "note": "자카르타(3억 6,769만 루피아)가 동누사틍가라(2,584만 루피아)의 약 14배다. 파푸아·서파푸아 값은 2022년 분할 이후의 새 경계 기준이다.",
+  "currency": "IDR",
+  "mult": 1000,
+  "fxRate": 16477.86518,
+  "fxYear": "2025",
+  "fxSource": "https://api.worldbank.org/v2/country/IDN/indicator/PA.NUS.FCRF"
  },
  "KR": {
   "metric": "1인당 지역내총생산(GRDP)",
@@ -736,7 +814,12 @@
    "Gwangju": 37675,
    "Sejong": 44610
   },
-  "note": "울산(8,519만 원)이 가장 높고 대구(3,137만 원)가 가장 낮아 약 2.7배 차이다. 전국 평균은 4,948만 원."
+  "note": "울산(8,519만 원)이 가장 높고 대구(3,137만 원)가 가장 낮아 약 2.7배 차이다. 전국 평균은 4,948만 원.",
+  "currency": "KRW",
+  "mult": 1000,
+  "fxRate": 1363.375,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/KOR/indicator/PA.NUS.FCRF"
  },
  "NG": {
   "metric": "1인당 주내총생산(추정)",
@@ -786,7 +869,9 @@
    "Kwara State": 919,
    "Yobe State": 688
   },
-  "note": "라고스(6,614달러)가 칸노(674달러)의 약 10배다. 연방수도구역(FCT)은 자료가 없다."
+  "note": "라고스(6,614달러)가 칸노(674달러)의 약 10배다. 연방수도구역(FCT)은 자료가 없다.",
+  "currency": "USD",
+  "mult": 1
  },
  "ZA": {
   "metric": "1인당 지역내총생산(실질)",
@@ -809,7 +894,12 @@
    "Limpopo": 52867,
    "Eastern Cape": 52145
   },
-  "note": "전국 평균(74,839랜드)을 넘는 곳은 하우텡과 웨스턴케이프 두 주뿐이다."
+  "note": "전국 평균(74,839랜드)을 넘는 곳은 하우텡과 웨스턴케이프 두 주뿐이다.",
+  "currency": "ZAR",
+  "mult": 1,
+  "fxRate": 18.328658,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/ZAF/indicator/PA.NUS.FCRF"
  },
  "TR": {
   "metric": "1인당 국내총생산(GRDP, 경상가격)",
@@ -904,6 +994,11 @@
    "Ağrı": 194660,
    "Şanlıurfa": 188144
   },
-  "note": "이스탄불(802,669리라)이 가장 높다. 샨르우르파(188,144리라)가 가장 낮다. 격차는 약 4.3배다."
+  "note": "이스탄불(802,669리라)이 가장 높다. 샨르우르파(188,144리라)가 가장 낮다. 격차는 약 4.3배다.",
+  "currency": "TRY",
+  "mult": 1,
+  "fxRate": 32.805861,
+  "fxYear": "2024",
+  "fxSource": "https://api.worldbank.org/v2/country/TUR/indicator/PA.NUS.FCRF"
  }
 }

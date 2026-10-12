@@ -16,10 +16,10 @@
   const frame=typeof target==="string"?document.querySelector(target):target;
   const onSelect=options.onSelect||(()=>{});
   frame.classList.add("vmap");
-  frame.innerHTML='<svg class="vmap-svg" role="img" aria-label="세계 지도"><g class="vmap-land"></g><g class="vmap-pins"></g></svg>'+
+  frame.innerHTML='<svg class="vmap-svg" role="img" aria-label="세계 지도"><defs><pattern id="occ-full" patternUnits="userSpaceOnUse" width="2.4" height="2.4" patternTransform="rotate(45)"><rect width="2.4" height="2.4" class="occ-bg"/><line x1="0" y1="0" x2="0" y2="2.4" class="occ-line"/></pattern><pattern id="occ-part" patternUnits="userSpaceOnUse" width="3.6" height="3.6" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3.6" class="occ-line occ-line--part"/></pattern></defs><g class="vmap-land"></g><g class="vmap-occ"></g><g class="vmap-pins"></g></svg>'+
    '<div class="vmap-controls"><button type="button" data-z="in" aria-label="확대">+</button><button type="button" data-z="out" aria-label="축소">−</button><button type="button" data-z="reset" aria-label="전체 보기">⟲</button></div>'+
    '<div class="vmap-tip" hidden></div><p class="vmap-loading">지도를 그리는 중…</p>';
-  const svg=frame.querySelector("svg"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip");
+  const svg=frame.querySelector("svg"),occLayer=svg.querySelector(".vmap-occ"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip");
   let focused=false,scaleNow=1,world=null,items=Array.isArray(options.items)?options.items:[],view=null,home=null;
   const project=(lon,lat)=>{const [x,y]=raw(((lon-(world.lon0||0))%360+540)%360-180,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
 
@@ -140,12 +140,14 @@
    if(moved){moved=false;return}
    const pin=e.target.closest(".vmap-pin");
    if(pin){onSelect({type:pin.dataset.type,id:pin.dataset.id});return}
+   const oc=e.target.closest(".vmap-occ-area");
+   if(oc){onSelect({type:"occupied",id:oc.dataset.id});return}
    const c=e.target.closest(".vmap-link");
    if(c)onSelect({type:"country",id:c.dataset.code});
   });
   svg.addEventListener("keydown",e=>{const pin=e.target.closest?.(".vmap-pin");if(pin&&(e.key==="Enter"||e.key===" ")){e.preventDefault();onSelect({type:pin.dataset.type,id:pin.dataset.id})}});
   svg.addEventListener("pointerover",e=>{
-   const c=e.target.closest(".vmap-link,.vmap-pin");
+   const c=e.target.closest(".vmap-occ-area,.vmap-link,.vmap-pin");
    if(!c||e.pointerType==="touch"){tip.hidden=true;return}
    tip.textContent=c.dataset.name||c.getAttribute("aria-label")||"";tip.hidden=!tip.textContent;
   });
@@ -165,9 +167,13 @@
    setView(home);drawPins();
   }).catch(()=>{const p=frame.querySelector(".vmap-loading");if(p)p.textContent="지도 자료를 불러오지 못했습니다. 아래 목록에서 항목을 고르세요."});
 
+  let occ=[],occOn=true;
+  function drawOcc(){const frag=document.createDocumentFragment();
+   if(occOn)for(const o of occ){if(!o.d)continue;const p=el("path",{d:o.d,class:"vmap-occ-area vmap-occ-"+(o.extent==="partial"?"part":"full"),fill:o.extent==="partial"?"url(#occ-part)":"url(#occ-full)"});p.dataset.id=o.id;p.dataset.name=(o.holder||"")+" "+(o.kind||"")+" · "+(o.name||"");frag.appendChild(p)}
+   occLayer.replaceChildren(frag)}
   let bloc=null;
   function paintBloc(){land.querySelectorAll(".vmap-country").forEach(p=>{const r=bloc&&bloc[p.dataset.code];p.classList.toggle("vmap-bloc",r==="member");p.classList.toggle("vmap-bloc-partner",r==="partner")});frame.classList.toggle("vmap-bloc-on",!!bloc)}
-  return {setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
+  return {setOccupied(list,on){if(Array.isArray(list))occ=list;if(on!==undefined)occOn=!!on;drawOcc()},setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
  }
  global.FrontlineAtlas={mount};
 })(window);
