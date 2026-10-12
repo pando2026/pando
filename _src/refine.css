@@ -716,3 +716,4 @@ html.lang-en-loading body{visibility:hidden}
 .cap-land--on{fill:#d9e2e8;stroke:#7f8f9a}
 .cap-star{fill:#b8202b;stroke:#fff}
 .cap-label{font-weight:800;fill:#15232d;paint-order:stroke;stroke:#fff;stroke-linejoin:round}
+@media (max-width:600px){.mastnav{flex-wrap:wrap;row-gap:8px;column-gap:12px;justify-content:flex-start;overflow:visible}.mastnav .guide-link,.mastnav .feedback-link{min-height:30px;padding:4px 9px}}
