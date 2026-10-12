@@ -558,12 +558,22 @@
   const names=data.partyNames||{};
   const chip=label=>{const g=groups[label],col=g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3",n=names[label];
    return '<button type="button" class="fight-party" data-party-open="'+esc(label)+'"'+(n&&n.orig&&n.orig!==label?' title="'+esc(n.orig)+'"':"")+'><i style="background:'+col+'"></i>'+esc(label)+(g?'<small>'+number(g[1],0)+'석</small>':"")+'</button>'};
-  const items=(f.items||[]).filter(it=>it&&it.topic&&Array.isArray(it.sides)&&it.sides.length).map(it=>
+  const chambers=data.civics?.parliament?.chambers||[];
+  // Seat tally per side: sum the seats of each side's parties in the chamber that holds most of them.
+  const tally=it=>{const labels=it.sides.flatMap(sd=>sd.parties||[]);if(!labels.length)return null;
+   const ch=chambers.map(c=>({c,hit:labels.filter(l=>(c.groups||[]).some(g=>g[0]===l)).length})).sort((x,y)=>y.hit-x.hit)[0];if(!ch||!ch.hit)return null;
+   const seat=l=>{const g=(ch.c.groups||[]).find(g=>g[0]===l);return g&&Number.isFinite(+g[1])?+g[1]:0};
+   const total=(ch.c.groups||[]).reduce((n,g)=>n+(Number.isFinite(+g[1])?+g[1]:0),0);
+   const sums=it.sides.map(sd=>(sd.parties||[]).reduce((n,l)=>n+seat(l),0));if(sums.filter(Boolean).length<2||!total)return null;
+   const cols=it.sides.map(sd=>{const g=groups[(sd.parties||[])[0]];return g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3"});
+   return {sums,total,maj:Math.floor(total/2)+1,name:ch.c.name||"",cols}};
+  const tallyBar=t=>'<div class="fight-tally"><p>'+t.sums.map((n,i)=>'<b style="color:'+t.cols[i]+'">'+n+'석</b>').join('<span>vs</span>')+'<small>'+(t.name?'<span>'+esc(t.name)+'</span> ':"")+'<span>'+t.total+'석 중</span> · <span>과반 '+t.maj+'석</span></small></p><div class="fight-tally-bar'+(t.sums.length===2?' fight-tally-bar--2':'')+'">'+t.sums.map((n,i)=>'<span style="width:'+(100*n/t.total).toFixed(2)+'%;background:'+t.cols[i]+'"></span>').join("")+'<i style="left:'+(100*t.maj/t.total).toFixed(2)+'%" title="과반"></i></div></div>';
+  const items=(f.items||[]).filter(it=>it&&it.topic&&Array.isArray(it.sides)&&it.sides.length).map(it=>{const t=tally(it);return ''+
    '<article class="fight"><header>'+(it.kind?'<span class="fight-kind">'+esc(it.kind)+'</span>':"")+'<h5>'+esc(it.topic)+'</h5></header>'+
-   (it.summary?'<p class="fight-summary">'+esc(it.summary)+'</p>':"")+
-   '<div class="fight-sides'+(it.sides.length>2?" fight-sides--multi":"")+'">'+it.sides.map((sd,i)=>(i?'<span class="fight-vs" aria-hidden="true">VS</span>':"")+'<div class="fight-side"><div class="fight-parties">'+(sd.parties||[]).map(chip).join("")+(sd.label&&!(sd.parties||[]).length?'<b class="fight-camp">'+esc(sd.label)+'</b>':"")+'</div>'+(sd.stance?'<p>'+esc(sd.stance)+'</p>':"")+'</div>').join("")+'</div>'+
+   (it.summary?'<p class="fight-summary">'+esc(it.summary)+'</p>':"")+(t?tallyBar(t):"")+
+   '<div class="fight-sides'+(it.sides.length>2?" fight-sides--multi":"")+'">'+it.sides.map((sd,i)=>(i?'<span class="fight-vs" aria-hidden="true">VS</span>':"")+'<div class="fight-side">'+(t&&t.sums[i]?'<span class="fight-total">합계 <b>'+t.sums[i]+'석</b></span>':"")+'<div class="fight-parties">'+(sd.parties||[]).map(chip).join("")+(sd.label&&!(sd.parties||[]).length?'<b class="fight-camp">'+esc(sd.label)+'</b>':"")+'</div>'+(sd.stance?'<p>'+esc(sd.stance)+'</p>':"")+'</div>').join("")+'</div>'+
    (it.status?'<p class="fight-status"><b>지금</b>'+esc(it.status)+'</p>':"")+
-   (Array.isArray(it.sources)&&it.sources.length?'<small class="fight-source">출처 '+it.sources.map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</small>':"")+'</article>').join("");
+   (Array.isArray(it.sources)&&it.sources.length?'<small class="fight-source">출처 '+it.sources.map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</small>':"")+'</article>'}).join("");
   return '<section class="fights"><div class="fights-head"><h4>정당 간 쟁점</h4>'+(f.asOf?'<span>'+esc(f.asOf)+' 기준</span>':"")+'</div>'+(f.note?'<p class="fights-note">'+esc(f.note)+'</p>':"")+items+'</section>';
  }
  function hemicycle(chamber){

@@ -627,3 +627,14 @@ html.lang-en-loading body{visibility:hidden}
 .pmap-win-i{background:conic-gradient(#1b2a8a 0 25%,#d63a3a 0 50%,#2f9e5b 0 75%,#e8a33a 0)!important}
 .pmap-grad{display:inline-block;width:140px;height:10px;border-radius:2px}
 .pmap-basis[hidden]{display:none}
+.fight-tally{margin:10px 0 12px}
+.fight-tally p{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;margin:0 0 6px;font-size:13px}
+.fight-tally p b{font-size:19px;font-weight:850;font-variant-numeric:tabular-nums}
+.fight-tally p>span{font-size:11px;font-weight:900;color:#b8202b;letter-spacing:.06em;text-transform:uppercase}
+.fight-tally small{color:#5d6b75;font-size:12px;margin-left:auto}
+.fight-tally-bar{position:relative;display:flex;height:10px;background:#e8ecef;border-radius:2px;overflow:visible}
+.fight-tally-bar span{display:block;height:100%}
+.fight-tally-bar--2 span+span{margin-left:auto}
+.fight-tally-bar i{position:absolute;top:-3px;bottom:-3px;width:2px;background:#15232d;margin-left:-1px}
+.fight-total{float:right;font-size:12px;color:#5d6b75;margin:0 0 4px 8px}
+.fight-total b{color:#15232d;font-size:13px}
