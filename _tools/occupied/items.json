@@ -1,0 +1,1088 @@
+[
+ {
+  "id": "ge-abkhazia",
+  "name": "압하지야",
+  "owner": "GE",
+  "holder": "러시아(압하지야 분리정부)",
+  "holderCode": "RU",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "full",
+  "since": "2008",
+  "units": [
+   [
+    "GE",
+    "Abkhazia"
+   ]
+  ],
+  "note": "2008년 8월 러시아-조지아 전쟁 뒤 러시아가 8월 26일 독립을 승인하고 제7군사기지를 두고 있다. 2014년 11월 '동맹·통합 조약'으로 압하지야 군을 러시아 지휘 아래 두었다. 조지아 의회는 2008년 8월 28일 이곳을 '러시아 점령지'로 선언했고, 러시아는 압하지야를 독립국으로 보며 자신은 점령국이 아니라고 한다.",
+  "sources": [
+   [
+    "위키백과",
+    "Russian-occupied territories in Georgia(러시아 점령 조지아 영토) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Russian-occupied_territories_in_Georgia"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "ge-south-ossetia",
+  "name": "남오세티야(츠힌발리 지역)",
+  "owner": "GE",
+  "holder": "러시아(남오세티야 분리정부)",
+  "holderCode": "RU",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "partial",
+  "since": "2008",
+  "units": [
+   [
+    "GE",
+    "Shida Kartli"
+   ],
+   [
+    "GE",
+    "Mtskheta-Mtianeti"
+   ]
+  ],
+  "note": "2008년 전쟁 뒤 러시아가 독립을 승인하고 제4근위군사기지를 두었으며, 2015년 3월 조약으로 군·경제·세관을 러시아에 통합했다. 2011년부터 경계선에 철조망을 치는 '보더라이제이션'으로 조지아 쪽 마을·농지를 갈라놓고 있다. 조지아는 압하지야와 합쳐 국토의 약 20%가 점령됐다고 보고, 러시아는 독립국이라는 입장이다.",
+  "sources": [
+   [
+    "위키백과",
+    "Russian-occupied territories in Georgia(러시아 점령 조지아 영토) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Russian-occupied_territories_in_Georgia"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "md-transnistria",
+  "name": "트란스니스트리아",
+  "owner": "MD",
+  "holder": "러시아군 주둔(트란스니스트리아 분리정부)",
+  "holderCode": "RU",
+  "holderType": "state",
+  "kind": "분리 지역",
+  "extent": "full",
+  "since": "1992",
+  "units": [
+   [
+    "MD",
+    "Transnistria"
+   ],
+   [
+    "MD",
+    "Stîngă Nistrului"
+   ],
+   [
+    "MD",
+    "Bender"
+   ],
+   [
+    "MD",
+    "Grigoriopol"
+   ],
+   [
+    "MD",
+    "Camenca"
+   ]
+  ],
+  "note": "1992년 7월 21일 휴전 뒤 드네스트르강 동쪽을 분리정부가 통치하고, 러시아 '평화유지군'과 러시아군 작전집단(OGRF, 1,500명 이하)이 주둔한다. 몰도바는 이를 '불법 배치된 외국군 점령'이라 부르며 철수를 요구하고, 유럽평의회 의원총회도 2022년 3월 15일 러시아 군사 점령지로 규정했다. 러시아는 1992년 휴전에 근거한 평화유지군이며 분쟁이 풀릴 때까지 남는다는 입장이다.",
+  "sources": [
+   [
+    "위키백과",
+    "Transnistria(트란스니스트리아) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Transnistria"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "cy-north",
+  "name": "북키프로스",
+  "owner": "CY",
+  "holder": "튀르키예(북키프로스 튀르크공화국)",
+  "holderCode": "TR",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "full",
+  "since": "1974",
+  "units": [
+   [
+    "-1",
+    "Northern Cyprus"
+   ]
+  ],
+  "note": "튀르키예가 1974년 7월 20일 침공해 섬 북부 약 36%를 차지했고, 1983년 11월 15일 북키프로스 튀르크공화국이 일방적으로 독립을 선언했다. 유엔 안보리 결의 541호는 이 선언을 법적으로 무효라 했고, 키프로스 공화국과 EU는 북부를 튀르키예군(약 3만~4만 명) 점령지로 본다. 튀르키예는 북키프로스를 국가로 승인한 유일한 나라로 군 주둔을 유지한다.",
+  "sources": [
+   [
+    "위키백과",
+    "Northern Cyprus(북키프로스) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Northern_Cyprus"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "eh-morocco",
+  "name": "서사하라(모로코 통치 지역)",
+  "owner": "EH",
+  "holder": "모로코",
+  "holderCode": "MA",
+  "holderType": "state",
+  "kind": "합병 선언",
+  "extent": "partial",
+  "since": "1975",
+  "country": "EH",
+  "units": [
+   [
+    "EH",
+    "Western Sahara"
+   ]
+  ],
+  "note": "모로코는 1975년 스페인 철수 뒤 이곳을 차지해 약 2,700km 방벽(베름) 서쪽 대부분을 '남부 주'로 통치하고, 폴리사리오/사흐라위공화국이 동쪽 약 30%를 '해방구'로 쥔다. 폴리사리오는 모로코 통치 지역을 점령지로 보고 완전 독립을 요구하며 2020년 11월 휴전 종료를 선언했다. 모로코는 자국 주권 아래 자치안을 내놓았고, 유엔 안보리 결의 2797호(2025-10-31)는 이 자치안을 협상의 기초로 언급했다.",
+  "sources": [
+   [
+    "위키백과",
+    "Western Sahara conflict(서사하라 분쟁) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Western_Sahara_conflict"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "sy-golan",
+  "name": "골란고원",
+  "owner": "SY",
+  "holder": "이스라엘",
+  "holderCode": "IL",
+  "holderType": "state",
+  "kind": "합병 선언",
+  "extent": "partial",
+  "since": "1967",
+  "unitNote": "Natural Earth가 골란고원을 이스라엘 북부지구(HaZafon)에 넣어 따로 그릴 단위가 없다. HaZafon 전체가 옅게 칠해지므로 골란 폴리곤을 따로 쓰는 편이 정확하다.",
+  "units": [
+   [
+    "IL",
+    "HaZafon"
+   ]
+  ],
+  "note": "이스라엘이 1967년 6월 9~10일 점령하고 1981년 12월 14일 골란고원법으로 자국 법·행정을 적용해 사실상 합병했다(약 1,170km²). 유엔 안보리 결의 497호는 이를 '무효'로 규정했고 시리아는 1967년 경계로의 완전 철수를 요구한다. 이스라엘은 안보·수자원을 이유로 통치를 유지하며, 미국은 2019년 이스라엘 영토로 승인했다.",
+  "sources": [
+   [
+    "위키백과",
+    "Golan Heights(골란고원) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Golan_Heights"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "sy-undof",
+  "name": "시리아 남부 완충지대(유엔 감시 구역·헤르몬산)",
+  "owner": "SY",
+  "holder": "이스라엘",
+  "holderCode": "IL",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "full",
+  "since": "2024",
+  "units": [
+   [
+    "SY",
+    "UNDOF"
+   ]
+  ],
+  "note": "아사드 정권이 무너진 2024년 12월 8일 이스라엘군이 1974년 휴전선의 유엔 완충지대에 들어가 헤르몬산 시리아 쪽 정상부와 완충지대에 초소를 세우고 머물고 있다. 이스라엘은 1974년 분리협정이 무효가 됐다고 선언했고 네타냐후 총리는 '안보를 보장할 다른 해법이 나올 때까지' 남는다고 했다. 시리아 정부는 2024년 12월 8일 이전 선으로의 철수를 요구하며, 미국 중재 안보협정 협상(2026년 1월 파리 회동)은 아직 타결되지 않았다.",
+  "sources": [
+   [
+    "위키백과",
+    "Israeli invasion of Syria (2024–present)(이스라엘의 시리아 침공) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Israeli_invasion_of_Syria_(2024–present)"
+   ],
+   [
+    "위키백과",
+    "Golan Heights(골란고원) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Golan_Heights"
+   ]
+  ]
+ },
+ {
+  "id": "sy-quneitra",
+  "name": "시리아 남부 쿠네이트라",
+  "owner": "SY",
+  "holder": "이스라엘",
+  "holderCode": "IL",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "partial",
+  "since": "2024",
+  "units": [
+   [
+    "SY",
+    "Quneitra"
+   ]
+  ],
+  "note": "이스라엘군은 2024년 12월 완충지대 밖 쿠네이트라 시와 알와흐다 댐 일대 등으로 나아갔고, 다라 주 마을도 습격해 왔다(최근 기록 2026년 5월). 이스라엘 당국은 2025년 1월 15km '통제 구역'과 60km '영향권'을 장기간 유지하겠다고 했고, 네타냐후 총리는 쿠네이트라·다라·스웨이다의 비무장화를 요구했다. 시리아 정부는 완전 철수를 요구한다.",
+  "sources": [
+   [
+    "위키백과",
+    "Israeli invasion of Syria (2024–present)(이스라엘의 시리아 침공) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Israeli_invasion_of_Syria_(2024–present)"
+   ]
+  ]
+ },
+ {
+  "id": "lb-south",
+  "name": "남레바논 '안보 구역'",
+  "owner": "LB",
+  "holder": "이스라엘",
+  "holderCode": "IL",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "partial",
+  "since": "2024",
+  "units": [
+   [
+    "LB",
+    "South Lebanon"
+   ],
+   [
+    "LB",
+    "An Nabatiyah"
+   ]
+  ],
+  "note": "2024년 전쟁 뒤 남은 거점에 더해, 2026년 3월 2일 헤즈볼라의 로켓 발사로 전투가 다시 터지자 이스라엘군이 '옐로라인'으로 둘러싼 안보 구역을 국경에서 10~12km 깊이까지 넓혔다(6월 19일 휴전 뒤에도 주둔). 유엔 레바논평화유지군(UNIFIL)은 2026년 9월 요새 기지 8곳을 포함해 약 30곳의 이스라엘군 진지를 셌다. 이스라엘군 참모총장 자미르는 옐로라인을 완전히 통제하겠다고 했고, 헤즈볼라 카셈 사무총장은 해법이 이스라엘 철수에서 시작한다고 했다(레바논 정부 공식 입장은 확인한 자료에 없음).",
+  "sources": [
+   [
+    "The National",
+    "Unifil counts eight fortified bases among 30 Israeli military positions in south Lebanon(UNIFIL, 남레바논 이스라엘군 진지 30곳 중 요새 기지 8곳 집계) · 2026-09-22",
+    "https://www.thenationalnews.com/news/mena/2026/09/22/unifil-counts-eight-fortified-bases-among-30-israeli-military-positions-in-south-lebanon"
+   ],
+   [
+    "FDD Long War Journal",
+    "IDF shifts southern Lebanon forces toward 'forward-defense' posture as troops prepare for winter(이스라엘군, 남레바논 병력을 '전진 방어' 태세로 전환) · 2026-10-07",
+    "https://www.longwarjournal.org/archives/2026/10/idf-shifts-southern-lebanon-forces-toward-forward-defense-posture-as-troops-prepare-for-winter.php"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "ps-gaza",
+  "name": "가자지구 옐로라인 동쪽",
+  "owner": "PS",
+  "holder": "이스라엘",
+  "holderCode": "IL",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "partial",
+  "since": "2025",
+  "units": [
+   [
+    "PS",
+    "Gaza Strip"
+   ]
+  ],
+  "note": "2025년 10월 10일 가자 평화안 발효 때 그어진 약 45km '옐로라인' 동쪽을 이스라엘군이 통제한다. 처음 약 53%였고, 로이터는 2026년 4월 최소 64%로 집계했으며 네타냐후 총리는 5월 60%로 넓혔다며 70%까지 확대를 지시했다고 말했다. 이스라엘은 가자를 더는 점령하지 않는다는 입장이지만 유엔 등은 점령으로 보며, 서쪽은 하마스가 통제한다.",
+  "sources": [
+   [
+    "위키백과",
+    "Yellow Line (Gaza)(가자 옐로라인) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Yellow_Line_(Gaza)"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "ps-west-bank",
+  "name": "요르단강 서안(동예루살렘 포함)",
+  "owner": "PS",
+  "holder": "이스라엘",
+  "holderCode": "IL",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "full",
+  "since": "1967",
+  "units": [
+   [
+    "PS",
+    "West Bank"
+   ]
+  ],
+  "note": "이스라엘이 1967년부터 점령하고 동예루살렘은 합병했으며, 서안 나머지는 사실상 부분 합병 상태다. 국제사법재판소(ICJ)는 2024년 7월 19일 권고 의견에서 점령 지속이 불법이며 '가능한 한 빨리' 끝내야 한다고 했다. 이스라엘 정부는 이를 거부했고 네타냐후 총리는 '거짓 결정'이라 했으며, 압바스 팔레스타인 수반 측은 '역사적'이라며 환영했다.",
+  "sources": [
+   [
+    "위키백과",
+    "ICJ advisory opinion on the Occupied Palestinian Territory(점령 팔레스타인 영토에 관한 ICJ 권고 의견) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Legal_Consequences_arising_from_the_Policies_and_Practices_of_Israel_in_the_Occupied_Palestinian_Territory,_including_East_Jerusalem"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "am-azerbaijan",
+  "name": "아르메니아 국경 지대(아제르바이잔군 주둔)",
+  "owner": "AM",
+  "holder": "아제르바이잔",
+  "holderCode": "AZ",
+  "holderType": "state",
+  "kind": "점령",
+  "extent": "partial",
+  "since": "2021",
+  "units": [
+   [
+    "AM",
+    "Syunik"
+   ],
+   [
+    "AM",
+    "Vayots Dzor"
+   ],
+   [
+    "AM",
+    "Gegharkunik"
+   ]
+  ],
+  "note": "아제르바이잔군이 2021~2022년 국경 충돌 때 시우니크·바요츠조르·게가르쿠니크 일부에 들어가 머물고 있다(아르츠바셴 월경지 포함). 파시냔 아르메니아 총리는 이를 주권 영토 '점령'이라 부르며 1991년 알마티 선언에 따른 국경 획정으로 철군 문제를 풀겠다고 했다. 아제르바이잔 정부의 공식 입장은 확인한 자료에 없다.",
+  "sources": [
+   [
+    "Armenpress",
+    "Pashinyan says border delimitation to ensure Azerbaijani troop withdrawal from Armenia's sovereign territories(파시냔 '국경 획정으로 아제르바이잔군 철수') · 2026(날짜 미표기)",
+    "https://armenpress.am/en/article/1241809/amp"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "sd-rsf-darfur",
+  "name": "다르푸르(서·남·동 다르푸르)",
+  "owner": "SD",
+  "holder": "신속지원군(RSF)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "full",
+  "since": "2023",
+  "units": [
+   [
+    "SD",
+    "Western Darfur"
+   ],
+   [
+    "SD",
+    "Southern Darfur"
+   ],
+   [
+    "SD",
+    "Eastern Darfur"
+   ]
+  ],
+  "note": "2023년 4월 내전이 터진 뒤 RSF가 니알라(2023-10-26)·에드다에인(2023-11-21) 등 다르푸르 주도들을 차지했고, 2025년 10월 26일 정부군의 마지막 다르푸르 거점 엘파셰르를 함락해 다르푸르 거의 전역을 쥐었다. RSF는 별도의 '평화통합정부'를 세웠다. 포트수단의 정부군(SAF) 주도 정부는 이를 인정하지 않는다.",
+  "sources": [
+   [
+    "Al Jazeera",
+    "The battle for Kordofan: The corridor linking Sudan's east and west(코르도판 전투: 수단 동서를 잇는 회랑) · 2026-10-01",
+    "https://www.aljazeera.com/news/2026/10/1/the-battle-for-kordofan-the-corridor-linking-sudans-east-and-west"
+   ],
+   [
+    "위키백과",
+    "Sudanese civil war (2023–present)(수단 내전) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Sudanese_civil_war_(2023–present)"
+   ]
+  ]
+ },
+ {
+  "id": "sd-rsf-partial",
+  "name": "북·중부 다르푸르와 코르도판 일부",
+  "owner": "SD",
+  "holder": "신속지원군(RSF)·SPLM-N(알히루)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2023",
+  "units": [
+   [
+    "SD",
+    "North Darfur"
+   ],
+   [
+    "SD",
+    "Central Darfur"
+   ],
+   [
+    "SD",
+    "South Kordufan"
+   ],
+   [
+    "SD",
+    "North Kordufan"
+   ]
+  ],
+  "note": "RSF는 엘파셰르 함락(2025-10-26)으로 북다르푸르를 대부분 장악했고, 서코르도판의 바바누사·물라드·알풀라를 쥐고 있다(Natural Earth 경계로는 남코르도판에 속함). 2026년 10월 현재 정부군은 북코르도판에서 우위(10월 2일 알마즈룹 탈환 발표), RSF는 서쪽에서 우위이며 남코르도판은 RSF와 손잡은 SPLM-N과 정부군이 다투는 교전 지역이다. 정부군 대변인은 보급선을 끊는 것이 목표라고 밝혔다.",
+  "sources": [
+   [
+    "Al Jazeera",
+    "Sudan's army says it captured RSF stronghold in North Kordofan(수단군 '북코르도판 RSF 거점 장악') · 2026-10-02",
+    "https://www.aljazeera.com/news/2026/10/2/sudans-army-says-it-captured-rsf-stronghold-in-north-kordofan"
+   ],
+   [
+    "Al Jazeera",
+    "The battle for Kordofan: The corridor linking Sudan's east and west(코르도판 전투: 수단 동서를 잇는 회랑) · 2026-10-01",
+    "https://www.aljazeera.com/news/2026/10/1/the-battle-for-kordofan-the-corridor-linking-sudans-east-and-west"
+   ],
+   [
+    "위키백과",
+    "Sudanese civil war (2023–present)(수단 내전) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Sudanese_civil_war_(2023–present)"
+   ]
+  ]
+ },
+ {
+  "id": "cd-m23",
+  "name": "북·남키부(M23 장악 지역)",
+  "owner": "CD",
+  "holder": "M23/콩고강연합(AFC)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2022",
+  "units": [
+   [
+    "CD",
+    "Nord-Kivu"
+   ],
+   [
+    "CD",
+    "Sud-Kivu"
+   ]
+  ],
+  "note": "M23은 2022년 공세를 재개해 2025년 1월 고마, 2월 부카부를 점령했고, 2025년 12월 10일 우비라를 차지했다가 2026년 1월 물러났지만 루지지 평원 등 주변 진지는 유지한다. 콩고 정부는 '르완다의 야만적 침략'이라 부르며, 미국은 2026년 3월 우비라 점령을 이유로 르완다군을 제재했다. 르완다 정부는 콩고발 위협에 맞선 자위일 뿐이라는 입장이다.",
+  "sources": [
+   [
+    "Human Rights Watch",
+    "Investigating the M23's Occupation of Uvira in Eastern DR Congo(동부 콩고 우비라 M23 점령 조사) · 2026-04-01",
+    "https://www.hrw.org/news/2026/04/01/investigating-the-m23s-occupation-of-uvira-in-eastern-dr-congo"
+   ],
+   [
+    "위키백과",
+    "M23 campaign (2022–present)(M23 공세) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/M23_campaign_(2022–present)"
+   ],
+   [
+    "위키백과",
+    "List of military occupations(군사 점령 목록) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/List_of_military_occupations"
+   ]
+  ]
+ },
+ {
+  "id": "ye-houthi",
+  "name": "예멘 북부(후티 통치 지역)",
+  "owner": "YE",
+  "holder": "후티(안사르알라)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "full",
+  "since": "2014",
+  "units": [
+   [
+    "YE",
+    "Amanat Al Asimah"
+   ],
+   [
+    "YE",
+    "Sana'a"
+   ],
+   [
+    "YE",
+    "Sa`dah"
+   ],
+   [
+    "YE",
+    "Amran"
+   ],
+   [
+    "YE",
+    "Dhamar"
+   ],
+   [
+    "YE",
+    "Ibb"
+   ],
+   [
+    "YE",
+    "Al Mahwit"
+   ],
+   [
+    "YE",
+    "Raymah"
+   ]
+  ],
+  "note": "후티는 2014년 수도 사나에 들어와 2015년 2월 6일 정부 장악과 의회 해산을 선포했고, 지금도 국제 승인을 받지 못한 채 국민 절반 이상이 사는 북서부를 통치한다. 국제 승인 정부(대통령지도위원회)는 남부·동부를 쥐며 2026년 1월 사우디 지원으로 남부과도위원회(STC)의 동부 장악을 되돌렸다. 후티는 2026년 2월 선박 공격 재개를 선언했다.",
+  "sources": [
+   [
+    "Political Geography Now",
+    "Yemen Control Map & Report: Collapse of Separatist Control(예멘 통제 지도: 분리주의 세력 통제 붕괴) · 2026-02-09",
+    "https://www.polgeonow.com/2026/02/yemen-civil-war-map-2026-houthis-separatists-irg-al-qaeda.html"
+   ],
+   [
+    "위키백과",
+    "Houthi movement(후티 운동) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Houthi_movement"
+   ]
+  ]
+ },
+ {
+  "id": "ye-houthi-front",
+  "name": "예멘 전선 지역(후티 일부 통제)",
+  "owner": "YE",
+  "holder": "후티(안사르알라)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2014",
+  "units": [
+   [
+    "YE",
+    "Al Hudaydah"
+   ],
+   [
+    "YE",
+    "Hajjah"
+   ],
+   [
+    "YE",
+    "Al Bayda'"
+   ],
+   [
+    "YE",
+    "Al Jawf"
+   ],
+   [
+    "YE",
+    "Ma'rib"
+   ],
+   [
+    "YE",
+    "Ta`izz"
+   ],
+   [
+    "YE",
+    "Al Dali'"
+   ]
+  ],
+  "note": "후디다(홍해 항구)·하자·바이다·자우프는 대부분 후티가, 마리브·타이즈·달리는 후티와 정부군이 나눠 쥔다. 2022년 휴전 이후 전선은 크게 바뀌지 않았으며, PolGeoNow는 2026년 7월에도 2월 지도가 거의 맞다고 적었다. 국제 승인 정부는 예멘 전역의 주권을 주장한다.",
+  "sources": [
+   [
+    "Political Geography Now",
+    "Yemen Control Map & Report: Collapse of Separatist Control(예멘 통제 지도: 분리주의 세력 통제 붕괴) · 2026-02-09",
+    "https://www.polgeonow.com/2026/02/yemen-civil-war-map-2026-houthis-separatists-irg-al-qaeda.html"
+   ],
+   [
+    "위키백과",
+    "Houthi movement(후티 운동) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Houthi_movement"
+   ]
+  ]
+ },
+ {
+  "id": "mm-rakhine",
+  "name": "라카인주(아라칸군 장악)",
+  "owner": "MM",
+  "holder": "아라칸군(AA)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "full",
+  "since": "2024",
+  "units": [
+   [
+    "MM",
+    "Rakhine"
+   ]
+  ],
+  "note": "아라칸군은 2023년 11월 공세 이후 2025년 2월까지 라카인주 17개 타운십 중 14곳과 친주 팔레트와를 차지했고, 2026년에는 세금을 걷는 등 행정도 한다. 군정은 주도 시트웨와 짜욱퓨, 마나웅섬만 쥔다. 군정은 저항 세력을 상대로 공습과 반격을 이어가고 있다.",
+  "sources": [
+   [
+    "위키백과",
+    "Territory of the Arakan Army(아라칸군 장악 지역) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Territory_of_the_Arakan_Army"
+   ],
+   [
+    "Mappr",
+    "Mapped: Myanmar's Conflict Zones in 2026 — Who Controls What Five Years After the Coup(2026 미얀마 분쟁 지도: 쿠데타 5년, 누가 어디를 쥐나) · 2026-05-29(2026-07-23 갱신)",
+    "https://www.mappr.co/?p=58391"
+   ]
+  ]
+ },
+ {
+  "id": "mm-chin",
+  "name": "친주(저항세력 장악)",
+  "owner": "MM",
+  "holder": "친 저항세력(친민족군·친 형제동맹)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "full",
+  "since": "2023",
+  "units": [
+   [
+    "MM",
+    "Chin"
+   ]
+  ],
+  "note": "친 저항세력은 2023년 말 친주 대부분을 장악했고 2025년 팔람을 점령해 마지막 군정 기지를 무너뜨렸다. '친랜드주'를 선포했다. 민족통합정부(NUG)는 2008년 헌법을 거부하고 연방 민주국가를 주장하며, 군정은 2023년 330개 타운십의 약 3분의 2를 통제한다고 주장했다.",
+  "sources": [
+   [
+    "Mappr",
+    "Mapped: Myanmar's Conflict Zones in 2026 — Who Controls What Five Years After the Coup(2026 미얀마 분쟁 지도: 쿠데타 5년, 누가 어디를 쥐나) · 2026-05-29(2026-07-23 갱신)",
+    "https://www.mappr.co/?p=58391"
+   ],
+   [
+    "위키백과",
+    "Myanmar civil war (2021–present)(미얀마 내전) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Myanmar_civil_war_(2021–present)"
+   ]
+  ]
+ },
+ {
+  "id": "mm-contested",
+  "name": "미얀마 북부·동부·중부 교전 지역",
+  "owner": "MM",
+  "holder": "소수민족 무장단체(KIA·카렌니·KNU·MNDAA 등)·국민방위군(PDF)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2021",
+  "units": [
+   [
+    "MM",
+    "Kachin"
+   ],
+   [
+    "MM",
+    "Kayah"
+   ],
+   [
+    "MM",
+    "Kayin"
+   ],
+   [
+    "MM",
+    "Sagaing"
+   ],
+   [
+    "MM",
+    "Shan"
+   ]
+  ],
+  "note": "2021년 쿠데타 이후 저항세력 장악 지역이 2026년 중반 약 42%로 늘었다는 조사가 있고(유엔 안보리 브리핑은 군정 통제를 약 21%로 추정), 군정은 대도시와 중부를 쥔다. 카친독립군은 바모 일대를 압박하고, 카렌니군은 2년째 로이코를 포위 중이며, 사가잉은 농촌 대부분을 PDF가 관리한다. 샨주에서는 중국 압력으로 MNDAA가 2025년 라시오를 넘겼다.",
+  "sources": [
+   [
+    "Mappr",
+    "Mapped: Myanmar's Conflict Zones in 2026 — Who Controls What Five Years After the Coup(2026 미얀마 분쟁 지도: 쿠데타 5년, 누가 어디를 쥐나) · 2026-05-29(2026-07-23 갱신)",
+    "https://www.mappr.co/?p=58391"
+   ],
+   [
+    "위키백과",
+    "Myanmar civil war (2021–present)(미얀마 내전) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Myanmar_civil_war_(2021–present)"
+   ]
+  ]
+ },
+ {
+  "id": "ht-gangs",
+  "name": "포르토프랭스·아르티보니트(갱단 통제)",
+  "owner": "HT",
+  "holder": "갱단 연합 비브 안상(Viv Ansanm) 등",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2024",
+  "units": [
+   [
+    "HT",
+    "Ouest"
+   ],
+   [
+    "HT",
+    "L'Artibonite"
+   ]
+  ],
+  "note": "갱단이 수도 포르토프랭스의 약 90%, 아르티보니트의 약 50%를 통제한다(가디언, 2025-12-01). 유엔 지원 '갱단 진압군(GSF)'이 2025년 10월 2일 출범해 2026년 4월 첫 병력(차드)이 도착했다. 과도정부 보안군은 2026년 1월 드론으로 갱단 두목 셰리지에의 거점을 공격했다.",
+  "sources": [
+   [
+    "위키백과",
+    "Haitian gang war(아이티 갱 전쟁) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Haitian_gang_war"
+   ]
+  ]
+ },
+ {
+  "id": "ml-kidal",
+  "name": "키달(말리 북부)",
+  "owner": "ML",
+  "holder": "아자와드해방전선(FLA)·JNIM",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "full",
+  "since": "2026",
+  "units": [
+   [
+    "ML",
+    "Kidal"
+   ]
+  ],
+  "note": "2026년 4월 25일 JNIM과 투아레그계 FLA의 전국 동시 공세 뒤 러시아 아프리카군단과 말리군이 협상 끝에 키달에서 철수했고(4월 27일 확인), 5월 1일 테살리트 기지도 넘어갔다. 말리 군정은 공격을 '좌절된 쿠데타 시도'라 했고 고이타 대통령은 상황이 '통제되고 있다'고 말했다. 마이가 총리는 공격을 '비겁하고 야만적'이라며 외국 자금을 지목했다.",
+  "sources": [
+   [
+    "위키백과",
+    "2026 Mali offensives(2026 말리 공세) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/2026_Mali_offensives"
+   ]
+  ]
+ },
+ {
+  "id": "ml-jnim",
+  "name": "말리 중부·서부(JNIM 장악·봉쇄 지역)",
+  "owner": "ML",
+  "holder": "JNIM(이슬람·무슬림 지지단)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2017",
+  "units": [
+   [
+    "ML",
+    "Mopti"
+   ],
+   [
+    "ML",
+    "Gao"
+   ],
+   [
+    "ML",
+    "Ségou"
+   ],
+   [
+    "ML",
+    "Kayes"
+   ]
+  ],
+  "note": "JNIM은 2026년 4월 공세 때 몹티 '완전 장악'을 주장했고(세바레는 양측 분할), 가오는 4월 25일 대부분 반군 손에 들어갔다는 보도 이후 상황이 불분명하다. 카예스주 니오로뒤사헬을 장악했고 세구주 파라부구를 봉쇄하며 바마코에도 몇 달째 연료 봉쇄를 걸고 있다. 군정은 고이타가 국방장관을 겸하며 반군 소탕을 공언했다.",
+  "sources": [
+   [
+    "위키백과",
+    "2026 Mali offensives(2026 말리 공세) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/2026_Mali_offensives"
+   ],
+   [
+    "Africa Defense Forum(미 아프리카사령부 발행)",
+    "'The Town Is Dying': Sahelian Civilians React to Life Under Terror Groups('마을이 죽어간다': 테러 단체 아래 사헬 주민들) · 2026-08-11",
+    "https://adf-magazine.com/2026/08/the-town-is-dying-sahelian-civilians-react-to-life-under-terror-groups/"
+   ]
+  ]
+ },
+ {
+  "id": "bf-jnim",
+  "name": "부르키나파소 북부·동부(JNIM 장악 지역)",
+  "owner": "BF",
+  "holder": "JNIM(이슬람·무슬림 지지단)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2020",
+  "units": [
+   [
+    "BF",
+    "Soum"
+   ],
+   [
+    "BF",
+    "Oudalan"
+   ],
+   [
+    "BF",
+    "Séno"
+   ],
+   [
+    "BF",
+    "Yagha"
+   ],
+   [
+    "BF",
+    "Gnagna"
+   ],
+   [
+    "BF",
+    "Gourma"
+   ],
+   [
+    "BF",
+    "Komondjari"
+   ],
+   [
+    "BF",
+    "Tapoa"
+   ]
+  ],
+  "note": "JNIM은 수년간 북부·동부의 넓은 지역을 장악했고 지보를 2020년부터 봉쇄해 2025년 5월 11일에는 지보 군기지를 몇 시간 점령했다(이튿날 동부 디아파가도 잠시 점령). 월드폴리틱스리뷰(2025-06)는 정부가 국토의 '3분의 1'만 통제한다고 추정했다. 트라오레 군정은 대규모 공습과 자원병(VDP) 동원으로 대응하며, 영토 통제에 관한 정부 공식 입장은 확인한 자료에 없다.",
+  "sources": [
+   [
+    "World Politics Review",
+    "With Security Unraveling, Burkina Faso's Traore Is Getting Desperate(안보 붕괴 속 부르키나파소 트라오레의 절박함) · 2025-06-06",
+    "https://www.worldpoliticsreview.com/burkina-faso-traore-jnim/"
+   ],
+   [
+    "ACCORD(오스트리아 출신국정보연구소)",
+    "Anfragebeantwortung zu Burkina Faso: Kontrolle über den Großraum Djibo seit 2025(부르키나파소: 2025년 이후 지보 일대 통제에 관한 질의 답변) · 2026-04-23",
+    "https://www.ecoi.net/en/document/2140610.html"
+   ]
+  ]
+ },
+ {
+  "id": "so-shabaab",
+  "name": "소말리아 남·중부(알샤바브 통제 지역)",
+  "owner": "SO",
+  "holder": "알샤바브",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2009",
+  "units": [
+   [
+    "SO",
+    "Jubbada Dhexe"
+   ],
+   [
+    "SO",
+    "Hiiraan"
+   ],
+   [
+    "SO",
+    "Shabeellaha Hoose"
+   ],
+   [
+    "SO",
+    "Shabeellaha Dhexe"
+   ],
+   [
+    "SO",
+    "Bay"
+   ],
+   [
+    "SO",
+    "Bakool"
+   ],
+   [
+    "SO",
+    "Gedo"
+   ],
+   [
+    "SO",
+    "Galguduud"
+   ]
+  ],
+  "note": "알샤바브는 중주바의 질리브에 지휘부를 두고 남부 농촌에 끊긴 통제망을 갖고 있으며, 2025년 공세로 히란·중샤벨레에서 정부가 되찾았던 곳 대부분을 다시 차지했다(7월 모코코리·마하스 등). EUAA는 PolGeoNow 지도(2026-03-31)를 인용해 국토의 약 30%를 통제한다고 적었다. 연방정부는 2022년 '전면전'을 선포했고 2026년 2월 히란 중부 탈환을 발표했다.",
+  "sources": [
+   [
+    "EUAA(유럽연합 망명청)",
+    "Somalia – Security situation: Al-Shabaab control areas, presence, and influence(소말리아 안보 상황: 알샤바브 통제·영향 지역) · 2026",
+    "https://www.euaa.europa.eu/print/pdf/node/31698"
+   ],
+   [
+    "EUAA(유럽연합 망명청)",
+    "Somalia – Security situation: 2.4 Hirshabelle(소말리아 안보 상황: 히르샤벨레) · 2026-06",
+    "https://www.euaa.europa.eu/somalia-security-situation/24-hirshabelle"
+   ],
+   [
+    "EUAA(유럽연합 망명청)",
+    "Somalia – Security situation: 2.2.3 Lower Shabelle(소말리아 안보 상황: 하샤벨레) · 2026-06",
+    "https://www.euaa.europa.eu/somalia-security-situation/223-lower-shabelle"
+   ]
+  ]
+ },
+ {
+  "id": "et-fano",
+  "name": "암하라주 농촌(파노 활동 지역)",
+  "owner": "ET",
+  "holder": "파노(암하라 민족 민병대, AFNM)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "무장세력 통제",
+  "extent": "partial",
+  "since": "2023",
+  "units": [
+   [
+    "ET",
+    "Amhara"
+   ]
+  ],
+  "note": "파노는 2024년 말 암하라의 80% 이상을 장악했다고 주장했으나 검증되지 않았고, 정부군은 주요 도시·간선도로를 쥔다. 2026년 1월 22일 두 연합이 통합 사령부(AFNM)를 만들었고, 2월 데브레타보르에 며칠 들어갔다가 드론 공격에 물러났다. 연방정부는 무력 진압을 이어가며 2025년 12월 5일 한 파벌 대표와 평화협정을 맺었으나 해당 연합은 이를 부인했다.",
+  "sources": [
+   [
+    "위키백과",
+    "War in Amhara(암하라 전쟁) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/War_in_Amhara"
+   ]
+  ]
+ },
+ {
+  "id": "ly-east",
+  "name": "리비아 동부(하프타르 통치)",
+  "owner": "LY",
+  "holder": "리비아국민군(LNA, 하프타르)·국가안정정부(GNS)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "분할 통치",
+  "extent": "full",
+  "since": "2014",
+  "units": [
+   [
+    "LY",
+    "Benghazi"
+   ],
+   [
+    "LY",
+    "Al Butnan"
+   ],
+   [
+    "LY",
+    "Al Jabal al Akhdar"
+   ],
+   [
+    "LY",
+    "Al Marj"
+   ],
+   [
+    "LY",
+    "Al Qubbah"
+   ],
+   [
+    "LY",
+    "Ajdabiya"
+   ],
+   [
+    "LY",
+    "Al Kufrah"
+   ]
+  ],
+  "note": "리비아는 2014년 이후 갈라져 서부는 국제 승인을 받은 트리폴리 국민통합정부(GNU, 드베이바 총리)가, 동부·중부는 하프타르의 리비아국민군이 실권을 쥔 국가안정정부(GNS, 하마드 총리)가 통치한다. 2020년 10월 23일 유엔 중재 영구 휴전 이후 경계는 크게 바뀌지 않았다. GNS는 동부 대표의회의 승인을, GNU는 국제 승인을 내세운다.",
+  "sources": [
+   [
+    "위키백과",
+    "Libyan crisis (2011–present)(리비아 위기) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Libyan_crisis_(2011–present)"
+   ],
+   [
+    "위키백과",
+    "Libyan National Army(리비아국민군) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Libyan_National_Army"
+   ]
+  ]
+ },
+ {
+  "id": "ly-center-south",
+  "name": "리비아 중부·남부(하프타르 세력권)",
+  "owner": "LY",
+  "holder": "리비아국민군(LNA, 하프타르)",
+  "holderCode": null,
+  "holderType": "armed",
+  "kind": "분할 통치",
+  "extent": "partial",
+  "since": "2019",
+  "units": [
+   [
+    "LY",
+    "Surt"
+   ],
+   [
+    "LY",
+    "Al Jufrah"
+   ],
+   [
+    "LY",
+    "Sabha"
+   ],
+   [
+    "LY",
+    "Murzuq"
+   ],
+   [
+    "LY",
+    "Ghat"
+   ],
+   [
+    "LY",
+    "Wadi al Hayaa"
+   ],
+   [
+    "LY",
+    "Ash Shati'"
+   ]
+  ],
+  "note": "리비아국민군은 2019년 남부 공세(사브하 전투)와 2020년 시르트 전투를 거쳐 중부·남부로 활동 범위를 넓혔고, GNS는 2022년 3월 시르트에 자리 잡았다. 2024년 6월에는 알제리 국경에도 병력을 배치했다. 남부는 지역 무장세력과 섞여 있어 연한 빗금으로 둔다.",
+  "sources": [
+   [
+    "위키백과",
+    "Libyan National Army(리비아국민군) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Libyan_National_Army"
+   ],
+   [
+    "위키백과",
+    "Libyan crisis (2011–present)(리비아 위기) · 열람 2026-10-12",
+    "https://en.wikipedia.org/wiki/Libyan_crisis_(2011–present)"
+   ]
+  ]
+ }
+]

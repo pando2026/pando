@@ -1,7 +1,8 @@
 """Build data/occupied.json: occupied / armed-group-controlled areas as pre-projected SVG paths
 (same Natural Earth I projection and lon0 as data/world.json).
-Usage: python3 _tools/occupied/build.py NE_ADMIN1.geojson DEEPSTATE.geojson _tools/occupied/out/occupied.json"""
-import json,math,sys
+Usage: python3 _tools/occupied/build.py NE_ADMIN1.geojson DEEPSTATE.geojson _tools/occupied/items.json
+(items.json = the researched list without geometry; Ukraine comes from the DeepState file, its date is read from the file name)"""
+import json,math,sys,os
 ne_path,ds_path,items_path=sys.argv[1:4]
 world=json.load(open('data/world.json'));W,K,TOP,LON0=world['w'],world['k'],world['top'],world.get('lon0',0)
 def fx(p):p2=p*p;p4=p2*p2;return 0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))
@@ -32,9 +33,11 @@ idx={(f['properties']['iso_a2'],f['properties']['name']):f['geometry'] for f in 
 GOLAN={"type":"Polygon","coordinates":[[[35.63,33.25],[35.82,33.33],[35.85,33.2],[35.94,32.96],[35.86,32.71],[35.63,32.69],[35.6,32.85],[35.65,33.05],[35.63,33.25]]]}
 items=json.load(open(items_path));out=[]
 ds=json.load(open(ds_path))['features'][0]['geometry']
+import re as _re
+_m=_re.search(r'(\d{4})(\d{2})(\d{2})',ds_path);DSDATE=f'{_m.group(1)}-{_m.group(2)}-{_m.group(3)}' if _m else '2026-10-11'
 out.append({"id":"ua-russia","name":"우크라이나 동·남부(크림반도 포함)","owner":"UA","holder":"러시아","holderCode":"RU","holderType":"state","kind":"점령","extent":"full","since":"2014",
- "note":"러시아는 2014년 크림반도를, 2022년 침공 뒤 도네츠크·루한스크·자포리자·헤르손 일부를 점령하고 자국 영토로 합병했다고 선언했다. 우크라이나는 불법 점령으로 보고 전 영토 회복을 요구한다. 유엔 총회는 2022년 10월 이 합병 시도를 143개국 찬성으로 무효라고 결의했다(러시아 반대). 지도 경계는 우크라이나 민간 분석단 DeepStateMap의 2026-10-11 점령지 자료다.",
- "sources":[["DeepStateMap (via cyterat/deepstate-map-data)","deepstatemap_data_20261011.geojson (점령지 경계 자료) · 2026-10-11","https://github.com/cyterat/deepstate-map-data"],["UN General Assembly","Territorial integrity of Ukraine: defending the principles of the Charter of the United Nations (우크라이나 영토 보전 결의, GA/12458) · 2022-10-12","https://press.un.org/en/2022/ga12458.doc.htm"]],
+ "note":"러시아는 2014년 크림반도를, 2022년 침공 뒤 도네츠크·루한스크·자포리자·헤르손 일부를 점령하고 자국 영토로 합병했다고 선언했다. 우크라이나는 불법 점령으로 보고 전 영토 회복을 요구한다. 유엔 총회는 2022년 10월 이 합병 시도를 143개국 찬성으로 무효라고 결의했다(러시아 반대). 지도 경계는 우크라이나 민간 분석단 DeepStateMap의 "+DSDATE+" 점령지 자료다.",
+ "sources":[["DeepStateMap (via cyterat/deepstate-map-data)",os.path.basename(ds_path)+" (점령지 경계 자료) · "+DSDATE,"https://github.com/cyterat/deepstate-map-data"],["UN General Assembly","Territorial integrity of Ukraine: defending the principles of the Charter of the United Nations (우크라이나 영토 보전 결의, GA/12458) · 2022-10-12","https://press.un.org/en/2022/ga12458.doc.htm"]],
  "d":geom_path(ds,0.015),"lonlat":[36.5,47.6]})
 for it in items:
   gs=[]
