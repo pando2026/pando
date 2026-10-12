@@ -2073,7 +2073,7 @@ html,body{background:#fff;color:var(--ink)}
  // Views: "__win" = 1st party in every region; a party = shaded by its vote/seat share; income layer on top.
  const admin1Cache={};
  const getAdmin1=cc=>admin1Cache[cc]||(admin1Cache[cc]=fetch("data/admin1/"+cc+".json").then(r=>r.json()));
- function partyColor(label){let col="#9ca7a3";(state.civicsChambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(g[0]===label&&/^#[\da-f]{6}$/i.test(g[2]))col=g[2]}));return col}
+ function partyColor(label){let col=state.partyMap?.colors?.[label]||"#9ca7a3";(state.civicsChambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(g[0]===label&&/^#[\da-f]{6}$/i.test(g[2]))col=g[2]}));return col}
  const isEn=()=>document.documentElement.lang==='en';
  const pct=v=>(Math.round(v*10)/10)+"%";
  const rv=(obj,u,g)=>!obj?null:obj[u]!=null?obj[u]:(g&&obj[g]!=null?obj[g]:null);

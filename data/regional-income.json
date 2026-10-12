@@ -1000,5 +1000,44 @@
   "fxRate": 32.805861,
   "fxYear": "2024",
   "fxSource": "https://api.worldbank.org/v2/country/TUR/indicator/PA.NUS.FCRF"
+ },
+ "UA": {
+  "metric": "1인당 지역총생산(GRP, 경상가격)",
+  "unit": "흐리우냐",
+  "currency": "UAH",
+  "mult": 1,
+  "year": "2021",
+  "provider": "우크라이나 국가통계청(Ukrstat)",
+  "source": [
+   "Ukrstat · Wikipedia",
+   "Валовий регіональний продукт 2021 (지역총생산 2021, Ukrstat 2023년 5월 간행, zb_vrp_2021.xlsx) — 영어 위키백과 각 주 문서 정보상자(GDP 총액·1인당)에서 인용, 키이우시는 'Kyiv' 문서의 GDP (nominal, 2021) · 열람 2026-10-12",
+   "https://ukrstat.gov.ua/druk/publicat/kat_u/2023/05/zb_vrp_2021.xlsx"
+  ],
+  "values": {
+   "Kyiv": 431616,
+   "Poltava Oblast": 195825,
+   "Dnipropetrovsk Oblast": 186697,
+   "Kyiv Oblast": 162696,
+   "Zaporizhzhia Oblast": 138521,
+   "Kharkiv Oblast": 122227,
+   "Lviv Oblast": 119049,
+   "Chernihiv Oblast": 117225,
+   "Odesa Oblast": 115129,
+   "Vinnytsia Oblast": 114218,
+   "Mykolaiv Oblast": 112864,
+   "Cherkasy Oblast": 112145,
+   "Kirovohrad Oblast": 109183,
+   "Sumy Oblast": 100760,
+   "Khmelnytskyi Oblast": 96964,
+   "Zhytomyr Oblast": 95948,
+   "Volyn Oblast": 90331,
+   "Ivano-Frankivsk Oblast": 88227,
+   "Kherson Oblast": 87378,
+   "Ternopil Oblast": 79412,
+   "Rivne Oblast": 77599,
+   "Chernivtsi Oblast": 61088,
+   "Zakarpattia Oblast": 60632
+  },
+  "note": "2021년 1인당 지역총생산은 키이우시(43만 1,616흐리우냐)가 가장 낮은 자카르파티아주(6만 632흐리우냐)의 약 7.1배다. 2022년 이후 주별 자료는 확인하지 못해 전면 침공 직전인 2021년 값을 썼고, 도네츠크·루한스크주(위키백과에 값 없음)와 크림·세바스토폴은 비어 있다."
  }
 }

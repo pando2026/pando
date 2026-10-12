@@ -1,7 +1,8 @@
 """Attach major cities (Natural Earth populated places) to data/admin1/<CC>.json units as `c`:
 [[ko, en, lon, lat, pop, kind]] kind 2=national capital, 1=state/province capital, 0=other. Up to 3 per unit.
 Cities are placed with full-resolution Natural Earth admin-1 polygons, then mapped to the site's (simplified) units.
-Usage: python3 _tools/partymap/cities.py ne_10m_populated_places.geojson ne_10m_admin_1_states_provinces.geojson"""
+Usage: python3 _tools/partymap/cities.py ne_10m_populated_places.geojson ne_10m_admin_1_states_provinces.geojson [CC,CC]
+(Note: US Washington D.C. is moved to the District of Columbia unit by hand after a full run.)"""
 import json,glob,os,sys
 pp=json.load(open(sys.argv[1]))['features'];ne=json.load(open(sys.argv[2]))['features']
 def pip(x,y,r):
@@ -15,8 +16,11 @@ def polys(g): return g['coordinates'] if g['type']=='MultiPolygon' else [g['coor
 def inside(x,y,g): return any(pip(x,y,pl[0]) and not any(pip(x,y,h) for h in pl[1:]) for pl in polys(g))
 def cen(r): return sum(p[0] for p in r)/len(r),sum(p[1] for p in r)/len(r)
 def area(r): return abs(sum(r[i][0]*r[i-1][1]-r[i-1][0]*r[i][1] for i in range(len(r))))
+only=set(sys.argv[3].split(',')) if len(sys.argv)>3 else None
 for fn in sorted(glob.glob('data/admin1/*.json')):
-  cc=os.path.basename(fn)[:2];d=json.load(open(fn));units=[u for u in d['units'] if u.get('n')]
+  cc=os.path.basename(fn)[:2]
+  if only and cc not in only: continue
+  d=json.load(open(fn));units=[u for u in d['units'] if u.get('n')]
   feats=[f for f in ne if f['properties']['iso_a2']==cc or (cc=='CY' and f['properties']['iso_a2']=='-1')]
   fix=lambda x:x+360 if cc=='RU' and x<0 else x
   def unit_of_point(x,y):
@@ -40,7 +44,7 @@ for fn in sorted(glob.glob('data/admin1/*.json')):
   per={}
   for c in pp:
     p=c['properties']
-    if p['ISO_A2']!=cc: continue
+    if p['ISO_A2']!=cc and not (cc=='UA' and p['ADM1NAME'] in ('Crimea','Sevastopol')): continue
     x,y=p['LONGITUDE'],p['LATITUDE'];u=None
     for i,f in enumerate(feats):
       if inside(x,y,f['geometry']): u=fmap[i];break
