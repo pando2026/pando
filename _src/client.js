@@ -416,6 +416,25 @@
  }
  // Party disputes: which parties are fighting over what, shown under the seat charts.
  // Corruption Perceptions Index (Transparency International): score, rank, Korea, 2020–2025 trend.
+ // Free and fair elections (V-Dem): separate from CPI, which measures perceived administrative corruption.
+ function electionBlock(data){
+  const E=data.elections;if(!E)return "";const e=E.entry,k=E.korea,meta=E.meta||{};
+  if(!e)return '<section class="section cpi elect"><h3>선거의 공정성</h3><p class="metric-missing"><span>평가 대상 아님</span> V-Dem 자료에 없는 국가·지역입니다.</p></section>';
+  const s=e.score,band=s>=.8?["대체로 자유·공정","#1f7a5a"]:s>=.5?["문제 있음","#5f9a3c"]:s>=.2?["심각한 문제","#d08a1e"]:["공정한 경쟁 선거 없음","#c62b33"];
+  const f2=v=>(Math.round(v*100)/100).toFixed(2);
+  const yrs=Object.keys(e.history||{}).sort();const pts=yrs.map(y=>e.history[y]);const kv=k?yrs.map(y=>k.history?.[y]??null):[];
+  const W=360,H=70,pad=10,x=i=>pad+i*(W-2*pad)/Math.max(1,yrs.length-1),y=v=>H-pad-v*(H-2*pad);
+  const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
+  const spark=yrs.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(yrs[0]+"–"+yrs.at(-1)+" 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:'+band[1]+'"/>'+[0,pts.length-1].map(i=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(pts[i]).toFixed(1)+'" r="2.6" style="fill:'+band[1]+'"/><text x="'+x(i).toFixed(1)+'" y="'+(y(pts[i])-6).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+f2(pts[i])+'</text>').join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+yrs[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+yrs.at(-1)+'</text></svg>':"";
+  const prev=e.history?.[String(Number(e.year)-1)],delta=prev!=null?Math.round((s-prev)*100)/100:null;
+  const scale='<div class="cpi-scale"><span class="cpi-track"></span>'+(k?'<i class="cpi-k" style="left:'+(k.score*100)+'%"><b>한국 '+f2(k.score)+'</b></i>':"")+'<i class="cpi-me" style="left:'+(s*100)+'%;background:'+band[1]+'"></i><span class="cpi-ends"><em>0 공정 선거 없음</em><em>1 자유·공정</em></span></div>';
+  const cp=data.cpi?.entry;
+  const both=cp?'<div class="elect-vs"><p><span>행정 부패 인식</span><span class="ev-track"><i class="ev-cpi" style="width:'+cp.score+'%"></i></span><b>부패인식지수 '+cp.score+'/100</b></p><p><span>선거 과정</span><span class="ev-track"><i style="width:'+(s*100)+'%;background:'+band[1]+'"></i></span><b>선거 공정성 '+f2(s)+'/1</b></p></div>':"";
+  return '<section class="section cpi elect"><h3>선거의 공정성 <small>'+esc(meta.edition||"V-Dem")+'</small></h3>'+
+   '<div class="cpi-card"><div class="cpi-main"><div class="cpi-score"><strong style="color:'+band[1]+'">'+f2(s)+'</strong><span>/ 1</span></div><div class="cpi-meta"><b style="background:'+band[1]+'">'+band[0]+'</b><span>'+e.rank+'위 / '+(meta.total||174)+'개국 · '+esc(e.year)+'년</span>'+(delta!=null&&delta!==0?'<span class="cpi-delta">전년 대비 '+(delta>0?"▲":"▼")+Math.abs(delta).toFixed(2)+'</span>':"")+(k?'<span class="cpi-korea">한국 '+f2(k.score)+'</span>':"")+'</div></div>'+scale+spark+
+   (k&&spark?'<p class="cpi-legend"><i style="background:'+band[1]+'"></i>'+esc(namedCountry(data.code))+' <i class="cpi-legend-k"></i>한국</p>':"")+both+
+   '<p class="cpi-note">선거 폭력, 정부의 야당 위협, 부정·대규모 부정행위, 표 매수가 얼마나 없는지와 선거관리기구가 독립적인지를 V-Dem 전문가 평가로 0~1로 매긴 지수로, 높을수록 깨끗합니다. 경쟁 선거가 없거나 열리지 않으면 0에 가깝습니다. 선거로 뽑는 자리가 적어도(예: 의회 일부만 간접 선출) 치러진 선거 자체가 깨끗하면 점수가 높게 나올 수 있습니다. 위의 부패인식지수(행정·공직 부패)와는 따로 재는 지표입니다. 색 구분은 판도가 읽기 쉽게 나눈 것입니다. '+sourceLink(meta.source,"Our World in Data")+' · '+sourceLink(meta.vdem,"V-Dem 원자료")+'</p></div></section>';
+ }
  function cpiBlock(data){
   const c=data.cpi;if(!c)return "";
   const e=c.entry,k=c.korea;
@@ -917,7 +936,7 @@
   const doc=budget.document?'<article class="budget-document"><span>예산 문서 · '+esc(budget.document.fiscalYear||"")+'</span><h3>'+esc(budget.document.title||"예산 자료")+'</h3><p>'+esc(budget.document.status||"")+' · '+esc(budget.document.provider||"")+'</p>'+sourceLink(budget.document.source,"공식 예산 문서")+'</article>':"";
   return {
    politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+(partyMapBlock(data)||capitalBlock(data))+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
-    cpiBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
+    cpiBlock(data)+electionBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["unemployment","실업률",metrics.unemployment],["policyRate","정책금리",metrics.policyRate]])+
     economyAlternativeEstimates(data.economyAlternatives)+
     fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),

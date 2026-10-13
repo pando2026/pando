@@ -27,5 +27,6 @@ series 항목 형식: {"year":"2025","value":숫자,"source":"원문 URL","provi
 
 ## 2. 부패인식지수 (data/cpi.json) — 매년 2월 국제투명성기구 발표 후. edition·published·countries[CC]{score,rank,history}.
 ## 3. 주·도별 소득 (data/regional-income.json) — 나라별 통계청 새 연도가 나왔는지 확인(지침 `_tools/income/BRIEF.md`). 연도가 바뀌면 fxRate(그 해 연평균 환율, 세계은행 PA.NUS.FCRF)도 같이.
-## 4. 환율 (data/fx.json) — 월간 점검과 같음.
+## 4. 선거의 공정성 (data/elections.json) — V-Dem 새 판(매년 3월) 뒤. `https://ourworldindata.org/grapher/free-and-fair-elections-index.csv?csvType=full&useColumnShortNames=true`(내장 브라우저로 받기) → ISO3를 ISO2로 바꿔 countries[CC]{score,year,history,rank}, edition·year 갱신.
+## 5. 환율 (data/fx.json) — 월간 점검과 같음.
 지어내기 금지: 연 페이지에서 확인한 숫자만.

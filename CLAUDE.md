@@ -14,7 +14,7 @@
   - `changewatch.json` 국가별 최근 변화 카드.
   - `civics.json` 의회 구성(parliament.chambers[].groups=[이름, 의석, 색, 성향]) + 갈등 관계(conflicts[]).
   - `party-names.json`, `party-profiles.json`, `party-photos.json` 정당 이름·카드·대표 사진. 키는 civics groups 이름과 글자까지 같아야 한다.
-  - `fights.json` 정당 간 쟁점. `cpi.json` 부패인식지수. `autocrats.json` 독재·권위주의 표시.
+  - `fights.json` 정당 간 쟁점. `cpi.json` 부패인식지수. `elections.json` 선거의 공정성(V-Dem 자유·공정 선거 지수 0~1, Our World in Data 경유, 매년 3월 새 판). `autocrats.json` 독재·권위주의 표시.
   - `explainers.json` 판도 해설. `s00~s15.json` 국가 기본 자료·인물(국가코드 c0*31+c1 mod 16 분할).
   - `photos.json`/`photo-index.json` 인물 사진(위키미디어 공용 자유 라이선스만, 출처·라이선스 필수).
   - `boards.json` **갈등도**(분쟁을 누르면 펼쳐지는 지도 그림). 보드마다 actors(국가·무장세력·기업, side a/b/a2/b2/n), links(from→to, type: attack·troops·arms·finance·trade·sanction·mediate·talks·claim·support, 출처 필수), background(경위 타임라인), videos(관련 날리지식 영상 id). `pairs`로 civics 갈등 항목에 붙는다. 보드가 없는 갈등은 civics 자료로 자동 그림을 그린다. 조사 지침 `_tools/boards/BRIEF.md`. 렌더러 `_src/board.js`, 국가 배지 좌표 `anchors.json`.

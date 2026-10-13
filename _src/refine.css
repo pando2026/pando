@@ -728,3 +728,11 @@ html.lang-en-loading body{visibility:hidden}
 .qs-results li span{color:#6b7881;font-size:12.5px;margin-left:auto}
 .qs-results li[aria-selected="true"],.qs-results li:hover{background:#f1f4f6}
 .qs-results .flag{width:22px;height:15px;flex:none}
+.elect .cpi-track{background:linear-gradient(90deg,#c62b33 0%,#d08a1e 20%,#5f9a3c 50%,#1f7a5a 80%,#1f7a5a 100%)}
+.elect-vs{margin:12px 0 0;display:grid;gap:7px}
+.elect-vs p{margin:0;display:grid;grid-template-columns:92px 1fr 140px;align-items:center;column-gap:10px;font-size:12px;color:#55666f}
+.elect-vs b{font-size:12px;color:#15232d;white-space:nowrap}
+.ev-track{height:10px;background:#eef1f3;border-radius:2px;overflow:hidden}
+.ev-track i{display:block;height:100%;border-radius:2px}
+.ev-cpi{background:#d08a1e}
+@media (max-width:600px){.elect-vs p{grid-template-columns:78px 1fr;row-gap:2px}.elect-vs b{grid-column:2}}
