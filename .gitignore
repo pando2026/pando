@@ -23,3 +23,7 @@ _tools/partymap/in-*.json
 _tools/problems/out/
 _tools/problems/in-*.json
 _tools/occupied/out/
+_tools/ties/out/
+_tools/ties/in-*.json
+_tools/cases/out/
+_tools/cases/in-*.json

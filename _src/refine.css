@@ -736,3 +736,70 @@ html.lang-en-loading body{visibility:hidden}
 .ev-track i{display:block;height:100%;border-radius:2px}
 .ev-cpi{background:#d08a1e}
 @media (max-width:600px){.elect-vs p{grid-template-columns:78px 1fr;row-gap:2px}.elect-vs b{grid-column:2}}
+/* 접고 펴기 */
+.fold-all{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:10px 0 4px;font-size:11px;color:#7a8a95}
+.fold-all span{margin-right:auto}
+.fold-all button{border:1px solid #cddde5;background:#fff;color:#33505f;font:inherit;font-weight:750;padding:4px 10px;border-radius:999px;cursor:pointer}
+.fold-all button:hover{border-color:#15232d;color:#15232d}
+.fold-head{cursor:pointer;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;user-select:none}
+.fold-head:focus-visible{outline:2px solid #2b6cb0;outline-offset:3px}
+.fold-head:hover h3,.fold-head:hover h4,h3.fold-head:hover{color:#2b4f66}
+.fold-chev{margin-left:auto;align-self:center;width:8px;height:8px;border-right:2px solid #7a8a95;border-bottom:2px solid #7a8a95;transform:rotate(45deg) translate(-2px,-2px);transition:transform .15s;flex:none}
+.is-folded .fold-chev{transform:rotate(-45deg)}
+.fold-hint{display:none;font-size:11px;font-weight:800;color:#33505f;background:#eef4f7;border-radius:999px;padding:1px 8px;letter-spacing:0}
+.is-folded > .fold-head .fold-hint{display:inline-block;margin-left:auto}
+.is-folded > .fold-head .fold-hint + .fold-chev{margin-left:0}
+.is-folded > :not(.fold-head){display:none!important}
+.is-folded > .fold-head{margin-bottom:0;border-bottom-color:transparent}
+.is-folded.leaders-section,.is-folded.ix,.is-folded.now{padding-bottom:12px}
+/* 부패·선거 사례 */
+.cases-fold{margin-top:10px;border-top:1px dashed #cddde5;padding-top:8px}
+.cases-fold>summary,.ties-fold>summary{cursor:pointer;font-size:12.5px;font-weight:850;color:#15232d;list-style:none;display:flex;align-items:center;gap:8px}
+.cases-fold>summary::-webkit-details-marker,.ties-fold>summary::-webkit-details-marker{display:none}
+.cases-fold>summary::before,.ties-fold>summary::before{content:"";width:6px;height:6px;border-right:2px solid #7a8a95;border-bottom:2px solid #7a8a95;transform:rotate(-45deg);transition:transform .15s}
+.cases-fold[open]>summary::before,.ties-fold[open]>summary::before{transform:rotate(45deg)}
+.case-list{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:10px}
+.case{border-left:3px solid #cddde5;padding:2px 0 2px 10px}
+.case-top{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.case-top time{font-size:11px;font-weight:800;color:#7a8a95;font-variant-numeric:tabular-nums}
+.case-top b{font-size:13px;color:#15232d}
+.case-st{font-size:10.5px;font-weight:800;border-radius:3px;padding:1px 6px;white-space:nowrap}
+.case-st--hard{background:#fbe6e7;color:#a3212a}
+.case-st--open{background:#fdf1dc;color:#8a5a0f}
+.case-st--soft{background:#eceff1;color:#4f5d66}
+.case-who{margin:3px 0 0;font-size:11.5px;color:#506776}
+.case-text{margin:4px 0;font-size:12.5px;line-height:1.6;color:#22323c}
+.case-src{display:block;font-size:10.5px;color:#7a8a95;line-height:1.5}
+.case-src a{color:#33505f}
+.case-note{margin:10px 0 0;font-size:11px;color:#7a8a95;line-height:1.5}
+/* 인물 간 개인적 관계 */
+.ties-fold{margin-top:14px;border-top:1px solid #cddde5;padding-top:10px}
+.ties-fold>summary span{font-size:11px;font-weight:700;color:#7a8a95}
+.tie-chips{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0}
+.tie-chips button{border:1px solid #cddde5;background:#fff;border-radius:999px;padding:3px 9px;font:inherit;font-size:11.5px;font-weight:750;color:#33505f;cursor:pointer;display:inline-flex;align-items:center;gap:5px}
+.tie-chips button[aria-pressed=true]{background:#15232d;border-color:#15232d;color:#fff}
+.tie-chips i{width:8px;height:8px;border-radius:50%}
+.tie-list{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.tie-list>li{background:#fff;border:1px solid #e1ebf0;border-radius:6px;padding:9px 11px}
+.tie-pair{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px}
+.tie-p{display:flex;flex-direction:column;min-width:0}
+.tie-p:last-child{text-align:right}
+.tie-p b{font-size:13px;color:#15232d}
+.tie-p small{font-size:10.5px;color:#7a8a95;line-height:1.35}
+.tie-kind{font-style:normal;font-size:10.5px;font-weight:850;color:#fff;border-radius:3px;padding:2px 7px;white-space:nowrap}
+i.tie-kind,.tie-chips i{background:#7a8a95}
+.tie-k0{background:#2b6cb0!important}.tie-k1{background:#2f8f6b!important}.tie-k2{background:#b04a7a!important}.tie-k3{background:#c47a12!important}.tie-k4{background:#56707f!important}.tie-k5{background:#3d4f5c!important}.tie-k6{background:#c62b33!important}
+.tie-list p{margin:7px 0 4px;font-size:12.5px;line-height:1.6;color:#22323c}
+.tie-claim{font-style:normal;font-size:10.5px;font-weight:800;background:#fdf1dc;color:#8a5a0f;border-radius:3px;padding:1px 5px;margin-right:6px}
+.tie-foot{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.tie-foot>span{font-size:10.5px;font-weight:800;color:#56707f}
+.tie-sub{margin:14px 0 6px;font-size:12.5px;font-weight:850;color:#15232d}
+.tie-groups{display:grid;gap:8px;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.tie-group{border:1px solid #e1ebf0;border-radius:6px;padding:9px 11px;background:#fbfdfe}
+.tie-group>div{display:flex;justify-content:space-between;gap:6px;align-items:baseline}
+.tie-group b{font-size:13px}
+.tie-group p{margin:6px 0;font-size:12px;line-height:1.55;color:#33505f}
+.tie-members{display:flex;flex-wrap:wrap;gap:4px}
+.tie-members span{font-size:11px;background:#eef4f7;border-radius:3px;padding:1px 6px;color:#22323c}
+@media(max-width:600px){.tie-pair{grid-template-columns:1fr;gap:4px}.tie-p:last-child{text-align:left}.tie-kind{justify-self:start}}
+.is-folded > .conflicts-head > span:not(.fold-hint):not(.fold-chev),.is-folded > .ix-head > .ix-legend{display:none}

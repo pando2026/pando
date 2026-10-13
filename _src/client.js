@@ -425,7 +425,7 @@
  // Free and fair elections (V-Dem): separate from CPI, which measures perceived administrative corruption.
  function electionBlock(data){
   const E=data.elections;if(!E)return "";const e=E.entry,k=E.korea,meta=E.meta||{};
-  if(!e)return '<section class="section cpi elect"><h3>선거의 공정성</h3><p class="metric-missing"><span>평가 대상 아님</span> V-Dem 자료에 없는 국가·지역입니다.</p></section>';
+  if(!e)return '<section class="section cpi elect"><h3>선거의 공정성</h3><p class="metric-missing"><span>평가 대상 아님</span> V-Dem 자료에 없는 국가·지역입니다.</p>'+casesFold(data.cases?.elections,"elections")+'</section>';
   const s=e.score,band=s>=.8?["대체로 자유·공정","#1f7a5a"]:s>=.5?["문제 있음","#5f9a3c"]:s>=.2?["심각한 문제","#d08a1e"]:["공정한 경쟁 선거 없음","#c62b33"];
   const f2=v=>(Math.round(v*100)/100).toFixed(2);
   const yrs=Object.keys(e.history||{}).sort();const pts=yrs.map(y=>e.history[y]);const kv=k?yrs.map(y=>k.history?.[y]??null):[];
@@ -439,12 +439,12 @@
   return '<section class="section cpi elect"><h3>선거의 공정성 <small>'+esc(meta.edition||"V-Dem")+'</small></h3>'+
    '<div class="cpi-card"><div class="cpi-main"><div class="cpi-score"><strong style="color:'+band[1]+'">'+f2(s)+'</strong><span>/ 1</span></div><div class="cpi-meta"><b style="background:'+band[1]+'">'+band[0]+'</b><span>'+e.rank+'위 / '+(meta.total||174)+'개국 · '+esc(e.year)+'년</span>'+(delta!=null&&delta!==0?'<span class="cpi-delta">전년 대비 '+(delta>0?"▲":"▼")+Math.abs(delta).toFixed(2)+'</span>':"")+(k?'<span class="cpi-korea">한국 '+f2(k.score)+'</span>':"")+'</div></div>'+scale+spark+
    (k&&spark?'<p class="cpi-legend"><i style="background:'+band[1]+'"></i>'+esc(namedCountry(data.code))+' <i class="cpi-legend-k"></i>한국</p>':"")+both+
-   '<p class="cpi-note">선거 폭력, 정부의 야당 위협, 부정·대규모 부정행위, 표 매수가 얼마나 없는지와 선거관리기구가 독립적인지를 V-Dem 전문가 평가로 0~1로 매긴 지수로, 높을수록 깨끗합니다. 경쟁 선거가 없거나 열리지 않으면 0에 가깝습니다. 선거로 뽑는 자리가 적어도(예: 의회 일부만 간접 선출) 치러진 선거 자체가 깨끗하면 점수가 높게 나올 수 있습니다. 위의 부패인식지수(행정·공직 부패)와는 따로 재는 지표입니다. 색 구분은 판도가 읽기 쉽게 나눈 것입니다. '+sourceLink(meta.source,"Our World in Data")+' · '+sourceLink(meta.vdem,"V-Dem 원자료")+'</p></div></section>';
+   '<p class="cpi-note">선거 폭력, 정부의 야당 위협, 부정·대규모 부정행위, 표 매수가 얼마나 없는지와 선거관리기구가 독립적인지를 V-Dem 전문가 평가로 0~1로 매긴 지수로, 높을수록 깨끗합니다. 경쟁 선거가 없거나 열리지 않으면 0에 가깝습니다. 선거로 뽑는 자리가 적어도(예: 의회 일부만 간접 선출) 치러진 선거 자체가 깨끗하면 점수가 높게 나올 수 있습니다. 위의 부패인식지수(행정·공직 부패)와는 따로 재는 지표입니다. 색 구분은 판도가 읽기 쉽게 나눈 것입니다. '+sourceLink(meta.source,"Our World in Data")+' · '+sourceLink(meta.vdem,"V-Dem 원자료")+'</p></div>'+casesFold(data.cases?.elections,"elections")+'</section>';
  }
  function cpiBlock(data){
   const c=data.cpi;if(!c)return "";
   const e=c.entry,k=c.korea;
-  if(!e)return '<section class="section cpi"><h3>부패인식지수</h3><p class="metric-missing"><span>평가 대상 아님</span> '+esc(c.edition||"CPI")+'에 포함되지 않은 국가·지역입니다.</p></section>';
+  if(!e)return '<section class="section cpi"><h3>부패인식지수</h3><p class="metric-missing"><span>평가 대상 아님</span> '+esc(c.edition||"CPI")+'에 포함되지 않은 국가·지역입니다.</p>'+casesFold(data.cases?.corruption,"corruption")+'</section>';
   const band=e.score>=70?["매우 청렴","#1f7a5a"]:e.score>=50?["대체로 청렴","#5f9a3c"]:e.score>=30?["부패 심각","#d08a1e"]:["부패 매우 심각","#c62b33"];
   const yrs=Object.keys(e.history||{}).sort();const pts=yrs.map(y=>e.history[y]);
   const W=360,H=70,pad=10,min=Math.min(...pts,...(k?yrs.map(y=>k.history?.[y]).filter(v=>v!=null):[]))-4,max=Math.max(...pts,...(k?yrs.map(y=>k.history?.[y]).filter(v=>v!=null):[]))+4;
@@ -457,7 +457,7 @@
   return '<section class="section cpi"><h3>부패인식지수 <small>'+esc(c.edition||"CPI")+'</small></h3>'+
    '<div class="cpi-card"><div class="cpi-main"><div class="cpi-score"><strong style="color:'+band[1]+'">'+e.score+'</strong><span>/ 100</span></div><div class="cpi-meta"><b style="background:'+band[1]+'">'+band[0]+'</b><span>'+e.rank+'위 / '+(c.total||182)+'개국</span>'+(delta!=null?'<span class="cpi-delta">전년 대비 '+(delta>0?"▲"+delta:delta<0?"▼"+(-delta):"변화 없음")+'</span>':"")+(k?'<span class="cpi-korea">한국 '+k.score+'점 · '+k.rank+'위</span>':"")+'</div></div>'+scale+spark+
    (k&&spark?'<p class="cpi-legend"><i style="background:'+band[1]+'"></i>'+esc(namedCountry(data.code))+' <i class="cpi-legend-k"></i>한국</p>':"")+
-   '<p class="cpi-note">공공부문 부패에 대해 전문가·기업인이 어떻게 느끼는지를 0~100으로 매긴 지수로, 높을수록 청렴합니다. 실제 부패 사건 수를 센 값은 아닙니다. '+sourceLink(c.source,"국제투명성기구")+' · '+sourceLink(c.wiki,"연도별 표")+'</p></div></section>';
+   '<p class="cpi-note">공공부문 부패에 대해 전문가·기업인이 어떻게 느끼는지를 0~100으로 매긴 지수로, 높을수록 청렴합니다. 실제 부패 사건 수를 센 값은 아닙니다. '+sourceLink(c.source,"국제투명성기구")+' · '+sourceLink(c.wiki,"연도별 표")+'</p></div>'+casesFold(data.cases?.corruption,"corruption")+'</section>';
  }
  // Party → regions, drawn on the country's own state/province map (never on the world map).
  // Views: "__win" = 1st party in every region; a party = shaded by its vote/seat share; income layer on top.
@@ -988,6 +988,75 @@
   if(!branches.length)return "";
   return '<article class="relationship-map" aria-label="'+esc(leaderDisplayName(hub))+'와 장관들의 역할"><div class="relationship-hub">'+portrait(hub,"person-portrait-mini")+'<div><span>정부 수반 · 정책 방향과 부처 간 조정</span><strong>'+esc(leaderDisplayName(hub))+'</strong><small>'+esc(hub.office||"")+'</small></div></div><ol class="relationship-branches">'+branches.join("")+'</ol><p class="relationship-map-note">점선은 직책상 정책 조정과 각 부처의 분업을 나타냅니다. 친분·개인적 충성이나 단독 지휘권을 뜻하지 않습니다.</p></article>';
  }
+ // 부패·선거 사례: CPI·선거 공정성 점수 옆에 접어 두는 실제 사건 목록.
+ const caseTone=s=>/무죄|취소|사면/.test(s)?"soft":/의혹|수사|기소|주장/.test(s)?"open":"hard";
+ function casesFold(list,kind){
+  if(!Array.isArray(list)||!list.length)return "";
+  const items=list.slice().sort((a,b)=>String(b.year).localeCompare(String(a.year))).map(c=>'<li class="case"><div class="case-top"><time>'+esc(c.year)+'</time><b>'+esc(c.title)+'</b><span class="case-st case-st--'+caseTone(c.status||"")+'">'+esc(c.status||"")+'</span></div>'+(c.who?'<p class="case-who">'+esc(c.who)+'</p>':"")+'<p class="case-text">'+esc(c.text)+'</p>'+(Array.isArray(c.sources)&&c.sources.length?'<small class="case-src">'+c.sources.map(s=>sourceLink(s[2],s[0]+(s[1]?" — "+s[1]:""))).join(" · ")+'</small>':"")+'</li>').join("");
+  return '<details class="cases-fold"><summary>'+(kind==="elections"?"선거 관련 사례":"부패 사례")+' '+list.length+'건 보기</summary><ul class="case-list">'+items+'</ul><p class="case-note">‘의혹’·‘수사 중’·‘기소’는 확정된 사실이 아닙니다. 당사자 반박은 본문에 함께 적었습니다. 점수는 인식·전문가 평가라 사건 수와 바로 비례하지 않습니다.</p></details>';
+ }
+ // 인물 간 개인적 관계(학연·지연·혈연·사업·경력·군·정보·계파).
+ const TIE_KINDS=["학연","지연","혈연","사업","경력","군·정보","계파"];
+ function tiesBlock(data){
+  const T=data.ties;if(!T||!(T.ties||[]).length&&!(T.groups||[]).length)return "";
+  const ties=T.ties||[],groups=T.groups||[];
+  const cnt={};ties.forEach(t=>cnt[t.kind]=(cnt[t.kind]||0)+1);
+  const kinds=TIE_KINDS.filter(k=>cnt[k]).concat(Object.keys(cnt).filter(k=>!TIE_KINDS.includes(k)));
+  const kc=k=>"tie-k"+Math.max(0,TIE_KINDS.indexOf(k));
+  const p=x=>'<span class="tie-p"><b>'+esc(x?.ko||x?.name||"")+'</b>'+(x?.role?'<small>'+esc(x.role)+'</small>':"")+'</span>';
+  const src=list=>Array.isArray(list)&&list.length?'<small class="case-src">'+list.map(s=>sourceLink(s[2],s[0]+(s[1]?" — "+s[1]:""))).join(" · ")+'</small>':"";
+  const chips='<div class="tie-chips"><button type="button" data-tie-k="" aria-pressed="true">전체 '+ties.length+'</button>'+kinds.map(k=>'<button type="button" data-tie-k="'+esc(k)+'" aria-pressed="false"><i class="'+kc(k)+'"></i>'+esc(k)+' '+cnt[k]+'</button>').join("")+'</div>';
+  const list='<ul class="tie-list">'+ties.map(t=>'<li data-k="'+esc(t.kind)+'"><div class="tie-pair">'+p(t.a)+'<i class="tie-kind '+kc(t.kind)+'">'+esc(t.kind)+'</i>'+p(t.b)+'</div><p>'+(t.claim?'<em class="tie-claim">주장·의혹</em>':"")+esc(t.text)+'</p><div class="tie-foot">'+(t.since?'<span>'+esc(t.since)+'~</span>':"")+src(t.sources)+'</div></li>').join("")+'</ul>';
+  const gs=groups.length?'<h5 class="tie-sub">함께 묶이는 집단</h5><div class="tie-groups">'+groups.map(g=>'<article class="tie-group"><div><b>'+esc(g.name)+'</b><i class="tie-kind '+kc(g.kind)+'">'+esc(g.kind)+'</i></div><p class="tie-members">'+(g.members||[]).map(m=>'<span>'+esc(m)+'</span>').join("")+'</p>'+(g.note?'<p>'+esc(g.note)+'</p>':"")+src(g.sources)+'</article>').join("")+'</div>':"";
+  return '<details class="ties-fold"><summary>인물 간 개인적 관계 <span>'+kinds.join("·")+' '+ties.length+'건'+(groups.length?' · 집단 '+groups.length:"")+'</span></summary>'+chips+list+gs+'<p class="case-note">공식 경력·가족 관계는 출처에서 확인한 것만 실었습니다. ‘주장·의혹’ 표시는 한쪽 주장이며 반박을 함께 적었습니다.'+(T.asOf?' '+esc(T.asOf)+' 기준.':"")+'</p></details>';
+ }
+ // 접고 펴기: 각 덩어리의 머리글을 누르면 내용이 접힌다. 접은 상태는 이 브라우저에 기억.
+ const FOLDS=[
+  ["ix",".ix",".ix-head",1],["conflicts","section.conflicts:not(.allies)",".conflicts-head",1],["allies","section.allies",".conflicts-head",0],
+  ["blocs",".country-blocs","h3",0],["now",".now",".now-head",1],["recent",".recent","h3",1],["leaders",".leaders-section",".leaders-heading",1],
+  ["pmap",".pmap-block",".fights-head",1],["regions",".regions",".fights-head",0],["fights",".fights",".fights-head",1],
+  ["decision",".decision-map","h3",0],["elect",".elect","h3",1],["cpi",".cpi","h3",1],["sec",".country-panel > .section","h3",1]
+ ];
+ const foldGet=k=>{try{return localStorage.getItem("pando.fold."+k)}catch{return null}};
+ const foldSet=(k,v)=>{try{localStorage.setItem("pando.fold."+k,v?"1":"0")}catch{}};
+ function foldHint(sec,key){
+  const n=sel=>sec.querySelectorAll(sel).length;
+  if(key==="conflicts"||key==="allies")return n(".conflict-chips > *")+"곳";
+  if(key==="blocs")return n(".bloc-list > li")+"개";
+  if(key==="fights")return n(".fight")+"개 쟁점";
+  if(key==="regions")return n(".region-party")+"곳";
+  if(key==="cpi"||key==="elect"){const s=sec.querySelector(".cpi-score strong")?.textContent,r=sec.querySelector(".cpi-meta span")?.textContent;return s?(s+(r?" · "+r.split(" / ")[0]:"")):"";}
+  return "";
+ }
+ function setFold(sec,on){
+  sec.classList.toggle("is-folded",on);
+  const h=sec.querySelector(":scope > .fold-head");if(h)h.setAttribute("aria-expanded",String(!on));
+ }
+ function foldSections(){
+  const root=$("#detail");if(!root)return;
+  for(const [key,sel,head,open] of FOLDS){
+   root.querySelectorAll(sel).forEach(sec=>{
+    if(sec.dataset.fold)return;
+    const h=sec.querySelector(":scope > "+head);if(!h)return;
+    const id=key==="sec"?"sec:"+(h.firstChild?.textContent||h.textContent||"").split(" · ")[0].replace(/\s+/g," ").trim().slice(0,24):key;
+    sec.dataset.fold=id;h.classList.add("fold-head");h.setAttribute("role","button");h.tabIndex=0;
+    const hint=foldHint(sec,key);
+    h.insertAdjacentHTML("beforeend",(hint?'<span class="fold-hint">'+esc(hint)+'</span>':"")+'<span class="fold-chev" aria-hidden="true"></span>');
+    const saved=foldGet(id);setFold(sec,saved==null?!open:saved==="1");
+   });
+  }
+ }
+ document.addEventListener("click",ev=>{
+  const all=ev.target.closest("[data-fold-all]");
+  if(all){const on=all.dataset.foldAll==="1";document.querySelectorAll("#detail [data-fold]").forEach(sec=>{setFold(sec,on);foldSet(sec.dataset.fold,on)});return}
+  const tk=ev.target.closest("[data-tie-k]");
+  if(tk){const box=tk.closest(".ties-fold"),k=tk.dataset.tieK;box.querySelectorAll("[data-tie-k]").forEach(b=>b.setAttribute("aria-pressed",String(b===tk)));box.querySelectorAll(".tie-list > li").forEach(li=>li.hidden=!!k&&li.dataset.k!==k);return}
+  const h=ev.target.closest(".fold-head");
+  if(!h||ev.target.closest("a,button:not(.fold-head)"))return;
+  const sec=h.parentElement;if(!sec?.dataset.fold)return;
+  const on=!sec.classList.contains("is-folded");setFold(sec,on);foldSet(sec.dataset.fold,on);
+ });
+ document.addEventListener("keydown",ev=>{if((ev.key==="Enter"||ev.key===" ")&&ev.target.classList?.contains("fold-head")){ev.preventDefault();ev.target.click()}});
  function renderLeaders(data){
   const people=Array.isArray(data.people)?data.people:[],relations=Array.isArray(data.relationships)?data.relationships:[];
   const standalone=relations.filter(rel=>rel.kind!=="cabinet").map(rel=>relationshipRow(rel,people)).filter(Boolean);
@@ -1026,10 +1095,10 @@
   const scrollTop=$(".drawer")?.scrollTop||0;
   state.trendName=name;state.activeCode=data.code;state.partyMap=data.partymap||null;state.income=data.income||null;state.civicsChambers=data.civics?.parliament?.chambers||[];state.partyProfiles=data.partyProfiles||{};state.regions=data.regions||null;state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
   const panels=countryPanels(data);
-  $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+
+  $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+'<div class="fold-all"><span>머리글을 누르면 접고 펼 수 있어요</span><button type="button" data-fold-all="0">모두 펼치기</button><button type="button" data-fold-all="1">모두 접기</button></div>'+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
    problemsBlock(data)+countryConflicts(data)+countryAllies(data)+relatedExplainers(data.code)+countryBlocs(data.code)+countryNow(data)+
-   '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div></section>'+
+   '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div>'+tiesBlock(data)+'</section>'+
    '<div class="country-tabs" role="tablist" aria-label="'+esc(name)+' 자료 분류">'+
     [["politics","정치·의회"],["economy","경제"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
    Object.entries(panels).map(([key,content],i)=>'<section role="tabpanel" id="panel-'+key+'" aria-labelledby="tab-'+key+'" class="country-panel"'+(i?" hidden":"")+'>'+content+'</section>').join("")+
@@ -1038,6 +1107,7 @@
   $("#back-to-countries").addEventListener("click",close);
   document.querySelectorAll("#detail .pmap-block .pmap").forEach(b=>drawPartyMap(b));
   document.querySelectorAll("#detail .capmap").forEach(b=>drawCapital(b));
+  foldSections();
   $("#copy-country-link").addEventListener("click",async e=>{const url=location.origin+location.pathname+"?country="+encodeURIComponent(data.code);try{await navigator.clipboard.writeText(url);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+url}});
   if(previousLeaders)$("#country-leaders").innerHTML=previousLeaders;
   if(previousTab&&panels[previousTab]){
@@ -1134,14 +1204,14 @@
     card("A","한눈에 보는 문제","맨 위 경고등 5칸(물가·실업률·정부부채·부패인식·분쟁)이 양호·주의·위험을 색으로 보여주고, ▲▼로 작년보다 나빠졌는지 알려줍니다. 마우스를 올리면 한국 값이 나옵니다. 주요국은 지금 가장 큰 문제 카드 3장이 있고, ‘왜?’를 누르면 결과 ← 직접 원인 ← 구조 순서로 원인을 따라가며, 금리 결정·선거 같은 다음 일정은 D-day로 보여줍니다.")+
     card("B","갈등 관계 · 갈등도","갈등 칩에 마우스를 올리면 이유가, 누르면 지도 위 갈등도가 펼쳐집니다. 누가 어느 쪽인지, 적대(빨강)·지원(초록)·중재(회색 점선) 관계를 선으로 보여주고, 선이나 나라를 누르면 사건과 출처(당사자 공식·상대측 공식·언론)가 나옵니다.")+
     card("C","우방 관계 · 국제기구","우방국 칩에 마우스를 올리면 왜 가까운지(겹치는 안보·경제 이해관계)가 보입니다. 아래에는 가입한 국제기구와 가입일이 있습니다.")+
-    card("D","지금 상황 · 핵심 인물","누가 권력을 쥐고 있는지와 지켜볼 점을 정리합니다. 국가원수·정부수반·주요 장관은 사진과 ‘제○대’, 독재·권위주의 평가 근거와 함께 나옵니다.")+'</ol></section>'+
+    card("D","지금 상황 · 핵심 인물","누가 권력을 쥐고 있는지와 지켜볼 점을 정리합니다. 국가원수·정부수반·주요 장관은 사진과 ‘제○대’, 독재·권위주의 평가 근거와 함께 나옵니다. ‘인물 간 개인적 관계’를 펼치면 학연·지연·혈연·사업·경력·군·정보·계파로 얽힌 사이와 함께 묶이는 집단이 보입니다.")+'</ol></section>'+
    '<section class="guide-sec"><h3>정치·의회 탭</h3><ol class="guide-grid">'+
     card("E","의석과 정당","반원 그림으로 정당별 의석을 보여줍니다. 정당을 누르면 대표자·주장·지역별 득표 지도가 담긴 카드가 열립니다.")+
     card("F","정당별 지역 지지 지도","주·도 지도를 ‘지역별 1위’ 정당 색으로 칠합니다. 정당을 누르면 득표율만큼 진하게 칠해 어디서 강하고 약한지 보입니다. 마우스를 올리면 지역 이름(한국어·현지어), 주요 도시, 상위 정당 득표율이 나옵니다.")+
     card("G","지역별 소득 수준","지도 오른쪽 위 스위치를 켜면 주·도별 1인당 소득·생산을 진하기로 보여줍니다. 현지 통화와 함께 자료 연도 환율로 바꾼 달러 값을 같이 적습니다. 주·도 지도가 아직 없는 나라는 ‘수도와 위치’ 지도가 나옵니다.")+
     card("H","정당 간 쟁점","누가 무엇으로 맞서는지 양쪽 주장과 함께 보여주고, 진영별 의석 합계(몇 석 vs 몇 석)와 과반선을 막대로 그립니다.")+
     card("I","결정은 어떻게 내려지나","법률·예산·전쟁(파병·조약)이 어떤 단계를 거쳐 정해지는지, 누가 최종 결정권을 쥐고 누가 견제하는지, 공식 제도 밖의 비공식 권력까지 정리합니다.")+
-    card("J","지역과 정당 · 부패인식지수","큰 나라의 지역 기반 정당과 지역 갈등, 국제투명성기구 부패인식지수의 점수·순위·추이를 한국과 비교합니다.")+'</ol></section>'+
+    card("J","지역과 정당 · 부패 · 선거의 공정성","큰 나라의 지역 기반 정당과 지역 갈등, 국제투명성기구 부패인식지수와 V-Dem 선거 공정성 점수의 순위·추이를 한국과 비교합니다. 각 점수 아래 ‘사례 보기’를 펼치면 실제 부패·선거 사건과 진행 상황(의혹·기소·유죄 등)이 나옵니다.")+'</ol></section>'+
    '<section class="guide-sec"><h3>경제 · 예산 · 군사 탭</h3><ol class="guide-grid">'+
     card("K","지표 카드와 그래프","카드를 누르면 연도별 그래프가 펼쳐지고, 같은 지표의 한국 추이가 회색 점선으로 겹쳐 그려집니다. 세계 순위와 한국 순위도 함께 나옵니다.")+
     card("L","경제","명목 GDP·1인당 GDP·성장률·물가·정부부채·실업률·정책금리를 봅니다. 오래된 값에는 ‘○년 전 자료’ 표시가 붙습니다.")+
@@ -1151,6 +1221,7 @@
     '<li><b>기준일</b> 모든 수치와 요약에는 ‘○○ 기준’ 날짜가 붙습니다. 날짜가 오래됐으면 그 사이 바뀌었을 수 있습니다.</li>'+
     '<li><b>사실과 주장</b> 정부·정당의 발표는 ‘주장’, 여러 출처로 확인된 것은 ‘사실’로 구분해 씁니다. 비난받는 쪽의 공식 반박도 함께 싣습니다.</li>'+
     '<li><b>출처 등급</b> 당사자 공식 > 상대측 공식 > 언론 > 연구기관 순으로 무게를 둡니다. 밑줄 친 링크는 모두 원문으로 이어집니다.</li>'+
+    '<li><b>접고 펼치기</b> 국가 화면의 각 덩어리 머리글을 누르면 접히고, 접어 둔 상태는 다음에도 기억됩니다. 맨 위 ‘모두 접기·모두 펼치기’로 한 번에 바꿀 수 있습니다.</li>'+
     '<li><b>영어로 보기</b> 오른쪽 위 KO | EN 버튼으로 화면 전체를 영어로 바꿀 수 있습니다.</li>'+
     '<li><b>바로가기</b> 주소 끝에 <code>?country=KR</code>처럼 국가 코드를 붙이면 그 나라 화면이 바로 열려 공유하기 좋습니다.</li>'+
     '<li><b>피드백</b> 오른쪽 위 ‘피드백 보내기’로 틀린 내용이나 바라는 기능을 바로 보낼 수 있습니다.</li></ul></section>'+

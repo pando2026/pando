@@ -42,7 +42,8 @@ async def main():
         for i,cc in enumerate(codes):
             try:
                 await pg.goto(f"http://localhost:{PORT}/?country={cc}");await pg.wait_for_timeout(1600)
-                tabs=await pg.query_selector_all("#detail [role=tab]")
+                await pg.evaluate("document.querySelectorAll('#detail .is-folded').forEach(s=>s.classList.remove('is-folded'))")
+                tabs=await pg.query_selector_all("#detail .country-tabs [role=tab]")
                 for t in tabs or [None]:
                     if t: await t.click();await pg.wait_for_timeout(250)
                     for m in await pg.query_selector_all("#detail [data-more]"):

@@ -17,6 +17,8 @@
  const incomeStore=()=>once("income",()=>json("data/regional-income.json")).catch(()=>({}));
  const problemStore=()=>once("problems",()=>json("data/problems.json")).catch(()=>({}));
  const electionStore=()=>once("elections",()=>json("data/elections.json")).catch(()=>null);
+const tieStore=()=>once("ties",()=>json("data/ties.json")).catch(()=>({}));
+const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const regionStore=()=>once("regions",()=>json("data/regions.json")).catch(()=>({}));
  const partyPhotoStore=()=>once("partyPhotos",()=>json("data/party-photos.json")).catch(()=>({}));
  const photoIndex=()=>once("photoIndex",()=>json("data/photo-index.json")).catch(()=>({}));
@@ -74,7 +76,7 @@
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);

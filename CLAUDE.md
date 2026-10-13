@@ -28,10 +28,13 @@
   - `regions.json` 큰 나라의 지역 기반 정당·전국 정당의 지역 기반(의회 탭 '지역과 정당'). 키는 civics groups 이름과 같아야 한다. 지침 `_tools/regions/BRIEF.md`.
   - `regional-income.json` 주·도별 소득 수준(정당 강세 지도의 '지역별 소득 수준' 토글). {CC:{metric,unit,year,provider,source,values:{admin1 이름 또는 그룹명:값},note}}. 키는 `admin1/CC.json`의 units `n`(또는 `g`)과 같아야 한다. 해마다 통계청 새 자료가 나오면 갱신. 지침 `_tools/income/BRIEF.md`.
   - `problems.json` 국가 화면 맨 위 '한눈에 보는 문제'의 핵심 문제 카드 3장(+왜? 원인 사슬, 다음 일정). 지침 `_tools/problems/BRIEF.md`. 경고등(물가·실업·부채·부패·갈등)은 기존 자료로 자동 계산. 주간 점검 때 asOf가 7일 넘은 나라부터 갱신.
+  - `ties.json` 핵심 인물 간 개인적 관계 {CC:{asOf, ties[{a,b:{name,ko,role}, kind(학연·지연·혈연·사업·경력·군·정보·계파), text, since, claim, sources}], groups[{name,kind,members,note,sources}]}}. claim=true는 한쪽 주장(반박 함께). 지침 `_tools/ties/BRIEF.md`. 개각·지도자 교체 때 갱신.
+  - `cases.json` 부패·선거 사례 {CC:{asOf, corruption[], elections[]}} 각 {title, year, who, status(의혹·수사 중·기소·1심 유죄·항소심 유죄·유죄 확정·무죄·사면·공식 확인 등), text, sources}. CPI·선거의 공정성 아래 '사례 보기'. 지침 `_tools/cases/BRIEF.md`. 판결·기소가 나오면 status를 고친다.
   - `occupied.json` 무력 점령·무장세력 통제 지역(메인 지도·갈등도 빗금). `_tools/occupied/build.py`(조사 목록 `_tools/occupied/items.json`)로 Natural Earth 1급 행정구역 + DeepStateMap(우크라이나) 경계를 투영해 만든다. 지침 `_tools/occupied/BRIEF.md`. 변화 점검 때 점령·탈환이 있으면 갱신.
   - `capitals.json` 나라별 수도 [한국어, 영어, 경도, 위도, 비고](Natural Earth 인구 밀집지 ADM0CAP). 주·도 지도가 없는 나라는 정치 탭에 '수도와 위치' 지도로 보여준다.
   - `fx.json` 예산 금액의 원화·달러 환산용 환율(USD 기준). 국가수반의 '제○대'는 s*.json 인물의 `ordinal`(지침 `_tools/extra/ORDINAL.md`).
   - `en/strings.json` 영어 번역 사전(아래 '영어판').
+- 국가 화면의 각 덩어리는 머리글을 눌러 접고 편다(`client.js`의 `FOLDS` 목록: 키·선택자·머리글·기본 펼침). 새 덩어리를 만들면 머리글을 직속 자식으로 두고 `FOLDS`에 추가한다.
 - `_tools/harvest.py` — 화면에 실제로 보이는 한국어 문자열을 모두 모은다(번역 누락 확인용).
 
 ## 취재 원칙 (날리지식 방식)
