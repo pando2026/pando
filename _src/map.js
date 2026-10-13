@@ -85,12 +85,20 @@
   }
   function drawPins(){
    if(!world)return;
-   const watched=new Set(items.filter(i=>i.type==="country").map(i=>i.id));
-   land.querySelectorAll(".vmap-country").forEach(p=>p.classList.toggle("vmap-watch",watched.has(p.dataset.code)));
+   // Shade countries by how many current stories they are the main subject of (0 = watched only).
+   const byCode=new Map(items.filter(i=>i.type==="country").map(i=>[i.id,i]));
+   land.querySelectorAll(".vmap-country").forEach(p=>{
+    const it=byCode.get(p.dataset.code),n=it?Number(it.heat)||0:0;
+    p.classList.toggle("vmap-watch",!!it);
+    if(n)p.dataset.heat=String(Math.min(3,n));else delete p.dataset.heat;
+    if(p.dataset.code){if(!p.dataset.base)p.dataset.base=p.dataset.name||"";p.dataset.name=it?(it.label||p.dataset.base)+(n?" · 이번 판 사건 "+n+"건":""):p.dataset.base}
+   });
    const frag=document.createDocumentFragment();
    // Country markers first so story pins sit on top.
    const ordered=[...items].sort((a,b)=>(a.type==="story")-(b.type==="story"));
    for(const it of ordered){
+    // Shaded countries are already visible and clickable; keep diamonds only for watch-only countries.
+    if(it.type==="country"&&Number(it.heat)>0)continue;
     let lon=it.lon,lat=it.lat;
     if(!Number.isFinite(lon)||!Number.isFinite(lat)){
      const c=world.countries.find(c=>c.c===it.id);if(!c)continue;lon=c.lon;lat=c.lat;

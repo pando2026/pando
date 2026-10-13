@@ -30,10 +30,13 @@
  function drawMap(){
   const stories=(state.edition?.stories||[]).filter(s=>Number.isFinite(s.lon)&&Number.isFinite(s.lat))
    .map(s=>({type:"story",id:s.id,lon:s.lon,lat:s.lat,label:s.label||s.place,subtitle:s.headline}));
-  const countries=[...new Set(state.watch.map(w=>w.code))].map(code=>{
+  // How many of this edition's stories each country is a main subject of: drives the map shading.
+  const heat={};for(const s of state.edition?.stories||[])for(const code of mainCodes(s))heat[code]=(heat[code]||0)+1;
+  const countries=[...new Set([...Object.keys(heat),...state.watch.map(w=>w.code)])].map(code=>{
    const country=state.countries.find(c=>c.code===code);
    const coord=Number.isFinite(country?.capitalLon)&&Number.isFinite(country?.capitalLat)?[country.capitalLon,country.capitalLat]:watchCapitals[code];
-   return coord?{type:"country",id:code,lon:coord[0],lat:coord[1],label:namedCountry(code),subtitle:"국가 자료 · 수도 위치"}:null;
+   const n=heat[code]||0;
+   return coord||n?{type:"country",id:code,lon:coord?.[0],lat:coord?.[1],label:namedCountry(code),heat:n,subtitle:n?"이번 판 사건 "+n+"건 · 국가 자료":"국가 자료 · 수도 위치"}:null;
   }).filter(Boolean);
   atlas.setItems([...stories,...countries]);
   renderMapQuickList();
@@ -45,20 +48,23 @@
   element.innerHTML=[...articles,...countries].join("");
  }
  function drawFilters(){
-  const names=["전체",...new Set(state.edition.stories.map(s=>s.region))];
+  const names=["전체",...new Set(state.edition.stories.map(mainRegion))];
   $("#filters").innerHTML=names.map(v=>'<button type="button" class="filter '+(state.filter===v?"active":"")+'" data-filter="'+esc(v)+'" aria-pressed="'+(state.filter===v)+'">'+esc(v)+"</button>").join("")+'<input class="search" id="search" type="search" placeholder="지역·주체 검색" aria-label="뉴스 검색" value="'+esc(state.query)+'">';
   $("#search").addEventListener("input",e=>{state.query=e.target.value;drawFeed()});
  }
  function drawFeed(){
-  const stories=state.edition.stories.filter(s=>(state.filter==="전체"||s.region===state.filter)&&(!state.query||[s.place,s.headline,s.summary,...s.actors.map(a=>a[0]),...s.economy.map(a=>a[0])].join(" ").toLowerCase().includes(state.query.toLowerCase())));
+  const stories=state.edition.stories.filter(s=>(state.filter==="전체"||mainRegion(s)===state.filter)&&(!state.query||[s.place,s.headline,s.summary,...s.actors.map(a=>a[0]),...s.economy.map(a=>a[0])].join(" ").toLowerCase().includes(state.query.toLowerCase())));
   const limited=!state.feedAll&&state.filter==="전체"&&!state.query&&stories.length>FEED_PREVIEW;
   const visible=limited?stories.slice(0,FEED_PREVIEW):stories;
-  $("#feed").innerHTML=(visible.length?visible.map(s=>'<button class="story-card" data-open="'+esc(s.id)+'" type="button"><div class="meta-line"><span>'+esc(s.region)+" / "+esc(s.place)+'</span><span class="status">● '+esc(s.level)+'</span></div><div class="story-card-flags">'+(s.countryCodes||[]).slice(0,4).map(code=>flag(code,"flag-story")).join("")+'</div><h3>'+esc(s.headline)+'</h3><p>'+esc(s.summary)+'</p><div class="story-bottom"><span>'+esc(s.eventDate)+" · "+esc(s.topic)+'</span><b>사건 읽기 ↗</b></div></button>').join(""):'<div class="empty">해당 조건에 맞는 사건이 없습니다.</div>')+
+  $("#feed").innerHTML=(visible.length?visible.map(s=>'<button class="story-card" data-open="'+esc(s.id)+'" type="button"><div class="meta-line"><span>'+esc(s.region)+" / "+esc(s.place)+'</span><span class="status">● '+esc(s.level)+'</span></div><div class="story-card-flags">'+[...new Set([...mainCodes(s),...(s.countryCodes||[])])].slice(0,4).map(code=>flag(code,"flag-story")).join("")+'</div><h3>'+esc(s.headline)+'</h3><p>'+esc(s.summary)+'</p><div class="story-bottom"><span>'+esc(s.eventDate)+" · "+esc(s.topic)+'</span><b>사건 읽기 ↗</b></div></button>').join(""):'<div class="empty">해당 조건에 맞는 사건이 없습니다.</div>')+
    (limited?'<button type="button" class="more-button" data-more="feed">나머지 '+(stories.length-FEED_PREVIEW)+'건 더 보기</button>':"");
  }
  function cited(item,s){
   return item[4].map(i=>s.sources[i]?'<a class="cite" href="'+safeUrl(s.sources[i][3])+'" target="_blank" rel="noopener noreferrer">['+(i+1)+"]</a>":"").join("");
  }
+ // One story belongs to one main region and its main countries (watchCodes); others are only mentioned.
+ const mainRegion=s=>String(s.region||"").split(" · ")[0].trim();
+ const mainCodes=s=>Array.isArray(s.watchCodes)&&s.watchCodes.length?s.watchCodes:(s.countryCodes||[]).slice(0,1);
  function entries(items,s){
   return items.map(a=>'<div class="entry"><div class="entry-head"><strong>'+esc(a[0])+'</strong><span class="badge '+(/주장|전|논쟁|안 됨/.test(a[3])?"warn":"")+'">'+esc(a[3])+'</span></div><div class="role">'+esc(a[1])+'</div><p>'+esc(a[2])+cited(a,s)+"</p></div>").join("");
  }
@@ -761,7 +767,7 @@
  // edition's stories for the country. This is what a reader opens a dossier for.
  function countryNow(data){
   const c=data.context;
-  const stories=(state.edition?.stories||[]).filter(s=>s.countryCodes?.includes(data.code));
+  const stories=(state.edition?.stories||[]).filter(s=>mainCodes(s).includes(data.code));
   const watch=(data.watch||[]).filter(w=>!stories.some(s=>s.headline===w.title));
   let html="";
   if(c&&c.summary){
@@ -1069,7 +1075,7 @@
  }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id);if(!s)return;state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div><div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div><div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div><div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
   $("#copy-link").addEventListener("click",async e=>{const u=location.origin+location.pathname+"?story="+encodeURIComponent(id);try{await navigator.clipboard.writeText(u);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+u}});

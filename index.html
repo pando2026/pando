@@ -1038,6 +1038,13 @@ html,body{background:#fff;color:var(--ink)}
 .vmap-link{cursor:pointer}
 .vmap-link:hover{fill:var(--map-hover)}
 .vmap-country.vmap-watch{fill:var(--map-watch)}
+.vmap-country[data-heat="1"]{fill:#fbe0bf}
+.vmap-country[data-heat="2"]{fill:#f5b56e}
+.vmap-country[data-heat="3"]{fill:#e8862f}
+.vmap-country[data-heat]{stroke:#b8742f;stroke-width:.9px}
+.vmap-country[data-heat]:hover{fill:#d0711f}
+.vmap-bloc-on .vmap-country[data-heat]:not(.vmap-bloc):not(.vmap-bloc-partner){fill:var(--map-land);stroke:var(--map-edge)}
+.heat-key{display:inline-block;width:26px;height:10px;margin:0 5px 0 8px;vertical-align:-1px;border-radius:2px;background:linear-gradient(90deg,#fbe0bf,#f5b56e,#e8862f)}
 .vmap-pin{cursor:pointer}
 .vmap-pin:focus{outline:none}
 .vmap-pin:focus-visible .vmap-dot{stroke:#e69467;stroke-width:2}
@@ -1066,11 +1073,11 @@ html,body{background:#fff;color:var(--ink)}
 
 </style>
 <div class="shell">
- <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#watch">변화 관찰</a><a href="#countries">국가 탐색</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
+ <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#latest">국제 현장</a><a href="#watch">주목 국가</a><a href="#countries">국가 탐색</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
  <section class="top"><div><div class="eyebrow">Global intelligence · Daily brief</div><h1>세계의 변화를<br><em>맥락까지</em> 읽다.</h1><p>정치 제도와 경제·군사 지표를 바탕으로, 분쟁부터 재정안과 선거까지 중요한 변화를 추적합니다. 확인된 사실과 주장을 구분해 보여드립니다.</p><a class="hero-guide" href="#guide" data-guide-open>처음이라면 · 판도 사용법 보기 →</a><div class="quick-search" role="search"><label for="quick-country">나라 바로 찾기</label><div class="qs-box"><input id="quick-country" type="search" autocomplete="off" placeholder="예: 튀르키예, 일본, Brazil" aria-controls="quick-results"><ul id="quick-results" class="qs-results" role="listbox" hidden></ul></div></div></div><aside class="edition-box"><strong id="edition-title">브리핑을 불러오는 중</strong><div id="edition-note">매시간 새로운 변화를 점검합니다. 통계는 각 발표 시점을 따릅니다.</div><div class="small" id="edition-time"></div><span class="live-note" id="live-note"></span></aside></section>
- <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="dot-key country-key"></i>주목 국가 <button type="button" class="occ-toggle" data-occ-toggle aria-pressed="true"><i class="occ-key"></i>무력 점령·통제 지역</button></span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치, 빗금은 무력 점령·무장세력 통제 지역(진한 빗금 = 대부분 장악, 옅은 빗금 = 일부)입니다.</span></div><div class="bloc-bar" id="bloc-bar" aria-label="국제기구 회원국 보기"></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
+ <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="heat-key"></i>이번 판 사건이 많은 나라(진할수록 많음) <button type="button" class="occ-toggle" data-occ-toggle aria-pressed="true"><i class="occ-key"></i>무력 점령·통제 지역</button></span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치, 빗금은 무력 점령·무장세력 통제 지역(진한 빗금 = 대부분 장악, 옅은 빗금 = 일부)입니다.</span></div><div class="bloc-bar" id="bloc-bar" aria-label="국제기구 회원국 보기"></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
+ <section id="latest" aria-labelledby="feed-title"><div class="section-head"><div><div class="eyebrow">The latest / 주요 현장</div><h2 id="feed-title">국제 현장</h2></div><p>기사 발행일과 사건 시점을 구분합니다</p></div><div class="filters" id="filters" role="group" aria-label="지역별 필터"></div><div class="feed" id="feed"></div></section>
  <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
- <section aria-labelledby="feed-title"><div class="section-head"><div><div class="eyebrow">The latest / 주요 현장</div><h2 id="feed-title">국제 현장</h2></div><p>기사 발행일과 사건 시점을 구분합니다</p></div><div class="filters" id="filters" role="group" aria-label="지역별 필터"></div><div class="feed" id="feed"></div></section>
  <section id="countries" aria-labelledby="countries-title"><div class="section-head"><div><div class="eyebrow">Country atlas / 국가 탐색</div><h2 id="countries-title">세계 국가·지역 정보</h2></div><p id="country-count">목록을 불러오는 중</p></div><div class="country-tools"><label class="country-search-label" for="country-search">국가·지역 검색</label><input id="country-search" type="search" autocomplete="off" placeholder="국가명이나 영문 이름으로 검색"><label class="country-region-label" for="country-region">지역</label><select id="country-region" aria-label="지역 필터"><option value="">전 지역</option></select></div><div class="country-list" id="country-list" aria-live="polite"></div><p class="country-method">국가·지역 250곳의 탐색 목록입니다. 통계·정책금리·예산안·의회 구성은 원문과 기준 시점을 지표마다 표시합니다. 모든 지역에 독립 정책금리나 공개된 예산안이 있는 것은 아닙니다.</p></section></main>
  <section class="method"><div><b>어떤 주체를 표시하나요?</b><p>교전 당사자, 지원·연루 주장, 피해 기업과 투자자를 각자의 역할로 분리합니다. 공개 자료에서 연결이 확인된 주체만 싣고, 이름이 확인되지 않은 기업은 추측해 채우지 않습니다.</p></div><div><b>어떻게 읽으면 되나요?</b><p>매시간 새로운 변화를 점검하지만 GDP와 군사비는 주로 연간 자료입니다. 카드의 사건 시점과 기사 발행일을 구분하고, 각 지표의 기준 연도를 확인하세요. <a href="#" id="about-open">편집 원칙 보기 →</a></p></div></section>
  <footer class="foot">판도 / PANDO · 한국시간 기준 · 각 카드에서 원문 확인 · 지도 경계 <a href="https://github.com/johan/world.geo.json" target="_blank" rel="noopener noreferrer">world.geo.json</a>(Natural Earth 기반, 퍼블릭 도메인)</footer></div>
@@ -1235,12 +1242,20 @@ html,body{background:#fff;color:var(--ink)}
   }
   function drawPins(){
    if(!world)return;
-   const watched=new Set(items.filter(i=>i.type==="country").map(i=>i.id));
-   land.querySelectorAll(".vmap-country").forEach(p=>p.classList.toggle("vmap-watch",watched.has(p.dataset.code)));
+   // Shade countries by how many current stories they are the main subject of (0 = watched only).
+   const byCode=new Map(items.filter(i=>i.type==="country").map(i=>[i.id,i]));
+   land.querySelectorAll(".vmap-country").forEach(p=>{
+    const it=byCode.get(p.dataset.code),n=it?Number(it.heat)||0:0;
+    p.classList.toggle("vmap-watch",!!it);
+    if(n)p.dataset.heat=String(Math.min(3,n));else delete p.dataset.heat;
+    if(p.dataset.code){if(!p.dataset.base)p.dataset.base=p.dataset.name||"";p.dataset.name=it?(it.label||p.dataset.base)+(n?" · 이번 판 사건 "+n+"건":""):p.dataset.base}
+   });
    const frag=document.createDocumentFragment();
    // Country markers first so story pins sit on top.
    const ordered=[...items].sort((a,b)=>(a.type==="story")-(b.type==="story"));
    for(const it of ordered){
+    // Shaded countries are already visible and clickable; keep diamonds only for watch-only countries.
+    if(it.type==="country"&&Number(it.heat)>0)continue;
     let lon=it.lon,lat=it.lat;
     if(!Number.isFinite(lon)||!Number.isFinite(lat)){
      const c=world.countries.find(c=>c.c===it.id);if(!c)continue;lon=c.lon;lat=c.lat;
@@ -1674,10 +1689,13 @@ html,body{background:#fff;color:var(--ink)}
  function drawMap(){
   const stories=(state.edition?.stories||[]).filter(s=>Number.isFinite(s.lon)&&Number.isFinite(s.lat))
    .map(s=>({type:"story",id:s.id,lon:s.lon,lat:s.lat,label:s.label||s.place,subtitle:s.headline}));
-  const countries=[...new Set(state.watch.map(w=>w.code))].map(code=>{
+  // How many of this edition's stories each country is a main subject of: drives the map shading.
+  const heat={};for(const s of state.edition?.stories||[])for(const code of mainCodes(s))heat[code]=(heat[code]||0)+1;
+  const countries=[...new Set([...Object.keys(heat),...state.watch.map(w=>w.code)])].map(code=>{
    const country=state.countries.find(c=>c.code===code);
    const coord=Number.isFinite(country?.capitalLon)&&Number.isFinite(country?.capitalLat)?[country.capitalLon,country.capitalLat]:watchCapitals[code];
-   return coord?{type:"country",id:code,lon:coord[0],lat:coord[1],label:namedCountry(code),subtitle:"국가 자료 · 수도 위치"}:null;
+   const n=heat[code]||0;
+   return coord||n?{type:"country",id:code,lon:coord?.[0],lat:coord?.[1],label:namedCountry(code),heat:n,subtitle:n?"이번 판 사건 "+n+"건 · 국가 자료":"국가 자료 · 수도 위치"}:null;
   }).filter(Boolean);
   atlas.setItems([...stories,...countries]);
   renderMapQuickList();
@@ -1689,20 +1707,23 @@ html,body{background:#fff;color:var(--ink)}
   element.innerHTML=[...articles,...countries].join("");
  }
  function drawFilters(){
-  const names=["전체",...new Set(state.edition.stories.map(s=>s.region))];
+  const names=["전체",...new Set(state.edition.stories.map(mainRegion))];
   $("#filters").innerHTML=names.map(v=>'<button type="button" class="filter '+(state.filter===v?"active":"")+'" data-filter="'+esc(v)+'" aria-pressed="'+(state.filter===v)+'">'+esc(v)+"</button>").join("")+'<input class="search" id="search" type="search" placeholder="지역·주체 검색" aria-label="뉴스 검색" value="'+esc(state.query)+'">';
   $("#search").addEventListener("input",e=>{state.query=e.target.value;drawFeed()});
  }
  function drawFeed(){
-  const stories=state.edition.stories.filter(s=>(state.filter==="전체"||s.region===state.filter)&&(!state.query||[s.place,s.headline,s.summary,...s.actors.map(a=>a[0]),...s.economy.map(a=>a[0])].join(" ").toLowerCase().includes(state.query.toLowerCase())));
+  const stories=state.edition.stories.filter(s=>(state.filter==="전체"||mainRegion(s)===state.filter)&&(!state.query||[s.place,s.headline,s.summary,...s.actors.map(a=>a[0]),...s.economy.map(a=>a[0])].join(" ").toLowerCase().includes(state.query.toLowerCase())));
   const limited=!state.feedAll&&state.filter==="전체"&&!state.query&&stories.length>FEED_PREVIEW;
   const visible=limited?stories.slice(0,FEED_PREVIEW):stories;
-  $("#feed").innerHTML=(visible.length?visible.map(s=>'<button class="story-card" data-open="'+esc(s.id)+'" type="button"><div class="meta-line"><span>'+esc(s.region)+" / "+esc(s.place)+'</span><span class="status">● '+esc(s.level)+'</span></div><div class="story-card-flags">'+(s.countryCodes||[]).slice(0,4).map(code=>flag(code,"flag-story")).join("")+'</div><h3>'+esc(s.headline)+'</h3><p>'+esc(s.summary)+'</p><div class="story-bottom"><span>'+esc(s.eventDate)+" · "+esc(s.topic)+'</span><b>사건 읽기 ↗</b></div></button>').join(""):'<div class="empty">해당 조건에 맞는 사건이 없습니다.</div>')+
+  $("#feed").innerHTML=(visible.length?visible.map(s=>'<button class="story-card" data-open="'+esc(s.id)+'" type="button"><div class="meta-line"><span>'+esc(s.region)+" / "+esc(s.place)+'</span><span class="status">● '+esc(s.level)+'</span></div><div class="story-card-flags">'+[...new Set([...mainCodes(s),...(s.countryCodes||[])])].slice(0,4).map(code=>flag(code,"flag-story")).join("")+'</div><h3>'+esc(s.headline)+'</h3><p>'+esc(s.summary)+'</p><div class="story-bottom"><span>'+esc(s.eventDate)+" · "+esc(s.topic)+'</span><b>사건 읽기 ↗</b></div></button>').join(""):'<div class="empty">해당 조건에 맞는 사건이 없습니다.</div>')+
    (limited?'<button type="button" class="more-button" data-more="feed">나머지 '+(stories.length-FEED_PREVIEW)+'건 더 보기</button>':"");
  }
  function cited(item,s){
   return item[4].map(i=>s.sources[i]?'<a class="cite" href="'+safeUrl(s.sources[i][3])+'" target="_blank" rel="noopener noreferrer">['+(i+1)+"]</a>":"").join("");
  }
+ // One story belongs to one main region and its main countries (watchCodes); others are only mentioned.
+ const mainRegion=s=>String(s.region||"").split(" · ")[0].trim();
+ const mainCodes=s=>Array.isArray(s.watchCodes)&&s.watchCodes.length?s.watchCodes:(s.countryCodes||[]).slice(0,1);
  function entries(items,s){
   return items.map(a=>'<div class="entry"><div class="entry-head"><strong>'+esc(a[0])+'</strong><span class="badge '+(/주장|전|논쟁|안 됨/.test(a[3])?"warn":"")+'">'+esc(a[3])+'</span></div><div class="role">'+esc(a[1])+'</div><p>'+esc(a[2])+cited(a,s)+"</p></div>").join("");
  }
@@ -2405,7 +2426,7 @@ html,body{background:#fff;color:var(--ink)}
  // edition's stories for the country. This is what a reader opens a dossier for.
  function countryNow(data){
   const c=data.context;
-  const stories=(state.edition?.stories||[]).filter(s=>s.countryCodes?.includes(data.code));
+  const stories=(state.edition?.stories||[]).filter(s=>mainCodes(s).includes(data.code));
   const watch=(data.watch||[]).filter(w=>!stories.some(s=>s.headline===w.title));
   let html="";
   if(c&&c.summary){
@@ -2714,7 +2735,7 @@ html,body{background:#fff;color:var(--ink)}
  }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id);if(!s)return;state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div><div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div><div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div><div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
   $("#copy-link").addEventListener("click",async e=>{const u=location.origin+location.pathname+"?story="+encodeURIComponent(id);try{await navigator.clipboard.writeText(u);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+u}});

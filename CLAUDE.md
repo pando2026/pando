@@ -10,6 +10,8 @@
 - `_src/` — 화면 소스: `client.js`(렌더링), `data.js`(데이터 로딩·/api 흉내), `map.js`(벡터 지도), `style.css`·`refine.css`·`artifact.css`, `body.html`(기본 마크업), `build.mjs`(조립·패치).
 - `data/` — 내용. 대부분의 갱신은 여기 JSON만 고치면 된다(빌드 불필요).
   - `edition.json` 첫 화면(오늘의 초점=stories[0], 지도 점, 변화 카드). `editionDate`, `updatedAt`, `editionNote` 함께 갱신.
+    - 스토리 분류: `region`은 하나만(동아시아·동남아시아·남아시아·중앙아시아·중동·유럽·아프리카·미주·오세아니아). `watchCodes`는 사건의 **주 당사국**만(국가 화면·지도 색칠·지역 필터가 이것을 쓴다), `countryCodes`는 언급된 나라 전체. 예: 팔레스타인 선거 연기 서한을 프랑스에 보냈다면 region=중동, watchCodes=[PS], countryCodes=[PS,FR].
+    - `outlook`(선택): 전문가 평가·전망 [[이름(소속), 평가|전망|권고, 요지, 근거 성격("연구기관 분석"·"언론 인용(매체)"), [출처 번호]]]. 상세 화면 '05 / 전문가 평가·전망'에 나온다.
   - `contexts.json` 국가별 '지금 상황' {kind, asOf, headline, summary, control[], points[], sources[]}.
   - `changewatch.json` 국가별 최근 변화 카드.
   - `civics.json` 의회 구성(parliament.chambers[].groups=[이름, 의석, 색, 성향]) + 갈등 관계(conflicts[]).
@@ -47,6 +49,8 @@
 12. 언론·싱크탱크는 국가 문서보다 한 단계 아래 자료다. **같은 주장이 서로 다른 여러 곳에서 나오는지 교차 확인**하고, 자료 속 의견·이념적 수식은 빼고 사실만 쓴다.
 13. 날리지식 노트(132편 분석)에서 본 약점을 판도는 채운다: 당사자 자체 공식 자료와 비(非)미국 공식 문서를 빠뜨리지 않는다.
 14. 지어내기 금지. 숫자·날짜·인용은 연 페이지에서 확인한 것만. 학습 지식(2026년 6월까지)은 최근 사건의 근거가 될 수 없다.
+15. **언론 출처는 지역에 맞게 고른다**: 국제 통신사(Reuters·AP·AFP·연합뉴스)를 먼저, 그다음 그 나라·지역의 대표 매체를 쓴다. 매체가 많은 선진국은 현지 매체를 우선한다(독일 → dpa·Tagesschau·Der Spiegel·FAZ, 프랑스 → AFP·Le Monde, 영국 → BBC·FT, 일본 → NHK·교도·닛케이, 미국 → AP·NYT·WSJ·WaPo, 중동 → Reuters·AP·현지 국영통신(SPA·WAM·IRNA 등은 당사자 공식으로 표시)·The National, 남아시아 → Dawn·The Hindu 등). 알자지라 같은 제3지역 매체는 현지·통신사 출처를 못 찾을 때만 쓴다.
+16. **전문가 평가·전망(`outlook`)**: 큰 사건에는 공개된 싱크탱크·연구기관·학계·전직 관료의 평가와 전망을 2~4개 붙인다(International Crisis Group·CrisisWatch, Chatham House, IISS, CSIS, Carnegie, ECFR, Brookings, 현지 연구기관, 국립외교원·아산정책연구원·KIEP 등, 또는 통신사·주요 매체가 인용한 전문가). 서로 다른 시각을 함께 싣고, 누가(소속) 무엇을 전망했는지 따옴표 인용은 짧게. 유료 구독 DB(Oxford Analytica 등)의 내용은 싣지 않는다. 독자가 알려준 단서는 공개 자료로 다시 확인해 쓴다.
 
 ## 해설(explainers.json) 쓰는 법
 - 구성: `hook`(독자가 '왜?'라고 묻게 하는 한 문장) → `summary` → `purpose`(무슨 자리·왜 열렸나·걸린 것) → `actors` → `exchanges`(질의 요지, 답변 요지, 짧은 직접 인용, **숨은 맥락**, **근거**) → `timeline` → `terms` → `background` → `takeaways` → `open`(아직 모르는 것) → `method`(취재 방식) → `sources`(tier 포함).
@@ -56,7 +60,7 @@
 
 ## 정기 갱신
 작업 후 반드시: JSON 문법 확인 → (화면 소스를 고쳤다면) `node _src/build.mjs` → 커밋(작성자 `Claude <noreply@anthropic.com>`) → `git push origin HEAD:main`.
-- **변화 점검(하루 2회)**: 최근 12~24시간 국제 정치·안보·경제 주요 사건을 확인해 `edition.json`(가장 중요한 사건을 stories[0]으로, 지도 좌표 포함), 관련 국가 `contexts.json`·`changewatch.json`·`civics.json` conflicts를 갱신. 이미 있는 스토리는 고쳐 쓰고 오래된(2주 이상) 스토리는 뺀다. 최대 20개.
+- **변화 점검(하루 2회)**: 최근 12~24시간 국제 정치·안보·경제 주요 사건을 확인해 `edition.json`(가장 중요한 사건을 stories[0]으로, 지도 좌표 포함, 새 큰 사건엔 `outlook` 2개 이상), 관련 국가 `contexts.json`·`changewatch.json`·`civics.json` conflicts를 갱신. 이미 있는 스토리는 고쳐 쓰고 오래된(2주 이상) 스토리는 뺀다. 최대 20개.
 - **주간 점검(월요일)**: `contexts.json` 52개국의 asOf가 7일 넘은 것부터 다시 확인, `fights.json` 보강.
 - **주간 점검**에서 우방·갈등 관계의 큰 변화(단교·조약·전쟁)를 `allies.json`·`civics.json`에 반영.
 - **월간 점검(1일)**: 의회 구성 변화(선거·탈당), 지도자 교체(+`ordinal` 갱신), `party-profiles.json` 대표 교체, `blocs.json` 가입·탈퇴·정지, `fx.json` 환율 확인.

@@ -11,6 +11,13 @@ html,body{background:#fff;color:var(--ink)}
 .vmap-link{cursor:pointer}
 .vmap-link:hover{fill:var(--map-hover)}
 .vmap-country.vmap-watch{fill:var(--map-watch)}
+.vmap-country[data-heat="1"]{fill:#fbe0bf}
+.vmap-country[data-heat="2"]{fill:#f5b56e}
+.vmap-country[data-heat="3"]{fill:#e8862f}
+.vmap-country[data-heat]{stroke:#b8742f;stroke-width:.9px}
+.vmap-country[data-heat]:hover{fill:#d0711f}
+.vmap-bloc-on .vmap-country[data-heat]:not(.vmap-bloc):not(.vmap-bloc-partner){fill:var(--map-land);stroke:var(--map-edge)}
+.heat-key{display:inline-block;width:26px;height:10px;margin:0 5px 0 8px;vertical-align:-1px;border-radius:2px;background:linear-gradient(90deg,#fbe0bf,#f5b56e,#e8862f)}
 .vmap-pin{cursor:pointer}
 .vmap-pin:focus{outline:none}
 .vmap-pin:focus-visible .vmap-dot{stroke:#e69467;stroke-width:2}
