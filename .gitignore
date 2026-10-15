@@ -27,3 +27,5 @@ _tools/ties/out/
 _tools/ties/in-*.json
 _tools/cases/out/
 _tools/cases/in-*.json
+_tools/interest/out/
+_tools/interest/in-*.json
