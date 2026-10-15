@@ -814,3 +814,13 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .map-quick-link[data-open] small{font-size:10.5px;color:#4d6359;font-weight:750}
 .story-flag-link{border:0;background:none;padding:0;margin:0;cursor:pointer;border-radius:3px;line-height:0}
 .story-flag-link:hover .flag,.story-flag-link:focus-visible .flag{outline:2px solid #124f86;outline-offset:1px}
+.side-split{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.side-col{border-top:3px solid #9aa6ae;padding-top:4px;min-width:0}
+.side-col.side-a{border-top-color:#c62f3a}
+.side-col.side-b{border-top-color:#1f5f9e}
+.side-col.side-n{border-top-color:#9aa6ae;margin-top:14px}
+.side-head{display:flex;align-items:baseline;gap:6px;margin:6px 0 2px;font-size:13px;font-weight:850;color:#15232d}
+.side-a .side-head{color:#a8222c}.side-b .side-head{color:#174c82}
+.side-head small{font-size:11px;font-weight:700;color:#7a8891}
+.side-n .side-split,.side-n .entry{}
+@media(max-width:700px){.side-split{grid-template-columns:1fr}}
