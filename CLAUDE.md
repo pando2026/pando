@@ -70,7 +70,7 @@
 ## 정기 갱신
 작업 후 반드시: JSON 문법 확인 → (화면 소스를 고쳤다면) `node _src/build.mjs` → 커밋(작성자 `Claude <noreply@anthropic.com>`) → `git push origin HEAD:main`.
 - **변화 점검(하루 2회)**: 최근 12~24시간 국제 정치·안보·경제 주요 사건을 확인해 `edition.json`(가장 중요한 사건을 stories[0]으로, 지도 좌표 포함, 새 큰 사건엔 `outlook` 2개 이상), 관련 국가 `contexts.json`·`changewatch.json`·`civics.json` conflicts를 갱신. 이미 있는 스토리는 고쳐 쓰고 오래된(2주 이상) 스토리는 뺀다. 최대 20개.
-- **주간 점검(월요일)**: `contexts.json` 52개국의 asOf가 7일 넘은 것부터 다시 확인, `fights.json` 보강.
+- **주간 점검(월요일)**: `contexts.json` 52개국 중 asOf가 7일 넘은 것 **전부**와, 52개국 중 `fights.json` asOf가 14일 넘은 나라를 다시 확인한다(지침 `_tools/weekly/BRIEF.md`, 나라를 5개씩 나눠 동시에). 일부만 하고 멈추지 않는다. 끝나면 남은 7일 초과가 0인지 확인.
 - **주간 점검**에서 우방·갈등 관계의 큰 변화(단교·조약·전쟁)를 `allies.json`·`civics.json`에 반영.
 - **월간 점검(1일)**: 의회 구성 변화(선거·탈당), 지도자 교체(+`ordinal` 갱신), `party-profiles.json` 대표 교체, `blocs.json` 가입·탈퇴·정지, `fx.json` 환율 확인.
 - **분기 점검(1·4·7·10월 15일)**: 국가 지표 시계열(세계은행·IMF·SIPRI·BIS), 부패인식지수, 주·도별 소득의 새 연도를 받아 넣는다. 지침 `_tools/extra/DATA-REFRESH.md`.
