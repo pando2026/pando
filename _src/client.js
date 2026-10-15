@@ -621,16 +621,16 @@
   const pad=Math.max(x1-x0,y1-y0)*.5+3;const near=[x0-pad*2,x1+pad*2,y0-pad*2,y1+pad*2];
   const [cl,ct]=inv((x0+x1)/2,(y0+y1)/2);const kx=Math.cos(ct*Math.PI/180);
   const fixLon=lon=>{let v=lon-cl;v=((v+540)%360)-180;return v};
-  const loc=([lon,lat])=>[fixLon(lon)*kx,-lat];
+  const loc=([lon,lat])=>{const q=Math.max(-80,Math.min(84,lat))*Math.PI/180;return [fixLon(lon),-Math.log(Math.tan(Math.PI/4+q/2))*180/Math.PI]}; // Mercator, like the world map
   // Keep each ring continuous: a ring crossing the far-side seam (e.g. the US seen from China) would otherwise stretch across the whole map.
-  const unwrap=r=>{const w=360*kx;for(let i=1;i<r.length;i++){while(r[i][0]-r[i-1][0]>w/2)r[i][0]-=w;while(r[i][0]-r[i-1][0]<-w/2)r[i][0]+=w}return r};
+  const unwrap=r=>{const w=360;for(let i=1;i<r.length;i++){while(r[i][0]-r[i-1][0]>w/2)r[i][0]-=w;while(r[i][0]-r[i-1][0]<-w/2)r[i][0]+=w}return r};
   const capList=caps[cc]||[];
   const shapes=world.countries.filter(c=>{const [a,b,e,f]=bb(c);return !(b<near[0]||a>near[1]||f<near[2]||e>near[3])}).map(c=>({c:c.c,rs:rings(c.d).map(r=>unwrap(r.map(p=>loc(inv(p[0],p[1])))))}));
   const meL=shapes.filter(s=>s.c===cc).flatMap(s=>s.rs);let X0=1e9,X1=-1e9,Y0=1e9,Y1=-1e9;
   const mainBox=bbx(myR[0].map(p=>loc(inv(p[0],p[1]))));[X0,X1,Y0,Y1]=mainBox;const sp=Math.max(X1-X0,Y1-Y0,1);
   meL.forEach(r=>{const [a,b,e,f]=bbx(r);if(a>X0-sp*.6&&b<X1+sp*.6&&e>Y0-sp*.6&&f<Y1+sp*.6){X0=Math.min(X0,a);X1=Math.max(X1,b);Y0=Math.min(Y0,e);Y1=Math.max(Y1,f)}});
   capList.forEach(c=>{const [x,y]=loc([c[2],c[3]]);X0=Math.min(X0,x);X1=Math.max(X1,x);Y0=Math.min(Y0,y);Y1=Math.max(Y1,y)});
-  const cw=Math.max(X1-X0,4),ch=Math.max(Y1-Y0,2.5),pd=Math.max(cw,ch)*.35+.3;let vx=X0-pd,vy=Y0-pd,vw=cw+pd*2,vh=ch+pd*2;
+  const cw=Math.max(X1-X0,4),ch=Math.max(Y1-Y0,2.5),pd=Math.max(cw,ch)*.12+.6;let vx=X0-pd,vy=Y0-pd,vw=cw+pd*2,vh=ch+pd*2;
   const ar=2;if(vw/vh<ar){const nw=vh*ar;vx-=(nw-vw)/2;vw=nw}else{const nh=vw/ar;vy-=(nh-vh)/2;vh=nh}
   const u=vw/(box.clientWidth||600);const ds=s=>s.rs.map(r=>"M"+r.map(p=>p[0].toFixed(3)+" "+p[1].toFixed(3)).join("L")+"Z").join("");
   const paths=shapes.map(s=>'<path class="cap-land'+(s.c===cc?' cap-land--on':"")+'" d="'+ds(s)+'"/>').join("");
