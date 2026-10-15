@@ -29,3 +29,5 @@ _tools/cases/out/
 _tools/cases/in-*.json
 _tools/interest/out/
 _tools/interest/in-*.json
+_tools/weekly/out/
+_tools/weekly/in-*.json
