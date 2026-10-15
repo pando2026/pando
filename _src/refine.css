@@ -828,3 +828,10 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .capmap--hero .cap-svg{aspect-ratio:2}
 .capmap--hero:empty{aspect-ratio:2;background:#eef3f6}
 @media(max-width:640px){.country-title{flex-wrap:wrap}.country-title .capmap--hero{width:100%;margin:8px 0 0}}
+.budget-memo{margin:12px 0;padding:10px 12px;border:1px solid #e7c9cb;border-left:3px solid #c62b33;background:#fdf6f6;border-radius:4px}
+.budget-memo-row{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.budget-memo-row span{font-weight:850;color:#15232d}
+.budget-memo-row strong{margin-left:auto;font-variant-numeric:tabular-nums}
+.budget-memo-row b{color:#c62b33}
+.budget-memo-row em{flex-basis:100%;font-style:normal;font-size:11px;color:#7a8a95}
+.budget-memo p{margin:6px 0 4px;font-size:12px;line-height:1.55;color:#33505f}
