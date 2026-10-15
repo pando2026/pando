@@ -984,7 +984,7 @@
     fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),
    budget:budgetOverviewCard(budget.overview)+doc+
     (ownBreakdown?'<section class="section"><h3>분야별 구성</h3>'+ownBreakdown+'</section>':"")+
-    '<section class="section"><h3>재정 지표</h3>'+grid([["governmentRevenue","중앙정부 세입 / GDP",budget.metrics?.governmentRevenue||metrics.governmentRevenue],["governmentExpenditure","중앙정부 지출 / GDP",budget.metrics?.governmentExpenditure||metrics.governmentExpenditure],["cashBalance","재정수지 / GDP",budget.metrics?.cashBalance||metrics.cashBalance]])+chinaFiscal+'</section>'+
+    '<section class="section"><h3>재정 지표</h3>'+grid([["governmentRevenue","중앙정부 세입 / GDP",budget.metrics?.governmentRevenue||metrics.governmentRevenue],["governmentExpenditure","중앙정부 지출 / GDP",budget.metrics?.governmentExpenditure||metrics.governmentExpenditure],["cashBalance","재정수지 / GDP",budget.metrics?.cashBalance||metrics.cashBalance]])+chinaFiscal+'</section>'+interestBlock(data)+
     budgetAlternativeEstimates(budget.alternativeEstimates)+budgetReferenceShares(budget.referenceShares)+
     (koreaBreakdown?'<details class="compare-fold"><summary>한국 예산 구성과 비교하기</summary>'+koreaBreakdown+'<p class="data-caption">두 나라 예산은 회계연도, 정부 범위, 정부안·의결 상태가 다를 수 있어 비중을 그대로 비교하지 마세요.</p></details>':"")+
     fold("예산 자료 읽는 법",'<p>정부안·의회 통과안·IMF 전망·과거 실적을 서로 다른 상태로 표시합니다. 재정 지표는 세계은행의 중앙정부 범위 과거 관측치로, 지금 제출된 예산안 합계가 아닙니다.</p><p>'+sourceLink(links.worldBank,"세계은행 재정 데이터")+'</p>'),
@@ -1051,7 +1051,7 @@
   ["ix",".ix",".ix-head",1],["conflicts","section.conflicts:not(.allies)",".conflicts-head",1],["allies","section.allies",".conflicts-head",0],
   ["blocs",".country-blocs","h3",0],["now",".now",".now-head",1],["recent",".recent","h3",1],["leaders",".leaders-section",".leaders-heading",1],
   ["pmap",".pmap-block",".fights-head",1],["regions",".regions",".fights-head",0],["fights",".fights",".fights-head",1],
-  ["decision",".decision-map","h3",0],["elect",".elect","h3",1],["cpi",".cpi","h3",1],["sec",".country-panel > .section","h3",1]
+  ["decision",".decision-map","h3",0],["interest",".interest","h3",1],["elect",".elect","h3",1],["cpi",".cpi","h3",1],["sec",".country-panel > .section","h3",1]
  ];
  const foldGet=k=>{try{return localStorage.getItem("pando.fold."+k)}catch{return null}};
  const foldSet=(k,v)=>{try{localStorage.setItem("pando.fold."+k,v?"1":"0")}catch{}};
@@ -1061,6 +1061,7 @@
   if(key==="blocs")return n(".bloc-list > li")+"개";
   if(key==="fights")return n(".fight")+"개 쟁점";
   if(key==="regions")return n(".region-party")+"곳";
+  if(key==="interest"){const v=sec.querySelector(".int-card strong")?.textContent;return v?"총지출의 "+v:""}
   if(key==="cpi"||key==="elect"){const s=sec.querySelector(".cpi-score strong")?.textContent,r=sec.querySelector(".cpi-meta span")?.textContent;return s?(s+(r?" · "+r.split(" / ")[0]:"")):"";}
   return "";
  }
@@ -1093,6 +1094,22 @@
   const on=!sec.classList.contains("is-folded");setFold(sec,on);foldSet(sec.dataset.fold,on);
  });
  document.addEventListener("keydown",ev=>{if((ev.key==="Enter"||ev.key===" ")&&ev.target.classList?.contains("fold-head")){ev.preventDefault();ev.target.click()}});
+
+ // 나랏빚 이자: 세계은행 WDI 중앙정부 이자 지출(총지출 대비·세입 대비). 모든 나라 같은 기준.
+ function interestBlock(data){
+  const I=data.interest;if(!I)return "";const e=I.entry,k=I.korea,meta=I.meta||{};
+  const memoDebt=(data.budget?.breakdown?.categories||[]).find(x=>/이자|원리금|채무/.test(x.label||""));
+  if(!e||(!e.exp&&!e.rev))return '<section class="section interest"><h3>나랏빚 이자</h3><p class="metric-missing"><span>세계은행 자료 없음</span> 이 나라는 중앙정부 이자 지출을 세계은행에 보고하지 않았습니다.'+(memoDebt?' 위 예산 구성의 ‘'+esc(memoDebt.label)+'’ 항목을 보세요.':"")+'</p></section>';
+  const old=y=>nowYear()-Number(y)>=4;
+  const tone=v=>v>=20?"#c62b33":v>=10?"#d08a1e":"#1f7a5a";
+  const card=(key,label,denom)=>{const x=e[key];if(!x)return '<div class="int-card int-card--none"><span>'+label+'</span><b>자료 없음</b></div>';
+   const kv=k?.[key];const H=e[key+"H"]||{};const ys=Object.keys(H).sort();const prev=H[String(Number(x.year)-5)];
+   return '<div class="int-card"><span>'+label+'</span><strong style="color:'+tone(x.value)+'">'+number(x.value,1)+'%</strong><p>'+esc(x.year)+'년'+(old(x.year)?' · <em class="int-old">'+(nowYear()-Number(x.year))+'년 전 자료</em>':"")+(x.rank?' · '+x.rank+'위 / '+(meta.total?.[key]||"")+'개국':"")+'</p>'+
+    '<div class="int-bar"><i style="width:'+Math.min(100,x.value*2.5).toFixed(1)+'%;background:'+tone(x.value)+'"></i>'+(kv?'<b class="int-k" style="left:'+Math.min(100,kv.value*2.5).toFixed(1)+'%" title="한국"></b>':"")+'</div>'+
+    '<small>'+denom+(prev!=null?' · 5년 전 '+number(prev,1)+'%':"")+(kv?' · 한국 '+number(kv.value,1)+'% ('+esc(kv.year)+')':"")+'</small></div>'};
+  return '<section class="section interest"><h3>나랏빚 이자 <small>중앙정부 · 세계은행</small></h3><div class="int-grid">'+card("exp","총지출 중 이자","정부가 쓰는 돈 100원 중 이자로 나가는 몫")+card("rev","세입 대비 이자","거둔 세금·수입 100원 중 이자로 나가는 몫")+'</div>'+
+   '<p class="cpi-note">원금 상환은 빼고 이자만 셉니다. 일본처럼 예산서에 ‘국채 원리금’(원금+이자)을 적는 나라의 비중과는 다릅니다. 색은 판도가 읽기 쉽게 나눈 것(10% 미만 초록, 20% 미만 주황, 그 이상 빨강)이고, 막대의 검은 눈금은 한국입니다. 순위는 2019년 이후 값이 있는 나라끼리 높은 순. '+sourceLink(meta.source?.exp,"세계은행 총지출 대비")+' · '+sourceLink(meta.source?.rev,"세입 대비")+(meta.updated?' · '+esc(meta.updated)+' 갱신':"")+'</p></section>';
+ }
  function renderLeaders(data){
   const people=Array.isArray(data.people)?data.people:[],relations=Array.isArray(data.relationships)?data.relationships:[];
   const standalone=relations.filter(rel=>rel.kind!=="cabinet").map(rel=>relationshipRow(rel,people)).filter(Boolean);

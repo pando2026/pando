@@ -30,3 +30,7 @@ series 항목 형식: {"year":"2025","value":숫자,"source":"원문 URL","provi
 ## 4. 선거의 공정성 (data/elections.json) — V-Dem 새 판(매년 3월) 뒤. `https://ourworldindata.org/grapher/free-and-fair-elections-index.csv?csvType=full&useColumnShortNames=true`(내장 브라우저로 받기) → ISO3를 ISO2로 바꿔 countries[CC]{score,year,history,rank}, edition·year 갱신.
 ## 5. 환율 (data/fx.json) — 월간 점검과 같음.
 지어내기 금지: 연 페이지에서 확인한 숫자만.
+
+
+## 나랏빚 이자 (interest.json)
+세계은행 GC.XPN.INTP.ZS·GC.XPN.INTP.RV.ZS zip(CSV)을 사용자 다운로드 폴더로 받아 스테이징한 뒤 `python3 _tools/extra/interest.py <풀린 폴더>/`. 한국 예산 breakdown의 `memo`(국고채 이자)는 새 예산안(9월)이 나오면 기획예산처·통신사 보도로 고친다.
