@@ -11,6 +11,7 @@
 - `data/` — 내용. 대부분의 갱신은 여기 JSON만 고치면 된다(빌드 불필요).
   - `edition.json` 첫 화면(오늘의 초점=stories[0], 지도 점, 변화 카드). `editionDate`, `updatedAt`, `editionNote` 함께 갱신.
     - 스토리 분류: `region`은 하나만(동아시아·동남아시아·남아시아·중앙아시아·중동·유럽·아프리카·미주·오세아니아). `watchCodes`는 사건의 **주 당사국**만(국가 화면·지도 색칠·지역 필터가 이것을 쓴다), `countryCodes`는 언급된 나라 전체. 예: 팔레스타인 선거 연기 서한을 프랑스에 보냈다면 region=중동, watchCodes=[PS], countryCodes=[PS,FR].
+    - `placeCode`(선택): 사건이 일어난 곳의 나라 코드. 지도 바로가기 칩에 국기·나라 이름으로 나온다. 없으면 지도 모양으로 자동 판정하고, 바다·작은 나라처럼 판정이 틀릴 때만 적는다.
     - `outlook`(선택): 전문가 평가·전망 [[이름(소속), 평가|전망|권고, 요지, 근거 성격("연구기관 분석"·"언론 인용(매체)"), [출처 번호]]]. 상세 화면 '05 / 전문가 평가·전망'에 나온다.
   - `contexts.json` 국가별 '지금 상황' {kind, asOf, headline, summary, control[], points[], sources[]}.
   - `changewatch.json` 국가별 최근 변화 카드.

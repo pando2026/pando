@@ -17,7 +17,7 @@
  const day=s=>{try{return new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",month:"long",day:"numeric",weekday:"long"}).format(new Date(s+"T12:00:00+09:00"))}catch{return s}};
  const time=s=>{try{return new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(s))}catch{return s}};
  const watchCapitals={ET:[38.75,9.03],ER:[38.93,15.33],FR:[2.35,48.86],DE:[13.41,52.52],LV:[24.1,56.95],JP:[139.69,35.69]};
- const atlas=window.FrontlineAtlas.mount("#map",{items:[],onSelect:item=>item.type==="occupied"?showOccupied(item.id):item.type==="country"?openCountry(item.id):openStory(item.id)});
+ const atlas=window.FrontlineAtlas.mount("#map",{items:[],onReady:()=>renderMapQuickList(),onSelect:item=>item.type==="occupied"?showOccupied(item.id):item.type==="country"?openCountry(item.id):openStory(item.id)});
  // Occupied / armed-group-controlled areas (hatched on the world map and on conflict boards).
  let occData=null;const loadOcc=()=>occData||(occData=fetch("data/occupied.json").then(r=>r.json()).then(d=>d.items||[]).catch(()=>[]));
  loadOcc().then(list=>{state.occupied=list;atlas.setOccupied&&atlas.setOccupied(list,true)});
@@ -41,9 +41,13 @@
   atlas.setItems([...stories,...countries]);
   renderMapQuickList();
  }
+ // The country an event happened in: explicit `placeCode` in edition.json, else the map shape under the pin, else its first main country.
+ function placeCode(s){if(/^[A-Z]{2}$/.test(s.placeCode||""))return s.placeCode;
+  const hit=Number.isFinite(s.lon)&&Number.isFinite(s.lat)&&atlas.countryAt?atlas.countryAt(s.lon,s.lat):null;return hit||mainCodes(s)[0]||null}
  function renderMapQuickList(){
   const element=$("#map-quick-list");if(!element)return;
-  const articles=(state.edition?.stories||[]).map(s=>'<button type="button" class="map-quick-link" data-open="'+esc(s.id)+'"><i class="map-mini-dot"></i><span>'+esc(s.label||s.place)+'</span><small>현장</small></button>');
+  const articles=(state.edition?.stories||[]).map(s=>{const cc=placeCode(s),cn=cc?namedCountry(cc):"",lb=s.label||s.place;
+   return '<button type="button" class="map-quick-link" data-open="'+esc(s.id)+'"'+(cn?' title="'+esc(cn+" · "+lb)+'"':"")+'><i class="map-mini-dot"></i><span>'+(cc?flag(cc,"flag-quick"):"")+esc(lb)+'</span><small>'+(cn&&!lb.includes(cn)?esc(cn):"현장")+'</small></button>'});
   const countries=state.watch.map(w=>'<button type="button" class="map-quick-link" data-country="'+esc(w.code)+'"><i class="map-mini-dot country-key"></i><span>'+flag(w.code,"flag-quick")+esc(namedCountry(w.code))+'</span><small>국가</small></button>');
   element.innerHTML=[...articles,...countries].join("");
  }

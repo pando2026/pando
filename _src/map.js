@@ -197,7 +197,7 @@
   fetch("data/world.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
    world=data;frame.querySelector(".vmap-loading")?.remove();
    drawLand();fitHome();if(typeof paintBloc==="function")setTimeout(()=>{try{paintBloc()}catch(e){}},0);
-   setView(home);if(focusOpt){focusOn(focusOpt);drawNames()}drawPins();
+   setView(home);if(focusOpt){focusOn(focusOpt);drawNames()}drawPins();if(options.onReady)try{options.onReady()}catch(e){}
   }).catch(()=>{const p=frame.querySelector(".vmap-loading");if(p)p.textContent="지도 자료를 불러오지 못했습니다. 아래 목록에서 항목을 고르세요."});
 
   let occ=[],occOn=true;
@@ -206,7 +206,9 @@
    occLayer.replaceChildren(frag)}
   let bloc=null;
   function paintBloc(){land.querySelectorAll(".vmap-country").forEach(p=>{const r=bloc&&bloc[p.dataset.code];p.classList.toggle("vmap-bloc",r==="member");p.classList.toggle("vmap-bloc-partner",r==="partner")});frame.classList.toggle("vmap-bloc-on",!!bloc)}
-  return {setOccupied(list,on){if(Array.isArray(list))occ=list;if(on!==undefined)occOn=!!on;drawOcc()},setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
+  // Which country a point lies in (low-res world shapes; small states may be missed).
+  function countryAt(lon,lat){if(!world)return null;const [x,y]=project(lon,lat);const pt=new DOMPoint(x,y);const hit=[...land.querySelectorAll(".vmap-link")].find(p=>{try{return p.isPointInFill(pt)}catch(e){return false}});return hit?hit.dataset.code:null}
+  return {countryAt,setOccupied(list,on){if(Array.isArray(list))occ=list;if(on!==undefined)occOn=!!on;drawOcc()},setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
  }
  global.FrontlineAtlas={mount};
 })(window);

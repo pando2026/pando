@@ -1098,6 +1098,8 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .tie-members span{font-size:11px;background:#eef4f7;border-radius:3px;padding:1px 6px;color:#22323c}
 @media(max-width:600px){.tie-pair{grid-template-columns:1fr;gap:4px}.tie-p:last-child{text-align:left}.tie-kind{justify-self:start}}
 .is-folded > .conflicts-head > span:not(.fold-hint):not(.fold-chev),.is-folded > .ix-head > .ix-legend{display:none}
+.map-quick-link .flag-quick{margin-right:5px}
+.map-quick-link[data-open] small{font-size:10.5px;color:#4d6359;font-weight:750}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -1437,7 +1439,7 @@ html,body{background:#fff;color:var(--ink)}
   fetch("data/world.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
    world=data;frame.querySelector(".vmap-loading")?.remove();
    drawLand();fitHome();if(typeof paintBloc==="function")setTimeout(()=>{try{paintBloc()}catch(e){}},0);
-   setView(home);if(focusOpt){focusOn(focusOpt);drawNames()}drawPins();
+   setView(home);if(focusOpt){focusOn(focusOpt);drawNames()}drawPins();if(options.onReady)try{options.onReady()}catch(e){}
   }).catch(()=>{const p=frame.querySelector(".vmap-loading");if(p)p.textContent="지도 자료를 불러오지 못했습니다. 아래 목록에서 항목을 고르세요."});
 
   let occ=[],occOn=true;
@@ -1446,7 +1448,9 @@ html,body{background:#fff;color:var(--ink)}
    occLayer.replaceChildren(frag)}
   let bloc=null;
   function paintBloc(){land.querySelectorAll(".vmap-country").forEach(p=>{const r=bloc&&bloc[p.dataset.code];p.classList.toggle("vmap-bloc",r==="member");p.classList.toggle("vmap-bloc-partner",r==="partner")});frame.classList.toggle("vmap-bloc-on",!!bloc)}
-  return {setOccupied(list,on){if(Array.isArray(list))occ=list;if(on!==undefined)occOn=!!on;drawOcc()},setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
+  // Which country a point lies in (low-res world shapes; small states may be missed).
+  function countryAt(lon,lat){if(!world)return null;const [x,y]=project(lon,lat);const pt=new DOMPoint(x,y);const hit=[...land.querySelectorAll(".vmap-link")].find(p=>{try{return p.isPointInFill(pt)}catch(e){return false}});return hit?hit.dataset.code:null}
+  return {countryAt,setOccupied(list,on){if(Array.isArray(list))occ=list;if(on!==undefined)occOn=!!on;drawOcc()},setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
  }
  global.FrontlineAtlas={mount};
 })(window);
@@ -1786,7 +1790,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const day=s=>{try{return new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",month:"long",day:"numeric",weekday:"long"}).format(new Date(s+"T12:00:00+09:00"))}catch{return s}};
  const time=s=>{try{return new Intl.DateTimeFormat("ko-KR",{timeZone:"Asia/Seoul",month:"short",day:"numeric",hour:"2-digit",minute:"2-digit"}).format(new Date(s))}catch{return s}};
  const watchCapitals={ET:[38.75,9.03],ER:[38.93,15.33],FR:[2.35,48.86],DE:[13.41,52.52],LV:[24.1,56.95],JP:[139.69,35.69]};
- const atlas=window.FrontlineAtlas.mount("#map",{items:[],onSelect:item=>item.type==="occupied"?showOccupied(item.id):item.type==="country"?openCountry(item.id):openStory(item.id)});
+ const atlas=window.FrontlineAtlas.mount("#map",{items:[],onReady:()=>renderMapQuickList(),onSelect:item=>item.type==="occupied"?showOccupied(item.id):item.type==="country"?openCountry(item.id):openStory(item.id)});
  // Occupied / armed-group-controlled areas (hatched on the world map and on conflict boards).
  let occData=null;const loadOcc=()=>occData||(occData=fetch("data/occupied.json").then(r=>r.json()).then(d=>d.items||[]).catch(()=>[]));
  loadOcc().then(list=>{state.occupied=list;atlas.setOccupied&&atlas.setOccupied(list,true)});
@@ -1810,9 +1814,13 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   atlas.setItems([...stories,...countries]);
   renderMapQuickList();
  }
+ // The country an event happened in: explicit `placeCode` in edition.json, else the map shape under the pin, else its first main country.
+ function placeCode(s){if(/^[A-Z]{2}$/.test(s.placeCode||""))return s.placeCode;
+  const hit=Number.isFinite(s.lon)&&Number.isFinite(s.lat)&&atlas.countryAt?atlas.countryAt(s.lon,s.lat):null;return hit||mainCodes(s)[0]||null}
  function renderMapQuickList(){
   const element=$("#map-quick-list");if(!element)return;
-  const articles=(state.edition?.stories||[]).map(s=>'<button type="button" class="map-quick-link" data-open="'+esc(s.id)+'"><i class="map-mini-dot"></i><span>'+esc(s.label||s.place)+'</span><small>현장</small></button>');
+  const articles=(state.edition?.stories||[]).map(s=>{const cc=placeCode(s),cn=cc?namedCountry(cc):"",lb=s.label||s.place;
+   return '<button type="button" class="map-quick-link" data-open="'+esc(s.id)+'"'+(cn?' title="'+esc(cn+" · "+lb)+'"':"")+'><i class="map-mini-dot"></i><span>'+(cc?flag(cc,"flag-quick"):"")+esc(lb)+'</span><small>'+(cn&&!lb.includes(cn)?esc(cn):"현장")+'</small></button>'});
   const countries=state.watch.map(w=>'<button type="button" class="map-quick-link" data-country="'+esc(w.code)+'"><i class="map-mini-dot country-key"></i><span>'+flag(w.code,"flag-quick")+esc(namedCountry(w.code))+'</span><small>국가</small></button>');
   element.innerHTML=[...articles,...countries].join("");
  }

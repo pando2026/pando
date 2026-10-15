@@ -810,3 +810,5 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .tie-members span{font-size:11px;background:#eef4f7;border-radius:3px;padding:1px 6px;color:#22323c}
 @media(max-width:600px){.tie-pair{grid-template-columns:1fr;gap:4px}.tie-p:last-child{text-align:left}.tie-kind{justify-self:start}}
 .is-folded > .conflicts-head > span:not(.fold-hint):not(.fold-chev),.is-folded > .ix-head > .ix-legend{display:none}
+.map-quick-link .flag-quick{margin-right:5px}
+.map-quick-link[data-open] small{font-size:10.5px;color:#4d6359;font-weight:750}
