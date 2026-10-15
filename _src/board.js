@@ -11,8 +11,8 @@
  const el=(n,a={})=>{const x=document.createElementNS(NS,n);for(const k in a)x.setAttribute(k,a[k]);return x};
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
  const safe=u=>/^https?:\/\//.test(String(u||""))?String(u):"#";
- const raw=(lon,lat)=>{const l=lon*Math.PI/180,p=lat*Math.PI/180,p2=p*p,p4=p2*p2;
-  return [l*(0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))),p*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)))]};
+ // Mercator, matching data/world.json.
+ const raw=(lon,lat)=>{const p=Math.max(-56,Math.min(82,lat))*Math.PI/180;return [lon*Math.PI/180,Math.log(Math.tan(Math.PI/4+p/2))]};
  let worldP=null,anchorP=null;
  const getWorld=()=>worldP||(worldP=fetch("data/world.json").then(r=>r.json()));
  let occP=null;const getOcc=()=>occP||(occP=fetch("data/occupied.json").then(r=>r.json()).then(d=>d.items||[]).catch(()=>[]));

@@ -1,12 +1,12 @@
 """Build data/occupied.json: occupied / armed-group-controlled areas as pre-projected SVG paths
-(same Natural Earth I projection and lon0 as data/world.json).
+(same Mercator projection and lon0 as data/world.json).
 Usage: python3 _tools/occupied/build.py NE_ADMIN1.geojson DEEPSTATE.geojson _tools/occupied/items.json
 (items.json = the researched list without geometry; Ukraine comes from the DeepState file, its date is read from the file name)"""
 import json,math,sys,os
 ne_path,ds_path,items_path=sys.argv[1:4]
 world=json.load(open('data/world.json'));W,K,TOP,LON0=world['w'],world['k'],world['top'],world.get('lon0',0)
-def fx(p):p2=p*p;p4=p2*p2;return 0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))
-def fy(p):p2=p*p;p4=p2*p2;return p*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)))
+def fy(p):p=max(math.radians(-56),min(math.radians(82),p));return math.log(math.tan(math.pi/4+p/2))
+def fx(p):return 1.0
 def fwd(lon,lat):
   lon=((lon-LON0)%360+540)%360-180;l=math.radians(lon);p=math.radians(lat);return (W/2+l*fx(p)*K,(TOP-fy(p))*K)
 def dp(pts,tol):

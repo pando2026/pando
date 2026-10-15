@@ -1,10 +1,10 @@
-"""Re-centre data/world.json (pre-projected Natural Earth I paths) on a new central meridian.
+"""Re-centre data/world.json (pre-projected Mercator paths) on a new central meridian.
 Usage: python3 _tools/reproject.py ORIG_WORLD.json LON0  -> writes data/world.json and data/anchors.json"""
 import json,re,math,sys
 src=json.load(open(sys.argv[1])); LON0=float(sys.argv[2])
 W,K,TOP=src['w'],src['k'],src['top']
-def fx(p):p2=p*p;p4=p2*p2;return 0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))
-def fy(p):p2=p*p;p4=p2*p2;return p*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)))
+def fy(p):p=max(math.radians(-56),min(math.radians(82),p));return math.log(math.tan(math.pi/4+p/2))
+def fx(p):return 1.0
 def inv(X,Y):
     x=(X-W/2)/K; y=TOP-Y/K
     p=y

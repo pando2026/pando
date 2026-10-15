@@ -1,14 +1,11 @@
 /* Frontline atlas for the artifact: a self-contained vector world map.
-   No tile servers (the artifact sandbox blocks them). Natural Earth I projection,
+   No tile servers (the artifact sandbox blocks them). Mercator projection,
    the same formula used to pre-project data/world.json, so pins line up. */
 (function(global){
  "use strict";
  const NS="http://www.w3.org/2000/svg";
- const raw=(lon,lat)=>{
-  const l=lon*Math.PI/180,p=lat*Math.PI/180,p2=p*p,p4=p2*p2;
-  return [l*(0.8707-0.131979*p2+p4*(-0.013791+p4*(0.003971*p2-0.001529*p4))),
-          p*(1.007226+p2*(0.015085+p4*(-0.044475+0.028874*p2-0.005916*p4)))];
- };
+ // Mercator (what most readers know), clipped to 82°N–56°S; data/world.json is pre-projected the same way.
+ const raw=(lon,lat)=>{const p=Math.max(-56,Math.min(82,lat))*Math.PI/180;return [lon*Math.PI/180,Math.log(Math.tan(Math.PI/4+p/2))]};
  const el=(name,attrs={})=>{const n=document.createElementNS(NS,name);for(const k in attrs)n.setAttribute(k,attrs[k]);return n};
  const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 

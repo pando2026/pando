@@ -812,3 +812,5 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .is-folded > .conflicts-head > span:not(.fold-hint):not(.fold-chev),.is-folded > .ix-head > .ix-legend{display:none}
 .map-quick-link .flag-quick{margin-right:5px}
 .map-quick-link[data-open] small{font-size:10.5px;color:#4d6359;font-weight:750}
+.story-flag-link{border:0;background:none;padding:0;margin:0;cursor:pointer;border-radius:3px;line-height:0}
+.story-flag-link:hover .flag,.story-flag-link:focus-visible .flag{outline:2px solid #124f86;outline-offset:1px}
