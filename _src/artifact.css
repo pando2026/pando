@@ -6,6 +6,15 @@ html,body{background:#fff;color:var(--ink)}
 /* Vector map */
 .map-card .map-frame.vmap{position:relative;overflow:hidden;background:var(--map-sea);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
 .map-card .map-frame.vmap.vmap-dragging{cursor:grabbing}
+.story-atlas.vmap{position:relative;overflow:hidden;height:340px;border:1px solid #d7dfe4;border-radius:4px;background:var(--map-sea);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.story-atlas.vmap.vmap-dragging{cursor:grabbing}
+.story-atlas .vmap-pin--main .vmap-label{opacity:1}
+.story-atlas .vmap-pin--main .vmap-dot{r:6.5;stroke-width:2}
+.story-atlas .vmap-pin--main .vmap-label{font-size:13.5px;font-weight:850}
+.story-atlas .vmap-pin:not(.vmap-pin--main){opacity:.75}
+.vmap-cname{font:600 10.5px/1 var(--font);fill:#6b7c88;letter-spacing:.02em;pointer-events:none;paint-order:stroke;stroke:var(--map-land);stroke-width:2.5px}
+.story-map-note{font-size:12px;color:#5d6b75;margin:6px 0 0;line-height:1.5}
+@media(max-width:600px){.story-atlas.vmap{height:280px}}
 .vmap-svg{display:block;width:100%;height:100%}
 .vmap-country{fill:var(--map-land);stroke:var(--map-edge);stroke-width:.7px;vector-effect:non-scaling-stroke;stroke-linejoin:round}
 .vmap-link{cursor:pointer}

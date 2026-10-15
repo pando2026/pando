@@ -872,7 +872,14 @@ html.lang-en-loading body{visibility:hidden}
 .pmap-block{margin:20px 0 6px}
 .pmap-chips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0}
 .pmap-chips .fight-party.on{border-color:#15232d;box-shadow:inset 0 0 0 1px #15232d}
-.pmap{border:1px solid #e3e7ea;background:#f6f8fa;min-height:120px}
+.pmap{position:relative;overflow:hidden;border:1px solid #e3e7ea;background:#f6f8fa;min-height:120px}
+.pmap-svg path[data-unit]{vector-effect:non-scaling-stroke}
+.pmap:not(.pmap--mini) .pmap-svg{touch-action:none;cursor:zoom-in}
+.pmap.pmap-zoomed .pmap-svg{cursor:grab}
+.pmap.pmap-dragging .pmap-svg{cursor:grabbing}
+.pmap-zoom{position:absolute;right:8px;top:8px;display:flex;flex-direction:column;gap:4px;z-index:4}
+.pmap-zoom button{width:28px;height:28px;border:1px solid #cfd8de;background:#fff;border-radius:4px;font-size:16px;font-weight:700;line-height:1;color:#15232d;cursor:pointer;box-shadow:0 1px 3px rgba(21,35,45,.1)}
+.pmap-zoom button:hover{border-color:#124f86;color:#124f86}
 .pmap-svg{display:block;width:100%;height:auto}
 .pmap-svg path{fill:#e3e7ea;stroke:#fff;stroke-width:.5;transition:fill .2s}
 .pmap-svg path.on{stroke:#fff;stroke-width:.8}
@@ -1100,6 +1107,15 @@ html,body{background:#fff;color:var(--ink)}
 /* Vector map */
 .map-card .map-frame.vmap{position:relative;overflow:hidden;background:var(--map-sea);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
 .map-card .map-frame.vmap.vmap-dragging{cursor:grabbing}
+.story-atlas.vmap{position:relative;overflow:hidden;height:340px;border:1px solid #d7dfe4;border-radius:4px;background:var(--map-sea);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}
+.story-atlas.vmap.vmap-dragging{cursor:grabbing}
+.story-atlas .vmap-pin--main .vmap-label{opacity:1}
+.story-atlas .vmap-pin--main .vmap-dot{r:6.5;stroke-width:2}
+.story-atlas .vmap-pin--main .vmap-label{font-size:13.5px;font-weight:850}
+.story-atlas .vmap-pin:not(.vmap-pin--main){opacity:.75}
+.vmap-cname{font:600 10.5px/1 var(--font);fill:#6b7c88;letter-spacing:.02em;pointer-events:none;paint-order:stroke;stroke:var(--map-land);stroke-width:2.5px}
+.story-map-note{font-size:12px;color:#5d6b75;margin:6px 0 0;line-height:1.5}
+@media(max-width:600px){.story-atlas.vmap{height:280px}}
 .vmap-svg{display:block;width:100%;height:100%}
 .vmap-country{fill:var(--map-land);stroke:var(--map-edge);stroke-width:.7px;vector-effect:non-scaling-stroke;stroke-linejoin:round}
 .vmap-link{cursor:pointer}
@@ -1240,23 +1256,26 @@ html,body{background:#fff;color:var(--ink)}
   const frame=typeof target==="string"?document.querySelector(target):target;
   const onSelect=options.onSelect||(()=>{});
   frame.classList.add("vmap");
-  frame.innerHTML='<svg class="vmap-svg" role="img" aria-label="세계 지도"><defs><pattern id="occ-full" patternUnits="userSpaceOnUse" width="2.4" height="2.4" patternTransform="rotate(45)"><rect width="2.4" height="2.4" class="occ-bg"/><line x1="0" y1="0" x2="0" y2="2.4" class="occ-line"/></pattern><pattern id="occ-part" patternUnits="userSpaceOnUse" width="3.6" height="3.6" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3.6" class="occ-line occ-line--part"/></pattern></defs><g class="vmap-land"></g><g class="vmap-occ"></g><g class="vmap-pins"></g></svg>'+
+  frame.innerHTML='<svg class="vmap-svg" role="img" aria-label="세계 지도"><defs><pattern id="occ-full" patternUnits="userSpaceOnUse" width="2.4" height="2.4" patternTransform="rotate(45)"><rect width="2.4" height="2.4" class="occ-bg"/><line x1="0" y1="0" x2="0" y2="2.4" class="occ-line"/></pattern><pattern id="occ-part" patternUnits="userSpaceOnUse" width="3.6" height="3.6" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3.6" class="occ-line occ-line--part"/></pattern></defs><g class="vmap-land"></g><g class="vmap-occ"></g><g class="vmap-names"></g><g class="vmap-pins"></g></svg>'+
    '<div class="vmap-controls"><button type="button" data-z="in" aria-label="확대">+</button><button type="button" data-z="out" aria-label="축소">−</button><button type="button" data-z="reset" aria-label="전체 보기">⟲</button></div>'+
    '<div class="vmap-tip" hidden></div><p class="vmap-loading">지도를 그리는 중…</p>';
-  const svg=frame.querySelector("svg"),occLayer=svg.querySelector(".vmap-occ"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip");
+  const svg=frame.querySelector("svg"),occLayer=svg.querySelector(".vmap-occ"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip"),nameLayer=svg.querySelector(".vmap-names");
+  const focusOpt=options.focus||null,nameOf=options.nameOf||null;
   let focused=false,scaleNow=1,world=null,items=Array.isArray(options.items)?options.items:[],view=null,home=null;
   const project=(lon,lat)=>{const [x,y]=raw(((lon-(world.lon0||0))%360+540)%360-180,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
 
   function setView(v){
    // Keep at least part of the map on screen and the zoom within sensible bounds.
-   const minW=home.w/14,maxW=home.w;
+   const minW=(focusOpt?world.w:home.w)/(focusOpt?60:14),maxW=focusOpt?world.w:home.w;
    const w=Math.min(maxW,Math.max(minW,v.w)),h=w*home.h/home.w;
-   const x=Math.min(home.x+home.w-w*.25,Math.max(home.x-w*.75,v.x));
-   const y=Math.min(home.y+home.h-h*.25,Math.max(home.y-h*.75,v.y));
+   const bx=focusOpt?0:home.x,bw=focusOpt?world.w:home.w,by=focusOpt?0:home.y,bh=focusOpt?world.h:home.h;
+   const x=Math.min(bx+bw-w*.25,Math.max(bx-w*.75,v.x));
+   const y=Math.min(by+bh-h*.25,Math.max(by-h*.75,v.y));
    view={x,y,w,h};
    svg.setAttribute("viewBox",[x,y,w,h].map(n=>n.toFixed(2)).join(" "));
    const s=w/home.w;scaleNow=w/(frame.clientWidth||w);
    pinLayer.querySelectorAll(".vmap-pin").forEach(g=>g.setAttribute("transform",`translate(${g.dataset.x} ${g.dataset.y}) scale(${scaleNow.toFixed(4)})`));
+   nameLayer.querySelectorAll("text").forEach(t=>t.setAttribute("transform",`translate(${t.dataset.x} ${t.dataset.y}) scale(${scaleNow.toFixed(4)})`));
    frame.classList.toggle("vmap-zoomed",s<.55);
    scheduleLabels();
   }
@@ -1307,6 +1326,24 @@ html,body{background:#fff;color:var(--ink)}
    }
    land.replaceChildren(frag);
   }
+  // Focus mode (story detail): country names so the reader knows where the pin is.
+  function drawNames(){
+   if(!nameOf)return;const frag=document.createDocumentFragment();
+   for(const c of world.countries){if(!c.c||!Number.isFinite(c.lon)||!Number.isFinite(c.lat))continue;const nm=nameOf(c.c);if(!nm)continue;
+    let [x,y]=project(c.lon,c.lat);
+    // A big country whose middle is off this close-up gets its name near its capital instead.
+    const inView=q=>q[0]>home.x&&q[0]<home.x+home.w&&q[1]>home.y&&q[1]<home.y+home.h;
+    if(!inView([x,y])&&options.altPoint){const a=options.altPoint(c.c);if(a){const q=project(a[0],a[1]);if(inView(q)){x=q[0];y=q[1]+home.h*.07}}}
+    const t=el("text",{class:"vmap-cname","text-anchor":"middle"});t.dataset.x=x.toFixed(1);t.dataset.y=y.toFixed(1);t.setAttribute("transform",`translate(${t.dataset.x} ${t.dataset.y}) scale(${scaleNow.toFixed(4)})`);t.textContent=nm;frag.appendChild(t)}
+   nameLayer.replaceChildren(frag);
+  }
+  function focusOn(f){
+   const pts=(f.points||[[f.lon,f.lat]]).map(q=>project(q[0],q[1]));
+   const xs=pts.map(q=>q[0]),ys=pts.map(q=>q[1]);const minSpan=(f.span||14)/360*world.w;
+   const asp=home.w/home.h;const w=Math.max(minSpan,(Math.max(...xs)-Math.min(...xs))*1.7,(Math.max(...ys)-Math.min(...ys))*2.3*asp),h=w/asp;
+   const cx=(Math.max(...xs)+Math.min(...xs))/2,cy=(Math.max(...ys)+Math.min(...ys))/2;
+   home={x:cx-w/2,y:cy-h/2,w,h,fx:home.x,fw:home.w};setView(home);
+  }
   function drawPins(){
    if(!world)return;
    // Shade countries by how many current stories they are the main subject of (0 = watched only).
@@ -1330,14 +1367,18 @@ html,body{background:#fff;color:var(--ink)}
     const [x,y]=project(lon,lat);
     const g=el("g",{class:"vmap-pin vmap-pin--"+it.type,transform:`translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${scaleNow.toFixed(4)})`,tabindex:"0",role:"button","aria-label":(it.label||"")+(it.subtitle?" · "+it.subtitle:"")});
     g.dataset.type=it.type;g.dataset.id=it.id;g.dataset.x=x.toFixed(1);g.dataset.y=y.toFixed(1);
-    if(it.type==="story"){g.appendChild(el("circle",{class:"vmap-halo",r:"9"}));g.appendChild(el("circle",{class:"vmap-dot",r:"4.5"}))}
+    if(it.main)g.classList.add("vmap-pin--main");
+    if(it.type==="story"){g.appendChild(el("circle",{class:"vmap-halo",r:it.main?"13":"9"}));g.appendChild(el("circle",{class:"vmap-dot",r:"4.5"}))}
     else g.appendChild(el("rect",{class:"vmap-dot",x:"-3.4",y:"-3.4",width:"6.8",height:"6.8",transform:"rotate(45)"}));
-    const t=el("text",{class:"vmap-label",x:"8",y:"4"});t.textContent=it.label||"";g.appendChild(t);
+    const t=el("text",{class:"vmap-label",x:"8",y:"4"});t.textContent=it.label||"";
+    // Close-up maps: name the country the main pin sits in (its own label may be off-screen).
+    if(it.main&&nameOf){try{const pt=new DOMPoint(x,y);const host=[...land.querySelectorAll(".vmap-link")].find(p=>p.isPointInFill&&p.isPointInFill(pt));const nm=host&&nameOf(host.dataset.code);if(nm&&!(it.label||"").includes(nm))t.textContent+=" · "+nm}catch(e){}}
+    g.appendChild(t);
     frag.appendChild(g);
    }
    pinLayer.replaceChildren(frag);
    // Narrow screens open framed on the story cluster, once, so pins are tappable.
-   if(!focused&&pinLayer.querySelector(".vmap-pin--story")){focused=true;const r=frame.getBoundingClientRect();if(r.width/r.height<1.3)focusPins()}
+   if(!focusOpt&&!focused&&pinLayer.querySelector(".vmap-pin--story")){focused=true;const r=frame.getBoundingClientRect();if(r.width/r.height<1.3)focusPins()}
    scheduleLabels();
   }
 
@@ -1391,12 +1432,12 @@ html,body{background:#fff;color:var(--ink)}
    if(b.dataset.z==="in")zoomAt(1/1.6,cx,cy);else if(b.dataset.z==="out")zoomAt(1.6,cx,cy);else setView(home);
   });
   let resizeTimer=0;
-  global.addEventListener("resize",()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(!world)return;const s=view.w/home.w;fitHome();setView({x:view.x,y:view.y,w:home.w*s,h:home.h*s})},150)});
+  global.addEventListener("resize",()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(!world||!frame.isConnected)return;if(focusOpt){fitHome();focusOn(focusOpt);drawNames();return}const s=view.w/home.w;fitHome();setView({x:view.x,y:view.y,w:home.w*s,h:home.h*s})},150)});
 
   fetch("data/world.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
    world=data;frame.querySelector(".vmap-loading")?.remove();
    drawLand();fitHome();if(typeof paintBloc==="function")setTimeout(()=>{try{paintBloc()}catch(e){}},0);
-   setView(home);drawPins();
+   setView(home);if(focusOpt){focusOn(focusOpt);drawNames()}drawPins();
   }).catch(()=>{const p=frame.querySelector(".vmap-loading");if(p)p.textContent="지도 자료를 불러오지 못했습니다. 아래 목록에서 항목을 고르세요."});
 
   let occ=[],occOn=true;
@@ -2227,12 +2268,13 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   box._units={};units.forEach(u=>box._units[u.n]=u);
   // Major cities: a dot for each listed city; labels only for the biggest ones that don't collide.
   const en=isEn(),mini=box.classList.contains("pmap--mini");const cs=[];units.forEach(u=>(u.c||[]).forEach(c=>cs.push(c)));
-  const dots=cs.map(c=>{const q=P([c[2],c[3]]);return c[5]===2?'<path class="pmap-cap" d="M'+q[0].toFixed(1)+' '+(q[1]-4).toFixed(1)+'l1.2 2.6 2.8.3-2.1 1.9.6 2.8-2.5-1.4-2.5 1.4.6-2.8-2.1-1.9 2.8-.3z"/>':'<circle class="pmap-city'+(c[5]===1?' pmap-city--adm':"")+'" cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="'+(c[5]===1?1.9:1.4)+'"/>'}).join("");
+  const dots=cs.map(c=>{const q=P([c[2],c[3]]);return c[5]===2?'<path class="pmap-cap" data-ax="'+q[0].toFixed(1)+'" data-ay="'+q[1].toFixed(1)+'" d="M'+q[0].toFixed(1)+' '+(q[1]-4).toFixed(1)+'l1.2 2.6 2.8.3-2.1 1.9.6 2.8-2.5-1.4-2.5 1.4.6-2.8-2.1-1.9 2.8-.3z"/>':'<circle class="pmap-city'+(c[5]===1?' pmap-city--adm':"")+'" data-ax="'+q[0].toFixed(1)+'" data-ay="'+q[1].toFixed(1)+'" cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="'+(c[5]===1?1.9:1.4)+'"/>'}).join("");
   let labels="";if(!mini){const taken=[];const order=[...cs].sort((a,b)=>(b[5]===2)-(a[5]===2)||b[4]-a[4]);let n=0;
    for(const c of order){if(n>=12)break;const q=P([c[2],c[3]]);const t=en?c[1]:c[0];const w=t.length*(en?5.2:8.6)+4,h=11;const box1={l:q[0]+3,r:q[0]+3+w,t:q[1]-h/2-1,b:q[1]+h/2-1};
     if(box1.r>W-2)continue;if(taken.some(o=>box1.l<o.r&&box1.r>o.l&&box1.t<o.b&&box1.b>o.t))continue;taken.push(box1);n++;
-    labels+='<text class="pmap-label'+(c[5]===2?' pmap-label--cap':"")+'" x="'+(q[0]+4).toFixed(1)+'" y="'+(q[1]+3).toFixed(1)+'">'+esc(t)+'</text>'}}
-  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'<g class="pmap-cities">'+dots+labels+'</g></svg><div class="pmap-tip" hidden></div>';
+    labels+='<text class="pmap-label'+(c[5]===2?' pmap-label--cap':"")+'" data-ax="'+q[0].toFixed(1)+'" data-ay="'+q[1].toFixed(1)+'" x="'+(q[0]+4).toFixed(1)+'" y="'+(q[1]+3).toFixed(1)+'">'+esc(t)+'</text>'}}
+  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'<g class="pmap-cities">'+dots+labels+'</g></svg><div class="pmap-tip" hidden></div>'+(mini?"":'<div class="pmap-zoom"><button type="button" data-pz="in" aria-label="확대">+</button><button type="button" data-pz="out" aria-label="축소">−</button><button type="button" data-pz="reset" aria-label="전체 보기">⟲</button></div>');
+  if(!mini)pmapZoom(box,W,H);
   const tip=box.querySelector(".pmap-tip");let cur=null;
   box.addEventListener("mousemove",e=>{const p=e.target.closest?.("path[data-unit]");if(!p){tip.hidden=true;cur=null;return}
    if(cur!==p){cur=p;tip.innerHTML=pmapTip(box,p.dataset.unit,p.dataset.group);tip.hidden=false}
@@ -2240,6 +2282,28 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   box.addEventListener("mouseleave",()=>{tip.hidden=true;cur=null});
   box._refreshTip=()=>{cur=null};
   if(box.dataset.mode==="income")paintIncome(box);else if(box.dataset.pmapParty)paintPartyMap(box,box.dataset.pmapParty);
+ }
+
+ // Party/income map zoom: wheel or +/− to zoom, drag to pan, two-finger pinch. City marks keep their size.
+ function pmapZoom(box,W,H){
+  const svg=box.querySelector(".pmap-svg");if(!svg)return;const home={x:0,y:0,w:W,h:H};let v={...home};
+  const marks=[...svg.querySelectorAll("[data-ax]")];
+  const set=n=>{const w=Math.min(W,Math.max(W/12,n.w)),h=w*H/W;const x=Math.min(W-w*.25,Math.max(-w*.75,n.x)),y=Math.min(H-h*.25,Math.max(-h*.75,n.y));v={x,y,w,h};
+   svg.setAttribute("viewBox",[x,y,w,h].map(t=>t.toFixed(2)).join(" "));const k=w/W;
+   marks.forEach(m=>{const ax=m.dataset.ax,ay=m.dataset.ay;m.setAttribute("transform",k>.999?"":"translate("+ax+" "+ay+") scale("+k.toFixed(4)+") translate("+(-ax)+" "+(-ay)+")")});
+   box.classList.toggle("pmap-zoomed",k<.999)};
+  const at=(f,cx,cy)=>set({x:cx-(cx-v.x)*f,y:cy-(cy-v.y)*f,w:v.w*f,h:v.h*f});
+  const toSvg=(X,Y)=>{const r=svg.getBoundingClientRect();return [v.x+(X-r.left)/r.width*v.w,v.y+(Y-r.top)/r.height*v.h]};
+  svg.addEventListener("wheel",e=>{e.preventDefault();const [cx,cy]=toSvg(e.clientX,e.clientY);at(e.deltaY>0?1.25:1/1.25,cx,cy)},{passive:false});
+  const pts=new Map();let drag=null,pinch=null;
+  svg.addEventListener("pointerdown",e=>{pts.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pts.size===1)drag={x:e.clientX,y:e.clientY,v:{...v},moved:false};if(pts.size===2){const [a,b]=[...pts.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y),v:{...v},c:toSvg((a.x+b.x)/2,(a.y+b.y)/2)};drag=null}});
+  svg.addEventListener("pointermove",e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,{x:e.clientX,y:e.clientY});const r=svg.getBoundingClientRect();
+   if(pinch&&pts.size===2){const [a,b]=[...pts.values()],d=Math.hypot(a.x-b.x,a.y-b.y);if(d>0){v={...pinch.v};at(pinch.d/d,pinch.c[0],pinch.c[1])}return}
+   if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!drag.moved&&Math.abs(dx)+Math.abs(dy)>4&&v.w<W-.01){drag.moved=true;svg.setPointerCapture?.(e.pointerId);box.classList.add("pmap-dragging")}
+    if(drag.moved)set({...drag.v,x:drag.v.x-dx/r.width*drag.v.w,y:drag.v.y-dy/r.height*drag.v.h})}});
+  const end=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch=null;if(!pts.size){drag=null;box.classList.remove("pmap-dragging")}};
+  svg.addEventListener("pointerup",end);svg.addEventListener("pointercancel",end);
+  box.querySelector(".pmap-zoom")?.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const cx=v.x+v.w/2,cy=v.y+v.h/2;if(b.dataset.pz==="in")at(1/1.6,cx,cy);else if(b.dataset.pz==="out")at(1.6,cx,cy);else set(home)});
  }
  // Regional income layer: quantile classes (≤5) so wide gaps (e.g. 10x) still show every step.
  const INC_COL=["#dbe7f2","#b9d2e7","#7eaed3","#3f80b6","#124f86"];
@@ -2608,7 +2672,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const tiles=sig.map(x=>x.miss?'<div class="ix-tile ix-miss"><small><i></i>'+esc(x.label)+'</small><b>자료 없음</b></div>':'<div class="ix-tile" title="'+esc(x.tip)+'"><small><i class="ix-'+x.lv+'"></i>'+esc(x.label)+'</small><b>'+esc(x.val)+'</b>'+x.tr+'</div>').join("");
   const tabName={economy:"경제 탭",politics:"정치·의회 탭",military:"군사 탭",conflict:"갈등 관계",decisions:"의사결정 구조"};
   const cards=(pb?.items||[]).map((it,i)=>'<article class="ix-card ix-card--'+(it.severity==="high"?"high":"mid")+'" data-ix="'+i+'" tabindex="0" role="button" aria-expanded="false"><span class="ix-tag">'+esc(it.area||"")+(it.topic?' · '+esc(it.topic):"")+'</span><h5>'+esc(it.title)+'</h5><p>'+esc(it.fact||"")+'</p><span class="ix-more">왜? ›</span></article>').join("");
-  const whys=(pb?.items||[]).map((it,i)=>{const w=it.why||{};return '<div class="ix-why" data-ix-why="'+i+'" hidden><ol><li><b>결과</b>'+esc(w.result||"")+'</li><span class="ix-ar" aria-hidden="true">←</span><li><b>직접 원인</b>'+esc(w.cause||"")+'</li><span class="ix-ar" aria-hidden="true">←</span><li><b>구조</b>'+esc(w.structure||"")+'</li></ol><p class="ix-src">'+(it.link&&tabName[it.link]?'<button type="button" class="ix-go" data-ix-go="'+esc(it.link)+'">'+tabName[it.link]+'에서 더 보기 →</button> ':"")+(it.since?'<span>'+esc(String(it.since))+'년부터 · </span>':"")+'<span>출처</span> '+(it.sources||[]).map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</p></div>'}).join("");
+  const whys=(pb?.items||[]).map((it,i)=>{const w=it.why||{};return '<div class="ix-why" data-ix-why="'+i+'" hidden><ol><li><b>구조</b>'+esc(w.structure||"")+'</li><span class="ix-ar" aria-hidden="true">→</span><li><b>직접 원인</b>'+esc(w.cause||"")+'</li><span class="ix-ar" aria-hidden="true">→</span><li><b>결과</b>'+esc(w.result||"")+'</li></ol><p class="ix-src">'+(it.link&&tabName[it.link]?'<button type="button" class="ix-go" data-ix-go="'+esc(it.link)+'">'+tabName[it.link]+'에서 더 보기 →</button> ':"")+(it.since?'<span>'+esc(String(it.since))+'년부터 · </span>':"")+'<span>출처</span> '+(it.sources||[]).map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</p></div>'}).join("");
   const next=(pb?.next||[]).filter(n=>n&&n.date&&n.date>=new Date().toISOString().slice(0,10)).slice(0,2).map(n=>'<span><time>'+esc(n.date)+'</time> '+esc(n.text||"")+(dday(n.date)?' <em>'+dday(n.date)+'</em>':"")+'</span>').join("");
   return '<section class="ix"><div class="ix-head"><h4>한눈에 보는 문제</h4><span class="ix-legend"><i class="ix-g"></i>양호 <i class="ix-y"></i>주의 <i class="ix-r"></i>위험'+(pb?.asOf?' · '+esc(pb.asOf)+' 기준':"")+'</span></div>'+
    '<div class="ix-sig">'+tiles+'</div>'+(cards?'<div class="ix-cards">'+cards+'</div>'+whys:"")+(next?'<p class="ix-next"><b>다음</b>'+next+'</p>':"")+'</section>';
@@ -2872,9 +2936,20 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    if(!shown)$("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER</div><div class="country-title">'+flag(code,"flag-hero")+'<h2>'+esc(namedCountry(code))+'</h2></div><p class="lead">국가 자료를 불러오지 못했습니다. 네트워크 상태를 확인하고 다시 시도해 주세요.</p><button class="retry-country" type="button" data-country="'+esc(code)+'">다시 시도 ↗</button>';
   }
  }
+ // Story detail: a close-up map around the event, with nearby stories of the same conflict for context.
+ function mountStoryMap(s){
+  const box=$("#detail .story-atlas");if(!box)return;
+  const all=(state.edition?.stories||[]).filter(a=>Number.isFinite(a.lon)&&Number.isFinite(a.lat));
+  const codes=new Set(mainCodes(s));
+  const near=all.filter(a=>a.id!==s.id&&a.lon!==s.lon&&mainCodes(a).some(c=>codes.has(c))&&Math.abs(a.lon-s.lon)<14&&Math.abs(a.lat-s.lat)<9);
+  const items=all.map(a=>({type:"story",id:a.id,lon:a.lon,lat:a.lat,label:a.label||a.place,subtitle:a.headline,main:a.id===s.id}));
+  const m=window.FrontlineAtlas.mount(box,{items,focus:{points:[[s.lon,s.lat],...near.map(a=>[a.lon,a.lat])],span:12},nameOf:code=>namedCountry(code),altPoint:code=>{const c=state.countries.find(x=>x.code===code);return Number.isFinite(c?.capitalLon)&&Number.isFinite(c?.capitalLat)?[c.capitalLon,c.capitalLat]:null},onSelect:item=>item.type==="story"&&item.id!==s.id?openStory(item.id):item.type==="occupied"?null:item.type==="country"?openCountry(item.id):null});
+  loadOcc().then(list=>m.setOccupied&&m.setOccupied(list,true));
+ }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id);if(!s)return;state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div><div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note">빨간 큰 점이 이 사건의 위치예요. 작은 점은 이번 판의 다른 사건이고, 빗금은 점령·무장세력 통제 지역입니다. 끌어서 옮기고 휠·+/−로 확대해요.</p></div>':"")+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  mountStoryMap(s);
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
   $("#copy-link").addEventListener("click",async e=>{const u=location.origin+location.pathname+"?story="+encodeURIComponent(id);try{await navigator.clipboard.writeText(u);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+u}});
@@ -2930,7 +3005,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     card("5","나라 바로 찾기","맨 위 검색창에 한국어나 영어 이름을 몇 글자 치면 바로 그 나라 화면이 열립니다. 아래 ‘국가 탐색’에서는 250개 국가·지역을 지역별로 훑어볼 수 있습니다.")+
     card("6","판도 해설","청문회·정상회담 같은 큰 장면을 ‘왜?’에서 출발해 질의응답·숨은 맥락·용어·아직 모르는 것까지 풀어 씁니다.")+'</ol></section>'+
    '<section class="guide-sec"><h3>국가 상세 · 위에서부터</h3><ol class="guide-grid">'+
-    card("A","한눈에 보는 문제","맨 위 경고등 5칸(물가·실업률·정부부채·부패인식·분쟁)이 양호·주의·위험을 색으로 보여주고, ▲▼로 작년보다 나빠졌는지 알려줍니다. 마우스를 올리면 한국 값이 나옵니다. 주요국은 지금 가장 큰 문제 카드 3장이 있고, ‘왜?’를 누르면 결과 ← 직접 원인 ← 구조 순서로 원인을 따라가며, 금리 결정·선거 같은 다음 일정은 D-day로 보여줍니다.")+
+    card("A","한눈에 보는 문제","맨 위 경고등 5칸(물가·실업률·정부부채·부패인식·분쟁)이 양호·주의·위험을 색으로 보여주고, ▲▼로 작년보다 나빠졌는지 알려줍니다. 마우스를 올리면 한국 값이 나옵니다. 주요국은 지금 가장 큰 문제 카드 3장이 있고, ‘왜?’를 누르면 구조 → 직접 원인 → 결과 순서로 원인을 따라가며, 금리 결정·선거 같은 다음 일정은 D-day로 보여줍니다.")+
     card("B","갈등 관계 · 갈등도","갈등 칩에 마우스를 올리면 이유가, 누르면 지도 위 갈등도가 펼쳐집니다. 누가 어느 쪽인지, 적대(빨강)·지원(초록)·중재(회색 점선) 관계를 선으로 보여주고, 선이나 나라를 누르면 사건과 출처(당사자 공식·상대측 공식·언론)가 나옵니다.")+
     card("C","우방 관계 · 국제기구","우방국 칩에 마우스를 올리면 왜 가까운지(겹치는 안보·경제 이해관계)가 보입니다. 아래에는 가입한 국제기구와 가입일이 있습니다.")+
     card("D","지금 상황 · 핵심 인물","누가 권력을 쥐고 있는지와 지켜볼 점을 정리합니다. 국가원수·정부수반·주요 장관은 사진과 ‘제○대’, 독재·권위주의 평가 근거와 함께 나옵니다. ‘인물 간 개인적 관계’를 펼치면 학연·지연·혈연·사업·경력·군·정보·계파로 얽힌 사이와 함께 묶이는 집단이 보입니다.")+'</ol></section>'+

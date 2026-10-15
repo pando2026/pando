@@ -499,12 +499,13 @@
   box._units={};units.forEach(u=>box._units[u.n]=u);
   // Major cities: a dot for each listed city; labels only for the biggest ones that don't collide.
   const en=isEn(),mini=box.classList.contains("pmap--mini");const cs=[];units.forEach(u=>(u.c||[]).forEach(c=>cs.push(c)));
-  const dots=cs.map(c=>{const q=P([c[2],c[3]]);return c[5]===2?'<path class="pmap-cap" d="M'+q[0].toFixed(1)+' '+(q[1]-4).toFixed(1)+'l1.2 2.6 2.8.3-2.1 1.9.6 2.8-2.5-1.4-2.5 1.4.6-2.8-2.1-1.9 2.8-.3z"/>':'<circle class="pmap-city'+(c[5]===1?' pmap-city--adm':"")+'" cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="'+(c[5]===1?1.9:1.4)+'"/>'}).join("");
+  const dots=cs.map(c=>{const q=P([c[2],c[3]]);return c[5]===2?'<path class="pmap-cap" data-ax="'+q[0].toFixed(1)+'" data-ay="'+q[1].toFixed(1)+'" d="M'+q[0].toFixed(1)+' '+(q[1]-4).toFixed(1)+'l1.2 2.6 2.8.3-2.1 1.9.6 2.8-2.5-1.4-2.5 1.4.6-2.8-2.1-1.9 2.8-.3z"/>':'<circle class="pmap-city'+(c[5]===1?' pmap-city--adm':"")+'" data-ax="'+q[0].toFixed(1)+'" data-ay="'+q[1].toFixed(1)+'" cx="'+q[0].toFixed(1)+'" cy="'+q[1].toFixed(1)+'" r="'+(c[5]===1?1.9:1.4)+'"/>'}).join("");
   let labels="";if(!mini){const taken=[];const order=[...cs].sort((a,b)=>(b[5]===2)-(a[5]===2)||b[4]-a[4]);let n=0;
    for(const c of order){if(n>=12)break;const q=P([c[2],c[3]]);const t=en?c[1]:c[0];const w=t.length*(en?5.2:8.6)+4,h=11;const box1={l:q[0]+3,r:q[0]+3+w,t:q[1]-h/2-1,b:q[1]+h/2-1};
     if(box1.r>W-2)continue;if(taken.some(o=>box1.l<o.r&&box1.r>o.l&&box1.t<o.b&&box1.b>o.t))continue;taken.push(box1);n++;
-    labels+='<text class="pmap-label'+(c[5]===2?' pmap-label--cap':"")+'" x="'+(q[0]+4).toFixed(1)+'" y="'+(q[1]+3).toFixed(1)+'">'+esc(t)+'</text>'}}
-  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'<g class="pmap-cities">'+dots+labels+'</g></svg><div class="pmap-tip" hidden></div>';
+    labels+='<text class="pmap-label'+(c[5]===2?' pmap-label--cap':"")+'" data-ax="'+q[0].toFixed(1)+'" data-ay="'+q[1].toFixed(1)+'" x="'+(q[0]+4).toFixed(1)+'" y="'+(q[1]+3).toFixed(1)+'">'+esc(t)+'</text>'}}
+  box.innerHTML='<svg class="pmap-svg" viewBox="0 0 '+W+' '+H.toFixed(0)+'" role="img" aria-label="주·도 지도">'+paths+'<g class="pmap-cities">'+dots+labels+'</g></svg><div class="pmap-tip" hidden></div>'+(mini?"":'<div class="pmap-zoom"><button type="button" data-pz="in" aria-label="확대">+</button><button type="button" data-pz="out" aria-label="축소">−</button><button type="button" data-pz="reset" aria-label="전체 보기">⟲</button></div>');
+  if(!mini)pmapZoom(box,W,H);
   const tip=box.querySelector(".pmap-tip");let cur=null;
   box.addEventListener("mousemove",e=>{const p=e.target.closest?.("path[data-unit]");if(!p){tip.hidden=true;cur=null;return}
    if(cur!==p){cur=p;tip.innerHTML=pmapTip(box,p.dataset.unit,p.dataset.group);tip.hidden=false}
@@ -512,6 +513,28 @@
   box.addEventListener("mouseleave",()=>{tip.hidden=true;cur=null});
   box._refreshTip=()=>{cur=null};
   if(box.dataset.mode==="income")paintIncome(box);else if(box.dataset.pmapParty)paintPartyMap(box,box.dataset.pmapParty);
+ }
+
+ // Party/income map zoom: wheel or +/− to zoom, drag to pan, two-finger pinch. City marks keep their size.
+ function pmapZoom(box,W,H){
+  const svg=box.querySelector(".pmap-svg");if(!svg)return;const home={x:0,y:0,w:W,h:H};let v={...home};
+  const marks=[...svg.querySelectorAll("[data-ax]")];
+  const set=n=>{const w=Math.min(W,Math.max(W/12,n.w)),h=w*H/W;const x=Math.min(W-w*.25,Math.max(-w*.75,n.x)),y=Math.min(H-h*.25,Math.max(-h*.75,n.y));v={x,y,w,h};
+   svg.setAttribute("viewBox",[x,y,w,h].map(t=>t.toFixed(2)).join(" "));const k=w/W;
+   marks.forEach(m=>{const ax=m.dataset.ax,ay=m.dataset.ay;m.setAttribute("transform",k>.999?"":"translate("+ax+" "+ay+") scale("+k.toFixed(4)+") translate("+(-ax)+" "+(-ay)+")")});
+   box.classList.toggle("pmap-zoomed",k<.999)};
+  const at=(f,cx,cy)=>set({x:cx-(cx-v.x)*f,y:cy-(cy-v.y)*f,w:v.w*f,h:v.h*f});
+  const toSvg=(X,Y)=>{const r=svg.getBoundingClientRect();return [v.x+(X-r.left)/r.width*v.w,v.y+(Y-r.top)/r.height*v.h]};
+  svg.addEventListener("wheel",e=>{e.preventDefault();const [cx,cy]=toSvg(e.clientX,e.clientY);at(e.deltaY>0?1.25:1/1.25,cx,cy)},{passive:false});
+  const pts=new Map();let drag=null,pinch=null;
+  svg.addEventListener("pointerdown",e=>{pts.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pts.size===1)drag={x:e.clientX,y:e.clientY,v:{...v},moved:false};if(pts.size===2){const [a,b]=[...pts.values()];pinch={d:Math.hypot(a.x-b.x,a.y-b.y),v:{...v},c:toSvg((a.x+b.x)/2,(a.y+b.y)/2)};drag=null}});
+  svg.addEventListener("pointermove",e=>{if(!pts.has(e.pointerId))return;pts.set(e.pointerId,{x:e.clientX,y:e.clientY});const r=svg.getBoundingClientRect();
+   if(pinch&&pts.size===2){const [a,b]=[...pts.values()],d=Math.hypot(a.x-b.x,a.y-b.y);if(d>0){v={...pinch.v};at(pinch.d/d,pinch.c[0],pinch.c[1])}return}
+   if(drag){const dx=e.clientX-drag.x,dy=e.clientY-drag.y;if(!drag.moved&&Math.abs(dx)+Math.abs(dy)>4&&v.w<W-.01){drag.moved=true;svg.setPointerCapture?.(e.pointerId);box.classList.add("pmap-dragging")}
+    if(drag.moved)set({...drag.v,x:drag.v.x-dx/r.width*drag.v.w,y:drag.v.y-dy/r.height*drag.v.h})}});
+  const end=e=>{pts.delete(e.pointerId);if(pts.size<2)pinch=null;if(!pts.size){drag=null;box.classList.remove("pmap-dragging")}};
+  svg.addEventListener("pointerup",end);svg.addEventListener("pointercancel",end);
+  box.querySelector(".pmap-zoom")?.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const cx=v.x+v.w/2,cy=v.y+v.h/2;if(b.dataset.pz==="in")at(1/1.6,cx,cy);else if(b.dataset.pz==="out")at(1.6,cx,cy);else set(home)});
  }
  // Regional income layer: quantile classes (≤5) so wide gaps (e.g. 10x) still show every step.
  const INC_COL=["#dbe7f2","#b9d2e7","#7eaed3","#3f80b6","#124f86"];
@@ -880,7 +903,7 @@
   const tiles=sig.map(x=>x.miss?'<div class="ix-tile ix-miss"><small><i></i>'+esc(x.label)+'</small><b>자료 없음</b></div>':'<div class="ix-tile" title="'+esc(x.tip)+'"><small><i class="ix-'+x.lv+'"></i>'+esc(x.label)+'</small><b>'+esc(x.val)+'</b>'+x.tr+'</div>').join("");
   const tabName={economy:"경제 탭",politics:"정치·의회 탭",military:"군사 탭",conflict:"갈등 관계",decisions:"의사결정 구조"};
   const cards=(pb?.items||[]).map((it,i)=>'<article class="ix-card ix-card--'+(it.severity==="high"?"high":"mid")+'" data-ix="'+i+'" tabindex="0" role="button" aria-expanded="false"><span class="ix-tag">'+esc(it.area||"")+(it.topic?' · '+esc(it.topic):"")+'</span><h5>'+esc(it.title)+'</h5><p>'+esc(it.fact||"")+'</p><span class="ix-more">왜? ›</span></article>').join("");
-  const whys=(pb?.items||[]).map((it,i)=>{const w=it.why||{};return '<div class="ix-why" data-ix-why="'+i+'" hidden><ol><li><b>결과</b>'+esc(w.result||"")+'</li><span class="ix-ar" aria-hidden="true">←</span><li><b>직접 원인</b>'+esc(w.cause||"")+'</li><span class="ix-ar" aria-hidden="true">←</span><li><b>구조</b>'+esc(w.structure||"")+'</li></ol><p class="ix-src">'+(it.link&&tabName[it.link]?'<button type="button" class="ix-go" data-ix-go="'+esc(it.link)+'">'+tabName[it.link]+'에서 더 보기 →</button> ':"")+(it.since?'<span>'+esc(String(it.since))+'년부터 · </span>':"")+'<span>출처</span> '+(it.sources||[]).map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</p></div>'}).join("");
+  const whys=(pb?.items||[]).map((it,i)=>{const w=it.why||{};return '<div class="ix-why" data-ix-why="'+i+'" hidden><ol><li><b>구조</b>'+esc(w.structure||"")+'</li><span class="ix-ar" aria-hidden="true">→</span><li><b>직접 원인</b>'+esc(w.cause||"")+'</li><span class="ix-ar" aria-hidden="true">→</span><li><b>결과</b>'+esc(w.result||"")+'</li></ol><p class="ix-src">'+(it.link&&tabName[it.link]?'<button type="button" class="ix-go" data-ix-go="'+esc(it.link)+'">'+tabName[it.link]+'에서 더 보기 →</button> ':"")+(it.since?'<span>'+esc(String(it.since))+'년부터 · </span>':"")+'<span>출처</span> '+(it.sources||[]).map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</p></div>'}).join("");
   const next=(pb?.next||[]).filter(n=>n&&n.date&&n.date>=new Date().toISOString().slice(0,10)).slice(0,2).map(n=>'<span><time>'+esc(n.date)+'</time> '+esc(n.text||"")+(dday(n.date)?' <em>'+dday(n.date)+'</em>':"")+'</span>').join("");
   return '<section class="ix"><div class="ix-head"><h4>한눈에 보는 문제</h4><span class="ix-legend"><i class="ix-g"></i>양호 <i class="ix-y"></i>주의 <i class="ix-r"></i>위험'+(pb?.asOf?' · '+esc(pb.asOf)+' 기준':"")+'</span></div>'+
    '<div class="ix-sig">'+tiles+'</div>'+(cards?'<div class="ix-cards">'+cards+'</div>'+whys:"")+(next?'<p class="ix-next"><b>다음</b>'+next+'</p>':"")+'</section>';
@@ -1143,9 +1166,20 @@
    if(!shown)$("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER</div><div class="country-title">'+flag(code,"flag-hero")+'<h2>'+esc(namedCountry(code))+'</h2></div><p class="lead">국가 자료를 불러오지 못했습니다. 네트워크 상태를 확인하고 다시 시도해 주세요.</p><button class="retry-country" type="button" data-country="'+esc(code)+'">다시 시도 ↗</button>';
   }
  }
+ // Story detail: a close-up map around the event, with nearby stories of the same conflict for context.
+ function mountStoryMap(s){
+  const box=$("#detail .story-atlas");if(!box)return;
+  const all=(state.edition?.stories||[]).filter(a=>Number.isFinite(a.lon)&&Number.isFinite(a.lat));
+  const codes=new Set(mainCodes(s));
+  const near=all.filter(a=>a.id!==s.id&&a.lon!==s.lon&&mainCodes(a).some(c=>codes.has(c))&&Math.abs(a.lon-s.lon)<14&&Math.abs(a.lat-s.lat)<9);
+  const items=all.map(a=>({type:"story",id:a.id,lon:a.lon,lat:a.lat,label:a.label||a.place,subtitle:a.headline,main:a.id===s.id}));
+  const m=window.FrontlineAtlas.mount(box,{items,focus:{points:[[s.lon,s.lat],...near.map(a=>[a.lon,a.lat])],span:12},nameOf:code=>namedCountry(code),altPoint:code=>{const c=state.countries.find(x=>x.code===code);return Number.isFinite(c?.capitalLon)&&Number.isFinite(c?.capitalLat)?[c.capitalLon,c.capitalLat]:null},onSelect:item=>item.type==="story"&&item.id!==s.id?openStory(item.id):item.type==="occupied"?null:item.type==="country"?openCountry(item.id):null});
+  loadOcc().then(list=>m.setOccupied&&m.setOccupied(list,true));
+ }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id);if(!s)return;state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div><div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>flag(code,"flag-story")).join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note">빨간 큰 점이 이 사건의 위치예요. 작은 점은 이번 판의 다른 사건이고, 빗금은 점령·무장세력 통제 지역입니다. 끌어서 옮기고 휠·+/−로 확대해요.</p></div>':"")+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+entries(s.actors,s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  mountStoryMap(s);
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
   $("#copy-link").addEventListener("click",async e=>{const u=location.origin+location.pathname+"?story="+encodeURIComponent(id);try{await navigator.clipboard.writeText(u);e.target.textContent="복사 완료 ✓"}catch{e.target.textContent="주소: "+u}});
@@ -1201,7 +1235,7 @@
     card("5","나라 바로 찾기","맨 위 검색창에 한국어나 영어 이름을 몇 글자 치면 바로 그 나라 화면이 열립니다. 아래 ‘국가 탐색’에서는 250개 국가·지역을 지역별로 훑어볼 수 있습니다.")+
     card("6","판도 해설","청문회·정상회담 같은 큰 장면을 ‘왜?’에서 출발해 질의응답·숨은 맥락·용어·아직 모르는 것까지 풀어 씁니다.")+'</ol></section>'+
    '<section class="guide-sec"><h3>국가 상세 · 위에서부터</h3><ol class="guide-grid">'+
-    card("A","한눈에 보는 문제","맨 위 경고등 5칸(물가·실업률·정부부채·부패인식·분쟁)이 양호·주의·위험을 색으로 보여주고, ▲▼로 작년보다 나빠졌는지 알려줍니다. 마우스를 올리면 한국 값이 나옵니다. 주요국은 지금 가장 큰 문제 카드 3장이 있고, ‘왜?’를 누르면 결과 ← 직접 원인 ← 구조 순서로 원인을 따라가며, 금리 결정·선거 같은 다음 일정은 D-day로 보여줍니다.")+
+    card("A","한눈에 보는 문제","맨 위 경고등 5칸(물가·실업률·정부부채·부패인식·분쟁)이 양호·주의·위험을 색으로 보여주고, ▲▼로 작년보다 나빠졌는지 알려줍니다. 마우스를 올리면 한국 값이 나옵니다. 주요국은 지금 가장 큰 문제 카드 3장이 있고, ‘왜?’를 누르면 구조 → 직접 원인 → 결과 순서로 원인을 따라가며, 금리 결정·선거 같은 다음 일정은 D-day로 보여줍니다.")+
     card("B","갈등 관계 · 갈등도","갈등 칩에 마우스를 올리면 이유가, 누르면 지도 위 갈등도가 펼쳐집니다. 누가 어느 쪽인지, 적대(빨강)·지원(초록)·중재(회색 점선) 관계를 선으로 보여주고, 선이나 나라를 누르면 사건과 출처(당사자 공식·상대측 공식·언론)가 나옵니다.")+
     card("C","우방 관계 · 국제기구","우방국 칩에 마우스를 올리면 왜 가까운지(겹치는 안보·경제 이해관계)가 보입니다. 아래에는 가입한 국제기구와 가입일이 있습니다.")+
     card("D","지금 상황 · 핵심 인물","누가 권력을 쥐고 있는지와 지켜볼 점을 정리합니다. 국가원수·정부수반·주요 장관은 사진과 ‘제○대’, 독재·권위주의 평가 근거와 함께 나옵니다. ‘인물 간 개인적 관계’를 펼치면 학연·지연·혈연·사업·경력·군·정보·계파로 얽힌 사이와 함께 묶이는 집단이 보입니다.")+'</ol></section>'+

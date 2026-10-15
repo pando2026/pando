@@ -16,23 +16,26 @@
   const frame=typeof target==="string"?document.querySelector(target):target;
   const onSelect=options.onSelect||(()=>{});
   frame.classList.add("vmap");
-  frame.innerHTML='<svg class="vmap-svg" role="img" aria-label="세계 지도"><defs><pattern id="occ-full" patternUnits="userSpaceOnUse" width="2.4" height="2.4" patternTransform="rotate(45)"><rect width="2.4" height="2.4" class="occ-bg"/><line x1="0" y1="0" x2="0" y2="2.4" class="occ-line"/></pattern><pattern id="occ-part" patternUnits="userSpaceOnUse" width="3.6" height="3.6" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3.6" class="occ-line occ-line--part"/></pattern></defs><g class="vmap-land"></g><g class="vmap-occ"></g><g class="vmap-pins"></g></svg>'+
+  frame.innerHTML='<svg class="vmap-svg" role="img" aria-label="세계 지도"><defs><pattern id="occ-full" patternUnits="userSpaceOnUse" width="2.4" height="2.4" patternTransform="rotate(45)"><rect width="2.4" height="2.4" class="occ-bg"/><line x1="0" y1="0" x2="0" y2="2.4" class="occ-line"/></pattern><pattern id="occ-part" patternUnits="userSpaceOnUse" width="3.6" height="3.6" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="3.6" class="occ-line occ-line--part"/></pattern></defs><g class="vmap-land"></g><g class="vmap-occ"></g><g class="vmap-names"></g><g class="vmap-pins"></g></svg>'+
    '<div class="vmap-controls"><button type="button" data-z="in" aria-label="확대">+</button><button type="button" data-z="out" aria-label="축소">−</button><button type="button" data-z="reset" aria-label="전체 보기">⟲</button></div>'+
    '<div class="vmap-tip" hidden></div><p class="vmap-loading">지도를 그리는 중…</p>';
-  const svg=frame.querySelector("svg"),occLayer=svg.querySelector(".vmap-occ"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip");
+  const svg=frame.querySelector("svg"),occLayer=svg.querySelector(".vmap-occ"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip"),nameLayer=svg.querySelector(".vmap-names");
+  const focusOpt=options.focus||null,nameOf=options.nameOf||null;
   let focused=false,scaleNow=1,world=null,items=Array.isArray(options.items)?options.items:[],view=null,home=null;
   const project=(lon,lat)=>{const [x,y]=raw(((lon-(world.lon0||0))%360+540)%360-180,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
 
   function setView(v){
    // Keep at least part of the map on screen and the zoom within sensible bounds.
-   const minW=home.w/14,maxW=home.w;
+   const minW=(focusOpt?world.w:home.w)/(focusOpt?60:14),maxW=focusOpt?world.w:home.w;
    const w=Math.min(maxW,Math.max(minW,v.w)),h=w*home.h/home.w;
-   const x=Math.min(home.x+home.w-w*.25,Math.max(home.x-w*.75,v.x));
-   const y=Math.min(home.y+home.h-h*.25,Math.max(home.y-h*.75,v.y));
+   const bx=focusOpt?0:home.x,bw=focusOpt?world.w:home.w,by=focusOpt?0:home.y,bh=focusOpt?world.h:home.h;
+   const x=Math.min(bx+bw-w*.25,Math.max(bx-w*.75,v.x));
+   const y=Math.min(by+bh-h*.25,Math.max(by-h*.75,v.y));
    view={x,y,w,h};
    svg.setAttribute("viewBox",[x,y,w,h].map(n=>n.toFixed(2)).join(" "));
    const s=w/home.w;scaleNow=w/(frame.clientWidth||w);
    pinLayer.querySelectorAll(".vmap-pin").forEach(g=>g.setAttribute("transform",`translate(${g.dataset.x} ${g.dataset.y}) scale(${scaleNow.toFixed(4)})`));
+   nameLayer.querySelectorAll("text").forEach(t=>t.setAttribute("transform",`translate(${t.dataset.x} ${t.dataset.y}) scale(${scaleNow.toFixed(4)})`));
    frame.classList.toggle("vmap-zoomed",s<.55);
    scheduleLabels();
   }
@@ -83,6 +86,24 @@
    }
    land.replaceChildren(frag);
   }
+  // Focus mode (story detail): country names so the reader knows where the pin is.
+  function drawNames(){
+   if(!nameOf)return;const frag=document.createDocumentFragment();
+   for(const c of world.countries){if(!c.c||!Number.isFinite(c.lon)||!Number.isFinite(c.lat))continue;const nm=nameOf(c.c);if(!nm)continue;
+    let [x,y]=project(c.lon,c.lat);
+    // A big country whose middle is off this close-up gets its name near its capital instead.
+    const inView=q=>q[0]>home.x&&q[0]<home.x+home.w&&q[1]>home.y&&q[1]<home.y+home.h;
+    if(!inView([x,y])&&options.altPoint){const a=options.altPoint(c.c);if(a){const q=project(a[0],a[1]);if(inView(q)){x=q[0];y=q[1]+home.h*.07}}}
+    const t=el("text",{class:"vmap-cname","text-anchor":"middle"});t.dataset.x=x.toFixed(1);t.dataset.y=y.toFixed(1);t.setAttribute("transform",`translate(${t.dataset.x} ${t.dataset.y}) scale(${scaleNow.toFixed(4)})`);t.textContent=nm;frag.appendChild(t)}
+   nameLayer.replaceChildren(frag);
+  }
+  function focusOn(f){
+   const pts=(f.points||[[f.lon,f.lat]]).map(q=>project(q[0],q[1]));
+   const xs=pts.map(q=>q[0]),ys=pts.map(q=>q[1]);const minSpan=(f.span||14)/360*world.w;
+   const asp=home.w/home.h;const w=Math.max(minSpan,(Math.max(...xs)-Math.min(...xs))*1.7,(Math.max(...ys)-Math.min(...ys))*2.3*asp),h=w/asp;
+   const cx=(Math.max(...xs)+Math.min(...xs))/2,cy=(Math.max(...ys)+Math.min(...ys))/2;
+   home={x:cx-w/2,y:cy-h/2,w,h,fx:home.x,fw:home.w};setView(home);
+  }
   function drawPins(){
    if(!world)return;
    // Shade countries by how many current stories they are the main subject of (0 = watched only).
@@ -106,14 +127,18 @@
     const [x,y]=project(lon,lat);
     const g=el("g",{class:"vmap-pin vmap-pin--"+it.type,transform:`translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${scaleNow.toFixed(4)})`,tabindex:"0",role:"button","aria-label":(it.label||"")+(it.subtitle?" · "+it.subtitle:"")});
     g.dataset.type=it.type;g.dataset.id=it.id;g.dataset.x=x.toFixed(1);g.dataset.y=y.toFixed(1);
-    if(it.type==="story"){g.appendChild(el("circle",{class:"vmap-halo",r:"9"}));g.appendChild(el("circle",{class:"vmap-dot",r:"4.5"}))}
+    if(it.main)g.classList.add("vmap-pin--main");
+    if(it.type==="story"){g.appendChild(el("circle",{class:"vmap-halo",r:it.main?"13":"9"}));g.appendChild(el("circle",{class:"vmap-dot",r:"4.5"}))}
     else g.appendChild(el("rect",{class:"vmap-dot",x:"-3.4",y:"-3.4",width:"6.8",height:"6.8",transform:"rotate(45)"}));
-    const t=el("text",{class:"vmap-label",x:"8",y:"4"});t.textContent=it.label||"";g.appendChild(t);
+    const t=el("text",{class:"vmap-label",x:"8",y:"4"});t.textContent=it.label||"";
+    // Close-up maps: name the country the main pin sits in (its own label may be off-screen).
+    if(it.main&&nameOf){try{const pt=new DOMPoint(x,y);const host=[...land.querySelectorAll(".vmap-link")].find(p=>p.isPointInFill&&p.isPointInFill(pt));const nm=host&&nameOf(host.dataset.code);if(nm&&!(it.label||"").includes(nm))t.textContent+=" · "+nm}catch(e){}}
+    g.appendChild(t);
     frag.appendChild(g);
    }
    pinLayer.replaceChildren(frag);
    // Narrow screens open framed on the story cluster, once, so pins are tappable.
-   if(!focused&&pinLayer.querySelector(".vmap-pin--story")){focused=true;const r=frame.getBoundingClientRect();if(r.width/r.height<1.3)focusPins()}
+   if(!focusOpt&&!focused&&pinLayer.querySelector(".vmap-pin--story")){focused=true;const r=frame.getBoundingClientRect();if(r.width/r.height<1.3)focusPins()}
    scheduleLabels();
   }
 
@@ -167,12 +192,12 @@
    if(b.dataset.z==="in")zoomAt(1/1.6,cx,cy);else if(b.dataset.z==="out")zoomAt(1.6,cx,cy);else setView(home);
   });
   let resizeTimer=0;
-  global.addEventListener("resize",()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(!world)return;const s=view.w/home.w;fitHome();setView({x:view.x,y:view.y,w:home.w*s,h:home.h*s})},150)});
+  global.addEventListener("resize",()=>{clearTimeout(resizeTimer);resizeTimer=setTimeout(()=>{if(!world||!frame.isConnected)return;if(focusOpt){fitHome();focusOn(focusOpt);drawNames();return}const s=view.w/home.w;fitHome();setView({x:view.x,y:view.y,w:home.w*s,h:home.h*s})},150)});
 
   fetch("data/world.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(data=>{
    world=data;frame.querySelector(".vmap-loading")?.remove();
    drawLand();fitHome();if(typeof paintBloc==="function")setTimeout(()=>{try{paintBloc()}catch(e){}},0);
-   setView(home);drawPins();
+   setView(home);if(focusOpt){focusOn(focusOpt);drawNames()}drawPins();
   }).catch(()=>{const p=frame.querySelector(".vmap-loading");if(p)p.textContent="지도 자료를 불러오지 못했습니다. 아래 목록에서 항목을 고르세요."});
 
   let occ=[],occOn=true;
