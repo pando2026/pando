@@ -824,3 +824,7 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .side-head small{font-size:11px;font-weight:700;color:#7a8891}
 .side-n .side-split,.side-n .entry{}
 @media(max-width:700px){.side-split{grid-template-columns:1fr}}
+.country-title .capmap--hero{margin-left:auto;flex:0 0 auto;width:min(340px,42%);min-height:0;border-radius:4px;overflow:hidden}
+.capmap--hero .cap-svg{aspect-ratio:2}
+.capmap--hero:empty{aspect-ratio:2;background:#eef3f6}
+@media(max-width:640px){.country-title{flex-wrap:wrap}.country-title .capmap--hero{width:100%;margin:8px 0 0}}

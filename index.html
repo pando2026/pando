@@ -1112,6 +1112,10 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .side-head small{font-size:11px;font-weight:700;color:#7a8891}
 .side-n .side-split,.side-n .entry{}
 @media(max-width:700px){.side-split{grid-template-columns:1fr}}
+.country-title .capmap--hero{margin-left:auto;flex:0 0 auto;width:min(340px,42%);min-height:0;border-radius:4px;overflow:hidden}
+.capmap--hero .cap-svg{aspect-ratio:2}
+.capmap--hero:empty{aspect-ratio:2;background:#eef3f6}
+@media(max-width:640px){.country-title{flex-wrap:wrap}.country-title .capmap--hero{width:100%;margin:8px 0 0}}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2391,7 +2395,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function capitalBlock(data){return '<section class="pmap-block cap-block"><div class="fights-head"><h4>수도와 위치</h4><span>주·도 지도는 준비 중이에요</span></div><div class="capmap" data-cap-cc="'+esc(data.code)+'"><p class="board-loading">지도를 그리는 중…</p></div><p class="pmap-note cap-note"></p></section>'}
  async function drawCapital(box){if(!box||box.dataset.drawn)return;box.dataset.drawn="1";const cc=box.dataset.capCc;
   let world,caps;try{[world,caps]=await Promise.all([getWorld2(),getCaps()])}catch(e){box.textContent="지도를 불러오지 못했습니다.";return}
-  const mine=world.countries.filter(c=>c.c===cc);if(!mine.length){box.closest(".cap-block")?.remove();return}
+  const mine=world.countries.filter(c=>c.c===cc);if(!mine.length){box.closest(".cap-block")?.remove();box.remove();return}
   // world.json is pre-projected (Mercator, centred on lon0); invert to lon/lat and redraw with a local projection.
   const inv=(x,y)=>{const X=(x-world.w/2)/world.k,Y=world.top-y/world.k;return [X*180/Math.PI+(world.lon0||0),(2*Math.atan(Math.exp(Y))-Math.PI/2)*180/Math.PI]};
   const rings=d=>(d.match(/M[^M]+/g)||[]).map(sub=>{const n=sub.match(/-?\d+(?:\.\d+)?/g)||[];const r=[];for(let i=0;i+1<n.length;i+=2)r.push([+n[i],+n[i+1]]);return r});
@@ -2404,15 +2408,17 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const [cl,ct]=inv((x0+x1)/2,(y0+y1)/2);const kx=Math.cos(ct*Math.PI/180);
   const fixLon=lon=>{let v=lon-cl;v=((v+540)%360)-180;return v};
   const loc=([lon,lat])=>[fixLon(lon)*kx,-lat];
+  // Keep each ring continuous: a ring crossing the far-side seam (e.g. the US seen from China) would otherwise stretch across the whole map.
+  const unwrap=r=>{const w=360*kx;for(let i=1;i<r.length;i++){while(r[i][0]-r[i-1][0]>w/2)r[i][0]-=w;while(r[i][0]-r[i-1][0]<-w/2)r[i][0]+=w}return r};
   const capList=caps[cc]||[];
-  const shapes=world.countries.filter(c=>{const [a,b,e,f]=bb(c);return !(b<near[0]||a>near[1]||f<near[2]||e>near[3])}).map(c=>({c:c.c,rs:rings(c.d).map(r=>r.map(p=>loc(inv(p[0],p[1]))))}));
+  const shapes=world.countries.filter(c=>{const [a,b,e,f]=bb(c);return !(b<near[0]||a>near[1]||f<near[2]||e>near[3])}).map(c=>({c:c.c,rs:rings(c.d).map(r=>unwrap(r.map(p=>loc(inv(p[0],p[1])))))}));
   const meL=shapes.filter(s=>s.c===cc).flatMap(s=>s.rs);let X0=1e9,X1=-1e9,Y0=1e9,Y1=-1e9;
   const mainBox=bbx(myR[0].map(p=>loc(inv(p[0],p[1]))));[X0,X1,Y0,Y1]=mainBox;const sp=Math.max(X1-X0,Y1-Y0,1);
   meL.forEach(r=>{const [a,b,e,f]=bbx(r);if(a>X0-sp*.6&&b<X1+sp*.6&&e>Y0-sp*.6&&f<Y1+sp*.6){X0=Math.min(X0,a);X1=Math.max(X1,b);Y0=Math.min(Y0,e);Y1=Math.max(Y1,f)}});
   capList.forEach(c=>{const [x,y]=loc([c[2],c[3]]);X0=Math.min(X0,x);X1=Math.max(X1,x);Y0=Math.min(Y0,y);Y1=Math.max(Y1,y)});
-  const cw=Math.max(X1-X0,.6),ch=Math.max(Y1-Y0,.4),pd=Math.max(cw,ch)*.35+.3;let vx=X0-pd,vy=Y0-pd,vw=cw+pd*2,vh=ch+pd*2;
+  const cw=Math.max(X1-X0,4),ch=Math.max(Y1-Y0,2.5),pd=Math.max(cw,ch)*.35+.3;let vx=X0-pd,vy=Y0-pd,vw=cw+pd*2,vh=ch+pd*2;
   const ar=2;if(vw/vh<ar){const nw=vh*ar;vx-=(nw-vw)/2;vw=nw}else{const nh=vw/ar;vy-=(nh-vh)/2;vh=nh}
-  const u=vw/600;const ds=s=>s.rs.map(r=>"M"+r.map(p=>p[0].toFixed(3)+" "+p[1].toFixed(3)).join("L")+"Z").join("");
+  const u=vw/(box.clientWidth||600);const ds=s=>s.rs.map(r=>"M"+r.map(p=>p[0].toFixed(3)+" "+p[1].toFixed(3)).join("L")+"Z").join("");
   const paths=shapes.map(s=>'<path class="cap-land'+(s.c===cc?' cap-land--on':"")+'" d="'+ds(s)+'"/>').join("");
   const en=isEn();const marks=capList.map(c=>{const [x,y]=loc([c[2],c[3]]);const r=6*u;
    const pts=[];for(let k=0;k<10;k++){const ang=-Math.PI/2+k*Math.PI/5,rr=k%2?r*.42:r;pts.push((x+rr*Math.cos(ang)).toFixed(3)+" "+(y+rr*Math.sin(ang)).toFixed(3))}
@@ -2756,7 +2762,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const koreaBreakdown=compare?budgetComposition(budget.koreaBreakdown,"한국 예산·지출 구성",data.comparison?.metrics?.militaryGovPct):"";
   const doc=budget.document?'<article class="budget-document"><span>예산 문서 · '+esc(budget.document.fiscalYear||"")+'</span><h3>'+esc(budget.document.title||"예산 자료")+'</h3><p>'+esc(budget.document.status||"")+' · '+esc(budget.document.provider||"")+'</p>'+sourceLink(budget.document.source,"공식 예산 문서")+'</article>':"";
   return {
-   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+(partyMapBlock(data)||capitalBlock(data))+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
+   politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyMapBlock(data)+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
     cpiBlock(data)+electionBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["unemployment","실업률",metrics.unemployment],["policyRate","정책금리",metrics.policyRate]])+
     economyAlternativeEstimates(data.economyAlternatives)+
@@ -2910,7 +2916,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const scrollTop=$(".drawer")?.scrollTop||0;
   state.trendName=name;state.activeCode=data.code;state.partyMap=data.partymap||null;state.income=data.income||null;state.civicsChambers=data.civics?.parliament?.chambers||[];state.partyProfiles=data.partyProfiles||{};state.regions=data.regions||null;state.partyNames=data.partyNames||{};state.partyPhotos=data.partyPhotos||{};
   const panels=countryPanels(data);
-  $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div></div>'+countryFacts(data)+'<div class="fold-all"><span>머리글을 누르면 접고 펼 수 있어요</span><button type="button" data-fold-all="0">모두 펼치기</button><button type="button" data-fold-all="1">모두 접기</button></div>'+
+  $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div><div class="capmap capmap--hero" data-cap-cc="'+esc(data.code)+'" title="'+esc(name)+'의 위치와 수도"></div></div>'+countryFacts(data)+'<div class="fold-all"><span>머리글을 누르면 접고 펼 수 있어요</span><button type="button" data-fold-all="0">모두 펼치기</button><button type="button" data-fold-all="1">모두 접기</button></div>'+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
    problemsBlock(data)+countryConflicts(data)+countryAllies(data)+relatedExplainers(data.code)+countryBlocs(data.code)+countryNow(data)+
    '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div>'+tiesBlock(data)+'</section>'+
