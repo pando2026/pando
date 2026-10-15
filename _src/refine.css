@@ -846,3 +846,17 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .int-bar{position:relative;height:8px;background:#eef4f7;border-radius:4px}
 .int-bar>i{position:absolute;left:0;top:0;bottom:0;border-radius:4px}
 .int-k{position:absolute;top:-3px;width:2px;height:14px;background:#15232d}
+.int-budget{border:1px solid #cddde5;border-left:3px solid #15232d;border-radius:6px;padding:10px 12px;margin:8px 0 12px;background:#fbfdfe}
+.int-budget-head{display:flex;justify-content:space-between;gap:8px;align-items:baseline;font-size:12px;font-weight:800;color:#33505f}
+.int-budget-head b{color:#7a8a95}
+.int-budget-main{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0}
+.int-budget-main strong{font-size:24px;font-weight:900;color:#15232d;font-variant-numeric:tabular-nums}
+.int-budget-main b{font-size:13px;color:#c62b33}
+.int-budget p{margin:4px 0;font-size:12px;line-height:1.55;color:#33505f}
+.int-budget-sub{color:#56707f!important}
+.int-tier{font-style:normal;font-size:10.5px;font-weight:800;border-radius:3px;padding:1px 6px;background:#eef4f7;color:#33505f}
+.int-tier--official{background:#e3f1ea;color:#1f6b4c}
+.int-tier--press{background:#fdf1dc;color:#8a5a0f}
+.int-flag{font-style:normal;font-size:10.5px;font-weight:800;background:#fbe6e7;color:#a3212a;border-radius:3px;padding:0 5px}
+.int-flag--q{background:#eceff1;color:#4f5d66}
+.int-sub{margin:10px 0 4px;font-size:12px;font-weight:850;color:#33505f}

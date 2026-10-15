@@ -1096,10 +1096,21 @@
  document.addEventListener("keydown",ev=>{if((ev.key==="Enter"||ev.key===" ")&&ev.target.classList?.contains("fold-head")){ev.preventDefault();ev.target.click()}});
 
  // 나랏빚 이자: 세계은행 WDI 중앙정부 이자 지출(총지출 대비·세입 대비). 모든 나라 같은 기준.
+
+ function interestBudgetCard(I){
+  const b=I?.budget;if(!b)return "";
+  const src=Array.isArray(b.sources)&&b.sources.length?'<small class="case-src">'+b.sources.map(x=>sourceLink(x[2],x[0]+(x[1]?" — "+x[1]:""))).join(" · ")+'</small>':"";
+  if(!b.interest)return '<div class="int-budget int-budget--none"><div class="int-budget-head"><span>최신 예산 기준</span><b>자료 없음</b></div>'+(b.note?'<p>'+esc(b.note)+'</p>':"")+src+'</div>';
+  const n=v=>number(Number(v),Number(v)%1?Math.min(2,String(v).split(".")[1]?.length||0):0);
+  return '<div class="int-budget"><div class="int-budget-head"><span>최신 예산 기준 · '+esc(b.fiscalYear||"")+(b.status?' · '+esc(b.status):"")+'</span>'+(b.tier?'<em class="int-tier int-tier--'+esc(b.tier)+'">'+({official:"정부 자료",press:"언론 보도",research:"연구기관"}[b.tier]||esc(b.tier))+'</em>':"")+'</div>'+
+   '<div class="int-budget-main"><strong>'+n(b.interest.value)+' '+esc(b.interest.unit||"")+'</strong>'+(b.share!=null?'<b>'+(b.total?.label?esc(b.total.label)+'의 ':'')+number(Number(b.share),1)+'%</b>':"")+'</div>'+
+   '<p class="int-budget-sub">'+esc(b.interest.label||"이자 지출")+(b.principalIncluded===true?' <em class="int-flag">원금 상환 포함</em>':b.principalIncluded==null?' <em class="int-flag int-flag--q">원금 포함 여부 미확인</em>':"")+(b.prev?' · '+esc(b.prev.fiscalYear||"전년")+' '+n(b.prev.value)+' '+esc(b.prev.unit||""):"")+(b.scope?' · '+esc(b.scope):"")+'</p>'+
+   (b.note?'<p>'+esc(b.note)+'</p>':"")+src+'</div>';
+ }
  function interestBlock(data){
   const I=data.interest;if(!I)return "";const e=I.entry,k=I.korea,meta=I.meta||{};
   const memoDebt=(data.budget?.breakdown?.categories||[]).find(x=>/이자|원리금|채무/.test(x.label||""));
-  if(!e||(!e.exp&&!e.rev))return '<section class="section interest"><h3>나랏빚 이자</h3><p class="metric-missing"><span>세계은행 자료 없음</span> 이 나라는 중앙정부 이자 지출을 세계은행에 보고하지 않았습니다.'+(memoDebt?' 위 예산 구성의 ‘'+esc(memoDebt.label)+'’ 항목을 보세요.':"")+'</p></section>';
+  if(!e||(!e.exp&&!e.rev))return '<section class="section interest"><h3>나랏빚 이자</h3>'+interestBudgetCard(I)+'<p class="metric-missing"><span>세계은행 결산 자료 없음</span> 이 나라는 중앙정부 이자 지출을 세계은행에 보고하지 않았습니다.'+(memoDebt?' 위 예산 구성의 ‘'+esc(memoDebt.label)+'’ 항목을 보세요.':"")+'</p></section>';
   const old=y=>nowYear()-Number(y)>=4;
   const tone=v=>v>=20?"#c62b33":v>=10?"#d08a1e":"#1f7a5a";
   const card=(key,label,denom)=>{const x=e[key];if(!x)return '<div class="int-card int-card--none"><span>'+label+'</span><b>자료 없음</b></div>';
@@ -1107,7 +1118,7 @@
    return '<div class="int-card"><span>'+label+'</span><strong style="color:'+tone(x.value)+'">'+number(x.value,1)+'%</strong><p>'+esc(x.year)+'년'+(old(x.year)?' · <em class="int-old">'+(nowYear()-Number(x.year))+'년 전 자료</em>':"")+(x.rank?' · '+x.rank+'위 / '+(meta.total?.[key]||"")+'개국':"")+'</p>'+
     '<div class="int-bar"><i style="width:'+Math.min(100,x.value*2.5).toFixed(1)+'%;background:'+tone(x.value)+'"></i>'+(kv?'<b class="int-k" style="left:'+Math.min(100,kv.value*2.5).toFixed(1)+'%" title="한국"></b>':"")+'</div>'+
     '<small>'+denom+(prev!=null?' · 5년 전 '+number(prev,1)+'%':"")+(kv?' · 한국 '+number(kv.value,1)+'% ('+esc(kv.year)+')':"")+'</small></div>'};
-  return '<section class="section interest"><h3>나랏빚 이자 <small>중앙정부 · 세계은행</small></h3><div class="int-grid">'+card("exp","총지출 중 이자","정부가 쓰는 돈 100원 중 이자로 나가는 몫")+card("rev","세입 대비 이자","거둔 세금·수입 100원 중 이자로 나가는 몫")+'</div>'+
+  return '<section class="section interest"><h3>나랏빚 이자 <small>중앙정부</small></h3>'+interestBudgetCard(I)+'<h5 class="int-sub">결산 기준 · 세계은행 (나라끼리 비교용)</h5><div class="int-grid">'+card("exp","총지출 중 이자","정부가 쓰는 돈 100원 중 이자로 나가는 몫")+card("rev","세입 대비 이자","거둔 세금·수입 100원 중 이자로 나가는 몫")+'</div>'+
    '<p class="cpi-note">원금 상환은 빼고 이자만 셉니다. 일본처럼 예산서에 ‘국채 원리금’(원금+이자)을 적는 나라의 비중과는 다릅니다. 색은 판도가 읽기 쉽게 나눈 것(10% 미만 초록, 20% 미만 주황, 그 이상 빨강)이고, 막대의 검은 눈금은 한국입니다. 순위는 2019년 이후 값이 있는 나라끼리 높은 순. '+sourceLink(meta.source?.exp,"세계은행 총지출 대비")+' · '+sourceLink(meta.source?.rev,"세입 대비")+(meta.updated?' · '+esc(meta.updated)+' 갱신':"")+'</p></section>';
  }
  function renderLeaders(data){
