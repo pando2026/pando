@@ -38,7 +38,7 @@ html,body{background:#fff;color:var(--ink)}
 .vmap-controls{position:absolute;right:10px;top:10px;display:flex;flex-direction:column;gap:4px}
 .vmap-controls button{width:34px;height:34px;border:1px solid #c5d2da;border-radius:4px;background:#fff;color:#15232d;font:700 18px/1 var(--font)}
 .vmap-controls button:hover{border-color:#15232d}
-.vmap-tip{position:absolute;z-index:2;pointer-events:none;background:#15232d;color:#fff;font-size:12px;font-weight:700;padding:4px 8px;border-radius:3px;white-space:nowrap}
+.vmap-tip{position:absolute;z-index:2;pointer-events:none;background:#15232d;color:#fff;font-size:12px;font-weight:700;line-height:1.45;padding:4px 8px;border-radius:3px;white-space:normal;max-width:min(320px,calc(100% - 12px));width:max-content}
 .vmap-loading{position:absolute;inset:auto 0 45% 0;text-align:center;color:#55666f;font-size:13px;margin:0}
 .dot-key.country-key{border-radius:0;transform:rotate(45deg) scale(.8)}
 

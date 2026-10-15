@@ -182,7 +182,11 @@
    tip.textContent=c.dataset.name||c.getAttribute("aria-label")||"";tip.hidden=!tip.textContent;
   });
   svg.addEventListener("pointerleave",()=>{tip.hidden=true});
-  svg.addEventListener("pointermove",e=>{if(tip.hidden)return;const r=frame.getBoundingClientRect();tip.style.left=(e.clientX-r.left+12)+"px";tip.style.top=(e.clientY-r.top+12)+"px"});
+  svg.addEventListener("pointermove",e=>{if(tip.hidden)return;const r=frame.getBoundingClientRect();
+   // Keep the tooltip inside the map: flip to the left/top of the cursor near the edges.
+   let x=e.clientX-r.left+12,y=e.clientY-r.top+12;const w=tip.offsetWidth,h=tip.offsetHeight;
+   if(x+w>r.width-6)x=Math.max(6,e.clientX-r.left-w-12);if(y+h>r.height-6)y=Math.max(6,e.clientY-r.top-h-12);
+   tip.style.left=x+"px";tip.style.top=y+"px"});
   frame.querySelector(".vmap-controls").addEventListener("click",e=>{
    const b=e.target.closest("button");if(!b||!view)return;
    const cx=view.x+view.w/2,cy=view.y+view.h/2;
