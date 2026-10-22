@@ -1225,6 +1225,15 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .bp-y{color:#1f6f4a}.bp-n{color:#b8202b}.bp-a{color:#7a8a95;font-weight:600}
 .bp-note{font-size:12px;color:#5d6b75;margin:4px 0}
 .bp-tip-t{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
+/* 정권 띠: 경제·예산·군사 그래프 아래 그 시기의 최고 지도자 */
+.regime-band .regime-seg{cursor:pointer}
+.regime-band .regime-seg:hover rect,.regime-band .regime-seg.is-on rect{fill-opacity:.75}
+.regime-band .regime-name{font:700 8.6px var(--font,system-ui);fill:#20323d;pointer-events:none}
+.regime-note{margin:2px 0 0;font-size:11px;color:#4a6575;display:flex;flex-wrap:wrap;gap:4px 8px;align-items:baseline}
+.regime-note b{color:#15232d}
+.regime-note span+span::before{content:"· ";color:#9fb0bb}
+.regime-hint{color:#6a7c88}
+.regime-band .regime-seg:focus{outline:none}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2007,6 +2016,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  loadBlocs().then(renderBlocBar);
  fetch("data/fx.json").then(r=>r.ok?r.json():null).then(j=>{state.fx=j}).catch(()=>{});
+ fetch("data/regimes.json").then(r=>r.ok?r.json():null).then(j=>{state.regimes=j}).catch(()=>{});
  async function loadExplainers(){
   try{const r=await api("/api/explainers");state.explainers=await r.json()}catch{state.explainers=[]}
   const box=$("#explain-list");if(box)box.innerHTML=(state.explainers||[]).length?state.explainers.map(explainerCard).join(""):'<p class="data-caption">첫 해설을 준비하고 있습니다.</p>';
@@ -2191,6 +2201,37 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const label=evidence.type==="unofficial"?"비공식 추정":evidence.type==="republished"?"재인용":/전망/.test(evidence.text)?"전망":/잠정/.test(evidence.text)?"잠정":"추정";
   return '<em class="metric-estimate metric-estimate--'+evidence.type+'" title="'+esc(evidence.text)+'">'+label+'</em>';
  }
+ function showRegime(g){
+  const box=g.closest(".metric-expand-content")?.querySelector(".regime-note")||g.closest("svg")?.nextElementSibling;
+  if(!box||!box.classList.contains("regime-note"))return;
+  g.closest("svg").querySelectorAll(".regime-seg.is-on").forEach(x=>x.classList.remove("is-on"));g.classList.add("is-on");
+  const d=g.dataset;
+  box.innerHTML='<b>'+esc(d.rname)+'</b>'+(d.roffice?'<span>'+esc(d.roffice)+'</span>':"")+(d.rparty?'<span>'+esc(d.rparty)+'</span>':"")+'<span>'+esc(d.rper)+'</span>';
+  if(window.PANDO_I18N?.apply)window.PANDO_I18N.apply(box);
+ }
+ document.addEventListener("mouseover",e=>{const g=e.target.closest?.(".regime-seg");if(g)showRegime(g)});
+ function regimeBand(code,years,px,y){
+  const R=state.regimes?.countries?.[code];if(!R||!Array.isArray(R.terms)||years.length<2)return {svg:"",h:0};
+  const Ys=years.map(Number),x0=px(years[0]),x1=px(years.at(-1));
+  const frac=d=>{const t=Date.parse(d+"T00:00:00Z");if(!Number.isFinite(t))return null;const yr=new Date(t).getUTCFullYear();return yr+(t-Date.UTC(yr,0,1))/(Date.UTC(yr+1,0,1)-Date.UTC(yr,0,1))};
+  const dx=v=>{if(v<=Ys[0])return x0;if(v>=Ys.at(-1))return x1;let i=0;while(i<Ys.length-2&&v>=Ys[i+1])i++;const a=Ys[i],b=Ys[i+1];return px(String(a))+(v-a)/(b-a)*(px(String(b))-px(String(a)))};
+  const groups=(state.civicsChambers||[]).flatMap(c=>c.groups||[]);
+  const palette=["#9fb7c6","#c9b28f","#a9c39b","#c7a3b5","#a6a9d0","#d0b7a0","#9cc4c0","#c4c08f"];
+  const colorOf=p=>{if(!p)return "#c3ccd2";const g=groups.find(g=>g[0]===p||String(g[0]).startsWith(p)||p.startsWith(String(g[0]).split("(")[0]));if(g&&/^#[0-9a-f]{6}$/i.test(g[2]))return g[2];let h=0;for(const c of p)h=(h*31+c.charCodeAt(0))>>>0;return palette[h%palette.length]};
+  const today=new Date().toISOString().slice(0,10);
+  const segs=R.terms.map(t=>({t,a:frac(t[0]),b:frac(t[1]||today)})).filter(o=>o.a!==null&&o.b!==null&&o.b-.5>Ys[0]&&o.a-.5<Ys.at(-1));
+  if(!segs.length)return {svg:"",h:0};
+  const H=15,out=[];let prev=null;
+  segs.forEach((o,i)=>{
+   const xa=Math.max(x0,dx(o.a-.5)),xb=Math.min(x1,dx(o.b-.5));if(xb-xa<0.6)return;
+   const [from,to,ko,en,party,partyEn,office]=o.t;let c=colorOf(party);if(prev&&prev.c===c&&prev.p!==party){let k=palette.indexOf(c);c=palette[(k+3+palette.length)%palette.length]}prev={c,p:party};
+   const short=String(ko||"").split(" ").at(-1);
+   const tw=t=>[...String(t)].reduce((w,c)=>w+(/[\u1100-\uffff]/.test(c)?8.9:5.2),0);const nm=String(ko||"").replace(/\(권한대행\)$/,"");const fits=nm&&tw(nm)<=xb-xa-5?nm:(short&&tw(short)<=xb-xa-5?short:"");
+   const per=from.slice(0,7).replace("-",".")+"–"+(to?to.slice(0,7).replace("-","."):"현재");
+   out.push('<g class="regime-seg" data-regime="'+i+'" data-rname="'+esc(ko||"")+'" data-roffice="'+esc(office||R.office||"")+'" data-rparty="'+esc(party||"")+'" data-rper="'+esc(per)+'" tabindex="0"><rect x="'+xa.toFixed(1)+'" y="'+y+'" width="'+(xb-xa).toFixed(1)+'" height="'+H+'" fill="'+c+'" fill-opacity=".38" stroke="#fff" stroke-width="1"><title>'+esc(ko||"")+'</title></rect>'+(fits?'<text class="regime-name" x="'+((xa+xb)/2).toFixed(1)+'" y="'+(y+10.6)+'" text-anchor="middle">'+esc(fits)+'</text>':"")+'</g>');
+  });
+  return {svg:'<g class="regime-band">'+out.join("")+'</g>',h:H+6};
+ }
  function metricTrend(key,points,korea=null,name=""){
   const clean=a=>(Array.isArray(a)?a:[]).filter(p=>p&&Number.isFinite(Number(p.value))&&/^\d{4}/.test(String(p.year))).map(p=>({year:String(p.year).slice(0,4),value:Number(p.value)})).sort((a,b)=>a.year.localeCompare(b.year));
   const series=clean(points).slice(-24);
@@ -2218,7 +2259,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   }).join("");
   const krLayer=showKr?'<path class="trend-line trend-line--kr" d="'+line(kr)+'"/><g class="trend-points trend-points--kr">'+kr.map(p=>'<circle cx="'+px(p.year).toFixed(1)+'" cy="'+py(p.value).toFixed(1)+'" r="2.2"><title>한국 '+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>').join("")+'</g><text class="trend-kr-end" x="'+(px(kr.at(-1).year)+4).toFixed(1)+'" y="'+(py(kr.at(-1).value)+(kr.at(-1).value>=series.at(-1).value?-14:22)).toFixed(1)+'" text-anchor="end">한국 '+esc(metricValue(key,kr.at(-1).value))+'</text>':"";
   const legend=showKr?'<span class="trend-legend"><i class="trend-key"></i>'+esc(name||"이 나라")+' <i class="trend-key trend-key--kr"></i>한국</span>':"";
-  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 152" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g></svg>';
+  const band=regimeBand(state.activeCode,years,px,B+24);
+  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자입니다. 띠를 누르면 이름·정당이 보입니다.</span></p>':"");
  }
  function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
   const valid=item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.year;
@@ -3509,6 +3551,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   }
   const metric=e.target.closest("[data-metric]");if(metric){const chart=metric.closest(".metric-card")?.querySelector(".metric-expand-content");if(chart){chart.hidden=!chart.hidden;metric.setAttribute("aria-expanded",String(!chart.hidden))}return}
   const country=e.target.closest("[data-country]");if(country){openCountry(country.dataset.country);return}
+  const rseg=e.target.closest(".regime-seg");if(rseg){showRegime(rseg);return}
   const story=e.target.closest("[data-open]");if(story){openStory(story.dataset.open);return}
   const tab=e.target.closest("[data-country-tab]");if(tab){
    const group=tab.parentElement;
