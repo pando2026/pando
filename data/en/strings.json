@@ -56874,5 +56874,8 @@
 "Connaissance des Énergies(AFP) · Macron annonce l'envoi de moyens militaires pour protéger un site énergétique clé en Arabie saoudite (마크롱, 사우디 핵심 에너지 시설 보호에 군 자산 파견 발표) · {0}-{1}-{2} ↗": "Connaissance des Énergies (AFP) · Macron annonce l'envoi de moyens militaires pour protéger un site énergétique clé en Arabie saoudite · {0}-{1}-{2} ↗",
 "Gulf News(AFP) · US task force aiding Saudis with intel, planning support: US official (미 관리 '미 태스크포스, 사우디에 정보·작전계획 지원') · {0}-{1}-{2} ↗": "Gulf News (AFP) · US task force aiding Saudis with intel, planning support: US official · {0}-{1}-{2} ↗",
 "The Guardian · UAE agrees with Saudi Arabia to re-enter Yemen conflict amid Houthi gains (UAE, 후티 진격에 사우디와 합의해 예멘 분쟁 재개입) · {0}-{1}-{2} ↗": "The Guardian · UAE agrees with Saudi Arabia to re-enter Yemen conflict amid Houthi gains · {0}-{1}-{2} ↗",
-"France to deploy some military forces to reinforce police for Saturday protests (프랑스, 토요일 시위에 경찰 보강용 군 일부 투입)": "France to deploy some military forces to reinforce police for Saturday protests"
+"France to deploy some military forces to reinforce police for Saturday protests (프랑스, 토요일 시위에 경찰 보강용 군 일부 투입)": "France to deploy some military forces to reinforce police for Saturday protests",
+"선 굵기 = 하루 수입량": "Line width = daily imports",
+"경로·환적지를 누르면 근거": "Tap a route or transfer point for the evidence",
+"막대 = 원유 수입 물량 비중 · 오른쪽 = 하루 수입량(b/d=배럴/일) · 기간 수입액(달러, 운임·보험 포함) · 세관 단가($/b=달러/배럴)": "Bars = share of crude import volume · right = daily imports (b/d) · import value for the period (USD, incl. freight and insurance) · customs unit price ($/b)"
 }
