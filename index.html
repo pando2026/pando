@@ -1603,6 +1603,17 @@ html,body{background:#fff;color:var(--ink)}
 }
 @media(max-width:600px){.ask{padding:13px 14px 16px}.ask-box input{font-size:16px}}
 
+/* 어디서든 고정(📌) */
+.story-card,.watch-card,.explain-card,.rep-card,.rp-detail,.en-card{position:relative}
+.pin-it{position:absolute;top:8px;right:8px;z-index:2;display:inline-flex;align-items:center;gap:3px;min-width:28px;height:26px;justify-content:center;padding:0 7px;border:1px solid #cfd8de;border-radius:13px;background:#ffffffee;font-size:12px;line-height:1;cursor:pointer;color:#22313b;font-weight:800;white-space:nowrap;opacity:.72;transition:opacity .15s,border-color .15s}
+.pin-it:hover,.pin-it:focus-visible{opacity:1;border-color:#1d2630}
+.pin-it.on{opacity:1;border-color:#c41230;color:#b51d2a;background:#fff4f5}
+.story-card .meta-line,.watch-card .watch-meta,.explain-card .explain-kicker,.rep-card .rep-k,.rp-detail .rp-dk,.en-card .en-ct{padding-right:40px}
+.drawer-head .pin-it,.fold-head .pin-it{position:static;margin-left:auto;margin-right:8px;height:24px;font-size:11.5px}
+.fold-head .pin-it{margin-right:6px;opacity:.6}
+.drawer-head{display:flex;align-items:center}
+@media(hover:none){.pin-it{opacity:1}}
+
 </style>
 <div class="shell">
  <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#latest">국제 현장</a><a href="#watch">주목 국가</a><a href="#countries">국가 탐색</a><a href="#reports">리포트</a><a href="#ripple">파급경로</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
@@ -4872,7 +4883,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(a.t==="explain")return fire("data-explain",a.id);
   if(a.t==="report")return fire("data-report",a.id);
   if(a.t==="country"){
-   fire("data-country",a.cc);if(!a.sec)return;
+   fire("data-country",a.cc);if(a.fold&&!a.sec)a={...a,sec:'[data-fold="'+a.fold.replace(/"/g,'')+'"]'};if(!a.sec)return;
    const el=await waitFor("#detail "+a.sec);if(!el)return;
    await sleep(350);const e2=document.querySelector("#detail "+a.sec)||el;
    const panel=e2.closest("[role=tabpanel]");if(panel&&panel.hidden)document.querySelector('#detail [data-country-tab="'+panel.id.replace("panel-","")+'"]')?.click();
@@ -4954,13 +4965,67 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  document.addEventListener("click",e=>{
   const s=e.target.closest("[data-ask-q]");if(s){e.preventDefault();const i=$("#ask-q");if(i)i.value=s.dataset.askQ;run(s.dataset.askQ);return}
   const g=e.target.closest("[data-ad-go]");if(g){const [m,i]=g.dataset.adGo.split(":");const c=m==="pin"?pins[+i]:now&&now.cards[+i];if(c)go(c.act);return}
-  const p=e.target.closest("[data-ad-pin]");if(p&&now){const c=now.cards[+p.dataset.adPin];if(c&&!pins.some(x=>JSON.stringify(x.act)===JSON.stringify(c.act))){pins.unshift({kind:c.kind,title:c.title,ans:c.ans,facts:c.facts,act:c.act,date:c.date,q:now.q,at:new Date().toISOString().slice(0,10)});pins=pins.slice(0,30);put(PK,pins);paint()}return}
-  const u=e.target.closest("[data-ad-unpin]");if(u){pins.splice(+u.dataset.adUnpin,1);put(PK,pins);paint();return}
+  const p=e.target.closest("[data-ad-pin]");if(p&&now){const c=now.cards[+p.dataset.adPin];if(c&&!pins.some(x=>JSON.stringify(x.act)===JSON.stringify(c.act))){pins.unshift({kind:c.kind,title:c.title,ans:c.ans,facts:c.facts,act:c.act,date:c.date,q:now.q,at:new Date().toISOString().slice(0,10)});pins=pins.slice(0,30);put(PK,pins);paint();setTimeout(decorate,0)}return}
+  const u=e.target.closest("[data-ad-unpin]");if(u){pins.splice(+u.dataset.adUnpin,1);put(PK,pins);paint();setTimeout(decorate,0);return}
   const t=e.target.closest("[data-ad-toggle]");if(t){setOpen(dock().classList.contains("closed"));return}
  });
  // 첫 화면 입력창: 처음 누를 때 색인을 미리 만든다
  document.addEventListener("focusin",e=>{if(e.target.closest&&e.target.closest("[data-ask-form]"))ensure()});
  // 고정한 답이 있으면 다음 방문에도 창을 띄운다
+ /* ---------- 어디서든 고정(📌) ---------- */
+ const key=a=>JSON.stringify(a);
+ const isPinned=a=>pins.some(p=>key(p.act)===key(a));
+ const txt=(el,sel)=>{const e=sel?el.querySelector(sel):el;return e?e.textContent.replace(/\s+/g," ").trim():""};
+ let lastOpen=null;
+ // 서랍을 연 것이 무엇인지 기억(기사·나라·해설·리포트)
+ document.addEventListener("click",e=>{
+  if(e.target.closest(".pin-it"))return;
+  const o=e.target.closest("[data-open],[data-country],[data-explain],[data-report]");if(!o||o.closest("#ask-dock"))return;
+  const d=o.dataset;lastOpen=d.open?{t:"story",id:d.open}:d.country?{t:"country",cc:d.country}:d.explain?{t:"explain",id:d.explain}:{t:"report",id:d.report};
+ },true);
+ const KIND={story:"기사",country:"나라",explain:"해설",report:"리포트"};
+ // 핀 대상: [선택자, 핀 만들기]
+ const TARGETS=[
+  [".story-card[data-open]",el=>({kind:"기사",title:txt(el,"h3"),ans:clip(txt(el,"p"),190),act:{t:"story",id:el.dataset.open}})],
+  [".watch-card",el=>{const b=el.querySelector("[data-country]");return b&&{kind:"주목 국가 · "+nameKo(b.dataset.country),title:txt(el,"strong"),ans:clip(txt(el,".watch-detail"),190),act:{t:"country",cc:b.dataset.country}}}],
+  [".explain-card[data-explain]",el=>({kind:"해설",title:txt(el,"strong"),ans:clip(txt(el,"p"),190),act:{t:"explain",id:el.dataset.explain}})],
+  [".rep-card[data-report]",el=>({kind:"리포트",title:txt(el,"strong"),ans:clip(txt(el,"p"),190),act:{t:"report",id:el.dataset.report}})],
+  ["#ripple .rp-detail",el=>{const R=window.__ripple;const t=R&&R.data&&R.data.tracks[R.ti];if(!t||!R.sel)return null;
+    return {kind:"파급경로 · "+t.title,title:txt(el,"h4"),ans:clip(txt(el,".rp-now"),190),facts:[...el.querySelectorAll(".rp-facts > div")].slice(0,4).map(d=>[txt(d,"span"),txt(d,"b")+(d.querySelector("em")?" · "+txt(d,"em"):"")]),act:{t:"ripple",k:t.id+":"+R.sel}}}],
+  ["#en-card",el=>{const c=document.querySelector("#en-app .en-chip.on[data-en-cc]");return c&&{kind:"에너지 지도",title:nameKo(c.dataset.enCc)+" 원유·기름값",ans:"",facts:[...el.querySelectorAll(".en-kv > div")].slice(0,4).map(d=>[txt(d,"span"),txt(d,"b")]),act:{t:"energy",cc:c.dataset.enCc}}}],
+  ["#mn-app .en-card",el=>{const c=document.querySelector("#mn-app .en-chip.on[data-mn]");return c&&{kind:"핵심광물",title:txt(c,"b"),ans:"",facts:[...el.querySelectorAll(".en-kv > div")].slice(0,4).map(d=>[txt(d,"span"),txt(d,"b")]),act:{t:"mineral",id:c.dataset.mn}}}],
+  [".drawer-head",el=>{if(!lastOpen||!$("#overlay")?.classList.contains("open"))return null;const D=$("#detail");
+    const title=txt(D,"h2")||txt(D,"h1")||txt(D,"h3");const kick=txt(D,".detail-kicker");
+    return {kind:KIND[lastOpen.t]+(lastOpen.t==="country"?"":kick?" · "+clip(kick,40):""),title:lastOpen.t==="country"?nameKo(lastOpen.cc)+" 국가 정보":title,ans:clip(txt(D,".country-facts, .now p, p"),190),act:lastOpen}}],
+  ["#detail [data-fold]",el=>{if(!lastOpen||lastOpen.t!=="country")return null;const h=el.querySelector(":scope > .fold-head");
+    return {kind:"나라 · "+nameKo(lastOpen.cc),title:nameKo(lastOpen.cc)+" · "+clip(headTitle(h),40),ans:"",facts:harvest(el),act:{t:"country",cc:lastOpen.cc,fold:el.dataset.fold}}}]];
+ function headTitle(h){if(!h)return "";const e=h.querySelector("h2,h3,h4,h5,strong,b");if(e)return txt(e);
+  for(const n of h.childNodes){if(n.nodeType===3&&n.textContent.trim())return n.textContent.trim();if(n.nodeType===1&&!n.classList.contains("pin-it")&&n.textContent.trim())return n.textContent.trim()}return ""}
+ function chip(el,i){
+  const host=el.matches("[data-fold]")?el.querySelector(":scope > .fold-head"):el;if(!host)return;
+  let c=host.querySelector(":scope > .pin-it");
+  if(!c){c=document.createElement("span");c.className="pin-it";c.setAttribute("role","button");c.tabIndex=0;c.dataset.pinT=i;
+   if(el.matches(".drawer-head"))el.insertBefore(c,el.querySelector("#close"));else host.appendChild(c);}
+  let p=null;try{p=TARGETS[i][1](el)}catch{}
+  const on=!!(p&&isPinned(p.act));c.hidden=!p;c.classList.toggle("on",on);c.textContent="📌";c.title=on?"고정 풀기":"오른쪽 창에 고정";c.setAttribute("aria-label",c.title);
+ }
+ function decorate(){TARGETS.forEach(([sel],i)=>document.querySelectorAll(sel).forEach(el=>chip(el,i)))}
+ let dq=0;const mo=new MutationObserver(ms=>{if(ms.every(m=>m.target.closest&&m.target.closest("#ask-dock,.pin-it")))return;clearTimeout(dq);dq=setTimeout(decorate,250)});
+ mo.observe(document.body,{childList:true,subtree:true});
+ window.addEventListener("hashchange",()=>setTimeout(decorate,300));
+ function togglePin(c){
+  const el=c.closest(TARGETS.map(t=>t[0]).join(","));if(!el)return;
+  const i=+c.dataset.pinT;const real=el.matches(TARGETS[i][0])?el:c.closest(TARGETS[i][0]);if(!real)return;
+  const p=TARGETS[i][1](real);if(!p)return;
+  const k=key(p.act),j=pins.findIndex(x=>key(x.act)===k);
+  if(j>=0)pins.splice(j,1);else pins.unshift({...p,at:new Date().toISOString().slice(0,10)});
+  pins=pins.slice(0,30);put(PK,pins);dock();paint();
+  if(j<0&&!matchMedia("(max-width:1179px)").matches)setOpen(true);else setOpen(!dock().classList.contains("closed"));
+  decorate();
+ }
+ document.addEventListener("click",e=>{const c=e.target.closest(".pin-it");if(!c)return;e.preventDefault();e.stopPropagation();togglePin(c)},true);
+ document.addEventListener("keydown",e=>{const c=e.target.closest&&e.target.closest(".pin-it");if(!c||(e.key!=="Enter"&&e.key!==" "))return;e.preventDefault();e.stopPropagation();togglePin(c)},true);
+ setTimeout(decorate,800);
  if(pins.length){dock();setOpen(get(DK,1)===1);paint()}
  window.__pandoAsk={run,ask:q=>ensure().then(()=>ask(q))};
 })();
