@@ -1632,6 +1632,12 @@ html,body{background:#fff;color:var(--ink)}
 .en-port circle{fill:#1d5f80;stroke:#fff;stroke-width:1;opacity:.75}
 .en-port.dn circle{fill:#e2622a}.en-port.dn2 circle{fill:#c41230}.en-port.up circle{fill:#2e8b57}
 .en-live:empty{display:none}.en-live{margin-top:10px}
+.en-sat{border-top-color:#1d5f80;background:#f4f9fc}
+.en-sats{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin-top:8px}
+.en-sats figure{margin:0;background:#0b1620}.en-sats img{width:100%;display:block;aspect-ratio:5/4;object-fit:cover}
+.en-sats figcaption{background:#fff;padding:5px 7px;font-size:11px;color:#42525d}.en-sats figcaption b{color:#14222b}
+.en-satbtn{border:1px solid #1d5f80;background:#fff;color:#1d5f80;font-weight:800;font-size:12px;padding:5px 10px;border-radius:3px;cursor:pointer}
+.en-fire,.en-port{cursor:pointer}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -4182,7 +4188,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<p>각국 세관·통계청이 공개한 원산지별 수입과 값, 시민이 내는 기름값, 물가에 닿는 정도. 나라를 누르면 그 나라로 오는 바닷길이 진해집니다.</p></div>'+
    '<span class="en-asof">'+(E.data.updatedAt?'자료 합친 시각 '+esc(E.data.updatedAt.slice(5,16).replace("T"," ")):'')+'</span></div>'+
    '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':C(cc)?'':'<span>경로</span>')+'</button>'}).join("")+'</div>'+
-   '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>? 경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div>'+
+   '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>? 경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div><div class="en-route en-sat" id="en-sat" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
    '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
    '<div class="en-live" id="en-live"></div>'+
@@ -4273,6 +4279,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   box.innerHTML='<div class="en-rh"><span class="en-rk">'+esc(KN[it.kind]||it.kind)+'</span><b>'+esc(it.name)+'</b><span class="en-cert '+(CERT[it.certainty]||"")+'">'+esc(it.certainty)+'</span><button type="button" class="en-rx" data-rt-close aria-label="닫기">×</button></div>'+
    (it.from||it.to?'<p class="en-rl">'+esc([it.from,it.to].filter(Boolean).join(" → "))+'</p>':'')+
    '<dl class="en-rd">'+[["상태",it.status],["용량",it.capacity],["실제 흐름",it.throughput],["무엇이",it.what],["누구 원유",org],["받는 나라",who],["전쟁 뒤 달라진 점",it.changed],["확실성 근거",it.why]].filter(x=>x[1]).map(x=>'<div><dt>'+esc(x[0])+'</dt><dd>'+esc(x[1])+'</dd></div>').join("")+'</dl>'+
+   (it.lon!=null?'<p><button type="button" class="en-satbtn" data-sat="'+esc(it.name)+'|'+it.lon+'|'+it.lat+'|">🛰 위성 사진으로 보기</button></p>':'')+
    '<p class="en-note">'+srcLinks(it.src)+'</p>';
  }
  /* ---------- 석유제품 수출(정제해서 되파는 흐름) ---------- */
@@ -4323,11 +4330,40 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function liveLayer(K){
   let g="";
   if(E.layers.fires&&E.fires&&E.fires.items)for(const f of E.fires.items){const [x,y]=P(f.lon,f.lat);
-   g+='<g class="en-fire'+(f.unusual?' hot':'')+'" data-fire="'+esc(f.id)+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+K.toFixed(3)+')"><circle r="'+(f.unusual?7:4.5)+'"/>'+(f.unusual?'<text x="9" y="4">'+esc(f.name)+'</text>':'')+'<title>'+esc(f.name+' · 48시간 위성 열 감지 '+f.count48h+'건 · 최대 '+f.frpMax+'MW'+(f.unusual?' · 평소보다 많음':' · 평소 수준(플레어 등)'))+'</title></g>'}
+   g+='<g class="en-fire'+(f.unusual?' hot':'')+'" data-sat="'+esc(f.name)+'|'+f.lon+'|'+f.lat+'|'+esc('48시간 위성 열 감지 '+f.count48h+'건')+'" data-fire="'+esc(f.id)+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+K.toFixed(3)+')"><circle r="'+(f.unusual?7:4.5)+'"/>'+(f.unusual?'<text x="9" y="4">'+esc(f.name)+'</text>':'')+'<title>'+esc(f.name+' · 48시간 위성 열 감지 '+f.count48h+'건 · 최대 '+f.frpMax+'MW'+(f.unusual?' · 평소보다 많음':' · 평소 수준(플레어 등)'))+'</title></g>'}
   if(E.layers.ports&&E.ports)for(const p of E.ports){if(p.avg==null)continue;const [x,y]=P(...p.pos);const r=2.5+Math.sqrt(p.avg/2e4)*3.2;
    const cls=p.chg==null?"":p.chg<=-50?" dn2":p.chg<=-15?" dn":p.chg>=15?" up":"";
-   g+='<g class="en-port'+cls+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+K.toFixed(3)+')"><circle r="'+r.toFixed(1)+'"/><title>'+esc(p.nm+' · 최근 7일 하루 유조선 '+(p.role==="i"?"하역":"선적")+' 약 '+num(p.avg/1e4,1)+'만 톤'+(p.chg!=null?' · 전쟁 전(1~2월) 대비 '+(p.chg>0?'+':'')+num(p.chg,0)+'%':'')+' · '+(p.last||'')+' 기준(IMF PortWatch)')+'</title></g>'}
+   g+='<g class="en-port'+cls+'" data-sat="'+esc(p.nm)+'|'+p.pos[0]+'|'+p.pos[1]+'|'+esc('최근 7일 하루 유조선 '+(p.role==="i"?"하역":"선적")+' 약 '+num(p.avg/1e4,1)+'만 톤')+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+K.toFixed(3)+')"><circle r="'+r.toFixed(1)+'"/><title>'+esc(p.nm+' · 최근 7일 하루 유조선 '+(p.role==="i"?"하역":"선적")+' 약 '+num(p.avg/1e4,1)+'만 톤'+(p.chg!=null?' · 전쟁 전(1~2월) 대비 '+(p.chg>0?'+':'')+num(p.chg,0)+'%':'')+' · '+(p.last||'')+' 기준(IMF PortWatch)')+'</title></g>'}
   return g;
+ }
+ /* ---------- 위성으로 보기(NASA Worldview 스냅숏: Sentinel-2·Landsat HLS 30m, VIIRS 일일 사진) ---------- */
+ // 시설을 누르면 가장 최근의 맑은 위성 사진과 전쟁 전(2026년 1~2월) 사진을 나란히, 그리고 넓은 일일 사진(연기 확인용)을 보여 준다.
+ const WV="https://wvs.earthdata.nasa.gov/api/v1/snapshot?REQUEST=GetSnapshot&CRS=EPSG:4326&FORMAT=image/jpeg";
+ async function hlsDate(lon,lat,from,to){
+  const bb=[lon-.03,lat-.03,lon+.03,lat+.03].map(v=>v.toFixed(3)).join(",");
+  for(const sn of ["HLSS30","HLSL30"]){
+   try{const u="https://cmr.earthdata.nasa.gov/search/granules.json?short_name="+sn+"&bounding_box="+bb+"&cloud_cover=0,35&page_size=20&sort_key=-start_date"+(from?"&temporal="+from+"T00:00:00Z,"+to+"T23:59:59Z":"");
+    const d=await fetch(u).then(r=>r.json());const L=(d.feed&&d.feed.entry)||[];if(!L.length)continue;
+    const best=from?L.slice().sort((a,b)=>(+a.cloud_cover||0)-(+b.cloud_cover||0))[0]:L[0];
+    return {date:best.time_start.slice(0,10),layer:sn==="HLSS30"?"HLS_S30_Nadir_BRDF_Adjusted_Reflectance":"HLS_L30_Nadir_BRDF_Adjusted_Reflectance",sat:sn==="HLSS30"?"Sentinel-2":"Landsat 8·9",cloud:best.cloud_cover}}catch(e){}
+  }
+  return null;
+ }
+ function snap(layer,date,lon,lat,km,w,h){const dl=km/111,dn=km/(111*Math.cos(lat*Math.PI/180));
+  return WV+"&LAYERS="+layer+"&TIME="+date+"&BBOX="+[lat-dl*h/w,lon-dn,lat+dl*h/w,lon+dn].map(v=>v.toFixed(4)).join(",")+"&WIDTH="+w+"&HEIGHT="+h}
+ async function satView(name,lon,lat,note){
+  let box=document.getElementById("en-sat");if(!box)return;
+  box.hidden=false;box.innerHTML='<div class="en-rh"><span class="en-rk">위성으로 보기</span><b>'+esc(name)+'</b><button type="button" class="en-rx" data-sat-close aria-label="닫기">×</button></div><p class="en-note">맑은 날 위성 사진을 찾는 중…</p>';
+  box.scrollIntoView({behavior:"smooth",block:"nearest"});
+  const y=new Date(Date.now()-864e5).toISOString().slice(0,10);
+  const [now,pre]=await Promise.all([hlsDate(lon,lat),hlsDate(lon,lat,"2026-01-01","2026-02-27")]);
+  const fig=(t,src,cap)=>'<figure><img src="'+src+'" alt="'+esc(name+' '+t)+'" loading="lazy"><figcaption><b>'+esc(t)+'</b> '+cap+'</figcaption></figure>';
+  box.innerHTML='<div class="en-rh"><span class="en-rk">위성으로 보기</span><b>'+esc(name)+'</b><button type="button" class="en-rx" data-sat-close aria-label="닫기">×</button></div>'+(note?'<p class="en-rl">'+esc(note)+'</p>':'')+
+   '<div class="en-sats">'+
+   (now?fig("최근 "+now.date,snap(now.layer,now.date,lon,lat,5,600,480),esc(now.sat)+' 30m · 구름 '+esc(String(now.cloud))+'%'):'<p class="en-none">최근 맑은 사진을 찾지 못했습니다.</p>')+
+   (pre?fig("전쟁 전 "+pre.date,snap(pre.layer,pre.date,lon,lat,5,600,480),esc(pre.sat)+' 30m · 구름 '+esc(String(pre.cloud))+'%'):'')+
+   fig("넓게 "+y,snap("VIIRS_SNPP_CorrectedReflectance_TrueColor",y,lon,lat,120,600,480),'VIIRS 375m · 하루 한 번 · 큰 연기 기둥 확인용')+
+   '</div><p class="en-note">배는 바다 위 작은 점·줄로, 큰 화재는 검은·회색 연기로 보입니다. 30m 사진이라 탱크 하나하나는 보이지 않습니다. 사진: NASA GIBS/Worldview(HLS: NASA·USGS·ESA Copernicus Sentinel-2, VIIRS: NASA·NOAA) · <a href="https://worldview.earthdata.nasa.gov/?v='+(lon-.3).toFixed(2)+','+(lat-.2).toFixed(2)+','+(lon+.3).toFixed(2)+','+(lat+.2).toFixed(2)+'&l=HLS_S30_Nadir_BRDF_Adjusted_Reflectance,HLS_L30_Nadir_BRDF_Adjusted_Reflectance,VIIRS_SNPP_CorrectedReflectance_TrueColor,Coastlines_15m'+(now?'&t='+now.date:'')+'" target="_blank" rel="noopener noreferrer">NASA Worldview에서 직접 보기 ↗</a></p>';
  }
  function livePanel(){
   const box=document.getElementById("en-live");if(!box)return;let h="";
@@ -4509,6 +4545,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  /* ---------- interaction ---------- */
  document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-en-layer]");if(!t)return;E.layers[t.dataset.enLayer]=t.checked;loadLiveLayers();drawMap()});
  document.addEventListener("click",e=>{
+  const sb=e.target.closest("[data-sat]");if(sb&&document.getElementById("en-app")?.contains(sb)){const [n,lo,la,nt]=sb.dataset.sat.split("|");satView(n,+lo,+la,nt);return}
+  if(e.target.closest("[data-sat-close]")){const b=document.getElementById("en-sat");if(b)b.hidden=true;return}
   const zb=e.target.closest("[data-en-zoom]");if(zb){E.vb=E.vb?null:zoomBox();zb.setAttribute("aria-pressed",String(!!E.vb));zb.textContent=E.vb?"세계 전체 보기":"이 나라 경로 가까이 보기";drawMap();return}
   const rt=e.target.closest("[data-rt]");if(rt&&document.getElementById("en-app")?.contains(rt)){routeInfo(rt.dataset.rt);return}
   if(e.target.closest("[data-rt-close]")){const b=document.getElementById("en-route");if(b)b.hidden=true;return}
