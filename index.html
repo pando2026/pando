@@ -1278,6 +1278,8 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .ph-lightbox figcaption{padding:9px 12px;display:grid;gap:3px;font-size:13px}.ph-lightbox figcaption span{font-size:11px;color:#5a6a73}.ph-lightbox a{color:inherit}
 .ph-lightbox button{position:absolute;top:6px;right:6px;width:32px;height:32px;border:0;border-radius:50%;background:#000000a0;color:#fff;font-size:20px;cursor:pointer}
 
+.actor-ph.logo img{object-fit:contain;background:#fff}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -2458,7 +2460,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  // 인물 사진: data/actor-photos.json(위키미디어 공용 자유 라이선스, _tools/photos/actors.py가 만든다). 처음 기사를 열 때 받아 채운다.
  const AP={data:null,loading:null};
  function loadActorPhotos(){if(AP.loading)return AP.loading;AP.loading=fetch("data/actor-photos.json").then(r=>r.ok?r.json():{}).catch(()=>({})).then(d=>{AP.data=d;fillActorPhotos()});return AP.loading}
- function fillActorPhotos(){if(!AP.data)return;document.querySelectorAll("[data-actor-ph]").forEach(el=>{const p=AP.data[el.dataset.actorPh];if(p&&p.d&&!el.dataset.done){el.dataset.done="1";el.innerHTML='<img src="'+p.d+'" alt="" loading="lazy">';el.classList.add("has");el.title="사진: "+(p.credit||"위키미디어 공용")+" · "+(p.license||"")}});
+ function fillActorPhotos(){if(!AP.data)return;document.querySelectorAll("[data-actor-ph]").forEach(el=>{const p=AP.data[el.dataset.actorPh];if(p&&p.d&&!el.dataset.done){el.dataset.done="1";el.innerHTML='<img src="'+p.d+'" alt="" loading="lazy">';el.classList.add("has");if(p.kind==="logo")el.classList.add("logo");el.title="사진: "+(p.credit||"위키미디어 공용")+" · "+(p.license||"")}});
   document.querySelectorAll(".photo-credits[data-for]").forEach(box=>{const labs=[...new Set([...box.closest("#detail").querySelectorAll("[data-actor-ph].has")].map(e=>e.dataset.actorPh))];
    box.innerHTML=labs.length?'<span>인물 사진</span> '+labs.map(l=>{const p=AP.data[l];return '<a href="'+safeUrl(p.source)+'" target="_blank" rel="noopener noreferrer">'+esc(l.split(" ").slice(0,3).join(" "))+'</a> ('+esc(p.credit||"위키미디어 공용")+', '+(p.licenseUrl?'<a href="'+safeUrl(p.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(p.license)+'</a>':esc(p.license||""))+')'}).join(" · "):""})}
  const face=(a,big)=>'<span class="actor-ph'+(big?' big':'')+'" data-actor-ph="'+esc(a[0])+'" aria-hidden="true"><b>'+esc(String(a[0]).replace(/^['"‘“]/,"").slice(0,1))+'</b></span>';
