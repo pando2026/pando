@@ -4413,7 +4413,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(E.layers.ships&&A&&A.areas&&A.areas.length){
    h+='<div class="en-sec"><h5>해협·터미널 유조선 <small>AIS 선박 위치 신호 · '+esc(String(A.updatedAt||"").replace("T"," ").replace("Z"," UTC"))+' · '+num(A.windowMin,0)+'분 관측</small></h5>'+
     '<div class="en-tablewrap"><table class="en-table"><thead><tr><th>곳</th><th>유조선</th><th>운항</th><th>정박·대기</th><th>30일 추이</th></tr></thead><tbody>'+
-    A.areas.map(a=>'<tr><th>'+esc(a.name)+' <small>'+esc(a.note)+'</small></th><td>'+a.tankers+'척</td><td>'+a.moving+'척</td><td>'+a.stopped+'척</td><td>'+spark(((A.hist||{})[a.id]||[]).map(x=>[x[0],x[1]]))+'</td></tr>').join("")+
+    A.areas.map(a=>'<tr><th>'+esc(a.name)+' <small>'+esc(a.note)+'</small></th>'+(a.signals===0?'<td colspan="3" class="en-none">수신 없음(이 바다엔 공개 수신기가 거의 없음)</td>':'<td>'+a.tankers+'척'+(a.unknownType?' <small>+선종 미확인 '+a.unknownType+'척</small>':'')+'</td><td>'+a.moving+'척</td><td>'+a.stopped+'척</td>')+'<td>'+spark(((A.hist||{})[a.id]||[]).map(x=>[x[0],x[1]]))+'</td></tr>').join("")+
     '</tbody></table></div><p class="en-note">'+esc(A.method||"")+' 자료: '+esc(A.provider||"")+'.</p></div>'}
   if(E.layers.ports){const P2=E.ports;
    h+='<div class="en-sec"><h5>석유 항구 실시간 <small>IMF PortWatch · 선박 위치 신호(AIS) 추정 · 약 1주 시차</small></h5>'+
