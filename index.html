@@ -1645,6 +1645,10 @@ html,body{background:#fff;color:var(--ink)}
 .en-satbtn{border:1px solid #1d5f80;background:#fff;color:#1d5f80;font-weight:800;font-size:12px;padding:5px 10px;border-radius:3px;cursor:pointer}
 .en-fire,.en-port{cursor:pointer}
 
+.en-aisbox rect{fill:rgba(29,95,128,.06);stroke:#1d5f80;stroke-width:1;stroke-dasharray:3 2}
+.en-ship path,.en-ship circle{fill:#0b3d91;stroke:#fff;stroke-width:.8}
+.en-ship.stop circle{fill:#d98e04}
+
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
 .ask label{display:flex;align-items:baseline;gap:12px;margin-bottom:9px;flex-wrap:wrap}
@@ -4089,7 +4093,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const ON={CN:"중국",JP:"일본",KR:"한국",DE:"독일",FR:"프랑스",IN:"인도",TW:"대만",SG:"싱가포르",ZA:"남아공",CD:"콩고민주공화국",CL:"칠레",MM:"미얀마",LA:"라오스",PH:"필리핀",NL:"네덜란드",BE:"벨기에",SA:"사우디",IQ:"이라크",AE:"UAE",KW:"쿠웨이트",QA:"카타르",OM:"오만",IR:"이란",RU:"러시아",US:"미국",BR:"브라질",NO:"노르웨이",GB:"영국",VE:"베네수엘라",NG:"나이지리아",AO:"앙골라",KZ:"카자흐스탄",MX:"멕시코",CA:"캐나다",LY:"리비아",GY:"가이아나",DZ:"알제리",EG:"이집트",AZ:"아제르바이잔",MY:"말레이시아",ID:"인도네시아",AU:"호주",BN:"브루나이",CO:"콜롬비아",EC:"에콰도르",GA:"가봉",CG:"콩고",GQ:"적도기니",CM:"카메룬",GH:"가나",SD:"수단",YE:"예멘",TT:"트리니다드토바고",AR:"아르헨티나",VN:"베트남",TH:"태국",PE:"페루",OT:"기타"};
  const ORDER=["KR","JP","CN","IN","TW","SG","DE","FR","GB","US"];
  const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구·통계"};
- const E={data:null,world:null,sel:"KR",loading:null,layers:{crude:true,prod:true,fires:true,ports:false},fires:null,ports:null};
+ const E={data:null,world:null,sel:"KR",loading:null,layers:{crude:true,prod:true,fires:true,ships:true,ports:false},fires:null,ports:null,ais:null};
 
  /* ---------- geography: ports, waypoints, sea lanes ---------- */
  const PORT={SA:[50.2,26.6],IQ:[48.8,29.7],KW:[48.2,29.1],QA:[51.6,25.9],IR:[50.3,29.2],AE:[52.6,24.2],OM:[58.6,23.6],
@@ -4208,7 +4212,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':C(cc)?'':'<span>경로</span>')+'</button>'}).join("")+'</div>'+
    '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>? 경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div><div class="en-route en-sat" id="en-sat" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
-   '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
+   '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ships","해협 유조선 위치"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
    '<div class="en-live" id="en-live"></div>'+
    '<div class="en-compare" id="en-compare"></div><div class="en-prices" id="en-prices"></div>';
   drawMap();card();compare();prices();loadLiveLayers();
@@ -4326,6 +4330,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const PWB="https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/";
  function loadLiveLayers(){
   if(!E.fires&&!E.firesLoading)E.firesLoading=fetch("data/fires.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{E.fires=d;drawMap();livePanel()});
+  if(!E.ais&&!E.aisLoading)E.aisLoading=fetch("data/ais.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{E.ais=d||{areas:[]};drawMap();livePanel()});
   if(E.layers.ports&&!E.ports&&!E.portsLoading)E.portsLoading=loadPorts().then(()=>{drawMap();livePanel()});
   livePanel();
  }
@@ -4352,6 +4357,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(E.layers.ports&&E.ports)for(const p of E.ports){if(p.avg==null)continue;const [x,y]=P(...p.pos);const r=2.5+Math.sqrt(p.avg/2e4)*3.2;
    const cls=p.chg==null?"":p.chg<=-50?" dn2":p.chg<=-15?" dn":p.chg>=15?" up":"";
    g+='<g class="en-port'+cls+'" data-sat="'+esc(p.nm)+'|'+p.pos[0]+'|'+p.pos[1]+'|'+esc('최근 7일 하루 유조선 '+(p.role==="i"?"하역":"선적")+' 약 '+num(p.avg/1e4,1)+'만 톤')+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+K.toFixed(3)+')"><circle r="'+r.toFixed(1)+'"/><title>'+esc(p.nm+' · 최근 7일 하루 유조선 '+(p.role==="i"?"하역":"선적")+' 약 '+num(p.avg/1e4,1)+'만 톤'+(p.chg!=null?' · 전쟁 전(1~2월) 대비 '+(p.chg>0?'+':'')+num(p.chg,0)+'%':'')+' · '+(p.last||'')+' 기준(IMF PortWatch)')+'</title></g>'}
+  if(E.layers.ships&&E.ais&&E.ais.areas)for(const a of E.ais.areas){
+   const [x0,y0]=P(a.box[0][1],a.box[1][0]),[x1,y1]=P(a.box[1][1],a.box[0][0]);
+   g+='<g class="en-aisbox"><rect x="'+Math.min(x0,x1).toFixed(1)+'" y="'+Math.min(y0,y1).toFixed(1)+'" width="'+Math.abs(x1-x0).toFixed(1)+'" height="'+Math.abs(y1-y0).toFixed(1)+'" vector-effect="non-scaling-stroke"/><title>'+esc(a.name+' · 유조선 '+a.tankers+'척(운항 '+a.moving+' · 정박·대기 '+a.stopped+')')+'</title></g>';
+   for(const v of a.ships){const [x,y]=P(v.lon,v.lat);const tip=(v.name||'이름 없음')+' · '+(v.stop?'정박·대기':'운항 '+num(v.sog,1)+'노트')+(v.dest?' · 목적지 '+v.dest:'');
+    g+='<g class="en-ship'+(v.stop?' stop':'')+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+(K*.6).toFixed(3)+')">'+(v.stop||v.cog==null?'<circle r="3"/>':'<path d="M0,-5 L3,4 L0,2 L-3,4Z" transform="rotate('+v.cog+')"/>')+'<title>'+esc(tip)+'</title></g>'}}
   return g;
  }
  /* ---------- 위성으로 보기(NASA Worldview 스냅숏: Sentinel-2·Landsat HLS 30m, VIIRS 일일 사진) ---------- */
@@ -4390,6 +4400,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    h+='<div class="en-sec"><h5>위성이 본 불 <small>NASA FIRMS · 48시간 · '+esc(String(F.updatedAt||"").replace("T"," ").replace("Z"," UTC"))+'</small></h5>'+
     (hot.length?'<ul class="en-pol">'+hot.map(i=>'<li><time>'+esc((i.last&&i.last.date||"").slice(5))+'</time><span><b>'+esc(i.name)+'</b> 열 감지 '+i.count48h+'건(평소 하루 '+num(i.baselinePerDay,1)+'건) · 최대 '+num(i.frpMax,1)+'MW · <a href="https://firms.modaps.eosdis.nasa.gov/map/#d:48hrs;@'+i.lon+','+i.lat+',12z" target="_blank" rel="noopener noreferrer">위성 지도 ↗</a></span></li>').join("")+'</ul>':'<p class="en-none">지금 에너지 시설 '+(F.facilities||0)+'곳 가운데 평소보다 열 감지가 많은 곳은 없습니다.</p>')+
     '<p class="en-note">'+esc(F.method||"")+'</p></div>'}
+  const A=E.ais;
+  if(E.layers.ships&&A&&A.areas&&A.areas.length){
+   h+='<div class="en-sec"><h5>해협·터미널 유조선 <small>AIS 선박 위치 신호 · '+esc(String(A.updatedAt||"").replace("T"," ").replace("Z"," UTC"))+' · '+num(A.windowMin,0)+'분 관측</small></h5>'+
+    '<div class="en-tablewrap"><table class="en-table"><thead><tr><th>곳</th><th>유조선</th><th>운항</th><th>정박·대기</th><th>30일 추이</th></tr></thead><tbody>'+
+    A.areas.map(a=>'<tr><th>'+esc(a.name)+' <small>'+esc(a.note)+'</small></th><td>'+a.tankers+'척</td><td>'+a.moving+'척</td><td>'+a.stopped+'척</td><td>'+spark(((A.hist||{})[a.id]||[]).map(x=>[x[0],x[1]]))+'</td></tr>').join("")+
+    '</tbody></table></div><p class="en-note">'+esc(A.method||"")+' 자료: '+esc(A.provider||"")+'.</p></div>'}
   if(E.layers.ports){const P2=E.ports;
    h+='<div class="en-sec"><h5>석유 항구 실시간 <small>IMF PortWatch · 선박 위치 신호(AIS) 추정 · 약 1주 시차</small></h5>'+
     (!P2?'<p class="en-none">불러오는 중…</p>':!P2.length?'<p class="en-none">PortWatch에 연결하지 못했습니다.</p>':
