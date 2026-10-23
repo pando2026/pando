@@ -4558,7 +4558,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   labItems.forEach((L,rank)=>{
    if(!E.vb&&L.share!=null&&L.share<2&&L.cls!==' p')return;   // 넓게 볼 땐 2% 미만은 이름표 없이
    const ax=wrapX(L.anchor[0]),ay=L.anchor[1],top=rank<5&&!L.cls;
-   const pct=L.share==null?(L.extra||''):' '+num(L.share,L.share<1?1:0)+'%',txt=L.name+pct,px=top?11:10;
+   const pct=L.share==null?(L.extra||''):L.share<0.05?' 0.1% 미만':' '+num(L.share,L.share<1?1:0)+'%',txt=L.name+pct,px=top?11:10;
    const bw=(tw(TR(L.name)+pct,px)+10)*K,bh=(top?17:15)*K;let best=null;
    for(const r of (rank<8?[3,10,20,32,46,62]:[3,10,20]))for(let a=0;a<12&&!best;a++){const ang=(a*30+(rank%2?15:0))*Math.PI/180;
     const cx=ax+Math.cos(ang)*(r*K+bw/2),cy=ay+Math.sin(ang)*(r*K+bh/2);const b={x0:cx-bw/2,x1:cx+bw/2,y0:cy-bh/2,y1:cy+bh/2};
