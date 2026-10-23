@@ -1546,7 +1546,7 @@ html,body{background:#fff;color:var(--ink)}
 /* 실제 수입 경로: 송유관·철도·환적지 */
 .en-l.pl{height:4px;background:#8a5a1f}.en-l.rl{height:3px;background:repeating-linear-gradient(90deg,#3d3d3d 0 5px,transparent 5px 7px)}.en-l.uq{height:2px;background:repeating-linear-gradient(90deg,#7a8a93 0 2px,transparent 2px 5px)}
 .en-hk{font-style:normal;color:#d9730d;font-size:11px}.en-hk.t{color:#1d5f80;font-size:10px}
-.en-rt{fill:none;stroke-linecap:round;stroke-linejoin:round;cursor:pointer;opacity:.45;transition:opacity .2s}
+.en-rt{fill:none;stroke-linecap:round;stroke-linejoin:round;cursor:pointer;opacity:.2;transition:opacity .2s}.en-rt:hover{opacity:.9}
 .en-rt.on{opacity:.95}
 .en-rt.k-pipeline{stroke:#8a5a1f;stroke-width:2.4}
 .en-rt.k-rail{stroke:#3d3d3d;stroke-width:1.6;stroke-dasharray:5 2}
@@ -1559,7 +1559,7 @@ html,body{background:#fff;color:var(--ink)}
 .en-hub{cursor:pointer}.en-hub path{fill:#d9730d;stroke:#fff;stroke-width:1.2}.en-hub rect{fill:#1d5f80;stroke:#fff;stroke-width:1.2}
 .en-hub.uq path,.en-hub.uq rect{fill:#fff;stroke:#d9730d;stroke-width:1.4;stroke-dasharray:2 1.5}
 .en-hub text{font:800 9.5px system-ui,sans-serif;fill:#5a3500;paint-order:stroke;stroke:#fffffff0;stroke-width:3px}
-.en-hub:not(.on){opacity:.75}
+.en-hub:not(.on){opacity:.35}.en-hub:hover{opacity:1}
 .en-route{border:1px solid #d3dce2;border-top:3px solid #d9730d;background:#fffaf4;padding:10px 12px;margin:0}
 .en-rh{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.en-rh b{font-size:14px}
 .en-rk{font-size:10px;font-weight:900;letter-spacing:.06em;color:#8a5a1f}
@@ -1572,6 +1572,8 @@ html,body{background:#fff;color:var(--ink)}
 .en-corr small{display:block;color:#6b7b85;font-size:10.5px}
 @media(max-width:600px){.en-rd div{grid-template-columns:1fr}.en-corr li{grid-template-columns:62px 1fr}}
 .en-kv small{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}.en-kv div:hover small,.en-kv div:focus-within small{-webkit-line-clamp:unset}
+.en-corr details{margin-top:2px}.en-corr summary{cursor:pointer;color:#6b7b85;font-size:10.5px}
+.en-mapbox{position:relative}.en-zoom{position:absolute;top:8px;right:8px;z-index:2;border:1px solid #1d2630;background:#fffffff2;border-radius:3px;padding:5px 10px;font-size:11.5px;font-weight:800;cursor:pointer;color:#1d2630}.en-zoom[aria-pressed=true]{background:#1d2630;color:#fff}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -4050,13 +4052,14 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function mount(){
   const host=document.getElementById("en-app");if(!host)return;
   if(!E.data||!E.data.countries||!Object.keys(E.data.countries).length){host.innerHTML="";return}
-  const have=ORDER.filter(cc=>C(cc));
-  if(!C(E.sel))E.sel=have[0];
+  const R0=RT(),hasR=cc=>!!(R0&&R0.corridors.some(c=>c.buyer===cc));
+  const have=ORDER.filter(cc=>C(cc)||hasR(cc));
+  if(!have.includes(E.sel))E.sel=have[0];
   host.innerHTML='<div class="en-head"><div><span class="en-k">ENERGY MAP / 에너지 지도</span><h4>원유는 어디서 와서, 누가 얼마에 사나</h4>'+
    '<p>각국 세관·통계청이 공개한 원산지별 수입과 값, 시민이 내는 기름값, 물가에 닿는 정도. 나라를 누르면 그 나라로 오는 바닷길이 진해집니다.</p></div>'+
    '<span class="en-asof">'+(E.data.updatedAt?'자료 합친 시각 '+esc(E.data.updatedAt.slice(5,16).replace("T"," ")):'')+'</span></div>'+
-   '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':'')+'</button>'}).join("")+'</div>'+
-   '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><figcaption><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>? 경로 불분명</span><em>선 굵기 = 수입 물량 · 경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div>'+
+   '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':C(cc)?'':'<span>경로</span>')+'</button>'}).join("")+'</div>'+
+   '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>? 경로 불분명</span><em>선 굵기 = 수입 물량 · 경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
    '<div class="en-compare" id="en-compare"></div><div class="en-prices" id="en-prices"></div>';
   drawMap();card();compare();prices();
@@ -4090,6 +4093,22 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(pts.length<2)return null;
   const via=[];if(near(pts,W.hormuz,1.6))via.push("hormuz");if(near(pts,W.bab,1.6)||near(pts,W.suez,1.6))via.push("bab");
   return {pts,via,corr:c,unsure};
+ }
+ // 고른 나라로 오는 경로만 둘러싼 범위(가까이 보기)
+ function zoomBox(){
+  const r=RT();const pts=[];
+  if(r)for(const c of r.corridors.filter(c=>c.buyer===E.sel))for(const id of c.via||[]){const sg=segOf(id),h=hubOf(id);if(sg)pts.push(...sg.path);if(h)pts.push([h.lon,h.lat])}
+  for(const f of flows())if(f.cc===E.sel)pts.push(...f.pts);
+  if(DEST[E.sel])pts.push(DEST[E.sel]);if(pts.length<2)return null;
+  const xy=pts.map(p=>P(p[0],p[1]));const half=E.world.w/2;
+  let xs=xy.map(p=>p[0]),ys=xy.map(p=>p[1]);
+  // 지도 이음매(서경 30°)를 넘는 경로는 한쪽으로 펴서 가장 좁은 범위를 고른다(그림은 양옆에 한 벌 더 그린다)
+  const Wd=E.world.w,opts=[xs,xs.map(x=>x>half?x-Wd:x),xs.map(x=>x<half?x+Wd:x)];
+  xs=opts.reduce((a,b)=>(Math.max(...b)-Math.min(...b))<(Math.max(...a)-Math.min(...a))?b:a);
+  let x0=Math.min(...xs),x1=Math.max(...xs),y0=Math.min(...ys),y1=Math.max(...ys);
+  const wd=Math.max(x1-x0,160),ht=Math.max(y1-y0,100),px=wd*.08,py=ht*.1;
+  let W2=wd+2*px,H2=ht+2*py;const ar=E.world.w/((P(0,-46)[1])-(P(0,72)[1]));if(W2/H2<ar)W2=H2*ar;else H2=W2/ar;
+  const cx=(x0+x1)/2,cy=(y0+y1)/2;return [cx-W2/2,cy-H2/2,W2,H2];
  }
  function routeLayer(k){
   const r=RT();if(!r)return "";
@@ -4131,10 +4150,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function drawMap(){
   const host=document.getElementById("en-map");if(!host||!E.world)return;
-  const w=E.world,y0=P(0,72)[1],y1=P(0,-46)[1],vb=[0,y0,w.w,y1-y0];
+  const w=E.world,y0=P(0,72)[1],y1=P(0,-46)[1];let vb=[0,y0,w.w,y1-y0];
+  if(E.zoom){const z=zoomBox();if(z)vb=z}
   const live=window.__ripple&&window.__ripple.live&&window.__ripple.live.pw;
   const F=flows(),maxV=Math.max(0.1,...F.map(f=>f.vol||0));
-  let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="원유 수입 바닷길 지도"><g class="en-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(ORDER.includes(c.c)?' class="imp'+(c.c===E.sel?' sel':'')+'" data-en-cc="'+c.c+'"':'')+'/>').join("")+'</g><g class="en-flows">';
+  let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="원유 수입 바닷길 지도"><g id="en-all"><g class="en-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(ORDER.includes(c.c)?' class="imp'+(c.c===E.sel?' sel':'')+'" data-en-cc="'+c.c+'"':'')+'/>').join("")+'</g><g class="en-flows">';
   const ord=F.slice().sort((a,b)=>(a.cc===E.sel)-(b.cc===E.sel)||(a.vol||0)-(b.vol||0));
   for(const f of ord){
    const kind=f.sanc?"s":f.via.includes("hormuz")?"h":f.via.includes("bab")||f.via.includes("suez")?"r":"o";
@@ -4147,8 +4167,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const k=vb[2]/1000;
   for(const [wk,id,nm] of cps){const [x,y]=P(...W[wk]);const L=live&&live[id];const lv=wk==="hormuz"?lvlOf("hormuz"):wk==="bab"?lvlOf("redsea"):0;
    g+='<g class="en-cp lv-'+lv+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="4.5"/><text x="7" y="-5">'+esc(nm)+(L?' '+num(L.recent,0)+'척/일':'')+'</text></g>'}
-  for(const cc of ORDER){if(!C(cc))continue;const [x,y]=P(...DEST[cc]);g+='<g class="en-dest'+(cc===E.sel?' sel':'')+'" data-en-cc="'+cc+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/>'+(cc===E.sel?'<text x="7" y="13">'+esc(CN[cc])+'</text>':'')+'</g>'}
-  host.innerHTML=g+'</g></svg>';
+  for(const cc of ORDER){if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))continue;const [x,y]=P(...DEST[cc]);g+='<g class="en-dest'+(cc===E.sel?' sel':'')+'" data-en-cc="'+cc+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/>'+(cc===E.sel?'<text x="7" y="13">'+esc(CN[cc])+'</text>':'')+'</g>'}
+  g+='</g></g>';
+  if(vb[0]<0)g+='<use href="#en-all" x="'+(-w.w)+'"/>';if(vb[0]+vb[2]>w.w)g+='<use href="#en-all" x="'+w.w+'"/>';
+  host.innerHTML=g+'</svg>';
  }
 
  /* ---------- charts ---------- */
@@ -4171,7 +4193,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
 
  /* ---------- country card ---------- */
  function card(){
-  const box=document.getElementById("en-card"),c=C(E.sel);if(!box||!c)return;
+  const box=document.getElementById("en-card"),c=C(E.sel);if(!box)return;
+  if(!c){box.innerHTML='<div class="en-ct"><b>'+esc(CN[E.sel]||E.sel)+'</b><span>'+esc(RT()&&RT().asOf?'경로 확인 '+RT().asOf:'')+'</span></div>'+corridors()+'<p class="en-note">이 나라의 원산지별 수입 단가·기름값·물가 자료는 아직 정리 중입니다. 지도에서 진한 선이 이 나라로 오는 경로입니다.</p>';return}
   const im=c.imports||{},ex=c.exposure||{},rt=c.retail||{},rc=c.refinerCost||{},cpi=c.cpi||{};
   const orig=(im.byOrigin||[]).slice().sort((a,b)=>(b.share||0)-(a.share||0));
   const bars=orig.length?'<div class="en-sec"><h5>어디서 사오나 <small>'+esc(im.period||"")+'</small></h5><ol class="en-bars">'+orig.slice(0,8).map(b=>{const sanc=["IR","VE","RU"].includes(b.origin);return '<li><span class="nm">'+esc(ON[b.origin]||b.origin)+'</span><span class="bar"><i style="width:'+Math.min(100,b.share||0).toFixed(1)+'%" class="'+(sanc?'s':["SA","IQ","KW","QA","IR"].includes(b.origin)||b.origin==="AE"?'h':'o')+'"></i></span><b>'+num(b.share,1)+'%</b><em>'+(b.unitPrice&&b.unitPrice.value!=null?num(b.unitPrice.value,1)+'달러':'')+'</em></li>'}).join("")+'</ol><p class="en-note">막대 = 원유 수입 물량 비중 · 오른쪽 = 세관 단가(배럴당, 운임·보험 포함) '+srcLinks(im.src)+'</p></div>':"";
@@ -4203,7 +4226,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const c0=C(E.sel),sh={};((c0&&c0.imports&&c0.imports.byOrigin)||[]).forEach(b=>sh[b.origin]=b.share);
   cs.sort((a,b)=>(sh[b.origin]||0)-(sh[a.origin]||0));
   const nm=id=>{const x=segOf(id)||hubOf(id);return x?'<button type="button" data-rt="'+esc(id)+'">'+esc(x.short||x.name)+(x.certainty==="불분명"?" ?":"")+'</button>':esc(id)};
-  return '<div class="en-sec"><h5>어떤 길로 오나 <small>원산지 → 실제 경로</small></h5><ol class="en-corr">'+cs.map(c=>'<li><b>'+esc(ON[c.origin]||c.origin)+'</b><span class="via">'+(c.via||[]).map(nm).join(" → ")+((c.alt||[]).length?'<small>다른 길: '+c.alt.map(nm).join(" · ")+'</small>':'')+(c.note?'<small>'+esc(c.note)+(c.share?' · '+esc(c.share):'')+'</small>':'')+'</span><span class="en-cert '+(CERT[c.certainty]||"")+'">'+esc(c.certainty||"")+'</span></li>').join("")+'</ol><p class="en-note">이름을 누르면 지도 아래에 근거가 나옵니다 · '+srcLinks(cs.flatMap(c=>c.src||[]).slice(0,3))+'</p></div>';
+  return '<div class="en-sec"><h5>어떤 길로 오나 <small>원산지 → 실제 경로</small></h5><ol class="en-corr">'+cs.map(c=>'<li><b>'+esc(ON[c.origin]||c.origin)+'</b><span class="via">'+(c.via||[]).map(nm).join(" → ")+((c.alt||[]).length||c.note?'<details><summary>다른 길·설명</summary>'+((c.alt||[]).length?'<small>다른 길: '+c.alt.map(nm).join(" · ")+'</small>':'')+(c.note?'<small>'+esc(c.note)+(c.share?' · '+esc(c.share):'')+'</small>':'')+'</details>':'')+'</span><span class="en-cert '+(CERT[c.certainty]||"")+'">'+esc(c.certainty||"")+'</span></li>').join("")+'</ol><p class="en-note">이름을 누르면 지도 아래에 근거가 나옵니다 · '+srcLinks(cs.flatMap(c=>c.src||[]).slice(0,3))+'</p></div>';
  }
  /* ---------- comparison table ---------- */
  function compare(){
@@ -4240,10 +4263,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
 
  /* ---------- interaction ---------- */
  document.addEventListener("click",e=>{
+  const zb=e.target.closest("[data-en-zoom]");if(zb){E.zoom=!E.zoom;zb.setAttribute("aria-pressed",String(E.zoom));zb.textContent=E.zoom?"세계 전체 보기":"이 나라 경로 가까이 보기";drawMap();return}
   const rt=e.target.closest("[data-rt]");if(rt&&document.getElementById("en-app")?.contains(rt)){routeInfo(rt.dataset.rt);return}
   if(e.target.closest("[data-rt-close]")){const b=document.getElementById("en-route");if(b)b.hidden=true;return}
   const b=e.target.closest("[data-en-cc]");if(!b||!document.getElementById("en-app")?.contains(b))return;
-  const cc=b.dataset.enCc;if(!C(cc))return;E.sel=cc;
+  const cc=b.dataset.enCc;if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))return;E.sel=cc;
   document.querySelectorAll(".en-chip").forEach(x=>{const on=x.dataset.enCc===cc;x.classList.toggle("on",on);x.setAttribute("aria-pressed",on)});
   drawMap();card();compare();
  });

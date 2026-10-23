@@ -55775,5 +55775,11 @@
 "유엔 UN National Accounts Statistics: Analysis of Main Aggregates, {0} ({1} 발간) ↗": "UN National Accounts Statistics: Analysis of Main Aggregates, {0} (published {1}) ↗",
 "실질 GDP 성장률 · % · 한국은행 · 보도자료 '{0}년 북한 경제성장률 추정 결과'({1}-{2}-{3}, 국민소득총괄팀)": "Real GDP growth · % · Bank of Korea · press release 'Estimates of North Korea's economic growth in {0}' ({1}-{2}-{3}, National Income Statistics Team)",
 "값·연도는 그대로이고 출처만 연합뉴스 기사 → 한국은행 보도자료 원문으로 바꿉니다. 한국은행({0}-{1}-{2})이 {3}년 북한 실질 GDP가 전년 대비 {4}% 증가했다고 추정했습니다.": "Value and year unchanged; only the source changes from a Yonhap article to the Bank of Korea press release. The Bank of Korea ({0}-{1}-{2}) estimated North Korea's real GDP grew {4}% in {3} from the previous year.",
-"한국은행 ↗": "Bank of Korea ↗"
+"한국은행 ↗": "Bank of Korea ↗",
+"다른 길·설명": "Other routes and notes",
+"이 나라 경로 가까이 보기": "Zoom to this country's routes",
+"세계 전체 보기": "Show whole world",
+"경로": "Routes",
+"이 나라의 원산지별 수입 단가·기름값·물가 자료는 아직 정리 중입니다. 지도에서 진한 선이 이 나라로 오는 경로입니다.": "Import prices by origin, fuel prices and inflation data for this country are still being compiled. On the map, the darker lines are the routes into this country.",
+"경로 확인 {0}-{1}-{2}": "Routes checked {0}-{1}-{2}"
 }
