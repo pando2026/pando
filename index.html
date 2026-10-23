@@ -1648,6 +1648,14 @@ html,body{background:#fff;color:var(--ink)}
 .en-aisbox rect{fill:rgba(29,95,128,.06);stroke:#1d5f80;stroke-width:1;stroke-dasharray:3 2}
 .en-ship path,.en-ship circle{fill:#0b3d91;stroke:#fff;stroke-width:.8}
 .en-ship.stop circle{fill:#d98e04}
+/* 고를 수 있는 나라·원산지를 바다(#e9f1f5)·다른 땅과 분명히 구분 */
+.en-land path.imp{fill:#e6d6b4;stroke:#7d6a45;stroke-width:.7}
+.en-land path.imp:hover{fill:#d9c393}
+.en-land path.orig,.en-land path.imp.orig{fill:#c3d8ea;stroke:#4f7899;stroke-width:.5}
+.en-land path.sel,.en-land path.imp.sel{fill:#ffc9cf;stroke:#c41230;stroke-width:1}
+.en-legimp{display:inline-block;width:12px;height:9px;background:#e6d6b4;border:1px solid #7d6a45;vertical-align:-1px;margin-right:3px}
+.en-legorig{display:inline-block;width:12px;height:9px;background:#c3d8ea;border:1px solid #4f7899;vertical-align:-1px;margin-right:3px}
+.en-dest text.o{font-size:9.5px;font-weight:700;fill:#5a4a2a}.en-dest{cursor:pointer}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -4210,7 +4218,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<p>각국 세관·통계청이 공개한 원산지별 수입과 값, 시민이 내는 기름값, 물가에 닿는 정도. 나라를 누르면 그 나라로 오는 바닷길이 진해집니다.</p></div>'+
    '<span class="en-asof">'+(E.data.updatedAt?'자료 합친 시각 '+esc(E.data.updatedAt.slice(5,16).replace("T"," ")):'')+'</span></div>'+
    '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':C(cc)?'':'<span>경로</span>')+'</button>'}).join("")+'</div>'+
-   '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>? 경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div><div class="en-route en-sat" id="en-sat" aria-live="polite" hidden></div>'+
+   '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-legimp"></i>누르면 고를 수 있는 나라</span><span><i class="en-legorig"></i>고른 나라의 원산지</span><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div><div class="en-route en-sat" id="en-sat" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
    '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ships","해협 유조선 위치"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
    '<div class="en-live" id="en-live"></div>'+
@@ -4487,7 +4495,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const [wk,id,nm] of cps){const [x,y]=P(...W[wk]);const L=live&&live[id];const lv=wk==="hormuz"?lvlOf("hormuz"):wk==="bab"?lvlOf("redsea"):0;
    const show=E.vb||usedCp.has(wk);
    g+='<g class="en-cp lv-'+lv+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="'+(show?4.5:3)+'"/>'+(show?'<text x="7" y="-5">'+esc(nm)+'</text>':'')+'<title>'+esc(nm+(L?' · 하루 통항 '+num(L.recent,0)+'척(IMF PortWatch)':''))+'</title></g>'}
-  for(const cc of ORDER){if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))continue;const [x,y]=P(...DEST[cc]);g+='<g class="en-dest'+(cc===E.sel?' sel':'')+'" data-en-cc="'+cc+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/>'+(cc===E.sel?'<text x="7" y="13">'+esc(CN[cc])+'</text>':'')+'</g>'}
+  for(const cc of ORDER){if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))continue;const [x,y]=P(...DEST[cc]);g+='<g class="en-dest'+(cc===E.sel?' sel':'')+'" data-en-cc="'+cc+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/>'+(cc===E.sel?'<text x="7" y="13">'+esc(CN[cc])+'</text>':'<text class="o" x="6" y="12">'+esc(CN[cc])+'</text>')+'<title>'+esc(CN[cc]+' · 누르면 이 나라로')+'</title></g>'}
   g+='</g></g>';
   g+='<use href="#en-all" x="'+(-w.w)+'"/><use href="#en-all" x="'+w.w+'"/>';
   g+='<g class="en-vlabs">'+labs+'</g>';   // 이름표는 맨 위(지도 복사본보다 뒤에)
