@@ -56928,5 +56928,11 @@
 "수시 리포트 · {0}월 {1}일 · {2}월 {3}~{4}일": "Flash report · {0:mon} {1} · {2:mon} {3}–{4}",
 "PANDO / 수시 리포트 · {0}월 {1}일 · {2}월 {3}~{4}일": "PANDO / Flash report · {0:mon} {1} · {2:mon} {3}–{4}",
 "지난해 {0}월 남북이 함께 끈 확성기를, 북한은 왜 지금 먼저 다시 켜겠다고 할까? {1}월 {2}일 DMZ 지뢰 폭발 한 달 뒤, 김여정 북한 노동당 총무부장이 나흘 동안 세 차례 담화를 내 '{3}월 중 전 국경선 대남 확성기 가동'과 '새 대응 수단 임무 대기'를 예고했다. 북한은 한국군의 경고방송·경고사격을 이유로 들고, 한국 정부는 지뢰가 북한군 소행이자 정전협정 위반이라며 {4}일 유엔 안보리 의장에게 서한을 보냈다. 국방부는 '비례적 조치'를 말하지만, 대북 확성기는 이미 철거했다. {5}일까지 북한이 실제로 확성기를 틀었다는 발표는 없다.": "Both Koreas switched off their loudspeakers in {0:mon} last year. Why is the North now threatening to turn them back on first? A month after the {1:mon} {2} DMZ mine blast, Kim Yo Jong, director of the Workers' Party General Affairs Department, issued three statements in four days announcing that propaganda loudspeakers aimed at the South would 'operate along the entire border within {3:mon}' and that 'new response assets are on mission standby'. Pyongyang cites South Korean warning broadcasts and warning shots; Seoul says the mine was planted by North Korean troops in violation of the Armistice and sent a letter to the UN Security Council president on the {4:ord}. The defence ministry speaks of a 'proportionate measure', but South Korea has already dismantled its own loudspeakers. As of the {5:ord}, there had been no report that the North had actually switched its loudspeakers on.",
-"한국, 안보리에 서한…북한에 DMZ 지뢰 폭발 책임 촉구": "S. Korea sends letter to UNSC urging NK to take responsibility for DMZ mine blasts"
+"한국, 안보리에 서한…북한에 DMZ 지뢰 폭발 책임 촉구": "S. Korea sends letter to UNSC urging NK to take responsibility for DMZ mine blasts",
+"하루 {0}백만 배럴": "{0} million barrels a day",
+"{0}만 배럴": "{0:man} barrels",
+"{0}백만 배럴": "{0} million barrels",
+"{0}~{1}월 {2}억 달러": "${2:eok} in {0:mon}–{1:mon}",
+"· {0}~{1}월 {2}억 달러": "· ${2:eok} in {0:mon}–{1:mon}",
+"적도기니": "Equatorial Guinea"
 }

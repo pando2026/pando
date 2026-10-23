@@ -1438,6 +1438,7 @@ html,body{background:#fff;color:var(--ink)}
 .mastnav .feedback-link,.mastnav .guide-link{white-space:nowrap}
 @media(min-width:601px) and (max-width:1120px){.masthead{flex-wrap:wrap;row-gap:10px}.mastnav{order:3;width:100%;margin:0;justify-content:flex-start;gap:18px;border-top:1px solid var(--line);padding-top:10px}}
 .rp-dsrc details summary{cursor:pointer;color:#5c6c76;font-weight:700;margin-top:3px}
+.rp-mapbox{position:relative}.rp-mapbox .en-zctl{bottom:10px}.rp-map.en-map svg{max-height:none}
 
 /* 판도 리포트 */
 .report-list{display:grid;gap:12px}
@@ -1585,11 +1586,14 @@ html,body{background:#fff;color:var(--ink)}
 @keyframes enflow{to{stroke-dashoffset:-12.5}}
 @media(prefers-reduced-motion:reduce){.en-flowdash{animation:none}}
 .en-arrow{fill:#1d2630;stroke:#fff;stroke-width:.8;pointer-events:none}
-.en-vlab text{font:800 10px system-ui,sans-serif;fill:#14222b;paint-order:stroke;stroke:#fffffff2;stroke-width:3.2px;text-anchor:middle;pointer-events:none}
-.en-vlab text.s{font-weight:700;font-size:9px;fill:#3e4f5a}
 .en-wleg{display:flex;align-items:center;gap:5px;font-weight:700}.en-wleg i{display:inline-block;width:18px;background:#2f6f93;margin-left:6px}
 .en-bars li{grid-template-columns:62px 1fr 42px 150px}.en-bars em{white-space:nowrap}
 @media(max-width:600px){.en-bars li{grid-template-columns:54px 1fr 38px 120px}.en-bars em{font-size:9.5px}}
+.en-vlab{pointer-events:none}.en-vlab rect{fill:#fffffff2;stroke:#1d2630;stroke-width:.7}
+.en-vlab line{stroke:#1d2630;stroke-width:1;vector-effect:non-scaling-stroke}.en-vlab circle{fill:#1d2630}
+.en-vlab text{font:800 10.5px system-ui,sans-serif;fill:#14222b;text-anchor:middle}.en-vlab text.s{font-weight:700;font-size:9px;fill:#3e4f5a}
+.en-land path.orig{fill:#e4eef6;stroke:#9fb6c8}.en-land path.imp.orig{fill:#e4eef6}
+.en-vlab.sm rect{stroke:#7a8a93;stroke-width:.5}.en-vlab.sm text{font-size:9.5px;font-weight:800}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -4057,11 +4061,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const cur=()=>(S.vb||base()).slice();
   const toUser=(cx,cy)=>{const s=svg();if(!s||!s.getScreenCTM())return null;const p=s.createSVGPoint();p.x=cx;p.y=cy;return p.matrixTransform(s.getScreenCTM().inverse())};
   function apply(vb,now){
-   const b=base(),Wd=(E.world&&E.world.w)||b[2];
-   vb[2]=Math.max(b[2]/16,Math.min(b[2],vb[2]));vb[3]=vb[2]*b[3]/b[2];
+   const b=base(),Wd=S.noWrap?Infinity:(E.world&&E.world.w)||b[2];
+   vb[2]=Math.max(b[2]/16,Math.min(b[2]*(S.maxOut||1),vb[2]));vb[3]=vb[2]*b[3]/b[2];
    vb[1]=Math.max(b[1]-vb[3]*0.3,Math.min(b[1]+b[3]-vb[3]*0.7,vb[1]));
    if(vb[0]<-Wd)vb[0]+=Wd;if(vb[0]>Wd)vb[0]-=Wd;
-   S.vb=vb[2]>=b[2]*0.999&&Math.abs(vb[0]-b[0])<1?null:vb;
+   if(S.noWrap){vb[0]=Math.max(b[0]-vb[2]*0.5,Math.min(b[0]+b[2]-vb[2]*0.5,vb[0]))}
+   S.vb=vb[2]>=b[2]*0.999&&vb[2]<=b[2]*1.001&&Math.abs(vb[0]-b[0])<1&&Math.abs(vb[1]-b[1])<1?null:vb;
    const sv=svg();if(sv)sv.setAttribute("viewBox",vb.map(v=>v.toFixed(2)).join(" "));
    host.classList.toggle("zoomed",!!S.vb);
    clearTimeout(S.zt);S.zt=setTimeout(redraw,now?0:160);
@@ -4222,7 +4227,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const w=E.world;let vb=(E.vb||baseVB()).slice();
   const live=window.__ripple&&window.__ripple.live&&window.__ripple.live.pw;
   const F=flows(),maxV=Math.max(0.1,...F.map(f=>f.vol||0));
-  let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="원유 수입 바닷길 지도"><g id="en-all"><g class="en-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(ORDER.includes(c.c)?' class="imp'+(c.c===E.sel?' sel':'')+'" data-en-cc="'+c.c+'"':'')+'/>').join("")+'</g><g class="en-flows">';
+  const origSet=new Set(F.filter(f=>f.cc===E.sel).map(f=>f.o));
+  let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="원유 수입 바닷길 지도"><g id="en-all"><g class="en-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(ORDER.includes(c.c)?' class="imp'+(c.c===E.sel?' sel':'')+(origSet.has(c.c)?' orig':'')+'" data-en-cc="'+c.c+'"':origSet.has(c.c)?' class="orig"':'')+'/>').join("")+'</g><g class="en-flows">';
   const ord=F.slice().sort((a,b)=>(a.cc===E.sel)-(b.cc===E.sel)||(a.vol||0)-(b.vol||0));
   for(const f of ord){
    const kind=f.sanc?"s":f.via.includes("hormuz")?"h":f.via.includes("bab")||f.via.includes("suez")?"r":"o";
@@ -4238,18 +4244,26 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const f of mine)for(const t of [0.3,0.62,0.9]){const a=along(f.pp,t);if(!a)continue;
    g+='<path class="en-arrow" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+a.x.toFixed(1)+' '+a.y.toFixed(1)+') rotate('+a.ang.toFixed(0)+') scale('+(K*(0.8+f.w*0.25)).toFixed(3)+')"/>'}
   // 이름표 자리: 해협·도착지 이름표, 이미 놓은 이름표와 겹치지 않는 곳(사각형 충돌 검사)
-  const boxes=[],hit=(b)=>boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0);
-  for(const wk of ["hormuz","bab","suez","malacca","cape","bosporus","panama"]){const [x,y]=P(...W[wk]);boxes.push({x0:x-6*K,x1:x+110*K,y0:y-16*K,y1:y+6*K})}
-  for(const cc of ORDER){if(DEST[cc]){const [x,y]=P(...DEST[cc]);boxes.push({x0:x-6*K,x1:x+45*K,y0:y-6*K,y1:y+16*K})}}
-  for(const f of mine.slice(0,6)){
-   const l1=(ON[f.o]||f.o)+' '+num(f.share,0)+'%',l2=(f.vol!=null?'하루 '+mbd(f.vol)+' 배럴':'')+(f.val?' · '+periodTxt(f.period)+' '+usd(valMusd(f.val))+' 달러':'');
-   const hw=Math.max(l1.length*5.5,l2.length*4.6)*K,top=-16*K,bot=10*K;let a=null;
-   let best=null,bn=1e9;const Wd=E.world.w;
-   for(let k=0;k<17;k++){const t=0.5+((k%2?1:-1)*Math.ceil(k/2)*0.05);const c=along(f.pp,t);if(!c)continue;c.x=((c.x%Wd)+Wd)%Wd;
-    const b={x0:c.x-hw,x1:c.x+hw,y0:c.y+top,y1:c.y+bot};const n=boxes.filter(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0).length;
-    if(n<bn){bn=n;best={c,b}}if(!n)break}
-   if(!best||bn>0)continue;a=best.c;boxes.push(best.b);
-   g+='<g class="en-vlab" transform="translate('+a.x.toFixed(1)+' '+a.y.toFixed(1)+') scale('+K.toFixed(3)+')"><text y="-6">'+esc(l1)+'</text>'+(l2?'<text y="6" class="s">'+esc(l2)+'</text>':'')+'</g>'}
+  // 원산지 이름표: 고른 나라로 오는 흐름마다 출발지(원산지 항구) 옆에 나라 이름·비중·양·금액. 선·해협 이름·다른 이름표와 안 겹치는 자리를 찾아 끈으로 잇는다.
+  const boxes=[],tw=(t,px)=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?px:px*0.58),0),Wd=E.world.w;
+  const inView=b=>b.x0>vb[0]+4*K&&b.x1<vb[0]+vb[2]-4*K&&b.y0>vb[1]+4*K&&b.y1<vb[1]+vb[3]-30*K;
+  const wrapX=x=>{let v=((x%Wd)+Wd)%Wd;if(v<vb[0])v+=Wd;if(v>vb[0]+vb[2])v-=Wd;return v};
+  for(const wk of ["hormuz","bab","suez","malacca","cape","bosporus","panama"]){const [x0,y]=P(...W[wk]);const x=wrapX(x0);boxes.push({x0:x-8*K,x1:x+120*K,y0:y-18*K,y1:y+8*K})}
+  for(const cc of ORDER){if(DEST[cc]){const [x0,y]=P(...DEST[cc]);const x=wrapX(x0);boxes.push({x0:x-8*K,x1:x+50*K,y0:y-8*K,y1:y+18*K})}}
+  let labs="";
+  mine.forEach((f,rank)=>{
+   const big=rank<8,l1=(ON[f.o]||f.o)+' '+num(f.share,f.share<1?1:0)+'%',l2a=big&&f.vol!=null?'하루 '+mbd(f.vol)+' 배럴':'',l2b=big&&f.val?(l2a?' · ':'')+periodTxt(f.period)+' '+usd(valMusd(f.val))+' 달러':'',l2=l2a+l2b;
+   const ax=wrapX(f.pp[0][0]),ay=f.pp[0][1];
+   const TR=window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR:x=>x;
+   const bw=(Math.max(tw(TR(ON[f.o]||f.o)+' '+num(f.share,1)+'%',big?10.5:9.5),l2?tw(TR(l2a)+TR(l2b),9):0)+(big?14:8))*K,bh=(l2?30:big?17:14)*K;let best=null;
+   for(const r of [14,30,48,70,96,124])for(let a=0;a<16&&!best;a++){const ang=(a*22.5+(rank%2?11:0))*Math.PI/180;
+    const cx=ax+Math.cos(ang)*(r*K+bw/2),cy=ay+Math.sin(ang)*(r*K+bh/2);const b={x0:cx-bw/2,x1:cx+bw/2,y0:cy-bh/2,y1:cy+bh/2};
+    if(inView(b)&&!boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0))best={b,cx,cy}}
+   if(!best)return;boxes.push(best.b);const {b,cx,cy}=best;
+   const ex=Math.max(b.x0,Math.min(b.x1,ax)),ey=Math.max(b.y0,Math.min(b.y1,ay));
+   labs+='<g class="en-vlab'+(big?'':' sm')+'"><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+ex.toFixed(1)+'" y2="'+ey.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.4*K).toFixed(2)+'"/>'+
+    '<g transform="translate('+cx.toFixed(1)+' '+cy.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="'+(-bw/2/K).toFixed(1)+'" y="'+(-bh/2/K).toFixed(1)+'" width="'+(bw/K).toFixed(1)+'" height="'+(bh/K).toFixed(1)+'" rx="3"/>'+
+    '<text y="'+(l2?-3:big?4:3.5)+'"><tspan>'+esc(ON[f.o]||f.o)+'</tspan><tspan> '+esc(num(f.share,f.share<1?1:0)+'%')+'</tspan></text>'+(l2?'<text y="10" class="s"><tspan>'+esc(l2a)+'</tspan>'+(l2b?'<tspan>'+esc(l2b)+'</tspan>':'')+'</text>':'')+'</g></g>'});
   g+='</g>'+routeLayer(vb[2]/1000)+'<g class="en-cps">';
   const cps=[["hormuz","chokepoint6","호르무즈"],["bab","chokepoint4","바브엘만데브"],["suez","chokepoint1","수에즈"],["malacca","chokepoint5","말라카"],["cape","chokepoint7","희망봉"],["bosporus","chokepoint3","보스포루스"],["panama","chokepoint2","파나마"]];
   const k=vb[2]/1000;
@@ -4258,6 +4272,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const cc of ORDER){if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))continue;const [x,y]=P(...DEST[cc]);g+='<g class="en-dest'+(cc===E.sel?' sel':'')+'" data-en-cc="'+cc+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/>'+(cc===E.sel?'<text x="7" y="13">'+esc(CN[cc])+'</text>':'')+'</g>'}
   g+='</g></g>';
   g+='<use href="#en-all" x="'+(-w.w)+'"/><use href="#en-all" x="'+w.w+'"/>';
+  g+='<g class="en-vlabs">'+labs+'</g>';   // 이름표는 맨 위(지도 복사본보다 뒤에)
+  g=g.replace(/<path /g,'<path vector-effect="non-scaling-stroke" ');   // <use> 복사본에도 선 굵기 고정이 따라가도록 속성으로
   host.innerHTML=g+'</svg>';
   const wl=document.getElementById("en-wleg");if(wl){const s=[0.1,0.5,1].filter(v=>v<=maxV*1.05);wl.innerHTML='선 굵기 = 하루 수입량 '+s.map(v=>'<i style="height:'+(0.5+3.6*Math.sqrt(v/maxV)).toFixed(1)+'px"></i>'+mbd(v)+' 배럴').join(" ")}
   zoomable(host,E,baseVB,drawMap);host.classList.toggle("zoomed",!!E.vb);
@@ -4633,8 +4649,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   let x0=Math.min(...pts.map(p=>p[0])),x1=Math.max(...pts.map(p=>p[0])),y0=Math.min(...pts.map(p=>p[1])),y1=Math.max(...pts.map(p=>p[1]));
   const padX=Math.max(40,(x1-x0)*.12),padY=Math.max(40,(y1-y0)*.3);x0-=padX;x1+=padX;y0-=padY;y1+=padY;
   const ar=2.1;let vw=x1-x0,vh=y1-y0;if(vw/vh<ar){const nw=vh*ar;x0-=(nw-vw)/2;vw=nw}else{const nh=vw/ar;y0-=(nh-vh)/2;vh=nh}
-  const k=vw/1000;
-  let g='<svg viewBox="'+[x0,y0,vw,vh].map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+esc(t.title)+' 경로 지도">';
+  // 확대·이동(에너지 지도와 같은 도구): 기본 범위는 충격원과 한국을 담는 틀, 바꾼 범위는 갈래마다 기억
+  const base=[x0,y0,vw,vh];S.mapZ=S.mapZ||{};const Z=S.mapZ[t.id]=S.mapZ[t.id]||{noWrap:true,maxOut:2.5};
+  const vbx=(Z.vb||base).slice();const k=vbx[2]/1000;
+  let g='<svg viewBox="'+vbx.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+esc(t.title)+' 경로 지도">';
   g+='<g class="rp-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(c.c==="KR"?' class="kr"':'')+'/>').join("")+'</g>';
   const {out}=graph(t);
   const best=id=>{let b=-1;const walk=(n,m)=>{const L=out[n]||[];if(!L.length){b=Math.max(b,m);return}for(const e of L)walk(e.to,Math.min(m,e.level))};walk(id,3);return b};
@@ -4642,7 +4660,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const n of shocks){
    const [sx,sy]=P(n.lon,n.lat),lv=Math.max(0,best(n.id));
    const mx=(sx+KR[0])/2,my=Math.min(sy,KR[1])-Math.abs(KR[0]-sx)*.28;
-   arcs+='<path class="rp-arc lv-'+lv+(S.sel===n.id?' on':'')+'" d="M'+sx.toFixed(1)+','+sy.toFixed(1)+'Q'+mx.toFixed(1)+','+my.toFixed(1)+' '+KR[0].toFixed(1)+','+KR[1].toFixed(1)+'" style="stroke-width:'+((1.2+lv*.9)*k).toFixed(2)+'"/>';
+   arcs+='<path class="rp-arc lv-'+lv+(S.sel===n.id?' on':'')+'" d="M'+sx.toFixed(1)+','+sy.toFixed(1)+'Q'+mx.toFixed(1)+','+my.toFixed(1)+' '+KR[0].toFixed(1)+','+KR[1].toFixed(1)+'" style="stroke-width:'+(1.2+lv*.9).toFixed(2)+'"/>';
    const live=n.live&&n.live.kind==="portwatch"?S.live.pw?.[n.live.id]:null;
    const lab=n.label+(live?' · 하루 '+num(live.recent,0)+'척':'');
    marks+='<g class="rp-mk lv-'+n.level+'" data-node="'+esc(n.id)+'" transform="translate('+sx.toFixed(1)+' '+sy.toFixed(1)+') scale('+k.toFixed(3)+')" tabindex="0" role="button" aria-label="'+esc(lab)+'"><circle r="7"/><text x="10" y="4">'+esc(lab)+'</text></g>';
@@ -4653,8 +4671,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    marks+='<g class="rp-mk rp-mk2 lv-'+n.level+'" data-node="'+esc(n.id)+'" transform="translate('+sx.toFixed(1)+' '+sy.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-5" y="-5" width="10" height="10"/><text x="9" y="4">'+esc(n.live.name+(live?' · 하루 '+num(live.recent,0)+'척':''))+'</text></g>';
   }
   marks+='<g class="rp-mk rp-kr" transform="translate('+KR[0].toFixed(1)+' '+KR[1].toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="8"/><text x="11" y="5">한국</text></g>';
-  host.innerHTML=g+'<g>'+arcs+'</g>'+marks+'</svg>';
+  host.innerHTML=(g+'<g>'+arcs+'</g>'+marks+'</svg>').replace(/<path /g,'<path vector-effect="non-scaling-stroke" ');
   declutter(host.querySelector("svg"));
+  const zr=window.__pandoRes&&window.__pandoRes.zoomable;
+  if(zr){if(host.dataset.zoomable&&host.dataset.zt!==t.id){delete host.dataset.zoomable;host.parentElement.querySelectorAll(".en-zctl").forEach(x=>x.remove())}
+   if(!host.dataset.zoomable){zr(host,Z,()=>base.slice(),drawMap);host.dataset.zt=t.id}host.classList.add("en-map");host.classList.toggle("zoomed",!!Z.vb)}
  }
 
  // Nudge marker labels apart (several shocks sit in the Gulf); draw a leader line when moved.
