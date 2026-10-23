@@ -1663,6 +1663,18 @@ html,body{background:#fff;color:var(--ink)}
 .en-mapcap .ex b{background:#2e8b57}
 .en-vlab.r rect{stroke:#4f7899;stroke-dasharray:2 1.5}
 
+.en-hit{fill:none;stroke:transparent;stroke-width:12px;cursor:pointer;pointer-events:stroke}
+.en-hit:hover{stroke:#ffd54a66}
+.en-use{margin:8px 0 4px;border:1px solid #d9e2e7;border-radius:4px;padding:7px 9px;background:#f8fbfc}
+.en-use h5{margin:0 0 5px;font-size:12px}
+.en-usec{border-top:1px solid #e3eaee;padding:5px 0}.en-usec:first-of-type{border-top:0}
+.en-usec.sel{background:#fff1f2;margin:0 -9px;padding:5px 9px}
+.en-usec p{margin:0 0 3px;font-size:12.5px}.en-usec strong{color:#c41230;font-size:14px}
+.en-usec ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.en-usec li{display:grid;grid-template-columns:86px 1fr 112px;gap:6px;align-items:center;font-size:11.5px}
+.en-usec li i{display:block;height:7px;background:#1d5f80;border-radius:1px;min-width:1px}.en-usec li em{font-style:normal;text-align:right;font-weight:700}
+.en-join{font-size:11.5px;color:#3e4f5a}.en-join button{border:0;background:none;padding:0;color:#1d5f80;font:inherit;font-weight:800;text-decoration:underline;cursor:pointer}
+
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
 .ask label{display:flex;align-items:baseline;gap:12px;margin-bottom:9px;flex-wrap:wrap}
@@ -4164,7 +4176,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const toUser=(cx,cy)=>{const s=svg();if(!s||!s.getScreenCTM())return null;const p=s.createSVGPoint();p.x=cx;p.y=cy;return p.matrixTransform(s.getScreenCTM().inverse())};
   function apply(vb,now){
    const b=base(),Wd=S.noWrap?Infinity:(E.world&&E.world.w)||b[2];
-   vb[2]=Math.max(b[2]/16,Math.min(b[2]*(S.maxOut||1),vb[2]));vb[3]=vb[2]*b[3]/b[2];
+   vb[2]=Math.max(b[2]/32,Math.min(b[2]*(S.maxOut||1),vb[2]));vb[3]=vb[2]*b[3]/b[2];
    vb[1]=Math.max(b[1]-vb[3]*0.3,Math.min(b[1]+b[3]-vb[3]*0.7,vb[1]));
    if(vb[0]<-Wd)vb[0]+=Wd;if(vb[0]>Wd)vb[0]-=Wd;
    if(S.noWrap){vb[0]=Math.max(b[0]-vb[2]*0.5,Math.min(b[0]+b[2]-vb[2]*0.5,vb[0]))}
@@ -4173,7 +4185,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    host.classList.toggle("zoomed",!!S.vb);
    clearTimeout(S.zt);S.zt=setTimeout(redraw,now?0:160);
   }
-  const zoomAt=(f,u)=>{const vb=cur();if(!u)u={x:vb[0]+vb[2]/2,y:vb[1]+vb[3]/2};apply([u.x-(u.x-vb[0])*f,u.y-(u.y-vb[1])*f,vb[2]*f,vb[3]*f])};
+  const zoomAt=(f,u)=>{const vb=cur(),b=base();const w2=Math.max(b[2]/32,Math.min(b[2]*(S.maxOut||1),vb[2]*f));f=w2/vb[2];if(Math.abs(f-1)<1e-3)return;
+   if(!u)u={x:vb[0]+vb[2]/2,y:vb[1]+vb[3]/2};apply([u.x-(u.x-vb[0])*f,u.y-(u.y-vb[1])*f,vb[2]*f,vb[3]*f])};
   host.addEventListener("wheel",e=>{e.preventDefault();zoomAt(Math.exp(Math.max(-60,Math.min(60,e.deltaY))*0.006),toUser(e.clientX,e.clientY))},{passive:false});
   host.addEventListener("dblclick",e=>{e.preventDefault();zoomAt(0.5,toUser(e.clientX,e.clientY))});
   const P2=new Map();let st=null,moved=false;
@@ -4293,20 +4306,49 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const used=new Set();for(const f of flows())if(f.corr)(f.corr.via||[]).forEach(v=>used.add(v));
   let g='<g class="en-routes">';
   for(const sg of r.segments){
-   if(sg.kind==="sea"&&used.has(sg.id))continue;   // 물량 선이 이미 그 바닷길을 그린다
+   if(sg.kind==="sea"&&used.has(sg.id)){g+='<path class="en-hit" data-rt="'+esc(sg.id)+'" d="'+smooth(sg.path.map(p=>P(p[0],p[1])))+'"><title>'+esc(sg.name+' · 눌러서 이 길로 오는 원유 보기')+'</title></path>';continue}   // 물량 선이 이미 그 바닷길을 그린다
    const on=mine.has(sg.id)||(sg.users||[]).includes(E.sel);
    const st=/중단/.test(sg.status||"")?" stop":/차질|제한|일부/.test(sg.status||"")?" part":"";
    const pts=sg.path.map(p=>P(p[0],p[1]));
    g+='<path class="en-rt k-'+esc(sg.kind)+st+(sg.certainty==="불분명"?" uq":"")+(on?" on":"")+'" data-rt="'+esc(sg.id)+'" d="'+smooth(pts)+'"><title>'+esc(sg.name+" · "+(sg.status||"")+" · "+sg.certainty)+'</title></path>';
   }
-  const near=k<0.42;
+  const near=k<0.42,hb=[],twh=t=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?9.5:5.6),0);
+  for(const h of r.hubs){const [x,y]=P(h.lon,h.lat);hb.push({x0:x-4.5*k,x1:x+4.5*k,y0:y-4.5*k,y1:y+4.5*k})}
+  const hubLab=(h,x,y)=>{const t=(h.short||h.name)+(h.certainty==="불분명"?" ?":""),w=twh(t)+2,hh=11;
+   for(const [dx,dy,anc] of [[7,3,"start"],[-7,3,"end"],[0,-8,"middle"],[0,13,"middle"]]){
+    const x0=anc==="start"?x+dx*k:anc==="end"?x+dx*k-w*k:x-w*k/2,y0=y+(dy-9)*k,b={x0,x1:x0+w*k,y0,y1:y0+hh*k};
+    if(!hb.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0)){hb.push(b);return '<text x="'+dx+'" y="'+dy+'" text-anchor="'+anc+'">'+esc(t)+'</text>'}}
+   return ""};
   for(const h of r.hubs){const [x,y]=P(h.lon,h.lat);const on=mine.has(h.id)||(h.who||[]).includes(E.sel);
    if(!near&&(h.kind==="refinery"||h.kind==="reserve"||!on))continue;
    g+='<g class="en-hub k-'+esc(h.kind)+(on?" on":"")+(h.certainty==="불분명"?" uq":"")+'" data-rt="'+esc(h.id)+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')">'+(h.kind==="sts"?'<path d="M0,-5L5,0L0,5L-5,0Z"/>':'<rect x="-3.5" y="-3.5" width="7" height="7"/>')+
-    (on&&near?'<text x="7" y="3">'+esc(h.short||h.name)+(h.certainty==="불분명"?" ?":"")+'</text>':'')+'<title>'+esc(h.name+" · "+h.certainty)+'</title></g>'}
+    (on&&near?hubLab(h,x,y):'')+'<title>'+esc(h.name+" · "+h.certainty)+'</title></g>'}
   return g+'</g>';
  }
  const CERT={"확인":"c-ok","추정":"c-est","불분명":"c-uq"};
+ function corrShare(c){const t=c.share||"";if(/수치 없음|자료 없음|찾지 못/.test(t)&&!/%/.test(t))return {};let m=t.match(/수입의 (?:약 )?([\d.]+)%/)||t.match(/^([\d.]+)%/);if(m)return {pct:+m[1]};m=t.match(/하루 (?:약 )?([\d.]+)만 배럴/);return m?{extra:'하루 '+m[1]+'만 배럴'}:{}}
+ // 이 구간을 지나는 원유: 나라별로 '수입의 몇 %가 이 길로', 어느 원산지가, 어디서 합류해 오는지
+ function usage(id){
+  const r=RT();if(!r)return "";const by={};
+  for(const c of r.corridors){const i=(c.via||[]).indexOf(id),alt=(c.alt||[]).includes(id);if(i<0&&!alt)continue;
+   const d=C(c.buyer),b=d&&d.imports&&(d.imports.byOrigin||[]).find(x=>x.origin===c.origin);
+   const pct=b&&b.share!=null?b.share:corrShare(c).pct;
+   const prev=i>0?c.via[i-1]:null,next=i>=0&&i<c.via.length-1?c.via[i+1]:null;
+   (by[c.buyer]=by[c.buyer]||{main:[],alt:[]})[i>=0?"main":"alt"].push({o:c.origin,pct,extra:corrShare(c).extra,prev,next})}
+  const sum=B=>B.main.reduce((s,x)=>s+(x.pct||0),0);
+  const keys=Object.keys(by).sort((a,b)=>(a===E.sel?-1:b===E.sel?1:0)||(sum(by[b])-sum(by[a])));
+  if(!keys.length)return "";
+  const nm=x=>{const q=segOf(x)||hubOf(x);return q?(q.short||q.name):x};
+  let h='<div class="en-use"><h5>이 길로 오는 원유</h5>';
+  for(const cc of keys){const B=by[cc],tot=sum(B),unk=B.main.filter(x=>x.pct==null);
+   const joins={};B.main.forEach(x=>{if(x.prev)(joins[x.prev]=joins[x.prev]||[]).push(ON[x.o]||x.o)});
+   const nexts=[...new Set(B.main.map(x=>x.next).filter(Boolean))];
+   h+='<div class="en-usec'+(cc===E.sel?' sel':'')+'"><p><b>'+esc(CN[cc]||cc)+'</b> '+(B.main.length?(tot?'원유 수입의 <strong>'+num(tot,tot<10?1:0)+'%</strong>가 이 길로':(vs=>vs?'비중은 미공개, 확인된 물량 <strong>하루 '+num(vs,0)+'만 배럴</strong>이 이 길로':'수입 비중 자료 없음')(B.main.reduce((s,x)=>s+(x.extra?+x.extra.replace(/[^\d.]/g,''):0),0)))+(unk.length&&tot?' + 비중 모르는 '+esc(unk.map(x=>ON[x.o]||x.o).join("·")):''):'평소엔 다른 길(대체 경로)')+'</p>'+
+    (B.main.length?'<ul>'+B.main.sort((a,b)=>(b.pct||0)-(a.pct||0)).map(x=>'<li><span>'+esc((ON[x.o]||x.o)+'산')+'</span><i style="width:'+Math.min(100,(x.pct||0)*2).toFixed(0)+'%"></i><em>'+(x.pct!=null?num(x.pct,x.pct<1?1:0)+'%':esc(x.extra||'–'))+'</em></li>').join("")+'</ul>':'')+
+    (Object.keys(joins).length?'<p class="en-join">합류: '+Object.entries(joins).map(([k,v])=>'<button type="button" data-rt="'+esc(k)+'">'+esc(nm(k))+'</button>에서 '+esc(v.join("·"))).join(" / ")+(nexts.length?' → 다음: '+nexts.map(k=>'<button type="button" data-rt="'+esc(k)+'">'+esc(nm(k))+'</button>').join(" · "):'')+'</p>':'')+
+    (B.alt.length?'<p class="en-join">대체 경로로 쓰일 때: '+esc(B.alt.map(x=>ON[x.o]||x.o).join("·"))+'</p>':'')+'</div>'}
+  return h+'<p class="en-note">% = 그 나라 원유 수입 중 이 구간을 지나는 원산지들의 몫(경로 조사의 대표 항로 기준). 실제 배는 화물마다 다른 길을 갈 수 있습니다.</p></div>';
+ }
  function routeInfo(id){
   const box=document.getElementById("en-route");if(!box)return;
   const it=segOf(id)||hubOf(id);if(!it){box.hidden=true;return}
@@ -4315,7 +4357,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   box.hidden=false;
   box.innerHTML='<div class="en-rh"><span class="en-rk">'+esc(KN[it.kind]||it.kind)+'</span><b>'+esc(it.name)+'</b><span class="en-cert '+(CERT[it.certainty]||"")+'">'+esc(it.certainty)+'</span><button type="button" class="en-rx" data-rt-close aria-label="닫기">×</button></div>'+
    (it.from||it.to?'<p class="en-rl">'+esc([it.from,it.to].filter(Boolean).join(" → "))+'</p>':'')+
-   '<dl class="en-rd">'+[["상태",it.status],["용량",it.capacity],["실제 흐름",it.throughput],["무엇이",it.what],["누구 원유",org],["받는 나라",who],["전쟁 뒤 달라진 점",it.changed],["확실성 근거",it.why]].filter(x=>x[1]).map(x=>'<div><dt>'+esc(x[0])+'</dt><dd>'+esc(x[1])+'</dd></div>').join("")+'</dl>'+
+   usage(id)+'<dl class="en-rd">'+[["상태",it.status],["용량",it.capacity],["실제 흐름",it.throughput],["무엇이",it.what],["누구 원유",org],["받는 나라",who],["전쟁 뒤 달라진 점",it.changed],["확실성 근거",it.why]].filter(x=>x[1]).map(x=>'<div><dt>'+esc(x[0])+'</dt><dd>'+esc(x[1])+'</dd></div>').join("")+'</dl>'+
    (it.lon!=null?'<p><button type="button" class="en-satbtn" data-sat="'+esc(it.name)+'|'+it.lon+'|'+it.lat+'|">🛰 위성 사진으로 보기</button></p>':'')+
    '<p class="en-note">'+srcLinks(it.src)+'</p>';
  }
@@ -4478,7 +4520,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   // 한 줄 이름표('사우디 29%')를 출발지 바로 옆에 둔다. 자리가 없으면 그 이름표는 생략(나라 색과 마우스 설명으로 남음). 양·금액은 마우스 설명과 오른쪽 막대에.
   const TR=window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR:x=>x;
   // 나라 자료가 아직 없는 나라: 경로 조사(corridors)의 원산지 이름만 출발지에 단다
-  const corrPct=c=>{const t=c.share||"";if(/수치 없음|자료 없음|찾지 못/.test(t)&&!/%/.test(t))return {};let m=t.match(/수입의 (?:약 )?([\d.]+)%/)||t.match(/^([\d.]+)%/);if(m)return {pct:+m[1]};m=t.match(/하루 (?:약 )?([\d.]+)만 배럴/);return m?{extra:' 하루 '+m[1]+'만 배럴'}:{}};
+  const corrPct=corrShare;const _unused=c=>{const t=c.share||"";if(/수치 없음|자료 없음|찾지 못/.test(t)&&!/%/.test(t))return {};let m=t.match(/수입의 (?:약 )?([\d.]+)%/)||t.match(/^([\d.]+)%/);if(m)return {pct:+m[1]};m=t.match(/하루 (?:약 )?([\d.]+)만 배럴/);return m?{extra:' 하루 '+m[1]+'만 배럴'}:{}};
   if(E.layers.crude&&!mine.length&&RT())for(const c of RT().corridors.filter(c=>c.buyer===E.sel).map(c=>Object.assign({},c,corrPct(c))).sort((a,b)=>(b.pct??-1)-(a.pct??-1))){const L=corrLane(c.origin,E.sel);if(!L)continue;
    const pp=unwrap(L.pts.map(p=>P(p[0],p[1])));labItems.push({anchor:pp[0],name:(ON[c.origin]||CN[c.origin]||c.origin)+'산',share:c.pct??null,extra:c.extra||'',note:c.share||'',cls:" r"});
    for(const t of [0.35,0.7]){const q=along(pp,t);if(q)g+='<path class="en-arrow" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+q.x.toFixed(1)+' '+q.y.toFixed(1)+') rotate('+q.ang.toFixed(0)+') scale('+K.toFixed(3)+')"/>'}}
