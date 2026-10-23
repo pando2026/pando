@@ -1305,13 +1305,171 @@ html,body{background:#fff;color:var(--ink)}
 .pmap-svg path.story-nb--prov{fill:#e4e9ec;stroke:#fbfcfc;stroke-width:1}
 .pmap-svg path.story-nb-border{fill:none;stroke:#aab5bd;stroke-width:.9;vector-effect:non-scaling-stroke;pointer-events:none}
 
+/* 파급경로 (ripple) — shock → transmission → Korea */
+#ripple{--l0:#8b9ba4;--l1:#d99a12;--l2:#e2622a;--l3:#c41230}
+#ripple .lv-0{--lc:var(--l0)}#ripple .lv-1{--lc:var(--l1)}#ripple .lv-2{--lc:var(--l2)}#ripple .lv-3{--lc:var(--l3)}
+.rp-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid #1d2630;border-bottom:0}
+.rp-tab{display:flex;flex-direction:column;align-items:flex-start;gap:3px;text-align:left;background:#f4f7f9;border:0;border-right:1px solid #d5dde2;border-bottom:1px solid #1d2630;padding:13px 16px 12px;color:#26323b;position:relative}
+.rp-tab:last-child{border-right:0}
+.rp-tab[aria-selected="true"]{background:#fff;border-bottom-color:#fff}
+.rp-tab[aria-selected="true"]:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--lc)}
+.rp-tab-k{font-size:9px;font-weight:850;letter-spacing:.14em;color:#6d7d87}
+.rp-tab strong{font-family:Georgia,"Times New Roman",serif;font-size:20px;font-weight:650;letter-spacing:-.04em;line-height:1.2}
+.rp-tab em{font-style:normal;font-size:11px;font-weight:800;color:var(--lc);display:flex;align-items:center;gap:5px}
+.rp-dot{width:8px;height:8px;border-radius:50%;background:var(--lc);display:inline-block}
+.rp-tab.lv-3 .rp-dot{animation:rp-pulse 1.6s ease-out infinite}
+@keyframes rp-pulse{0%{box-shadow:0 0 0 0 #c4123088}100%{box-shadow:0 0 0 8px #c4123000}}
+.rp-board{border:1px solid #1d2630;border-top:0;background:#fff;padding:22px 22px 18px}
+.rp-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:start}
+.rp-q{font-size:12px;font-weight:800;color:#b51d2a}
+.rp-head h3{font-family:Georgia,"Times New Roman",serif;font-size:27px;font-weight:650;letter-spacing:-.05em;line-height:1.25;margin:7px 0 8px;word-break:keep-all}
+.rp-head p{margin:0;max-width:760px;color:#42515c;font-size:14px;line-height:1.7;word-break:keep-all}
+.rp-stamp{display:flex;flex-direction:column;align-items:flex-end;gap:5px;font-size:11px;color:#5d6e79;white-space:nowrap}
+.rp-lvbadge{display:inline-block;background:var(--lc);color:#fff;font-size:11px;font-weight:850;padding:3px 9px;border-radius:2px;letter-spacing:.04em}
+.rp-stamp .rp-lvbadge{font-size:15px;padding:5px 14px}
+.rp-live{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:18px 0 6px;padding:10px 0;border-top:1px solid #e3e8eb;border-bottom:1px solid #e3e8eb}
+.rp-live-k{font-size:10px;font-weight:900;letter-spacing:.12em;color:#fff;background:#1d2630;padding:3px 7px;border-radius:2px;display:flex;align-items:center;gap:5px}
+.rp-live-k:before{content:"";width:6px;height:6px;border-radius:50%;background:#ff4d5a;animation:rp-blink 1.4s infinite}
+@keyframes rp-blink{50%{opacity:.25}}
+.rp-lchip{display:flex;align-items:baseline;gap:7px;border:1px solid #d6dee3;background:#f8fafb;border-radius:2px;padding:5px 9px;font-size:12px;color:#26323b;border-left:3px solid var(--lc,#b9c6cd)}
+.rp-lchip b{font-weight:800}.rp-lchip span{color:#4c5e69}
+.rp-lchip:hover{background:#eef6fa}
+.rp-main{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(300px,.95fr);gap:22px;margin-top:14px;align-items:start}
+.rp-flow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:52px;padding:4px 0 8px;align-items:stretch}
+.rp-wires{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:0}
+.rp-col{display:flex;flex-direction:column;gap:9px;position:relative;z-index:1}.rp-stack{flex:1;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.rp-col-h{font-size:10px;font-weight:900;letter-spacing:.1em;color:#6b7b85;padding-bottom:5px;border-bottom:2px solid #1d2630;margin-bottom:2px}
+.rp-col[data-col="3"] .rp-col-h{color:#b51d2a;border-color:#c41230}
+.rp-node{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;background:#fff;border:1px solid #d6dee3;border-left:4px solid var(--lc);border-radius:2px;padding:8px 9px 8px 9px;color:#1b2730;transition:box-shadow .15s,transform .15s,opacity .15s;min-height:62px}
+.rp-node:hover{box-shadow:0 4px 14px #12324b1c;transform:translateY(-1px)}
+.rp-node.sel{box-shadow:0 0 0 2px #1d2630;background:#fbfdfe}
+.rp-nlv{font-size:9px;font-weight:900;letter-spacing:.06em;color:var(--lc)}
+.rp-node strong{font-size:13.5px;letter-spacing:-.03em;line-height:1.25;word-break:keep-all}
+.rp-node small{font-size:10.5px;color:#66767f;line-height:1.35;word-break:keep-all}
+.rp-nlive{font-style:normal;font-size:10px;font-weight:800;color:#1d5f80;background:#eaf4fa;padding:1px 5px;border-radius:2px;margin-top:3px}
+.rp-node.lv-3 .rp-nlv:before{content:"● ";animation:rp-blink 1.4s infinite}
+.rp-wire{fill:none;stroke:var(--lc);stroke-linecap:round;transition:opacity .2s}
+.rp-wire.lv-0{stroke-width:1.2}.rp-wire.lv-1{stroke-width:1.8}.rp-wire.lv-2{stroke-width:2.6}.rp-wire.lv-3{stroke-width:3.4}
+.rp-wire.off{opacity:.16}
+.rp-wire.on{opacity:.95}
+.rp-wire.on.lv-2,.rp-wire.on.lv-3{stroke-dasharray:7 6;animation:rp-flow 1.1s linear infinite}
+.rp-wire.on.lv-3{animation-duration:.7s}
+@keyframes rp-flow{to{stroke-dashoffset:-13}}
+.rp-detail{background:#f6f9fb;border:1px solid #dce5ea;border-top:3px solid #1d2630;padding:16px 16px 14px;position:sticky;top:12px;max-height:calc(100vh - 24px);overflow:auto}
+.rp-dk{font-size:11px;font-weight:800;color:#5c6d78;display:flex;align-items:center;gap:7px}
+.rp-detail h4{font-family:Georgia,"Times New Roman",serif;font-size:23px;font-weight:650;letter-spacing:-.04em;margin:8px 0 2px}
+.rp-dsub{margin:0;font-size:12px;color:#62727c}
+.rp-now{font-size:13.5px;line-height:1.7;color:#25333c;margin:10px 0 12px;word-break:keep-all}
+.rp-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:7px;margin-bottom:12px}
+.rp-facts div{background:#fff;border:1px solid #dce5ea;padding:8px 9px;display:flex;flex-direction:column;gap:2px}
+.rp-facts span{font-size:10.5px;font-weight:800;color:#5b6d78}
+.rp-facts b{font-size:18px;letter-spacing:-.04em;color:#14222b;line-height:1.2;overflow-wrap:anywhere;word-break:keep-all}.rp-facts em{font-style:normal;font-size:10.5px;color:#4b5d68;line-height:1.35}
+.rp-facts small{font-size:10px;color:#71818b}
+.rp-facts a,.rp-src a,.rp-dsrc a{color:#b51d2a;text-decoration:underline;text-underline-offset:2px}
+.rp-dlive{background:#fff;border:1px solid #c9dfeb;border-left:3px solid #1d5f80;padding:10px 11px;margin-bottom:12px}
+.rp-dlive h5,.rp-paths h5{margin:0 0 6px;font-size:11px;font-weight:900;letter-spacing:.04em;color:#1d5f80}
+.rp-paths h5{color:#1d2630}
+.rp-gauge{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-size:11.5px;color:#4d606c}
+.rp-gauge b{font-size:24px;letter-spacing:-.05em;color:#14222b}
+.rp-gauge strong.dn{color:#c41230}.rp-gauge strong.up{color:#c41230}
+.rp-spark{width:100%;height:40px;margin-top:6px;display:block}
+.rp-spark polyline{fill:none;stroke:#1d5f80;stroke-width:1.6;vector-effect:non-scaling-stroke}
+.rp-alert{margin:8px 0 0;font-size:11.5px;background:#fff1f2;border-left:3px solid #c41230;padding:6px 8px;color:#6b2730}
+.rp-gtext{font-size:12px;margin:0 0 6px;color:#3f505b}
+.rp-fed{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.rp-fed li{display:grid;grid-template-columns:36px 52px 1fr;gap:6px;font-size:11px;line-height:1.4;align-items:start}
+.rp-fed time{color:#6a7a84}.rp-fed span{font-weight:800;color:#1d5f80}
+.rp-fed a{color:#22323c;text-decoration:none}.rp-fed a:hover{text-decoration:underline}
+.rp-path{border:1px solid #dce5ea;background:#fff;margin-bottom:7px;border-left:3px solid var(--lc)}
+.rp-path summary{list-style:none;cursor:pointer;padding:8px 10px;display:flex;gap:8px;align-items:flex-start}
+.rp-path summary::-webkit-details-marker{display:none}
+.rp-pathlv{flex:none;font-size:10px;font-weight:900;color:#fff;background:var(--lc);padding:2px 6px;border-radius:2px;margin-top:1px}
+.rp-chain{font-size:12.5px;line-height:1.55;word-break:keep-all}
+.rp-chain i{font-style:normal;color:#9aa8b0;margin:0 4px}
+.rp-chain .me{font-weight:900;text-decoration:underline;text-decoration-color:var(--lc);text-underline-offset:3px}
+.rp-path ol{margin:0;padding:0 10px 8px 10px;list-style:none;display:flex;flex-direction:column;gap:7px}
+.rp-path li{border-left:2px solid var(--lc);padding:2px 0 2px 9px}
+.rp-path li b{font-size:11.5px}.rp-path li em{font-style:normal;font-size:10px;font-weight:800;color:#5e707b;margin-left:6px;background:#eef2f4;padding:1px 5px;border-radius:2px}
+.rp-path li p{margin:3px 0 0;font-size:12px;line-height:1.6;color:#41525d;word-break:keep-all}
+.rp-path li p.rp-ev{color:#1f2d36}.rp-ev strong{font-size:10px;color:#fff;background:#1d2630;padding:1px 4px;border-radius:2px;margin-right:3px}
+.rp-src{font-size:10.5px;color:#7a8a93}
+.rp-dsrc{font-size:10.5px;line-height:1.6;color:#6c7c86;margin:8px 0 0}
+.rp-dsrc i{font-style:normal;color:#93a0a7}
+.rp-lower{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,1fr);gap:22px;margin-top:22px;align-items:start}
+.rp-mapbox{margin:0;border:1px solid #1e2c35;background:#eaf2f6}
+.rp-mapbox figcaption{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:8px 11px;background:#fff;border-bottom:1px solid #d3dde3;font-size:12px;font-weight:850}
+.rp-mapbox figcaption span{font-weight:600;color:#62727c;font-size:10.5px}
+.rp-map svg{display:block;width:100%;height:auto;aspect-ratio:2.1}
+.rp-land path{fill:#f7f4ee;stroke:#c3cbcf;stroke-width:.35}
+.rp-land path.kr{fill:#ffd9dc;stroke:#c41230;stroke-width:.6}
+.rp-arc{fill:none;stroke:var(--lc);opacity:.75;stroke-linecap:round}
+.rp-arc.lv-2,.rp-arc.lv-3{stroke-dasharray:4 3;animation:rp-flow2 1s linear infinite}
+.rp-arc.on{opacity:1}
+@keyframes rp-flow2{to{stroke-dashoffset:-7}}
+.rp-mk{cursor:pointer}.rp-mk circle,.rp-mk rect{fill:var(--lc);stroke:#fff;stroke-width:2}
+.rp-mk text{font:800 11px system-ui,sans-serif;fill:#14222b;paint-order:stroke;stroke:#ffffffe6;stroke-width:3.2px}
+.rp-lead{stroke:#5b6b75;stroke-width:1}.rp-kr circle{fill:#c41230}.rp-kr{cursor:default}
+.rp-mk.lv-3 circle{animation:rp-mk 1.6s ease-out infinite}
+@keyframes rp-mk{0%{stroke-width:2}60%{stroke-width:9;stroke:#c4123033}100%{stroke-width:2}}
+.rp-side{display:flex;flex-direction:column;gap:16px}
+.rp-side h4{margin:0 0 8px;font-size:12px;font-weight:900;letter-spacing:.05em;border-bottom:2px solid #1d2630;padding-bottom:5px}
+.rp-signals ol,.rp-next ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.rp-signals li,.rp-next li{display:grid;grid-template-columns:42px 1fr;gap:8px;padding:7px 0;border-bottom:1px solid #e6ebee;font-size:12.5px;line-height:1.6;word-break:keep-all}
+.rp-signals time,.rp-next time{font-weight:900;color:#b51d2a;font-size:11.5px;padding-top:1px}
+.rp-signals{max-height:440px;overflow:auto}
+.rp-chip{border:0;background:transparent;padding:0 0 0 7px;border-left:3px solid var(--lc);font-size:11px;font-weight:850;color:#22313b;margin-right:3px}
+.rp-chip:hover{text-decoration:underline}
+.rp-none{font-size:12px;color:#6c7c86;margin:4px 0}
+.rp-legend{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin:16px 0 0;font-size:11px;color:#5c6c76}
+.rp-legend span{display:flex;align-items:center;gap:5px;font-weight:800}
+.rp-legend i{width:18px;height:4px;background:var(--lc);display:inline-block}
+.rp-legend em{font-style:normal;flex-basis:100%}
+@media(max-width:1020px){.rp-main{grid-template-columns:1fr}.rp-detail{position:static;max-height:none}.rp-lower{grid-template-columns:1fr}}
+@media(max-width:720px){
+ .rp-tabs{grid-template-columns:1fr}.rp-tab{border-right:0;padding:10px 13px;flex-direction:row;align-items:center;flex-wrap:wrap;gap:4px 10px}.rp-tab strong{font-size:17px}.rp-tab-k{flex-basis:100%}
+ .rp-board{padding:16px 13px}.rp-head{grid-template-columns:1fr;gap:10px}.rp-stamp{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px}.rp-head h3{font-size:22px}
+ .rp-flow{grid-template-columns:1fr;gap:26px}
+ .rp-stack{flex-direction:row;flex-wrap:wrap;gap:7px}
+ .rp-node{flex:1 1 calc(50% - 7px);min-height:0}
+ .rp-fed li{grid-template-columns:34px 1fr}.rp-fed li span{display:none}
+}
+/* Masthead: one more menu item ("파급경로") — wrap the nav onto its own row on mid-width screens
+   instead of squeezing buttons into vertical text. */
+.mastnav .feedback-link,.mastnav .guide-link{white-space:nowrap}
+@media(min-width:601px) and (max-width:1120px){.masthead{flex-wrap:wrap;row-gap:10px}.mastnav{order:3;width:100%;margin:0;justify-content:flex-start;gap:18px;border-top:1px solid var(--line);padding-top:10px}}
+.rp-dsrc details summary{cursor:pointer;color:#5c6c76;font-weight:700;margin-top:3px}
+
+/* 판도 리포트 */
+.report-list{display:grid;gap:12px}
+.rep-card{display:flex;flex-direction:column;align-items:flex-start;gap:8px;text-align:left;background:#fff;border:1px solid #d7dfe4;border-top:3px solid #1d2630;border-radius:3px;padding:17px 18px;color:var(--ink);transition:border-color .15s,box-shadow .15s}
+.rep-card:hover{border-color:#9ac3d6;box-shadow:0 8px 22px #12324b12}
+.rep-card.rep-flash{border-top-color:#d52832}
+.rep-k{font-size:10px;font-weight:900;letter-spacing:.08em;color:#b51d2a}
+.rep-card strong{font-family:Georgia,"Times New Roman",serif;font-size:21px;font-weight:650;letter-spacing:-.04em;line-height:1.3;word-break:keep-all}
+.rep-card p{margin:0;font-size:13px;line-height:1.7;color:#4a5a65;word-break:keep-all}
+.rep-big{padding:24px 26px;background:#f7fafc;border-left:4px solid #d52832}
+.rep-big strong{font-size:29px}
+.rep-big p{font-size:14.5px;max-width:880px}
+.rep-tags{display:flex;flex-wrap:wrap;gap:6px;align-items:center;width:100%}
+.rep-tags i{font-style:normal;font-size:10.5px;font-weight:800;background:#eaf4fa;color:#1d5f80;padding:2px 7px;border-radius:2px}
+.rep-tags em{font-style:normal;margin-left:auto;font-size:12px;font-weight:850;color:#b51d2a}
+.rep-rest{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.rep-block{margin:0 0 12px}.rep-block h4{margin:0 0 4px;font-size:15px}.rep-block p{margin:0;font-size:14px;line-height:1.75;color:#33434e}
+.rep-view{border-left:3px solid #9ac3d6;padding:4px 0 4px 11px;margin:0 0 10px}
+.rep-view header{display:flex;gap:8px;align-items:baseline;font-size:13px}.rep-view header span{font-size:10.5px;font-weight:800;color:#1d5f80;background:#eaf4fa;padding:1px 6px;border-radius:2px}
+.rep-view p{margin:4px 0 0;font-size:13.5px;line-height:1.7;color:#3a4a55}
+.rep-ripple{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin:14px 0 4px;padding:9px 11px;background:#fff7f7;border-left:3px solid #d52832;font-size:12px}
+.rep-ripple span{font-weight:900;color:#b51d2a}.rep-ripple a{color:#22323c;font-weight:750}
+@media(max-width:900px){.rep-rest{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.rep-rest{grid-template-columns:1fr}.rep-big{padding:18px}.rep-big strong{font-size:23px}}
+
 </style>
 <div class="shell">
- <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#latest">국제 현장</a><a href="#watch">주목 국가</a><a href="#countries">국가 탐색</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
+ <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#latest">국제 현장</a><a href="#watch">주목 국가</a><a href="#countries">국가 탐색</a><a href="#reports">리포트</a><a href="#ripple">파급경로</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
  <section class="top"><div><div class="eyebrow">Global intelligence · Daily brief</div><h1>세계의 변화를<br><em>맥락까지</em> 읽다.</h1><p>정치 제도와 경제·군사 지표를 바탕으로, 분쟁부터 재정안과 선거까지 중요한 변화를 추적합니다. 확인된 사실과 주장을 구분해 보여드립니다.</p><a class="hero-guide" href="#guide" data-guide-open>처음이라면 · 판도 사용법 보기 →</a><div class="quick-search" role="search"><label for="quick-country">나라 바로 찾기</label><div class="qs-box"><input id="quick-country" type="search" autocomplete="off" placeholder="예: 튀르키예, 일본, Brazil" aria-controls="quick-results"><ul id="quick-results" class="qs-results" role="listbox" hidden></ul></div></div></div><aside class="edition-box"><strong id="edition-title">브리핑을 불러오는 중</strong><div id="edition-note">매시간 새로운 변화를 점검합니다. 통계는 각 발표 시점을 따릅니다.</div><div class="small" id="edition-time"></div><span class="live-note" id="live-note"></span></aside></section>
  <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="heat-key"></i>이번 판 사건이 많은 나라(진할수록 많음) <button type="button" class="occ-toggle" data-occ-toggle aria-pressed="true"><i class="occ-key"></i>무력 점령·통제 지역</button></span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치, 빗금은 무력 점령·무장세력 통제 지역(진한 빗금 = 대부분 장악, 옅은 빗금 = 일부)입니다.</span></div><div class="bloc-bar" id="bloc-bar" aria-label="국제기구 회원국 보기"></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
  <section id="latest" aria-labelledby="feed-title"><div class="section-head"><div><div class="eyebrow">The latest / 주요 현장</div><h2 id="feed-title">국제 현장</h2></div><p>기사 발행일과 사건 시점을 구분합니다</p></div><div class="filters" id="filters" role="group" aria-label="지역별 필터"></div><div class="feed" id="feed"></div></section>
- <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
+ <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="reports" aria-labelledby="reports-title"><div class="section-head"><div><div class="eyebrow">Pando report / 판도 리포트</div><h2 id="reports-title">판도 리포트</h2></div><p>한 주의 흐름과 큰 주제를 묶어 — 무슨 일·왜·한국에 무슨 뜻·다음에 볼 것</p></div><div id="report-list" class="report-list"><p class="empty">리포트를 불러오는 중</p></div></section><section id="ripple" aria-labelledby="ripple-title"><div class="section-head"><div><div class="eyebrow">Ripple effects / 파급경로</div><h2 id="ripple-title">파급경로 추적</h2></div><p>충격원에서 한국 산업·생활까지 — 노드를 누르면 경로와 근거가 펼쳐집니다</p></div><div id="ripple-app" class="ripple-app"><p class="empty">파급경로를 불러오는 중</p></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
  <section id="countries" aria-labelledby="countries-title"><div class="section-head"><div><div class="eyebrow">Country atlas / 국가 탐색</div><h2 id="countries-title">세계 국가·지역 정보</h2></div><p id="country-count">목록을 불러오는 중</p></div><div class="country-tools"><label class="country-search-label" for="country-search">국가·지역 검색</label><input id="country-search" type="search" autocomplete="off" placeholder="국가명이나 영문 이름으로 검색"><label class="country-region-label" for="country-region">지역</label><select id="country-region" aria-label="지역 필터"><option value="">전 지역</option></select></div><div class="country-list" id="country-list" aria-live="polite"></div><p class="country-method">국가·지역 250곳의 탐색 목록입니다. 통계·정책금리·예산안·의회 구성은 원문과 기준 시점을 지표마다 표시합니다. 모든 지역에 독립 정책금리나 공개된 예산안이 있는 것은 아닙니다.</p></section></main>
  <section class="method"><div><b>어떤 주체를 표시하나요?</b><p>교전 당사자, 지원·연루 주장, 피해 기업과 투자자를 각자의 역할로 분리합니다. 공개 자료에서 연결이 확인된 주체만 싣고, 이름이 확인되지 않은 기업은 추측해 채우지 않습니다.</p></div><div><b>어떻게 읽으면 되나요?</b><p>매시간 새로운 변화를 점검하지만 GDP와 군사비는 주로 연간 자료입니다. 카드의 사건 시점과 기사 발행일을 구분하고, 각 지표의 기준 연도를 확인하세요. <a href="#" id="about-open">편집 원칙 보기 →</a></p></div></section>
  <footer class="foot">판도 / PANDO · 한국시간 기준 · 각 카드에서 원문 확인 · 지도 경계 <a href="https://github.com/johan/world.geo.json" target="_blank" rel="noopener noreferrer">world.geo.json</a>(Natural Earth 기반, 퍼블릭 도메인) · <span class="foot-copy">© 판도. 무단 복제·배포 금지</span></footer></div>
@@ -2153,6 +2311,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   $(".drawer").scrollTop=0;
   $("#close").focus();
  }
+ window.__pandoDrawer=activateDrawer;
  function money(value){
   if(value>=1e12)return "US$"+number(value/1e12,2)+"조";
   if(value>=1e8)return "US$"+number(value/1e8,1)+"억";
@@ -3627,6 +3786,405 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")refreshEdition()});
  window.addEventListener("focus",refreshEdition);
  setInterval(refreshEdition,5*60*1000);
+})();
+
+</script>
+<script>
+/* 판도 파급경로: 충격원 → 1차 전달 → 2차 전달 → 한국 영향.
+   Verified judgements come from data/ripple.json (scheduled updates).
+   Live gauges are fetched by the reader's browser straight from public APIs:
+   IMF PortWatch (daily chokepoint transits), US Federal Register (BIS/USTR/presidential
+   trade documents) and Frankfurter (ECB reference FX). Nothing here writes data. */
+(function(){
+ "use strict";
+ const root=document.getElementById("ripple-app");
+ if(!root)return;
+ const LV=["평시","주의","경계","위기"];
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const safe=u=>/^https?:\/\/[^\s"'<>]+$/i.test(String(u||""))?String(u):"#";
+ const NS="http://www.w3.org/2000/svg";
+ const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구·통계"};
+ const S={data:null,ti:0,sel:null,live:{},liveAt:0,world:null,ro:null};
+ const iso=d=>d.toISOString().slice(0,10);
+ const daysAgo=n=>{const d=new Date();d.setUTCDate(d.getUTCDate()-n);return iso(d)};
+ const md=s=>{const m=String(s||"").match(/^\d{4}-(\d{2})-(\d{2})/);return m?(+m[1])+"/"+(+m[2]):esc(s)};
+ const pct=v=>(v>0?"+":"")+(Math.round(v*10)/10).toLocaleString("ko-KR")+"%";
+ const num=(v,d=0)=>Number(v).toLocaleString("ko-KR",{minimumFractionDigits:d,maximumFractionDigits:d});
+
+ /* ---------- data ---------- */
+ fetch("data/ripple.json",{cache:"no-cache"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}).then(d=>{
+  S.data=d;
+  const h=decodeURIComponent(location.hash||"");const m=h.match(/^#ripple=([a-z]+)(?::([a-z0-9_]+))?/);
+  if(m){const i=d.tracks.findIndex(t=>t.id===m[1]);if(i>=0){S.ti=i;S.sel=m[2]||null}setTimeout(()=>document.getElementById("ripple")?.scrollIntoView(),400)}
+  render();loadLive();
+  setInterval(()=>{if(!document.hidden&&Date.now()-S.liveAt>30*60e3)loadLive()},60e3);
+ }).catch(()=>{root.innerHTML='<p class="empty">파급경로 자료를 불러오지 못했습니다.</p>'});
+
+ window.addEventListener("hashchange",()=>{
+  if(!S.data)return;const m=decodeURIComponent(location.hash||"").match(/^#ripple=([a-z]+)(?::([a-z0-9_]+))?/);if(!m)return;
+  const i=S.data.tracks.findIndex(t=>t.id===m[1]);if(i<0)return;S.ti=i;S.sel=m[2]||null;render();paintLive();
+ });
+ const track=()=>S.data.tracks[S.ti];
+ const nodeOf=(t,id)=>t.nodes.find(n=>n.id===id);
+ function graph(t){
+  const out={},inn={};
+  for(const e of t.edges){(out[e.from]=out[e.from]||[]).push(e);(inn[e.to]=inn[e.to]||[]).push(e)}
+  return {out,inn};
+ }
+ // Every chain shock(col 0) → … → Korea(col 3) that passes through `id`.
+ function pathsThrough(t,id){
+  const {out,inn}=graph(t),res=[];
+  const up=(n,acc)=>{const L=inn[n]||[];if(!L.length){heads.push(acc);return}for(const e of L)up(e.from,[e,...acc])};
+  const down=(n,acc)=>{const L=out[n]||[];if(!L.length){tails.push(acc);return}for(const e of L)down(e.to,[...acc,e])};
+  const heads=[],tails=[];up(id,[]);down(id,[]);
+  for(const a of heads)for(const b of tails){const p=[...a,...b];if(p.length)res.push(p)}
+  const score=p=>Math.min(...p.map(e=>e.level))*100+p.reduce((s,e)=>s+e.level,0);
+  return res.sort((a,b)=>score(b)-score(a));
+ }
+ const strength=p=>Math.min(...p.map(e=>e.level));
+
+ /* ---------- render ---------- */
+ function render(){
+  const d=S.data,t=track();
+  if(!S.sel||!nodeOf(t,S.sel)){
+   const kr=t.nodes.filter(n=>n.col===3).sort((a,b)=>b.level-a.level)[0];S.sel=kr?kr.id:t.nodes[0].id;
+  }
+  const tabs=d.tracks.map((x,i)=>'<button type="button" role="tab" class="rp-tab lv-'+x.level+'" data-ti="'+i+'" aria-selected="'+(i===S.ti)+'"><span class="rp-tab-k">'+esc(x.kicker)+'</span><strong>'+esc(x.title)+'</strong><em><i class="rp-dot"></i>'+esc(LV[x.level])+'</em></button>').join("");
+  const cols=d.cols.map((c,ci)=>'<div class="rp-col" data-col="'+ci+'"><div class="rp-col-h">'+esc(c)+'</div><div class="rp-stack">'+t.nodes.filter(n=>n.col===ci).map(nodeBtn).join("")+'</div></div>').join("");
+  root.innerHTML='<div class="rp-tabs" role="tablist" aria-label="파급경로 갈래">'+tabs+'</div>'+
+   '<div class="rp-board"><div class="rp-head"><div><span class="rp-q">'+esc(t.question)+'</span><h3>'+esc(t.headline)+'</h3><p>'+esc(t.summary)+'</p></div>'+
+   '<div class="rp-stamp"><b class="rp-lvbadge lv-'+t.level+'">'+esc(LV[t.level])+'</b><span>판정 '+md(t.asOf)+' 기준</span><span class="rp-livetime" id="rp-livetime">실시간 계기 받는 중</span></div></div>'+
+   '<div class="rp-live" id="rp-live" aria-label="실시간 계기">'+liveStrip(t)+'</div>'+
+   '<div class="rp-main"><div class="rp-flow" id="rp-flow"><svg class="rp-wires" id="rp-wires" aria-hidden="true"></svg>'+cols+'</div>'+
+   '<aside class="rp-detail" id="rp-detail" aria-live="polite"></aside></div>'+
+   '<div class="rp-lower"><figure class="rp-mapbox"><figcaption>충격원에서 한국까지<span>선 색 = 그 경로의 지금 단계 · 해협 숫자 = 실시간 하루 통항</span></figcaption><div class="rp-map" id="rp-map"></div></figure>'+
+   '<div class="rp-side"><div class="rp-signals"><h4>최근 30일 신호</h4>'+signals(t)+'</div>'+nextList(t)+'</div></div>'+
+   '<p class="rp-legend"><span><i class="lv-0"></i>평시</span><span><i class="lv-1"></i>주의</span><span><i class="lv-2"></i>경계</span><span><i class="lv-3"></i>위기</span>'+
+   '<em>단계는 공식 발표·가격·물량으로 판정합니다. 선이 굵고 움직일수록 그 경로가 지금 실제로 작동하고 있다는 뜻입니다.</em></p></div>';
+  detail();
+  requestAnimationFrame(()=>{wires();drawMap()});
+  if(!S.ro&&"ResizeObserver" in window){S.ro=new ResizeObserver(()=>wires());}
+  if(S.ro){S.ro.disconnect();const f=document.getElementById("rp-flow");if(f)S.ro.observe(f)}
+ }
+ function nodeBtn(n){
+  return '<button type="button" class="rp-node lv-'+n.level+(n.id===S.sel?' sel':'')+'" data-node="'+esc(n.id)+'" aria-pressed="'+(n.id===S.sel)+'">'+
+   '<span class="rp-nlv">'+esc(LV[n.level])+'</span><strong>'+esc(n.label)+'</strong><small>'+esc(n.sub||"")+'</small>'+
+   (n.live?'<em class="rp-nlive" data-live-node="'+esc(n.id)+'">'+liveShort(n)+'</em>':'')+'</button>';
+ }
+ function srcLinks(src){
+  return (src||[]).map(s=>'<a href="'+esc(safe(s[2]))+'" target="_blank" rel="noopener noreferrer" title="'+esc(s[1])+'">'+esc(s[0])+'</a>').join(" · ");
+ }
+ function srcBlock(src){
+  const row=s=>'<a href="'+esc(safe(s[2]))+'" target="_blank" rel="noopener noreferrer">'+esc(s[0])+' — '+esc(s[1])+'</a> <i>'+esc(TIER[s[3]]||"")+'</i>';
+  const head=src.slice(0,3).map(row).join("<br>"),rest=src.slice(3);
+  return '<div class="rp-dsrc">출처 · '+head+(rest.length?'<details><summary>출처 '+rest.length+'개 더</summary>'+rest.map(row).join("<br>")+'</details>':'')+'</div>';
+ }
+ function signals(t){
+  if(!t.signals.length)return '<p class="rp-none">최근 30일 새 신호 없음</p>';
+  return '<ol>'+t.signals.map(s=>{const n=nodeOf(t,s.node);return '<li><time>'+md(s.date)+'</time><div>'+(n?'<button type="button" class="rp-chip lv-'+n.level+'" data-node="'+esc(n.id)+'">'+esc(n.label)+'</button> ':'')+esc(s.text)+(s.src.length?' <span class="rp-src">'+srcLinks(s.src)+'</span>':'')+'</div></li>'}).join("")+'</ol>';
+ }
+ function nextList(t){
+  if(!t.next.length)return "";
+  return '<div class="rp-next"><h4>다음 일정</h4><ul>'+t.next.map(x=>{const n=nodeOf(t,x.node);return '<li><time>'+md(x.date)+'</time><span>'+esc(x.text)+(n?' <button type="button" class="rp-chip lv-'+n.level+'" data-node="'+esc(n.id)+'">'+esc(n.label)+'</button>':'')+'</span></li>'}).join("")+'</ul></div>';
+ }
+
+ // "55.6% (전년 대비 -15.3%p)" → big number + small note
+ function factVal(v){const m=String(v||"").match(/^(.{1,26}?)\s*[(（](.+)[)）]\s*$/);return m?'<b>'+esc(m[1])+'</b><em>'+esc(m[2])+'</em>':'<b>'+esc(v)+'</b>'}
+ function detail(){
+  const t=track(),n=nodeOf(t,S.sel),box=document.getElementById("rp-detail");if(!n||!box)return;
+  const paths=pathsThrough(t,n.id).slice(0,4);
+  const facts=n.facts.length?'<div class="rp-facts">'+n.facts.map(f=>'<div><span>'+esc(f.label)+'</span>'+factVal(f.value)+'<small>'+md(f.asOf)+(f.src.length?' · '+srcLinks(f.src):'')+'</small></div>').join("")+'</div>':"";
+  const live=n.live?'<div class="rp-dlive" data-live-detail="'+esc(n.id)+'">'+liveDetail(n)+'</div>':"";
+  const ptxt=paths.map((p,i)=>{
+   const ids=[p[0].from,...p.map(e=>e.to)];const lv=strength(p);
+   const chain=ids.map(id=>{const x=nodeOf(t,id);return '<span class="'+(id===n.id?'me':'')+'">'+esc(x?x.label:id)+'</span>'}).join('<i>→</i>');
+   const hops=p.map(e=>'<li class="lv-'+e.level+'"><b>'+esc(nodeOf(t,e.from)?.label)+' → '+esc(nodeOf(t,e.to)?.label)+'</b><em>'+esc(e.lag)+'</em><p>'+esc(e.how)+'</p>'+(e.evidence?'<p class="rp-ev"><strong>지금</strong> '+esc(e.evidence)+(e.src.length?' <span class="rp-src">'+srcLinks(e.src)+'</span>':'')+'</p>':'')+'</li>').join("");
+   return '<details class="rp-path lv-'+lv+'"'+(i===0?' open':'')+'><summary><span class="rp-pathlv">'+esc(LV[lv])+'</span><span class="rp-chain">'+chain+'</span></summary><ol>'+hops+'</ol></details>';
+  }).join("");
+  box.innerHTML='<div class="rp-dk">'+esc(S.data.cols[n.col])+' · <b class="rp-lvbadge lv-'+n.level+'">'+esc(LV[n.level])+'</b></div>'+
+   '<h4>'+esc(n.label)+'</h4><p class="rp-dsub">'+esc(n.sub||"")+'</p><p class="rp-now">'+esc(n.now)+'</p>'+facts+live+
+   (ptxt?'<div class="rp-paths"><h5>'+(n.col===3?'이곳까지 오는 경로':n.col===0?'여기서 번지는 경로':'이 지점을 지나는 경로')+'</h5>'+ptxt+'</div>':'')+
+   (n.src.length?srcBlock(n.src):'');
+ }
+
+ /* ---------- wires between nodes ---------- */
+ function onPathSets(t){
+  const {out,inn}=graph(t),up=new Set([S.sel]),down=new Set([S.sel]);
+  const goU=id=>{for(const e of inn[id]||[])if(!up.has(e.from)){up.add(e.from);goU(e.from)}};
+  const goD=id=>{for(const e of out[id]||[])if(!down.has(e.to)){down.add(e.to);goD(e.to)}};
+  goU(S.sel);goD(S.sel);return {up,down};
+ }
+ function wires(){
+  const flow=document.getElementById("rp-flow"),svg=document.getElementById("rp-wires");if(!flow||!svg)return;
+  const t=track(),fr=flow.getBoundingClientRect(),{up,down}=onPathSets(t);
+  svg.setAttribute("viewBox","0 0 "+fr.width+" "+fr.height);svg.setAttribute("width",fr.width);svg.setAttribute("height",fr.height);
+  const box=id=>{const b=flow.querySelector('[data-node="'+CSS.escape(id)+'"]');if(!b)return null;const r=b.getBoundingClientRect();return {x:r.left-fr.left,y:r.top-fr.top,w:r.width,h:r.height}};
+  let html="";
+  const sorted=[...t.edges].sort((a,b)=>a.level-b.level);
+  for(const e of sorted){
+   const a=box(e.from),b=box(e.to);if(!a||!b)continue;
+   const on=(up.has(e.from)&&up.has(e.to))||(down.has(e.from)&&down.has(e.to));
+   let d;
+   if(b.x>a.x+a.w-4){const x1=a.x+a.w,y1=a.y+a.h/2,x2=b.x,y2=b.y+b.h/2,c=(x2-x1)*.5;d=`M${x1},${y1}C${x1+c},${y1} ${x2-c},${y2} ${x2},${y2}`}
+   else{const x1=a.x+a.w/2,y1=a.y+a.h,x2=b.x+b.w/2,y2=b.y,c=Math.max(18,(y2-y1)*.5);d=`M${x1},${y1}C${x1},${y1+c} ${x2},${y2-c} ${x2},${y2}`}
+   html+='<path class="rp-wire lv-'+e.level+(on?' on':' off')+'" d="'+d+'"/>';
+  }
+  svg.innerHTML=html;
+ }
+
+ /* ---------- map ---------- */
+ const raw=(lon,lat)=>{const p=Math.max(-56,Math.min(82,lat))*Math.PI/180;return [lon*Math.PI/180,Math.log(Math.tan(Math.PI/4+p/2))]};
+ async function drawMap(){
+  const host=document.getElementById("rp-map");if(!host)return;
+  if(!S.world){try{S.world=await fetch("data/world.json").then(r=>r.json())}catch{host.innerHTML='<p class="rp-none">지도를 불러오지 못했습니다.</p>';return}}
+  const w=S.world,t=track();
+  const P=(lon,lat)=>{const [x,y]=raw(((lon-(w.lon0||0))%360+540)%360-180,lat);return [w.w/2+x*w.k,(w.top-y)*w.k]};
+  const KR=P(127.6,36.4);
+  const shocks=t.nodes.filter(n=>n.col===0&&n.lon!=null);
+  const pts=[KR,...shocks.map(n=>P(n.lon,n.lat))];
+  let x0=Math.min(...pts.map(p=>p[0])),x1=Math.max(...pts.map(p=>p[0])),y0=Math.min(...pts.map(p=>p[1])),y1=Math.max(...pts.map(p=>p[1]));
+  const padX=Math.max(40,(x1-x0)*.12),padY=Math.max(40,(y1-y0)*.3);x0-=padX;x1+=padX;y0-=padY;y1+=padY;
+  const ar=2.1;let vw=x1-x0,vh=y1-y0;if(vw/vh<ar){const nw=vh*ar;x0-=(nw-vw)/2;vw=nw}else{const nh=vw/ar;y0-=(nh-vh)/2;vh=nh}
+  const k=vw/1000;
+  let g='<svg viewBox="'+[x0,y0,vw,vh].map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+esc(t.title)+' 경로 지도">';
+  g+='<g class="rp-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(c.c==="KR"?' class="kr"':'')+'/>').join("")+'</g>';
+  const {out}=graph(t);
+  const best=id=>{let b=-1;const walk=(n,m)=>{const L=out[n]||[];if(!L.length){b=Math.max(b,m);return}for(const e of L)walk(e.to,Math.min(m,e.level))};walk(id,3);return b};
+  let arcs="",marks="";
+  for(const n of shocks){
+   const [sx,sy]=P(n.lon,n.lat),lv=Math.max(0,best(n.id));
+   const mx=(sx+KR[0])/2,my=Math.min(sy,KR[1])-Math.abs(KR[0]-sx)*.28;
+   arcs+='<path class="rp-arc lv-'+lv+(S.sel===n.id?' on':'')+'" d="M'+sx.toFixed(1)+','+sy.toFixed(1)+'Q'+mx.toFixed(1)+','+my.toFixed(1)+' '+KR[0].toFixed(1)+','+KR[1].toFixed(1)+'" style="stroke-width:'+((1.2+lv*.9)*k).toFixed(2)+'"/>';
+   const live=n.live&&n.live.kind==="portwatch"?S.live.pw?.[n.live.id]:null;
+   const lab=n.label+(live?' · 하루 '+num(live.recent,0)+'척':'');
+   marks+='<g class="rp-mk lv-'+n.level+'" data-node="'+esc(n.id)+'" transform="translate('+sx.toFixed(1)+' '+sy.toFixed(1)+') scale('+k.toFixed(3)+')" tabindex="0" role="button" aria-label="'+esc(lab)+'"><circle r="7"/><text x="10" y="4">'+esc(lab)+'</text></g>';
+  }
+  for(const n of t.nodes.filter(n=>n.col===1&&n.live&&n.live.kind==="portwatch")){
+   // chokepoints used as transmission gauges (e.g. Cape of Good Hope detours)
+   const pos={chokepoint7:[18.5,-34.4],chokepoint1:[32.35,30.45]}[n.live.id];if(!pos)continue;const [sx,sy]=P(...pos);const live=S.live.pw?.[n.live.id];
+   marks+='<g class="rp-mk rp-mk2 lv-'+n.level+'" data-node="'+esc(n.id)+'" transform="translate('+sx.toFixed(1)+' '+sy.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-5" y="-5" width="10" height="10"/><text x="9" y="4">'+esc(n.live.name+(live?' · 하루 '+num(live.recent,0)+'척':''))+'</text></g>';
+  }
+  marks+='<g class="rp-mk rp-kr" transform="translate('+KR[0].toFixed(1)+' '+KR[1].toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="8"/><text x="11" y="5">한국</text></g>';
+  host.innerHTML=g+'<g>'+arcs+'</g>'+marks+'</svg>';
+  declutter(host.querySelector("svg"));
+ }
+
+ // Nudge marker labels apart (several shocks sit in the Gulf); draw a leader line when moved.
+ function declutter(svg){
+  if(!svg)return;const placed=[];
+  const gs=[...svg.querySelectorAll(".rp-mk")].sort((a,b)=>a.getBBox&&b.getBBox?0:0);
+  const items=gs.map(g=>{const t=g.querySelector("text"),m=g.transform.baseVal.consolidate();if(!t||!m)return null;const M=m.matrix;return {g,t,x:M.e,y:M.f,s:M.a,b:t.getBBox()}}).filter(Boolean).sort((a,b)=>a.y-b.y);
+  const vb=svg.viewBox.baseVal;
+  for(const it of items){
+   const W=it.b.width*it.s,H=(it.b.height+2)*it.s;
+   // start on the side that keeps the label inside the frame
+   let dy=0,side=it.x+10*it.s+W>vb.x+vb.width?-1:1;const side0=side;
+   const box=(dx,dy)=>({x0:side>0?it.x+10*it.s:it.x-10*it.s-W,y0:it.y+dy-H*.75,x1:side>0?it.x+10*it.s+W:it.x-10*it.s,y1:it.y+dy+H*.25});
+   const hit=b=>placed.some(p=>!(b.x1<p.x0||b.x0>p.x1||b.y1<p.y0||b.y0>p.y1));
+   let b=box(0,0),tries=0;
+   const fits=b=>b.x0>=vb.x&&b.x1<=vb.x+vb.width;
+   while((hit(b)||!fits(b))&&tries<24){tries++;side=tries%2?-side0:side0;dy=Math.ceil(tries/2)*H*(tries%4<2?1:-1);b=box(0,dy)}
+   placed.push(b);
+   if(side<0){it.t.setAttribute("text-anchor","end");it.t.setAttribute("x",-10)}
+   if(dy){const ly=dy/it.s;it.t.setAttribute("y",4+ly);const l=document.createElementNS(NS,"line");l.setAttribute("x1",0);l.setAttribute("y1",0);l.setAttribute("x2",side>0?8:-8);l.setAttribute("y2",ly);l.setAttribute("class","rp-lead");it.g.insertBefore(l,it.g.firstChild)}
+  }
+ }
+
+ /* ---------- live gauges ---------- */
+ const PW="https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/Daily_Chokepoints_Data/FeatureServer/0/query";
+ const FR="https://www.federalregister.gov/api/v1/documents.json";
+ const FIELDS="&fields[]=title&fields[]=publication_date&fields[]=html_url&fields[]=type";
+ async function getJSON(u){const r=await fetch(u);if(!r.ok)throw Error("HTTP "+r.status);return r.json()}
+ async function loadPortwatch(ids){
+  const recent=daysAgo(75),ly0=daysAgo(365+75),ly1=daysAgo(365-10);
+  const where="portid IN ("+ids.map(i=>"'"+i+"'").join(",")+") AND ((date >= DATE '"+recent+"') OR (date BETWEEN DATE '"+ly0+"' AND DATE '"+ly1+"'))";
+  const j=await getJSON(PW+"?where="+encodeURIComponent(where)+"&outFields=date,portid,n_total,n_tanker&orderByFields=date&resultRecordCount=4000&f=json");
+  if(j.error)throw Error("portwatch");
+  const by={};for(const f of j.features||[]){const a=f.attributes;(by[a.portid]=by[a.portid]||{})[a.date]=a}
+  const res={};
+  for(const id of ids){
+   const m=by[id];if(!m)continue;const dates=Object.keys(m).sort();const last=dates[dates.length-1];if(!last)continue;
+   const L=new Date(last+"T00:00:00Z"),win=k=>{const v=[];for(let i=0;i<7;i++){const d=new Date(L);d.setUTCDate(d.getUTCDate()-i-k);const r=m[iso(d)];if(r)v.push(r)}return v};
+   const r7=win(0),y7=win(364);if(!r7.length)continue;
+   const avg=(v,f)=>v.reduce((s,x)=>s+x[f],0)/v.length;
+   const recent=avg(r7,"n_total"),tank=avg(r7,"n_tanker"),base=y7.length?avg(y7,"n_total"):null;
+   const series=dates.filter(d=>d>=daysAgo(75)).map(d=>m[d].n_total);
+   res[id]={last,recent,tank,base,change:base?(recent/base-1)*100:null,series};
+  }
+  return res;
+ }
+ async function loadFed(){
+  const since=daysAgo(30);
+  const [bis,ustr,pres]=await Promise.all([
+   getJSON(FR+"?conditions[agencies][]=industry-and-security-bureau&conditions[publication_date][gte]="+since+"&order=newest&per_page=40"+FIELDS),
+   getJSON(FR+"?conditions[agencies][]=trade-representative-office-of-united-states&conditions[publication_date][gte]="+since+"&order=newest&per_page=40"+FIELDS),
+   getJSON(FR+"?conditions[type][]=PRESDOCU&conditions[term]=tariff&conditions[publication_date][gte]="+since+"&order=newest&per_page=40"+FIELDS)]);
+  const pick=j=>(j.results||[]).map(x=>({t:x.title,d:x.publication_date,u:x.html_url,k:x.type}));
+  const ustrAll=[...pick(ustr),...pick(pres)].sort((a,b)=>b.d.localeCompare(a.d));
+  return {bis:pick(bis),ustr:ustrAll};
+ }
+ async function loadFx(){
+  const j=await getJSON("https://api.frankfurter.dev/v1/"+daysAgo(70)+"..?base=USD&symbols=KRW,CNY");
+  const dates=Object.keys(j.rates||{}).sort();if(!dates.length)throw Error("fx");
+  const res={};
+  for(const s of ["KRW","CNY"]){
+   const ser=dates.map(d=>j.rates[d][s]),last=dates[dates.length-1],v=ser[ser.length-1];
+   const ref=new Date(last+"T00:00:00Z");ref.setUTCDate(ref.getUTCDate()-30);const refD=dates.filter(d=>d<=iso(ref)).pop()||dates[0];
+   res[s]={last,v,change:(v/j.rates[refD][s]-1)*100,series:ser};
+  }
+  return res;
+ }
+ async function loadLive(){
+  const all=S.data.tracks.flatMap(t=>t.nodes).filter(n=>n.live);
+  const pwIds=[...new Set(all.filter(n=>n.live.kind==="portwatch").map(n=>n.live.id).concat(["chokepoint1"]))];
+  const jobs=[
+   loadPortwatch(pwIds).then(v=>S.live.pw=v).catch(()=>S.live.pw=false),
+   loadFed().then(v=>S.live.fed=v).catch(()=>S.live.fed=false),
+   loadFx().then(v=>S.live.fx=v).catch(()=>S.live.fx=false)];
+  await Promise.all(jobs);
+  S.liveAt=Date.now();
+  paintLive();
+ }
+ function liveLevel(n){
+  const L=n.live;if(!L)return null;
+  if(L.kind==="portwatch"){const x=S.live.pw?.[L.id];if(!x||x.change==null)return null;const c=x.change;
+   if(L.id==="chokepoint7")return c>50?3:c>25?2:c>12?1:0; // detours swell Cape traffic
+   return c<-50?3:c<-25?2:c<-10?1:0}
+  if(L.kind==="fx"){const x=S.live.fx?.[L.id];if(!x)return null;const c=x.change;return c>6?3:c>4?2:c>2?1:0}
+  return null;
+ }
+ function liveShort(n){
+  const L=n.live;
+  if(L.kind==="portwatch"){const x=S.live.pw?.[L.id];if(S.live.pw===false)return "실시간 연결 안 됨";if(!x)return "실시간 받는 중";
+   return "하루 "+num(x.recent,0)+"척"+(x.change!=null?" · 작년 "+pct(x.change):"")}
+  if(L.kind==="fx"){const x=S.live.fx?.[L.id];if(S.live.fx===false)return "실시간 연결 안 됨";if(!x)return "실시간 받는 중";
+   return (L.id==="KRW"?num(x.v,1)+"원":num(x.v,3)+"위안")+" · 30일 "+pct(x.change)}
+  if(L.kind==="fedreg"){const x=S.live.fed?.[L.id];if(S.live.fed===false)return "실시간 연결 안 됨";if(!x)return "실시간 받는 중";
+   return "최근 30일 관보 "+x.length+"건"}
+  return "";
+ }
+ function spark(series,cls){
+  if(!series||series.length<2)return "";
+  const W=220,H=44,mn=Math.min(...series),mx=Math.max(...series),r=mx-mn||1;
+  const pts=series.map((v,i)=>(i/(series.length-1)*W).toFixed(1)+","+(H-3-(v-mn)/r*(H-6)).toFixed(1)).join(" ");
+  return '<svg class="rp-spark '+(cls||"")+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true"><polyline points="'+pts+'"/></svg>';
+ }
+ const KIND={"Rule":"규정","Proposed Rule":"규정안","Notice":"공고","Presidential Document":"대통령 문서"};
+ function liveDetail(n){
+  const L=n.live,lv=liveLevel(n);
+  const flag=lv!=null&&lv>n.level?'<p class="rp-alert">실시간 수치는 지금 판정보다 한 단계 높은 <b>'+esc(LV[lv])+'</b> 수준입니다. 다음 갱신 때 다시 확인합니다.</p>':'';
+  if(L.kind==="portwatch"){const x=S.live.pw?.[L.id];
+   if(!x)return '<h5>실시간 · '+esc(L.name)+' 통항</h5><p class="rp-none">'+(S.live.pw===false?'IMF PortWatch에 연결하지 못했습니다.':'IMF PortWatch에서 받는 중…')+'</p>';
+   return '<h5>실시간 · '+esc(L.name)+' 하루 통항(최근 7일 평균)</h5><div class="rp-gauge"><b>'+num(x.recent,0)+'척</b><span>유조선 '+num(x.tank,0)+'척</span>'+(x.base!=null?'<span>작년 같은 때 '+num(x.base,0)+'척 · <strong class="'+(x.change<0?'dn':'up')+'">'+pct(x.change)+'</strong></span>':'')+'</div>'+spark(x.series)+
+    '<p class="rp-dsrc">최근 75일 · '+md(x.last)+' 자료까지(위성 선박 신호 집계, 며칠 늦게 나옴) · <a href="https://portwatch.imf.org/pages/chokepoints" target="_blank" rel="noopener noreferrer">IMF PortWatch</a></p>'+flag}
+  if(L.kind==="fx"){const x=S.live.fx?.[L.id];
+   if(!x)return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-none">'+(S.live.fx===false?'환율 자료에 연결하지 못했습니다.':'환율 받는 중…')+'</p>';
+   return '<h5>실시간 · '+esc(L.name)+' 기준환율</h5><div class="rp-gauge"><b>'+(L.id==="KRW"?num(x.v,1)+'원':num(x.v,4)+'위안')+'</b><span>1달러당 · '+md(x.last)+'</span><span>30일 새 <strong class="'+(x.change>0?'up':'dn')+'">'+pct(x.change)+'</strong></span></div>'+spark(x.series)+
+    '<p class="rp-dsrc">유럽중앙은행 기준환율(영업일 오후 4시 CET) · <a href="https://www.frankfurter.app" target="_blank" rel="noopener noreferrer">Frankfurter</a></p>'+flag}
+  if(L.kind==="fedreg"){const x=S.live.fed?.[L.id];
+   if(!x)return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-none">'+(S.live.fed===false?'미 연방관보에 연결하지 못했습니다.':'미 연방관보에서 받는 중…')+'</p>';
+   return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-gtext">최근 30일 '+x.length+'건이 관보에 실렸습니다(원문 영어).</p><ul class="rp-fed">'+x.slice(0,6).map(r=>'<li><time>'+md(r.d)+'</time><span>'+esc(KIND[r.k]||r.k)+'</span><a href="'+esc(safe(r.u))+'" target="_blank" rel="noopener noreferrer" translate="no">'+esc(r.t)+'</a></li>').join("")+'</ul><p class="rp-dsrc"><a href="https://www.federalregister.gov/" target="_blank" rel="noopener noreferrer">Federal Register(미 연방관보)</a></p>'}
+  return "";
+ }
+ function liveStrip(t){
+  const L=t.nodes.filter(n=>n.live);
+  if(!L.length)return "";
+  return '<span class="rp-live-k">실시간</span>'+L.map(n=>{const lv=liveLevel(n);return '<button type="button" class="rp-lchip'+(lv!=null?' lv-'+lv:'')+'" data-node="'+esc(n.id)+'"><b>'+esc(n.live.name)+'</b><span data-live-node="'+esc(n.id)+'">'+liveShort(n)+'</span></button>'}).join("");
+ }
+ function paintLive(){
+  if(!S.data)return;const t=track();
+  const strip=document.getElementById("rp-live");if(strip)strip.innerHTML=liveStrip(t);
+  for(const el of root.querySelectorAll(".rp-node [data-live-node]")){const n=nodeOf(t,el.dataset.liveNode);if(n)el.textContent=liveShort(n)}
+  for(const el of root.querySelectorAll("[data-live-detail]")){const n=nodeOf(t,el.dataset.liveDetail);if(n)el.innerHTML=liveDetail(n)}
+  const lt=document.getElementById("rp-livetime");
+  if(lt){const ok=[S.live.pw,S.live.fed,S.live.fx].filter(Boolean).length;const d=new Date(S.liveAt);
+   lt.textContent=ok?"실시간 계기 "+String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0")+" 확인":"실시간 계기 연결 안 됨"}
+  drawMap();
+ }
+
+ /* ---------- interaction ---------- */
+ function select(id,scroll){
+  S.sel=id;
+  for(const b of root.querySelectorAll(".rp-node")){const on=b.dataset.node===id;b.classList.toggle("sel",on);b.setAttribute("aria-pressed",on)}
+  detail();wires();drawMap();
+  try{history.replaceState(null,"","#ripple="+track().id+":"+id)}catch{}
+  if(scroll&&window.innerWidth<900)document.getElementById("rp-detail")?.scrollIntoView({behavior:"smooth",block:"start"});
+ }
+ root.addEventListener("click",e=>{
+  const tab=e.target.closest(".rp-tab");
+  if(tab){S.ti=+tab.dataset.ti;S.sel=null;render();paintLive();try{history.replaceState(null,"","#ripple="+track().id)}catch{}return}
+  const n=e.target.closest("[data-node]");
+  if(n&&root.contains(n)){e.preventDefault();select(n.dataset.node,!n.classList.contains("rp-node"))}
+ });
+ root.addEventListener("keydown",e=>{
+  if(e.key==="Enter"&&e.target.matches(".rp-mk[data-node]"))select(e.target.dataset.node,true);
+  const tab=e.target.closest(".rp-tab");
+  if(tab&&(e.key==="ArrowRight"||e.key==="ArrowLeft")){const n=S.data.tracks.length;S.ti=(S.ti+(e.key==="ArrowRight"?1:n-1))%n;S.sel=null;render();paintLive();root.querySelector('.rp-tab[aria-selected="true"]')?.focus()}
+ });
+})();
+
+</script>
+<script>
+/* 판도 리포트: 주간 종합 + 수시 리포트. data/reports.json → 첫 화면 카드, 누르면 상세 서랍.
+   Uses the site's drawer (#overlay/#detail) through window.__pandoDrawer (exposed by build.mjs). */
+(function(){
+ "use strict";
+ const root=document.getElementById("report-list");
+ if(!root)return;
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const safe=u=>/^https?:\/\/[^\s"'<>]+$/i.test(String(u||""))?String(u):"#";
+ const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구기관"};
+ const KIND={weekly:"주간 리포트",flash:"수시 리포트"};
+ const TRACK={energy:"에너지 안보",trade:"관세·수출통제",chips:"희토류·반도체"};
+ let reports=[];
+ const md=s=>{const m=String(s||"").match(/^(\d{4})-(\d{2})-(\d{2})/);return m?(+m[2])+"월 "+(+m[3])+"일":esc(s)};
+
+ fetch("data/reports.json",{cache:"no-cache"}).then(r=>r.ok?r.json():{reports:[]}).catch(()=>({reports:[]})).then(d=>{
+  reports=(d.reports||[]).slice().sort((a,b)=>String(b.date).localeCompare(String(a.date)));
+  render();
+  const m=decodeURIComponent(location.hash||"").match(/^#report=([\w-]+)/);
+  if(m)setTimeout(()=>open(m[1]),300);
+ });
+
+ function render(){
+  const sec=document.getElementById("reports"),nav=document.querySelector('.mastnav a[href="#reports"]');
+  if(!reports.length){if(sec)sec.hidden=true;if(nav)nav.hidden=true;return}
+  if(sec)sec.hidden=false;if(nav)nav.hidden=false;
+  const [first,...rest]=reports;
+  root.innerHTML=card(first,true)+(rest.length?'<div class="rep-rest">'+rest.slice(0,8).map(r=>card(r,false)).join("")+'</div>':"");
+ }
+ function card(r,big){
+  const tracks=(r.ripple||[]).map(x=>x.track).filter((v,i,a)=>a.indexOf(v)===i);
+  return '<button type="button" class="rep-card'+(big?' rep-big':'')+' rep-'+esc(r.kind)+'" data-report="'+esc(r.id)+'">'+
+   '<span class="rep-k">'+esc(KIND[r.kind]||"리포트")+' · '+md(r.date)+(r.period?' · '+esc(r.period):'')+'</span>'+
+   '<strong>'+esc(r.title)+'</strong><p>'+esc(big?(r.hook+" "+r.summary):r.hook)+'</p>'+
+   '<span class="rep-tags">'+tracks.map(t=>'<i>'+esc(TRACK[t]||t)+'</i>').join("")+'<em>읽기 →</em></span></button>';
+ }
+ function open(id){
+  const r=reports.find(x=>x.id===id);if(!r)return;
+  const src=r.sources||[];
+  const cite=ids=>(ids||[]).filter(i=>src[i]).map(i=>'<a class="cite-n" href="#rs-'+i+'" data-rcite="'+i+'">'+(i+1)+'</a>').join("");
+  const blocks=(arr,title)=>arr&&arr.length?'<section class="explain-sec rep-sec"><h3>'+title+'</h3>'+arr.map(b=>'<div class="rep-block">'+(b.h?'<h4>'+esc(b.h)+'</h4>':'')+'<p>'+esc(b.body)+' '+cite(b.src)+'</p></div>').join("")+'</section>':"";
+  const views=(r.views||[]).length?'<section class="explain-sec rep-sec"><h3>전문가 시각</h3>'+r.views.map(v=>'<div class="rep-view"><header><b>'+esc(v.who)+'</b><span>'+esc(v.kind||"")+'</span></header><p>'+esc(v.text)+' '+cite(v.src)+'</p></div>').join("")+'</section>':"";
+  const watch=(r.watch||[]).length?'<section class="explain-sec rep-sec"><h3>다음에 볼 것</h3><ol class="xtimeline">'+r.watch.map(w=>'<li><time>'+esc(w.date?md(w.date):"")+'</time><p>'+esc(w.text)+'</p></li>').join("")+'</ol></section>':"";
+  const openQ=(r.open||[]).length?'<section class="explain-sec rep-sec"><h3>아직 모르는 것</h3><ul class="open-q">'+r.open.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul></section>':"";
+  const rip=(r.ripple||[]).length?'<div class="rep-ripple"><span>파급경로에서 보기</span>'+r.ripple.map(x=>'<a href="#ripple='+esc(x.track)+(x.node?':'+esc(x.node):'')+'" data-rip="'+esc(x.track)+(x.node?':'+esc(x.node):'')+'">'+esc(TRACK[x.track]||x.track)+(x.label?' · '+esc(x.label):'')+' →</a>').join("")+'</div>':"";
+  const srcs=src.map((s,i)=>'<li id="rs-'+i+'"><span class="xs-n">'+(i+1)+'</span><div><span class="tier tier-'+esc(s.tier||"press")+'">'+esc(TIER[s.tier]||"언론")+'</span> <b>'+esc(s.outlet)+'</b> · '+esc(s.date||"")+'<br><a href="'+esc(safe(s.url))+'" target="_blank" rel="noopener noreferrer">'+esc(s.title)+'</a>'+(s.titleKo&&s.titleKo!==s.title?'<small>'+esc(s.titleKo)+'</small>':"")+'</div></li>').join("");
+  const det=document.getElementById("detail");if(!det)return;
+  det.innerHTML='<div class="detail-kicker">PANDO / '+esc(KIND[r.kind]||"리포트")+' · '+md(r.date)+(r.period?' · '+esc(r.period):'')+'</div><h2>'+esc(r.title)+'</h2>'+
+   '<p class="explain-hook">'+esc(r.hook||"")+'</p><p class="lead">'+esc(r.summary||"")+'</p>'+rip+
+   blocks(r.points,"무슨 일이 있었나")+blocks(r.why,"왜 이렇게 됐나")+blocks(r.korea,"한국에는 무슨 뜻인가")+views+watch+openQ+
+   (r.method?'<p class="explain-method"><b>취재 방식</b> '+esc(r.method)+'</p>':"")+
+   '<section class="explain-sec"><h3>출처 '+src.length+'</h3><ol class="xsources">'+srcs+'</ol></section>';
+  if(window.__pandoDrawer)window.__pandoDrawer(r.title);
+  try{history.replaceState(null,"","#report="+r.id)}catch{}
+ }
+ document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-report]");if(b){e.preventDefault();open(b.dataset.report);return}
+  const c=e.target.closest("[data-rcite]");if(c){e.preventDefault();document.getElementById("rs-"+c.dataset.rcite)?.scrollIntoView({behavior:"smooth",block:"center"});return}
+  const rp=e.target.closest("[data-rip]");
+  if(rp){e.preventDefault();document.getElementById("close")?.click();location.hash="ripple="+rp.dataset.rip;setTimeout(()=>document.getElementById("ripple")?.scrollIntoView({behavior:"smooth"}),250)}
+ });
 })();
 
 </script>
