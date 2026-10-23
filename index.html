@@ -1234,6 +1234,30 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .regime-note span+span::before{content:"· ";color:#9fb0bb}
 .regime-hint{color:#6a7c88}
 .regime-band .regime-seg:focus{outline:none}
+/* 관련 주체: 인물 사진·대립 구도 */
+.actor-entry{display:grid;grid-template-columns:46px minmax(0,1fr);gap:11px;align-items:start}
+.actor-ph{width:44px;height:44px;border-radius:50%;background:#e7edf0;display:flex;align-items:center;justify-content:center;overflow:hidden;flex:none;border:1px solid #d3dce2}
+.actor-ph b{font-size:16px;color:#6b7b85;font-weight:800}.actor-ph img{width:100%;height:100%;object-fit:cover;display:block}
+.actor-ph.big{width:58px;height:58px}.actor-ph.big b{font-size:20px}
+.side-a .actor-ph{border-color:#e7b3b8}.side-b .actor-ph{border-color:#a9c3de}
+.vs-strip{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;margin:4px 0 14px;padding:12px;border:1px solid #e1e7ea;background:linear-gradient(90deg,#fdf1f2,#fff 45%,#fff 55%,#eef4fb)}
+.vs-side em{display:block;font-style:normal;font-size:12px;font-weight:900;margin-bottom:6px}.vs-a em{color:#a8222c}.vs-b{text-align:right}.vs-b em{color:#174c82}
+.vs-side>div{display:flex;flex-wrap:wrap;gap:8px}.vs-b>div{justify-content:flex-end}
+.vs-p{display:flex;flex-direction:column;align-items:center;gap:3px;width:70px}.vs-p small{font-size:10.5px;font-weight:700;color:#35444e;text-align:center;line-height:1.25;word-break:keep-all}
+.vs-a .actor-ph{border:2px solid #c62f3a}.vs-b .actor-ph{border:2px solid #1f5f9e}
+.vs{font:900 20px Georgia,serif;color:#1d2630;letter-spacing:.04em}
+.photo-credits{font-size:10px;color:#7a8891;margin:8px 0 0;line-height:1.5}.photo-credits span{font-weight:800}.photo-credits a{color:#7a8891}
+@media(max-width:600px){.vs-strip{grid-template-columns:1fr;text-align:left}.vs-b{text-align:left}.vs-b>div{justify-content:flex-start}.vs{justify-self:center}}
+/* 영상으로 보기 */
+.vid-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px}
+.vid{margin:0;border:1px solid #e1e7ea;background:#fff}
+.vid-play{position:relative;display:block;width:100%;padding:0;border:0;background:#000;cursor:pointer;aspect-ratio:16/9}
+.vid-play img{width:100%;height:100%;object-fit:cover;display:block;opacity:.92}
+.vid-play i{position:absolute;inset:0;margin:auto;width:52px;height:36px;border-radius:9px;background:#c41230;color:#fff;font-style:normal;font-size:16px;display:flex;align-items:center;justify-content:center}
+.vid-frame{aspect-ratio:16/9}.vid-frame iframe{width:100%;height:100%;border:0;display:block}
+.vid figcaption{padding:8px 10px;display:flex;flex-direction:column;gap:3px}
+.vid figcaption b{font-size:12.5px;line-height:1.4}.vid figcaption span{font-size:11px;color:#5b6d78;font-weight:700}
+.vid figcaption small{font-size:11px;color:#3e4f5a;line-height:1.45}.vid figcaption a{font-size:10.5px;color:#b51d2a}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2362,13 +2386,35 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function entries(items,s){
   return items.map(a=>'<div class="entry"><div class="entry-head"><strong>'+esc(a[0])+'</strong><span class="badge '+(/주장|전|논쟁|안 됨/.test(a[3])?"warn":"")+'">'+esc(a[3])+'</span></div><div class="role">'+esc(a[1])+'</div><p>'+esc(a[2])+cited(a,s)+"</p></div>").join("");
  }
+ // 인물 사진: data/actor-photos.json(위키미디어 공용 자유 라이선스, _tools/photos/actors.py가 만든다). 처음 기사를 열 때 받아 채운다.
+ const AP={data:null,loading:null};
+ function loadActorPhotos(){if(AP.loading)return AP.loading;AP.loading=fetch("data/actor-photos.json").then(r=>r.ok?r.json():{}).catch(()=>({})).then(d=>{AP.data=d;fillActorPhotos()});return AP.loading}
+ function fillActorPhotos(){if(!AP.data)return;document.querySelectorAll("[data-actor-ph]").forEach(el=>{const p=AP.data[el.dataset.actorPh];if(p&&p.d&&!el.dataset.done){el.dataset.done="1";el.innerHTML='<img src="'+p.d+'" alt="" loading="lazy">';el.classList.add("has");el.title="사진: "+(p.credit||"위키미디어 공용")+" · "+(p.license||"")}});
+  document.querySelectorAll(".photo-credits[data-for]").forEach(box=>{const labs=[...new Set([...box.closest("#detail").querySelectorAll("[data-actor-ph].has")].map(e=>e.dataset.actorPh))];
+   box.innerHTML=labs.length?'<span>인물 사진</span> '+labs.map(l=>{const p=AP.data[l];return '<a href="'+safeUrl(p.source)+'" target="_blank" rel="noopener noreferrer">'+esc(l.split(" ").slice(0,3).join(" "))+'</a> ('+esc(p.credit||"위키미디어 공용")+', '+(p.licenseUrl?'<a href="'+safeUrl(p.licenseUrl)+'" target="_blank" rel="noopener noreferrer">'+esc(p.license)+'</a>':esc(p.license||""))+')'}).join(" · "):""})}
+ const face=(a,big)=>'<span class="actor-ph'+(big?' big':'')+'" data-actor-ph="'+esc(a[0])+'" aria-hidden="true"><b>'+esc(String(a[0]).replace(/^['"‘“]/,"").slice(0,1))+'</b></span>';
+ function actorEntries(items,s){
+  return items.map(a=>'<div class="entry actor-entry">'+face(a)+'<div class="actor-body"><div class="entry-head"><strong>'+esc(a[0])+'</strong><span class="badge '+(/주장|전|논쟁|안 됨/.test(a[3])?"warn":"")+'">'+esc(a[3])+'</span></div><div class="role">'+esc(a[1])+'</div><p>'+esc(a[2])+cited(a,s)+"</p></div></div>").join("");
+ }
  // Actors split by side when the story has `sides` [label A, label B] and actor[5] is "a"|"b"|"n" (mediators / third parties).
  function actorsBlock(s){
+  loadActorPhotos();setTimeout(fillActorPhotos,0);
   const items=s.actors||[];const sd=Array.isArray(s.sides)&&s.sides.length===2&&items.some(a=>a[5]==="a"||a[5]==="b")?s.sides:null;
-  if(!sd)return entries(items,s);
-  const col=(k,label,cls)=>{const list=items.filter(a=>(a[5]||"n")===k);return list.length?'<div class="side-col '+cls+'"><h4 class="side-head">'+esc(label)+'<small>'+list.length+'</small></h4>'+entries(list,s)+'</div>':""};
-  return '<div class="side-split">'+col("a",sd[0],"side-a")+col("b",sd[1],"side-b")+'</div>'+col("n","중재·제3자","side-n");
+  if(!sd)return actorEntries(items,s);
+  const col=(k,label,cls)=>{const list=items.filter(a=>(a[5]||"n")===k);return list.length?'<div class="side-col '+cls+'"><h4 class="side-head">'+esc(label)+'<small>'+list.length+'</small></h4>'+actorEntries(list,s)+'</div>':""};
+  const strip=k=>items.filter(a=>a[5]===k).slice(0,4).map(a=>'<span class="vs-p">'+face(a,true)+'<small>'+esc(String(a[0]).split(" ").slice(0,2).join(" "))+'</small></span>').join("");
+  return '<div class="vs-strip"><div class="vs-side vs-a"><em>'+esc(sd[0])+'</em><div>'+strip("a")+'</div></div><b class="vs">VS</b><div class="vs-side vs-b"><em>'+esc(sd[1])+'</em><div>'+strip("b")+'</div></div></div>'+
+   '<div class="side-split">'+col("a",sd[0],"side-a")+col("b",sd[1],"side-b")+'</div>'+col("n","중재·제3자","side-n");
  }
+ // 영상으로 보기: 스토리·리포트의 videos(방송사·통신사·공식 채널, _tools/videos/BRIEF.md). 누르면 그 자리에서 재생.
+ const ytId=u=>{const m=String(u||"").match(/(?:v=|youtu\.be\/|shorts\/|embed\/)([\w-]{11})/);return m?m[1]:null};
+ function videosBlock(list){
+  list=(list||[]).filter(v=>ytId(v.url));if(!list.length)return "";
+  return '<div class="section videos"><h3>영상으로 보기</h3><div class="vid-list">'+list.map(v=>{const id=ytId(v.url);return '<figure class="vid"><button type="button" class="vid-play" data-yt="'+esc(id)+'" aria-label="'+esc(v.title)+' 재생"><img src="https://i.ytimg.com/vi/'+esc(id)+'/mqdefault.jpg" alt="" loading="lazy"><i>▶</i></button><figcaption><b>'+esc(v.title)+'</b><span>'+esc(v.channel||"")+(v.lang?' · '+(v.lang==="ko"?"한국어":"영어"):"")+(v.date?' · '+esc(v.date):"")+'</span>'+(v.why?'<small>'+esc(v.why)+'</small>':"")+'<a href="'+safeUrl(v.url)+'" target="_blank" rel="noopener noreferrer">유튜브에서 보기 ↗</a></figcaption></figure>'}).join("")+'</div></div>';
+ }
+ window.__pandoVideos=videosBlock;
+ document.addEventListener("click",e=>{const b=e.target.closest("[data-yt]");if(!b)return;e.preventDefault();const id=b.dataset.yt;
+  b.outerHTML='<div class="vid-frame"><iframe src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(id)+'?autoplay=1&rel=0" title="영상" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>'});
  // ---- 판도 해설 (explainers) ----
  const TIER={official:"공식 문서",counter:"상대국 공식",press:"언론",research:"연구기관"};
  function explainerCard(x){
@@ -3762,7 +3808,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id);if(!s)return;state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div><div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'</div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div>'+videosBlock(s.videos)+'<div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'<p class="photo-credits" data-for="actors"></p></div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
   mountStoryMap(s);
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
@@ -4884,6 +4930,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   det.innerHTML='<div class="detail-kicker">PANDO / '+esc(KIND[r.kind]||"리포트")+' · '+md(r.date)+(r.period?' · '+esc(r.period):'')+'</div><h2>'+esc(r.title)+'</h2>'+
    '<p class="explain-hook">'+esc(r.hook||"")+'</p><p class="lead">'+esc(r.summary||"")+'</p>'+rip+
    blocks(r.points,"무슨 일이 있었나")+blocks(r.why,"왜 이렇게 됐나")+blocks(r.korea,"한국에는 무슨 뜻인가")+views+watch+openQ+
+   (window.__pandoVideos?window.__pandoVideos(r.videos):"")+
    (r.method?'<p class="explain-method"><b>취재 방식</b> '+esc(r.method)+'</p>':"")+
    '<section class="explain-sec"><h3>출처 '+src.length+'</h3><ol class="xsources">'+srcs+'</ol></section>';
   if(window.__pandoDrawer)window.__pandoDrawer(r.title);
