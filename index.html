@@ -1618,6 +1618,20 @@ html,body{background:#fff;color:var(--ink)}
 .en-vlab text{font:800 10.5px system-ui,sans-serif;fill:#14222b;text-anchor:middle}.en-vlab text.s{font-weight:700;font-size:9px;fill:#3e4f5a}
 .en-land path.orig{fill:#e4eef6;stroke:#9fb6c8}.en-land path.imp.orig{fill:#e4eef6}
 .en-vlab.sm rect{stroke:#7a8a93;stroke-width:.5}.en-vlab.sm text{font-size:9.5px;font-weight:800}
+/* 석유제품 수출·실시간 층 */
+.en-prod{fill:none;stroke:#2e8b57;stroke-linecap:round;opacity:.9}
+.en-flowdash.p{stroke:#eafff2}.en-arrow.p{fill:#1f6b45}
+.en-vlab.p rect{stroke:#2e8b57;fill:#f3fbf6f2}
+.en-layers{display:flex;flex-wrap:wrap;gap:6px 14px;margin:8px 0 0;font-size:12px;font-weight:700;color:#22313b}
+.en-layers label{display:flex;align-items:center;gap:5px;cursor:pointer}
+.en-fire circle{fill:#ff8a00;stroke:#fff;stroke-width:1.2;opacity:.85}
+.en-fire.hot circle{fill:#e3120b;animation:enpulse 1.4s ease-in-out infinite}
+.en-fire text{font:800 10px system-ui,sans-serif;fill:#9b0c07;paint-order:stroke;stroke:#fff;stroke-width:3px}
+@keyframes enpulse{50%{opacity:.35}}
+@media(prefers-reduced-motion:reduce){.en-fire.hot circle{animation:none}}
+.en-port circle{fill:#1d5f80;stroke:#fff;stroke-width:1;opacity:.75}
+.en-port.dn circle{fill:#e2622a}.en-port.dn2 circle{fill:#c41230}.en-port.up circle{fill:#2e8b57}
+.en-live:empty{display:none}.en-live{margin-top:10px}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -4051,7 +4065,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const ON={CN:"중국",JP:"일본",KR:"한국",DE:"독일",FR:"프랑스",IN:"인도",TW:"대만",SG:"싱가포르",ZA:"남아공",CD:"콩고민주공화국",CL:"칠레",MM:"미얀마",LA:"라오스",PH:"필리핀",NL:"네덜란드",BE:"벨기에",SA:"사우디",IQ:"이라크",AE:"UAE",KW:"쿠웨이트",QA:"카타르",OM:"오만",IR:"이란",RU:"러시아",US:"미국",BR:"브라질",NO:"노르웨이",GB:"영국",VE:"베네수엘라",NG:"나이지리아",AO:"앙골라",KZ:"카자흐스탄",MX:"멕시코",CA:"캐나다",LY:"리비아",GY:"가이아나",DZ:"알제리",EG:"이집트",AZ:"아제르바이잔",MY:"말레이시아",ID:"인도네시아",AU:"호주",BN:"브루나이",CO:"콜롬비아",EC:"에콰도르",GA:"가봉",CG:"콩고",GQ:"적도기니",CM:"카메룬",GH:"가나",SD:"수단",YE:"예멘",TT:"트리니다드토바고",AR:"아르헨티나",VN:"베트남",TH:"태국",PE:"페루",OT:"기타"};
  const ORDER=["KR","JP","CN","IN","TW","SG","DE","FR","GB","US"];
  const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구·통계"};
- const E={data:null,world:null,sel:"KR",loading:null};
+ const E={data:null,world:null,sel:"KR",loading:null,layers:{crude:true,prod:true,fires:true,ports:false},fires:null,ports:null};
 
  /* ---------- geography: ports, waypoints, sea lanes ---------- */
  const PORT={SA:[50.2,26.6],IQ:[48.8,29.7],KW:[48.2,29.1],QA:[51.6,25.9],IR:[50.3,29.2],AE:[52.6,24.2],OM:[58.6,23.6],
@@ -4170,8 +4184,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':C(cc)?'':'<span>경로</span>')+'</button>'}).join("")+'</div>'+
    '<div class="en-grid"><figure class="en-mapbox"><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>? 경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
+   '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
+   '<div class="en-live" id="en-live"></div>'+
    '<div class="en-compare" id="en-compare"></div><div class="en-prices" id="en-prices"></div>';
-  drawMap();card();compare();prices();
+  drawMap();card();compare();prices();loadLiveLayers();
  }
 
  /* ---------- map ---------- */
@@ -4259,6 +4275,75 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<dl class="en-rd">'+[["상태",it.status],["용량",it.capacity],["실제 흐름",it.throughput],["무엇이",it.what],["누구 원유",org],["받는 나라",who],["전쟁 뒤 달라진 점",it.changed],["확실성 근거",it.why]].filter(x=>x[1]).map(x=>'<div><dt>'+esc(x[0])+'</dt><dd>'+esc(x[1])+'</dd></div>').join("")+'</dl>'+
    '<p class="en-note">'+srcLinks(it.src)+'</p>';
  }
+ /* ---------- 석유제품 수출(정제해서 되파는 흐름) ---------- */
+ // 수출국 → 수입국 바닷길(대표 항로, 점은 [경도,위도]). 없으면 그리지 않고 목록에만 남긴다.
+ const PDEST={AU:[151.2,-33.9],SG:[103.8,1.27],US:[-118.2,33.7],PH:[120.9,14.5],JP:[140.0,35.4],CN:[121.9,29.9],NZ:[174.8,-36.8],MY:[101.3,3.0],TW:[120.3,22.6],HK:[114.2,22.3],VN:[106.8,10.7],TH:[100.9,13.1],ID:[106.9,-6.1],IN:[72.8,19.0],CA:[-123.1,49.3],MX:[-96.1,19.2],CL:[-71.6,-33.0],PE:[-77.1,-12.0]};
+ const PLANE={
+  KR:{AU:[[129.5,34.6],[131,27],[134,14],[142,1],[152.5,-11],[154,-27]],NZ:[[129.5,34.6],[131,27],[134,14],[142,1],[156,-15],[168,-30]],
+      SG:[[129,34.2],[125.5,29.5],[121.3,20.4],[113,12],[105,3]],MY:[[129,34.2],[125.5,29.5],[121.3,20.4],[113,12],[104.4,1.3],[102.5,2.6]],
+      PH:[[129,34.2],[125.5,29.5],[121.6,19.5],[119.8,14.6]],JP:[[129.6,34.8],[132.5,33.2],[136.5,33.6],[139.8,34.9]],
+      CN:[[129,34.8],[125,33],[122.8,30.6]],TW:[[129,34.2],[125.5,29.5],[121.2,24.5],[120.1,23.0]],HK:[[129,34.2],[125.5,29.5],[121.3,20.4],[115,21.8]],
+      VN:[[129,34.2],[125.5,29.5],[121.3,20.4],[112,12],[107.5,9.6]],TH:[[129,34.2],[125.5,29.5],[121.3,20.4],[113,12],[105,8],[101,12.5]],
+      ID:[[129,34.2],[125.5,29.5],[121.3,20.4],[113,12],[105,3],[106,-3]],US:[[130,36],[140.5,41.6],[150,43],[170,48],[190,50],[220,44],[238,36]],
+      CA:[[130,36],[140.5,41.6],[150,43],[170,48],[190,51],[220,50],[235.5,48.6]],MX:[[129.5,34.6],[150,32],[180,28],[220,20],[250,17]]}};
+ function prodFlows(){
+  const out=[];
+  for(const cc of ORDER){const c=C(cc);const ex=c&&c.products&&c.products.exports;if(!ex||!ex.byDest)continue;
+   for(const d of ex.byDest){const to=d.dest;const lane=PLANE[cc]&&PLANE[cc][to];const end=PDEST[to];if(!lane||!end)continue;
+    const vol=d.volume&&d.volume.value!=null?d.volume.value:null;const val=d.value&&d.value.value!=null?d.value:null;
+    out.push({cc,to,share:d.share,vol,val,mix:d.mix||"",period:ex.period||"",pts:[DEST[cc],...lane,end]})}}
+  return out;
+ }
+ /* ---------- 실시간 층: 위성 화재 감지(data/fires.json), 석유 항구 유조선 입출항(IMF PortWatch, 방문자 브라우저가 직접) ---------- */
+ const PWPORTS=[["port1091","라스타누라","SA","x"],["port526","주아이마","SA","x"],["port570","얀부","SA","x"],["port2479","바스라 원유터미널","IQ","x"],["port743","미나알아마디","KW","x"],["port2164","하르그섬","IR","x"],["port362","푸자이라","AE","h"],["port988","소하르","OM","h"],
+  ["port1020","프리모르스크","RU","x"],["port1095","우스트루가","RU","x"],["port833","노보로시스크","RU","x"],["port787","나홋카(코즈미노 인근)","RU","x"],["port481","휴스턴","US","x"],["port264","코퍼스크리스티","US","x"],["port2129","시디크리르","EG","x"],
+  ["port1338","울산","KR","i"],["port270","대산","KR","i"],["port2033","여수","KR","i"],["port1069","칭다오","CN","i"],["port1105","르자오","CN","i"],["port1429","저우산","CN","i"],["port239","지바","JP","i"],["port541","가오슝","TW","i"],["port1201","싱가포르","SG","h"],["port1199","시카(잠나가르)","IN","i"],["port1114","로테르담","NL","h"],["port1396","빌헬름스하펜","DE","i"],["port1318","트리에스테","IT","i"]];
+ const PWB="https://services9.arcgis.com/weJ1QsnbMYJlCHdG/arcgis/rest/services/";
+ function loadLiveLayers(){
+  if(!E.fires&&!E.firesLoading)E.firesLoading=fetch("data/fires.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{E.fires=d;drawMap();livePanel()});
+  if(E.layers.ports&&!E.ports&&!E.portsLoading)E.portsLoading=loadPorts().then(()=>{drawMap();livePanel()});
+  livePanel();
+ }
+ async function loadPorts(){
+  const ids=PWPORTS.map(p=>"'"+p[0]+"'").join(",");const iso=d=>d.toISOString().slice(0,10);const now=new Date();const from=new Date(now-50*864e5);
+  const q=(o)=>fetch(PWB+"Daily_Ports_Data/FeatureServer/0/query?"+new URLSearchParams(Object.assign({f:"json"},o))).then(r=>r.json());
+  try{
+   const [rows,base]=await Promise.all([
+    q({where:"portid IN ("+ids+") AND date >= DATE '"+iso(from)+"'",outFields:"portid,date,portcalls_tanker,export_tanker,import_tanker",orderByFields:"date",resultRecordCount:"4000"}),
+    q({where:"portid IN ("+ids+") AND date >= DATE '2026-01-01' AND date <= DATE '2026-02-27'",outStatistics:JSON.stringify([{statisticType:"avg",onStatisticField:"export_tanker",outStatisticFieldName:"ex"},{statisticType:"avg",onStatisticField:"import_tanker",outStatisticFieldName:"im"},{statisticType:"avg",onStatisticField:"portcalls_tanker",outStatisticFieldName:"pc"}]),groupByFieldsForStatistics:"portid"})]);
+   const B={};(base.features||[]).forEach(f=>B[f.attributes.portid]=f.attributes);
+   const S={};(rows.features||[]).forEach(f=>{const a=f.attributes;(S[a.portid]=S[a.portid]||[]).push(a)});
+   E.ports=PWPORTS.map(([id,nm,cc,role])=>{const L=(S[id]||[]).sort((a,b)=>a.date-b.date);const last7=L.slice(-7);const key=role==="i"?"import_tanker":"export_tanker";
+    const avg=last7.length?last7.reduce((s,a)=>s+(a[key]||0),0)/last7.length:null;const b=B[id]?(role==="i"?B[id].im:B[id].ex):null;
+    const pos=PWPOS[id];return {id,nm,cc,role,avg,base:b,chg:b?((avg-b)/b*100):null,calls:last7.length?last7.reduce((s,a)=>s+(a.portcalls_tanker||0),0)/last7.length:null,
+     last:L.length?new Date(L[L.length-1].date).toISOString().slice(0,10):null,series:L.map(a=>[new Date(a.date).toISOString().slice(0,10),a[key]||0]),pos}}).filter(p=>p.pos);
+  }catch(e){E.ports=[]}
+ }
+ const PWPOS={port1091:[50.16,26.64],port526:[50.03,26.88],port570:[38.06,24.09],port2479:[48.82,29.68],port743:[48.17,29.06],port2164:[50.32,29.24],port362:[56.36,25.17],port988:[56.61,24.51],port1020:[28.6,60.36],port1095:[28.39,59.68],port833:[37.79,44.72],port787:[132.89,42.8],port481:[-95.0,29.73],port264:[-97.4,27.81],port2129:[29.62,31.1],port1338:[129.38,35.5],port270:[126.4,37.01],port2033:[127.74,34.74],port1069:[120.3,36.07],port1105:[119.53,35.35],port1429:[122.1,30.06],port239:[140.05,35.53],port541:[120.32,22.56],port1201:[103.71,1.27],port1199:[69.83,22.44],port1114:[4.05,51.95],port1396:[8.12,53.58],port1318:[13.79,45.62]};
+ function liveLayer(K){
+  let g="";
+  if(E.layers.fires&&E.fires&&E.fires.items)for(const f of E.fires.items){const [x,y]=P(f.lon,f.lat);
+   g+='<g class="en-fire'+(f.unusual?' hot':'')+'" data-fire="'+esc(f.id)+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+K.toFixed(3)+')"><circle r="'+(f.unusual?7:4.5)+'"/>'+(f.unusual?'<text x="9" y="4">'+esc(f.name)+'</text>':'')+'<title>'+esc(f.name+' · 48시간 위성 열 감지 '+f.count48h+'건 · 최대 '+f.frpMax+'MW'+(f.unusual?' · 평소보다 많음':' · 평소 수준(플레어 등)'))+'</title></g>'}
+  if(E.layers.ports&&E.ports)for(const p of E.ports){if(p.avg==null)continue;const [x,y]=P(...p.pos);const r=2.5+Math.sqrt(p.avg/2e4)*3.2;
+   const cls=p.chg==null?"":p.chg<=-50?" dn2":p.chg<=-15?" dn":p.chg>=15?" up":"";
+   g+='<g class="en-port'+cls+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+K.toFixed(3)+')"><circle r="'+r.toFixed(1)+'"/><title>'+esc(p.nm+' · 최근 7일 하루 유조선 '+(p.role==="i"?"하역":"선적")+' 약 '+num(p.avg/1e4,1)+'만 톤'+(p.chg!=null?' · 전쟁 전(1~2월) 대비 '+(p.chg>0?'+':'')+num(p.chg,0)+'%':'')+' · '+(p.last||'')+' 기준(IMF PortWatch)')+'</title></g>'}
+  return g;
+ }
+ function livePanel(){
+  const box=document.getElementById("en-live");if(!box)return;let h="";
+  const F=E.fires;
+  if(E.layers.fires&&F){const hot=(F.items||[]).filter(i=>i.unusual);
+   h+='<div class="en-sec"><h5>위성이 본 불 <small>NASA FIRMS · 48시간 · '+esc(String(F.updatedAt||"").replace("T"," ").replace("Z"," UTC"))+'</small></h5>'+
+    (hot.length?'<ul class="en-pol">'+hot.map(i=>'<li><time>'+esc((i.last&&i.last.date||"").slice(5))+'</time><span><b>'+esc(i.name)+'</b> 열 감지 '+i.count48h+'건(평소 하루 '+num(i.baselinePerDay,1)+'건) · 최대 '+num(i.frpMax,1)+'MW · <a href="https://firms.modaps.eosdis.nasa.gov/map/#d:48hrs;@'+i.lon+','+i.lat+',12z" target="_blank" rel="noopener noreferrer">위성 지도 ↗</a></span></li>').join("")+'</ul>':'<p class="en-none">지금 에너지 시설 '+(F.facilities||0)+'곳 가운데 평소보다 열 감지가 많은 곳은 없습니다.</p>')+
+    '<p class="en-note">'+esc(F.method||"")+'</p></div>'}
+  if(E.layers.ports){const P2=E.ports;
+   h+='<div class="en-sec"><h5>석유 항구 실시간 <small>IMF PortWatch · 선박 위치 신호(AIS) 추정 · 약 1주 시차</small></h5>'+
+    (!P2?'<p class="en-none">불러오는 중…</p>':!P2.length?'<p class="en-none">PortWatch에 연결하지 못했습니다.</p>':
+     '<div class="en-tablewrap"><table class="en-table"><thead><tr><th>항구</th><th>최근 7일 하루 유조선 물량</th><th>전쟁 전(1~2월) 대비</th><th>하루 유조선</th><th>50일 추이</th></tr></thead><tbody>'+
+     P2.filter(p=>p.avg!=null).sort((a,b)=>(b.avg||0)-(a.avg||0)).map(p=>'<tr><th>'+esc(p.nm)+' <small>'+esc((p.role==="i"?"하역":p.role==="h"?"선적(환적 허브)":"선적")+' · '+(CN[p.cc]||ON[p.cc]||p.cc))+'</small></th><td>'+num(p.avg/1e4,1)+'만 톤</td><td class="'+(p.chg==null?'':p.chg<0?'dn':'up')+'">'+(p.chg==null?'–':(p.chg>0?'+':'')+num(p.chg,0)+'%')+'</td><td>'+(p.calls!=null?num(p.calls,1)+'척':'–')+'</td><td>'+spark(p.series)+'</td></tr>').join("")+'</tbody></table></div>')+
+    '<p class="en-note">PortWatch는 위성·지상 수신기로 모은 선박 위치 신호(AIS)로 항구별 유조선 입출항과 실은 양을 추정합니다. 신호를 끈 배(호르무즈 셔틀 유조선 등)는 잡히지 않아 실제보다 적게 나올 수 있습니다. 1톤 ≈ 7.3배럴.</p></div>'}
+  box.innerHTML=h;
+ }
  function flows(){
   const out=[];
   for(const cc of ORDER){const c=C(cc);if(!c||!c.imports)continue;const tot=c.imports.total&&c.imports.total.value;
@@ -4273,10 +4358,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const w=E.world;let vb=(E.vb||baseVB()).slice();
   const live=window.__ripple&&window.__ripple.live&&window.__ripple.live.pw;
   const F=flows(),maxV=Math.max(0.1,...F.map(f=>f.vol||0));
-  const origSet=new Set(F.filter(f=>f.cc===E.sel).map(f=>f.o));
+  const origSet=new Set(E.layers.crude?F.filter(f=>f.cc===E.sel).map(f=>f.o):[]);const prodLabs=[];
   let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="원유 수입 바닷길 지도"><g id="en-all"><g class="en-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(ORDER.includes(c.c)?' class="imp'+(c.c===E.sel?' sel':'')+(origSet.has(c.c)?' orig':'')+'" data-en-cc="'+c.c+'"':origSet.has(c.c)?' class="orig"':'')+'/>').join("")+'</g><g class="en-flows">';
   const ord=F.slice().sort((a,b)=>(a.cc===E.sel)-(b.cc===E.sel)||(a.vol||0)-(b.vol||0));
-  for(const f of ord){
+  for(const f of (E.layers.crude?ord:[])){
    const kind=f.sanc?"s":f.via.includes("hormuz")?"h":f.via.includes("bab")||f.via.includes("suez")?"r":"o";
    const wpx=0.5+3.6*Math.sqrt((f.vol||maxV*f.share/100*0.3)/maxV);
    const tip=ON[f.o]||f.o;const pr=f.price&&f.price.value!=null?' · '+num(f.price.value,1)+' '+(f.price.unit||"달러/배럴"):'';
@@ -4290,6 +4375,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const f of mine)for(const t of [0.3,0.62,0.9]){const a=along(f.pp,t);if(!a)continue;
    g+='<path class="en-arrow" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+a.x.toFixed(1)+' '+a.y.toFixed(1)+') rotate('+a.ang.toFixed(0)+') scale('+(K*(0.8+f.w*0.25)).toFixed(3)+')"/>'}
   // 이름표 자리: 해협·도착지 이름표, 이미 놓은 이름표와 겹치지 않는 곳(사각형 충돌 검사)
+  // 석유제품 수출(고른 나라에서 나가는 흐름)
+  if(E.layers.prod)for(const f of prodFlows().filter(f=>f.cc===E.sel)){const pp=f.pts.map(p=>P(p[0],p[1]));const d=smooth(pp);f.pp=unwrap(pp);
+   const wpx=0.6+3.4*Math.sqrt((f.vol||0.01)/Math.max(0.05,maxV));
+   g+='<path class="en-prod" d="'+d+'" style="stroke-width:'+wpx.toFixed(2)+'"><title>'+esc((CN[f.cc]||f.cc)+' → '+(ON[f.to]||CN[f.to]||f.to)+' 석유제품 · 수출의 '+num(f.share,1)+'%'+(f.vol!=null?' · 하루 '+mbd(f.vol)+' 배럴':'')+(f.mix?' · '+f.mix:''))+'</title></path><path class="en-flowdash p" d="'+d+'"/>';
+   for(const t of [0.35,0.7]){const a=along(f.pp,t);if(a)g+='<path class="en-arrow p" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+a.x.toFixed(1)+' '+a.y.toFixed(1)+') rotate('+a.ang.toFixed(0)+') scale('+(K*(0.8+wpx*0.25)).toFixed(3)+')"/>'}
+   prodLabs.push(f)}
   // 원산지 이름표: 고른 나라로 오는 흐름마다 출발지(원산지 항구) 옆에 나라 이름·비중·양·금액. 선·해협 이름·다른 이름표와 안 겹치는 자리를 찾아 끈으로 잇는다.
   const boxes=[],tw=(t,px)=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?px:px*0.58),0),Wd=E.world.w;
   const inView=b=>b.x0>vb[0]+4*K&&b.x1<vb[0]+vb[2]-4*K&&b.y0>vb[1]+4*K&&b.y1<vb[1]+vb[3]-30*K;
@@ -4297,20 +4388,22 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const wk of ["hormuz","bab","suez","malacca","cape","bosporus","panama"]){const [x0,y]=P(...W[wk]);const x=wrapX(x0);boxes.push({x0:x-8*K,x1:x+120*K,y0:y-18*K,y1:y+8*K})}
   for(const cc of ORDER){if(DEST[cc]){const [x0,y]=P(...DEST[cc]);const x=wrapX(x0);boxes.push({x0:x-8*K,x1:x+50*K,y0:y-8*K,y1:y+18*K})}}
   let labs="";
-  mine.forEach((f,rank)=>{
-   const big=rank<8,l1=(ON[f.o]||f.o)+' '+num(f.share,f.share<1?1:0)+'%',l2a=big&&f.vol!=null?'하루 '+mbd(f.vol)+' 배럴':'',l2b=big&&f.val?(l2a?' · ':'')+periodTxt(f.period)+' '+usd(valMusd(f.val))+' 달러':'',l2=l2a+l2b;
+  const labItems=(E.layers.crude?mine.map(f=>({f,anchor:f.pp[0],name:ON[f.o]||f.o,share:f.share,vol:f.vol,val:f.val,period:f.period,cls:""})):[])
+   .concat(prodLabs.sort((a,b)=>(b.vol||0)-(a.vol||0)).map(f=>({f,anchor:f.pp[f.pp.length-1],name:(ON[f.to]||CN[f.to]||f.to)+' ← 제품',share:f.share,vol:f.vol,val:f.val,period:f.period,cls:" p"})));
+  labItems.forEach((L,rank)=>{const f={o:null,share:L.share,vol:L.vol,val:L.val,period:L.period,pp:[L.anchor]};
+   const big=rank<8||L.cls,l1=(ON[f.o]||f.o)+' '+num(f.share,f.share<1?1:0)+'%',l2a=big&&f.vol!=null?'하루 '+mbd(f.vol)+' 배럴':'',l2b=big&&f.val?(l2a?' · ':'')+periodTxt(f.period)+' '+usd(valMusd(f.val))+' 달러':'',l2=l2a+l2b;
    const ax=wrapX(f.pp[0][0]),ay=f.pp[0][1];
    const TR=window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR:x=>x;
-   const bw=(Math.max(tw(TR(ON[f.o]||f.o)+' '+num(f.share,1)+'%',big?10.5:9.5),l2?tw(TR(l2a)+TR(l2b),9):0)+(big?14:8))*K,bh=(l2?30:big?17:14)*K;let best=null;
+   const bw=(Math.max(tw(TR(L.name)+' '+num(f.share,1)+'%',big?10.5:9.5),l2?tw(TR(l2a)+TR(l2b),9):0)+(big?14:8))*K,bh=(l2?30:big?17:14)*K;let best=null;
    for(const r of [14,30,48,70,96,124])for(let a=0;a<16&&!best;a++){const ang=(a*22.5+(rank%2?11:0))*Math.PI/180;
     const cx=ax+Math.cos(ang)*(r*K+bw/2),cy=ay+Math.sin(ang)*(r*K+bh/2);const b={x0:cx-bw/2,x1:cx+bw/2,y0:cy-bh/2,y1:cy+bh/2};
     if(inView(b)&&!boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0))best={b,cx,cy}}
    if(!best)return;boxes.push(best.b);const {b,cx,cy}=best;
    const ex=Math.max(b.x0,Math.min(b.x1,ax)),ey=Math.max(b.y0,Math.min(b.y1,ay));
-   labs+='<g class="en-vlab'+(big?'':' sm')+'"><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+ex.toFixed(1)+'" y2="'+ey.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.4*K).toFixed(2)+'"/>'+
+   labs+='<g class="en-vlab'+(big?'':' sm')+L.cls+'"><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+ex.toFixed(1)+'" y2="'+ey.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.4*K).toFixed(2)+'"/>'+
     '<g transform="translate('+cx.toFixed(1)+' '+cy.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="'+(-bw/2/K).toFixed(1)+'" y="'+(-bh/2/K).toFixed(1)+'" width="'+(bw/K).toFixed(1)+'" height="'+(bh/K).toFixed(1)+'" rx="3"/>'+
-    '<text y="'+(l2?-3:big?4:3.5)+'"><tspan>'+esc(ON[f.o]||f.o)+'</tspan><tspan> '+esc(num(f.share,f.share<1?1:0)+'%')+'</tspan></text>'+(l2?'<text y="10" class="s"><tspan>'+esc(l2a)+'</tspan>'+(l2b?'<tspan>'+esc(l2b)+'</tspan>':'')+'</text>':'')+'</g></g>'});
-  g+='</g>'+routeLayer(vb[2]/1000)+'<g class="en-cps">';
+    '<text y="'+(l2?-3:big?4:3.5)+'"><tspan>'+esc(L.name)+'</tspan><tspan> '+esc(num(f.share,f.share<1?1:0)+'%')+'</tspan></text>'+(l2?'<text y="10" class="s"><tspan>'+esc(l2a)+'</tspan>'+(l2b?'<tspan>'+esc(l2b)+'</tspan>':'')+'</text>':'')+'</g></g>'});
+  g+='</g>'+routeLayer(vb[2]/1000)+liveLayer(vb[2]/1000)+'<g class="en-cps">';
   const cps=[["hormuz","chokepoint6","호르무즈"],["bab","chokepoint4","바브엘만데브"],["suez","chokepoint1","수에즈"],["malacca","chokepoint5","말라카"],["cape","chokepoint7","희망봉"],["bosporus","chokepoint3","보스포루스"],["panama","chokepoint2","파나마"]];
   const k=vb[2]/1000;
   for(const [wk,id,nm] of cps){const [x,y]=P(...W[wk]);const L=live&&live[id];const lv=wk==="hormuz"?lvlOf("hormuz"):wk==="bab"?lvlOf("redsea"):0;
@@ -4414,6 +4507,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function spark(s){if(!s||s.length<2)return "";const v=s.map(p=>p[1]),mn=Math.min(...v),mx=Math.max(...v),r=mx-mn||1;return '<svg viewBox="0 0 80 22" class="en-spark"><polyline points="'+v.map((x,i)=>(i/(v.length-1)*80).toFixed(1)+","+(20-(x-mn)/r*18).toFixed(1)).join(" ")+'"/></svg>'}
 
  /* ---------- interaction ---------- */
+ document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-en-layer]");if(!t)return;E.layers[t.dataset.enLayer]=t.checked;loadLiveLayers();drawMap()});
  document.addEventListener("click",e=>{
   const zb=e.target.closest("[data-en-zoom]");if(zb){E.vb=E.vb?null:zoomBox();zb.setAttribute("aria-pressed",String(!!E.vb));zb.textContent=E.vb?"세계 전체 보기":"이 나라 경로 가까이 보기";drawMap();return}
   const rt=e.target.closest("[data-rt]");if(rt&&document.getElementById("en-app")?.contains(rt)){routeInfo(rt.dataset.rt);return}
