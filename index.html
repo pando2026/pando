@@ -4093,7 +4093,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const ON={CN:"중국",JP:"일본",KR:"한국",DE:"독일",FR:"프랑스",IN:"인도",TW:"대만",SG:"싱가포르",ZA:"남아공",CD:"콩고민주공화국",CL:"칠레",MM:"미얀마",LA:"라오스",PH:"필리핀",NL:"네덜란드",BE:"벨기에",SA:"사우디",IQ:"이라크",AE:"UAE",KW:"쿠웨이트",QA:"카타르",OM:"오만",IR:"이란",RU:"러시아",US:"미국",BR:"브라질",NO:"노르웨이",GB:"영국",VE:"베네수엘라",NG:"나이지리아",AO:"앙골라",KZ:"카자흐스탄",MX:"멕시코",CA:"캐나다",LY:"리비아",GY:"가이아나",DZ:"알제리",EG:"이집트",AZ:"아제르바이잔",MY:"말레이시아",ID:"인도네시아",AU:"호주",BN:"브루나이",CO:"콜롬비아",EC:"에콰도르",GA:"가봉",CG:"콩고",GQ:"적도기니",CM:"카메룬",GH:"가나",SD:"수단",YE:"예멘",TT:"트리니다드토바고",AR:"아르헨티나",VN:"베트남",TH:"태국",PE:"페루",OT:"기타"};
  const ORDER=["KR","JP","CN","IN","TW","SG","DE","FR","GB","US"];
  const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구·통계"};
- const E={data:null,world:null,sel:"KR",loading:null,layers:{crude:true,prod:true,fires:true,ships:true,ports:false},fires:null,ports:null,ais:null};
+ const E={data:null,world:null,sel:"KR",loading:null,layers:{crude:true,prod:false,fires:true,ships:true,ports:false},fires:null,ports:null,ais:null};
 
  /* ---------- geography: ports, waypoints, sea lanes ---------- */
  const PORT={SA:[50.2,26.6],IQ:[48.8,29.7],KW:[48.2,29.1],QA:[51.6,25.9],IR:[50.3,29.2],AE:[52.6,24.2],OM:[58.6,23.6],
@@ -4284,11 +4284,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    const st=/중단/.test(sg.status||"")?" stop":/차질|제한|일부/.test(sg.status||"")?" part":"";
    const pts=sg.path.map(p=>P(p[0],p[1]));
    g+='<path class="en-rt k-'+esc(sg.kind)+st+(sg.certainty==="불분명"?" uq":"")+(on?" on":"")+'" data-rt="'+esc(sg.id)+'" d="'+smooth(pts)+'"><title>'+esc(sg.name+" · "+(sg.status||"")+" · "+sg.certainty)+'</title></path>';
-   if(sg.certainty==="불분명"){const m=pts[Math.floor(pts.length/2)];g+='<text class="en-uq" x="'+m[0].toFixed(1)+'" y="'+m[1].toFixed(1)+'" style="font-size:'+(11*k).toFixed(2)+'px;stroke-width:'+(3*k).toFixed(2)+'px" data-rt="'+esc(sg.id)+'">?</text>'}
   }
+  const near=k<0.42;
   for(const h of r.hubs){const [x,y]=P(h.lon,h.lat);const on=mine.has(h.id)||(h.who||[]).includes(E.sel);
+   if(!near&&(h.kind==="refinery"||h.kind==="reserve"||!on))continue;
    g+='<g class="en-hub k-'+esc(h.kind)+(on?" on":"")+(h.certainty==="불분명"?" uq":"")+'" data-rt="'+esc(h.id)+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')">'+(h.kind==="sts"?'<path d="M0,-5L5,0L0,5L-5,0Z"/>':'<rect x="-3.5" y="-3.5" width="7" height="7"/>')+
-    (on?'<text x="7" y="3">'+esc(h.short||h.name)+(h.certainty==="불분명"?" ?":"")+'</text>':'')+'<title>'+esc(h.name+" · "+h.certainty)+'</title></g>'}
+    (on&&near?'<text x="7" y="3">'+esc(h.short||h.name)+(h.certainty==="불분명"?" ?":"")+'</text>':'')+'<title>'+esc(h.name+" · "+h.certainty)+'</title></g>'}
   return g+'</g>';
  }
  const CERT={"확인":"c-ok","추정":"c-est","불분명":"c-uq"};
@@ -4455,29 +4456,37 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const boxes=[],tw=(t,px)=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?px:px*0.58),0),Wd=E.world.w;
   const inView=b=>b.x0>vb[0]+4*K&&b.x1<vb[0]+vb[2]-4*K&&b.y0>vb[1]+4*K&&b.y1<vb[1]+vb[3]-30*K;
   const wrapX=x=>{let v=((x%Wd)+Wd)%Wd;if(v<vb[0])v+=Wd;if(v>vb[0]+vb[2])v-=Wd;return v};
-  for(const wk of ["hormuz","bab","suez","malacca","cape","bosporus","panama"]){const [x0,y]=P(...W[wk]);const x=wrapX(x0);boxes.push({x0:x-8*K,x1:x+120*K,y0:y-18*K,y1:y+8*K})}
+  const usedW=new Set(mine.flatMap(f=>f.via||[]));for(const wk of ["hormuz","bab","suez","malacca","cape","bosporus","panama"]){const [x0,y]=P(...W[wk]);const x=wrapX(x0);boxes.push({x0:x-6*K,x1:x+(E.vb||usedW.has(wk)?70:6)*K,y0:y-16*K,y1:y+6*K})}
   for(const cc of ORDER){if(DEST[cc]){const [x0,y]=P(...DEST[cc]);const x=wrapX(x0);boxes.push({x0:x-8*K,x1:x+50*K,y0:y-8*K,y1:y+18*K})}}
   let labs="";
   const labItems=(E.layers.crude?mine.map(f=>({f,anchor:f.pp[0],name:ON[f.o]||f.o,share:f.share,vol:f.vol,val:f.val,period:f.period,cls:""})):[])
    .concat(prodLabs.sort((a,b)=>(b.vol||0)-(a.vol||0)).map(f=>({f,anchor:f.pp[f.pp.length-1],name:(ON[f.to]||CN[f.to]||f.to)+' ← 제품',share:f.share,vol:f.vol,val:f.val,period:f.period,cls:" p"})));
-  labItems.forEach((L,rank)=>{const f={o:null,share:L.share,vol:L.vol,val:L.val,period:L.period,pp:[L.anchor]};
-   const big=rank<8||L.cls,l1=(ON[f.o]||f.o)+' '+num(f.share,f.share<1?1:0)+'%',l2a=big&&f.vol!=null?'하루 '+mbd(f.vol)+' 배럴':'',l2b=big&&f.val?(l2a?' · ':'')+periodTxt(f.period)+' '+usd(valMusd(f.val))+' 달러':'',l2=l2a+l2b;
-   const ax=wrapX(f.pp[0][0]),ay=f.pp[0][1];
-   const TR=window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR:x=>x;
-   const bw=(Math.max(tw(TR(L.name)+' '+num(f.share,1)+'%',big?10.5:9.5),l2?tw(TR(l2a)+TR(l2b),9):0)+(big?14:8))*K,bh=(l2?30:big?17:14)*K;let best=null;
-   for(const r of [14,30,48,70,96,124])for(let a=0;a<16&&!best;a++){const ang=(a*22.5+(rank%2?11:0))*Math.PI/180;
+  // 한 줄 이름표('사우디 29%')를 출발지 바로 옆에 둔다. 자리가 없으면 그 이름표는 생략(나라 색과 마우스 설명으로 남음). 양·금액은 마우스 설명과 오른쪽 막대에.
+  const TR=window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR:x=>x;
+  // 나라 자료가 아직 없는 나라: 경로 조사(corridors)의 원산지 이름만 출발지에 단다
+  if(E.layers.crude&&!mine.length&&RT())for(const c of RT().corridors.filter(c=>c.buyer===E.sel)){const L=corrLane(c.origin,E.sel);if(!L)continue;
+   const pp=unwrap(L.pts.map(p=>P(p[0],p[1])));labItems.push({anchor:pp[0],name:ON[c.origin]||CN[c.origin]||c.origin,share:null,cls:" r"});
+   for(const t of [0.35,0.7]){const q=along(pp,t);if(q)g+='<path class="en-arrow" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+q.x.toFixed(1)+' '+q.y.toFixed(1)+') rotate('+q.ang.toFixed(0)+') scale('+K.toFixed(3)+')"/>'}}
+  labItems.forEach((L,rank)=>{
+   if(!E.vb&&L.share!=null&&L.share<2&&!L.cls)return;   // 넓게 볼 땐 2% 미만은 이름표 없이
+   const ax=wrapX(L.anchor[0]),ay=L.anchor[1],top=rank<5&&!L.cls;
+   const pct=L.share==null?'':' '+num(L.share,L.share<1?1:0)+'%',txt=L.name+pct,px=top?11:10;
+   const bw=(tw(TR(L.name)+pct,px)+10)*K,bh=(top?17:15)*K;let best=null;
+   for(const r of (rank<8?[3,10,20,32,46,62]:[3,10,20]))for(let a=0;a<12&&!best;a++){const ang=(a*30+(rank%2?15:0))*Math.PI/180;
     const cx=ax+Math.cos(ang)*(r*K+bw/2),cy=ay+Math.sin(ang)*(r*K+bh/2);const b={x0:cx-bw/2,x1:cx+bw/2,y0:cy-bh/2,y1:cy+bh/2};
     if(inView(b)&&!boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0))best={b,cx,cy}}
    if(!best)return;boxes.push(best.b);const {b,cx,cy}=best;
    const ex=Math.max(b.x0,Math.min(b.x1,ax)),ey=Math.max(b.y0,Math.min(b.y1,ay));
-   labs+='<g class="en-vlab'+(big?'':' sm')+L.cls+'"><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+ex.toFixed(1)+'" y2="'+ey.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.4*K).toFixed(2)+'"/>'+
+   const tip=txt+(L.vol!=null?' · 하루 '+mbd(L.vol)+' 배럴':'')+(L.val?' · '+periodTxt(L.period)+' '+usd(valMusd(L.val))+' 달러':'');
+   labs+='<g class="en-vlab'+(top?'':' sm')+L.cls+'"><title>'+esc(tip)+'</title><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+ex.toFixed(1)+'" y2="'+ey.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.2*K).toFixed(2)+'"/>'+
     '<g transform="translate('+cx.toFixed(1)+' '+cy.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="'+(-bw/2/K).toFixed(1)+'" y="'+(-bh/2/K).toFixed(1)+'" width="'+(bw/K).toFixed(1)+'" height="'+(bh/K).toFixed(1)+'" rx="3"/>'+
-    '<text y="'+(l2?-3:big?4:3.5)+'"><tspan>'+esc(L.name)+'</tspan><tspan> '+esc(num(f.share,f.share<1?1:0)+'%')+'</tspan></text>'+(l2?'<text y="10" class="s"><tspan>'+esc(l2a)+'</tspan>'+(l2b?'<tspan>'+esc(l2b)+'</tspan>':'')+'</text>':'')+'</g></g>'});
+    '<text y="'+(top?4:3.5)+'"><tspan>'+esc(L.name)+'</tspan>'+(pct?'<tspan>'+esc(pct)+'</tspan>':'')+'</text></g></g>'});
   g+='</g>'+routeLayer(vb[2]/1000)+liveLayer(vb[2]/1000)+'<g class="en-cps">';
   const cps=[["hormuz","chokepoint6","호르무즈"],["bab","chokepoint4","바브엘만데브"],["suez","chokepoint1","수에즈"],["malacca","chokepoint5","말라카"],["cape","chokepoint7","희망봉"],["bosporus","chokepoint3","보스포루스"],["panama","chokepoint2","파나마"]];
-  const k=vb[2]/1000;
+  const k=vb[2]/1000,usedCp=new Set(mine.flatMap(f=>f.via||[]));
   for(const [wk,id,nm] of cps){const [x,y]=P(...W[wk]);const L=live&&live[id];const lv=wk==="hormuz"?lvlOf("hormuz"):wk==="bab"?lvlOf("redsea"):0;
-   g+='<g class="en-cp lv-'+lv+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="4.5"/><text x="7" y="-5">'+esc(nm)+(L?' '+num(L.recent,0)+'척/일':'')+'</text></g>'}
+   const show=E.vb||usedCp.has(wk);
+   g+='<g class="en-cp lv-'+lv+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="'+(show?4.5:3)+'"/>'+(show?'<text x="7" y="-5">'+esc(nm)+'</text>':'')+'<title>'+esc(nm+(L?' · 하루 통항 '+num(L.recent,0)+'척(IMF PortWatch)':''))+'</title></g>'}
   for(const cc of ORDER){if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))continue;const [x,y]=P(...DEST[cc]);g+='<g class="en-dest'+(cc===E.sel?' sel':'')+'" data-en-cc="'+cc+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/>'+(cc===E.sel?'<text x="7" y="13">'+esc(CN[cc])+'</text>':'')+'</g>'}
   g+='</g></g>';
   g+='<use href="#en-all" x="'+(-w.w)+'"/><use href="#en-all" x="'+w.w+'"/>';
