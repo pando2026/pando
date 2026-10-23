@@ -1437,7 +1437,7 @@ html,body{background:#fff;color:var(--ink)}
 .rp-arc.on{opacity:1}
 @keyframes rp-flow2{to{stroke-dashoffset:-7}}
 .rp-mk{cursor:pointer}.rp-mk circle,.rp-mk rect{fill:var(--lc);stroke:#fff;stroke-width:2}
-.rp-mk text{font:800 11px system-ui,sans-serif;fill:#14222b;paint-order:stroke;stroke:#ffffffe6;stroke-width:3.2px}
+.rp-mk text{font:800 12.5px system-ui,sans-serif;fill:#14222b;paint-order:stroke;stroke:#ffffffe6;stroke-width:3.2px}
 .rp-lead{stroke:#5b6b75;stroke-width:1}.rp-kr circle{fill:#c41230}.rp-kr{cursor:default}
 .rp-mk.lv-3 circle{animation:rp-mk 1.6s ease-out infinite}
 @keyframes rp-mk{0%{stroke-width:2}60%{stroke-width:9;stroke:#c4123033}100%{stroke-width:2}}
@@ -4239,7 +4239,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':C(cc)?'':'<span>경로</span>')+'</button>'}).join("")+'</div>'+
    '<div class="en-grid"><figure class="en-mapbox"><div class="en-mapcap" id="en-mapcap"></div><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-legimp"></i>누르면 고를 수 있는 나라</span><span><i class="en-legorig"></i>고른 나라의 원산지</span><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div><div class="en-route en-sat" id="en-sat" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
-   '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ships","해협 유조선 위치"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
+   '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ships","유조선 위치(AIS)"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
    '<div class="en-live" id="en-live"></div>'+
    '<div class="en-compare" id="en-compare"></div><div class="en-prices" id="en-prices"></div>';
   drawMap();card();compare();prices();loadLiveLayers();
@@ -4459,7 +4459,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     '<p class="en-note">'+esc(F.method||"")+'</p></div>'}
   const A=E.ais;
   if(E.layers.ships&&A&&A.areas&&A.areas.length){
-   h+='<div class="en-sec"><h5>해협·터미널 유조선 <small>AIS 선박 위치 신호 · '+esc(String(A.updatedAt||"").replace("T"," ").replace("Z"," UTC"))+' · '+num(A.windowMin,0)+'분 관측</small></h5>'+
+   h+='<div class="en-sec"><h5>원유 항구·해협 유조선 <small>AIS 선박 위치 신호 · '+esc(String(A.updatedAt||"").replace("T"," ").replace("Z"," UTC"))+' · '+num(A.windowMin,0)+'분 관측</small></h5>'+
     '<div class="en-tablewrap"><table class="en-table"><thead><tr><th>곳</th><th>유조선</th><th>운항</th><th>정박·대기</th><th>30일 추이</th></tr></thead><tbody>'+
     A.areas.map(a=>'<tr><th>'+esc(a.name)+' <small>'+esc(a.note)+'</small></th>'+(a.signals===0?'<td colspan="3" class="en-none">수신 없음(이 바다엔 공개 수신기가 거의 없음)</td>':'<td>'+a.tankers+'척'+(a.unknownType?' <small>+선종 미확인 '+a.unknownType+'척</small>':'')+'</td><td>'+a.moving+'척</td><td>'+a.stopped+'척</td>')+'<td>'+spark(((A.hist||{})[a.id]||[]).map(x=>[x[0],x[1]]))+'</td></tr>').join("")+
     '</tbody></table></div><p class="en-note">'+esc(A.method||"")+' 자료: '+esc(A.provider||"")+'.</p></div>'}
@@ -4498,7 +4498,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    if(f.cc===E.sel)g+='<path class="en-flowdash" d="'+d+'"/>';
   }
   // 고른 나라: 방향 화살표와 큰 흐름의 양·금액
-  const K=vb[2]/1000,mine=F.filter(f=>f.cc===E.sel&&f.pp).sort((a,b)=>(b.vol||0)-(a.vol||0));
+  const K=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000)),mine=F.filter(f=>f.cc===E.sel&&f.pp).sort((a,b)=>(b.vol||0)-(a.vol||0));
   for(const f of mine)for(const t of [0.3,0.62,0.9]){const a=along(f.pp,t);if(!a)continue;
    g+='<path class="en-arrow" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+a.x.toFixed(1)+' '+a.y.toFixed(1)+') rotate('+a.ang.toFixed(0)+') scale('+(K*(0.8+f.w*0.25)).toFixed(3)+')"/>'}
   // 이름표 자리: 해협·도착지 이름표, 이미 놓은 이름표와 겹치지 않는 곳(사각형 충돌 검사)
@@ -4538,9 +4538,9 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    labs+='<g class="en-vlab'+(top?'':' sm')+L.cls+'"><title>'+esc(tip)+'</title><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+ex.toFixed(1)+'" y2="'+ey.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.2*K).toFixed(2)+'"/>'+
     '<g transform="translate('+cx.toFixed(1)+' '+cy.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="'+(-bw/2/K).toFixed(1)+'" y="'+(-bh/2/K).toFixed(1)+'" width="'+(bw/K).toFixed(1)+'" height="'+(bh/K).toFixed(1)+'" rx="3"/>'+
     '<text y="'+(top?4:3.5)+'"><tspan>'+esc(L.name)+'</tspan>'+(pct?'<tspan>'+esc(pct)+'</tspan>':'')+'</text></g></g>'});
-  g+='</g>'+routeLayer(vb[2]/1000)+liveLayer(vb[2]/1000)+'<g class="en-cps">';
+  g+='</g>'+routeLayer(K)+liveLayer(K)+'<g class="en-cps">';
   const cps=[["hormuz","chokepoint6","호르무즈"],["bab","chokepoint4","바브엘만데브"],["suez","chokepoint1","수에즈"],["malacca","chokepoint5","말라카"],["cape","chokepoint7","희망봉"],["bosporus","chokepoint3","보스포루스"],["panama","chokepoint2","파나마"]];
-  const k=vb[2]/1000,usedCp=new Set(mine.flatMap(f=>f.via||[]));
+  const k=K,usedCp=new Set(mine.flatMap(f=>f.via||[]));
   for(const [wk,id,nm] of cps){const [x,y]=P(...W[wk]);const L=live&&live[id];const lv=wk==="hormuz"?lvlOf("hormuz"):wk==="bab"?lvlOf("redsea"):0;
    const show=E.vb||usedCp.has(wk);
    g+='<g class="en-cp lv-'+lv+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="'+(show?4.5:3)+'"/>'+(show?'<text x="7" y="-5">'+esc(nm)+'</text>':'')+'<title>'+esc(nm+(L?' · 하루 통항 '+num(L.recent,0)+'척(IMF PortWatch)':''))+'</title></g>'}
@@ -4708,7 +4708,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const host=document.getElementById("mn-map"),h=H(),m=mineral(M.sel);if(!host||!h||!m)return;
   const w=window.__pandoRes&&document.querySelector("#en-map")?null:null; // world comes from helpers
   h.ensureWorld().then(world=>{
-   const P=h.P,y0=P(0,72)[1],y1=P(0,-46)[1],base=()=>[0,y0,world.w,y1-y0],vb=(M.vb||base()).slice(),k=vb[2]/1000;
+   const P=h.P,y0=P(0,72)[1],y1=P(0,-46)[1],base=()=>[0,y0,world.w,y1-y0],vb=(M.vb||base()).slice(),k=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000));
    const dest=(m.exports&&m.exports.byDest)||[];const maxV=Math.max(1e-9,...dest.map(d=>d.volume&&d.volume.value||0));
    const mineCC=new Set((m.mining||[]).slice(0,5).map(x=>x.cc));
    let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+h.esc(m.name)+' 공급 지도"><g class="en-land">'+world.countries.map(c=>'<path d="'+c.d+'"'+(h.ORDER.includes(c.c)?' class="imp'+(c.c===M.cc?' sel':'')+'" data-mn-cc="'+c.c+'"':mineCC.has(c.c)?' class="mine"':'')+'/>').join("")+'</g><g class="en-flows">';
@@ -4932,7 +4932,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const ar=2.1;let vw=x1-x0,vh=y1-y0;if(vw/vh<ar){const nw=vh*ar;x0-=(nw-vw)/2;vw=nw}else{const nh=vw/ar;y0-=(nh-vh)/2;vh=nh}
   // 확대·이동(에너지 지도와 같은 도구): 기본 범위는 충격원과 한국을 담는 틀, 바꾼 범위는 갈래마다 기억
   const base=[x0,y0,vw,vh];S.mapZ=S.mapZ||{};const Z=S.mapZ[t.id]=S.mapZ[t.id]||{noWrap:true,maxOut:2.5};
-  const vbx=(Z.vb||base).slice();const k=vbx[2]/1000;
+  const vbx=(Z.vb||base).slice();const pxw=(document.querySelector('#ripple .rp-mapbox')||{}).clientWidth||1000;const k=vbx[2]/Math.max(320,Math.min(1400,pxw));   // 화면에서 늘 같은 글자 크기
   let g='<svg viewBox="'+vbx.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+esc(t.title)+' 경로 지도">';
   g+='<g class="rp-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(c.c==="KR"?' class="kr"':'')+'/>').join("")+'</g>';
   const {out}=graph(t);
