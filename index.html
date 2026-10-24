@@ -1292,6 +1292,10 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .control-list .ctl-ph{display:none}.control-list .ctl-ph.has-ent{display:inline-block;width:30px;height:30px;border-radius:50%;overflow:hidden;vertical-align:middle;margin-right:8px;border:1px solid #d9e0e4;background:#fff}
 .control-list .ctl-ph img{width:100%;height:100%;object-fit:cover;display:block}
 
+.cur-toggle{display:inline-flex;margin-top:6px;border:1px solid #c9d3d9;border-radius:999px;overflow:hidden}
+.cur-toggle button{border:0;background:#fff;padding:3px 11px;font:700 12px system-ui,sans-serif;color:#41525c;cursor:pointer}
+.cur-toggle button[aria-pressed=true]{background:#1d2630;color:#fff}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -2522,6 +2526,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  loadBlocs().then(renderBlocBar);
  fetch("data/fx.json").then(r=>r.ok?r.json():null).then(j=>{state.fx=j}).catch(()=>{});
+ fetch("data/kr-imf.json").then(r=>r.ok?r.json():null).then(j=>{state.krImf=j}).catch(()=>{});
  fetch("data/regimes.json").then(r=>r.ok?r.json():null).then(j=>{state.regimes=j}).catch(()=>{});
  async function loadExplainers(){
   try{const r=await api("/api/explainers");state.explainers=await r.json()}catch{state.explainers=[]}
@@ -2775,6 +2780,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
   const valid=item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.year;
   if(!valid)return "";
+  // IMF 자료로 그린 카드는 한국도 같은 IMF 지표로 비교한다(정의가 같아야 선을 겹쳐 볼 수 있다)
+  if((item.sourceFamily==="IMF_WEO"||/IMF/.test(item.provider||""))&&state.krImf?.[key]&&state.activeCode!=="KR"){korea=null;koreaReference=null;koreaLatest=state.krImf[key];compare=true;var imfKr=true}
   const vintage=String(item.year);
   const unofficial=["unofficial","republished"].includes(metricEvidence(item)?.type);
   const nonRanked=item?.rankEligible===false||["THIRD_PARTY_ESTIMATE","CIA_FACTBOOK_ESTIMATE","UN_STATISTICAL_YEARBOOK"].includes(item?.sourceFamily);
@@ -2793,7 +2800,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   // Korea is shown only when a like-for-like figure exists; otherwise nothing.
   const latestOk=koreaLatest&&koreaLatest.value!==null&&Number.isFinite(Number(koreaLatest.value))&&koreaLatest.year;
   const koreaObs=sameYear?korea:referenceAvailable?koreaReference:latestOk?koreaLatest:null;
-  const loose=!sameYear&&koreaObs;
+  const loose=!sameYear&&koreaObs&&!(typeof imfKr!=="undefined"&&imfKr);
   const koreaLine=compare&&koreaObs?'<span class="metric-korea-line'+(loose?' metric-korea-line--loose':'')+'"'+(loose?' title="출처·연도·정의가 달라 같은 기준의 비교가 아닙니다. 크기를 가늠하는 참고용입니다."':'')+'>한국 <b>'+esc(displayValue(koreaObs,Number(koreaObs.value)))+'</b>'+(key==="policyRate"?"":" · "+esc(String(koreaObs.year)))+(loose?' · 참고':'')+'</span>':"";
   const rankYear=key==="policyRate"?"":vintage;
   const meta=esc(vintage)+(/^\d{4}$/.test(vintage)?"년":"")+(item.fiscalYear?" · 회계연도 "+esc(item.fiscalYear):"")+metricBadgeShort(item)+ageTag(vintage);
@@ -2850,12 +2857,22 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const FXCUR=[[/포클랜드\s*파운드/,"FKP"],[/동카리브\s*달러/,"XCD"],[/호주\s*달러/,"AUD"],[/뉴질랜드\s*달러/,"NZD"],[/홍콩\s*달러/,"HKD"],[/대만\s*달러/,"TWD"],[/가이아나\s*달러/,"GYD"],[/브루나이\s*달러/,"BND"],[/케이맨\s*달러/,"KYD"],[/버뮤다\s*달러/,"BMD"],[/수리남\s*달러/,"SRD"],[/미국\s*달러/,"USD"],[/덴마크\s*크로네/,"DKK"],[/CFP\s*프랑/,"XPF"],[/카리브\s*길더/,"XCG"],[/스위스\s*프랑/,"CHF"],[/지부티\s*프랑/,"DJF"],[/튀니지\s*디나르/,"TND"],[/쿠웨이트\s*디나르/,"KWD"],[/리비아\s*디나르/,"LYD"],[/알제리\s*디나르/,"DZD"],[/파키스탄\s*루피/,"PKR"],[/세이셸\s*루피/,"SCR"],[/크로어\s*루피|루피/,"INR"],[/우기야/,"MRU"],[/쿠바\s*페소/,"CUP"],[/파타카/,"MOP"],[/도브라/,"STN"],[/남수단\s*파운드/,"SSP"],[/시리아\s*파운드/,"SYP"],[/파운드/,"GBP"],[/디르함/,"AED"],[/리온/,"SLE"],[/마나트/,"TMT"],[/볼리비아노/,"BOB"],[/플로린/,"AWG"],[/달라시/,"GMD"],[/위안/,"CNY"],[/엔/,"JPY"],[/유로/,"EUR"],[/원/,"KRW"],[/달러/,"USD"]];
  const FXMUL=u=>/라크\s*크로어/.test(u)?1e12:/^\s*조/.test(u)?1e12:/^\s*십억/.test(u)?1e9:/^\s*억/.test(u)?1e8:/^\s*백만/.test(u)?1e6:/^\s*천/.test(u)?1e3:1;
  const krUnits=v=>{const a=Math.abs(v);return a>=1e12?number(v/1e12,a>=1e14?0:a>=1e13?1:2)+"조":a>=1e8?number(v/1e8,0)+"억":a>=1e4?number(v/1e4,0)+"만":number(v,0)};
- function fxNote(value,unit){const fx=state.fx;if(!fx||!Number.isFinite(Number(value)))return "";const u=String(unit||"");if(/%/.test(u))return "";
-  const hit=FXCUR.find(([re])=>re.test(u));if(!hit)return "";const cur=hit[1],rate=fx.rates?.[cur],krw=fx.rates?.KRW;if(!rate||!krw)return "";
-  const local=Number(value)*FXMUL(u),usd=local/rate,won=usd*krw;
+ function fxNote(value,unit){const c=fxConv(value,unit);if(!c)return "";const cur=c.cur,usd=c.usd,won=c.won;
   return (cur==="USD"?"":"약 US$"+krUnits(usd)+(cur==="KRW"?"":" · "))+(cur==="KRW"?"":"약 "+krUnits(won)+"원")}
- function fxLine(value,unit){const t=fxNote(value,unit);return t?'<span class="fx-note" title="'+esc((state.fx?.provider||"")+" "+(state.fx?.asOf||"")+" 기준")+'">'+esc(t)+' <small>('+esc(state.fx?.asOf||"")+' 환율)</small></span>':""}
- const budgetMoney=(value,unit)=>unit==="십억 엔"?number(value/1000,2)+"조 엔":unit==="십억 유로"?number(value*10,1)+"억 유로":unit==="십억 디르함"?number(value*10,2)+"억 디르함":unit==="억 위안"?number(value,2)+"억 위안":unit==="조 원"?number(value,1)+"조 원":number(value,1)+" "+unit;
+ function fxLine(value,unit){const t=state.cur!=="local"&&fxConv(value,unit)?"현지 통화 "+budgetMoneyLocal(value,unit):fxNote(value,unit);return t?'<span class="fx-note" title="'+esc((state.fx?.provider||"")+" "+(state.fx?.asOf||"")+" 기준")+'">'+esc(t)+' <small>('+esc(state.fx?.asOf||"")+' 환율)</small></span>':""}
+ // 예산 금액 보기: 현지 통화 / US$ / 원(그 브라우저에 기억)
+ try{state.cur=localStorage.getItem("pando.cur")||"local"}catch(e){state.cur="local"}
+ // 나라별 통화(예산 구성표의 단위 글자만으로는 '디나르·리얄·페소·파운드'가 어느 나라 것인지 알 수 없다)
+ const CCCUR={BR:"BRL",SS:"SSP",AR:"ARS",CD:"CDF",DE:"EUR",FR:"EUR",ES:"EUR",IT:"EUR",EG:"EGP",IL:"ILS",PS:"ILS",RU:"RUB",TW:"TWD",AU:"AUD",BF:"XOF",ML:"XOF",NE:"XOF",AE:"AED",AF:"AFN",IN:"INR",RW:"RWF",JP:"JPY",LB:"LBP",KR:"KRW",ZA:"ZAR",IQ:"IQD",PH:"PHP",VN:"VND",IR:"IRR",NG:"NGN",GB:"GBP",CN:"CNY",ID:"IDR",MX:"MXN",PK:"PKR",HT:"HTG",PL:"PLN",SO:"USD",UA:"UAH",YE:"YER",LY:"LYD",CA:"CAD",SA:"SAR",TR:"TRY",US:"USD",ET:"ETB",JO:"JOD",SY:"SYP",SD:"SDG",MM:"MMK",VE:"VES",GR:"EUR",PT:"EUR",BE:"EUR",AL:"ALL",ER:"ERN",SO2:"SOS"};
+ const FXGAP=new Set(["IR","LB","SS","YE","SY","SD","VE","AR","NG","MM","ET","EG","ER","AF"]);   // 공식 환율과 시장 환율 차이가 큰 나라
+ let FXCC=null;
+ function fxConv(value,unit,cc){const fx=state.fx;const u=String(unit||"");if(!fx||/%/.test(u)||!Number.isFinite(Number(value)))return null;cc=cc||FXCC;
+  let cur=cc&&CCCUR[cc];if(!cur){const hit=FXCUR.find(([re])=>re.test(u));if(!hit)return null;cur=hit[1]}
+  if(/달러/.test(u)&&!/대만|호주|캐나다|홍콩|싱가포르|뉴질랜드/.test(u))cur="USD";
+  const rate=fx.rates?.[cur],krw=fx.rates?.KRW;if(!rate||!krw)return null;const usd=Number(value)*FXMUL(u)/rate;return {usd,won:usd*krw,cur}}
+ const curToggle=unit=>fxConv(1,unit)?'<div class="cur-toggle" role="group" aria-label="금액 단위">'+[["local","현지 통화"],["usd","US$"],["krw","원"]].map(([k,l])=>'<button type="button" data-cur="'+k+'" aria-pressed="'+(state.cur===k)+'">'+l+'</button>').join("")+'</div>'+(state.cur!=="local"?'<small class="cur-note">'+esc((state.fx?.asOf||"")+" 공식 환율("+(state.fx?.provider||"")+")로 환산"+(FXGAP.has(FXCC)?" · 이 나라는 공식 환율과 시장 환율 차이가 커서 실제 구매력과 다를 수 있습니다":""))+'</small>':""):"";
+ const budgetMoney=(value,unit)=>{if(state.cur!=="local"){const c=fxConv(value,unit);if(c)return state.cur==="usd"?"US$"+krUnits(c.usd):krUnits(c.won)+"원"}return budgetMoneyLocal(value,unit)};
+ const budgetMoneyLocal=(value,unit)=>unit==="십억 엔"?number(value/1000,2)+"조 엔":unit==="십억 유로"?number(value*10,1)+"억 유로":unit==="십억 디르함"?number(value*10,2)+"억 디르함":unit==="억 위안"?number(value,2)+"억 위안":unit==="조 원"?number(value,1)+"조 원":number(value,1)+" "+unit;
  // 예산 설계 의도·집행·통과 과정(data/budget-plan.json). BP: 화면에 그린 구성표별 항목과 자료.
  const BP={};let bpSeq=0;
  const bpKey=s=>String(s||"").replace(/[\s·・,.()（）]/g,"");
@@ -2878,14 +2895,14 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function bpDetail(reg,i){
   const item=reg.items[i];if(!item)return "";const x=bpItem(reg.plan,item.label);
-  const head='<div class="bp-d-head"><b>'+esc(item.label)+'</b><span>'+esc(budgetMoney(Number(item.value),reg.unit))+' · '+reg.share(item.value).toFixed(1)+'%</span><button type="button" class="bp-close" aria-label="닫기">×</button></div>';
+  const head='<div class="bp-d-head"><b>'+esc(item.label)+'</b><span>'+esc((FXCC=reg.cc,budgetMoney(Number(item.value),reg.unit)))+' · '+reg.share(item.value).toFixed(1)+'%</span><button type="button" class="bp-close" aria-label="닫기">×</button></div>';
   if(!x)return head+'<p class="metric-missing">이 항목의 설계 의도·집행 자료는 아직 정리되지 않았어요.</p>';
   const prog=Array.isArray(x.programs)&&x.programs.length?'<h5>주요 사업</h5><ul class="bp-prog">'+x.programs.map(p=>'<li><b>'+esc(p.name||"")+'</b>'+(p.amount?'<span>'+esc(p.amount)+'</span>':"")+(p.note?'<p>'+esc(p.note)+'</p>':"")+'</li>').join("")+'</ul>':"";
   const ex=Array.isArray(x.execution)&&x.execution.length?'<h5>실제 집행 상황</h5><ol class="bp-exec">'+x.execution.map(e=>'<li><time>'+esc(e.date||"")+'</time>'+(e.status?'<em class="bp-st">'+esc(e.status)+'</em>':"")+'<p>'+esc(e.text||"")+'</p>'+bpSrc(e.sources)+'</li>').join("")+'</ol>':'<h5>실제 집행 상황</h5><p class="metric-missing">'+esc(x.executionNote||"최근 집행 소식을 찾지 못했어요.")+'</p>';
   return head+'<h5>설계 의도</h5><p class="bp-intent">'+esc(x.intent||"")+'</p>'+(x.quote?'<q>'+esc(x.quote)+'</q>':"")+(x.intentBy?'<p class="bp-by">— '+esc(x.intentBy)+'</p>':"")+(x.change?'<p class="bp-change"><span>전년 대비</span> '+esc(x.change)+'</p>':"")+prog+ex+(x.debate?'<h5>비판·반론</h5><p>'+esc(x.debate)+'</p>':"")+bpSrc(x.sources);
  }
  function bpTip(reg,i){const item=reg.items[i];const x=bpItem(reg.plan,item?.label);if(!item)return "";const t=x?.intent||"";
-  return '<b>'+esc(item.label)+'</b><span class="bp-tip-v">'+esc(budgetMoney(Number(item.value),reg.unit))+' · '+reg.share(item.value).toFixed(1)+'%</span>'+(t?'<em>설계 의도</em><p class="bp-tip-t">'+esc(t)+'</p>':'<p class="bp-tip-none">의도 자료 준비 중</p>')+'<small>누르면 집행 상황 ↓</small>'}
+  return '<b>'+esc(item.label)+'</b><span class="bp-tip-v">'+esc((FXCC=reg.cc,budgetMoney(Number(item.value),reg.unit)))+' · '+reg.share(item.value).toFixed(1)+'%</span>'+(t?'<em>설계 의도</em><p class="bp-tip-t">'+esc(t)+'</p>':'<p class="bp-tip-none">의도 자료 준비 중</p>')+'<small>누르면 집행 상황 ↓</small>'}
  function bpSelect(art,i){const reg=BP[art.dataset.bp];if(!reg)return;const det=art.querySelector(".bp-detail");art.querySelectorAll("[data-bi]").forEach(e=>e.classList.toggle("bp-on",e.dataset.bi===String(i)));
   if(det.dataset.i===String(i)&&!det.hidden){det.hidden=true;det.dataset.i="";art.querySelectorAll(".bp-on").forEach(e=>e.classList.remove("bp-on"));return}
   det.innerHTML=bpDetail(reg,i);det.hidden=false;det.dataset.i=String(i);det.querySelector(".bp-close")?.addEventListener("click",()=>{det.hidden=true;det.dataset.i="";art.querySelectorAll(".bp-on").forEach(e=>e.classList.remove("bp-on"))});}
@@ -2896,7 +2913,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  document.addEventListener("click",e=>{const el=e.target.closest?.(".budget-visual [data-bi]");if(!el)return;const art=el.closest(".budget-visual");if(!BP[art?.dataset.bp])return;art.querySelector(".bp-tip").hidden=true;bpSelect(art,el.dataset.bi);art.querySelector(".bp-detail")?.scrollIntoView({block:"nearest",behavior:"smooth"})});
  document.addEventListener("keydown",e=>{if(e.key!=="Enter"&&e.key!==" ")return;const el=e.target.closest?.(".budget-visual li[data-bi]");if(!el)return;e.preventDefault();bpSelect(el.closest(".budget-visual"),el.dataset.bi)});
  function budgetComposition(b,heading,militaryGov=null,plan=null){
-  if(!b)return "";
+  if(!b)return "";FXCC=b.cc||null;
   const estimatedBudget=b.sourceFamily==="THIRD_PARTY_ESTIMATE"||/비공식|민간기관 추정/.test(b.estimateKind||"");
   const items=(Array.isArray(b.categories)?b.categories:[]).filter(x=>x&&x.label&&Number.isFinite(Number(x.value))&&Number(x.value)>=0);
   const total=Number(b.total),sum=items.reduce((n,x)=>n+Number(x.value),0);
@@ -2924,9 +2941,9 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const list=items.map((item,i)=>'<li data-bi="'+i+'" tabindex="0"><span class="budget-category-name"><i style="background:'+budgetColor(i,items.length)+'"></i>'+esc(item.label)+'</span><span class="budget-category-value">'+esc(budgetMoney(Number(item.value),b.unit))+'</span><b>'+(donutTotal?share(item.value):pct(item.value)).toFixed(1)+'%</b>'+(donutTotal?"":'<span class="budget-bar"><i style="width:'+Math.min(100,pct(item.value)).toFixed(2)+'%;background:'+budgetColor(i,items.length)+'"></i></span>')+'</li>').join("");
   const sub=b.details?.categories?.length?'<details class="budget-details"><summary>'+esc(b.details.label||"기타 세부 내역")+'</summary><ul>'+b.details.categories.map(x=>'<li><span>'+esc(x.label)+'</span><strong>'+esc(budgetMoney(Number(x.value),b.unit))+'</strong><small>'+pct(x.value).toFixed(2)+'%</small></li>').join("")+'</ul><p>'+esc(b.details.note||"")+'</p>'+(Array.isArray(b.details.sources)&&b.details.sources.length?'<small class="case-src">'+b.details.sources.map(x=>sourceLink(x[2],x[0]+(x[1]?" — "+x[1]:""))).join(" · ")+'</small>':"")+'</details>':"";
   const memo=Array.isArray(b.memo)&&b.memo.length?'<div class="budget-memo">'+b.memo.map(m=>'<div class="budget-memo-row"><span>'+esc(m.label)+'</span><strong>'+esc(budgetMoney(Number(m.value),b.unit))+'</strong><b>총지출의 '+pct(m.value).toFixed(1)+'%</b>'+(m.prev?'<em>'+esc(m.prev)+'</em>':"")+'</div>'+(m.note?'<p>'+esc(m.note)+'</p>':"")+'<small class="case-src">'+sourceLink(m.source,m.provider||"원문")+'</small>').join("")+'</div>':"";
-  const bpId="bp"+(++bpSeq);BP[bpId]={items,unit:b.unit,share:v=>donutTotal?share(v):pct(v),plan};
+  const bpId="bp"+(++bpSeq);BP[bpId]={items,unit:b.unit,cc:b.cc||null,share:v=>donutTotal?share(v):pct(v),plan};
   const pass=plan?budgetPassage(plan):"";
-  return '<article class="budget-visual" data-bp="'+bpId+'"><header><h4>'+esc(heading)+'</h4><p>'+esc(b.fiscalYear||"")+" · "+esc(b.status||"")+(estimatedBudget?' · 비공식 추정':'')+'</p><p>'+esc(b.scope||"")+'</p>'+(Number.isFinite(total)&&total>0?'<p class="budget-total"><b>총액 '+esc(budgetMoney(total,b.unit))+'</b> '+fxLine(total,b.unit)+'</p>':"")+'</header>'+chart+(plan?'<p class="bp-hint">항목에 마우스를 올리면 설계 의도, 누르면 실제 집행 상황과 세부 사업이 나와요.</p>':"")+'<ul class="budget-legend">'+list+'</ul><div class="bp-detail" hidden></div><div class="bp-tip" hidden></div>'+pass+memo+sub+warning+'<p class="budget-source">'+(estimatedBudget?'추정 자료':'자료 기준')+' '+esc(b.asOf||"확인 필요")+' · '+sourceLink(b.source,b.provider||"원문")+'</p></article>';
+  return '<article class="budget-visual" data-bp="'+bpId+'"><header><h4>'+esc(heading)+'</h4><p>'+esc(b.fiscalYear||"")+" · "+esc(b.status||"")+(estimatedBudget?' · 비공식 추정':'')+'</p><p>'+esc(b.scope||"")+'</p>'+(Number.isFinite(total)&&total>0?'<p class="budget-total"><b>총액 '+esc(budgetMoney(total,b.unit))+'</b> '+fxLine(total,b.unit)+'</p>':"")+curToggle(b.unit)+'</header>'+chart+(plan?'<p class="bp-hint">항목에 마우스를 올리면 설계 의도, 누르면 실제 집행 상황과 세부 사업이 나와요.</p>':"")+'<ul class="budget-legend">'+list+'</ul><div class="bp-detail" hidden></div><div class="bp-tip" hidden></div>'+pass+memo+sub+warning+'<p class="budget-source">'+(estimatedBudget?'추정 자료':'자료 기준')+' '+esc(b.asOf||"확인 필요")+' · '+sourceLink(b.source,b.provider||"원문")+'</p></article>';
  }
  function budgetAlternativeEstimates(estimate){
   if(!estimate?.metrics)return "";
@@ -3506,6 +3523,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const civCol=groups=>label=>{let c="#9ca7a3";(groups||[]).forEach(ch=>(ch.groups||[]).forEach(g=>{if(g[0]===label&&/^#[\da-f]{6}$/i.test(g[2]))c=g[2]}));return c};
   const ownPlan=data.budgetPlan?{...data.budgetPlan,colorOf:civCol(data.civics?.parliament?.chambers)}:null;
   const krPlan=data.koreaBudgetPlan?{...data.koreaBudgetPlan,colorOf:civCol(data.koreaChambers)}:null;
+  if(budget.breakdown)budget.breakdown.cc=data.code;if(budget.koreaBreakdown)budget.koreaBreakdown.cc="KR";
   const ownBreakdown=budget.breakdown?budgetComposition(budget.breakdown,namedCountry(data.code)+" 예산·지출 구성",metrics.militaryGovPct,ownPlan):
    ownPlan&&(ownPlan.passage||ownPlan.designer)?'<article class="budget-visual"><header><h4>'+esc(namedCountry(data.code))+' 예산 · 통과 과정</h4></header>'+(ownPlan.breakdownNote||ownPlan.itemsNote?'<p class="budget-no-pie">'+esc(ownPlan.breakdownNote||ownPlan.itemsNote)+'</p>':"")+budgetPassage(ownPlan)+'</article>':"";
   const koreaBreakdown=compare?budgetComposition(budget.koreaBreakdown,"한국 예산·지출 구성",data.comparison?.metrics?.militaryGovPct,krPlan):"";
@@ -3780,6 +3798,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   }
  }
  function showCountry(data){
+  state.lastCountry=data;
   const name=namedCountry(data.code);
   const previousTab=$("#detail [data-country-tab][aria-selected=true]")?.dataset.countryTab;
   const previousLeaders=$("#country-leaders")?.innerHTML;
@@ -4077,6 +4096,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    else if(kind==="countries"){state.countriesAll=true;renderCountries()}
    return;
   }
+  const cur=e.target.closest("[data-cur]");if(cur){state.cur=cur.dataset.cur;try{localStorage.setItem("pando.cur",state.cur)}catch(x){}if(state.lastCountry)showCountry(state.lastCountry);return}
   const metric=e.target.closest("[data-metric]");if(metric){const chart=metric.closest(".metric-card")?.querySelector(".metric-expand-content");if(chart){chart.hidden=!chart.hidden;metric.setAttribute("aria-expanded",String(!chart.hidden))}return}
   const country=e.target.closest("[data-country]");if(country){openCountry(country.dataset.country);return}
   const rseg=e.target.closest(".regime-seg");if(rseg){showRegime(rseg);return}
