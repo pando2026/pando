@@ -1311,6 +1311,25 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .tr-items b,.tr-partners b{font-weight:700}.tr-items em,.tr-partners em{font-style:normal;color:#c41230;text-align:right;font-weight:700}
 .tr-partners li>:first-child{width:20px!important;height:14px!important;object-fit:cover}
 
+/* 먼저 알아둘 맥락 */
+.story-bg{background:#fffaf0;border:1px solid #f0dfb8;border-radius:6px;padding:10px 14px}.story-bg-why{font-weight:700;margin:0 0 6px}
+/* 용어 풀이 */
+.gl{all:unset;cursor:help;border-bottom:1.5px dotted #1d5f80;color:inherit}.gl:hover,.gl:focus{background:#e9f3f8}
+.gl-pop{position:fixed;z-index:2000;background:#fff;border:1px solid #1d2630;border-radius:8px;box-shadow:0 8px 30px #0003;padding:10px 12px;font-size:13px;line-height:1.6}
+.gl-pop b{font-size:14px}.gl-pop time{margin-left:8px;color:#7a8a93;font-size:12px}.gl-pop .gl-short{font-weight:700;margin:4px 0}.gl-pop p{margin:4px 0}.gl-pop small{color:#6b7b84}
+/* 실제 권력자 */
+.power-block{margin:14px 0}.power-block h4{margin:0 0 6px}.power-block h4 small{font-weight:500;color:#7a8a93;font-size:12px}.power-note{font-size:12.5px;color:#41525c;margin:0 0 8px}
+.power-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px}
+.power-card{display:grid;grid-template-columns:48px 1fr;gap:10px;border:1px solid #e1e7ea;border-radius:8px;padding:10px}.power-card--rival{border-color:#e9c4c8;background:#fff8f8}
+.power-ph{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:#1d2630;color:#fff;font-weight:800;overflow:hidden}
+.power-ph.has-ent{background:#fff;border:1px solid #d9e0e4}.power-ph img{width:100%;height:100%;object-fit:cover}
+.power-kind{display:inline-block;font-size:11px;font-weight:800;color:#c41230;margin-bottom:2px}.power-card b{display:block;font-size:14.5px}.power-card small{color:#6b7b84;font-size:11.5px}
+.power-role{display:block;font-size:12px;color:#41525c}.power-card p{margin:4px 0;font-size:12.5px;line-height:1.55}
+/* 변화 카드 영상 미리보기 */
+.watch-thumb{position:relative;display:block;width:100%;aspect-ratio:16/9;margin:6px 0 8px;border:0;padding:0;cursor:pointer;background:#e9eef1;border-radius:2px;overflow:hidden}
+.watch-thumb img{width:100%;height:100%;object-fit:cover;display:block}.watch-thumb i{position:absolute;left:8px;bottom:8px;width:28px;height:28px;border-radius:50%;background:#000000b0;color:#fff;font-style:normal;font-size:12px;display:grid;place-items:center}
+.watch-thumb small{position:absolute;right:6px;bottom:6px;background:#000000a0;color:#fff;font-size:10.5px;padding:1px 5px;border-radius:2px}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -2306,6 +2325,7 @@ const interestBudgetStore=()=>once("interestBudget",()=>json("data/interest-budg
 const taxStore=()=>once("tax",()=>json("data/tax.json")).catch(()=>null);
 const laborStore=()=>once("labor",()=>json("data/labor.json")).catch(()=>null);
 const tradeStore=()=>once("trade",()=>json("data/trade.json")).catch(()=>null);
+const powerStore=()=>once("power",()=>json("data/power.json")).catch(()=>null);
 const budgetPlanStore=()=>once("budgetPlan",()=>json("data/budget-plan.json")).catch(()=>null);
 const historyStore=()=>once("history",()=>json("data/history.json")).catch(()=>({}));
 const tieStore=()=>once("ties",()=>json("data/ties.json")).catch(()=>({}));
@@ -2337,7 +2357,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     if(!codes.has(code))continue;
     const old=watch.get(code);if(old&&old.date>date)continue;
     watch.set(code,{code,topic:story.topic||"국제 변화",status:story.level||"보도",title:story.headline,detail:story.changed||story.summary,date,
-     url:story.sources?.[0]?.[3]||"",sourceKind:"edition",storyId:story.id,eventDate:story.eventDate||null,dateBasis:basis,dateLabel});
+     url:story.sources?.[0]?.[3]||"",videos:story.videos||null,sourceKind:"edition",storyId:story.id,eventDate:story.eventDate||null,dateBasis:basis,dateLabel});
    }
   }
   return [...watch.values()].sort((a,b)=>b.date.localeCompare(a.date)||a.code.localeCompare(b.code));
@@ -2367,7 +2387,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),trade:await (async()=>{const t=await tradeStore();if(!t)return null;return {hs2:t.hs2||{},asOf:t.asOf,goodsSource:t.goodsSource,structureSource:t.structureSource,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),power:await (async()=>{const t=await powerStore();return t?.countries?.[code]||null})(),trade:await (async()=>{const t=await tradeStore();if(!t)return null;return {hs2:t.hs2||{},asOf:t.asOf,goodsSource:t.goodsSource,structureSource:t.structureSource,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -2599,7 +2619,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const limited=!state.watchAll&&groups.length>WATCH_PREVIEW;
   const visible=limited?groups.slice(0,WATCH_PREVIEW):groups;
   el.innerHTML=groups.length?visible.map(w=>
-   '<article class="watch-card"><div class="watch-meta"><span>'+esc(w.topic)+'</span><span>'+esc(w.dateLabel||"자료일 "+w.date)+'</span></div>'+
+   '<article class="watch-card"><div class="watch-meta"><span>'+esc(w.topic)+'</span><span>'+esc(w.dateLabel||"자료일 "+w.date)+'</span></div>'+((w.videos||[]).find(v=>ytId(v.url))?(v=>'<button type="button" class="vid-play watch-thumb" data-yt="'+esc(ytId(v.url))+'" aria-label="'+esc(v.title)+' 재생"><img src="https://i.ytimg.com/vi/'+esc(ytId(v.url))+'/mqdefault.jpg" alt="" loading="lazy"><i>▶</i><small>'+esc(v.channel||"")+'</small></button>')((w.videos||[]).find(v=>ytId(v.url))):"")+
    '<button type="button" class="watch-open" data-country="'+esc(w.codes[0])+'"><strong>'+esc(w.title)+'</strong><span class="watch-detail">'+esc(w.detail)+'</span></button>'+
    '<div class="watch-countries">'+w.codes.map(code=>'<button type="button" class="country-chip" data-country="'+esc(code)+'">'+flag(code,"flag-watch")+esc(namedCountry(code))+'</button>').join("")+'</div>'+
    '<div class="watch-foot"><span class="watch-status">'+esc(w.status)+'</span><a href="'+safeUrl(w.url)+'" target="_blank" rel="noopener noreferrer">원문 ↗</a></div></article>').join("")+
@@ -3374,7 +3394,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    const points=Array.isArray(c.points)&&c.points.length?'<ul class="now-points">'+c.points.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
    const sources=Array.isArray(c.sources)?c.sources.map(s=>'<li>'+sourceLink(s[2],s[0]+(s[1]?" — "+s[1]:""))+'</li>').join(""):"";
    html+='<section class="now" aria-label="지금 상황"><div class="now-head"><span>지금 상황</span>'+(c.asOf?'<time>'+esc(c.asOf)+' 기준</time>':"")+'</div>'+
-    (c.headline?'<h3>'+esc(c.headline)+'</h3>':"")+'<p class="now-summary">'+esc(c.summary)+'</p>'+
+    (c.headline?'<h3>'+esc(c.headline)+'</h3>':"")+'<p class="now-summary">'+esc(c.summary)+'</p>'+videosBlock(c.videos)+
     (control?'<h4>'+(c.kind==="politics"?"권력 구도":"누가 무엇을 쥐고 있나")+'</h4>'+control:"")+(points?'<h4>지켜볼 점</h4>'+points:"")+
     fold("출처 "+(Array.isArray(c.sources)?c.sources.length:0)+"건",sources?'<ul class="now-sources">'+sources+'</ul>'+(c.note?'<p>'+esc(c.note)+'</p>':""):"")+'</section>';
   }
@@ -3739,6 +3759,36 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(!h)return "";
   return '<section class="section tradeb"><h3>산업 구조와 교역</h3>'+h+'<p class="tr-src">'+(S?sourceLink("https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations="+data.code,"세계은행 WDI(산업 비중·수출입)"):"")+(G&&G.source?' · '+sourceLink(G.source,"유엔 컴트레이드(품목·상대국)"):"")+(T.asOf?' · '+esc(T.asOf)+' 조회':"")+'</p></section>';
  }
+ // 기사 '먼저 알아둘 맥락': 본문이 전제하는 지난 사건·협상을 날짜순으로(edition.json stories[].background)
+ function storyBackground(B){if(!B||!(B.items||[]).length)return "";
+  return '<div class="section story-bg"><h3>먼저 알아둘 맥락</h3>'+(B.why?'<p class="story-bg-why">'+esc(B.why)+'</p>':"")+'<ol class="xtimeline">'+B.items.map(t=>'<li><time>'+esc(t.date||"")+'</time><p>'+esc(t.text||"")+(Array.isArray(t.src)&&t.src[2]?' '+sourceLink(t.src[2],t.src[0]||"출처"):"")+'</p></li>').join("")+'</ol></div>'}
+ // 용어·맥락 풀이(data/glossary.json): 창(#detail) 본문에서 처음 나오는 곳에 밑줄, 누르면 뜻·맥락
+ const GL={};
+ function glossaryMark(){
+  const root=$("#detail");if(!root||root.dataset.glDone===root.dataset.glKey)return;
+  if(!GL.data){if(!GL.loading)GL.loading=fetch("data/glossary.json").then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{GL.data=d||{terms:{},alias:{}};const keys=[...Object.keys(GL.data.terms||{}),...Object.keys(GL.data.alias||{})].filter(k=>k.length>=2).sort((a,b)=>b.length-a.length);
+   GL.re=keys.length?new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g"):null;glossaryMark()});return}
+  if(!GL.re)return;
+  const seen=new Set();const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;if(p.closest("a,button,script,style,svg,.gl,.gl-pop,h2,.detail-kicker,input,textarea,select,.xsources,.source"))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT}});
+  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+  for(const n of nodes){const t=n.nodeValue;GL.re.lastIndex=0;let m,last=0,frag=null;
+   while((m=GL.re.exec(t))){const term=GL.data.alias?.[m[0]]||m[0];if(seen.has(term))continue;seen.add(term);frag=frag||document.createDocumentFragment();frag.appendChild(document.createTextNode(t.slice(last,m.index)));
+    const b=document.createElement("button");b.type="button";b.className="gl";b.dataset.gl=term;b.textContent=m[0];frag.appendChild(b);last=m.index+m[0].length}
+   if(frag){frag.appendChild(document.createTextNode(t.slice(last)));n.parentNode.replaceChild(frag,n)}}
+  root.dataset.glDone=root.dataset.glKey||"";
+ }
+ new MutationObserver(()=>{clearTimeout(GL.t);GL.t=setTimeout(()=>{const r=$("#detail");if(r){r.dataset.glKey=String(r.innerHTML.length);glossaryMark()}},250)}).observe(document.documentElement,{childList:true,subtree:true});
+ document.addEventListener("click",e=>{const b=e.target.closest(".gl");document.querySelectorAll(".gl-pop").forEach(x=>x.remove());if(!b)return;e.preventDefault();e.stopPropagation();
+  const g=GL.data?.terms?.[b.dataset.gl];if(!g)return;const pop=document.createElement("div");pop.className="gl-pop";pop.setAttribute("role","dialog");
+  pop.innerHTML='<b>'+esc(b.dataset.gl)+'</b>'+(g.date?'<time>'+esc(g.date)+'</time>':"")+'<p class="gl-short">'+esc(g.short||"")+'</p>'+(g.context?'<p>'+esc(g.context)+'</p>':"")+((g.src||[]).length?'<small>'+g.src.slice(0,2).map(z=>sourceLink(z[2],z[0])).join(" · ")+'</small>':"");
+  document.body.appendChild(pop);const r=b.getBoundingClientRect(),w=Math.min(340,innerWidth-24);pop.style.width=w+"px";pop.style.left=Math.max(12,Math.min(innerWidth-w-12,r.left))+"px";
+  const below=r.bottom+8+pop.offsetHeight<innerHeight;pop.style.top=(below?r.bottom+8:Math.max(8,r.top-8-pop.offsetHeight))+"px"},true);
+ // 실제 권력자(data/power.json): 의전 명단 밖에서 전쟁·안보·예산·선거 결정을 실제로 쥔 사람
+ const PKIND={supreme:"최고 권력",party:"당",military:"군",security:"안보",intelligence:"정보기관",religious:"종교",legislature:"의회",judiciary:"사법",economy:"경제",family:"가족·측근",rival:"맞선 세력",opposition:"야권"};
+ function powerBlock(data){
+  const P=data.power;if(!P||!(P.people||[]).length)return "";
+  return '<div class="power-block"><h4>실제로 힘을 쥔 사람 <small>'+esc(P.asOf||"")+' 기준</small></h4>'+(P.note?'<p class="power-note">'+esc(P.note)+'</p>':"")+'<div class="power-list">'+P.people.map(x=>'<article class="power-card'+(x.kind==="rival"?' power-card--rival':'')+'"><span class="power-ph actor-face"'+(x.wd?' data-ent="pw:'+esc(x.wd)+'"':'')+'>'+esc((x.ko||x.name||"?").slice(0,1))+'</span><div><span class="power-kind">'+esc(PKIND[x.kind]||x.kind||"")+'</span><b>'+esc(x.ko||x.name)+'</b>'+(x.ko&&x.name?'<small>'+esc(x.name)+'</small>':"")+'<span class="power-role">'+esc(x.role||"")+(x.since?' · '+esc(String(x.since))+'부터':"")+'</span><p>'+esc(x.why||"")+'</p>'+((x.sources||[]).length?'<small class="case-src">'+x.sources.slice(0,3).map(z=>sourceLink(z[2],z[0])).join(" · ")+'</small>':"")+'</div></article>').join("")+'</div></div>';
+ }
  function laborBlock(data){
   const Lb=data.labor;if(!Lb)return "";const e=Lb.entry||{},k=Lb.korea,meta=Lb.meta||{},S=meta.sources||{},nat=e.national||{},isK=data.code==="KR";
   const name=namedCountry(data.code),ny=nowYear();
@@ -3851,7 +3901,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   $("#detail").innerHTML='<div class="detail-kicker">COUNTRY DOSSIER / '+esc(data.code)+'</div><div class="country-title">'+flag(data.code,"flag-hero")+'<div><h2>'+esc(name)+'</h2>'+(data.name&&data.name!==name?'<p class="country-english">'+esc(data.name)+'</p>':"")+'</div><div class="capmap capmap--hero" data-cap-cc="'+esc(data.code)+'" title="'+esc(name)+'의 위치와 수도"></div></div>'+countryFacts(data)+'<div class="fold-all"><span>머리글을 누르면 접고 펼 수 있어요</span><button type="button" data-fold-all="0">모두 펼치기</button><button type="button" data-fold-all="1">모두 접기</button></div>'+
    (data.partial?'<p class="load-status" role="status">일부 자료를 불러오지 못해 저장된 값만 보입니다. <button class="retry-country" type="button" data-country="'+esc(data.code)+'">다시 조회</button></p>':data.refreshPending?'<p class="load-status" role="status">최신 관측치 확인 중…</p>':"")+
    problemsBlock(data)+countryConflicts(data)+countryAllies(data)+relatedExplainers(data.code)+countryBlocs(data.code)+countryNow(data)+
-   '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div>'+tiesBlock(data)+'</section>'+
+   '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div>'+powerBlock(data)+tiesBlock(data)+'</section>'+
    '<div class="country-tabs" role="tablist" aria-label="'+esc(name)+' 자료 분류">'+
     [["politics","정치·의회"],["economy","경제"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
    Object.entries(panels).map(([key,content],i)=>'<section role="tabpanel" id="panel-'+key+'" aria-labelledby="tab-'+key+'" class="country-panel"'+(i?" hidden":"")+'>'+content+'</section>').join("")+
@@ -3979,7 +4029,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id)||(state.archive||[]).find(a=>a.id===id);if(!s){if(!state.archive){loadArchive().then(()=>{if((state.archive||[]).some(a=>a.id===id))openStory(id)})}return}state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div>'+videosBlock(s.videos)+'<div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'<p class="photo-credits" data-for="actors"></p></div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+storyBackground(s.background)+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div>'+videosBlock(s.videos)+'<div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'<p class="photo-credits" data-for="actors"></p></div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
   mountStoryMap(s);
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
