@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="981ce178af";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="51952626ce";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -300,6 +300,10 @@ svg[data-ct]{cursor:crosshair;touch-action:pan-y}
 .watch-onfeed{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:12px 0 2px;border-top:1px solid #e0e5e9;margin-top:6px}
 .watch-onfeed>span{font-size:12px;font-weight:800;color:#5b6d78;margin-right:4px}
 .watch-onfeed .country-chip em{font-style:normal;font-size:11px;color:#8a979f;margin-left:4px}
+.ct-band{position:fixed;z-index:9997;pointer-events:none;background:rgba(196,18,48,.10);border-left:1px solid rgba(196,18,48,.5);border-right:1px solid rgba(196,18,48,.5)}
+.ct-tip em{font-style:normal;font-weight:800;margin-left:2px}.ct-tip em.up{color:#ff8a8a}.ct-tip em.dn{color:#8ec5ff}
+.ct-tip small{font-size:10px;color:#9fb0bb;font-weight:600;margin-top:2px}
+svg[data-ct]{user-select:none;-webkit-user-select:none}
 
 /* refine.css — readability pass. Loaded last, so it wins over earlier layers.
    Principle: facts first, method notes folded. */
@@ -1383,6 +1387,11 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .event-band .event-name{font:700 8px var(--font,system-ui);pointer-events:none}
 /* 영상 재생 단추는 어디서나 사진 한가운데 */
 .vid-play i,.story-hero i,.watch-thumb i,.story-card .card-thumb i{position:absolute;inset:auto;left:50%;top:50%;right:auto;bottom:auto;margin:0;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#000000b3;color:#fff;font-style:normal;font-size:18px;display:grid;place-items:center}
+/* 큰 사건: |──── 이름 ────| */
+.event-band .event-br{fill:none;stroke:currentColor;stroke-width:1.6;vector-effect:non-scaling-stroke}
+.event-band .event-name{font:800 8.5px var(--font,system-ui);fill:currentColor;paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
+.event-band .event-seg:hover .event-br,.event-band .event-seg:focus .event-br{stroke-width:2.6}
+.event-band .event-dot{fill:currentColor}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2392,48 +2401,91 @@ html,body{background:#fff;color:var(--ink)}
 
 </script>
 <script>
-/* 모든 차트 공통: 마우스(손가락)를 올리면 가장 가까운 점의 시기·값을 띄운다.
-   차트 <svg>에 data-ct='[[x,y,"설명"],…]'(viewBox 좌표)를 달면 된다. 세로 안내선과 점도 함께 그린다. */
+/* 모든 차트 공통(주식 차트처럼):
+   - 마우스(손가락)를 올리면 가장 가까운 점의 시기·값을 띄운다.
+   - 좌우로 끌면 그 구간의 처음 값 → 마지막 값, 변화량(차이와 %)을 보여 준다.
+   차트 <svg>에 data-ct='[[x, y, "시기\n값…", [[이름, 숫자, "표시용 값"], …]], …]'(viewBox 좌표)를 달면 된다. */
 (function(){
  "use strict";
- const tip=document.createElement("div");tip.className="ct-tip";tip.setAttribute("role","status");
- const line=document.createElement("div");line.className="ct-line";
- const dot=document.createElement("div");dot.className="ct-dot";
- const mount=()=>{for(const el of [line,dot,tip]){el.hidden=true;document.body.appendChild(el)}};
+ const mk=c=>{const d=document.createElement("div");d.className=c;d.hidden=true;return d};
+ const tip=mk("ct-tip"),line=mk("ct-line"),dot=mk("ct-dot"),band=mk("ct-band"),line2=mk("ct-line");
+ tip.setAttribute("role","status");
+ const mount=()=>{for(const el of [band,line,line2,dot,tip])document.body.appendChild(el)};
  if(document.body)mount();else document.addEventListener("DOMContentLoaded",mount);
  const TR=s=>window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR(s):s;
- let on=null;
+ const esc=s=>String(s).replace(/[&<>]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[ch]));
+ let on=null,drag=null,held=false;
  function pts(svg){
   if(svg.__ctSrc!==svg.getAttribute("data-ct")){svg.__ctSrc=svg.getAttribute("data-ct");try{svg.__ct=JSON.parse(svg.__ctSrc)||[]}catch{svg.__ct=[]}}
   return svg.__ct;
  }
- function hide(){if(!on)return;on=null;tip.hidden=line.hidden=dot.hidden=true}
- function show(svg,cx,cy){
-  const P=pts(svg),M=svg.getScreenCTM();if(!P.length||!M)return hide();
+ function hide(){if(!on&&!held)return;on=null;held=false;drag=null;tip.hidden=line.hidden=line2.hidden=dot.hidden=band.hidden=true}
+ function near(svg,cx,cy){
+  const P=pts(svg),M=svg.getScreenCTM();if(!P.length||!M)return -1;
   const p=svg.createSVGPoint();p.x=cx;p.y=cy;const q=p.matrixTransform(M.inverse());
-  let best=P[0];for(const a of P)if(Math.abs(a[0]-q.x)<Math.abs(best[0]-q.x))best=a;
-  const at=(x,y)=>{const s=svg.createSVGPoint();s.x=x;s.y=y;return s.matrixTransform(M)};
-  const r=svg.getBoundingClientRect(),c=at(best[0],best[1]);
-  if(on!==svg)svg.addEventListener("pointerleave",hide,{once:true});   // 차트 밖으로 나가면 바로 지운다
-  on=svg;
-  line.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
-  dot.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+c.y.toFixed(1)+"px";
-  tip.innerHTML=String(best[2]||"").split("\n").map((t,i)=>(i?"<span>":"<b>")+TR(t).replace(/[&<>]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[ch]))+(i?"</span>":"</b>")).join("");
-  line.hidden=dot.hidden=tip.hidden=false;
+  let bi=0;P.forEach((a,i)=>{if(Math.abs(a[0]-q.x)<Math.abs(P[bi][0]-q.x))bi=i});return bi;
+ }
+ function at(svg,a){const M=svg.getScreenCTM(),s=svg.createSVGPoint();s.x=a[0];s.y=a[1];return s.matrixTransform(M)}
+ function place(html,c){
+  tip.innerHTML=html;tip.hidden=false;
   const w=tip.offsetWidth,h=tip.offsetHeight,vw=document.documentElement.clientWidth;
   let x=c.x+12,y=c.y-h-10;if(x+w>vw-6)x=c.x-w-12;if(x<6)x=6;if(y<6)y=c.y+12;
   tip.style.left=x.toFixed(0)+"px";tip.style.top=y.toFixed(0)+"px";
  }
- document.addEventListener("pointermove",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");const out=on&&(()=>{const r=on.getBoundingClientRect();return e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom})();if(out)hide();if(svg)show(svg,e.clientX,e.clientY);else hide()},{passive:true,capture:true});   // 캡처 단계: 다른 차트가 이벤트를 막아도 지운다
- document.addEventListener("pointerdown",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY);else hide()},{passive:true,capture:true});
- // 보던 차트가 화면에서 사라지면(다른 나라·탭으로 바뀜) 설명도 지운다
- new MutationObserver(()=>{if(on&&!on.isConnected)hide()}).observe(document.documentElement,{childList:true,subtree:true});
+ const lines=t=>String(t||"").split("\n");
+ function show(svg,cx,cy){
+  const P=pts(svg),i=near(svg,cx,cy);if(i<0)return hide();
+  if(on!==svg)svg.addEventListener("pointerleave",()=>{if(!drag&&!held)hide()},{once:true});   // 차트 밖으로 나가면 바로 지운다
+  on=svg;held=false;
+  const r=svg.getBoundingClientRect(),c=at(svg,P[i]);
+  line.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
+  dot.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+c.y.toFixed(1)+"px";
+  line.hidden=dot.hidden=false;line2.hidden=band.hidden=true;
+  place(lines(P[i][2]).map((t,k)=>(k?"<span>":"<b>")+esc(TR(t))+(k?"</span>":"</b>")).join("")+(P.length>2&&P[i][3]&&P[i][3].length?'<small>'+esc(TR("좌우로 끌면 기간 변화"))+'</small>':''),c);
+ }
+ // 구간 변화: 처음 → 마지막, 차이, %
+ const fmtN=v=>{const a=Math.abs(v);return v.toLocaleString("ko-KR",{maximumFractionDigits:a>=100?0:a>=10?1:2})};
+ function range(svg,i0,i1){
+  const P=pts(svg);if(i0>i1)[i0,i1]=[i1,i0];
+  const A=P[i0],B=P[i1],r=svg.getBoundingClientRect(),ca=at(svg,A),cb=at(svg,B);
+  band.style.cssText="left:"+ca.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;width:"+Math.max(1,cb.x-ca.x).toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
+  line.style.cssText="left:"+ca.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
+  line2.style.cssText="left:"+cb.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
+  band.hidden=line.hidden=line2.hidden=false;dot.hidden=true;
+  const va=A[3]||[],vb=B[3]||[];
+  const rows=va.map(x=>{const y=vb.find(z=>z[0]===x[0]);if(!y||typeof x[1]!=="number"||typeof y[1]!=="number")return "";
+   const d=y[1]-x[1],pctUnit=/%$/.test(String(x[2]||"")),rel=x[1]!==0?(d/Math.abs(x[1])*100):null,cls=d>0?"up":d<0?"dn":"";
+   const ch=(pctUnit?(d>0?"+":"")+fmtN(d)+"%p":(d>0?"+":"")+fmtN(d))+(rel!=null&&isFinite(rel)?" ("+(rel>0?"+":"")+fmtN(rel)+"%)":"");
+   return '<span>'+(va.length>1&&x[0]?esc(TR(x[0]))+" ":"")+esc(TR(String(x[2]||fmtN(x[1]))))+" → "+esc(TR(String(y[2]||fmtN(y[1]))))+' <em class="'+cls+'">'+esc(ch)+'</em></span>'}).join("");
+  place('<b>'+esc(TR(lines(A[2])[0]))+" → "+esc(TR(lines(B[2])[0]))+'</b>'+(rows||'<span>'+esc(TR("두 시점에 같은 값이 없습니다"))+'</span>'),{x:cb.x,y:Math.min(ca.y,cb.y)});
+ }
+ const svgAt=e=>e.target&&e.target.closest&&e.target.closest("svg[data-ct]");
+ document.addEventListener("pointerdown",e=>{const svg=svgAt(e);
+  if(!svg){hide();return}
+  if(e.button>0)return;
+  const i=near(svg,e.clientX,e.clientY);if(i<0)return;
+  drag={svg,i0:i,x0:e.clientX,y0:e.clientY,moved:false,id:e.pointerId};show(svg,e.clientX,e.clientY);
+ },{passive:true,capture:true});
+ document.addEventListener("pointermove",e=>{
+  if(drag&&e.pointerId===drag.id){
+   if(!drag.moved&&Math.abs(e.clientX-drag.x0)>6&&Math.abs(e.clientX-drag.x0)>Math.abs(e.clientY-drag.y0)){drag.moved=true;try{drag.svg.setPointerCapture(e.pointerId)}catch{}}
+   if(drag.moved){const i=near(drag.svg,e.clientX,e.clientY);if(i>=0)range(drag.svg,drag.i0,i);return}
+  }
+  if(held){const r=on&&on.getBoundingClientRect();if(r&&e.clientX>=r.left&&e.clientX<=r.right&&e.clientY>=r.top&&e.clientY<=r.bottom)return;hide();return}   // 끌어서 잰 결과는 차트 위에 있는 동안 남긴다
+  const svg=svgAt(e);const out=on&&(()=>{const r=on.getBoundingClientRect();return e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom})();
+  if(out)hide();if(svg)show(svg,e.clientX,e.clientY);else hide();
+ },{passive:true,capture:true});
+ const end=()=>{if(!drag)return;if(drag.moved){held=true;on=drag.svg}drag=null};
+ document.addEventListener("pointerup",end,{passive:true,capture:true});
+ document.addEventListener("pointercancel",()=>{if(drag&&!drag.moved)drag=null},{passive:true,capture:true});
  window.addEventListener("scroll",hide,{passive:true,capture:true});   // 서랍(상세 화면) 안 스크롤도
  window.addEventListener("hashchange",hide);window.addEventListener("blur",hide);
- document.addEventListener("pointerout",e=>{if(!e.relatedTarget)hide()},{passive:true});
- document.addEventListener("click",e=>{if(!(e.target&&e.target.closest&&e.target.closest("svg[data-ct]")))hide()},true);
- // 차트 그리는 쪽이 쓰는 도우미: 점 목록 → data-ct 속성 문자열
- window.__ct=list=>' data-ct="'+JSON.stringify(list.map(a=>[+(+a[0]).toFixed(1),+(+a[1]).toFixed(1),String(a[2])])).replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'"';
+ document.addEventListener("pointerout",e=>{if(!e.relatedTarget&&!drag)hide()},{passive:true});
+ document.addEventListener("keydown",e=>{if(e.key==="Escape")hide()});
+ // 보던 차트가 화면에서 사라지면(다른 나라·탭으로 바뀜) 설명도 지운다
+ new MutationObserver(()=>{if(on&&!on.isConnected)hide()}).observe(document.documentElement,{childList:true,subtree:true});
+ // 차트 그리는 쪽이 쓰는 도우미: 점 목록 → data-ct 속성 문자열. a[3] = [[이름, 숫자, "표시용 값"], …](끌어서 잴 때 씀)
+ window.__ct=list=>' data-ct="'+JSON.stringify(list.map(a=>{const o=[+(+a[0]).toFixed(1),+(+a[1]).toFixed(1),String(a[2])];if(a[3])o.push(a[3].filter(v=>v&&typeof v[1]==="number"&&isFinite(v[1])).map(v=>[String(v[0]||""),+(+v[1]).toPrecision(8),String(v[2]??"")]));return o})).replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'"';
 })();
 
 </script>
@@ -2927,7 +2979,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   list.forEach((o,i)=>{let xa=Math.max(x0,dx(o.a-.5)),xb=Math.min(x1,dx(o.b-.5));if(xb-xa<5){const m=(xa+xb)/2;xa=m-2.5;xb=m+2.5}
    const lab=o.e.short||o.e.name,w=Math.max(xb-xa,tw(lab)+4);let r=rows.findIndex(end=>end<=xa-2);if(r<0){r=rows.length;rows.push(0)}if(r>2)return;rows[r]=xa+w;
    const yy=y+r*(H+2),c=EVC[o.e.kind]||EVC.other,per=String(o.e.from).slice(0,7).replace("-",".")+(o.e.to&&o.e.to!==o.e.from?"–"+String(o.e.to).slice(0,7).replace("-","."):"");
-   out.push('<g class="regime-seg event-seg" data-rname="'+esc(o.e.name)+'" data-roffice="'+esc(o.e.desc||"")+'" data-rparty="" data-rper="'+esc(per)+'" tabindex="0"><rect x="'+xa.toFixed(1)+'" y="'+yy+'" width="'+(xb-xa).toFixed(1)+'" height="'+H+'" rx="2" fill="'+c+'" fill-opacity=".85"><title>'+esc(o.e.name+" "+per)+'</title></rect><text class="event-name" x="'+(xb-xa>=tw(lab)+4?((xa+xb)/2):(xb+3)).toFixed(1)+'" y="'+(yy+9)+'" text-anchor="'+(xb-xa>=tw(lab)+4?"middle":"start")+'" fill="'+(xb-xa>=tw(lab)+4?"#fff":c)+'">'+esc(lab)+'</text></g>')});
+   // |──── 코로나19 ────| 모양: 기간은 가는 선과 양 끝 눈금, 이름은 선 위(흰 테두리 글씨), 짧은 사건은 눈금 하나와 오른쪽 이름
+   const fits=xb-xa>=tw(lab)+14,ym=yy+H/2,cx=((xa+xb)/2).toFixed(1);
+   out.push('<g class="regime-seg event-seg" data-rname="'+esc(o.e.name)+'" data-roffice="'+esc(o.e.desc||"")+'" data-rparty="" data-rper="'+esc(per)+'" tabindex="0" style="color:'+c+'"><rect x="'+xa.toFixed(1)+'" y="'+yy+'" width="'+(xb-xa).toFixed(1)+'" height="'+H+'" fill="transparent"><title>'+esc(o.e.name+" "+per)+'</title></rect>'+
+    (xb-xa<8?'<path class="event-br pt" d="M'+cx+' '+(yy+1)+'V'+(yy+H-1)+'"/><circle class="event-dot" cx="'+cx+'" cy="'+ym+'" r="2.4"/>':'<path class="event-br" d="M'+xa.toFixed(1)+' '+(yy+2)+'V'+(yy+H-2)+'M'+xa.toFixed(1)+' '+ym+'H'+xb.toFixed(1)+'M'+xb.toFixed(1)+' '+(yy+2)+'V'+(yy+H-2)+'"/>')+
+    '<text class="event-name" x="'+(fits?cx:(xb+4).toFixed(1))+'" y="'+(yy+9)+'" text-anchor="'+(fits?"middle":"start")+'">'+esc(lab)+'</text></g>')});
   return {svg:'<g class="regime-band event-band">'+out.join("")+'</g>',h:rows.slice(0,3).length*(H+2)+4};
  }
  function regimeBand0(code,years,px,y){
@@ -2970,7 +3026,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(fromZero)lo=0;
   const pad=(hi-lo)*.12||Math.max(1,Math.abs(hi)*.1);hi+=pad*2.2;if(!fromZero)lo-=pad;
   const L=74,R=380,T=22,B=128,xi=y=>years.indexOf(y),px=y=>L+xi(y)*(R-L)/Math.max(1,years.length-1),py=v=>B-(v-lo)/(hi-lo)*(B-T);
-  const ticks=[lo,(lo+hi)/2,hi];
+  // 눈금은 딱 떨어지는 값(1·2·2.5·5×10ⁿ 간격)
+  const traw=(hi-lo)/3,tmag=Math.pow(10,Math.floor(Math.log10(traw||1))),tstep=[1,2,2.5,5,10].map(k=>k*tmag).find(v=>v>=traw)||10*tmag;
+  {const dmin=Math.min(...all);lo=Math.floor(lo/tstep)*tstep;hi=Math.ceil(hi/tstep)*tstep;if(dmin>=0&&lo<0)lo=0}
+  const ticks=[];for(let v=lo;v<=hi+tstep/2;v+=tstep)ticks.push(+v.toFixed(10));
   const grid=ticks.map(t=>'<path class="trend-grid" d="M'+L+' '+py(t).toFixed(1)+'H'+R+'"/><text class="trend-ytick" x="'+(L-6)+'" y="'+(py(t)+3.5).toFixed(1)+'" text-anchor="end">'+esc(metricValue(key,t))+'</text>').join("");
   const line=a=>a.map((p,i)=>(i?"L":"M")+px(p.year).toFixed(1)+" "+py(p.value).toFixed(1)).join(" ");
   const labelEvery=series.length<=8?1:Math.ceil(series.length/6);
@@ -2983,7 +3042,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const krLayer=showKr?'<path class="trend-line trend-line--kr" d="'+line(kr)+'"/><g class="trend-points trend-points--kr">'+kr.map(p=>'<circle cx="'+px(p.year).toFixed(1)+'" cy="'+py(p.value).toFixed(1)+'" r="2.2"><title>한국 '+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>').join("")+'</g><text class="trend-kr-end" x="'+(px(kr.at(-1).year)+4).toFixed(1)+'" y="'+(py(kr.at(-1).value)+(kr.at(-1).value>=series.at(-1).value?-14:22)).toFixed(1)+'" text-anchor="end">한국 '+esc(metricValue(key,kr.at(-1).value))+'</text>':"";
   const legend=showKr?'<span class="trend-legend"><i class="trend-key"></i>'+esc(name||"이 나라")+' <i class="trend-key trend-key--kr"></i>한국</span>':"";
   const band=regimeBand(state.activeCode,years,px,B+24);
-  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart"'+(window.__ct?window.__ct(series.map(p=>{const kk=showKr&&kr.find(q=>q.year===p.year);return [px(p.year),py(p.value),p.year+"년\n"+(name||"이 나라")+" "+metricValue(key,p.value)+(kk?"\n한국 "+metricValue(key,kk.value):"")]})):"")+' viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>':"");
+  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart"'+(window.__ct?window.__ct(series.map(p=>{const kk=showKr&&kr.find(q=>q.year===p.year);return [px(p.year),py(p.value),p.year+"년\n"+(name||"이 나라")+" "+metricValue(key,p.value)+(kk?"\n한국 "+metricValue(key,kk.value):""),[[name||"이 나라",p.value,metricValue(key,p.value)],...(kk?[["한국",kk.value,metricValue(key,kk.value)]]:[])]]})):"")+' viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>':"");
  }
  function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
   const valid=item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.year;
@@ -3189,7 +3248,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const W=360,H=70,pad=10,x=i=>pad+i*(W-2*pad)/Math.max(1,yrs.length-1),y=v=>H-pad-v*(H-2*pad);
   const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
   let spark=yrs.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(yrs[0]+"–"+yrs.at(-1)+" 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:'+band[1]+'"/>'+[0,pts.length-1].map(i=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(pts[i]).toFixed(1)+'" r="2.6" style="fill:'+band[1]+'"/><text x="'+x(i).toFixed(1)+'" y="'+(y(pts[i])-6).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+f2(pts[i])+'</text>').join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+yrs[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+yrs.at(-1)+'</text></svg>':"";
-  spark=chartAx(spark,yrs.map((yr,i)=>[x(i),y(pts[i]),yr+"년\n"+namedCountry(data.code)+" "+f2(pts[i])+(k&&kv[i]!=null?"\n한국 "+f2(kv[i]):"")]),[[0,y(1)+3,"1"],[0,y(.5)+3,"0.5"],[0,y(0)-2,"0"]]);
+  spark=chartAx(spark,yrs.map((yr,i)=>[x(i),y(pts[i]),yr+"년\n"+namedCountry(data.code)+" "+f2(pts[i])+(k&&kv[i]!=null?"\n한국 "+f2(kv[i]):""),[[namedCountry(data.code),pts[i],f2(pts[i])],...(k&&kv[i]!=null?[["한국",kv[i],f2(kv[i])]]:[])]]),[[0,y(1)+3,"1"],[0,y(.5)+3,"0.5"],[0,y(0)-2,"0"]]);
   spark=addBand(spark,yrs,x,H+16);
   const prev=e.history?.[String(Number(e.year)-1)],delta=prev!=null?Math.round((s-prev)*100)/100:null;
   const scale='<div class="cpi-scale"><span class="cpi-track"></span>'+(k?'<i class="cpi-k" style="left:'+(k.score*100)+'%"><b>한국 '+f2(k.score)+'</b></i>':"")+'<i class="cpi-me" style="left:'+(s*100)+'%;background:'+band[1]+'"></i><span class="cpi-ends"><em>0 공정 선거 없음</em><em>1 자유·공정</em></span></div>';
@@ -3211,7 +3270,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
   const kv=k?yrs.map(y2=>k.history?.[y2]??null):[];
   let spark=yrs.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(yrs[0]+"–"+yrs.at(-1)+" 점수 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:'+band[1]+'"/>'+pts.map((v,i)=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(v).toFixed(1)+'" r="2.6" style="fill:'+band[1]+'"/>'+((i===0||i===pts.length-1)?'<text x="'+x(i).toFixed(1)+'" y="'+(y(v)-6).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+v+'</text>':"")).join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+yrs[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+yrs.at(-1)+'</text></svg>':"";
-  spark=chartAx(spark,yrs.map((yr,i)=>[x(i),y(pts[i]),yr+"년\n"+namedCountry(data.code)+" "+pts[i]+"점"+(k&&kv[i]!=null?"\n한국 "+kv[i]+"점":"")]),[[0,y(Math.ceil(max-4))+3,String(Math.ceil(max-4))],[0,y(Math.floor(min+4))-2,String(Math.floor(min+4))]]);
+  spark=chartAx(spark,yrs.map((yr,i)=>[x(i),y(pts[i]),yr+"년\n"+namedCountry(data.code)+" "+pts[i]+"점"+(k&&kv[i]!=null?"\n한국 "+kv[i]+"점":""),[[namedCountry(data.code),pts[i],pts[i]+"점"],...(k&&kv[i]!=null?[["한국",kv[i],kv[i]+"점"]]:[])]]),[[0,y(Math.ceil(max-4))+3,String(Math.ceil(max-4))],[0,y(Math.floor(min+4))-2,String(Math.floor(min+4))]]);
   spark=addBand(spark,yrs,x,H+16);
   const prev=e.history?.[String(Number(yrs.at(-1))-1)],delta=prev!=null?e.score-prev:null;
   const scale='<div class="cpi-scale"><span class="cpi-track"></span>'+(k?'<i class="cpi-k" style="left:'+k.score+'%" title="한국 '+k.score+'"><b>한국 '+k.score+'</b></i>':"")+'<i class="cpi-me" style="left:'+e.score+'%;background:'+band[1]+'"></i><span class="cpi-ends"><em>0 부패 심각</em><em>100 매우 청렴</em></span></div>';
@@ -3247,7 +3306,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(!box||box.dataset.drawn)return;box.dataset.drawn="1";
   const cc=box.dataset.pmapCc;let data;try{data=await getAdmin1(cc)}catch(e){box.textContent="지도를 불러오지 못했습니다.";return}
   const units=(data.units||[]).filter(u=>u.n);let pts=[];
-  const fix=lon=>cc==="RU"&&lon<0?lon+360:cc==="US"&&lon>0?lon-360:lon;
+  const fix=lon=>cc==="RU"&&lon<-160?lon+360:cc==="US"&&lon>160?lon-360:lon;
   units.forEach(u=>u.r.forEach(r=>r.forEach(p=>pts.push([fix(p[0]),p[1]]))));
   if(cc==="US")pts=pts.filter(p=>p[0]>-170);
   const lat0=pts.reduce((a,p)=>a+p[1],0)/pts.length,kx=Math.cos(lat0*Math.PI/180);
@@ -3910,7 +3969,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const x=i=>pad+i*(W-2*pad)/Math.max(1,ys.length-1),y=v=>H-pad-(v-mn)/(mx-mn||1)*(H-2*pad);
   const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
   let spark=ys.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(ys[0]+"–"+ys.at(-1)+" 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:#2b6cb0"/>'+[0,pts.length-1].map(i=>'<text x="'+x(i).toFixed(1)+'" y="'+(y(pts[i])-5).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+number(pts[i],1)+'%</text>').join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+ys[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+ys.at(-1)+'</text></svg>':"";
-  spark=chartAx(spark,ys.map((yr,i)=>[x(i),y(pts[i]),yr+"년\nGDP 대비 세수 "+number(pts[i],1)+"%"+(k&&kv[i]!=null?"\n한국 "+number(kv[i],1)+"%":"")]),[[0,y(mx-2)+3,number(mx-2,0)+"%"],[0,y(mn+2)-2,number(mn+2,0)+"%"]]);
+  spark=chartAx(spark,ys.map((yr,i)=>[x(i),y(pts[i]),yr+"년\nGDP 대비 세수 "+number(pts[i],1)+"%"+(k&&kv[i]!=null?"\n한국 "+number(kv[i],1)+"%":""),[[namedCountry(data.code),pts[i],number(pts[i],1)+"%"],...(k&&kv[i]!=null?[["한국",kv[i],number(kv[i],1)+"%"]]:[])]]),[[0,y(mx-2)+3,number(mx-2,0)+"%"],[0,y(mn+2)-2,number(mn+2,0)+"%"]]);
   spark=addBand(spark,ys,x,H+16);
   const kc=(v,kvv,fmt)=>kvv!=null?'<small>한국 '+fmt(kvv)+'</small>':"";
   const usd=v=>'US$'+number(v,0);
@@ -3940,7 +3999,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const kEnd=b.length&&Math.abs(Y(b.at(-1)[1])-Y(a.at(-1)[1]))<11?((Y(b.at(-1)[1])<Y(a.at(-1)[1]))?-6:6):0;
   const RY=[];for(let yy=y0;yy<=y1;yy++)RY.push(yy);
   const kb2=new Map(b);
-  const ctL=a.map(p=>[X(p[0]),Y(p[1]),p[0]+"년\n"+(opt.name||"")+" "+fmt(p[1])+(kb2.has(p[0])?"\n한국 "+fmt(kb2.get(p[0])):"")]);
+  const ctL=a.map(p=>[X(p[0]),Y(p[1]),p[0]+"년\n"+(opt.name||"")+" "+fmt(p[1])+(kb2.has(p[0])?"\n한국 "+fmt(kb2.get(p[0])):""),[[opt.name||"",p[1],fmt(p[1])],...(kb2.has(p[0])?[["한국",kb2.get(p[0]),fmt(kb2.get(p[0]))]]:[])]]);
   const tkL=nticks.map(v=>[L+2,Y(v)-3,fmt(v)]);
   return addBand(chartAx('<svg class="lab-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opt.label||"추이")+'">'+grid+cross+(b.length?'<path d="'+path(b)+'" class="lab-k"/>'+dots(b,"lab-kd"):"")+'<path d="'+path(a)+'" class="lab-m"/>'+dots(a,"lab-md")+end(a,"lab-end",opt.name||"")+(b.length?'<g transform="translate(0 '+kEnd+')">'+end(b,"lab-end lab-end-k","한국")+'</g>':"")+yrs+'</svg>',ctL,tkL),RY,i=>X(RY[i]),H+2);
  }
@@ -4334,9 +4393,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  async function storyProvinceMap(box,s,cc){
   const [occ,world,mineU]=await Promise.all([loadOcc(),getWorld2().catch(()=>null),getAdmin1(cc).then(d=>d.units)]);
   // what's in view: the country's box plus a margin; neighbours there are drawn with their own provinces (grey)
-  const fix=lon=>cc==="RU"&&lon<0?lon+360:cc==="US"&&lon>0?lon-360:lon;
+  const fix=lon=>cc==="RU"&&lon<-160?lon+360:cc==="US"&&lon>160?lon-360:lon;
   let lo0=1e9,lo1=-1e9,la0=1e9,la1=-1e9;mineU.forEach(u=>u.r.forEach(r=>r.forEach(p=>{const x=fix(p[0]);if(cc==="US"&&x<-170)return;lo0=Math.min(lo0,x);lo1=Math.max(lo1,x);la0=Math.min(la0,p[1]);la1=Math.max(la1,p[1])})));
-  const cl=(lo0+lo1)/2,pl=Math.max(lo1-lo0,8)*.7,pa=Math.max(la1-la0,5)*.7;const wrap=lon=>cl+((lon-cl+540)%360)-180;
+  const cl=(lo0+lo1)/2,pl=Math.min(Math.max(lo1-lo0,8)*.7,24),pa=Math.min(Math.max(la1-la0,5)*.7,16);   // 큰 나라(미국·러시아 등)는 여백이 바다 건너 다른 대륙까지 넓어지지 않게
+  const wrap=lon=>cl+((lon-cl+540)%360)-180;
   const inView=(lon,lat)=>lon>lo0-pl&&lon<lo1+pl&&lat>la0-pa&&lat<la1+pa;
   const nbs=[];
   if(world){const inv=(px,py)=>{const X=(px-world.w/2)/world.k,Y=world.top-py/world.k;return [X*180/Math.PI+(world.lon0||0),(2*Math.atan(Math.exp(Y))-Math.PI/2)*180/Math.PI]};
@@ -5189,7 +5249,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   // 마우스를 올리면: 시기 + 시리즈별 값
   const full=x=>{const m=String(x).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);return m?(m[3]?m[1]+"년 "+(+m[2])+"월 "+(+m[3])+"일":m[1]+"년 "+(+m[2])+"월"):String(x)};
   const ct=xs.map((x,i)=>{const vs=sets.map(st=>{const p=st.pts.find(q=>q[0]===x);return p?[st,p[1]]:null}).filter(Boolean);if(!vs.length)return null;
-   return [X(i),Y(vs[0][1]),full(x)+"\n"+vs.map(([st,v])=>(sets.length>1?st.name+" ":"")+num(v,Math.max(dec,Math.abs(v)<10?2:dec))+u).join("\n")]}).filter(Boolean);
+   const fv=v=>num(v,Math.max(dec,Math.abs(v)<10?2:dec))+u;
+   return [X(i),Y(vs[0][1]),full(x)+"\n"+vs.map(([st,v])=>(sets.length>1?st.name+" ":"")+fv(v)).join("\n"),vs.map(([st,v])=>[st.name||"",v,fv(v)])]}).filter(Boolean);
   s=s.replace("__CT__",window.__ct?window.__ct(ct):"");
   const leg=sets.length>1||opt.legend?'<div class="en-leg">'+sets.map((st,k)=>'<span><i class="'+(st.bars?'bar':'c'+k)+'"></i>'+esc(st.name)+'</span>').join("")+'</div>':"";
   return s+leg;
