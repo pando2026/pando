@@ -3897,12 +3897,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    let acc=0;const rows=list.map((x,i)=>[x[0],x[1],TRC[i]]).concat(rest>T0*.005?[["",rest,"#d9e0e4"]]:[]);const stops=rows.map(([c,v,col])=>{const a=acc;acc+=100*v/T0;return col+" "+a.toFixed(2)+"% "+Math.min(100,acc).toFixed(2)+"%"}).join(",");
    return '<div class="tr-pie tr-partners"><h5>'+esc(title)+'</h5><div class="tr-donut" style="background:conic-gradient('+stops+')"><span>'+usdK(T0)+'</span></div><ol class="tr-items">'+rows.map(([cc,v,col])=>'<li><i style="background:'+col+'"></i><span>'+(cc?flag(cc,"mini")+' '+esc(namedCountry(cc)):'그 밖의 나라')+'</span><b>'+usdK(v)+'</b><em>'+number(100*v/T0,1)+'%</em></li>').join("")+'</ol></div>'};
   if(G&&G.year){
-   h+='<h4>상품 수출·수입 <small>'+esc(String(G.year))+'년 · 이 나라 신고 기준</small></h4><div class="tr-pies">'+donut(G.exports,"수출 품목")+donut(G.imports,"수입 품목")+'</div>'+
+   h+='<h4>상품 수출·수입 <small>'+esc(String(G.year))+'년 · 이 나라 신고 기준'+(nowYear()-G.year>=3?' · <em class="int-old">이 나라가 낸 가장 최근 신고('+(nowYear()-G.year)+'년 전)</em>':"")+'</small></h4><div class="tr-pies">'+donut(G.exports,"수출 품목")+donut(G.imports,"수입 품목")+'</div>'+
     '<div class="tr-pies">'+partners(G.partnersX,"주요 수출 상대국",G.exports?.total)+partners(G.partnersM,"주요 수입 상대국",G.imports?.total)+'</div>'+
     (k&&k.goods?.exports?.total?'<p class="tr-note">한국 '+esc(String(k.goods.year))+'년 상품 수출 '+usdK(k.goods.exports.total)+' · 수입 '+usdK(k.goods.imports?.total)+' (같은 출처)</p>':"");
    h+=productBlock(T,name);
   }else if(!G)h+='<p class="tr-note">품목별 수출·수입과 상대국 자료를 유엔 컴트레이드에서 받고 있습니다.</p>';
-  else if(G&&G.checked)h+='<p class="tr-note">이 나라는 유엔 컴트레이드에 최근(2022~2025년) 품목별 교역을 신고하지 않았습니다.</p>';
+  else if(G&&G.checked)h+='<p class="tr-note">이 나라는 유엔 컴트레이드에 2018~2025년 품목별 교역을 신고하지 않았습니다.</p>';
   if(!h)return "";
   return '<section class="section tradeb"><h3>산업 구조와 교역</h3>'+h+'<p class="tr-src">'+(S?sourceLink("https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations="+data.code,"세계은행 WDI(산업 비중·수출입)"):"")+(G&&G.source?' · '+sourceLink(G.source,"유엔 컴트레이드(품목·상대국)"):"")+(T.asOf?' · '+esc(T.asOf)+' 조회':"")+'</p></section>';
  }
