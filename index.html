@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="3d3d5f05b8";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="0cf3ffdca1";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -305,6 +305,7 @@ svg[data-ct]{cursor:crosshair;touch-action:pan-y}
 .ct-tip em{font-style:normal;font-weight:800;margin-left:2px}.ct-tip em.up{color:#ff8a8a}.ct-tip em.dn{color:#8ec5ff}
 .ct-tip small{font-size:10px;color:#9fb0bb;font-weight:600;margin-top:2px}
 svg[data-ct]{user-select:none;-webkit-user-select:none}
+.tab-hint{font-size:12px;color:var(--muted);margin:14px 0 4px}.link-btn{border:0;background:none;padding:0;color:#b51d2a;font:inherit;font-weight:800;text-decoration:underline;cursor:pointer}
 
 /* refine.css — readability pass. Loaded last, so it wins over earlier layers.
    Principle: facts first, method notes folded. */
@@ -3288,7 +3289,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   }catch{delete node.dataset.rankLoaded}
  }
  function loadTabRanks(code,key){
-  if(!["economy","military","budget"].includes(key))return;
+  if(!["economy","military","budget","livelihood"].includes(key))return;
   document.querySelectorAll("#panel-"+key+" [data-rank-key]").forEach(node=>{if(node.dataset.rankKey!=="policyRate")loadMetricRank(code,node)});
  }
  const budgetColors=["#c72a34","#123f5b","#75b6d5","#eeac69","#608e91","#a38db8","#c4d7df","#8cb68d","#9a6e64","#d9a961","#527eae","#a7b8c1"];
@@ -4001,14 +4002,16 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyMapBlock(data)+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
     cpiBlock(data)+electionBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["unemployment","실업률",metrics.unemployment],["policyRate","정책금리",metrics.policyRate]])+
-    economyAlternativeEstimates(data.economyAlternatives)+tradeBlock(data)+pppBlock(data)+laborBlock(data)+
+    economyAlternativeEstimates(data.economyAlternatives)+tradeBlock(data)+'<p class="tab-hint">물가까지 따진 실질 구매력·세금 부담·임금·청년 일자리는 <button type="button" class="link-btn" data-ix-go="livelihood">민생 탭</button>에 있습니다.</p>'+
     fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),
    budget:budgetOverviewCard(budget.overview)+doc+
     (ownBreakdown?'<section class="section"><h3>분야별 구성</h3>'+ownBreakdown+'</section>':"")+
-    '<section class="section"><h3>재정 지표</h3>'+grid([["governmentRevenue","중앙정부 세입 / GDP",budget.metrics?.governmentRevenue||metrics.governmentRevenue],["governmentExpenditure","중앙정부 지출 / GDP",budget.metrics?.governmentExpenditure||metrics.governmentExpenditure],["cashBalance","재정수지 / GDP",budget.metrics?.cashBalance||metrics.cashBalance]])+chinaFiscal+'</section>'+taxBlock(data)+pppBlock(data)+interestBlock(data)+historyBlock(data)+
+    '<section class="section"><h3>재정 지표</h3>'+grid([["governmentRevenue","중앙정부 세입 / GDP",budget.metrics?.governmentRevenue||metrics.governmentRevenue],["governmentExpenditure","중앙정부 지출 / GDP",budget.metrics?.governmentExpenditure||metrics.governmentExpenditure],["cashBalance","재정수지 / GDP",budget.metrics?.cashBalance||metrics.cashBalance]])+chinaFiscal+'</section>'+'<p class="tab-hint">세금 부담·실질 구매력은 <button type="button" class="link-btn" data-ix-go="livelihood">민생 탭</button>에 있습니다.</p>'+interestBlock(data)+historyBlock(data)+
     budgetAlternativeEstimates(budget.alternativeEstimates)+budgetReferenceShares(budget.referenceShares)+
     (koreaBreakdown?'<details class="compare-fold"><summary>한국 예산 구성과 비교하기</summary>'+koreaBreakdown+'<p class="data-caption">두 나라 예산은 회계연도, 정부 범위, 정부안·의결 상태가 다를 수 있어 비중을 그대로 비교하지 마세요.</p></details>':"")+
     fold("예산 자료 읽는 법",'<p>정부안·의회 통과안·IMF 전망·과거 실적을 서로 다른 상태로 표시합니다. 재정 지표는 세계은행의 중앙정부 범위 과거 관측치로, 지금 제출된 예산안 합계가 아닙니다.</p><p>'+sourceLink(links.worldBank,"세계은행 재정 데이터")+'</p>'),
+   livelihood:(()=>{const x=pppBlock(data)+taxBlock(data)+laborBlock(data);return x||'<p class="metric-missing"><span>자료 없음</span> 실질 구매력·세금 부담·임금 자료</p>'})()+
+    fold("민생 자료 읽는 법",'<p>실질 구매력은 나라마다 다른 물가 수준을 맞춘 값(구매력평가)이라, 같은 돈으로 실제로 얼마나 살 수 있는지를 견줄 수 있습니다. 세금 부담은 사회보험료를 포함한 정부 전체 세수입니다. 임금·청년 실업은 ILO·OECD가 같은 정의로 맞춘 값과 그 나라 통계청 최신값을 따로 적었습니다.</p>'),
    military:grid([["militaryUsd","연간 군사비",metrics.militaryUsd],["militaryPct","군사비 / GDP",metrics.militaryPct],["militaryGovPct","군사비 / 정부 총지출",metrics.militaryGovPct],["militaryPersonnel","군 병력",metrics.militaryPersonnel],["militaryLaborPct","군 병력 / 노동력",metrics.militaryLaborPct],["armsImports","무기 수입(SIPRI TIV)",metrics.armsImports],["armsExports","무기 수출(SIPRI TIV)",metrics.armsExports]])+
     budgetReferenceShares(budget.referenceShares)+
     fold("군사 지표 읽는 법",'<p>SIPRI 원자료를 인용한 세계은행 WDI 관측치가 기본입니다. 지출액은 병력이나 전력 규모를 뜻하지 않습니다. 군사비/GDP는 달력연도, 군사비/정부 총지출은 회계연도 기준입니다. 분쟁국은 공식 집계가 끊긴 경우가 많아 오래된 연도가 표시될 수 있습니다.</p><p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+' · '+sourceLink("https://www.sipri.org/databases/milex","SIPRI")+'</p>')
@@ -4491,7 +4494,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    problemsBlock(data)+countryConflicts(data)+countryAllies(data)+relatedExplainers(data.code)+countryBlocs(data.code)+countryReligion(data.code)+countryNow(data)+
    '<section class="leaders-section"><div class="leaders-heading"><h3>핵심 인물</h3></div><div id="country-leaders" aria-live="polite"><p class="leaders-loading">명단을 불러오는 중…</p></div>'+powerBlock(data)+tiesBlock(data)+'</section>'+
    '<div class="country-tabs" role="tablist" aria-label="'+esc(name)+' 자료 분류">'+
-    [["politics","정치·의회"],["economy","경제"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
+    [["politics","정치·의회"],["economy","경제"],["livelihood","민생"],["budget","예산"],["military","군사"]].map((a,i)=>'<button type="button" role="tab" id="tab-'+a[0]+'" aria-controls="panel-'+a[0]+'" aria-selected="'+(i===0)+'" data-country-tab="'+a[0]+'">'+a[1]+'</button>').join("")+'</div>'+
    Object.entries(panels).map(([key,content],i)=>'<section role="tabpanel" id="panel-'+key+'" aria-labelledby="tab-'+key+'" class="country-panel"'+(i?" hidden":"")+'>'+content+'</section>').join("")+
    '<div class="detail-nav"><button id="back-to-countries" type="button">← 국가 목록</button><button id="copy-country-link" type="button">링크 복사 ↗</button></div>'+
    '<p class="dossier-sources">기관 자료 '+sourceLink((data.profile||{}).source||(data.links||{}).ipu,"의회·정치 구조")+' · '+sourceLink((data.links||{}).worldBank,"세계은행 국가 통계")+'</p>';
@@ -6530,7 +6533,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   [["지도자","대통령","총리","인물","장관","leader","president"],".leaders-section","핵심 인물"],
   [["동맹","우방","ally","allies"],"section.allies","우방 관계"],[["갈등","분쟁","전쟁","적대","conflict","war"],"section.conflicts:not(.allies)","갈등 관계"],
   [["기구","가입","나토","브릭스","nato","brics"],".country-blocs","국제기구"],[["역사","어쩌다"],".histb","어쩌다 여기까지"],
-  [["예산","재정","지출","세출","budget"],".budget-visual","예산"],[["경제","gdp","성장","물가","인플레","인플레이션","economy"],"#panel-economy","경제"],
+  [["예산","재정","지출","세출","budget"],".budget-visual","예산"],[["경제","gdp","성장","물가","인플레","인플레이션","economy"],"#panel-economy","경제"],[["민생","구매력","세금","임금","월급","청년","실업","일자리","빅맥","생활비"],"#panel-livelihood","민생"],
   [["군사","국방","군대","병력","무기","military","defense"],"#panel-military","군사"],[["의회","국회","의석","정당","parliament","party"],"#panel-politics","정치·의회"],
   [["문제","위기","problem"],".ix","한눈에 보는 문제"],[["상황","요즘","now"],".now","지금 상황"]];
 

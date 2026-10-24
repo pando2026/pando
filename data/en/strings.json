@@ -65798,5 +65798,15 @@
 "(참고자료){0}차 석유 최고가격, {1}원 전격 인하 · {2}-{3}-{4}": "(Press note) {0:ord}-round oil maximum price cut sharply by ₩{1} · {2}-{3}-{4}",
 "(참고자료){0}차 최고가격, {1}차 최고가로 동결 · {2}-{3}-{4}": "(Press note) {0:ord}-round maximum price frozen at {1:ord}-round level · {2}-{3}-{4}",
 "(참고자료){0}차 최고가격 동결, 민생부담과 국제유가를 종합 고려 · {1}-{2}-{3}": "(Press note) {0:ord}-round maximum price frozen, weighing household burdens and international oil prices · {1}-{2}-{3}",
-"(참고자료){0}차 최고가격 동결, 중동정세 불안으로부터 민생경제 보호 · {1}-{2}-{3}": "(Press note) {0:ord}-round maximum price frozen to shield the economy from Middle East instability · {1}-{2}-{3}"
+"(참고자료){0}차 최고가격 동결, 중동정세 불안으로부터 민생경제 보호 · {1}-{2}-{3}": "(Press note) {0:ord}-round maximum price frozen to shield the economy from Middle East instability · {1}-{2}-{3}",
+"물가까지 따진 실질 구매력·세금 부담·임금·청년 일자리는": "Real purchasing power (adjusted for prices), tax burden, wages and youth jobs are in the",
+"민생 탭": "Living Standards tab",
+"에 있습니다.": ".",
+"세금 부담·실질 구매력은": "Tax burden and real purchasing power are in the",
+"실질 구매력 — 물가까지 따지면 얼마나 잘사나": "Real purchasing power — how well off, once prices are factored in",
+"인도에서 이발은 몇백 원, 한국에서는 만 원이 넘습니다. 그래서 소득을 환율로만 바꾸면 물가가 싼 나라는 실제보다 가난해 보입니다. ‘구매력 평가(PPP)’는 같은 물건·서비스 묶음의 값을 나라마다 조사해, 모든 금액을": "A haircut costs a few hundred won in India but over ten thousand won in Korea. Converting incomes at market exchange rates therefore makes low-price countries look poorer than they are. Purchasing power parity (PPP) prices the same basket of goods and services in every country and converts all amounts",
+"{0}년 · 구매력 환율 {1} / 시장 환율 {2}": "{0} · PPP rate {1} / market rate {2}",
+"민생 자료 읽는 법": "How to read the living-standards data",
+"실질 구매력은 나라마다 다른 물가 수준을 맞춘 값(구매력평가)이라, 같은 돈으로 실제로 얼마나 살 수 있는지를 견줄 수 있습니다. 세금 부담은 사회보험료를 포함한 정부 전체 세수입니다. 임금·청년 실업은 ILO·OECD가 같은 정의로 맞춘 값과 그 나라 통계청 최신값을 따로 적었습니다.": "Real purchasing power adjusts for differing price levels (purchasing power parity), so it compares what the same money actually buys. Tax burden is total general-government tax revenue including social contributions. Wages and youth unemployment show ILO/OECD figures harmonised to one definition separately from the national statistics office's latest figures.",
+"한국 {0}년 이후는 ILO가 아직 싣지 않아, ILO와 같은 원자료(고용노동부 고용형태별근로실태조사 보고서 '상용 {1}인 이상 사업체 상용근로자 월 임금총액', {2}월)를 ILO와 같은 환산계수(세계은행 민간소비 구매력평가 PA.NUS.PRVT.PP)로 판도가 바꾼 값입니다({3}~{4}년 ILO 값과 이 방식이 완전히 일치).": "ILO has not yet published Korea from {0}; these are Pando's conversions of the same source (Ministry of Employment and Labor survey, 'average monthly total wages of regular employees at firms with {1}+ staff', {2:mon}) using ILO's conversion factor (World Bank private-consumption PPP, PA.NUS.PRVT.PP). This method reproduces ILO's {3}–{4} values exactly."
 }
