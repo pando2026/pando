@@ -2353,6 +2353,7 @@ html,body{background:#fff;color:var(--ink)}
  const electionStore=()=>once("elections",()=>json("data/elections.json")).catch(()=>null);
 const interestStore=()=>once("interest",()=>json("data/interest.json")).catch(()=>null);
 const interestBudgetStore=()=>once("interestBudget",()=>json("data/interest-budget.json")).catch(()=>null);
+const pppStore=()=>once("ppp",()=>json("data/ppp.json")).catch(()=>null);
 const taxStore=()=>once("tax",()=>json("data/tax.json")).catch(()=>null);
 const laborStore=()=>once("labor",()=>json("data/labor.json")).catch(()=>null);
 const tradeStore=()=>once("trade",()=>json("data/trade.json")).catch(()=>null);
@@ -2420,7 +2421,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),power:await (async()=>{const t=await powerStore();return t?.countries?.[code]||null})(),trade:await (async()=>{const t=await tradeStore();if(!t)return null;const sc=await sectorStore(),ind=await industryStore();return {hs2:t.hs2||{},products:t.products||[],asOf:t.asOf,goodsSource:t.goodsSource,structureSource:t.structureSource,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null,sectors:sc?{asOf:sc.asOf,sources:sc.sources,entry:sc.countries?.[code]||null,korea:code==="KR"?null:sc.countries?.KR||null}:null,industry:ind?.countries?.[code]||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),power:await (async()=>{const t=await powerStore();return t?.countries?.[code]||null})(),trade:await (async()=>{const t=await tradeStore();if(!t)return null;const sc=await sectorStore(),ind=await industryStore();return {hs2:t.hs2||{},products:t.products||[],asOf:t.asOf,goodsSource:t.goodsSource,structureSource:t.structureSource,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null,sectors:sc?{asOf:sc.asOf,sources:sc.sources,entry:sc.countries?.[code]||null,korea:code==="KR"?null:sc.countries?.KR||null}:null,industry:ind?.countries?.[code]||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),ppp:await (async()=>{const t=await pppStore();if(!t)return null;return {meta:t.meta,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -3626,11 +3627,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyMapBlock(data)+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
     cpiBlock(data)+electionBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["unemployment","실업률",metrics.unemployment],["policyRate","정책금리",metrics.policyRate]])+
-    economyAlternativeEstimates(data.economyAlternatives)+tradeBlock(data)+laborBlock(data)+
+    economyAlternativeEstimates(data.economyAlternatives)+tradeBlock(data)+pppBlock(data)+laborBlock(data)+
     fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),
    budget:budgetOverviewCard(budget.overview)+doc+
     (ownBreakdown?'<section class="section"><h3>분야별 구성</h3>'+ownBreakdown+'</section>':"")+
-    '<section class="section"><h3>재정 지표</h3>'+grid([["governmentRevenue","중앙정부 세입 / GDP",budget.metrics?.governmentRevenue||metrics.governmentRevenue],["governmentExpenditure","중앙정부 지출 / GDP",budget.metrics?.governmentExpenditure||metrics.governmentExpenditure],["cashBalance","재정수지 / GDP",budget.metrics?.cashBalance||metrics.cashBalance]])+chinaFiscal+'</section>'+taxBlock(data)+interestBlock(data)+historyBlock(data)+
+    '<section class="section"><h3>재정 지표</h3>'+grid([["governmentRevenue","중앙정부 세입 / GDP",budget.metrics?.governmentRevenue||metrics.governmentRevenue],["governmentExpenditure","중앙정부 지출 / GDP",budget.metrics?.governmentExpenditure||metrics.governmentExpenditure],["cashBalance","재정수지 / GDP",budget.metrics?.cashBalance||metrics.cashBalance]])+chinaFiscal+'</section>'+taxBlock(data)+pppBlock(data)+interestBlock(data)+historyBlock(data)+
     budgetAlternativeEstimates(budget.alternativeEstimates)+budgetReferenceShares(budget.referenceShares)+
     (koreaBreakdown?'<details class="compare-fold"><summary>한국 예산 구성과 비교하기</summary>'+koreaBreakdown+'<p class="data-caption">두 나라 예산은 회계연도, 정부 범위, 정부안·의결 상태가 다를 수 있어 비중을 그대로 비교하지 마세요.</p></details>':"")+
     fold("예산 자료 읽는 법",'<p>정부안·의회 통과안·IMF 전망·과거 실적을 서로 다른 상태로 표시합니다. 재정 지표는 세계은행의 중앙정부 범위 과거 관측치로, 지금 제출된 예산안 합계가 아닙니다.</p><p>'+sourceLink(links.worldBank,"세계은행 재정 데이터")+'</p>'),
@@ -3697,7 +3698,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   ["ix",".ix",".ix-head",1],["conflicts","section.conflicts:not(.allies)",".conflicts-head",1],["allies","section.allies",".conflicts-head",0],
   ["blocs",".country-blocs","h3",0],["now",".now",".now-head",1],["recent",".recent","h3",1],["leaders",".leaders-section",".leaders-heading",1],
   ["pmap",".pmap-block",".fights-head",1],["regions",".regions",".fights-head",0],["fights",".fights",".fights-head",1],
-  ["decision",".decision-map","h3",0],["interest",".interest","h3",1],["taxb",".taxb","h3",1],["laborb",".laborb","h3",1],["tradeb",".tradeb","h3",1],["histb",".histb","h3",1],["elect",".elect","h3",1],["cpi",".cpi","h3",1],["sec",".country-panel > .section","h3",1]
+  ["decision",".decision-map","h3",0],["interest",".interest","h3",1],["taxb",".taxb","h3",1],["laborb",".laborb","h3",1],["pppb",".pppb","h3",1],["tradeb",".tradeb","h3",1],["histb",".histb","h3",1],["elect",".elect","h3",1],["cpi",".cpi","h3",1],["sec",".country-panel > .section","h3",1]
  ];
  const foldGet=k=>{try{return localStorage.getItem("pando.fold."+k)}catch{return null}};
  const foldSet=(k,v)=>{try{localStorage.setItem("pando.fold."+k,v?"1":"0")}catch{}};
@@ -3938,6 +3939,46 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function powerBlock(data){
   const P=data.power;if(!P||!(P.people||[]).length)return "";
   return '<div class="power-block"><h4>실제로 힘을 쥔 사람 <small>'+esc(P.asOf||"")+' 기준</small></h4>'+(P.note?'<p class="power-note">'+esc(P.note)+'</p>':"")+'<div class="power-list">'+P.people.map(x=>'<article class="power-card'+(x.kind==="rival"?' power-card--rival':'')+'"><span class="power-ph actor-face"'+(x.wd?' data-ent="pw:'+esc(x.wd)+'"':'')+'>'+esc((x.ko||x.name||"?").slice(0,1))+'</span><div><span class="power-kind">'+esc(PKIND[x.kind]||x.kind||"")+'</span><b>'+esc(x.ko||x.name)+'</b>'+(x.ko&&x.name?'<small>'+esc(x.name)+'</small>':"")+'<span class="power-role">'+esc(x.role||"")+(x.since?' · '+esc(String(x.since))+'부터':"")+'</span><p>'+esc(x.why||"")+'</p>'+((x.sources||[]).length?'<small class="case-src">'+x.sources.slice(0,3).map(z=>sourceLink(z[2],z[0])).join(" · ")+'</small>':"")+'</div></article>').join("")+'</div></div>';
+ }
+
+ // 실질 구매력(data/ppp.json): 구매력 기준 1인당 GDP·물가 수준·구매력 기준 1인당 세금·빅맥·가구 하루 소득·빈곤율
+ function pppBlock(data){
+  const P=data.ppp;if(!P||!P.entry)return "";const e=P.entry,k=P.korea,M=P.meta||{},tot=M.total||{},isK=data.code==="KR",name=namedCountry(data.code);
+  const last=a=>Array.isArray(a)&&a.length?a.at(-1):null,at=(a,y)=>Array.isArray(a)?(a.find(p=>p[0]===y)||null):null;
+  const usd=v=>'$'+number(Math.round(v),0),pc=v=>number(v,1)+"%";
+  const card=(label,val,color,line,small)=>'<div class="int-card"><span>'+label+'</span><strong style="color:'+color+'">'+val+'</strong><p>'+line+'</p>'+(small||"")+'</div>';
+  const kl=t=>!isK&&t?'<small>'+t+'</small>':"";
+  const rk=(key)=>e.ranks?.[key]&&tot[key]?' · '+e.ranks[key]+'위 / '+tot[key]+'개국':"";
+  let cards="";
+  // 1) 구매력 기준 1인당 GDP
+  const g=last(e.imfPc)&&(!last(e.pcPpp)||last(e.imfPc)[0]>last(e.pcPpp)[0])?{p:last(e.imfPc),src:"IMF",key:"imfPc"}:last(e.pcPpp)?{p:last(e.pcPpp),src:"세계은행",key:"pcPpp"}:null;
+  if(g){const nom=at(e.pcUsd,g.p[0])||last(e.pcUsd);const kg=k&&(last(k[g.key])||last(k.pcPpp));
+   cards+=card('1인당 GDP <small>(구매력 기준, 국제달러)</small>',usd(g.p[1]),"#1f6f4a",g.p[0]+'년 · '+g.src+rk(g.key),(nom?'<small>환율로 바꾼 명목 '+usd(nom[1])+' ('+nom[0]+') → 물가를 맞추면 '+number(g.p[1]/nom[1],2)+'배</small>':"")+kl(kg?'한국 '+usd(kg[1])+' ('+kg[0]+')':""))}
+  // 2) 물가 수준
+  const L=last(e.plr);if(L){const v=L[1]*100,kp=k&&last(k.plr);
+   cards+=card('물가 수준 <small>(미국 = 100)</small>',number(v,0),"#8a5a12",L[0]+'년'+rk("plr")+' · 같은 물건 묶음이 미국보다 '+(v<100?number(100-v,0)+'% 싸다':v>100?number(v-100,0)+'% 비싸다':'같다'),kl(kp?'한국 '+number(kp[1]*100,0)+' ('+kp[0]+')':""))}
+  // 3) 구매력 기준 1인당 세금
+  const T=data.tax?.entry;if(T&&T.share!=null){const y=+T.year,gp=at(e.pcPpp,y)||at(e.imfPc,y);
+   if(gp){const kt=data.tax?.korea,kgp=kt?(at(k?.pcPpp,+kt.year)||at(k?.imfPc,+kt.year)):null;
+    cards+=card('1인당 세금 <small>(구매력 기준, 사회보험료 포함)</small>',usd(T.share/100*gp[1]),"#b8202b",y+'년 · 세수 GDP의 '+pc(T.share)+(T.perCapita?' · 환율 기준 '+usd(T.perCapita):""),kl(kt&&kgp?'한국 '+usd(kt.share/100*kgp[1])+' ('+kt.year+', GDP의 '+pc(kt.share)+')':""))}}
+  // 4) 하루 평균 소득·소비(가구 조사)와 빈곤율
+  const mn=last(e.mean),m40=last(e.mean40),pv=last(e.pov);
+  if(mn||pv){const km=k&&last(k.mean),kpv=k&&last(k.pov);
+   cards+=card('하루 평균 소득·소비 <small>(가구 조사, 2021년 구매력 달러)</small>',mn?'$'+number(mn[1],1):'–',"#15232d",(mn?mn[0]+'년'+(m40&&m40[0]===mn[0]?' · 하위 40% $'+number(m40[1],1):""):"")+(pv?' · 하루 $3 미만 빈곤율 '+pc(pv[1])+' ('+pv[0]+')':""),kl(km||kpv?'한국 '+(km?'$'+number(km[1],1)+' ('+km[0]+')':"")+(kpv?' · 빈곤율 '+pc(kpv[1]):""):""))}
+  // 5) 빅맥
+  const bm=e.bigmac&&e.bigmac.length?e.bigmac.at(-1):null;
+  if(bm){const kb=k?.bigmac?.at(-1);
+   cards+=card('빅맥 한 개 <small>(이코노미스트 빅맥 지수)</small>',number(bm[1],bm[1]<100?2:0)+' <em class="lab-unit">'+esc(bm[4])+'</em>',"#c72a34",esc(bm[0].slice(0,7))+' · 달러로 $'+number(bm[2],2)+(bm[3]!=null&&bm[4]!=="USD"?' · 통화가 달러 대비 '+(bm[3]<0?number(-bm[3],0)+'% 저평가':number(bm[3],0)+'% 고평가'):""),kl(kb?'한국 '+number(kb[1],0)+'원 = $'+number(kb[2],2)+' ('+kb[0].slice(0,7)+')':""))}
+  // 6) 구매력 환율
+  const px=last(e.pppx);if(px&&!["USD"].includes(bm?.[4])){cards+=card('구매력 환율 <small>(1국제달러로 살 물건 값)</small>',number(px[1],px[1]<10?2:0),"#5d6b75",px[0]+'년 · 현지 통화 기준'+(L?' · 시장 환율은 '+number(px[1]/L[1],px[1]/L[1]<10?2:0):""),'<small>시장 환율보다 숫자가 작을수록 그 나라 물가가 싸다는 뜻입니다.</small>')}
+  if(!cards)return "";
+  const K=isK?null:k;const yrs=a=>(a||[]).filter(p=>p[0]>=2000);
+  const bmY=a=>{const o={};for(const r of a||[])o[+r[0].slice(0,4)]=r[2];return Object.entries(o).map(([y,v])=>[+y,v])};
+  const charts=[["구매력 기준 1인당 GDP (국제달러)",yrs(e.pcPpp),yrs(K?.pcPpp),v=>'$'+number(v/1000,0)+'k',"#1f6f4a"],["실질 1인당 GDP (2021년 불변 구매력 달러, 물가 변동 뺀 성장)",yrs(e.pcPppK),yrs(K?.pcPppK),v=>'$'+number(v/1000,0)+'k',"#2c5680"],["물가 수준 (미국 = 100)",yrs(e.plr).map(p=>[p[0],p[1]*100]),yrs(K?.plr).map(p=>[p[0],p[1]*100]),v=>number(v,0),"#8a5a12"],["빅맥 가격 (달러 환산)",bmY(e.bigmac),bmY(K?.bigmac),v=>'$'+number(v,2),"#c72a34"]]
+   .filter(c=>c[1].length>1).map(c=>'<h5 class="tie-sub">'+c[0]+'</h5><div style="color:'+c[4]+'">'+laborChart(c[1],c[2],c[3],{name,label:c[0]})+'</div>'+(K?'<p class="cpi-legend"><i style="background:'+c[4]+'"></i>'+esc(name)+' <i class="cpi-legend-k"></i>한국</p>':"")).join("");
+  const S=M.sources||{},src=x=>Array.isArray(x)?sourceLink(x[2],x[0]):"";
+  return '<section class="section pppb"><h3>실질 구매력</h3><p class="cpi-note">환율로만 바꾸면 물가가 싼 나라의 생활 수준이 작게 보입니다. 같은 물건 묶음의 값을 맞춘 ‘구매력 평가(PPP)’ 달러로 바꾸면 그 나라 안에서 실제로 얼마나 살 수 있는지 비교할 수 있습니다.</p><div class="int-grid">'+cards+'</div>'+charts+
+   '<p class="cpi-note">구매력 기준 값은 세계은행 국제비교프로그램(ICP) 가격 조사로 만든 국제달러(미국에서 1달러로 살 수 있는 만큼)입니다. IMF 값에는 최근 해 추정치가 섞여 있습니다. 빅맥 지수는 한 상품의 값만 비교한 것이라 참고용입니다. 가구 조사 소득·소비는 몇 년에 한 번 조사합니다.</p><p class="cpi-note">'+[S.wb,S.imf,S.pip,S.bigmac].map(src).filter(Boolean).join(" · ")+(M.asOf?' · '+esc(M.asOf)+' 조회':"")+'</p></section>';
  }
  function laborBlock(data){
   const Lb=data.labor;if(!Lb)return "";const e=Lb.entry||{},k=Lb.korea,meta=Lb.meta||{},S=meta.sources||{},nat=e.national||{},isK=data.code==="KR";
