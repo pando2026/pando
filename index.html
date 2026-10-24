@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="1bf2f0d875";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="790a0a8f01";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -289,6 +289,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .watch-card:not(.open) .watch-detail{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}
 .watch-more{align-self:flex-start;margin:6px 0 2px;padding:4px 10px;border:1px solid #cfd8de;background:#fff;border-radius:2px;font-size:12px;font-weight:700;color:#1d2630;cursor:pointer}
 .watch-more:hover{border-color:#1d2630}
+/* 차트 공통 마우스 설명(charttip.js) */
+.ct-tip{position:fixed;z-index:9999;pointer-events:none;background:#1d2630;color:#fff;border-radius:3px;padding:6px 9px;font-size:12px;line-height:1.4;box-shadow:0 2px 10px rgba(0,0,0,.18);max-width:260px;display:flex;flex-direction:column;gap:1px}
+.ct-tip b{font-weight:800;font-size:11px;color:#cfd8de}.ct-tip span{font-weight:700;font-variant-numeric:tabular-nums}
+.ct-line{position:fixed;z-index:9998;pointer-events:none;width:0;border-left:1px dashed rgba(29,38,48,.45)}
+.ct-dot{position:fixed;z-index:9998;pointer-events:none;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#c41230;box-shadow:0 0 0 2px #fff}
+svg[data-ct]{cursor:crosshair;touch-action:pan-y}
+.cpi-spark .ax-y,.lab-chart .ax-y{font:600 9px system-ui,sans-serif;fill:#8a979f}
 
 /* refine.css — readability pass. Loaded last, so it wins over earlier layers.
    Principle: facts first, method notes folded. */
@@ -1508,8 +1515,9 @@ html,body{background:#fff;color:var(--ink)}
 .rp-gauge{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;font-size:11.5px;color:#4d606c}
 .rp-gauge b{font-size:24px;letter-spacing:-.05em;color:#14222b}
 .rp-gauge strong.dn{color:#c41230}.rp-gauge strong.up{color:#c41230}
-.rp-spark{width:100%;height:40px;margin-top:6px;display:block}
-.rp-spark polyline{fill:none;stroke:#1d5f80;stroke-width:1.6;vector-effect:non-scaling-stroke}
+.rp-spark{width:100%;margin-top:8px;display:block}
+.rp-chart{margin:14px 0 6px;padding:10px 12px 8px;background:#fff;border:1px solid #dce5ea}.rp-chart h5{margin:0 0 6px;font-size:13px}
+.rp-tl{list-style:none;margin:0;padding:0;display:grid;gap:5px}.rp-tl li{display:grid;grid-template-columns:86px 1fr;gap:8px;font-size:12.5px;line-height:1.45;border-left:3px solid #c41230;padding-left:8px}.rp-tl time{font-weight:800;font-variant-numeric:tabular-nums}
 .rp-alert{margin:8px 0 0;font-size:11.5px;background:#fff1f2;border-left:3px solid #c41230;padding:6px 8px;color:#6b2730}
 .rp-gtext{font-size:12px;margin:0 0 6px;color:#3f505b}
 .rp-fed{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
@@ -1800,8 +1808,12 @@ html,body{background:#fff;color:var(--ink)}
 @media (pointer:coarse){.en-fhit,.en-hit{stroke-width:24px}}
 .en-pick{max-height:320px;overflow:auto}
 /* 나라 단추: 사는 나라 / 파는 나라 묶음, 국내 생산 몫 */
-.en-chg{align-self:center;font-size:10.5px;font-weight:800;color:#6b7b85;letter-spacing:.02em;margin:0 2px 0 6px}.en-chg:first-child{margin-left:0}
-.en-chip.x{border-style:dashed}.en-chip.x.on{border-style:solid}
+.en-chips{flex-direction:column;flex-wrap:nowrap;gap:8px}
+.en-chrow{display:grid;grid-template-columns:64px 1fr;gap:8px;align-items:center}
+.en-chlist{display:flex;flex-wrap:wrap;gap:6px}
+.en-chlist .en-chip{min-width:104px;min-height:58px}
+.en-chg{font-size:11px;font-weight:800;color:#6b7b85;letter-spacing:.02em}
+@media(max-width:600px){.en-chrow{grid-template-columns:1fr;gap:4px}.en-chlist .en-chip{min-width:0}}
 /* 국내 생산은 얼마나 되나 */
 .en-bal .en-bars li{grid-template-columns:72px 1fr 64px}
 .en-bars i.pd{background:#2b7a4b}.en-bars i.im{background:#2f6f93}.en-bars i.ex{background:#b8860b}.en-bars i.rf{background:#5d6b74}
@@ -2374,6 +2386,46 @@ html,body{background:#fff;color:var(--ink)}
 
 </script>
 <script>
+/* 모든 차트 공통: 마우스(손가락)를 올리면 가장 가까운 점의 시기·값을 띄운다.
+   차트 <svg>에 data-ct='[[x,y,"설명"],…]'(viewBox 좌표)를 달면 된다. 세로 안내선과 점도 함께 그린다. */
+(function(){
+ "use strict";
+ const tip=document.createElement("div");tip.className="ct-tip";tip.setAttribute("role","status");
+ const line=document.createElement("div");line.className="ct-line";
+ const dot=document.createElement("div");dot.className="ct-dot";
+ const mount=()=>{for(const el of [line,dot,tip]){el.hidden=true;document.body.appendChild(el)}};
+ if(document.body)mount();else document.addEventListener("DOMContentLoaded",mount);
+ const TR=s=>window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR(s):s;
+ let on=null;
+ function pts(svg){
+  if(svg.__ctSrc!==svg.getAttribute("data-ct")){svg.__ctSrc=svg.getAttribute("data-ct");try{svg.__ct=JSON.parse(svg.__ctSrc)||[]}catch{svg.__ct=[]}}
+  return svg.__ct;
+ }
+ function hide(){if(!on)return;on=null;tip.hidden=line.hidden=dot.hidden=true}
+ function show(svg,cx,cy){
+  const P=pts(svg),M=svg.getScreenCTM();if(!P.length||!M)return hide();
+  const p=svg.createSVGPoint();p.x=cx;p.y=cy;const q=p.matrixTransform(M.inverse());
+  let best=P[0];for(const a of P)if(Math.abs(a[0]-q.x)<Math.abs(best[0]-q.x))best=a;
+  const at=(x,y)=>{const s=svg.createSVGPoint();s.x=x;s.y=y;return s.matrixTransform(M)};
+  const r=svg.getBoundingClientRect(),c=at(best[0],best[1]);
+  on=svg;
+  line.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
+  dot.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+c.y.toFixed(1)+"px";
+  tip.innerHTML=String(best[2]||"").split("\n").map((t,i)=>(i?"<span>":"<b>")+TR(t).replace(/[&<>]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[ch]))+(i?"</span>":"</b>")).join("");
+  line.hidden=dot.hidden=tip.hidden=false;
+  const w=tip.offsetWidth,h=tip.offsetHeight,vw=document.documentElement.clientWidth;
+  let x=c.x+12,y=c.y-h-10;if(x+w>vw-6)x=c.x-w-12;if(x<6)x=6;if(y<6)y=c.y+12;
+  tip.style.left=x.toFixed(0)+"px";tip.style.top=y.toFixed(0)+"px";
+ }
+ document.addEventListener("pointermove",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY);else hide()},{passive:true});
+ document.addEventListener("pointerdown",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY)},{passive:true});
+ window.addEventListener("scroll",hide,{passive:true});window.addEventListener("hashchange",hide);
+ // 차트 그리는 쪽이 쓰는 도우미: 점 목록 → data-ct 속성 문자열
+ window.__ct=list=>' data-ct="'+JSON.stringify(list.map(a=>[+(+a[0]).toFixed(1),+(+a[1]).toFixed(1),String(a[2])])).replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'"';
+})();
+
+</script>
+<script>
 /* Frontline data layer for the artifact.
    Replaces the old Worker API (/api/*) with files published next to the page,
    and takes the briefing and country situation summaries from the artifact's
@@ -2911,7 +2963,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const krLayer=showKr?'<path class="trend-line trend-line--kr" d="'+line(kr)+'"/><g class="trend-points trend-points--kr">'+kr.map(p=>'<circle cx="'+px(p.year).toFixed(1)+'" cy="'+py(p.value).toFixed(1)+'" r="2.2"><title>한국 '+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>').join("")+'</g><text class="trend-kr-end" x="'+(px(kr.at(-1).year)+4).toFixed(1)+'" y="'+(py(kr.at(-1).value)+(kr.at(-1).value>=series.at(-1).value?-14:22)).toFixed(1)+'" text-anchor="end">한국 '+esc(metricValue(key,kr.at(-1).value))+'</text>':"";
   const legend=showKr?'<span class="trend-legend"><i class="trend-key"></i>'+esc(name||"이 나라")+' <i class="trend-key trend-key--kr"></i>한국</span>':"";
   const band=regimeBand(state.activeCode,years,px,B+24);
-  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>':"");
+  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart"'+(window.__ct?window.__ct(series.map(p=>{const kk=showKr&&kr.find(q=>q.year===p.year);return [px(p.year),py(p.value),p.year+"년\n"+(name||"이 나라")+" "+metricValue(key,p.value)+(kk?"\n한국 "+metricValue(key,kk.value):"")]})):"")+' viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>':"");
  }
  function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
   const valid=item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.year;
@@ -3117,6 +3169,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const W=360,H=70,pad=10,x=i=>pad+i*(W-2*pad)/Math.max(1,yrs.length-1),y=v=>H-pad-v*(H-2*pad);
   const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
   let spark=yrs.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(yrs[0]+"–"+yrs.at(-1)+" 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:'+band[1]+'"/>'+[0,pts.length-1].map(i=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(pts[i]).toFixed(1)+'" r="2.6" style="fill:'+band[1]+'"/><text x="'+x(i).toFixed(1)+'" y="'+(y(pts[i])-6).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+f2(pts[i])+'</text>').join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+yrs[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+yrs.at(-1)+'</text></svg>':"";
+  spark=chartAx(spark,yrs.map((yr,i)=>[x(i),y(pts[i]),yr+"년\n"+namedCountry(data.code)+" "+f2(pts[i])+(k&&kv[i]!=null?"\n한국 "+f2(kv[i]):"")]),[[0,y(1)+3,"1"],[0,y(.5)+3,"0.5"],[0,y(0)-2,"0"]]);
   spark=addBand(spark,yrs,x,H+16);
   const prev=e.history?.[String(Number(e.year)-1)],delta=prev!=null?Math.round((s-prev)*100)/100:null;
   const scale='<div class="cpi-scale"><span class="cpi-track"></span>'+(k?'<i class="cpi-k" style="left:'+(k.score*100)+'%"><b>한국 '+f2(k.score)+'</b></i>':"")+'<i class="cpi-me" style="left:'+(s*100)+'%;background:'+band[1]+'"></i><span class="cpi-ends"><em>0 공정 선거 없음</em><em>1 자유·공정</em></span></div>';
@@ -3138,6 +3191,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
   const kv=k?yrs.map(y2=>k.history?.[y2]??null):[];
   let spark=yrs.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(yrs[0]+"–"+yrs.at(-1)+" 점수 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:'+band[1]+'"/>'+pts.map((v,i)=>'<circle cx="'+x(i).toFixed(1)+'" cy="'+y(v).toFixed(1)+'" r="2.6" style="fill:'+band[1]+'"/>'+((i===0||i===pts.length-1)?'<text x="'+x(i).toFixed(1)+'" y="'+(y(v)-6).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+v+'</text>':"")).join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+yrs[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+yrs.at(-1)+'</text></svg>':"";
+  spark=chartAx(spark,yrs.map((yr,i)=>[x(i),y(pts[i]),yr+"년\n"+namedCountry(data.code)+" "+pts[i]+"점"+(k&&kv[i]!=null?"\n한국 "+kv[i]+"점":"")]),[[0,y(Math.ceil(max-4))+3,String(Math.ceil(max-4))],[0,y(Math.floor(min+4))-2,String(Math.floor(min+4))]]);
   spark=addBand(spark,yrs,x,H+16);
   const prev=e.history?.[String(Number(yrs.at(-1))-1)],delta=prev!=null?e.score-prev:null;
   const scale='<div class="cpi-scale"><span class="cpi-track"></span>'+(k?'<i class="cpi-k" style="left:'+k.score+'%" title="한국 '+k.score+'"><b>한국 '+k.score+'</b></i>':"")+'<i class="cpi-me" style="left:'+e.score+'%;background:'+band[1]+'"></i><span class="cpi-ends"><em>0 부패 심각</em><em>100 매우 청렴</em></span></div>';
@@ -3836,6 +3890,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const x=i=>pad+i*(W-2*pad)/Math.max(1,ys.length-1),y=v=>H-pad-(v-mn)/(mx-mn||1)*(H-2*pad);
   const line=vals=>vals.map((v,i)=>v==null?"":(i&&vals[i-1]!=null?"L":"M")+x(i).toFixed(1)+" "+y(v).toFixed(1)).join(" ");
   let spark=ys.length>1?'<svg class="cpi-spark" viewBox="0 0 '+W+' '+(H+14)+'" role="img" aria-label="'+esc(ys[0]+"–"+ys.at(-1)+" 추이")+'">'+(k?'<path d="'+line(kv)+'" class="cpi-kline"/>':"")+'<path d="'+line(pts)+'" class="cpi-line" style="stroke:#2b6cb0"/>'+[0,pts.length-1].map(i=>'<text x="'+x(i).toFixed(1)+'" y="'+(y(pts[i])-5).toFixed(1)+'" text-anchor="'+(i?"end":"start")+'">'+number(pts[i],1)+'%</text>').join("")+'<text x="'+pad+'" y="'+(H+12)+'" class="cpi-yr">'+ys[0]+'</text><text x="'+(W-pad)+'" y="'+(H+12)+'" text-anchor="end" class="cpi-yr">'+ys.at(-1)+'</text></svg>':"";
+  spark=chartAx(spark,ys.map((yr,i)=>[x(i),y(pts[i]),yr+"년\nGDP 대비 세수 "+number(pts[i],1)+"%"+(k&&kv[i]!=null?"\n한국 "+number(kv[i],1)+"%":"")]),[[0,y(mx-2)+3,number(mx-2,0)+"%"],[0,y(mn+2)-2,number(mn+2,0)+"%"]]);
   spark=addBand(spark,ys,x,H+16);
   const kc=(v,kvv,fmt)=>kvv!=null?'<small>한국 '+fmt(kvv)+'</small>':"";
   const usd=v=>'US$'+number(v,0);
@@ -3845,6 +3900,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<p class="cpi-note">1인당 세금을 1인당 GDP로 나눈 값은 GDP 대비 세수와 같습니다. 그래서 금액(나라마다 소득·물가가 달라 그대로 비교하기 어려움)과 비율(소득 수준을 걸러낸 ‘부담의 무게’)을 함께 보여줍니다. 국제 비교 자료는 GDP 기준이 표준이라 국민소득(GNI) 대신 GDP를 씁니다. 사회보험료(연금·건강보험)를 포함한 정부 전체 기준이라 위 ‘중앙정부 세입’과 다릅니다. 석유·광물 같은 자원 수입은 잘 잡히지 않아 산유국은 낮게 나옵니다. 1인당 금액은 판도가 ‘GDP 대비 세수 비율 × 1인당 GDP’(세계은행, 같은 해 미 달러)로 계산했습니다. '+sourceLink(meta.source,"UNU-WIDER 정부수입 데이터셋(Our World in Data)")+'</p></section>';
  }
 
+ // 차트 공통: <svg>에 마우스 설명(data-ct, charttip.js)과 세로축 눈금 글자를 붙인다
+ function chartAx(svg,ct,ticks){if(!svg)return svg;let o=svg.replace("<svg ","<svg"+(window.__ct?window.__ct(ct):"")+" ");if(ticks&&ticks.length){const i=o.lastIndexOf("</svg>");o=o.slice(0,i)+ticks.map(t=>'<text class="ax-y" x="'+(+t[0]).toFixed(1)+'" y="'+(+t[1]).toFixed(1)+'">'+esc(t[2])+'</text>').join("")+o.slice(i)}return o}
  // 일자리·임금·인구 이동(data/labor.json): 경제 탭. 국제 비교 시계열 + 그 나라 통계청 최신값(national).
  function laborChart(main,kor,fmt,opt={}){
   const a=(main||[]).filter(p=>p[1]!=null),b=(kor||[]).filter(p=>p[1]!=null);if(a.length<2)return "";
@@ -3860,7 +3917,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const yrs=[...new Set([y0,y1,...(opt.marks||[])])].map(y=>'<text x="'+X(y).toFixed(1)+'" y="'+(H-6)+'" text-anchor="'+(y===y0?"start":y===y1?"end":"middle")+'" class="lab-yr">'+y+'</text>').join("");
   const kEnd=b.length&&Math.abs(Y(b.at(-1)[1])-Y(a.at(-1)[1]))<11?((Y(b.at(-1)[1])<Y(a.at(-1)[1]))?-6:6):0;
   const RY=[];for(let yy=y0;yy<=y1;yy++)RY.push(yy);
-  return addBand('<svg class="lab-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opt.label||"추이")+'">'+grid+cross+(b.length?'<path d="'+path(b)+'" class="lab-k"/>'+dots(b,"lab-kd"):"")+'<path d="'+path(a)+'" class="lab-m"/>'+dots(a,"lab-md")+end(a,"lab-end",opt.name||"")+(b.length?'<g transform="translate(0 '+kEnd+')">'+end(b,"lab-end lab-end-k","한국")+'</g>':"")+yrs+'</svg>',RY,i=>X(RY[i]),H+2);
+  const kb2=new Map(b);
+  const ctL=a.map(p=>[X(p[0]),Y(p[1]),p[0]+"년\n"+(opt.name||"")+" "+fmt(p[1])+(kb2.has(p[0])?"\n한국 "+fmt(kb2.get(p[0])):"")]);
+  const tkL=[0,.5,1].map(t=>{const v=lo+(hi-lo)*t;return [L+2,Y(v)-3,fmt(v)]});
+  return addBand(chartAx('<svg class="lab-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opt.label||"추이")+'">'+grid+cross+(b.length?'<path d="'+path(b)+'" class="lab-k"/>'+dots(b,"lab-kd"):"")+'<path d="'+path(a)+'" class="lab-m"/>'+dots(a,"lab-md")+end(a,"lab-end",opt.name||"")+(b.length?'<g transform="translate(0 '+kEnd+')">'+end(b,"lab-end lab-end-k","한국")+'</g>':"")+yrs+'</svg>',ctL,tkL),RY,i=>X(RY[i]),H+2);
  }
  // 산업 구조와 교역(data/trade.json: 세계은행 WDI 부가가치·수출입 + 유엔 컴트레이드 HS 2단위 상품 교역·상대국)
  const TRC=["#c72a34","#123f5b","#75b6d5","#eeac69","#608e91","#a38db8","#8cb68d","#9a6e64","#d9a961","#527eae","#c4d7df","#e48aa0","#7d8f3a","#b0b8bd"];
@@ -4705,7 +4765,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   host.innerHTML='<div class="en-head"><div><span class="en-k">ENERGY MAP / 에너지 지도</span><h4>원유는 어디서 와서, 누가 얼마에 사나</h4>'+
    '<p>각국 세관·통계청이 공개한 원산지별 수입과 값, 시민이 내는 기름값, 물가에 닿는 정도. 나라를 누르면 그 나라로 오는 바닷길이 진해집니다.</p></div>'+
    '<span class="en-asof">'+(E.data.updatedAt?'자료 합친 시각 '+esc(E.data.updatedAt.slice(5,16).replace("T"," ")):'')+'</span></div>'+
-   '<div class="en-chips" role="tablist" aria-label="나라"><span class="en-chg">사는 나라</span>'+have.map(chip).join("")+(hx.length?'<span class="en-chg">파는 나라</span>'+hx.map(chip).join(""):'')+'</div>'+
+   '<div class="en-chips" role="tablist" aria-label="나라"><div class="en-chrow"><span class="en-chg">사는 나라</span><div class="en-chlist">'+have.map(chip).join("")+'</div></div>'+(hx.length?'<div class="en-chrow"><span class="en-chg">파는 나라</span><div class="en-chlist">'+hx.map(chip).join("")+'</div></div>':'')+'</div>'+
    '<div class="en-grid"><figure class="en-mapbox"><div class="en-mapcap" id="en-mapcap"></div><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-legimp"></i>누르면 고를 수 있는 나라</span><span><i class="en-legorig"></i>원산지(파는 나라를 고르면 사는 나라)</span><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div><div class="en-route en-sat" id="en-sat" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
    '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["others","다른 나라 경로도 흐리게"],["fires","위성 화재 감지"],["ships","유조선 위치(AIS)"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
@@ -5078,22 +5138,41 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
 
  /* ---------- charts ---------- */
+ // 가로축 날짜는 어느 차트에서나 같은 형식: 2026.10 / 2026.10.23
+ const xlab=x=>{const m=String(x).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);return m?m[1]+"."+m[2]+(m[3]?"."+m[3]:""):esc(x)};
  function lineChart(sets,opt){
   sets=sets.filter(s=>s.pts&&s.pts.length>1);if(!sets.length)return "";
-  const W2=opt.w||420,H=opt.h||140,pl=38,pr=8,pt=10,pb=20;
+  const W2=opt.w||420,H=opt.h||140,pl=40,pr=10,pt=opt.unit?16:10,pb=20;
   const xs=[...new Set(sets.flatMap(s=>s.pts.map(p=>p[0])))].sort();const xi=x=>xs.indexOf(x);
   const vals=sets.flatMap(s=>s.pts.map(p=>p[1]));let mn=Math.min(...vals),mx=Math.max(...vals);if(opt.zero)mn=Math.min(0,mn);if(mx===mn){mx+=1;mn-=1}
+  // 눈금은 딱 떨어지는 값(1·2·2.5·5×10ⁿ 간격)으로
+  const raw=(mx-mn)/3,mag=Math.pow(10,Math.floor(Math.log10(raw))),step=[1,2,2.5,5,10].map(k=>k*mag).find(v=>v>=raw)||10*mag;
+  mn=Math.floor(mn/step+1e-9)*step;mx=Math.ceil(mx/step-1e-9)*step;if(mx===mn)mx=mn+step;
+  const tks=[];for(let v=mn;v<=mx+step/2;v+=step)tks.push(+v.toFixed(10));
+  const tdec=Math.min(4,(String(+step.toPrecision(6)).split(".")[1]||"").length);
   const X=i=>pl+(W2-pl-pr)*(xs.length>1?i/(xs.length-1):0),Y=v=>pt+(H-pt-pb)*(1-(v-mn)/(mx-mn));
-  let s='<svg class="en-chart" viewBox="0 0 '+W2+' '+H+'" role="img" aria-label="'+esc(opt.label||"")+'">';
-  for(const t of [mn,(mn+mx)/2,mx])s+='<line class="g" x1="'+pl+'" x2="'+(W2-pr)+'" y1="'+Y(t).toFixed(1)+'" y2="'+Y(t).toFixed(1)+'"/><text class="ax" x="'+(pl-4)+'" y="'+(Y(t)+3).toFixed(1)+'" text-anchor="end">'+num(t,opt.dec??0)+'</text>';
+  const dec=opt.dec??0,u=opt.unit?" "+opt.unit:"";
+  let s='<svg class="en-chart" viewBox="0 0 '+W2+' '+H+'" role="img" aria-label="'+esc(opt.label||"")+'"__CT__>';
+  if(opt.unit)s+='<text class="ax un" x="'+(pl-4)+'" y="8" text-anchor="end">'+esc(opt.unit)+'</text>';
+  for(const t of tks)s+='<line class="g" x1="'+pl+'" x2="'+(W2-pr)+'" y1="'+Y(t).toFixed(1)+'" y2="'+Y(t).toFixed(1)+'"/><text class="ax" x="'+(pl-4)+'" y="'+(Y(t)+3).toFixed(1)+'" text-anchor="end">'+num(t,tdec)+'</text>';
   if(opt.zero&&mn<0)s+='<line class="z" x1="'+pl+'" x2="'+(W2-pr)+'" y1="'+Y(0).toFixed(1)+'" y2="'+Y(0).toFixed(1)+'"/>';
   (opt.marks||[]).forEach(m=>{const i=xs.findIndex(x=>x>=m[0]);if(i<0)return;s+='<line class="mk" x1="'+X(i).toFixed(1)+'" x2="'+X(i).toFixed(1)+'" y1="'+pt+'" y2="'+(H-pb)+'"/><text class="mkt" x="'+(X(i)+3).toFixed(1)+'" y="'+(pt+8)+'">'+esc(m[1])+'</text>'});
-  sets.forEach((st,k)=>{if(st.bars){const bw=Math.max(2,(W2-pl-pr)/xs.length*0.6);st.pts.forEach(p=>{const x=X(xi(p[0])),y=Y(Math.max(0,p[1])),y2=Y(Math.min(0,p[1]));s+='<rect class="bar'+(p[1]<0?' neg':'')+'" x="'+(x-bw/2).toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(.5,y2-y).toFixed(1)+'"><title>'+esc(p[0]+' '+num(p[1],opt.dec??1)+(opt.unit?" "+opt.unit:""))+'</title></rect>'})}
+  sets.forEach((st,k)=>{if(st.bars){const bw=Math.max(2,(W2-pl-pr)/xs.length*0.6);st.pts.forEach(p=>{const x=X(xi(p[0])),y=Y(Math.max(0,p[1])),y2=Y(Math.min(0,p[1]));s+='<rect class="bar'+(p[1]<0?' neg':'')+'" x="'+(x-bw/2).toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(.5,y2-y).toFixed(1)+'"></rect>'})}
+   else if(st.step){let d="";st.pts.forEach((p,i)=>{const x=X(xi(p[0])).toFixed(1),y=Y(p[1]).toFixed(1);d+=i?"H"+x+"V"+y:"M"+x+","+y});d+="H"+(W2-pr);s+='<path class="ln st c'+k+'" d="'+d+'"/>'}
    else s+='<polyline class="ln c'+k+'" points="'+st.pts.map(p=>X(xi(p[0])).toFixed(1)+","+Y(p[1]).toFixed(1)).join(" ")+'"/>'});
-  s+='<text class="ax" x="'+pl+'" y="'+(H-5)+'">'+ym(xs[0])+'</text><text class="ax" x="'+(W2-pr)+'" y="'+(H-5)+'" text-anchor="end">'+ym(xs[xs.length-1])+'</text></svg>';
+  // 가로축: 처음·가운데·끝 시기
+  const xl=[0,xs.length>4?Math.round((xs.length-1)/2):-1,xs.length-1].filter((v,i,a)=>v>=0&&a.indexOf(v)===i);
+  xl.forEach((i,j)=>{s+='<text class="ax" x="'+X(i).toFixed(1)+'" y="'+(H-5)+'" text-anchor="'+(j===0?"start":i===xs.length-1?"end":"middle")+'">'+xlab(xs[i])+'</text>'});
+  s+='</svg>';
+  // 마우스를 올리면: 시기 + 시리즈별 값
+  const full=x=>{const m=String(x).match(/^(\d{4})-(\d{2})(?:-(\d{2}))?$/);return m?(m[3]?m[1]+"년 "+(+m[2])+"월 "+(+m[3])+"일":m[1]+"년 "+(+m[2])+"월"):String(x)};
+  const ct=xs.map((x,i)=>{const vs=sets.map(st=>{const p=st.pts.find(q=>q[0]===x);return p?[st,p[1]]:null}).filter(Boolean);if(!vs.length)return null;
+   return [X(i),Y(vs[0][1]),full(x)+"\n"+vs.map(([st,v])=>(sets.length>1?st.name+" ":"")+num(v,Math.max(dec,Math.abs(v)<10?2:dec))+u).join("\n")]}).filter(Boolean);
+  s=s.replace("__CT__",window.__ct?window.__ct(ct):"");
   const leg=sets.length>1||opt.legend?'<div class="en-leg">'+sets.map((st,k)=>'<span><i class="'+(st.bars?'bar':'c'+k)+'"></i>'+esc(st.name)+'</span>').join("")+'</div>':"";
   return s+leg;
  }
+
 
  /* ---------- country card ---------- */
  function card(){
@@ -5174,7 +5253,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  /* ---------- crude prices: grades, origin × buyer, daily benchmarks, world ---------- */
  function prices(){
   const box=document.getElementById("en-prices");if(!box)return;const g=E.data.global||{};
-  const grades=(g.grades||[]).map(x=>'<tr><th>'+esc(x.name)+'<small>'+esc(x.quality||"")+'</small></th><td>'+(x.price&&x.price.value!=null?num(x.price.value,1):'–')+'<small>'+esc(x.price&&x.price.date||"")+'</small></td><td class="'+(x.diffToBrent&&x.diffToBrent.value<0?'dn':'up')+'">'+(x.diffToBrent&&x.diffToBrent.value!=null?(x.diffToBrent.value>0?'+':'')+num(x.diffToBrent.value,1):'–')+'</td><td>'+esc(x.buyers||"")+'</td><td class="sp">'+spark(x.series)+'</td><td>'+srcLinks(x.src)+'</td></tr>').join("");
+  const grades=(g.grades||[]).map(x=>'<tr><th>'+esc(x.name)+'<small>'+esc(x.quality||"")+'</small></th><td>'+(x.price&&x.price.value!=null?num(x.price.value,1):'–')+'<small>'+esc(x.price&&x.price.date||"")+'</small></td><td class="'+(x.diffToBrent&&x.diffToBrent.value<0?'dn':'up')+'">'+(x.diffToBrent&&x.diffToBrent.value!=null?(x.diffToBrent.value>0?'+':'')+num(x.diffToBrent.value,1):'–')+'</td><td>'+esc(x.buyers||"")+'</td><td class="sp">'+spark(x.series,"달러/배럴")+'</td><td>'+srcLinks(x.src)+'</td></tr>').join("");
   const M=g.matrix||[],origins=[...new Set(M.map(m=>m.origin))],buyers=ORDER.concat(["EU"]).filter(b=>M.some(m=>m.buyer===b));
   const vals=M.map(m=>m.price&&m.price.value).filter(v=>v!=null),mn=Math.min(...vals),mx=Math.max(...vals);
   const cell=(o,b)=>{const m=M.find(x=>x.origin===o&&x.buyer===b);if(!m||!m.price||m.price.value==null)return '<td class="na">·</td>';const t=(m.price.value-mn)/((mx-mn)||1);
@@ -5193,7 +5272,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    (matrix?'<div class="en-sec"><h5>누가, 누구 원유를, 얼마에 들여오나</h5>'+matrix+shadow+'</div>':'')+
    '<div class="en-sec"><h5>세계 원유 수급</h5>'+world+'</div>';
  }
- function spark(s){if(!s||s.length<2)return "";const v=s.map(p=>p[1]),mn=Math.min(...v),mx=Math.max(...v),r=mx-mn||1;return '<svg viewBox="0 0 80 22" class="en-spark"><polyline points="'+v.map((x,i)=>(i/(v.length-1)*80).toFixed(1)+","+(20-(x-mn)/r*18).toFixed(1)).join(" ")+'"/></svg>'}
+ function spark(s,unit){if(!s||s.length<2)return "";const v=s.map(p=>p[1]),mn=Math.min(...v),mx=Math.max(...v),r=mx-mn||1,X=i=>i/(v.length-1)*80,Yv=x=>20-(x-mn)/r*18;return '<svg viewBox="0 0 80 22" class="en-spark"'+(window.__ct?window.__ct(s.map((p,i)=>[X(i),Yv(p[1]),p[0]+"\n"+num(p[1],2)+(unit?" "+unit:"")])):"")+'><polyline points="'+v.map((x,i)=>X(i).toFixed(1)+","+Yv(x).toFixed(1)).join(" ")+'"/></svg>'}
 
  /* ---------- interaction ---------- */
  document.addEventListener("change",e=>{const t=e.target.closest&&e.target.closest("[data-en-layer]");if(!t)return;E.layers[t.dataset.enLayer]=t.checked;loadLiveLayers();drawMap()});
@@ -5440,7 +5519,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    return '<details class="rp-path lv-'+lv+'"'+(i===0?' open':'')+'><summary><span class="rp-pathlv">'+esc(LV[lv])+'</span><span class="rp-chain">'+chain+'</span></summary><ol>'+hops+'</ol></details>';
   }).join("");
   box.innerHTML='<div class="rp-dk">'+esc(S.data.cols[n.col])+' · <b class="rp-lvbadge lv-'+n.level+'">'+esc(LV[n.level])+'</b></div>'+
-   '<h4>'+esc(n.label)+'</h4><p class="rp-dsub">'+esc(n.sub||"")+'</p><p class="rp-now">'+esc(n.now)+'</p>'+facts+live+
+   '<h4>'+esc(n.label)+'</h4><p class="rp-dsub">'+esc(n.sub||"")+'</p><p class="rp-now">'+esc(n.now)+'</p>'+facts+(n.chart&&!(n.live&&n.live.kind==="portwatch")&&!(n.live&&n.live.kind==="fx"&&/^fx/.test(n.chart.auto||""))?nodeChart(n):'')+live+
    (ptxt?'<div class="rp-paths"><h5>'+(n.col===3?'이곳까지 오는 경로':n.col===0?'여기서 번지는 경로':'이 지점을 지나는 경로')+'</h5>'+ptxt+'</div>':'')+
    (n.src.length?srcBlock(n.src):'');
  }
@@ -5551,7 +5630,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    const r7=win(0),y7=win(364);if(!r7.length)continue;
    const avg=(v,f)=>v.reduce((s,x)=>s+x[f],0)/v.length;
    const recent=avg(r7,"n_total"),tank=avg(r7,"n_tanker"),base=y7.length?avg(y7,"n_total"):null;
-   const series=dates.filter(d=>d>=daysAgo(75)).map(d=>m[d].n_total);
+   const series=dates.filter(d=>d>=daysAgo(75)).map(d=>[d,m[d].n_total]);
    res[id]={last,recent,tank,base,change:base?(recent/base-1)*100:null,series};
   }
   return res;
@@ -5571,7 +5650,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const dates=Object.keys(j.rates||{}).sort();if(!dates.length)throw Error("fx");
   const res={};
   for(const s of ["KRW","CNY"]){
-   const ser=dates.map(d=>j.rates[d][s]),last=dates[dates.length-1],v=ser[ser.length-1];
+   const ser=dates.map(d=>[d,j.rates[d][s]]),last=dates[dates.length-1],v=ser[ser.length-1][1];
    const ref=new Date(last+"T00:00:00Z");ref.setUTCDate(ref.getUTCDate()-30);const refD=dates.filter(d=>d<=iso(ref)).pop()||dates[0];
    res[s]={last,v,change:(v/j.rates[refD][s]-1)*100,series:ser};
   }
@@ -5606,23 +5685,36 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    return "최근 30일 관보 "+x.length+"건"}
   return "";
  }
- function spark(series,cls){
+ // 추이 차트(축·마우스 설명 포함). series = [[날짜, 값], …]
+ function spark(series,cls,unit,dec){
   if(!series||series.length<2)return "";
-  const W=220,H=44,mn=Math.min(...series),mx=Math.max(...series),r=mx-mn||1;
-  const pts=series.map((v,i)=>(i/(series.length-1)*W).toFixed(1)+","+(H-3-(v-mn)/r*(H-6)).toFixed(1)).join(" ");
-  return '<svg class="rp-spark '+(cls||"")+'" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="none" aria-hidden="true"><polyline points="'+pts+'"/></svg>';
+  const R=window.__pandoRes;if(!R||!R.lineChart)return "";
+  return '<div class="rp-spark '+(cls||"")+'">'+R.lineChart([{name:"",pts:series}],{w:420,h:130,unit:unit||"",dec:dec??0})+'</div>';
  }
+ // 노드 차트: 조사한 시계열(+자동 자료가 있으면 그 뒤에 이어 붙임)
+ function nodeChart(n,liveSer){
+  const c=n.chart;if(!c)return "";
+  const R=window.__pandoRes;
+  if(c.kind==="timeline"||!(c.series||[]).length)return (c.events||[]).length?'<div class="rp-chart"><h5>'+esc(c.title||"")+'</h5><ol class="rp-tl">'+c.events.map(e=>'<li><time>'+esc(e[0])+'</time><span>'+esc(e[1])+'</span></li>').join("")+'</ol>'+(c.note?'<p class="rp-dsrc">'+esc(c.note)+'</p>':'')+(c.src&&c.src.length?'<p class="rp-dsrc">'+srcLinks(c.src)+'</p>':'')+'</div>':"";
+  let sets=c.series.map(x=>({name:x.name||"",pts:(x.points||[]).slice(),bars:c.kind==="bar",step:c.kind==="step"}));
+  if(liveSer&&liveSer.length&&sets.length===1){const lastD=sets[0].pts.length?sets[0].pts[sets[0].pts.length-1][0]:"";const add=liveSer.filter(p=>p[0]>lastD);if(add.length&&String(lastD).length===String(add[0][0]).length)sets[0].pts=sets[0].pts.concat(add)}
+  const vals=sets.flatMap(x=>x.pts.map(p=>p[1])),dec=vals.some(v=>Math.abs(v)<10&&v%1)?2:vals.some(v=>v%1)?1:0;
+  const svg=R&&R.lineChart?R.lineChart(sets,{w:420,h:150,unit:c.unit||"",dec,marks:c.marks||[],legend:sets.length>1,zero:c.kind==="bar"}):"";
+  if(!svg)return "";
+  return '<div class="rp-chart"><h5>'+esc(c.title||"추이")+'</h5>'+svg+'<p class="rp-dsrc">'+(c.note?esc(c.note)+' · ':'')+srcLinks(c.src||[])+'</p></div>';
+ }
+
  const KIND={"Rule":"규정","Proposed Rule":"규정안","Notice":"공고","Presidential Document":"대통령 문서"};
  function liveDetail(n){
   const L=n.live,lv=liveLevel(n);
   const flag=lv!=null&&lv>n.level?'<p class="rp-alert">실시간 수치는 지금 판정보다 한 단계 높은 <b>'+esc(LV[lv])+'</b> 수준입니다. 다음 갱신 때 다시 확인합니다.</p>':'';
   if(L.kind==="portwatch"){const x=S.live.pw?.[L.id];
    if(!x)return '<h5>실시간 · '+esc(L.name)+' 통항</h5><p class="rp-none">'+(S.live.pw===false?'IMF PortWatch에 연결하지 못했습니다.':'IMF PortWatch에서 받는 중…')+'</p>';
-   return '<h5>실시간 · '+esc(L.name)+' 하루 통항(최근 7일 평균)</h5><div class="rp-gauge"><b>'+num(x.recent,0)+'척</b><span>유조선 '+num(x.tank,0)+'척</span>'+(x.base!=null?'<span>작년 같은 때 '+num(x.base,0)+'척 · <strong class="'+(x.change<0?'dn':'up')+'">'+pct(x.change)+'</strong></span>':'')+'</div>'+spark(x.series)+
+   return '<h5>실시간 · '+esc(L.name)+' 하루 통항(최근 7일 평균)</h5><div class="rp-gauge"><b>'+num(x.recent,0)+'척</b><span>유조선 '+num(x.tank,0)+'척</span>'+(x.base!=null?'<span>작년 같은 때 '+num(x.base,0)+'척 · <strong class="'+(x.change<0?'dn':'up')+'">'+pct(x.change)+'</strong></span>':'')+'</div>'+(n.chart?nodeChart(n,x.series):spark(x.series,"","척"))+
     '<p class="rp-dsrc">최근 75일 · '+md(x.last)+' 자료까지(위성 선박 신호 집계, 며칠 늦게 나옴) · <a href="https://portwatch.imf.org/pages/chokepoints" target="_blank" rel="noopener noreferrer">IMF PortWatch</a></p>'+flag}
   if(L.kind==="fx"){const x=S.live.fx?.[L.id];
    if(!x)return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-none">'+(S.live.fx===false?'환율 자료에 연결하지 못했습니다.':'환율 받는 중…')+'</p>';
-   return '<h5>실시간 · '+esc(L.name)+' 기준환율</h5><div class="rp-gauge"><b>'+(L.id==="KRW"?num(x.v,1)+'원':num(x.v,4)+'위안')+'</b><span>1달러당 · '+md(x.last)+'</span><span>30일 새 <strong class="'+(x.change>0?'up':'dn')+'">'+pct(x.change)+'</strong></span></div>'+spark(x.series)+
+   return '<h5>실시간 · '+esc(L.name)+' 기준환율</h5><div class="rp-gauge"><b>'+(L.id==="KRW"?num(x.v,1)+'원':num(x.v,4)+'위안')+'</b><span>1달러당 · '+md(x.last)+'</span><span>30일 새 <strong class="'+(x.change>0?'up':'dn')+'">'+pct(x.change)+'</strong></span></div>'+(n.chart&&/^fx/.test(n.chart.auto||"")?nodeChart(n,x.series):spark(x.series,"",L.id==="KRW"?"원":"위안",L.id==="KRW"?1:4))+
     '<p class="rp-dsrc">유럽중앙은행 기준환율(영업일 오후 4시 CET) · <a href="https://www.frankfurter.app" target="_blank" rel="noopener noreferrer">Frankfurter</a></p>'+flag}
   if(L.kind==="fedreg"){const x=S.live.fed?.[L.id];
    if(!x)return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-none">'+(S.live.fed===false?'미 연방관보에 연결하지 못했습니다.':'미 연방관보에서 받는 중…')+'</p>';
