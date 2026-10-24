@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="929dbe22f5";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="9c066c9766";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1589,9 +1589,14 @@ html,body{background:#fff;color:var(--ink)}
  .rp-board{padding:16px 13px}.rp-head{grid-template-columns:1fr;gap:10px}.rp-stamp{flex-direction:row;flex-wrap:wrap;align-items:center;gap:8px}.rp-head h3{font-size:22px}
  .rp-flow{grid-template-columns:1fr;gap:26px}
  .rp-stack{flex-direction:row;flex-wrap:wrap;gap:7px}
- .rp-node{flex:1 1 calc(50% - 7px);min-height:0}
+ .rp-node{flex:1 1 100%;min-height:0}
+ .rp-wires{display:none}
+ .rp-nout{display:flex;flex-wrap:wrap;gap:3px 4px;align-items:center;margin-top:6px;font-size:11px;color:#5b6d78;font-weight:700}
+ .rp-nout i{font-style:normal;border:1px solid #d3dce2;border-left:3px solid #9aa9b3;border-radius:2px;padding:1px 6px;background:#fff;color:#1d2630}
+ .rp-nout i.lv-1{border-left-color:#d9a40d}.rp-nout i.lv-2{border-left-color:#e2622a}.rp-nout i.lv-3{border-left-color:#c41230}
  .rp-fed li{grid-template-columns:34px 1fr}.rp-fed li span{display:none}
 }
+@media(min-width:721px){.rp-nout{display:none}}
 /* Masthead: one more menu item ("파급경로") — wrap the nav onto its own row on mid-width screens
    instead of squeezing buttons into vertical text. */
 .mastnav .feedback-link,.mastnav .guide-link{white-space:nowrap}
@@ -1836,6 +1841,8 @@ html,body{background:#fff;color:var(--ink)}
 .en-chart .mkt{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
 .en-chart .ln.gap{stroke-dasharray:2 3;stroke-width:1.2;opacity:.7}
 
+@media(max-width:600px){.en-mapcap{position:static;max-width:none;margin:0;padding:6px 8px;border-bottom:1px solid #d3dde3;background:#fff}.en-mapcap:empty{display:none}}
+
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
 .ask label{display:flex;align-items:baseline;gap:12px;margin-bottom:9px;flex-wrap:wrap}
@@ -1984,6 +1991,7 @@ html,body{background:#fff;color:var(--ink)}
 .ar-cos li span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ar-cos li b{white-space:nowrap}
 .ar-more>summary{cursor:pointer;font-size:12px;font-weight:800;color:#b51d2a;margin:8px 0 4px;list-style:none}.ar-more>summary::-webkit-details-marker{display:none}.ar-more>summary h5{display:inline;color:#1d2630}.ar-more>summary::after{content:' ▾';color:#b51d2a}.ar-more[open]>summary::after{content:' ▴'}
 .ar-sp b{margin-right:4px}
+@media(max-width:700px){.ar-grid .en-mapbox figcaption{font-size:11.5px;gap:4px 10px}.ar-head{font-size:15px}.ar-tools{font-size:13px}.ar-seg button{padding:7px 9px;font-size:12.5px}.en-chips .en-chlist .en-chip{min-width:0;flex:1 1 44%}}
 
 </style>
 <div class="shell">
@@ -2496,11 +2504,13 @@ html,body{background:#fff;color:var(--ink)}
  const TR=s=>window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR(s):s;
  const esc=s=>String(s).replace(/[&<>]/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[ch]));
  let on=null,drag=null,held=false;
+ const TOUCH=()=>matchMedia("(hover:none)").matches;   // 휴대폰: 올려두기가 없으니 보여준 뒤 시간이 지나면 스스로 지운다
+ let ttimer=0;const arm=ms=>{clearTimeout(ttimer);ttimer=setTimeout(()=>{ttimer=0;hide()},ms)};
  function pts(svg){
   if(svg.__ctSrc!==svg.getAttribute("data-ct")){svg.__ctSrc=svg.getAttribute("data-ct");try{svg.__ct=JSON.parse(svg.__ctSrc)||[]}catch{svg.__ct=[]}}
   return svg.__ct;
  }
- function hide(){if(!on&&!held)return;on=null;held=false;drag=null;tip.hidden=line.hidden=line2.hidden=dot.hidden=band.hidden=true}
+ function hide(){clearTimeout(ttimer);ttimer=0;if(!on&&!held)return;on=null;held=false;drag=null;tip.hidden=line.hidden=line2.hidden=dot.hidden=band.hidden=true}
  function near(svg,cx,cy){
   const P=pts(svg),M=svg.getScreenCTM();if(!P.length||!M)return -1;
   const p=svg.createSVGPoint();p.x=cx;p.y=cy;const q=p.matrixTransform(M.inverse());
@@ -2525,13 +2535,14 @@ html,body{background:#fff;color:var(--ink)}
   const P=pts(svg),i=near(svg,cx,cy);if(i<0)return hide();
   {const M=svg.getScreenCTM(),q=svg.createSVGPoint();q.x=cx;q.y=cy;const z=q.matrixTransform(M.inverse());const xs=P.map(a=>a[0]),gap=P.length>1?Math.abs(xs[xs.length-1]-xs[0])/(P.length-1)/2:20;
    if(z.x<Math.min(...xs)-gap||z.x>Math.max(...xs)+gap)return hide()}   // 축 글자·여백 위에서는 띄우지 않는다
-  if(on!==svg)svg.addEventListener("pointerleave",()=>{if(!drag&&!held)hide()},{once:true});   // 차트 밖으로 나가면 바로 지운다
+  if(on!==svg)svg.addEventListener("pointerleave",e=>{if(e.pointerType==="touch")return;if(!drag&&!held)hide()},{once:true});   // 차트 밖으로 나가면 바로 지운다(터치는 시간이 지나면 지움)
   on=svg;held=false;
   const r=svg.getBoundingClientRect(),c=at(svg,P[i]);
   line.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
   dot.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+c.y.toFixed(1)+"px";
   line.hidden=dot.hidden=false;line2.hidden=band.hidden=true;
   placeTop(lines(P[i][2]).map((t,k)=>(k?"<span>":"<b>")+esc(TR(t))+(k?"</span>":"</b>")).join("")+(P.length>2&&P[i][3]&&P[i][3].length?'<small>'+esc(TR("좌우로 끌면 기간 변화"))+'</small>':''),c);
+  if(TOUCH())arm(2500);
  }
  // 구간 변화: 처음 → 마지막, 차이, %
  const fmtN=v=>{const a=Math.abs(v);return v.toLocaleString("ko-KR",{maximumFractionDigits:a>=100?0:a>=10?1:2})};
@@ -2548,6 +2559,7 @@ html,body{background:#fff;color:var(--ink)}
    const ch=(pctUnit?(d>0?"+":"")+fmtN(d)+"%p":(d>0?"+":"")+fmtN(d))+(rel!=null&&isFinite(rel)?" ("+(rel>0?"+":"")+fmtN(rel)+"%)":"");
    return '<span>'+(va.length>1&&x[0]?esc(TR(x[0]))+" ":"")+esc(TR(String(x[2]||fmtN(x[1]))))+" → "+esc(TR(String(y[2]||fmtN(y[1]))))+' <em class="'+cls+'">'+esc(ch)+'</em></span>'}).join("");
   place('<b>'+esc(TR(lines(A[2])[0]))+" → "+esc(TR(lines(B[2])[0]))+'</b>'+(rows||'<span>'+esc(TR("두 시점에 같은 값이 없습니다"))+'</span>'),{x:cb.x,y:Math.min(ca.y,cb.y)});
+  if(TOUCH())arm(4000);
  }
  const svgAt=e=>e.target&&e.target.closest&&e.target.closest("svg[data-ct]");
  document.addEventListener("pointerdown",e=>{const svg=svgAt(e);
@@ -2557,6 +2569,8 @@ html,body{background:#fff;color:var(--ink)}
   drag={svg,i0:i,x0:e.clientX,y0:e.clientY,moved:false,id:e.pointerId};show(svg,e.clientX,e.clientY);
  },{passive:true,capture:true});
  document.addEventListener("pointermove",e=>{
+  if(e.pointerType==="touch"&&drag&&!drag.moved&&Math.abs(e.clientY-drag.y0)>8&&Math.abs(e.clientY-drag.y0)>=Math.abs(e.clientX-drag.x0)){hide();return}   // 손가락으로 페이지를 넘기는 중: 설명을 지우고 끝
+  if(e.pointerType==="touch"&&!drag)return;   // 손을 뗀 뒤 지나가는 터치 이동으로는 다시 띄우지 않는다
   if(drag&&e.pointerId===drag.id){
    if(!drag.moved&&Math.abs(e.clientX-drag.x0)>6&&Math.abs(e.clientX-drag.x0)>Math.abs(e.clientY-drag.y0)){drag.moved=true;try{drag.svg.setPointerCapture(e.pointerId)}catch{}}
    if(drag.moved){const i=near(drag.svg,e.clientX,e.clientY);if(i>=0)range(drag.svg,drag.i0,i);return}
@@ -2569,11 +2583,14 @@ html,body{background:#fff;color:var(--ink)}
  document.addEventListener("pointerup",end,{passive:true,capture:true});
  document.addEventListener("pointercancel",()=>{if(drag&&!drag.moved)drag=null},{passive:true,capture:true});
  window.addEventListener("scroll",hide,{passive:true,capture:true});   // 서랍(상세 화면) 안 스크롤도
+ document.addEventListener("touchstart",e=>{if(!(on&&e.target&&on.contains(e.target)))hide()},{passive:true,capture:true});   // 휴대폰: 차트 밖을 건드리면 바로 지움
+ document.addEventListener("touchend",()=>{if(on&&TOUCH())arm(held?4000:2500)},{passive:true,capture:true});
+ document.addEventListener("visibilitychange",hide);
  window.addEventListener("hashchange",hide);window.addEventListener("blur",hide);
- document.addEventListener("pointerout",e=>{if(!e.relatedTarget&&!drag)hide()},{passive:true});
+ document.addEventListener("pointerout",e=>{if(e.pointerType==="touch")return;if(!e.relatedTarget&&!drag)hide()},{passive:true});
  document.addEventListener("keydown",e=>{if(e.key==="Escape")hide()});
  // 안전장치: 0.2초마다 브라우저가 아는 '마우스가 올라가 있는가'(:hover)로 다시 확인해, 차트 위가 아니면 지운다
- setInterval(()=>{if(!on||drag)return;let h=false;try{h=on.matches(':hover')}catch{h=true}if(!h)hide()},200);
+ setInterval(()=>{if(!on||drag||TOUCH())return;let h=false;try{h=on.matches(':hover')}catch{h=true}if(!h)hide()},200);
  // 보던 차트가 화면에서 사라지면(다른 나라·탭으로 바뀜) 설명도 지운다
  new MutationObserver(()=>{if(on&&!on.isConnected)hide()}).observe(document.documentElement,{childList:true,subtree:true});
  // 지도 선·점 설명(data-tip, 에너지·무기 지도): 커서를 따라다니지 않는다. 한 선 위에 잠깐(0.25초) 머물면 그 자리 옆에 고정해서 띄우고,
@@ -5339,7 +5356,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function lineChart(sets,opt){
   sets=sets.filter(s=>s.pts&&s.pts.length>1);if(!sets.length)return "";
   const W2=opt.w||420,H=opt.h||140,pl=40,pr=10,pt=opt.unit?16:10,pb=20;
-  const xs=[...new Set(sets.flatMap(s=>s.pts.map(p=>p[0])))].sort();const xi=x=>xs.indexOf(x);
+  const XK=x=>String(x).replace(/\d+/g,m=>m.padStart(6,"0"));const xs=[...new Set(sets.flatMap(s=>s.pts.map(p=>p[0])))].sort((a,b)=>XK(a)<XK(b)?-1:XK(a)>XK(b)?1:0);const xi=x=>xs.indexOf(x);
   const vals=sets.flatMap(s=>s.pts.map(p=>p[1]));let mn=Math.min(...vals),mx=Math.max(...vals);if(opt.zero)mn=Math.min(0,mn);if(mx===mn){mx+=1;mn-=1}
   // 눈금은 딱 떨어지는 값(1·2·2.5·5×10ⁿ 간격)으로
   const raw=(mx-mn)/3,mag=Math.pow(10,Math.floor(Math.log10(raw))),step=[1,2,2.5,5,10].map(k=>k*mag).find(v=>v>=raw)||10*mag;
@@ -5668,7 +5685,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    const kr=t.nodes.filter(n=>n.col===3).sort((a,b)=>b.level-a.level)[0];S.sel=kr?kr.id:t.nodes[0].id;
   }
   const tabs=d.tracks.map((x,i)=>'<button type="button" role="tab" class="rp-tab lv-'+x.level+'" data-ti="'+i+'" aria-selected="'+(i===S.ti)+'"><span class="rp-tab-k">'+esc(x.kicker)+'</span><strong>'+esc(x.title)+'</strong><em><i class="rp-dot"></i>'+esc(LV[x.level])+'</em></button>').join("");
-  const cols=d.cols.map((c,ci)=>'<div class="rp-col" data-col="'+ci+'"><div class="rp-col-h">'+esc(c)+'</div><div class="rp-stack">'+t.nodes.filter(n=>n.col===ci).map(nodeBtn).join("")+'</div></div>').join("");
+  const cols=d.cols.map((c,ci)=>'<div class="rp-col" data-col="'+ci+'"><div class="rp-col-h">'+esc(c)+'</div><div class="rp-stack">'+t.nodes.filter(n=>n.col===ci).map(n=>nodeBtn(n,t)).join("")+'</div></div>').join("");
   root.innerHTML='<div class="rp-tabs" role="tablist" aria-label="파급경로 갈래">'+tabs+'</div>'+
    '<div class="rp-board"><div class="rp-head"><div><span class="rp-q">'+esc(t.question)+'</span><h3>'+esc(t.headline)+'</h3><p>'+esc(t.summary)+'</p></div>'+
    '<div class="rp-stamp"><b class="rp-lvbadge lv-'+t.level+'">'+esc(LV[t.level])+'</b><span>판정 '+md(t.asOf)+' 기준</span><span class="rp-livetime" id="rp-livetime">실시간 계기 받는 중</span></div></div>'+
@@ -5687,10 +5704,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(!S.ro&&"ResizeObserver" in window){S.ro=new ResizeObserver(()=>wires());}
   if(S.ro){S.ro.disconnect();const f=document.getElementById("rp-flow");if(f)S.ro.observe(f)}
  }
- function nodeBtn(n){
+ function nodeBtn(n,t){
+  const nx=t?(t.edges||[]).filter(e=>e.from===n.id).map(e=>{const m=nodeOf(t,e.to);return m?'<i class="lv-'+(e.level||0)+'">'+esc(m.label)+'</i>':''}).join(""):"";
   return '<button type="button" class="rp-node lv-'+n.level+(n.id===S.sel?' sel':'')+'" data-node="'+esc(n.id)+'" aria-pressed="'+(n.id===S.sel)+'">'+
    '<span class="rp-nlv">'+esc(LV[n.level])+'</span><strong>'+esc(n.label)+'</strong><small>'+esc(n.sub||"")+'</small>'+
-   (n.live?'<em class="rp-nlive" data-live-node="'+esc(n.id)+'">'+liveShort(n)+'</em>':'')+'</button>';
+   (n.live?'<em class="rp-nlive" data-live-node="'+esc(n.id)+'">'+liveShort(n)+'</em>':'')+(nx?'<span class="rp-nout" aria-label="다음으로 전달">→ '+nx+'</span>':'')+'</button>';
  }
  function srcLinks(src){
   return (src||[]).map(s=>'<a href="'+esc(safe(s[2]))+'" target="_blank" rel="noopener noreferrer" title="'+esc(s[1])+'">'+esc(s[0])+'</a>').join(" · ");
@@ -6131,8 +6149,20 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function map(){
   const host=document.getElementById("ar-map"),h=H();if(!host||!h||!A.world)return;
   if(A.mode==="self")return selfMap();
-  const w=A.world,P=h.P,y0=P(0,72)[1],y1=P(0,-46)[1],base=()=>[0,y0,w.w,y1-y0],vb=(A.vb||base()).slice(),K=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000));
+  const w=A.world,P=h.P,y0=P(0,72)[1],y1=P(0,-46)[1],world=()=>[0,y0,w.w,y1-y0],base=()=>A.fit||world();
   const sel=A.sel,me=pos(sel),PT=partners(sel),WF=A.lay.war?warFlows(sel):[];
+  // 좁은 화면(휴대폰): 세계 전체가 아니라 고른 나라와 그 나라로 오가는 선이 들어가는 범위만 보여준다(세로로 더 길게)
+  A.fit=null;
+  if((host.clientWidth||1000)<700&&me){const xs=[],ys=[];const add=p=>{xs.push(p[0]);ys.push(p[1])};
+   const pm=P(...me);add(pm);
+   for(const x of PT.slice(0,30)){const p=pos(x.cc);if(p)arc(p,me).pts.forEach(add)}
+   for(const f of WF){const o=A.mode!=="out"?f.from:f.to,p=pos(o);if(p)arc(p,me).pts.forEach(add)}
+   let x0=Math.min(...xs),x1=Math.max(...xs),ya=Math.max(y0,Math.min(...ys)),yb=Math.min(y1,Math.max(...ys));
+   if(x1-x0<w.w*0.8){const pad=Math.max(40,(x1-x0)*0.12);x0-=pad;x1+=pad;ya-=pad;yb+=pad;let W=x1-x0,Hh=yb-ya;
+    const minH=W*0.75,maxH=W*1.15;if(Hh<minH){const c=(ya+yb)/2;ya=c-minH/2;yb=c+minH/2;Hh=minH}else if(Hh>maxH){W=Hh/1.15;const c=(x0+x1)/2;x0=c-W/2;x1=c+W/2}
+    A.fit=[x0,Math.max(y0,ya),x1-x0,Math.min(y1,yb)-Math.max(y0,ya)]}
+   else A.fit=[pm[0]-w.w/2,y0,w.w,y1-y0]}   // 세계 곳곳에서 오면: 고른 나라를 가운데 두고 세계 전체
+  const vb=(A.vb||base()).slice(),K=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000));
   const shade=new Map(PT.slice(0,25).map(x=>[x.cc,x.sh]));WF.forEach(f=>{const o=A.mode!=="out"?f.from:f.to;if(!shade.has(o))shade.set(o,4)});
   const pick=new Set(Object.keys(D().imp).concat(Object.keys(A.ex)));
   let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+h.esc(ko(sel))+' 무기 공급 지도"><g id="ar-all"><g class="en-land">'+
@@ -6154,11 +6184,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   g+='</g>';
   // 이름표: 상위 공급국(또는 받는 나라) 8곳
   const boxes=[],tw=(t,px)=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?px:px*0.58),0);let labs="";
-  if(me){const [mx,my]=P(...me);boxes.push({x0:mx-8*K,x1:mx+60*K,y0:my-10*K,y1:my+18*K});
+  const wrapX=x=>{let v=((x%w.w)+w.w)%w.w;if(v<vb[0])v+=w.w;if(v>vb[0]+vb[2])v-=w.w;return v};
+  if(me){const [mx0,my]=P(...me),mx=wrapX(mx0);boxes.push({x0:mx-8*K,x1:mx+60*K,y0:my-10*K,y1:my+18*K});
    labs+='<g class="en-dest sel" transform="translate('+mx.toFixed(1)+' '+my.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/><text x="7" y="13">'+h.esc(ko(sel))+'</text></g>'}
-  if(A.lay.sipri)PT.slice(0,8).forEach(x=>{const p=pos(x.cc);if(!p)return;const [ax,ay]=P(...p),t=ko(x.cc)+' '+h.num(x.sh,x.sh<1?1:0)+'%',bw=(tw(t,10.5)+10)*K,bh=15*K;let best=null;
+  if(A.lay.sipri)PT.slice(0,8).forEach(x=>{const p=pos(x.cc);if(!p)return;const [ax0,ay]=P(...p),ax=wrapX(ax0),t=ko(x.cc)+' '+h.num(x.sh,x.sh<1?1:0)+'%',bw=(tw(t,10.5)+10)*K,bh=15*K;let best=null;
    for(const r of [4,12,22,34])for(let k=0;k<8&&!best;k++){const an=(k*45+20)*Math.PI/180,cx=ax+Math.cos(an)*(r*K+bw/2),cy=ay+Math.sin(an)*(r*K+bh/2),b={x0:cx-bw/2,x1:cx+bw/2,y0:cy-bh/2,y1:cy+bh/2};
-    if(!boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0))best={b,cx,cy}}
+    if(b.x0>vb[0]+2*K&&b.x1<vb[0]+vb[2]-2*K&&b.y0>vb[1]+2*K&&b.y1<vb[1]+vb[3]-2*K&&!boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0))best={b,cx,cy}}
    if(!best)return;boxes.push(best.b);
    labs+='<g class="en-vlab sm"><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+best.cx.toFixed(1)+'" y2="'+best.cy.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.2*K).toFixed(2)+'"/><g transform="translate('+best.cx.toFixed(1)+' '+best.cy.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="'+(-bw/2/K).toFixed(1)+'" y="'+(-bh/2/K).toFixed(1)+'" width="'+(bw/K).toFixed(1)+'" height="'+(bh/K).toFixed(1)+'" rx="3"/><text y="3.5">'+h.esc(t)+'</text></g></g>'});
   g+='</g><use href="#ar-all" x="'+(-w.w)+'"/><use href="#ar-all" x="'+w.w+'"/><g class="en-vlabs">'+labs+'</g>';
@@ -6209,8 +6240,9 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const ti=tot(imp(c)),te=tot(exp(c)),kri=tot(imp("KR")),kre=tot(exp("KR"));
   const PT=partners(c),top=PT[0];
   const auto=A.mode!=="out"?(ti>0?winTxt()+' 주요 무기 수입 '+tiv(ti)+' TIV'+(rk.im.get(c)?' · 세계 '+rk.im.get(c)+'위':'')+(top?' · 1위 공급국 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수입 기록이 없습니다.'):(te>0?winTxt()+' 주요 무기 수출 '+tiv(te)+' TIV'+(rk.ex.get(c)?' · 세계 '+rk.ex.get(c)+'위':'')+(top?' · 가장 많이 받은 나라 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수출 기록이 없습니다.');
+  const exI=exportItems(c);
   const kv=[["수입 "+winTxt(),ti>0?tiv(ti)+' TIV':'–',rk.im.get(c)?'세계 '+rk.im.get(c)+'위 / '+rk.ni+'곳 · 세계 수입의 '+h.num(ti/rk.wi*100,1)+'%':''],
-   ["수출 "+winTxt(),te>0?tiv(te)+' TIV':'–',rk.ex.get(c)?'세계 '+rk.ex.get(c)+'위 / '+rk.ne+'곳 · 세계 수출의 '+h.num(te/rk.we*100,1)+'%':''],
+   ["수출 "+winTxt(),te>0?tiv(te)+' TIV':'–',(rk.ex.get(c)?'세계 '+rk.ex.get(c)+'위 / '+rk.ne+'곳 · 세계 수출의 '+h.num(te/rk.we*100,1)+'%':'')+(exI?' · 주로 '+exI:'')],
    ...(c!=="KR"?[["한국과 비교",'수입 '+tiv(kri)+' · 수출 '+tiv(kre),'한국 수입 '+(rk.im.get("KR")||'–')+'위 · 수출 '+(rk.ex.get("KR")||'–')+'위'+(ti>0&&kri>0?' · 수입은 한국의 '+h.num(ti/kri,ti/kri<10?1:0)+'배':'')]]:[])];
   const bars=PT.length?'<div class="en-sec"><h5>'+(A.mode!=="out"?'어디서 받나':'누구에게 보내나')+' <small>'+h.esc(winTxt())+' · SIPRI TIV</small></h5><ol class="en-bars">'+PT.slice(0,8).map(x=>'<li><span class="nm">'+h.esc(ko(x.cc))+'</span><span class="bar"><i class="'+(x.cc==="KR"?'h':'o')+'" style="width:'+Math.min(100,x.sh).toFixed(1)+'%"></i></span><b>'+h.num(x.sh,x.sh<1?1:0)+'%</b><em>'+tiv(x.v)+'</em></li>').join("")+'</ol></div>':'';
   // 연도별 추이(수입·수출)
@@ -6232,6 +6264,13 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<p class="ar-head">'+h.esc(r&&r.headline||auto)+'</p>'+(r&&r.headline?'<p class="en-note">'+h.esc(auto)+'</p>':'')+
    (A.mode==="self"?selfSec(c):'')+'<div class="en-kv">'+kv.map(x=>'<div><span>'+h.esc(x[0])+'</span><b>'+h.esc(x[1])+'</b><small>'+h.esc(x[2])+'</small></div>').join("")+'</div>'+(A.mode==="self"?'':selfSec(c))+bars+chart+R+deals+
    '<p class="en-note">SIPRI는 항공기·함정·전차·포·미사일·방공체계 같은 주요 재래식 무기만 셉니다. 포탄·소총·탄약·재정 지원은 빠지고, TIV는 금액이 아니라 군사적 능력의 양입니다. 출처: <a href="https://www.sipri.org/databases/armstransfers" target="_blank" rel="noopener noreferrer">SIPRI Arms Transfers Database</a> (스톡홀름국제평화연구소 무기 이전 데이터베이스)</p>';
+ }
+ // 이 나라가 내보낸 무기 가운데 큰 것(기간 안 인도분): 설명·받는 나라·계약 연도
+ function exportItems(c){
+  const h=H(),L=[];for(const [r,ds] of Object.entries(D().deals||{}))for(const d of ds){if(d[0]!==c)continue;const ys=String(d[6]||"").split(/;\s*/).map(Number).filter(y=>y&&inWin(y));if(!ys.length)continue;L.push({r,d})}
+  L.sort((a,b)=>(b.d[9]||0)-(a.d[9]||0));const seen=new Set(),out=[];
+  for(const {r,d} of L){const k=d[4]+"|"+r;if(seen.has(k))continue;seen.add(k);out.push(d[4]+'('+ko(r)+(d[1]?', '+d[1]+'년 계약':'')+')');if(out.length>=3)break}
+  return out.join(' · ');
  }
  function compare(){
   const box=document.getElementById("ar-compare"),h=H();if(!box)return;const rk=ranks();
