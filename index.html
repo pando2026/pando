@@ -1361,6 +1361,9 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .rel-basis{font-size:13px;color:#3a4a53;border-left:3px solid #dfe5e8;padding-left:8px}.rel-maj span{color:#8a979e;font-size:11.5px;margin-right:4px}
 .party-origin{font-size:13px;line-height:1.6;margin:2px 0 8px}.party-origin b{color:#14222b}
 .tr-partners .tr-items img,.tr-partners .tr-items svg,.tr-partners .tr-items .flag{width:18px!important;height:12px!important;object-fit:cover;vertical-align:-1px;margin-right:4px;border-radius:2px;display:inline-block}.tr-partners .tr-items span{display:inline-flex;align-items:center;gap:4px}
+.ppp-sum{background:#f3f8f5;border-left:4px solid #1f6f4a;padding:10px 12px;border-radius:6px;font-size:14.5px;line-height:1.6;margin:6px 0 10px}.ppp-sum b{color:#1f6f4a;margin-right:6px}
+.ppp-how{margin:0 0 10px;font-size:13px}.ppp-how summary{cursor:pointer;color:#2c5680;font-weight:700}.ppp-how p{line-height:1.65;margin:6px 0}
+.ppp-card .ppp-plain{font-size:13.5px;line-height:1.6;color:#14222b;margin:6px 0 4px}.ppp-card small{display:block;color:#6b7b84;font-size:11.5px;margin-top:2px}.ppp-card .ppp-kr{color:#33505f;font-weight:600}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -3946,43 +3949,50 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
 
  // 실질 구매력(data/ppp.json): 구매력 기준 1인당 GDP·물가 수준·구매력 기준 1인당 세금·빅맥·가구 하루 소득·빈곤율
+ const josa=(w,a,b)=>{const c=String(w).trim().slice(-1).charCodeAt(0);return w+(c>=0xAC00&&c<=0xD7A3&&(c-0xAC00)%28?a:b)};
  function pppBlock(data){
   const P=data.ppp;if(!P||!P.entry)return "";const e=P.entry,k=P.korea,M=P.meta||{},tot=M.total||{},isK=data.code==="KR",name=namedCountry(data.code);
   const last=a=>Array.isArray(a)&&a.length?a.at(-1):null,at=(a,y)=>Array.isArray(a)?(a.find(p=>p[0]===y)||null):null;
-  const usd=v=>'$'+number(Math.round(v),0),pc=v=>number(v,1)+"%";
-  const card=(label,val,color,line,small)=>'<div class="int-card"><span>'+label+'</span><strong style="color:'+color+'">'+val+'</strong><p>'+line+'</p>'+(small||"")+'</div>';
-  const kl=t=>!isK&&t?'<small>'+t+'</small>':"";
-  const rk=(key)=>e.ranks?.[key]&&tot[key]?' · '+e.ranks[key]+'위 / '+tot[key]+'개국':"";
-  let cards="";
+  const usd=v=>'$'+number(Math.round(v),0),pc=v=>number(v,1)+"%",x=(a,b)=>a>=b?number(a/b,a/b<10?1:0)+'배':number(b/a,b/a<10?1:0)+'분의 1';
+  // card: 제목 · 큰 숫자 · 쉬운 풀이(한 문장) · 근거 줄 · 한국
+  const card=(label,val,color,plain,line,kor)=>'<div class="int-card ppp-card"><span>'+label+'</span><strong style="color:'+color+'">'+val+'</strong>'+(plain?'<p class="ppp-plain">'+plain+'</p>':"")+(line?'<small>'+line+'</small>':"")+(!isK&&kor?'<small class="ppp-kr">'+kor+'</small>':"")+'</div>';
+  const rk=key=>e.ranks?.[key]&&tot[key]?e.ranks[key]+'위 / '+tot[key]+'개국':"";
+  let cards="",head="";
   // 1) 구매력 기준 1인당 GDP
   const g=last(e.imfPc)&&(!last(e.pcPpp)||last(e.imfPc)[0]>last(e.pcPpp)[0])?{p:last(e.imfPc),src:"IMF",key:"imfPc"}:last(e.pcPpp)?{p:last(e.pcPpp),src:"세계은행",key:"pcPpp"}:null;
-  if(g){const nom=at(e.pcUsd,g.p[0])||last(e.pcUsd);const kg=k&&(last(k[g.key])||last(k.pcPpp));
-   cards+=card('1인당 GDP <small>(구매력 기준, 국제달러)</small>',usd(g.p[1]),"#1f6f4a",g.p[0]+'년 · '+g.src+rk(g.key),(nom?'<small>환율로 바꾼 명목 '+usd(nom[1])+' ('+nom[0]+') → 물가를 맞추면 '+number(g.p[1]/nom[1],2)+'배</small>':"")+kl(kg?'한국 '+usd(kg[1])+' ('+kg[0]+')':""))}
+  const nom=g?(at(e.pcUsd,g.p[0])||last(e.pcUsd)):null,kg=k&&g?(at(k[g.key],g.p[0])||last(k[g.key])):null,kn=k&&nom?(at(k.pcUsd,nom[0])||last(k.pcUsd)):null;
+  if(g){cards+=card('1인당 GDP · 물가를 맞춘 값',usd(g.p[1]),"#1f6f4a",
+    '한 사람이 1년에 만들어 내는 몫을 <b>미국 물가로 치면 '+usd(g.p[1])+'어치</b>입니다.'+(nom?' 환율로만 바꾸면 '+usd(nom[1])+'이지만, 물가가 '+(g.p[1]>nom[1]?'싸서':'비싸서')+' 실제로는 그 '+number(g.p[1]/nom[1],1)+'배만큼 쓸 수 있다는 뜻입니다.':""),
+    g.p[0]+'년 · '+g.src+' · '+rk(g.key),kg?'한국 '+usd(kg[1])+' — '+josa(name,'은','는')+' 한국의 '+x(g.p[1],kg[1])+(kn&&nom?' (환율로만 보면 '+x(nom[1],kn[1])+')':""):"")}
+  if(g&&kg&&nom&&kn&&!isK)head='<p class="ppp-sum"><b>한 줄로</b> '+esc(name)+' 사람 한 명의 소득은 환율로 보면 한국의 '+x(nom[1],kn[1])+'이지만, 물가 차이를 맞추면 한국의 '+x(g.p[1],kg[1])+'입니다.</p>';
   // 2) 물가 수준
   const L=last(e.plr);if(L){const v=L[1]*100,kp=k&&last(k.plr);
-   cards+=card('물가 수준 <small>(미국 = 100)</small>',number(v,0),"#8a5a12",L[0]+'년'+rk("plr")+' · 같은 물건 묶음이 미국보다 '+(v<100?number(100-v,0)+'% 싸다':v>100?number(v-100,0)+'% 비싸다':'같다'),kl(kp?'한국 '+number(kp[1]*100,0)+' ('+kp[0]+')':""))}
+   cards+=card('물가 수준 · 미국 = 100',number(v,0),"#8a5a12",'미국에서 <b>$100</b> 하는 같은 물건·서비스 묶음이 '+esc(name)+'에서는 <b>$'+number(v,0)+'</b>쯤입니다(환율로 바꾼 값).',L[0]+'년 · 비싼 순 '+rk("plr"),kp?'한국 $'+number(kp[1]*100,0)+'어치':"")}
   // 3) 구매력 기준 1인당 세금
   const T=data.tax?.entry;if(T&&T.share!=null){const y=+T.year,gp=at(e.pcPpp,y)||at(e.imfPc,y);
-   if(gp){const kt=data.tax?.korea,kgp=kt?(at(k?.pcPpp,+kt.year)||at(k?.imfPc,+kt.year)):null;
-    cards+=card('1인당 세금 <small>(구매력 기준, 사회보험료 포함)</small>',usd(T.share/100*gp[1]),"#b8202b",y+'년 · 세수 GDP의 '+pc(T.share)+(T.perCapita?' · 환율 기준 '+usd(T.perCapita):""),kl(kt&&kgp?'한국 '+usd(kt.share/100*kgp[1])+' ('+kt.year+', GDP의 '+pc(kt.share)+')':""))}}
-  // 4) 하루 평균 소득·소비(가구 조사)와 빈곤율
-  const mn=last(e.mean),m40=last(e.mean40),pv=last(e.pov);
-  if(mn||pv){const km=k&&last(k.mean),kpv=k&&last(k.pov);
-   cards+=card('하루 평균 소득·소비 <small>(가구 조사, 2021년 구매력 달러)</small>',mn?'$'+number(mn[1],1):'–',"#15232d",(mn?mn[0]+'년'+(m40&&m40[0]===mn[0]?' · 하위 40% $'+number(m40[1],1):""):"")+(pv?' · 하루 $3 미만 빈곤율 '+pc(pv[1])+' ('+pv[0]+')':""),kl(km||kpv?'한국 '+(km?'$'+number(km[1],1)+' ('+km[0]+')':"")+(kpv?' · 빈곤율 '+pc(kpv[1]):""):""))}
+   if(gp){const kt=data.tax?.korea,kgp=kt?(at(k?.pcPpp,+kt.year)||at(k?.imfPc,+kt.year)):null,me=T.share/100*gp[1],kme=kt&&kgp?kt.share/100*kgp[1]:null;
+    cards+=card('1인당 세금 · 물가를 맞춘 값',usd(me),"#b8202b",'한 사람이 1년에 내는 세금(사회보험료 포함)을 <b>미국 물가로 치면 '+usd(me)+'어치</b>입니다.'+(T.perCapita?' 환율로만 바꾸면 '+usd(T.perCapita)+'.':""),y+'년 · 세금이 GDP의 '+pc(T.share),kme?'한국 '+usd(kme)+' — '+josa(name,'은','는')+' 한국의 '+x(me,kme):"")}}
+  // 4) 빈곤율과 하루 소득·소비
+  const mn=last(e.mean),m40=last(e.mean40),pv=last(e.pov),km=k&&last(k.mean),kpv=k&&last(k.pov);
+  if(pv)cards+=card('하루 $3도 못 쓰는 사람',pc(pv[1]),"#7a1f3d",'미국 물가로 치면 <b>하루 3달러</b>어치도 쓰지 못하는 극빈층이 인구의 '+pc(pv[1])+'입니다.',pv[0]+'년 가구 조사 · 세계은행',kpv?'한국 '+pc(kpv[1])+' ('+kpv[0]+')':"");
+  if(mn)cards+=card('하루 평균 소득·소비',('$'+number(mn[1],1)),"#15232d",'가구 조사로 본 한 사람의 <b>하루 평균 소득(또는 소비)</b>을 미국 물가로 친 값입니다.'+(m40&&m40[0]===mn[0]?' 아래쪽 40%는 하루 $'+number(m40[1],1)+'.':""),mn[0]+'년 가구 조사 · 세계은행',km?'한국 $'+number(km[1],1)+' ('+km[0]+')':"");
   // 5) 빅맥
   const bm=e.bigmac&&e.bigmac.length?e.bigmac.at(-1):null;
-  if(bm){const kb=k?.bigmac?.at(-1);
-   cards+=card('빅맥 한 개 <small>(이코노미스트 빅맥 지수)</small>',number(bm[1],bm[1]<100?2:0)+' <em class="lab-unit">'+esc(bm[4])+'</em>',"#c72a34",esc(bm[0].slice(0,7))+' · 달러로 $'+number(bm[2],2)+(bm[3]!=null&&bm[4]!=="USD"?' · 통화가 달러 대비 '+(bm[3]<0?number(-bm[3],0)+'% 저평가':number(bm[3],0)+'% 고평가'):""),kl(kb?'한국 '+number(kb[1],0)+'원 = $'+number(kb[2],2)+' ('+kb[0].slice(0,7)+')':""))}
+  if(bm){const kb=k?.bigmac?.at(-1),us=bm[3]!=null&&bm[3]>-100?bm[2]/(1+bm[3]/100):null;
+   cards+=card('빅맥 한 개 값',number(bm[1],bm[1]<100?2:0)+' <em class="lab-unit">'+esc(bm[4])+'</em>',"#c72a34",'같은 빅맥이 환율로 바꾸면 <b>$'+number(bm[2],2)+'</b>'+(us&&bm[4]!=="USD"?', 미국($'+number(us,2)+')보다 '+(bm[3]<0?number(-bm[3],0)+'% 싸고':number(bm[3],0)+'% 비싸고'):"")+'. 같은 물건 값으로 본 물가 차이입니다.',esc(bm[0].slice(0,7))+' · 이코노미스트 빅맥 지수',kb?'한국 '+number(kb[1],0)+'원 = $'+number(kb[2],2):"")}
   // 6) 구매력 환율
-  const px=last(e.pppx);if(px&&!["USD"].includes(bm?.[4])){cards+=card('구매력 환율 <small>(1국제달러로 살 물건 값)</small>',number(px[1],px[1]<10?2:0),"#5d6b75",px[0]+'년 · 현지 통화 기준'+(L?' · 시장 환율은 '+number(px[1]/L[1],px[1]/L[1]<10?2:0):""),'<small>시장 환율보다 숫자가 작을수록 그 나라 물가가 싸다는 뜻입니다.</small>')}
+  const px=last(e.pppx);if(px&&L&&bm?.[4]!=="USD"){const mk=px[1]/L[1];
+   cards+=card('달러 한 장의 실제 값어치',number(mk/px[1],2)+'배',"#5d6b75",'은행에서 1달러를 바꾸면 <b>'+number(mk,mk<10?2:0)+'</b>(현지 통화)를 받지만, 미국에서 1달러로 사는 만큼을 사는 데는 <b>'+number(px[1],px[1]<10?2:0)+'</b>만 듭니다. 그래서 1달러가 그 나라 안에서는 '+number(mk/px[1],2)+'배로 쓰입니다.',px[0]+'년 · 구매력 환율 '+number(px[1],px[1]<10?2:0)+' / 시장 환율 '+number(mk,mk<10?2:0),"")}
   if(!cards)return "";
   const K=isK?null:k;const yrs=a=>(a||[]).filter(p=>p[0]>=2000);
   const bmY=a=>{const o={};for(const r of a||[])o[+r[0].slice(0,4)]=r[2];return Object.entries(o).map(([y,v])=>[+y,v])};
-  const charts=[["구매력 기준 1인당 GDP (국제달러)",yrs(e.pcPpp),yrs(K?.pcPpp),v=>'$'+number(v/1000,0)+'k',"#1f6f4a"],["실질 1인당 GDP (2021년 불변 구매력 달러, 물가 변동 뺀 성장)",yrs(e.pcPppK),yrs(K?.pcPppK),v=>'$'+number(v/1000,0)+'k',"#2c5680"],["물가 수준 (미국 = 100)",yrs(e.plr).map(p=>[p[0],p[1]*100]),yrs(K?.plr).map(p=>[p[0],p[1]*100]),v=>number(v,0),"#8a5a12"],["빅맥 가격 (달러 환산)",bmY(e.bigmac),bmY(K?.bigmac),v=>'$'+number(v,2),"#c72a34"]]
-   .filter(c=>c[1].length>1).map(c=>'<h5 class="tie-sub">'+c[0]+'</h5><div style="color:'+c[4]+'">'+laborChart(c[1],c[2],c[3],{name,label:c[0]})+'</div>'+(K?'<p class="cpi-legend"><i style="background:'+c[4]+'"></i>'+esc(name)+' <i class="cpi-legend-k"></i>한국</p>':"")).join("");
-  const S=M.sources||{},src=x=>Array.isArray(x)?sourceLink(x[2],x[0]):"";
-  return '<section class="section pppb"><h3>실질 구매력</h3><p class="cpi-note">환율로만 바꾸면 물가가 싼 나라의 생활 수준이 작게 보입니다. 같은 물건 묶음의 값을 맞춘 ‘구매력 평가(PPP)’ 달러로 바꾸면 그 나라 안에서 실제로 얼마나 살 수 있는지 비교할 수 있습니다.</p><div class="int-grid">'+cards+'</div>'+charts+
-   '<p class="cpi-note">구매력 기준 값은 세계은행 국제비교프로그램(ICP) 가격 조사로 만든 국제달러(미국에서 1달러로 살 수 있는 만큼)입니다. IMF 값에는 최근 해 추정치가 섞여 있습니다. 빅맥 지수는 한 상품의 값만 비교한 것이라 참고용입니다. 가구 조사 소득·소비는 몇 년에 한 번 조사합니다.</p><p class="cpi-note">'+[S.wb,S.imf,S.pip,S.bigmac].map(src).filter(Boolean).join(" · ")+(M.asOf?' · '+esc(M.asOf)+' 조회':"")+'</p></section>';
+  const charts=[["물가를 맞춘 1인당 GDP","해마다 미국 물가로 친 한 사람 몫(국제달러)",yrs(e.pcPpp),yrs(K?.pcPpp),v=>'$'+number(v/1000,0)+'k',"#1f6f4a"],["실제로 얼마나 커졌나","물가 오른 만큼을 뺀 1인당 GDP(2021년 가격으로 고정) — 선이 오르면 진짜로 잘살게 된 것",yrs(e.pcPppK),yrs(K?.pcPppK),v=>'$'+number(v/1000,0)+'k',"#2c5680"],["물가 수준","미국에서 $100인 묶음이 그 나라에서는 얼마인가",yrs(e.plr).map(p=>[p[0],p[1]*100]),yrs(K?.plr).map(p=>[p[0],p[1]*100]),v=>'$'+number(v,0),"#8a5a12"],["빅맥 값(달러로 바꾼 값)","같은 햄버거 값으로 본 물가",bmY(e.bigmac),bmY(K?.bigmac),v=>'$'+number(v,2),"#c72a34"]]
+   .filter(c=>c[2].length>1).map(c=>'<h5 class="tie-sub">'+c[0]+' <small>'+c[1]+'</small></h5><div style="color:'+c[5]+'">'+laborChart(c[2],c[3],c[4],{name,label:c[0]})+'</div>'+(K?'<p class="cpi-legend"><i style="background:'+c[5]+'"></i>'+esc(name)+' <i class="cpi-legend-k"></i>한국</p>':"")).join("");
+  const S=M.sources||{},src=z=>Array.isArray(z)?sourceLink(z[2],z[0]):"";
+  return '<section class="section pppb"><h3>실질 구매력 — 물가까지 따지면 얼마나 잘사나</h3>'+head+
+   '<details class="ppp-how"><summary>왜 물가를 맞추나</summary><p>인도에서 이발은 몇백 원, 한국에서는 만 원이 넘습니다. 그래서 소득을 환율로만 바꾸면 물가가 싼 나라는 실제보다 가난해 보입니다. ‘구매력 평가(PPP)’는 같은 물건·서비스 묶음의 값을 나라마다 조사해, 모든 금액을 <b>미국 물가 기준 달러(국제달러)</b>로 다시 계산한 것입니다. 이 칸의 $는 모두 “미국에서라면 이만큼 살 수 있는 돈”이라는 뜻입니다.</p></details>'+
+   '<div class="int-grid">'+cards+'</div>'+charts+
+   '<p class="cpi-note">IMF 값의 최근 해는 추정이 섞여 있습니다. 빅맥은 한 가지 물건만 비교한 참고용입니다. 가구 조사는 몇 년에 한 번입니다.</p><p class="cpi-note">'+[S.wb,S.imf,S.pip,S.bigmac].map(src).filter(Boolean).join(" · ")+(M.asOf?' · '+esc(M.asOf)+' 조회':"")+'</p></section>';
  }
  function laborBlock(data){
   const Lb=data.labor;if(!Lb)return "";const e=Lb.entry||{},k=Lb.korea,meta=Lb.meta||{},S=meta.sources||{},nat=e.national||{},isK=data.code==="KR";
