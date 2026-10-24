@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="790a0a8f01";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="a8e1c649b5";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -296,6 +296,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .ct-dot{position:fixed;z-index:9998;pointer-events:none;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#c41230;box-shadow:0 0 0 2px #fff}
 svg[data-ct]{cursor:crosshair;touch-action:pan-y}
 .cpi-spark .ax-y,.lab-chart .ax-y{font:600 9px system-ui,sans-serif;fill:#8a979f}
+/* 주목 국가: 국제 현장에 이미 있는 기사는 나라 단추로만 */
+.watch-onfeed{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:12px 0 2px;border-top:1px solid #e0e5e9;margin-top:6px}
+.watch-onfeed>span{font-size:12px;font-weight:800;color:#5b6d78;margin-right:4px}
+.watch-onfeed .country-chip em{font-style:normal;font-size:11px;color:#8a979f;margin-left:4px}
 
 /* refine.css — readability pass. Loaded last, so it wins over earlier layers.
    Principle: facts first, method notes folded. */
@@ -1377,6 +1381,8 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .ppp-card .ppp-plain{font-size:13.5px;line-height:1.6;color:#14222b;margin:6px 0 4px}.ppp-card small{display:block;color:#6b7b84;font-size:11.5px;margin-top:2px}.ppp-card .ppp-kr{color:#33505f;font-weight:600}
 .ind-more{margin:0 0 14px}.ind-more summary{cursor:pointer;font-size:13px;color:#2c5680;font-weight:700;line-height:1.5;padding:6px 0}
 .event-band .event-name{font:700 8px var(--font,system-ui);pointer-events:none}
+/* 영상 재생 단추는 어디서나 사진 한가운데 */
+.vid-play i,.story-hero i,.watch-thumb i,.story-card .card-thumb i{position:absolute;inset:auto;left:50%;top:50%;right:auto;bottom:auto;margin:0;transform:translate(-50%,-50%);width:52px;height:52px;border-radius:50%;background:#000000b3;color:#fff;font-style:normal;font-size:18px;display:grid;place-items:center}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2507,7 +2513,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     const all=editionWatch(edition,b.changeWatch,codes),latest=Date.parse(all[0]?.date||"1970-01-01");
     const diverse=all.filter(i=>/재정|통화|예산|선거|경제|정치|금리/i.test(i.topic||"")&&latest-Date.parse(i.date)<=14*86400000).slice(0,4);
     const top=[...diverse,...all.filter(i=>!diverse.some(k=>k.code===i.code))].slice(0,18);
-    return ok({...b.countries,watch:top,watchEditionDate:edition.editionDate});
+    // 기사 목록에 없는 나라별 변화(changewatch 중 기사 제목과 다른 것, 나라마다 가장 새것, 최근 14일)
+    const hk=t=>String(t||"").replace(/\s+/g,"").slice(0,14),heads=new Set((edition.stories||[]).map(x=>hk(x.headline))),fresh=new Map();
+    for(const it of b.changeWatch.slice().sort((a,c)=>c.date.localeCompare(a.date))){if(!codes.has(it.code)||heads.has(hk(it.title))||fresh.has(it.code))continue;if(latest-Date.parse(it.date)>14*86400000)continue;fresh.set(it.code,{...it,sourceKind:"curated_snapshot",dateBasis:"change",dateLabel:"변화일 "+it.date})}
+    return ok({...b.countries,watch:top,watchFresh:[...fresh.values()].sort((a,c)=>c.date.localeCompare(a.date)||a.code.localeCompare(c.code)),watchEditionDate:edition.editionDate});
    }
    if(!codes.has(code))return fail(404);
    if(path==="/api/country"){
@@ -2622,7 +2631,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   $("#search").addEventListener("input",e=>{state.query=e.target.value;drawFeed()});
  }
  function drawFeed(){
-  const stories=state.edition.stories.filter(s=>(state.filter==="전체"||mainRegion(s)===state.filter)&&(!state.query||[s.place,s.headline,s.summary,...s.actors.map(a=>a[0]),...s.economy.map(a=>a[0])].join(" ").toLowerCase().includes(state.query.toLowerCase())));
+  const stories=state.edition.stories.filter(s=>(state.filter==="전체"||mainRegion(s)===state.filter)&&(!state.query||[s.place,s.headline,s.summary,...(s.actors||[]).map(a=>a[0]),...(s.economy||[]).map(a=>a[0])].join(" ").toLowerCase().includes(state.query.toLowerCase())));
   const limited=!state.feedAll&&state.filter==="전체"&&!state.query&&stories.length>FEED_PREVIEW;
   const visible=limited?stories.slice(0,FEED_PREVIEW):stories;
   $("#feed").innerHTML=(visible.length?visible.map(s=>'<button class="story-card" data-open="'+esc(s.id)+'" type="button"><div class="meta-line"><span>'+esc(s.region)+" / "+esc(s.place)+'</span><span class="status">● '+esc(s.level)+'</span></div><div class="story-card-flags">'+[...new Set([...mainCodes(s),...(s.countryCodes||[])])].slice(0,4).map(code=>flag(code,"flag-story")).join("")+'</div>'+cardThumb(s)+'<h3>'+esc(s.headline)+'</h3><p>'+esc(s.summary)+'</p><div class="story-bottom"><span>'+esc(s.eventDate)+" · "+esc(s.topic)+'</span><b>사건 읽기 ↗</b></div></button>').join(""):'<div class="empty">해당 조건에 맞는 사건이 없습니다.</div>')+
@@ -2634,7 +2643,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  // One story belongs to one main region and its main countries (watchCodes); others are only mentioned.
  const mainRegion=s=>String(s.region||"").split(" · ")[0].trim();
  const mainCodes=s=>Array.isArray(s.watchCodes)&&s.watchCodes.length?s.watchCodes:(s.countryCodes||[]).slice(0,1);
- function entries(items,s){
+ function entries(items,s){items=Array.isArray(items)?items:[];   // 빠진 칸(예: economy 없는 기사)도 열리게
   return items.map(a=>'<div class="entry"><div class="entry-head"><strong>'+esc(a[0])+'</strong><span class="badge '+(/주장|전|논쟁|안 됨/.test(a[3])?"warn":"")+'">'+esc(a[3])+'</span></div><div class="role">'+esc(a[1])+'</div><p>'+esc(a[2])+cited(a,s)+"</p></div>").join("");
  }
  // 인물 사진: data/actor-photos.json(위키미디어 공용 자유 라이선스, _tools/photos/actors.py가 만든다). 처음 기사를 열 때 받아 채운다.
@@ -2741,10 +2750,15 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   // One story often names several countries (e.g. China and Taiwan). Show it once
   // with every country as a chip instead of repeating the identical card.
   const groups=[];
-  for(const w of state.watch){
+  for(const w of [...(state.watchFresh||[]),...state.watch]){
    const same=groups.find(g=>g.title===w.title&&g.detail===w.detail);
    if(same){if(!same.codes.includes(w.code))same.codes.push(w.code)}else groups.push({...w,codes:[w.code]});
   }
+  // 국제 현장(기사 목록)에 이미 같은 기사가 있으면 카드를 되풀이하지 않고, 아래에 '기사로 보기' 나라 단추로만 모은다
+  const st=state.edition?.stories||[],byHead=new Map(st.map(x=>[x.headline,x.id])),ids=new Set(st.map(x=>x.id));
+  const onFeed=[];
+  for(let i=groups.length-1;i>=0;i--){const g=groups[i],sid=ids.has(g.storyId)?g.storyId:byHead.get(g.title);if(sid){onFeed.unshift({...g,sid});groups.splice(i,1)}}
+  const feedRow=onFeed.length?'<div class="watch-onfeed"><span>국제 현장 기사로 보기</span>'+onFeed.map(g=>g.codes.map(code=>'<button type="button" class="country-chip" data-open="'+esc(g.sid)+'" title="'+esc(g.title)+'">'+flag(code,"flag-watch")+esc(namedCountry(code))+'<em>'+esc(g.topic||"")+'</em></button>').join("")).join("")+'</div>':"";
   const limited=!state.watchAll&&groups.length>WATCH_PREVIEW;
   const visible=limited?groups.slice(0,WATCH_PREVIEW):groups;
   el.innerHTML=groups.length?visible.map(w=>
@@ -2752,8 +2766,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<button type="button" class="watch-open" data-country="'+esc(w.codes[0])+'"><strong>'+esc(w.title)+'</strong><span class="watch-detail">'+esc(w.detail)+'</span></button>'+(String(w.detail||"").length>160?'<button type="button" class="watch-more" data-watch-more aria-expanded="false">자세히 보기 ▾</button>':'')+
    '<div class="watch-countries">'+w.codes.map(code=>'<button type="button" class="country-chip" data-country="'+esc(code)+'">'+flag(code,"flag-watch")+esc(namedCountry(code))+'</button>').join("")+'</div>'+
    '<div class="watch-foot"><span class="watch-status">'+esc(w.status)+'</span><a href="'+safeUrl(w.url)+'" target="_blank" rel="noopener noreferrer">원문 ↗</a></div></article>').join("")+
-   (limited?'<button type="button" class="more-button" data-more="watch">나머지 '+(groups.length-WATCH_PREVIEW)+'건 더 보기</button>':""):
-   '<div class="empty">관찰 국가 자료를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>';
+   (limited?'<button type="button" class="more-button" data-more="watch">나머지 '+(groups.length-WATCH_PREVIEW)+'건 더 보기</button>':"")+feedRow:
+   feedRow||'<div class="empty">관찰 국가 자료를 불러오지 못했습니다. 잠시 후 새로고침해 주세요.</div>';
  }
  function renderCountryFilters(){
   const select=$("#country-region");if(!select)return;
@@ -4374,7 +4388,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id)||(state.archive||[]).find(a=>a.id===id);if(!s){if(!state.archive){loadArchive().then(()=>{if((state.archive||[]).some(a=>a.id===id))openStory(id)})}return}state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2>'+storyHero(s)+'<div class="lead">'+paras(s.summary,2)+'</div><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+storyBackground(s.background)+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+paras(s.changed,2)+'</div></div>'+videosBlock(s.videos)+'<div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'<p class="photo-credits" data-for="actors"></p></div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2>'+storyHero(s)+'<div class="lead">'+paras(s.summary,2)+'</div><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+storyBackground(s.background)+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+paras(s.changed,2)+'</div></div>'+videosBlock(s.videos)+'<div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'<p class="photo-credits" data-for="actors"></p></div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+(s.sources||[]).map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
   mountStoryMap(s);
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
@@ -4597,7 +4611,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  async function loadCountries(silent=false){
   try{
    const r=await api("/api/countries");if(!r.ok)throw Error("HTTP "+r.status);
-   const result=await r.json();state.countries=Array.isArray(result.countries)?result.countries:[];state.watch=Array.isArray(result.watch)?result.watch:[];
+   const result=await r.json();state.countries=Array.isArray(result.countries)?result.countries:[];state.watch=Array.isArray(result.watch)?result.watch:[];state.watchFresh=Array.isArray(result.watchFresh)?result.watchFresh:[];
    state.countries.sort((a,b)=>countryName(a).localeCompare(countryName(b),"ko"));
    renderCountryFilters();renderCountries();renderWatch();if(state.edition)drawMap();
    if(!silent){const code=new URLSearchParams(location.search).get("country");if(code)openCountry(code.toUpperCase())}
@@ -4752,7 +4766,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz,b=BAL(cc),x=XD(cc);let sub="";
   if(isX(cc)){const v=x&&x.exports&&x.exports.value!=null?x.exports:b&&b.exports!=null?{value:b.exports/1000}:null;
    const pv=x&&x.production&&x.production.value!=null?x.production:b&&b.production!=null?{value:b.production/1000}:null;
-   if(pv)sub+='<span>생산 하루 '+mbd(pv.value)+'</span>';if(v)sub+='<span>수출 '+(v.estimate?'약 ':'')+mbd(v.value)+'</span>'}
+   if(pv)sub+='<span>생산 하루 '+mbd(pv.value)+'</span>';if(v)sub+='<span>수출 '+(v.value===0?'사실상 0':(v.estimate?'약 ':'')+mbd(v.value))+'</span>'}
   else{if(b&&b.self!=null)sub+='<span title="국내 원유 생산 ÷ 국내 정유 투입('+esc(b.period||"")+', JODI)">국내 생산 '+(b.self>=100?num(b.self,0):b.self<1&&b.self>0?num(b.self,1):num(b.self,0))+'%</span>';
    if(h&&h.share!=null)sub+='<span>호르무즈 '+num(h.share,0)+'%</span>'}
   return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+(isX(cc)?' x':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+sub+'</button>';
@@ -5220,7 +5234,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  // 수출국 카드: 생산·수출, 그리고 경로 조사로 본 '사는 나라'
  function exporterCard(cc){
   const x=XD(cc)||{},b=BAL(cc),r=RT(),n=CN[cc]||cc;
-  const kv=(label,o)=>o&&o.value!=null?'<div><span>'+esc(label)+'</span><b>'+(o.estimate?'약 ':'')+num(o.value,o.value<10?2:1)+'</b><small>'+esc((o.unit||"")+(o.period?' · '+o.period:'')+(o.basis?' · '+o.basis:''))+(o.src?' · '+srcLinks(o.src):'')+'</small></div>':"";
+  const kv=(label,o)=>o&&o.value!=null?'<div><span>'+esc(label)+'</span><b>'+(o.value===0?'사실상 0':(o.estimate?'약 ':'')+num(o.value,o.value<10?2:1))+'</b><small>'+esc((o.unit||"")+(o.period?' · '+o.period:'')+(o.basis?' · '+o.basis:''))+(o.src?' · '+srcLinks(o.src):'')+'</small></div>':"";
   const fromJ=k=>b&&b[k]!=null?{value:+(b[k]/1000).toFixed(2),unit:"백만 배럴/일",period:periodTxt(b.period)+" 월평균",basis:"JODI(정부 제출)",src:E.data.balance.src}:null;
   const prod=x.production||fromJ("production"),exp=x.exports||fromJ("exports"),ref=x.refinery||fromJ("refinery");
   const cs=r?r.corridors.filter(c=>c.origin===cc):[];
@@ -5229,7 +5243,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const nm=id=>{const q=segOf(id)||hubOf(id);return q?'<button type="button" data-rt="'+esc(id)+'">'+esc(q.short||q.name)+(q.certainty==="불분명"?" ?":"")+'</button>':esc(id)};
   const buyers=rows.length?'<div class="en-sec"><h5>누가 사 가나 <small>사는 나라 원유 수입 중 '+esc(n)+'산 몫</small></h5><ol class="en-corr">'+rows.map(({c,p,vol,extra})=>'<li><b>'+esc(CN[c.buyer]||ON[c.buyer]||c.buyer)+'</b><span class="via">'+(p!=null?'<strong>'+num(p,p<1?1:0)+'%</strong>'+(vol!=null?' · 하루 '+mbd(vol)+' 배럴':'')+' · ':extra?esc(extra)+' · ':'')+(c.via||[]).map(nm).join(" → ")+(c.note?'<details><summary>설명</summary><small>'+esc(c.note)+'</small></details>':'')+'</span><span class="en-cert '+(CERT[c.certainty]||"")+'">'+esc(c.certainty||"")+'</span></li>').join("")+'</ol><p class="en-note">판도가 경로를 조사한 수입국 기준입니다(이 밖의 구매국은 빠져 있을 수 있음). '+srcLinks(cs.flatMap(c=>c.src||[]))+'</p></div>':'';
   return '<div class="en-ct"><b>'+esc(n)+'</b><span>'+esc(x.asOf||E.data.exporters&&E.data.exporters.asOf?'자료 확인 '+(x.asOf||E.data.exporters.asOf):'')+'</span></div>'+
-   '<div class="en-sec"><h5>얼마나 뽑고, 얼마나 파나 <small>원유, 백만 배럴/일</small></h5><div class="en-kv">'+kv("생산",prod)+kv("수출",exp)+kv("국내 정유 투입",ref)+'</div>'+
+   '<div class="en-sec"><h5>얼마나 뽑고, 얼마나 파나 <small>원유, 백만 배럴/일</small></h5><div class="en-kv">'+kv("생산",prod)+kv("수출",exp)+kv(/능력/.test(ref&&ref.basis||"")?"정유 능력":"국내 정유 투입",ref)+'</div>'+
    (x.notes?'<p class="en-note">'+esc(x.notes)+'</p>':'')+'</div>'+buyers+
    ((x.policy||[]).length?'<div class="en-sec"><h5>최근 일</h5><ul class="en-pol">'+x.policy.slice(0,5).map(p=>'<li><time>'+ym(p.date)+'</time><span>'+esc(p.text)+' '+srcLinks(p.src)+'</span></li>').join("")+'</ul></div>':'');
  }
