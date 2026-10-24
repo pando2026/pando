@@ -4745,7 +4745,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(E.layers.ships&&E.ais&&E.ais.areas)for(const a of E.ais.areas){
    const [x0,y0]=P(a.box[0][1],a.box[1][0]),[x1,y1]=P(a.box[1][1],a.box[0][0]);
    g+='<g class="en-aisbox"><rect x="'+Math.min(x0,x1).toFixed(1)+'" y="'+Math.min(y0,y1).toFixed(1)+'" width="'+Math.abs(x1-x0).toFixed(1)+'" height="'+Math.abs(y1-y0).toFixed(1)+'" vector-effect="non-scaling-stroke"/><title>'+esc(a.name+' · 유조선 '+a.tankers+'척(운항 '+a.moving+' · 정박·대기 '+a.stopped+')')+'</title></g>';
-   for(const v of a.ships){const [x,y]=P(v.lon,v.lat);const tip=(v.name||'이름 없음')+' · '+(v.stop?'정박·대기':'운항 '+num(v.sog,1)+'노트')+(v.dest?' · 목적지 '+v.dest:'');
+   for(const v of a.ships){const [x,y]=P(v.lon,v.lat);const en=document.documentElement.lang==='en';const tip=(v.name||(en?'Unnamed':'이름 없음'))+' · '+(v.stop?(en?'anchored/waiting':'정박·대기'):(en?'underway '+num(v.sog,1)+' kn':'운항 '+num(v.sog,1)+'노트'))+(v.dest?(en?' · bound for ':' · 목적지 ')+v.dest:'');
     g+='<g class="en-ship'+(v.stop?' stop':'')+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+(K*.6).toFixed(3)+')">'+(v.stop||v.cog==null?'<circle r="3"/>':'<path d="M0,-5 L3,4 L0,2 L-3,4Z" transform="rotate('+v.cog+')"/>')+'<title>'+esc(tip)+'</title></g>'}}
   return g;
  }
