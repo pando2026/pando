@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="d9835e157f";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="af7270d931";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1904,13 +1904,57 @@ html,body{background:#fff;color:var(--ink)}
 .drawer-head{display:flex;align-items:center}
 @media(hover:none){.pin-it{opacity:1}}
 
+/* 무기 안보 지도 (_src/arms.js). 레이아웃은 에너지 지도(en-*)를 그대로 쓰고, 선·배지만 따로. */
+.ar-app{margin-top:6px;border-top:0;padding-top:0}
+.ar-pick{display:flex;flex-direction:column;gap:1px;border:1px dashed #b9c6ce;border-radius:2px;padding:4px 8px;font-size:10px;font-weight:700;color:#6b7b85}
+.ar-pick select{border:0;background:transparent;font:inherit;font-size:13px;font-weight:800;color:#22313b;max-width:180px}
+.ar-tools{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin:0 0 10px;font-size:12px}
+.ar-seg{display:inline-flex;border:1px solid #1d2630;border-radius:2px;overflow:hidden}
+.ar-seg button{border:0;background:#fff;padding:5px 10px;font:inherit;font-size:12px;font-weight:800;color:#1d2630;cursor:pointer}
+.ar-seg button+button{border-left:1px solid #1d2630}
+.ar-seg button[aria-pressed="true"]{background:#1d2630;color:#fff}
+.ar-ck{display:flex;align-items:center;gap:5px;font-weight:700;color:#3e4f5a;cursor:pointer}
+.ar-grid{grid-template-columns:minmax(0,1.55fr) minmax(300px,1fr)}
+.ar-grid .en-mapbox{grid-column:1;grid-row:1 / span 2}
+.ar-grid .ar-route{grid-column:2}
+.ar-grid .ar-card{grid-column:2}
+@media(max-width:1020px){.ar-grid{grid-template-columns:1fr}.ar-grid .en-mapbox,.ar-grid .ar-route,.ar-grid .ar-card{grid-column:1;grid-row:auto}}
+#ar-map .en-land path.ar-p{fill:#2f6f93}
+#ar-map .en-land path.sel{fill:#c41230;fill-opacity:.85}
+.ar-ln{fill:none;stroke-linecap:round;pointer-events:none}
+.ar-ln.s{stroke:#1d2630;opacity:.78}
+.ar-ln.w{stroke-width:2px;stroke-dasharray:5 3;opacity:.95}
+.ar-ln.w.cl{stroke-dasharray:2 3}
+.ar-ln.k-a,.ar-l.w{stroke:#d9730d}.ar-ln.k-s{stroke:#d9730d}.ar-ln.k-p{stroke:#2e8b57}
+.ar-ln.k-c,.ar-l.c{stroke:#c41230}.ar-ln.k-m,.ar-l.m{stroke:#6b4aa0}.ar-ln.k-t,.ar-l.t{stroke:#7a4b12}
+.en-arrow.w{fill:#d9730d}
+.ar-l{display:inline-block;width:22px;height:0;border-top:3px solid #1d2630;vertical-align:middle}
+.ar-l.w{border-top:2px dashed #d9730d}.ar-l.c{border-top:2px dashed #c41230}.ar-l.m{border-top:2px dashed #6b4aa0}.ar-l.t{border-top:2px dashed #7a4b12}
+.ar-head{font-size:14.5px;font-weight:800;line-height:1.5;margin:4px 0 8px;word-break:keep-all;color:#14222b}
+.ar-sum{font-size:13px;line-height:1.7;margin:8px 0 0;color:#2b3a44;word-break:keep-all}
+.ar-fl{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ar-fl li{background:#fff;border:1px solid #dce5ea;padding:8px 9px}
+.ar-fl li>b{font-size:13px;margin:0 6px}
+.ar-fl p{margin:4px 0 0;font-size:12.5px;line-height:1.6;word-break:keep-all}
+.ar-k{display:inline-block;font-size:10px;font-weight:900;padding:1px 6px;border-radius:2px;color:#fff;background:#d9730d}
+.ar-k.k-c{background:#c41230}.ar-k.k-m{background:#6b4aa0}.ar-k.k-t{background:#7a4b12}.ar-k.k-p{background:#2e8b57}
+.ar-st{font-style:normal;font-size:10px;font-weight:900;padding:1px 6px;border-radius:9px;border:1px solid currentColor;margin-left:4px}
+.ar-st.ok{color:#1f6b45}.ar-st.cl{color:#a0560b}.ar-st.dn{color:#6b4aa0}.ar-st.st{color:#5b6d78}
+.ar-tier{margin-left:3px;font-size:9.5px;color:#7a8a93}
+.ar-deals{min-width:0}.ar-deals th{white-space:normal;max-width:240px}.ar-deals td{font-size:11.5px}
+.ar-src{margin-top:12px;font-size:11.5px}.ar-src summary{cursor:pointer;font-weight:800}.ar-src ol{margin:6px 0 0;padding-left:18px;display:grid;gap:3px}
+.ar-src a{color:#b51d2a;word-break:break-all}
+#ar-compare tbody tr{cursor:pointer}
+.ar-grid>*{min-width:0}
+.ar-deals td:nth-child(5),.ar-deals td:nth-child(6){white-space:nowrap}
+
 </style>
 <div class="shell">
- <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#latest">국제 현장</a><a href="#watch">주목 국가</a><a href="#countries">국가 탐색</a><a href="#reports">리포트</a><a href="#ripple">파급경로</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
+ <header class="masthead"><a class="brand" href="/" aria-label="판도 첫 화면"><span class="brandmark" aria-hidden="true"></span><span class="brandtext">판도<small>PANDO · 세계의 판도를 읽다</small></span></a><nav class="mastnav" aria-label="주요 메뉴"><a href="#latest">국제 현장</a><a href="#watch">주목 국가</a><a href="#countries">국가 탐색</a><a href="#reports">리포트</a><a href="#ripple">파급경로</a><a href="#arms">무기 안보</a><a href="#explain">해설</a><button id="guide-open" class="guide-link" type="button">판도 사용법</button><button id="feedback-open" class="feedback-link" type="button">피드백 보내기</button></nav><div class="mastdate" id="mastdate">세계 변화 브리핑</div></header>
  <section class="top"><div><div class="eyebrow">Global intelligence · Daily brief</div><h1>세계의 변화를<br><em>맥락까지</em> 읽다.</h1><p>정치 제도와 경제·군사 지표를 바탕으로, 분쟁부터 재정안과 선거까지 중요한 변화를 추적합니다. 확인된 사실과 주장을 구분해 보여드립니다.</p><a class="hero-guide" href="#guide" data-guide-open>처음이라면 · 판도 사용법 보기 →</a><div class="quick-search" role="search"><label for="quick-country">나라 바로 찾기</label><div class="qs-box"><input id="quick-country" type="search" autocomplete="off" placeholder="예: 튀르키예, 일본, Brazil" aria-controls="quick-results"><ul id="quick-results" class="qs-results" role="listbox" hidden></ul></div></div></div><aside class="edition-box"><strong id="edition-title">브리핑을 불러오는 중</strong><div id="edition-note">매시간 새로운 변화를 점검합니다. 통계는 각 발표 시점을 따릅니다.</div><div class="small" id="edition-time"></div><span class="live-note" id="live-note"></span></aside></section>
  <main><div class="main-grid"><section class="map-card" aria-label="세계 사건과 주목 국가 지도"><div class="cardtop"><div><span class="map-card-kicker">WHERE IT HAPPENS / ATLAS</span><strong>세계 변화 지도</strong></div><span id="map-count"></span></div><div class="map-frame" id="map" role="region" aria-label="이동 및 확대 가능한 세계 변화 지도" tabindex="0"></div><div class="map-tools"><span class="map-legend"><i class="dot-key"></i>현장 <i class="heat-key"></i>이번 판 사건이 많은 나라(진할수록 많음) <button type="button" class="occ-toggle" data-occ-toggle aria-pressed="true"><i class="occ-key"></i>무력 점령·통제 지역</button></span><span>나라를 누르면 상세 정보가 열립니다. 표식은 대표 위치, 빗금은 무력 점령·무장세력 통제 지역(진한 빗금 = 대부분 장악, 옅은 빗금 = 일부)입니다.</span></div><div class="bloc-bar" id="bloc-bar" aria-label="국제기구 회원국 보기"></div><div class="bloc-bar rel-bar" id="rel-bar" aria-label="종교로 나라 묶어 보기" hidden></div><div class="map-quick"><div class="map-quick-head"><strong>지도에서 바로 열기</strong><span>겹친 핀도 아래에서 선택할 수 있습니다</span></div><div class="map-quick-list" id="map-quick-list" aria-label="지도 표시 항목"></div></div><form class="ask" id="ask" role="search" data-ask-form autocomplete="off"><label for="ask-q"><b>판도에 물어보기</b><span>말하듯 적으면 답이 있는 화면으로 바로 옮겨 드려요. 답은 오른쪽 창에 고정해 둘 수 있어요.</span></label><div class="ask-box"><input id="ask-q" type="search" enterkeyhint="search" placeholder="예: 한국 기름값 지금 얼마야?" aria-describedby="ask-status"><button type="submit">묻기</button></div><div class="ask-sugg" aria-label="예시 질문"><button type="button" data-ask-q="한국 기름값 지금 얼마야?">한국 기름값 지금 얼마야?</button><button type="button" data-ask-q="호르무즈 해협 지금 배가 지나가?">호르무즈 해협 지금 배가 지나가?</button><button type="button" data-ask-q="희토류 수출통제 언제 끝나?">희토류 수출통제 언제 끝나?</button><button type="button" data-ask-q="미국 관세가 한국 수출에 준 영향">미국 관세가 한국 수출에 준 영향</button><button type="button" data-ask-q="일본 의회 의석은 어떻게 돼?">일본 의회 의석은 어떻게 돼?</button></div><p class="ask-status" id="ask-status" aria-live="polite"></p></form></section><section class="brief-card"><div><div class="brief-header">The lead / 오늘의 초점</div><div class="brief-number">01</div><h2 id="lead-title">자료를 불러오는 중</h2><p id="lead-copy"></p></div><button class="brief-link" id="lead-open" type="button">자세히 보기 ↗</button></section></div>
  <section id="latest" aria-labelledby="feed-title"><div class="section-head"><div><div class="eyebrow">The latest / 주요 현장</div><h2 id="feed-title">국제 현장</h2></div><p>기사 발행일과 사건 시점을 구분합니다</p></div><p class="arch-link"><button type="button" data-archive-open>지난 기사 보관함 →</button></p><div class="filters" id="filters" role="group" aria-label="지역별 필터"></div><div class="feed" id="feed"></div></section>
- <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="reports" aria-labelledby="reports-title"><div class="section-head"><div><div class="eyebrow">Pando report / 판도 리포트</div><h2 id="reports-title">판도 리포트</h2></div><p>한 주의 흐름과 큰 주제를 묶어 — 무슨 일·왜·한국에 무슨 뜻·다음에 볼 것</p></div><div id="report-list" class="report-list"><p class="empty">리포트를 불러오는 중</p></div></section><section id="ripple" aria-labelledby="ripple-title"><div class="section-head"><div><div class="eyebrow">Ripple effects / 파급경로</div><h2 id="ripple-title">파급경로 추적</h2></div><p>충격원에서 한국 산업·생활까지 — 노드를 누르면 경로와 근거가 펼쳐집니다</p></div><div id="ripple-app" class="ripple-app"><p class="empty">파급경로를 불러오는 중</p></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
+ <section id="watch" aria-labelledby="watch-title"><div class="section-head"><div><div class="eyebrow">Countries in motion / 변화 관찰</div><h2 id="watch-title">지금 주목할 국가</h2></div><p>정치·경제·군사 흐름, 발표·잠정·확정 상태 구분</p></div><div class="watch-list" id="watch-list" aria-live="polite"></div></section><section id="reports" aria-labelledby="reports-title"><div class="section-head"><div><div class="eyebrow">Pando report / 판도 리포트</div><h2 id="reports-title">판도 리포트</h2></div><p>한 주의 흐름과 큰 주제를 묶어 — 무슨 일·왜·한국에 무슨 뜻·다음에 볼 것</p></div><div id="report-list" class="report-list"><p class="empty">리포트를 불러오는 중</p></div></section><section id="ripple" aria-labelledby="ripple-title"><div class="section-head"><div><div class="eyebrow">Ripple effects / 파급경로</div><h2 id="ripple-title">파급경로 추적</h2></div><p>충격원에서 한국 산업·생활까지 — 노드를 누르면 경로와 근거가 펼쳐집니다</p></div><div id="ripple-app" class="ripple-app"><p class="empty">파급경로를 불러오는 중</p></div></section><section id="arms" aria-labelledby="arms-title"><div class="section-head"><div><div class="eyebrow">Arms security / 무기 안보</div><h2 id="arms-title">무기 안보 지도</h2></div><p>전쟁 중인 나라와 관련국이 어디서 무기를 받아 오는지 — 주요 무기 인도량과 전시 지원·비공식 공급</p></div><div id="ar-app" class="en-app ar-app"><p class="empty">무기 이전 자료를 불러오는 중</p></div></section><section id="explain" aria-labelledby="explain-title"><div class="section-head"><div><div class="eyebrow">Explained / 판도 해설</div><h2 id="explain-title">해설</h2></div><p>무슨 자리였나, 무슨 말이 오갔나, 그 뒤의 맥락과 근거</p></div><div class="explain-list" id="explain-list"></div></section>
  <section id="countries" aria-labelledby="countries-title"><div class="section-head"><div><div class="eyebrow">Country atlas / 국가 탐색</div><h2 id="countries-title">세계 국가·지역 정보</h2></div><p id="country-count">목록을 불러오는 중</p></div><div class="country-tools"><label class="country-search-label" for="country-search">국가·지역 검색</label><input id="country-search" type="search" autocomplete="off" placeholder="국가명이나 영문 이름으로 검색"><label class="country-region-label" for="country-region">지역</label><select id="country-region" aria-label="지역 필터"><option value="">전 지역</option></select></div><div class="country-list" id="country-list" aria-live="polite"></div><p class="country-method">국가·지역 250곳의 탐색 목록입니다. 통계·정책금리·예산안·의회 구성은 원문과 기준 시점을 지표마다 표시합니다. 모든 지역에 독립 정책금리나 공개된 예산안이 있는 것은 아닙니다.</p></section></main>
  <section class="method"><div><b>어떤 주체를 표시하나요?</b><p>교전 당사자, 지원·연루 주장, 피해 기업과 투자자를 각자의 역할로 분리합니다. 공개 자료에서 연결이 확인된 주체만 싣고, 이름이 확인되지 않은 기업은 추측해 채우지 않습니다.</p></div><div><b>어떻게 읽으면 되나요?</b><p>매시간 새로운 변화를 점검하지만 GDP와 군사비는 주로 연간 자료입니다. 카드의 사건 시점과 기사 발행일을 구분하고, 각 지표의 기준 연도를 확인하세요. <a href="#" id="about-open">편집 원칙 보기 →</a></p></div></section>
  <footer class="foot">판도 / PANDO · 한국시간 기준 · 각 카드에서 원문 확인 · 지도 경계 <a href="https://github.com/johan/world.geo.json" target="_blank" rel="noopener noreferrer">world.geo.json</a>(Natural Earth 기반, 퍼블릭 도메인) · <span class="foot-copy">© 판도. 무단 복제·배포 금지</span></footer></div>
@@ -5844,6 +5888,234 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
 
 </script>
 <script>
+/* 판도 무기 안보 지도 (첫 화면 '무기 안보').
+   data/arms.json: SIPRI 주요 재래식 무기 인도량(TIV) 받는 나라×공급국×연도 + 최근 계약 목록 + 전시·비공식 공급 조사(res).
+   Uses helpers exposed by energy.js (window.__pandoRes). */
+(function(){
+ "use strict";
+ const A={data:null,sel:"UA",mode:"in",win:5,lay:{sipri:true,war:true},vb:null,loading:null,L:[]};
+ const H=()=>window.__pandoRes;
+ const GROUPS=[["전쟁 당사국",["UA","RU","IL","IR","US","X-HOUTHI","X-HEZBOLLAH","X-RSF","SD"]],["관련국",["KR","KP","DE","PL","TR","GB","FR","BY","SA","AE","YE"]],["긴장 지역",["CN","TW","JP","PH","IN","PK","AZ","AM","EG","MM"]]];
+ const FOCUS=GROUPS.flatMap(g=>g[1]);
+ const XKO={"X-HOUTHI":"후티 반군","X-HEZBOLLAH":"헤즈볼라","X-HAMAS":"하마스","X-RSF":"신속지원군(RSF)","X-DONBAS":"돈바스 친러 무장조직","X-KRG":"쿠르드자치정부","X-SYREB":"시리아 반군","X-LYGNC":"리비아 국민의회(GNC)","X-LYHOR":"리비아 동부 하원 세력","X-IS":"이슬람국가(IS)","X-TALIBAN":"탈레반","X-KH":"카타이브 헤즈볼라","X-PIJ":"팔레스타인 이슬라믹 지하드","X-STC":"남부과도위원회(예멘)","X-ARTSAKH":"아르차흐(나고르노카라바흐)","X-PUNTLAND":"푼틀란드","X-PKK":"쿠르드노동자당(PKK)","X-ABKHAZIA":"압하지야","X-SOSSETIA":"남오세티야","X-TRANSN":"트란스니스트리아","X-DARFUR":"다르푸르 반군","X-SHABAAB":"알샤바브","X-NATO":"나토(NATO)","X-EU":"유럽연합","X-AU":"아프리카연합","X-UN":"유엔","X-UNK":"공급국 미상","X-MULTI":"여러 나라 합작","X-OSC":"유럽안보협력기구(OSCE)","X-XAN":"북부동맹(아프가니스탄)","X-XMU":"와주연합군(미얀마)","X-XSL":"남레바논군(SLA)"};
+ const OVR={TR:"튀르키예",CZ:"체코",XK:"코소보",PS:"팔레스타인",KP:"북한",KR:"한국",US:"미국",GB:"영국",AE:"UAE",SA:"사우디",CD:"콩고민주공화국",CG:"콩고",MM:"미얀마",VA:"바티칸"};
+ const KIND={aid:"무상 지원",sale:"판매",loan:"차관·대여",covert:"비밀 이전",smuggling:"밀수·제재 회피",production:"공동·현지 생산",troops:"병력·인력",components:"부품·이중용도"};
+ const KC={aid:"a",sale:"s",loan:"a",covert:"c",smuggling:"c",production:"p",troops:"t",components:"m"};
+ const ST={"확인":"ok","주장":"cl","부인":"dn","중단":"st"};
+ let dn=null;try{dn=new Intl.DisplayNames(["ko"],{type:"region"})}catch{}
+ const ko=cc=>{if(!cc)return "";if(XKO[cc])return XKO[cc];if(cc.startsWith("X-")&&A.data&&A.data.names&&A.data.names[cc])return A.data.names[cc].replace(/\*+$/,"");if(OVR[cc])return OVR[cc];if(cc[0]==="?")return cc.slice(1);try{return (dn&&dn.of(cc))||cc}catch{return cc}};
+ const D=()=>A.data;
+ const imp=cc=>(D().imp||{})[cc]||{};
+ const res=cc=>(D().res||{})[cc];
+ const Y1=()=>D().years[1];
+ const inWin=y=>A.win==="all"?true:y>Y1()-A.win;
+ const sumW=s=>(s||[]).reduce((a,p)=>a+(inWin(p[0])?p[1]:0),0);
+
+ function ensure(){
+  if(A.loading)return A.loading;
+  A.loading=Promise.all([fetch("data/arms.json",{cache:"no-cache"}).then(r=>r.ok?r.json():null).catch(()=>null),H()?H().ensureWorld():null]).then(([d,w])=>{A.data=d;A.world=w;if(d)index()});
+  return A.loading;
+ }
+ // 수출 쪽 색인: 공급국 → 받는 나라 → 연도 값
+ function index(){
+  const ex={};for(const [r,sups] of Object.entries(D().imp||{}))for(const [s,ser] of Object.entries(sups))(ex[s]=ex[s]||{})[r]=ser;A.ex=ex;
+ }
+ const exp=cc=>A.ex[cc]||{};
+ const tot=(m)=>Object.values(m).reduce((a,s)=>a+sumW(s),0);
+ function ranks(){
+  const key=A.win+"";if(A._rk&&A._rk.k===key)return A._rk;
+  const im=Object.keys(D().imp).filter(c=>!c.startsWith("X-")).map(c=>[c,tot(imp(c))]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  const exl=Object.keys(A.ex).filter(c=>!c.startsWith("X-")&&c[0]!=="?").map(c=>[c,tot(exp(c))]).filter(x=>x[1]>0).sort((a,b)=>b[1]-a[1]);
+  const wi=im.reduce((a,x)=>a+x[1],0),we=exl.reduce((a,x)=>a+x[1],0);
+  A._rk={k:key,im:new Map(im.map((x,i)=>[x[0],i+1])),ex:new Map(exl.map((x,i)=>[x[0],i+1])),ni:im.length,ne:exl.length,wi,we};return A._rk;
+ }
+ const winTxt=()=>A.win==="all"?D().years[0]+"~"+Y1():(Y1()-A.win+1)+"~"+Y1();
+ const tiv=v=>v>=1000?H().num(v/1000,1)+"천":H().num(v,0);
+
+ function partners(cc){
+  const m=A.mode==="in"?imp(cc):exp(cc);const t=tot(m);
+  return Object.entries(m).map(([k,s])=>({cc:k,v:sumW(s),ser:s})).filter(x=>x.v>0.4).sort((a,b)=>b.v-a.v).map(x=>Object.assign(x,{sh:t?x.v/t*100:0}));
+ }
+ function warFlows(cc){
+  const out=[],seen=new Set();
+  for(const [owner,r] of Object.entries(D().res||{}))for(const f of (r.flows||[])){
+   if(!(A.mode==="in"?f.to===cc:f.from===cc))continue;const k=f.from+"|"+f.to+"|"+(f.what||"").slice(0,30);if(seen.has(k))continue;seen.add(k);out.push(Object.assign({owner},f))}
+  return out;
+ }
+ const pos=cc=>(D().pos||{})[cc];
+
+ function mount(){
+  const host=document.getElementById("ar-app"),h=H();if(!host||!h)return;
+  if(!D()){host.innerHTML='<p class="empty">무기 이전 자료를 불러오지 못했습니다.</p>';return}
+  const rk=ranks();
+  const chip=c=>'<button type="button" class="en-chip'+(c===A.sel?' on':'')+'" data-ar-cc="'+c+'" aria-pressed="'+(c===A.sel)+'"><b>'+h.esc(ko(c))+'</b><span>'+h.esc(partners0(c))+'</span></button>';
+  const chips=GROUPS.map(([g,L])=>'<div class="en-chrow"><span class="en-chg">'+g+'</span><div class="en-chlist">'+L.filter(c=>D().imp[c]||A.ex[c]||res(c)).map(chip).join("")+'</div></div>').join("");
+  const all=Object.keys(D().imp).concat(Object.keys(A.ex)).filter((c,i,a)=>a.indexOf(c)===i&&c[0]!=="?"&&!["X-UNK","X-MULTI"].includes(c)).sort((a,b)=>ko(a).localeCompare(ko(b),"ko"));
+  host.innerHTML='<div class="en-head"><div><h4>누가 누구에게 무기를 대나</h4>'+
+   '<p>나라를 고르면 그 나라로 무기가 들어오는 길(또는 그 나라가 무기를 보내는 길)이 그려집니다. 실선은 스톡홀름국제평화연구소(SIPRI)가 집계한 주요 무기 인도량, 점선은 전쟁 중 지원·비밀 이전·제재 회피처럼 SIPRI 표에 다 잡히지 않는 공급(정부 발표·제재 문서·유엔 보고서로 확인).</p></div>'+
+   '<span class="en-asof">'+(D().asOf?'SIPRI 자료 '+h.esc(D().asOf)+' 받음':'')+'</span></div>'+
+   '<div class="en-chips" aria-label="나라">'+chips+'<div class="en-chrow"><span class="en-chg">모든 나라</span><div class="en-chlist"><label class="ar-pick"><span>다른 나라</span><select id="ar-sel" aria-label="나라 고르기"><option value="">선택…</option>'+all.map(c=>'<option value="'+h.esc(c)+'"'+(c===A.sel?' selected':'')+'>'+h.esc(ko(c))+'</option>').join("")+'</select></label></div></div></div>'+
+   '<div class="ar-tools"><div class="ar-seg" role="group" aria-label="방향"><button type="button" data-ar-mode="in" aria-pressed="'+(A.mode==="in")+'">받는 무기(수입)</button><button type="button" data-ar-mode="out" aria-pressed="'+(A.mode==="out")+'">보내는 무기(수출)</button></div>'+
+   '<div class="ar-seg" role="group" aria-label="기간"><button type="button" data-ar-win="5" aria-pressed="'+(A.win===5)+'">최근 5년</button><button type="button" data-ar-win="10" aria-pressed="'+(A.win===10)+'">10년</button><button type="button" data-ar-win="all" aria-pressed="'+(A.win==="all")+'">'+D().years[0]+'년 이후</button></div>'+
+   '<label class="ar-ck"><input type="checkbox" data-ar-lay="sipri"'+(A.lay.sipri?' checked':'')+'> 주요 무기 인도(SIPRI)</label><label class="ar-ck"><input type="checkbox" data-ar-lay="war"'+(A.lay.war?' checked':'')+'> 전시 지원·비공식 공급</label></div>'+
+   '<div class="en-grid ar-grid"><figure class="en-mapbox"><div id="ar-map" class="en-map"></div><figcaption id="ar-cap"></figcaption></figure>'+
+   '<aside class="en-route ar-route" id="ar-route" hidden></aside><aside class="en-card ar-card" id="ar-card"></aside></div><div class="en-compare" id="ar-compare"></div>';
+  draw();
+ }
+ function partners0(c){const m=imp(c),t=tot(m);const top=Object.entries(m).map(([k,s])=>[k,sumW(s)]).sort((a,b)=>b[1]-a[1])[0];
+  if(top&&t>0)return ko(top[0])+" "+Math.round(top[1]/t*100)+"%";const e=tot(exp(c));return e>0?"수출 "+tiv(e):(res(c)?"전시 공급":"")}
+ function draw(){map();card();compare()}
+
+ /* ---------- 지도 ---------- */
+ function arc(a,b){
+  const h=H(),Wd=A.world.w;let p0=h.P(a[0],a[1]),p1=h.P(b[0],b[1]);
+  if(p1[0]-p0[0]>Wd/2)p1=[p1[0]-Wd,p1[1]];else if(p0[0]-p1[0]>Wd/2)p1=[p1[0]+Wd,p1[1]];
+  const mx=(p0[0]+p1[0])/2,my=(p0[1]+p1[1])/2,dx=p1[0]-p0[0],dy=p1[1]-p0[1],L=Math.hypot(dx,dy)||1;
+  let nx=-dy/L,ny=dx/L;if(ny>0){nx=-nx;ny=-ny}   // 항상 위(북쪽)로 굽게
+  const c=[mx+nx*L*0.22,my+ny*L*0.22];
+  const pts=[];for(let i=0;i<=24;i++){const t=i/24,u=1-t;pts.push([u*u*p0[0]+2*u*t*c[0]+t*t*p1[0],u*u*p0[1]+2*u*t*c[1]+t*t*p1[1]])}
+  return {d:"M"+p0[0].toFixed(1)+","+p0[1].toFixed(1)+"Q"+c[0].toFixed(1)+","+c[1].toFixed(1)+" "+p1[0].toFixed(1)+","+p1[1].toFixed(1),pts};
+ }
+ function map(){
+  const host=document.getElementById("ar-map"),h=H();if(!host||!h||!A.world)return;
+  const w=A.world,P=h.P,y0=P(0,72)[1],y1=P(0,-46)[1],base=()=>[0,y0,w.w,y1-y0],vb=(A.vb||base()).slice(),K=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000));
+  const sel=A.sel,me=pos(sel),PT=partners(sel),WF=A.lay.war?warFlows(sel):[];
+  const shade=new Map(PT.slice(0,25).map(x=>[x.cc,x.sh]));WF.forEach(f=>{const o=A.mode==="in"?f.from:f.to;if(!shade.has(o))shade.set(o,4)});
+  const pick=new Set(Object.keys(D().imp).concat(Object.keys(A.ex)));
+  let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+h.esc(ko(sel))+' 무기 공급 지도"><g id="ar-all"><g class="en-land">'+
+   w.countries.map(c=>{const s=shade.get(c.c),cls=(pick.has(c.c)?'imp':'')+(c.c===sel?' sel':'')+(s!=null?' ar-p':'');
+    return '<path d="'+c.d+'"'+(cls.trim()?' class="'+cls.trim()+'"':'')+(pick.has(c.c)?' data-ar-cc="'+c.c+'"':'')+(s!=null&&c.c!==sel?' style="fill-opacity:'+(0.18+0.7*Math.min(1,Math.sqrt(s/40))).toFixed(2)+'"':'')+'/>'}).join("")+'</g><g class="en-flows">';
+  A.L=[];const maxV=Math.max(1,...PT.map(x=>x.v));
+  if(me&&A.lay.sipri)for(const x of PT.slice(0,30).reverse()){const p=pos(x.cc);if(!p)continue;
+   const a=A.mode==="in"?arc(p,me):arc(me,p),wpx=0.7+5*Math.sqrt(x.v/maxV);
+   const tipT=(A.mode==="in"?ko(x.cc)+' → '+ko(sel):ko(sel)+' → '+ko(x.cc))+' · '+winTxt()+' 주요 무기 '+tiv(x.v)+' TIV · '+(A.mode==="in"?ko(sel)+' 수입의 ':ko(sel)+' 수출의 ')+h.num(x.sh,x.sh<1?1:0)+'%';
+   const i=A.L.push({t:"s",x,a})-1;
+   g+='<path class="ar-ln s" d="'+a.d+'" style="stroke-width:'+wpx.toFixed(2)+'"/><path class="en-fhit" data-ar-l="'+i+'" data-tip="'+h.esc(tipT)+'" d="'+a.d+'"/>'}
+  for(const f of WF){const o=A.mode==="in"?f.from:f.to,p=pos(o);if(!p||!me)continue;const a=A.mode==="in"?arc(p,me):arc(me,p);
+   const tipT=ko(f.from)+' → '+ko(f.to)+' · '+(KIND[f.kind]||f.kind||'')+(f.what?' · '+f.what:'')+(f.status?' · '+f.status:'');
+   const i=A.L.push({t:"w",f,a})-1;
+   g+='<path class="ar-ln w k-'+(KC[f.kind]||"a")+(f.status==="주장"||f.status==="부인"?' cl':'')+'" d="'+a.d+'"/><path class="en-fhit" data-ar-l="'+i+'" data-tip="'+h.esc(tipT)+'" d="'+a.d+'"/>'}
+  // 화살촉: 받는 쪽 끝 가까이
+  for(const L of A.L){const p=L.a.pts,q=p[20],r=p[23];const ang=Math.atan2(r[1]-q[1],r[0]-q[0])*180/Math.PI;
+   g+='<path class="en-arrow'+(L.t==="w"?' w':'')+'" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+r[0].toFixed(1)+' '+r[1].toFixed(1)+') rotate('+ang.toFixed(0)+') scale('+K.toFixed(3)+')"/>'}
+  g+='</g>';
+  // 이름표: 상위 공급국(또는 받는 나라) 8곳
+  const boxes=[],tw=(t,px)=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?px:px*0.58),0);let labs="";
+  if(me){const [mx,my]=P(...me);boxes.push({x0:mx-8*K,x1:mx+60*K,y0:my-10*K,y1:my+18*K});
+   labs+='<g class="en-dest sel" transform="translate('+mx.toFixed(1)+' '+my.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/><text x="7" y="13">'+h.esc(ko(sel))+'</text></g>'}
+  if(A.lay.sipri)PT.slice(0,8).forEach(x=>{const p=pos(x.cc);if(!p)return;const [ax,ay]=P(...p),t=ko(x.cc)+' '+h.num(x.sh,x.sh<1?1:0)+'%',bw=(tw(t,10.5)+10)*K,bh=15*K;let best=null;
+   for(const r of [4,12,22,34])for(let k=0;k<8&&!best;k++){const an=(k*45+20)*Math.PI/180,cx=ax+Math.cos(an)*(r*K+bw/2),cy=ay+Math.sin(an)*(r*K+bh/2),b={x0:cx-bw/2,x1:cx+bw/2,y0:cy-bh/2,y1:cy+bh/2};
+    if(!boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0))best={b,cx,cy}}
+   if(!best)return;boxes.push(best.b);
+   labs+='<g class="en-vlab sm"><line x1="'+ax.toFixed(1)+'" y1="'+ay.toFixed(1)+'" x2="'+best.cx.toFixed(1)+'" y2="'+best.cy.toFixed(1)+'"/><circle cx="'+ax.toFixed(1)+'" cy="'+ay.toFixed(1)+'" r="'+(2.2*K).toFixed(2)+'"/><g transform="translate('+best.cx.toFixed(1)+' '+best.cy.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="'+(-bw/2/K).toFixed(1)+'" y="'+(-bh/2/K).toFixed(1)+'" width="'+(bw/K).toFixed(1)+'" height="'+(bh/K).toFixed(1)+'" rx="3"/><text y="3.5">'+h.esc(t)+'</text></g></g>'});
+  g+='</g><use href="#ar-all" x="'+(-w.w)+'"/><use href="#ar-all" x="'+w.w+'"/><g class="en-vlabs">'+labs+'</g>';
+  g=g.replace(/<path /g,'<path vector-effect="non-scaling-stroke" ');
+  host.innerHTML=g+'</svg>';
+  h.zoomable&&h.zoomable(host,A,base,map);host.classList.toggle("zoomed",!!A.vb);
+  const cap=document.getElementById("ar-cap");
+  if(cap)cap.innerHTML='<span><i class="ar-l s"></i>주요 무기 인도(굵기 = 양, '+h.esc(winTxt())+')</span><span><i class="ar-l w"></i>전시 지원·판매</span><span><i class="ar-l c"></i>비밀 이전·밀수</span><span><i class="ar-l m"></i>부품·이중용도</span><span><i class="ar-l t"></i>병력</span><em>선을 누르면 무엇이 오갔는지, 나라를 누르면 그 나라로</em>';
+ }
+ // 눌린 자리 가까이 지나는 선 모두(겹친 선도 고르게)
+ function pickNear(ev){
+  const host=document.getElementById("ar-map"),sv=host&&host.querySelector("svg");if(!sv||!sv.getScreenCTM())return false;
+  const pt=sv.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;const u=pt.matrixTransform(sv.getScreenCTM().inverse());
+  const vb=sv.viewBox.baseVal,K=vb.width/Math.max(1,sv.getBoundingClientRect().width),tol=(matchMedia("(pointer:coarse)").matches?20:11)*K,Wd=A.world.w;
+  const dist=(pp,x,y)=>{let best=1e9;for(let i=1;i<pp.length;i++){const a=pp[i-1],b=pp[i],dx=b[0]-a[0],dy=b[1]-a[1],l=dx*dx+dy*dy;let t=l?((x-a[0])*dx+(y-a[1])*dy)/l:0;t=Math.max(0,Math.min(1,t));best=Math.min(best,Math.hypot(a[0]+t*dx-x,a[1]+t*dy-y))}return best};
+  const hits=[];A.L.forEach((L,i)=>{const d=Math.min(...[-Wd,0,Wd].map(o=>dist(L.a.pts,u.x-o,u.y)));if(d<tol)hits.push({i,d})});
+  if(!hits.length)return false;
+  if(hits.length===1){lineInfo(A.L[hits[0].i]);return true}
+  const h=H(),box=document.getElementById("ar-route");box.hidden=false;
+  box.innerHTML='<div class="en-rh"><span class="en-rk">이 자리를 지나는 선</span><b>'+hits.length+'개</b><button type="button" class="en-rx" data-ar-close aria-label="닫기">×</button></div><ul class="en-pick">'+
+   hits.sort((a,b)=>a.d-b.d).slice(0,20).map(x=>{const L=A.L[x.i];const t=L.t==="s"?(A.mode==="in"?ko(L.x.cc)+' → '+ko(A.sel):ko(A.sel)+' → '+ko(L.x.cc))+' · '+h.num(L.x.sh,1)+'%':ko(L.f.from)+' → '+ko(L.f.to)+' · '+(KIND[L.f.kind]||'');return '<li><button type="button" data-ar-l="'+x.i+'">'+h.esc(t)+'</button></li>'}).join("")+'</ul>';
+  return true;
+ }
+ function dealsOf(rec,sup){return ((D().deals||{})[rec]||[]).filter(d=>!sup||d[0]===sup)}
+ const yrsTxt=t=>{const y=String(t||"").split(/;\s*/).map(Number).filter(Boolean);if(!y.length)return "미인도";const a=Math.min(...y),b=Math.max(...y);return a===b?String(a):a+"~"+String(b).slice(2)};
+ function dealRows(L,showSup){const h=H();return L.map(d=>'<tr><th>'+h.esc(d[3])+'<small>'+h.esc(d[4])+(d[8]?' · '+h.esc(d[8]):'')+'</small></th>'+(showSup?'<td>'+h.esc(ko(d[0]))+'</td>':'')+'<td>'+h.esc(d[2]||'–')+'</td><td>'+h.esc(d[1]||'')+'</td><td>'+h.esc(String(d[6]||'').replace(/; /g,'·')||'미인도')+'</td><td>'+(d[9]!=null?tiv(d[9]):'–')+'</td></tr>').join("")}
+ function lineInfo(L){
+  const h=H(),box=document.getElementById("ar-route");if(!box||!L)return;box.hidden=false;
+  if(L.t==="s"){const x=L.x,rec=A.mode==="in"?A.sel:x.cc,sup=A.mode==="in"?x.cc:A.sel;const ds=dealsOf(rec,sup).slice(0,12);
+   const sm=new Map((x.ser||[]).map(p=>[p[0],p[1]])),y0=Math.max(Y1()-14,Math.min(...(x.ser||[[Y1()]]).map(p=>p[0]))),yrs=[];for(let y=y0;y<=Y1();y++)yrs.push([y,sm.get(y)||0]);
+   box.innerHTML='<div class="en-rh"><span class="en-rk">주요 무기 인도 (SIPRI)</span><b>'+h.esc(ko(sup))+' → '+h.esc(ko(rec))+'</b><button type="button" class="en-rx" data-ar-close aria-label="닫기">×</button></div>'+
+    '<dl class="en-rd"><div><dt>'+h.esc(winTxt())+' 인도량</dt><dd>'+tiv(x.v)+' TIV</dd></div><div><dt>'+(A.mode==="in"?h.esc(ko(rec))+' 수입 중 몫':h.esc(ko(sup))+' 수출 중 몫')+'</dt><dd>'+h.num(x.sh,1)+'%</dd></div></dl>'+
+    (yrs.length>1?h.lineChart([{name:"인도량",pts:yrs.map(p=>[String(p[0]),p[1]]),bars:true}],{label:"연도별 인도량",unit:"TIV",zero:true,h:110}):'')+
+    (ds.length?'<div class="en-tablewrap"><table class="en-table ar-deals"><thead><tr><th>무기</th><th>수량</th><th>계약</th><th>인도</th><th>TIV</th></tr></thead><tbody>'+dealRows(ds,false)+'</tbody></table></div>':'<p class="en-note">최근 10년 계약 목록에는 없습니다(그 전 인도분).</p>')+
+    '<p class="en-note">TIV는 SIPRI가 무기의 군사적 능력을 재는 단위로, 거래 금액(달러)이 아닙니다.</p>'}
+  else{const f=L.f,r=res(f.owner),S=r&&r.sources||[];
+   box.innerHTML='<div class="en-rh"><span class="en-rk">'+h.esc(KIND[f.kind]||f.kind||'공급')+'</span><b>'+h.esc(ko(f.from))+' → '+h.esc(ko(f.to))+'</b>'+(f.status?'<em class="ar-st '+(ST[f.status]||'')+'">'+h.esc(f.status)+'</em>':'')+'<button type="button" class="en-rx" data-ar-close aria-label="닫기">×</button></div>'+
+    '<dl class="en-rd">'+[["무엇을",f.what],["얼마나",f.amount],["언제",f.period],["누가 주장",f.claimBy],["반박",f.denial]].filter(x=>x[1]).map(x=>'<div><dt>'+x[0]+'</dt><dd>'+h.esc(x[1])+'</dd></div>').join("")+'</dl>'+
+    '<p class="en-note">'+srcOf(f.src,S)+'</p>'}
+  box.scrollIntoView({block:"nearest",behavior:"smooth"});
+ }
+ const TIERK={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구기관"};
+ function srcOf(idx,S){const h=H();return (idx||[]).map(i=>S[i]).filter(Boolean).slice(0,4).map(s=>'<a href="'+h.esc(h.safe(s[2]))+'" target="_blank" rel="noopener noreferrer" title="'+h.esc(s[1])+'">'+h.esc(s[0])+'</a>'+(s[3]?'<small class="ar-tier">'+h.esc(TIERK[s[3]]||s[3])+'</small>':'')).join(" · ")}
+
+ /* ---------- 오른쪽 카드 ---------- */
+ function card(){
+  const box=document.getElementById("ar-card"),h=H();if(!box)return;const c=A.sel,r=res(c),rk=ranks();
+  const ti=tot(imp(c)),te=tot(exp(c)),kri=tot(imp("KR")),kre=tot(exp("KR"));
+  const PT=partners(c),top=PT[0];
+  const auto=A.mode==="in"?(ti>0?winTxt()+' 주요 무기 수입 '+tiv(ti)+' TIV'+(rk.im.get(c)?' · 세계 '+rk.im.get(c)+'위':'')+(top?' · 1위 공급국 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수입 기록이 없습니다.'):(te>0?winTxt()+' 주요 무기 수출 '+tiv(te)+' TIV'+(rk.ex.get(c)?' · 세계 '+rk.ex.get(c)+'위':'')+(top?' · 가장 많이 받은 나라 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수출 기록이 없습니다.');
+  const kv=[["수입 "+winTxt(),ti>0?tiv(ti)+' TIV':'–',rk.im.get(c)?'세계 '+rk.im.get(c)+'위 / '+rk.ni+'곳 · 세계 수입의 '+h.num(ti/rk.wi*100,1)+'%':''],
+   ["수출 "+winTxt(),te>0?tiv(te)+' TIV':'–',rk.ex.get(c)?'세계 '+rk.ex.get(c)+'위 / '+rk.ne+'곳 · 세계 수출의 '+h.num(te/rk.we*100,1)+'%':''],
+   ...(c!=="KR"?[["한국과 비교",'수입 '+tiv(kri)+' · 수출 '+tiv(kre),'한국 수입 '+(rk.im.get("KR")||'–')+'위 · 수출 '+(rk.ex.get("KR")||'–')+'위'+(ti>0&&kri>0?' · 수입은 한국의 '+h.num(ti/kri,ti/kri<10?1:0)+'배':'')]]:[])];
+  const bars=PT.length?'<div class="en-sec"><h5>'+(A.mode==="in"?'어디서 받나':'누구에게 보내나')+' <small>'+h.esc(winTxt())+' · SIPRI TIV</small></h5><ol class="en-bars">'+PT.slice(0,8).map(x=>'<li><span class="nm">'+h.esc(ko(x.cc))+'</span><span class="bar"><i class="'+(x.cc==="KR"?'h':'o')+'" style="width:'+Math.min(100,x.sh).toFixed(1)+'%"></i></span><b>'+h.num(x.sh,x.sh<1?1:0)+'%</b><em>'+tiv(x.v)+'</em></li>').join("")+'</ol></div>':'';
+  // 연도별 추이(수입·수출)
+  const yr=(m)=>{const o={};for(const s of Object.values(m))for(const [y,v] of s)o[y]=(o[y]||0)+v;return Object.entries(o).map(([y,v])=>[y,Math.round(v)]).sort()};
+  const si=yr(imp(c)),se=yr(exp(c)),yrs=[...new Set(si.concat(se).map(p=>p[0]))].sort(),fill=s=>yrs.map(y=>[y,(s.find(p=>p[0]===y)||[0,0])[1]]);
+  const chart=yrs.length>2?'<div class="en-sec"><h5>해마다 얼마나 <small>주요 무기 인도량, TIV</small></h5>'+h.lineChart([si.length?{name:"수입",pts:fill(si)}:null,se.length?{name:"수출",pts:fill(se)}:null].filter(Boolean),{label:"연도별 무기 수입·수출",zero:true,legend:true,h:130})+'</div>':'';
+  const ds=A.mode==="in"?dealsOf(c).slice().sort((a,b)=>(b[9]||b[10]||0)-(a[9]||a[10]||0)).slice(0,12):[];
+  const deals=ds.length?'<div class="en-sec"><h5>핵심 무기 <small>최근 10년 인도·계약, 양이 큰 순</small></h5><div class="en-tablewrap"><table class="en-table ar-deals"><thead><tr><th>무기</th><th>공급국</th><th>수량</th><th>계약</th><th>인도</th><th>TIV</th></tr></thead><tbody>'+dealRows(ds,true)+'</tbody></table></div></div>':'';
+  let R="";
+  if(r){const S=r.sources||[];
+   R+=(r.summary?'<p class="ar-sum">'+h.esc(r.summary)+'</p>':'')+(r.selfProduction&&r.selfProduction.text?'<p class="en-note"><b>자체 생산</b> '+h.esc(r.selfProduction.text)+' '+srcOf(r.selfProduction.src,S)+'</p>':'');
+   const fl=(r.flows||[]).filter(f=>A.mode==="in"?f.to===c:f.from===c);
+   if(fl.length)R+='<div class="en-sec"><h5>'+(A.mode==="in"?'전쟁·위기 속 공급':'전쟁·위기 속 보낸 것')+' <small>정부 발표·제재 문서·유엔 보고서</small></h5><ul class="ar-fl">'+fl.map(f=>'<li><span class="ar-k k-'+(KC[f.kind]||'a')+'">'+h.esc(KIND[f.kind]||f.kind)+'</span><b>'+h.esc(ko(f.from))+' → '+h.esc(ko(f.to))+'</b>'+(f.status?'<em class="ar-st '+(ST[f.status]||'')+'">'+h.esc(f.status)+'</em>':'')+'<p>'+h.esc(f.what||'')+(f.amount?' — '+h.esc(f.amount):'')+(f.period?' ('+h.esc(f.period)+')':'')+'</p>'+(f.claimBy?'<p class="en-note">주장: '+h.esc(f.claimBy)+'</p>':'')+(f.denial?'<p class="en-note">반박: '+h.esc(f.denial)+'</p>':'')+'<p class="en-note">'+srcOf(f.src,S)+'</p></li>').join("")+'</ul></div>';
+   if((r.embargo||[]).length)R+='<div class="en-sec"><h5>금수·제재</h5><ul class="en-pol">'+r.embargo.map(e=>'<li><time>'+h.esc(e.since||'')+'</time><span><b>'+h.esc(e.by||'')+'</b> '+h.esc(e.text||'')+(e.status?' — <b>'+h.esc(e.status)+'</b>':'')+' '+srcOf(e.src,S)+'</span></li>').join("")+'</ul></div>';
+   if(r.korea)R+='<div class="en-sec"><h5>한국과는</h5><p class="ar-sum">'+h.esc(r.korea)+'</p></div>';
+   if((r.watch||[]).length)R+='<div class="en-sec"><h5>다음에 볼 것</h5><ul class="en-pol">'+r.watch.map(w=>'<li><time>'+h.esc(w.date||'')+'</time><span>'+h.esc(w.text||'')+'</span></li>').join("")+'</ul></div>';
+   if(S.length)R+='<details class="ar-src"><summary>출처 '+S.length+'개</summary><ol>'+S.map(s=>'<li><a href="'+h.esc(h.safe(s[2]))+'" target="_blank" rel="noopener noreferrer">'+h.esc(s[0])+' — '+h.esc(s[1])+'</a>'+(s[3]?' <small class="ar-tier">'+h.esc(TIERK[s[3]]||s[3])+'</small>':'')+(s[4]?' <small>'+h.esc(s[4])+'</small>':'')+'</li>').join("")+'</ol></details>'}
+  box.innerHTML='<div class="en-ct"><b>'+h.esc(ko(c))+'</b><span>'+h.esc(r&&r.asOf?'조사 '+r.asOf:'')+'</span></div>'+
+   '<p class="ar-head">'+h.esc(r&&r.headline||auto)+'</p>'+(r&&r.headline?'<p class="en-note">'+h.esc(auto)+'</p>':'')+
+   '<div class="en-kv">'+kv.map(x=>'<div><span>'+h.esc(x[0])+'</span><b>'+h.esc(x[1])+'</b><small>'+h.esc(x[2])+'</small></div>').join("")+'</div>'+bars+chart+R+deals+
+   '<p class="en-note">SIPRI는 항공기·함정·전차·포·미사일·방공체계 같은 주요 재래식 무기만 셉니다. 포탄·소총·탄약·재정 지원은 빠지고, TIV는 금액이 아니라 군사적 능력의 양입니다. 출처: <a href="https://www.sipri.org/databases/armstransfers" target="_blank" rel="noopener noreferrer">SIPRI Arms Transfers Database</a> (스톡홀름국제평화연구소 무기 이전 데이터베이스)</p>';
+ }
+ function compare(){
+  const box=document.getElementById("ar-compare"),h=H();if(!box)return;const rk=ranks();
+  const rows=FOCUS.filter(c=>D().imp[c]||A.ex[c]).map(c=>{const m=imp(c),t=tot(m),top=Object.entries(m).map(([k,s])=>[k,sumW(s)]).sort((a,b)=>b[1]-a[1]).slice(0,2),e=tot(exp(c));
+   return '<tr class="'+(c===A.sel?'on':'')+'" data-ar-cc="'+c+'"><th>'+h.esc(ko(c))+'</th><td>'+(t?tiv(t):'–')+'</td><td>'+(rk.im.get(c)||'–')+'</td><td>'+top.map(x=>h.esc(ko(x[0]))+' '+h.num(t?x[1]/t*100:0,0)+'%').join(', ')+'</td><td>'+(e?tiv(e):'–')+'</td><td>'+(rk.ex.get(c)||'–')+'</td><td>'+(res(c)&&(res(c).flows||[]).length?(res(c).flows.length+'건'):'–')+'</td></tr>'}).join("");
+  box.innerHTML='<h5>한눈에 비교 <small>'+h.esc(winTxt())+' · SIPRI TIV · 줄을 누르면 그 나라로</small></h5><div class="en-tablewrap"><table class="en-table"><thead><tr><th>나라</th><th>수입</th><th>수입 순위</th><th>주요 공급국</th><th>수출</th><th>수출 순위</th><th>전시 공급 조사</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+ }
+
+ function select(cc){if(!cc||cc===A.sel)return;A.sel=cc;const r=document.getElementById("ar-route");if(r)r.hidden=true;mount()}
+ document.addEventListener("click",e=>{
+  const app=document.getElementById("ar-app");if(!app||!app.contains(e.target))return;
+  if(e.target.closest("[data-ar-close]")){document.getElementById("ar-route").hidden=true;return}
+  const l=e.target.closest("[data-ar-l]");if(l&&!l.closest("#ar-map")){lineInfo(A.L[+l.dataset.arL]);return}
+  const md=e.target.closest("[data-ar-mode]");if(md){A.mode=md.dataset.arMode;mount();return}
+  const wn=e.target.closest("[data-ar-win]");if(wn){A.win=wn.dataset.arWin==="all"?"all":+wn.dataset.arWin;mount();return}
+  if(e.target.closest("#ar-map")&&pickNear(e))return;
+  const b=e.target.closest("[data-ar-cc]");if(b){select(b.dataset.arCc);if(b.closest("#ar-compare"))app.scrollIntoView({behavior:"smooth",block:"start"})}
+ });
+ document.addEventListener("change",e=>{const t=e.target;if(t.id==="ar-sel"&&t.value)select(t.value);else if(t.dataset&&t.dataset.arLay){A.lay[t.dataset.arLay]=t.checked;map()}});
+ (function(){let tipEl=null;
+  document.addEventListener("mousemove",e=>{const t=e.target.closest&&e.target.closest("#ar-app [data-tip]");
+   if(!t){if(tipEl)tipEl.hidden=true;return}
+   if(!tipEl){tipEl=document.createElement("div");tipEl.className="en-tip";document.body.appendChild(tipEl)}
+   tipEl.textContent=t.dataset.tip;tipEl.hidden=false;const w=Math.min(320,innerWidth-16);tipEl.style.maxWidth=w+"px";
+   const x=Math.min(innerWidth-w-8,e.clientX+14),y=e.clientY+16+tipEl.offsetHeight>innerHeight?e.clientY-tipEl.offsetHeight-10:e.clientY+16;tipEl.style.left=Math.max(8,x)+"px";tipEl.style.top=y+"px"});
+ })();
+ function start(){const host=document.getElementById("ar-app");if(!host)return;
+  const m=location.hash.match(/^#arms(?:=([A-Z-]+))?/);if(m&&m[1])A.sel=m[1];
+  const go=()=>ensure().then(mount);
+  if(m)go();else if("IntersectionObserver" in window){const io=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){io.disconnect();go()}},{rootMargin:"600px"});io.observe(host)}else go()}
+ window.__pandoArms={open:cc=>ensure().then(()=>{A.sel=cc;mount();document.getElementById("arms")?.scrollIntoView({behavior:"smooth"})}),data:()=>ensure().then(()=>A.data),ko};
+ if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",start);else start();
+ addEventListener("hashchange",()=>{const m=location.hash.match(/^#arms=([A-Z-]+)/);if(m)window.__pandoArms.open(m[1])});
+})();
+
+</script>
+<script>
 /* 판도 리포트: 주간 종합 + 수시 리포트. data/reports.json → 첫 화면 카드, 누르면 상세 서랍.
    Uses the site's drawer (#overlay/#detail) through window.__pandoDrawer (exposed by build.mjs). */
 (function(){
@@ -5985,6 +6257,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  // 같은 뜻으로 함께 찾는 말
  const SYN=[
+  ["무기","무기 수입","무기 공급","무기 지원","군사 지원","병기","방산","arms","weapons"],
   ["기름값","기름","휘발유","경유","주유","주유소","유가","석유","원유","oil","gasoline","fuel","petrol","브렌트","두바이유"],
   ["가스","lng","천연가스","gas"],["전기요금","전기세","전기료","전력","electricity"],
   ["물가","인플레","인플레이션","소비자물가","inflation","prices"],["환율","원달러","원화","달러","exchange"],
@@ -6021,7 +6294,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function doc(o){o.cc=o.cc||[];o.T=String(o.title||"").toLowerCase();o.G=[o.kind,...(o.tags||[])].join(" ").toLowerCase();o.X=String(o.text||"").toLowerCase();return o}
  function ensure(){
   if(IDX)return Promise.resolve(IDX);if(loading)return loading;
-  loading=Promise.all(["countries","edition","contexts","problems","changewatch","explainers","reports","ripple","energy","minerals","archive"].map(n=>J("data/"+n+".json"))).then(([co,ed,cx,pr,cw,ex,rp,ri,en,mn,arc])=>{
+  loading=Promise.all(["countries","edition","contexts","problems","changewatch","explainers","reports","ripple","energy","minerals","archive","arms"].map(n=>J("data/"+n+".json"))).then(([co,ed,cx,pr,cw,ex,rp,ri,en,mn,arc,ar])=>{
    const D=[],codes=((co&&co.countries)||[]).map(c=>c.code);buildNames(codes);
    const R={energy:"에너지 안보",trade:"관세·수출통제",chips:"희토류·반도체"};
    for(const s of (ed&&ed.stories)||[])D.push(doc({kind:"기사",title:s.headline,text:[s.summary,s.place,s.changed].join(" "),tags:[s.region,s.place,s.label,s.topic],cc:s.countryCodes||[],act:{t:"story",id:s.id},date:s.eventDate||s.changeDate,prior:3}));
@@ -6052,7 +6325,14 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     for(const c of (m.controls||[]).slice(-2))facts.push(["통제 "+(c.date||""),clip(c.text+(c.status?" · "+c.status:""),70)]);
     D.push(doc({kind:"핵심광물",title:m.name,text:[m.uses,m.notes,...(m.controls||[]).map(c=>c.text+" "+(c.status||""))].join(" "),tags:[m.name,m.id,"광물","핵심광물",...(m.industries||[])],act:{t:"mineral",id:m.id},date:mn.asOf,facts,ans:m.uses,prior:1}));
    }
-   [["리포트","reports","판도 리포트 — 한 주의 흐름과 큰 주제"],["파급경로","ripple","파급경로 추적 — 에너지·관세·희토류가 한국까지"],["해설","explain","판도 해설 — 청문회·회의에서 오간 것"],["국가 탐색","countries","국가 탐색 — 나라별 정치·경제·예산·군사"],["주목 국가","watch","주목 국가 — 이번 판에 사건이 많은 나라"]]
+   // 무기 안보 지도: 조사한 나라(전시 공급)와 SIPRI 수입 상위국
+   if(ar&&ar.imp){const Y=ar.years[1],sum=s=>(s||[]).reduce((a,p)=>a+(p[0]>Y-5?p[1]:0),0),arName=cc=>cc.startsWith("X-")?((window.__pandoArms&&window.__pandoArms.ko(cc))||cc):nameKo(cc);
+    const all=new Set(Object.keys(ar.res||{}).concat(Object.keys(ar.imp)));
+    for(const cc of all){const m=ar.imp[cc]||{},t=Object.values(m).reduce((a,s)=>a+sum(s),0),top=Object.entries(m).map(([k,s])=>[k,sum(s)]).sort((a,b)=>b[1]-a[1]).slice(0,3),r=(ar.res||{})[cc];
+     if(!r&&t<50)continue;
+     const facts=top.filter(x=>x[1]>0).map(x=>[arName(x[0])+"에서",fmt(t?x[1]/t*100:0,0)+"% ("+(Y-4)+"~"+Y+")"]);
+     D.push(doc({kind:"무기 안보",title:arName(cc)+" 무기는 어디서 오나",text:[r&&r.headline,r&&r.summary,...((r&&r.flows)||[]).map(f=>f.what+" "+(f.amount||""))].join(" "),tags:["무기","무기 수입","무기 공급","군사 지원","무기 지원","방산","SIPRI",...top.map(x=>arName(x[0]))],cc:cc.startsWith("X-")?[]:[cc],act:{t:"arms",cc},date:(r&&r.asOf)||ar.asOf,facts,ans:r&&r.headline||"",prior:r?2:1}))}}
+   [["리포트","reports","판도 리포트 — 한 주의 흐름과 큰 주제"],["파급경로","ripple","파급경로 추적 — 에너지·관세·희토류가 한국까지"],["무기 안보","arms","무기 안보 지도 — 누가 누구에게 무기를 대나"],["해설","explain","판도 해설 — 청문회·회의에서 오간 것"],["국가 탐색","countries","국가 탐색 — 나라별 정치·경제·예산·군사"],["주목 국가","watch","주목 국가 — 이번 판에 사건이 많은 나라"]]
     .forEach(([k,id,t])=>D.push(doc({kind:"화면",title:t,tags:[k],act:{t:"anchor",id},prior:0})));
    IDX=D;return D;
   });
@@ -6148,6 +6428,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(a.t==="anchor"){const el=document.getElementById(a.id);el?.scrollIntoView({behavior:"smooth"});return}
   if(a.t==="ripple"){setHash("ripple="+a.k);await sleep(150);document.getElementById("ripple")?.scrollIntoView({behavior:"smooth"});
    const node=a.k.split(":")[1];if(node){const el=await waitFor('#ripple .rp-node[data-node="'+node+'"]',3000);if(el)flash(el)}return}
+  if(a.t==="arms"){if(window.__pandoArms){await window.__pandoArms.open(a.cc);flash(document.getElementById("ar-app"))}return}
   if(a.t==="energy"||a.t==="mineral"){
    setHash("ripple="+(a.t==="energy"?"energy":"chips"));
    const sel=a.t==="energy"?'#en-app [data-en-cc="'+a.cc+'"]':'#mn-app [data-mn="'+a.id+'"]';
