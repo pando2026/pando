@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="c62af299e1";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="2e75888076";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1833,6 +1833,7 @@ html,body{background:#fff;color:var(--ink)}
 .en-bal .en-bars li{grid-template-columns:72px 1fr 64px}
 .en-bars i.pd{background:#2b7a4b}.en-bars i.im{background:#2f6f93}.en-bars i.ex{background:#b8860b}.en-bars i.rf{background:#5d6b74}
 .en-self{display:flex;align-items:baseline;gap:8px;margin:2px 0 8px}.en-self b{font-size:24px;letter-spacing:-.03em;color:#1d2630}.en-self span{font-size:11.5px;color:#4d5d67;line-height:1.4}
+.en-chart .mkt{paint-order:stroke;stroke:#fff;stroke-width:3px;stroke-linejoin:round}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -5350,7 +5351,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(opt.unit)s+='<text class="ax un" x="'+(pl-4)+'" y="8" text-anchor="end">'+esc(opt.unit)+'</text>';
   for(const t of tks)s+='<line class="g" x1="'+pl+'" x2="'+(W2-pr)+'" y1="'+Y(t).toFixed(1)+'" y2="'+Y(t).toFixed(1)+'"/><text class="ax" x="'+(pl-4)+'" y="'+(Y(t)+3).toFixed(1)+'" text-anchor="end">'+num(t,tdec)+'</text>';
   if(opt.zero&&mn<0)s+='<line class="z" x1="'+pl+'" x2="'+(W2-pr)+'" y1="'+Y(0).toFixed(1)+'" y2="'+Y(0).toFixed(1)+'"/>';
-  (opt.marks||[]).forEach(m=>{const i=xs.findIndex(x=>x>=m[0]);if(i<0)return;s+='<line class="mk" x1="'+X(i).toFixed(1)+'" x2="'+X(i).toFixed(1)+'" y1="'+pt+'" y2="'+(H-pb)+'"/><text class="mkt" x="'+(X(i)+3).toFixed(1)+'" y="'+(pt+8)+'">'+esc(m[1])+'</text>'});
+  // 표시선 이름표: 서로 겹치면 아랫줄로(최대 3줄), 오른쪽 끝에 닿으면 선 왼쪽에 붙인다
+  {const rowEnd=[];(opt.marks||[]).slice().sort((a,b)=>String(a[0]).localeCompare(String(b[0]))).forEach(m=>{const i=xs.findIndex(x=>x>=m[0]);if(i<0)return;const x=X(i),t=String(m[1]),tw=[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?9.6:5.4),0);
+   let lx=x+3,end=false;if(lx+tw>W2-pr){lx=x-3;end=true}const x0=end?lx-tw:lx;let r=0;while(r<2&&rowEnd[r]!=null&&rowEnd[r]>x0-4)r++;rowEnd[r]=x0+tw;
+   s+='<line class="mk" x1="'+x.toFixed(1)+'" x2="'+x.toFixed(1)+'" y1="'+pt+'" y2="'+(H-pb)+'"/><text class="mkt" x="'+lx.toFixed(1)+'" y="'+(pt+8+r*11)+'"'+(end?' text-anchor="end"':'')+'>'+esc(t)+'</text>'})}
   sets.forEach((st,k)=>{if(st.bars){const bw=Math.max(2,(W2-pl-pr)/xs.length*0.6);st.pts.forEach(p=>{const x=X(xi(p[0])),y=Y(Math.max(0,p[1])),y2=Y(Math.min(0,p[1]));s+='<rect class="bar'+(p[1]<0?' neg':'')+'" x="'+(x-bw/2).toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(.5,y2-y).toFixed(1)+'"></rect>'})}
    else if(st.step){let d="";st.pts.forEach((p,i)=>{const x=X(xi(p[0])).toFixed(1),y=Y(p[1]).toFixed(1);d+=i?"H"+x+"V"+y:"M"+x+","+y});d+="H"+(W2-pr);s+='<path class="ln st c'+k+'" d="'+d+'"/>'}
    else s+='<polyline class="ln c'+k+'" points="'+st.pts.map(p=>X(xi(p[0])).toFixed(1)+","+Y(p[1]).toFixed(1)).join(" ")+'"/>'});
@@ -5714,7 +5718,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    return '<details class="rp-path lv-'+lv+'"'+(i===0?' open':'')+'><summary><span class="rp-pathlv">'+esc(LV[lv])+'</span><span class="rp-chain">'+chain+'</span></summary><ol>'+hops+'</ol></details>';
   }).join("");
   box.innerHTML='<div class="rp-dk">'+esc(S.data.cols[n.col])+' · <b class="rp-lvbadge lv-'+n.level+'">'+esc(LV[n.level])+'</b></div>'+
-   '<h4>'+esc(n.label)+'</h4><p class="rp-dsub">'+esc(n.sub||"")+'</p><p class="rp-now">'+esc(n.now)+'</p>'+facts+(n.chart&&!(n.live&&n.live.kind==="portwatch")&&!(n.live&&n.live.kind==="fx"&&/^fx/.test(n.chart.auto||""))?nodeChart(n):'')+live+
+   '<h4>'+esc(n.label)+'</h4><p class="rp-dsub">'+esc(n.sub||"")+'</p><p class="rp-now">'+esc(n.now)+'</p>'+facts+(n.chart&&!mergeLive(n)?nodeChart(n):'')+live+
    (ptxt?'<div class="rp-paths"><h5>'+(n.col===3?'이곳까지 오는 경로':n.col===0?'여기서 번지는 경로':'이 지점을 지나는 경로')+'</h5>'+ptxt+'</div>':'')+
    (n.src.length?srcBlock(n.src):'');
  }
@@ -5887,12 +5891,20 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   return '<div class="rp-spark '+(cls||"")+'">'+R.lineChart([{name:"",pts:series}],{w:420,h:130,unit:unit||"",dec:dec??0})+'</div>';
  }
  // 노드 차트: 조사한 시계열(+자동 자료가 있으면 그 뒤에 이어 붙임)
+ // 차트가 실시간 계기 값을 이어 붙이는 경우: auto가 그 계기(portwatch:·fx:)를 가리킬 때만. 나머지는 차트와 실시간 계기를 따로 보여 준다
+ const mergeLive=n=>!!(n.chart&&n.live&&((n.live.kind==="portwatch"&&/^portwatch/.test(n.chart.auto||""))||(n.live.kind==="fx"&&/^fx/.test(n.chart.auto||""))));
  function nodeChart(n,liveSer){
   const c=n.chart;if(!c)return "";
   const R=window.__pandoRes;
   if(c.kind==="timeline"||!(c.series||[]).length)return (c.events||[]).length?'<div class="rp-chart"><h5>'+esc(c.title||"")+'</h5><ol class="rp-tl">'+c.events.map(e=>'<li><time>'+esc(e[0])+'</time><span>'+esc(e[1])+'</span></li>').join("")+'</ol>'+(c.note?'<p class="rp-dsrc">'+esc(c.note)+'</p>':'')+(c.src&&c.src.length?'<p class="rp-dsrc">'+srcLinks(c.src)+'</p>':'')+'</div>':"";
   let sets=c.series.map(x=>({name:x.name||"",pts:(x.points||[]).slice(),bars:c.kind==="bar",step:c.kind==="step"}));
-  if(liveSer&&liveSer.length&&sets.length===1){const lastD=sets[0].pts.length?sets[0].pts[sets[0].pts.length-1][0]:"";const add=liveSer.filter(p=>p[0]>lastD);if(add.length&&String(lastD).length===String(add[0][0]).length)sets[0].pts=sets[0].pts.concat(add)}
+  if(liveSer&&liveSer.length&&sets.length===1){const P=sets[0].pts,lastD=P.length?P[P.length-1][0]:"";let add=liveSer.filter(p=>p[0]>lastD);
+   if(add.length&&String(lastD).length===String(add[0][0]).length){
+    // 차트가 주 평균인데 실시간 값이 하루 단위면, 마지막 점 다음 날부터 7일씩 묶어 평균(4일 이상 있는 주만)으로 맞춘다
+    const D=864e5,gap=P.length>2?(Date.parse(P[P.length-1][0])-Date.parse(P[P.length-3][0]))/2/D:1;
+    if(gap>=5&&String(lastD).length===10){const t0=Date.parse(lastD),bins=new Map();for(const p of add){const k=Math.floor((Date.parse(p[0])-t0-D)/(7*D));if(!bins.has(k))bins.set(k,[]);bins.get(k).push(+p[1])}
+     add=[...bins].filter(b=>b[1].length>=4).sort((a,b)=>a[0]-b[0]).map(([k,v])=>[new Date(t0+(k+1)*7*D).toISOString().slice(0,10),Math.round(v.reduce((a,b)=>a+b,0)/v.length*10)/10])}
+    sets[0].pts=P.concat(add)}}
   const vals=sets.flatMap(x=>x.pts.map(p=>p[1])),dec=vals.some(v=>Math.abs(v)<10&&v%1)?2:vals.some(v=>v%1)?1:0;
   const svg=R&&R.lineChart?R.lineChart(sets,{w:420,h:150,unit:c.unit||"",dec,marks:c.marks||[],legend:sets.length>1,zero:c.kind==="bar"}):"";
   if(!svg)return "";
@@ -5904,12 +5916,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const L=n.live,lv=liveLevel(n);
   const flag=lv!=null&&lv>n.level?'<p class="rp-alert">실시간 수치는 지금 판정보다 한 단계 높은 <b>'+esc(LV[lv])+'</b> 수준입니다. 다음 갱신 때 다시 확인합니다.</p>':'';
   if(L.kind==="portwatch"){const x=S.live.pw?.[L.id];
-   if(!x)return '<h5>실시간 · '+esc(L.name)+' 통항</h5><p class="rp-none">'+(S.live.pw===false?'IMF PortWatch에 연결하지 못했습니다.':'IMF PortWatch에서 받는 중…')+'</p>';
-   return '<h5>실시간 · '+esc(L.name)+' 하루 통항(최근 7일 평균)</h5><div class="rp-gauge"><b>'+num(x.recent,0)+'척</b><span>유조선 '+num(x.tank,0)+'척</span>'+(x.base!=null?'<span>작년 같은 때 '+num(x.base,0)+'척 · <strong class="'+(x.change<0?'dn':'up')+'">'+pct(x.change)+'</strong></span>':'')+'</div>'+(n.chart?nodeChart(n,x.series):spark(x.series,"","척"))+
+   if(!x)return '<h5>실시간 · '+esc(L.name)+' 통항</h5><p class="rp-none">'+(S.live.pw===false?'IMF PortWatch에 연결하지 못했습니다.':'IMF PortWatch에서 받는 중…')+'</p>'+(mergeLive(n)?nodeChart(n):'');
+   return '<h5>실시간 · '+esc(L.name)+' 하루 통항(최근 7일 평균)</h5><div class="rp-gauge"><b>'+num(x.recent,0)+'척</b><span>유조선 '+num(x.tank,0)+'척</span>'+(x.base!=null?'<span>작년 같은 때 '+num(x.base,0)+'척 · <strong class="'+(x.change<0?'dn':'up')+'">'+pct(x.change)+'</strong></span>':'')+'</div>'+(mergeLive(n)?nodeChart(n,x.series):spark(x.series,"","척"))+
     '<p class="rp-dsrc">최근 75일 · '+md(x.last)+' 자료까지(위성 선박 신호 집계, 며칠 늦게 나옴) · <a href="https://portwatch.imf.org/pages/chokepoints" target="_blank" rel="noopener noreferrer">IMF PortWatch</a></p>'+flag}
   if(L.kind==="fx"){const x=S.live.fx?.[L.id];
-   if(!x)return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-none">'+(S.live.fx===false?'환율 자료에 연결하지 못했습니다.':'환율 받는 중…')+'</p>';
-   return '<h5>실시간 · '+esc(L.name)+' 기준환율</h5><div class="rp-gauge"><b>'+(L.id==="KRW"?num(x.v,1)+'원':num(x.v,4)+'위안')+'</b><span>1달러당 · '+md(x.last)+'</span><span>30일 새 <strong class="'+(x.change>0?'up':'dn')+'">'+pct(x.change)+'</strong></span></div>'+(n.chart&&/^fx/.test(n.chart.auto||"")?nodeChart(n,x.series):spark(x.series,"",L.id==="KRW"?"원":"위안",L.id==="KRW"?1:4))+
+   if(!x)return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-none">'+(S.live.fx===false?'환율 자료에 연결하지 못했습니다.':'환율 받는 중…')+'</p>'+(mergeLive(n)?nodeChart(n):'');
+   return '<h5>실시간 · '+esc(L.name)+' 기준환율</h5><div class="rp-gauge"><b>'+(L.id==="KRW"?num(x.v,1)+'원':num(x.v,4)+'위안')+'</b><span>1달러당 · '+md(x.last)+'</span><span>30일 새 <strong class="'+(x.change>0?'up':'dn')+'">'+pct(x.change)+'</strong></span></div>'+(mergeLive(n)?nodeChart(n,x.series):spark(x.series,"",L.id==="KRW"?"원":"위안",L.id==="KRW"?1:4))+
     '<p class="rp-dsrc">유럽중앙은행 기준환율(영업일 오후 4시 CET) · <a href="https://www.frankfurter.app" target="_blank" rel="noopener noreferrer">Frankfurter</a></p>'+flag}
   if(L.kind==="fedreg"){const x=S.live.fed?.[L.id];
    if(!x)return '<h5>실시간 · '+esc(L.name)+'</h5><p class="rp-none">'+(S.live.fed===false?'미 연방관보에 연결하지 못했습니다.':'미 연방관보에서 받는 중…')+'</p>';
