@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="ce8b827d37";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="5ddeabe53d";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1981,6 +1981,7 @@ html,body{background:#fff;color:var(--ink)}
 .ar-cos li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted #d3dce2;padding:2px 0}
 .ar-cos li span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ar-cos li b{white-space:nowrap}
 .ar-more>summary{cursor:pointer;font-size:12px;font-weight:800;color:#b51d2a;margin:8px 0 4px;list-style:none}.ar-more>summary::-webkit-details-marker{display:none}.ar-more>summary h5{display:inline;color:#1d2630}.ar-more>summary::after{content:' ▾';color:#b51d2a}.ar-more[open]>summary::after{content:' ▴'}
+.ar-sp b{margin-right:4px}
 
 </style>
 <div class="shell">
@@ -6024,7 +6025,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   return out.map(x=>"<span>"+h.esc(x)+"</span>").join("");
  }
  function selfSec(c){
-  const h=H(),s=SELF(c),o=IND(c),I=D().ind;if(!s&&!(o&&o.ser&&o.ser.length))return "";
+  const h=H(),s=SELF(c),o=IND(c),I=D().ind,rr=res(c),sp=rr&&rr.selfProduction&&rr.selfProduction.text?rr.selfProduction:null;if(!s&&!sp&&!(o&&o.ser&&o.ser.length))return "";
   const S=s&&s.sources||[];
   let x='<div class="en-sec ar-self"><h5>스스로 만드나, 사 오나 <small>'+(s&&s.asOf?'조사 '+h.esc(s.asOf):'SIPRI 100대 방산기업')+'</small></h5>';
   if(s&&s.share&&s.share.value!=null){const v=Math.max(0,Math.min(100,+s.share.value)),m=100-v;
@@ -6036,6 +6037,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const made=s&&s.made||[],rel=s&&s.relies||[];
   if(made.length||rel.length)x+='<div class="ar-two">'+(made.length?'<div><h6>스스로 만드는 주력 무기</h6><ul>'+made.map(m=>'<li><b>'+h.esc(m.name)+'</b><small>'+h.esc([m.kind,m.maker].filter(Boolean).join(' · '))+'</small></li>').join("")+'</ul></div>':'')+
    (rel.length?'<div><h6>들여오는 핵심</h6><ul>'+rel.map(r=>'<li><b>'+h.esc(r.what)+'</b><small>'+h.esc([r.from?ko(r.from):'',r.note].filter(Boolean).join(' · '))+'</small></li>').join("")+'</ul></div>':'')+'</div>';
+  if(sp)x+='<p class="ar-sum ar-sp"><b>최근 발표</b> '+h.esc(sp.text)+' '+srcOf(sp.src,rr.sources||[])+'</p>';
   if(s&&s.gaps)x+='<p class="en-note"><b>스스로 못 만드는 것</b> '+h.esc(s.gaps)+'</p>';
   if(s&&s.production&&s.production.text)x+='<p class="en-note"><b>생산 규모</b> '+h.esc(s.production.text)+' '+srcOf(s.production.src,S)+'</p>';
   if(o&&o.v)x+='<div class="en-kv ar-ind"><div><span>방산 매출 '+I.year+'</span><b>'+usd(o.v)+'</b><small>SIPRI 100대 방산기업 중 본사가 '+h.esc(ko(c))+'인 '+o.n+'곳 합계 · 세계 '+o.rank+'위 · 100대 매출의 '+h.num(o.sh,1)+'%</small></div></div>'+
@@ -6199,7 +6201,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const deals=ds.length?'<details class="en-sec ar-more"'+(r?'':' open')+'><summary><h5>핵심 무기 <small>최근 10년 인도·계약, 양이 큰 순 · '+ds.length+'건</small></h5></summary><div class="en-tablewrap"><table class="en-table ar-deals"><thead><tr><th>무기</th><th>공급국</th><th>수량</th><th>계약</th><th>인도</th><th>TIV</th></tr></thead><tbody>'+dealRows(ds,true)+'</tbody></table></div></details>':'';
   let R="";
   if(r){const S=r.sources||[];
-   R+=(r.summary?'<p class="ar-sum">'+h.esc(r.summary)+'</p>':'')+(r.selfProduction&&r.selfProduction.text?'<p class="en-note"><b>자체 생산</b> '+h.esc(r.selfProduction.text)+' '+srcOf(r.selfProduction.src,S)+'</p>':'');
+   R+=(r.summary?'<p class="ar-sum">'+h.esc(r.summary)+'</p>':'');
    const fl=(r.flows||[]).filter(f=>A.mode!=="out"?f.to===c:f.from===c);
    if(fl.length)R+='<div class="en-sec"><h5>'+(A.mode!=="out"?'전쟁·위기 속 공급':'전쟁·위기 속 보낸 것')+' <small>정부 발표·제재 문서·유엔 보고서</small></h5><ul class="ar-fl">'+fl.map((f,i)=>(i===4?'</ul><details class="ar-more"><summary>'+(fl.length-4)+'건 더 보기</summary><ul class="ar-fl">':'')+'<li><span class="ar-k k-'+(KC[f.kind]||'a')+'">'+h.esc(KIND[f.kind]||f.kind)+'</span><b>'+h.esc(ko(f.from))+' → '+h.esc(ko(f.to))+'</b>'+(f.status?'<em class="ar-st '+(ST[f.status]||'')+'">'+h.esc(f.status)+'</em>':'')+'<p>'+h.esc(f.what||'')+(f.amount?' — '+h.esc(f.amount):'')+(f.period?' ('+h.esc(f.period)+')':'')+'</p>'+(f.claimBy?'<p class="en-note">주장: '+h.esc(f.claimBy)+'</p>':'')+(f.denial?'<p class="en-note">반박: '+h.esc(f.denial)+'</p>':'')+'<p class="en-note">'+srcOf(f.src,S)+'</p></li>').join("")+'</ul>'+(fl.length>4?'</details>':'')+'</div>';
    if((r.embargo||[]).length)R+='<div class="en-sec"><h5>금수·제재</h5><ul class="en-pol">'+r.embargo.map(e=>'<li><time>'+h.esc(e.since||'')+'</time><span><b>'+h.esc(e.by||'')+'</b> '+h.esc(e.text||'')+(e.status?' — <b>'+h.esc(e.status)+'</b>':'')+' '+srcOf(e.src,S)+'</span></li>').join("")+'</ul></div>';
