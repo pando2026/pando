@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="a8e1c649b5";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="619be1c9f2";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -2414,6 +2414,7 @@ html,body{background:#fff;color:var(--ink)}
   let best=P[0];for(const a of P)if(Math.abs(a[0]-q.x)<Math.abs(best[0]-q.x))best=a;
   const at=(x,y)=>{const s=svg.createSVGPoint();s.x=x;s.y=y;return s.matrixTransform(M)};
   const r=svg.getBoundingClientRect(),c=at(best[0],best[1]);
+  if(on!==svg)svg.addEventListener("pointerleave",hide,{once:true});   // 차트 밖으로 나가면 바로 지운다
   on=svg;
   line.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
   dot.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+c.y.toFixed(1)+"px";
@@ -2425,7 +2426,10 @@ html,body{background:#fff;color:var(--ink)}
  }
  document.addEventListener("pointermove",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY);else hide()},{passive:true});
  document.addEventListener("pointerdown",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY)},{passive:true});
- window.addEventListener("scroll",hide,{passive:true});window.addEventListener("hashchange",hide);
+ window.addEventListener("scroll",hide,{passive:true,capture:true});   // 서랍(상세 화면) 안 스크롤도
+ window.addEventListener("hashchange",hide);window.addEventListener("blur",hide);
+ document.addEventListener("pointerout",e=>{if(!e.relatedTarget)hide()},{passive:true});
+ document.addEventListener("click",e=>{if(!(e.target&&e.target.closest&&e.target.closest("svg[data-ct]")))hide()},true);
  // 차트 그리는 쪽이 쓰는 도우미: 점 목록 → data-ct 속성 문자열
  window.__ct=list=>' data-ct="'+JSON.stringify(list.map(a=>[+(+a[0]).toFixed(1),+(+a[1]).toFixed(1),String(a[2])])).replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'"';
 })();
@@ -3933,7 +3937,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const RY=[];for(let yy=y0;yy<=y1;yy++)RY.push(yy);
   const kb2=new Map(b);
   const ctL=a.map(p=>[X(p[0]),Y(p[1]),p[0]+"년\n"+(opt.name||"")+" "+fmt(p[1])+(kb2.has(p[0])?"\n한국 "+fmt(kb2.get(p[0])):"")]);
-  const tkL=[0,.5,1].map(t=>{const v=lo+(hi-lo)*t;return [L+2,Y(v)-3,fmt(v)]});
+  const dmin=Math.min(...vals),tkL=[0,.5,1].map(t=>{const v=lo+(hi-lo)*t;return [L+2,Y(v)-3,fmt(v)]}).filter((t,i)=>!(i===0&&lo<0&&dmin>=0));   // 자료가 모두 양수면 음수 눈금 글자는 빼기
   return addBand(chartAx('<svg class="lab-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opt.label||"추이")+'">'+grid+cross+(b.length?'<path d="'+path(b)+'" class="lab-k"/>'+dots(b,"lab-kd"):"")+'<path d="'+path(a)+'" class="lab-m"/>'+dots(a,"lab-md")+end(a,"lab-end",opt.name||"")+(b.length?'<g transform="translate(0 '+kEnd+')">'+end(b,"lab-end lab-end-k","한국")+'</g>':"")+yrs+'</svg>',ctL,tkL),RY,i=>X(RY[i]),H+2);
  }
  // 산업 구조와 교역(data/trade.json: 세계은행 WDI 부가가치·수출입 + 유엔 컴트레이드 HS 2단위 상품 교역·상대국)
