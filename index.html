@@ -1296,6 +1296,21 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .cur-toggle button{border:0;background:#fff;padding:3px 11px;font:700 12px system-ui,sans-serif;color:#41525c;cursor:pointer}
 .cur-toggle button[aria-pressed=true]{background:#1d2630;color:#fff}
 
+/* 산업 구조와 교역 */
+.tradeb h4{margin:14px 0 6px;font-size:14px}.tradeb h4 small,.tradeb h5 small{font-weight:500;color:#6b7b84;font-size:11.5px}
+.tr-bar-row{display:grid;grid-template-columns:110px 1fr;gap:8px;align-items:center;margin:4px 0}.tr-bar-name{font-size:12.5px;font-weight:700}.tr-bar-name small{color:#7a8a93;font-weight:500}
+.tr-bar{display:flex;height:16px;border-radius:3px;overflow:hidden;background:#eef2f4}.tr-bar i{display:block;height:100%}
+.tr-legend{list-style:none;margin:8px 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:4px 12px;font-size:12.5px}
+.tr-legend i,.tr-items i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}.tr-legend span{color:#5a6a73}.tr-legend em{display:block;font-style:normal;color:#7a8a93;font-size:11.5px;margin-left:15px}
+.tr-note{font-size:11.5px;color:#6b7b84;margin:4px 0}.tr-src{font-size:11.5px;color:#6b7b84;margin-top:10px}
+.tr-kpis{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.tr-kpis div{border:1px solid #e1e7ea;border-radius:6px;padding:8px 10px}.tr-kpis span{display:block;font-size:12px;color:#5a6a73}.tr-kpis b{font-size:18px}.tr-kpis small{display:block;color:#6b7b84;font-size:11.5px}
+.tr-pies{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin:6px 0}
+.tr-pie h5,.tr-partners h5{margin:4px 0 8px;font-size:13px}.tr-donut{width:150px;height:150px;border-radius:50%;margin:0 auto 10px;position:relative}
+.tr-donut span{position:absolute;inset:32px;border-radius:50%;background:#fff;display:grid;place-items:center;font:800 13px system-ui,sans-serif;text-align:center}
+.tr-items,.tr-partners ol{list-style:none;margin:0;padding:0;display:grid;gap:3px}.tr-items li,.tr-partners li{display:grid;grid-template-columns:auto 1fr auto 46px;gap:6px;align-items:center;font-size:12px}
+.tr-items b,.tr-partners b{font-weight:700}.tr-items em,.tr-partners em{font-style:normal;color:#c41230;text-align:right;font-weight:700}
+.tr-partners li>:first-child{width:20px!important;height:14px!important;object-fit:cover}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -2290,6 +2305,7 @@ const interestStore=()=>once("interest",()=>json("data/interest.json")).catch(()
 const interestBudgetStore=()=>once("interestBudget",()=>json("data/interest-budget.json")).catch(()=>null);
 const taxStore=()=>once("tax",()=>json("data/tax.json")).catch(()=>null);
 const laborStore=()=>once("labor",()=>json("data/labor.json")).catch(()=>null);
+const tradeStore=()=>once("trade",()=>json("data/trade.json")).catch(()=>null);
 const budgetPlanStore=()=>once("budgetPlan",()=>json("data/budget-plan.json")).catch(()=>null);
 const historyStore=()=>once("history",()=>json("data/history.json")).catch(()=>({}));
 const tieStore=()=>once("ties",()=>json("data/ties.json")).catch(()=>({}));
@@ -2351,7 +2367,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),trade:await (async()=>{const t=await tradeStore();if(!t)return null;return {hs2:t.hs2||{},asOf:t.asOf,goodsSource:t.goodsSource,structureSource:t.structureSource,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -3532,7 +3548,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    politics:'<section class="section"><h3>의회</h3>'+(institution?'<p class="country-parliament">'+esc(institution)+(legislature.structure?" · "+esc(legislature.structure):"")+'</p>':"")+parliamentNote+electionCards+seats+partyMapBlock(data)+partyRegions(data)+partyFights(data)+(seats||electionCards?"":headcounts)+(!headcounts&&!seats&&!electionCards?'<p class="metric-missing"><span>공개 자료 없음</span> 의회 구성·의석</p>':"")+'</section>'+
     cpiBlock(data)+electionBlock(data)+decisions+fold("정치 자료 기준·출처",politicsFine),
    economy:grid([["gdp","명목 GDP",metrics.gdp],["gdpPc","1인당 GDP",metrics.gdpPc],["growth","실질 성장률",metrics.growth],["inflation","물가 상승률",metrics.inflation],["debt","중앙정부 부채 / GDP",metrics.debt],["unemployment","실업률",metrics.unemployment],["policyRate","정책금리",metrics.policyRate]])+
-    economyAlternativeEstimates(data.economyAlternatives)+laborBlock(data)+
+    economyAlternativeEstimates(data.economyAlternatives)+tradeBlock(data)+laborBlock(data)+
     fold("경제 지표 읽는 법",'<p>카드를 누르면 과거 추이와 정의·출처가 열립니다. 순위는 같은 연도에 관측치가 있는 국가끼리 값이 높은 순서이며 우수성을 뜻하지 않습니다. 한국 값은 같은 원자료·같은 연도일 때만 나란히 표시합니다. IMF·민간 추정은 ‘추정’으로 표시하고 순위에서 뺍니다.</p>'+(data.monetaryNote?'<p>'+esc(data.monetaryNote)+' '+sourceLink(data.monetarySource,"통화제도 근거")+'</p>':"")+'<p>'+sourceLink(links.worldBank,"세계은행 국가 자료")+'</p>'),
    budget:budgetOverviewCard(budget.overview)+doc+
     (ownBreakdown?'<section class="section"><h3>분야별 구성</h3>'+ownBreakdown+'</section>':"")+
@@ -3603,7 +3619,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   ["ix",".ix",".ix-head",1],["conflicts","section.conflicts:not(.allies)",".conflicts-head",1],["allies","section.allies",".conflicts-head",0],
   ["blocs",".country-blocs","h3",0],["now",".now",".now-head",1],["recent",".recent","h3",1],["leaders",".leaders-section",".leaders-heading",1],
   ["pmap",".pmap-block",".fights-head",1],["regions",".regions",".fights-head",0],["fights",".fights",".fights-head",1],
-  ["decision",".decision-map","h3",0],["interest",".interest","h3",1],["taxb",".taxb","h3",1],["laborb",".laborb","h3",1],["histb",".histb","h3",1],["elect",".elect","h3",1],["cpi",".cpi","h3",1],["sec",".country-panel > .section","h3",1]
+  ["decision",".decision-map","h3",0],["interest",".interest","h3",1],["taxb",".taxb","h3",1],["laborb",".laborb","h3",1],["tradeb",".tradeb","h3",1],["histb",".histb","h3",1],["elect",".elect","h3",1],["cpi",".cpi","h3",1],["sec",".country-panel > .section","h3",1]
  ];
  const foldGet=k=>{try{return localStorage.getItem("pando.fold."+k)}catch{return null}};
  const foldSet=(k,v)=>{try{localStorage.setItem("pando.fold."+k,v?"1":"0")}catch{}};
@@ -3695,6 +3711,33 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const yrs=[...new Set([y0,y1,...(opt.marks||[])])].map(y=>'<text x="'+X(y).toFixed(1)+'" y="'+(H-6)+'" text-anchor="'+(y===y0?"start":y===y1?"end":"middle")+'" class="lab-yr">'+y+'</text>').join("");
   const kEnd=b.length&&Math.abs(Y(b.at(-1)[1])-Y(a.at(-1)[1]))<11?((Y(b.at(-1)[1])<Y(a.at(-1)[1]))?-6:6):0;
   return '<svg class="lab-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opt.label||"추이")+'">'+grid+cross+(b.length?'<path d="'+path(b)+'" class="lab-k"/>'+dots(b,"lab-kd"):"")+'<path d="'+path(a)+'" class="lab-m"/>'+dots(a,"lab-md")+end(a,"lab-end",opt.name||"")+(b.length?'<g transform="translate(0 '+kEnd+')">'+end(b,"lab-end lab-end-k","한국")+'</g>':"")+yrs+'</svg>';
+ }
+ // 산업 구조와 교역(data/trade.json: 세계은행 WDI 부가가치·수출입 + 유엔 컴트레이드 HS 2단위 상품 교역·상대국)
+ const TRC=["#c72a34","#123f5b","#75b6d5","#eeac69","#608e91","#a38db8","#8cb68d","#9a6e64","#d9a961","#527eae","#c4d7df","#e48aa0","#7d8f3a","#b0b8bd"];
+ const usdK=v=>Number.isFinite(+v)&&+v>0?"US$"+krUnits(+v):"–";
+ function tradeBlock(data){
+  const T=data.trade;if(!T||!T.entry)return "";const e=T.entry,k=T.korea,S=e.structure,G=e.goods,H=T.hs2||{},name=namedCountry(data.code);
+  let h="";
+  if(S&&(S.srv!=null||S.ind!=null)){
+   const parts=st=>{const mining=st.ind!=null&&st.manf!=null?Math.max(0,st.ind-st.manf):null;return [["농림어업",st.agr,st.agrUsd,"#8cb68d"],["제조업",st.manf,st.manfUsd,"#c72a34"],["광업·건설·전기",mining!=null?mining:st.ind,st.indUsd!=null&&st.manfUsd!=null?st.indUsd-st.manfUsd:st.indUsd,"#eeac69"],["서비스",st.srv,st.srvUsd,"#527eae"]].filter(x=>x[1]!=null)};
+   const bar=(st,label)=>'<div class="tr-bar-row"><span class="tr-bar-name">'+esc(label)+' <small>'+esc(String(st.year||""))+'</small></span><div class="tr-bar">'+parts(st).map(([n,p,u,c])=>'<i style="width:'+Math.max(0,p).toFixed(2)+'%;background:'+c+'" title="'+esc(n+" "+number(p,1)+"% · "+usdK(u))+'"></i>').join("")+'</div></div>';
+   h+='<h4>산업 구조 <small>GDP(부가가치) 중 비중</small></h4>'+bar(S,name)+(k&&k.structure?bar(k.structure,"한국"):"")+
+    '<ul class="tr-legend">'+parts(S).map(([n,p,u,c])=>'<li><i style="background:'+c+'"></i><b>'+esc(n)+'</b> '+number(p,1)+'% <span>'+esc(usdK(u))+'</span>'+(k&&k.structure?'<em>한국 '+(()=>{const kk=parts(k.structure).find(x=>x[0]===n);return kk?number(kk[1],1)+'%':'–'})()+'</em>':"")+'</li>').join("")+'</ul>'+
+    (S.rents!=null&&S.rents>=5?'<p class="tr-note">천연자원 지대(석유·가스·광물 등에서 나오는 초과 수익)가 GDP의 '+number(S.rents,1)+'%('+esc(String(S.rentsYear||S.year))+')로, 자원 의존이 큰 경제입니다.</p>':"")+
+    '<p class="tr-note">세 부문 합은 100%가 되지 않을 수 있습니다(생산물세·보조금 조정분 제외). 제조업은 광공업의 일부입니다.</p>';
+   if(S.expGdp!=null||S.impGdp!=null)h+='<div class="tr-kpis"><div><span>상품·서비스 수출</span><b>'+usdK(S.expUsd)+'</b><small>GDP의 '+(S.expGdp!=null?number(S.expGdp,1)+'%':'–')+(k&&k.structure?.expGdp!=null?' · 한국 '+number(k.structure.expGdp,1)+'%':"")+'</small></div><div><span>상품·서비스 수입</span><b>'+usdK(S.impUsd)+'</b><small>GDP의 '+(S.impGdp!=null?number(S.impGdp,1)+'%':'–')+(k&&k.structure?.impGdp!=null?' · 한국 '+number(k.structure.impGdp,1)+'%':"")+'</small></div></div>';
+  }
+  const donut=(blk,title)=>{if(!blk||!blk.total||!blk.items?.length)return "";const top=blk.items.slice(0,8),rest=blk.total-top.reduce((a,x)=>a+x[1],0);const rows=top.map((x,i)=>[H[x[0]]||("HS "+x[0]),x[1],TRC[i]]);if(rest>blk.total*.005)rows.push(["그 밖의 품목",rest,"#d9e0e4"]);
+   let acc=0;const stops=rows.map(([n,v,c])=>{const a=acc;acc+=100*v/blk.total;return c+" "+a.toFixed(2)+"% "+Math.min(100,acc).toFixed(2)+"%"}).join(",");
+   return '<div class="tr-pie"><h5>'+esc(title)+' <b>'+usdK(blk.total)+'</b></h5><div class="tr-donut" style="background:conic-gradient('+stops+')"><span>'+usdK(blk.total)+'</span></div><ol class="tr-items">'+rows.map(([n,v,c])=>'<li><i style="background:'+c+'"></i><span>'+esc(n)+'</span><b>'+usdK(v)+'</b><em>'+number(100*v/blk.total,1)+'%</em></li>').join("")+'</ol></div>'};
+  const partners=(list,title,tot)=>list&&list.length?'<div class="tr-partners"><h5>'+esc(title)+'</h5><ol>'+list.map(([cc,v])=>'<li>'+flag(cc,"mini")+'<span>'+esc(namedCountry(cc))+'</span><b>'+usdK(v)+'</b>'+(tot?'<em>'+number(100*v/tot,1)+'%</em>':"")+'</li>').join("")+'</ol></div>':"";
+  if(G&&G.year){
+   h+='<h4>상품 수출·수입 <small>'+esc(String(G.year))+'년 · 이 나라 신고 기준</small></h4><div class="tr-pies">'+donut(G.exports,"수출 품목")+donut(G.imports,"수입 품목")+'</div>'+
+    '<div class="tr-pies">'+partners(G.partnersX,"주요 수출 상대국",G.exports?.total)+partners(G.partnersM,"주요 수입 상대국",G.imports?.total)+'</div>'+
+    (k&&k.goods?.exports?.total?'<p class="tr-note">한국 '+esc(String(k.goods.year))+'년 상품 수출 '+usdK(k.goods.exports.total)+' · 수입 '+usdK(k.goods.imports?.total)+' (같은 출처)</p>':"");
+  }else if(G&&G.checked)h+='<p class="tr-note">이 나라는 유엔 컴트레이드에 최근(2022~2025년) 품목별 교역을 신고하지 않았습니다.</p>';
+  if(!h)return "";
+  return '<section class="section tradeb"><h3>산업 구조와 교역</h3>'+h+'<p class="tr-src">'+(S?sourceLink("https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations="+data.code,"세계은행 WDI(산업 비중·수출입)"):"")+(G&&G.source?' · '+sourceLink(G.source,"유엔 컴트레이드(품목·상대국)"):"")+(T.asOf?' · '+esc(T.asOf)+' 조회':"")+'</p></section>';
  }
  function laborBlock(data){
   const Lb=data.labor;if(!Lb)return "";const e=Lb.entry||{},k=Lb.korea,meta=Lb.meta||{},S=meta.sources||{},nat=e.national||{},isK=data.code==="KR";
