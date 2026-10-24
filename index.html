@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="29e24db52d";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="8916543dd1";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -2662,6 +2662,50 @@ html,body{background:#fff;color:var(--ink)}
  window.__ct=list=>' data-ct="'+JSON.stringify(list.map(a=>{const o=[+(+a[0]).toFixed(1),+(+a[1]).toFixed(1),String(a[2])];if(a[3])o.push(a[3].filter(v=>v&&typeof v[1]==="number"&&isFinite(v[1])).map(v=>[String(v[0]||""),+(+v[1]).toPrecision(8),String(v[2]??"")]));return o})).replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'"';
 })();
 
+/* 지도·그림 이름표 겹침 정리(사이트 공통, 번역 뒤에도 다시 돈다).
+   각 그림에서 이름표를 중요도 순서로 실제 화면 상자(getBoundingClientRect)로 재고,
+   먼저 놓인 것과 겹치면 다른 자리(alts)로 옮겨 보고, 안 되면 덜 중요한 것은 숨긴다(hide).
+   영어판은 글자가 길어져 한국어 기준 배치가 겹치므로, 그림을 그린 코드와 상관없이 마지막에 한 번 더 정리한다. */
+(function(){
+ "use strict";
+ // 아래(원래 자리) → 위 → 오른쪽 아래 → 왼쪽 아래 → 오른쪽 위 → 왼쪽 위 (반 글자폭씩 비켜서)
+ const flipY=el=>{const t=el.getAttribute("data-t0")||el.getAttribute("transform")||"";if(!el.hasAttribute("data-t0"))el.setAttribute("data-t0",t);
+  const m=t.match(/translate\(\s*([-\d.]+)[ ,]+([-\d.]+)\s*\)/);if(!m)return [t];const x=+m[1],y=+m[2];let w=0;try{w=el.getBBox().width*0.6}catch(e){}
+  const T=(a,b)=>"translate("+(+a.toFixed(2))+" "+(+b.toFixed(2))+")";return [t,T(x,-y*0.82),T(x+w,y),T(x-w,y),T(x+w,-y*0.82),T(x-w,-y*0.82),T(x,y*1.9)]};
+ // [그림 선택자, [[이름표 선택자, {hide, alts}], …]] — 앞쪽이 더 중요하다
+ const CONF=[
+  [".vmap-svg",[[".vmap-label--on",{}],[".vmap-cname",{hide:true}]]],
+  [".pmap-svg",[[".story-ev-label",{}],[".vmap-label--on",{}],[".pmap-label--cap",{hide:true}],[".story-nb-name",{hide:true}],[".story-prov--hit",{hide:true}],[".story-prov",{hide:true}],[".pmap-label",{hide:true}]]],
+  [".board-svg",[[".board-count",{}],[".board-name",{alts:flipY}],[".board-kind",{hide:true}]]],
+  ["#en-map svg,.en-map svg",[[".en-dest.sel text",{}],[".en-dest text",{hide:true}],[".en-cp text",{hide:true}]]],
+ ];
+ const vis=el=>{const cs=getComputedStyle(el);return cs.display!=="none"&&cs.visibility!=="hidden"&&+cs.opacity>0};
+ const ov=(a,b)=>a.left<b.right+2&&a.right>b.left-2&&a.top<b.bottom-1&&a.bottom>b.top+1;
+ function run(svg,spec){
+  const r0=svg.getBoundingClientRect();if(!r0.width||!r0.height)return;
+  const placed=[],done=new Set();
+  for(const [sel,o] of spec){
+   for(const el of svg.querySelectorAll(sel)){
+    if(done.has(el))continue;done.add(el);
+    if(el.dataset.dcl==="h"){el.style.visibility="";delete el.dataset.dcl}
+    if(!vis(el))continue;
+    const alts=o.alts?o.alts(el):[null];let first=null,ok=false;
+    for(const a of alts){if(a!=null)el.setAttribute("transform",a);const r=el.getBoundingClientRect();if(!r.width){ok=true;break}
+     if(!first)first=[a,r];if(!placed.some(p=>ov(p,r))){placed.push(r);ok=true;break}}
+    if(!ok){if(o.hide){el.style.visibility="hidden";el.dataset.dcl="h"}else{if(first[0]!=null)el.setAttribute("transform",first[0]);placed.push(first[1])}}
+   }
+  }
+ }
+ let timer=0,mo=null;
+ function all(){timer=0;if(mo)mo.disconnect();
+  try{for(const [s,spec] of CONF)for(const svg of document.querySelectorAll(s))run(svg,spec)}catch(e){}
+  if(mo)mo.observe(document.body,{subtree:true,childList:true,characterData:true,attributes:true,attributeFilter:["transform","viewBox","class"]});}
+ const kick=()=>{clearTimeout(timer);timer=setTimeout(all,160)};
+ window.__declutter=kick;
+ const start=()=>{mo=new MutationObserver(kick);kick();addEventListener("resize",kick)};
+ if(document.body)start();else document.addEventListener("DOMContentLoaded",start);
+})();
+
 </script>
 <script>
 /* Frontline data layer for the artifact.
@@ -3228,8 +3272,18 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const grid=ticks.map(t=>'<path class="trend-grid" d="M'+L+' '+py(t).toFixed(1)+'H'+R+'"/><text class="trend-ytick" x="'+(L-6)+'" y="'+(py(t)+3.5).toFixed(1)+'" text-anchor="end">'+esc(metricValue(key,t))+'</text>').join("");
   const line=a=>a.map((p,i)=>(i?"L":"M")+px(p.year).toFixed(1)+" "+py(p.value).toFixed(1)).join(" ");
   const labelEvery=series.length<=8?1:Math.ceil(series.length/6);
+  // 점 위 값·아래 연도 글씨: 실제 글자 폭(영어판은 번역 뒤)으로 재서 서로·한국 끝 이름표와 겹치지 않는 것만 남긴다(마지막·처음 우선)
+  const showSet=new Set();{
+   const boxes=[];const free=b=>!boxes.some(q=>b[0]<q[2]+4&&b[2]>q[0]-4&&b[1]<q[3]&&b[3]>q[1]);
+   const span=(x,w,an)=>an==="start"?[x,x+w]:an==="end"?[x-w,x]:[x-w/2,x+w/2];
+   if(showKr){const kl=kr.at(-1),t=TRL("한국 "+metricValue(key,kl.value)),w=textW(t,10,700)+3,ky=py(kl.value)+(kl.value>=series.at(-1).value?-14:22),xx=px(kl.year)+4;boxes.push([xx-w,ky-10,xx,ky+2])}
+   const n=series.length,order=[n-1,0,...series.map((_,i)=>i).filter(i=>i%labelEvery===0&&i>0&&i<n-1)];
+   for(const i of order){const p=series[i],an=i===0?"start":i===n-1?"end":"middle",x=px(p.year),y=py(p.value);
+    const [a1,b1]=span(x,textW(TRL(metricValue(key,p.value)),10.5,800)+3,an),[a2,b2]=span(x,textW(p.year,10,600)+2,an);
+    const bv=[a1,y-18,b1,y-6],by=[a2,B+6,b2,B+18];if(free(bv)&&free(by)){boxes.push(bv,by);showSet.add(i)}}
+  }
   const dots=series.map((p,i)=>{
-   const show=i%labelEvery===0||i===series.length-1;
+   const show=showSet.has(i);
    const x=px(p.year),y=py(p.value),anchor=i===0?"start":i===series.length-1?"end":"middle";
    return '<circle cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+(i===series.length-1?4:3)+'"><title>'+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>'+
     (show?'<text class="trend-val" x="'+x.toFixed(1)+'" y="'+(y-8).toFixed(1)+'" text-anchor="'+anchor+'">'+esc(metricValue(key,p.value))+'</text><text class="trend-x" x="'+x.toFixed(1)+'" y="'+(B+16)+'" text-anchor="'+anchor+'">'+esc(p.year)+'</text>':"");
@@ -4205,7 +4259,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
 
  // 차트 공통: <svg>에 마우스 설명(data-ct, charttip.js)과 세로축 눈금 글자를 붙인다
- function chartAx(svg,ct,ticks){if(!svg)return svg;let o=svg.replace("<svg ","<svg"+(window.__ct?window.__ct(ct):"")+" ");if(ticks&&ticks.length){const i=o.lastIndexOf("</svg>");o=o.slice(0,i)+ticks.map(t=>'<text class="ax-y" x="'+(+t[0]).toFixed(1)+'" y="'+(+t[1]).toFixed(1)+'">'+esc(t[2])+'</text>').join("")+o.slice(i)}return o}
+ function chartAx(svg,ct,ticks){if(!svg)return svg;let o=svg.replace("<svg ","<svg"+(window.__ct?window.__ct(ct):"")+" ");
+  // 눈금 숫자가 그래프의 값 글씨(첫 값 등)와 같은 높이에 있거나, 반올림으로 같은 숫자가 두 번 나오면 그 눈금은 뺀다(겹침 방지)
+  if(ticks&&ticks.length){const lab=[...o.matchAll(/<text\b[^>]*?\bx="([-\d.]+)"[^>]*?\by="([-\d.]+)"[^>]*>/g)].map(m=>[+m[1],+m[2]]),seen=new Set();
+   ticks=ticks.filter(t=>{const k=String(t[2]);if(seen.has(k))return false;seen.add(k);return !lab.some(([lx,ly])=>Math.abs(ly-t[1])<11&&lx-t[0]<44)})}
+  if(ticks&&ticks.length){const i=o.lastIndexOf("</svg>");o=o.slice(0,i)+ticks.map(t=>'<text class="ax-y" x="'+(+t[0]).toFixed(1)+'" y="'+(+t[1]).toFixed(1)+'">'+esc(t[2])+'</text>').join("")+o.slice(i)}return o}
  // 일자리·임금·인구 이동(data/labor.json): 경제 탭. 국제 비교 시계열 + 그 나라 통계청 최신값(national).
  function laborChart(main,kor,fmt,opt={}){
   const a=(main||[]).filter(p=>p[1]!=null),b=(kor||[]).filter(p=>p[1]!=null);if(a.length<2)return "";
@@ -4221,7 +4279,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const end=(pts,c,name)=>{const p=pts.at(-1);return '<text x="'+(X(p[0])+6).toFixed(1)+'" y="'+(Y(p[1])+4).toFixed(1)+'" class="'+c+'"><tspan class="lab-end-v">'+esc(fmt(p[1]))+'</tspan> <tspan>'+esc(name)+'</tspan></text>'};
   const grid=nticks.map(v=>'<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v).toFixed(1)+'" y2="'+Y(v).toFixed(1)+'" class="lab-grid"/>').join("");
   const yrs=[...new Set([y0,y1,...(opt.marks||[])])].map(y=>'<text x="'+X(y).toFixed(1)+'" y="'+(H-6)+'" text-anchor="'+(y===y0?"start":y===y1?"end":"middle")+'" class="lab-yr">'+y+'</text>').join("");
-  const kEnd=b.length&&Math.abs(Y(b.at(-1)[1])-Y(a.at(-1)[1]))<11?((Y(b.at(-1)[1])<Y(a.at(-1)[1]))?-6:6):0;
+  // 두 끝 이름표(이 나라·한국)가 13px보다 가까우면 한국 쪽을 그만큼 떼어 놓는다(같은 값이면 아래로)
+  const dEnd=b.length?Y(b.at(-1)[1])-Y(a.at(-1)[1]):99,kEnd=b.length&&Math.abs(dEnd)<13?(dEnd<0?-(13+dEnd):13-dEnd):0;
   const RY=[];for(let yy=y0;yy<=y1;yy++)RY.push(yy);
   const kb2=new Map(b);
   const ctL=a.map(p=>[X(p[0]),Y(p[1]),p[0]+"년\n"+(opt.name||"")+" "+fmt(p[1])+(kb2.has(p[0])?"\n한국 "+fmt(kb2.get(p[0])):""),[[opt.name||"",p[1],fmt(p[1])],...(kb2.has(p[0])?[["한국",kb2.get(p[0]),fmt(kb2.get(p[0]))]]:[])]]);
@@ -5472,9 +5531,13 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const t of tks)s+='<line class="g" x1="'+pl+'" x2="'+(W2-pr)+'" y1="'+Y(t).toFixed(1)+'" y2="'+Y(t).toFixed(1)+'"/><text class="ax" x="'+(pl-4)+'" y="'+(Y(t)+3).toFixed(1)+'" text-anchor="end">'+num(t,tdec)+'</text>';
   if(opt.zero&&mn<0)s+='<line class="z" x1="'+pl+'" x2="'+(W2-pr)+'" y1="'+Y(0).toFixed(1)+'" y2="'+Y(0).toFixed(1)+'"/>';
   // 표시선 이름표: 서로 겹치면 아랫줄로(최대 3줄), 오른쪽 끝에 닿으면 선 왼쪽에 붙인다
-  {const rowEnd=[];(opt.marks||[]).slice().sort((a,b)=>String(a[0]).localeCompare(String(b[0]))).forEach(m=>{const i=xs.findIndex(x=>x>=m[0]);if(i<0)return;const x=X(i),t=String(m[1]),tw=[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?9.6:5.4),0);
-   let lx=x+3,end=false;if(lx+tw>W2-pr){lx=x-3;end=true}const x0=end?lx-tw:lx;let r=0;while(r<2&&rowEnd[r]!=null&&rowEnd[r]>x0-4)r++;rowEnd[r]=x0+tw;
-   s+='<line class="mk" x1="'+x.toFixed(1)+'" x2="'+x.toFixed(1)+'" y1="'+pt+'" y2="'+(H-pb)+'"/><text class="mkt" x="'+lx.toFixed(1)+'" y="'+(pt+8+r*11)+'"'+(end?' text-anchor="end"':'')+'>'+esc(t)+'</text>'})}
+  {const rowEnd=[];(opt.marks||[]).slice().sort((a,b)=>String(a[0]).localeCompare(String(b[0]))).forEach(m=>{const i=xs.findIndex(x=>x>=m[0]);if(i<0)return;const x=X(i),t=(window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR(String(m[1])):String(m[1]));
+   // 실제 글자 폭(보이는 언어)으로 재고, 겹치면 아랫줄(최대 4줄). 그래도 자리가 없으면 선만 긋고 이름은 마우스를 올리면 보이게
+   let tw;try{const c=(window.__mkC=window.__mkC||document.createElement("canvas").getContext("2d"));c.font="700 9.5px system-ui,sans-serif";tw=c.measureText(t).width+4}catch(e){tw=[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?9.6:5.4),0)}
+   let lx=x+3,end=false;if(lx+tw>W2-pr){lx=x-3;end=true}const x0=end?lx-tw:lx,x1=x0+tw;let r=0;
+   while(r<4&&(rowEnd[r]||[]).some(([a,b])=>x0<b+4&&x1>a-4))r++;
+   s+='<line class="mk" x1="'+x.toFixed(1)+'" x2="'+x.toFixed(1)+'" y1="'+pt+'" y2="'+(H-pb)+'"><title>'+esc(t)+'</title></line>';
+   if(r<4){(rowEnd[r]=rowEnd[r]||[]).push([x0,x1]);s+='<text class="mkt" x="'+lx.toFixed(1)+'" y="'+(pt+8+r*11)+'"'+(end?' text-anchor="end"':'')+'>'+esc(t)+'</text>'}})}
   sets.forEach((st,k)=>{if(st.bars){const bw=Math.max(2,(W2-pl-pr)/xs.length*0.6);st.pts.forEach(p=>{const x=X(xi(p[0])),y=Y(Math.max(0,p[1])),y2=Y(Math.min(0,p[1]));s+='<rect class="bar'+(p[1]<0?' neg':'')+'" x="'+(x-bw/2).toFixed(1)+'" y="'+y.toFixed(1)+'" width="'+bw.toFixed(1)+'" height="'+Math.max(.5,y2-y).toFixed(1)+'"></rect>'})}
    else if(st.step){let d="";st.pts.forEach((p,i)=>{const x=X(xi(p[0])).toFixed(1),y=Y(p[1]).toFixed(1);d+=i?"H"+x+"V"+y:"M"+x+","+y});d+="H"+(W2-pr);s+='<path class="ln st c'+k+'" d="'+d+'"/>'}
    else{// 이 시리즈만 몇 칸을 건너뛰면(자료가 빈 기간) 그 구간은 가는 점선으로: 빈 기간을 실선으로 이어 '있는 값'처럼 보이지 않게
@@ -5906,15 +5969,15 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    const mx=(sx+KR[0])/2,my=Math.min(sy,KR[1])-Math.abs(KR[0]-sx)*.28;
    arcs+='<path class="rp-arc lv-'+lv+(S.sel===n.id?' on':'')+'" d="M'+sx.toFixed(1)+','+sy.toFixed(1)+'Q'+mx.toFixed(1)+','+my.toFixed(1)+' '+KR[0].toFixed(1)+','+KR[1].toFixed(1)+'" style="stroke-width:'+(1.2+lv*.9).toFixed(2)+'"/>';
    const live=n.live&&n.live.kind==="portwatch"?S.live.pw?.[n.live.id]:null;
-   const lab=n.label+(live?' · 하루 '+num(live.recent,0)+'척':'');
+   const lab=TRr(n.label+(live?' · 하루 '+num(live.recent,0)+'척':''));
    marks+='<g class="rp-mk lv-'+n.level+'" data-node="'+esc(n.id)+'" transform="translate('+sx.toFixed(1)+' '+sy.toFixed(1)+') scale('+k.toFixed(3)+')" tabindex="0" role="button" aria-label="'+esc(lab)+'"><circle r="7"/><text x="10" y="4">'+esc(lab)+'</text></g>';
   }
   for(const n of t.nodes.filter(n=>n.col===1&&n.live&&n.live.kind==="portwatch")){
    // chokepoints used as transmission gauges (e.g. Cape of Good Hope detours)
    const pos={chokepoint7:[18.5,-34.4],chokepoint1:[32.35,30.45]}[n.live.id];if(!pos)continue;const [sx,sy]=P(...pos);const live=S.live.pw?.[n.live.id];
-   marks+='<g class="rp-mk rp-mk2 lv-'+n.level+'" data-node="'+esc(n.id)+'" transform="translate('+sx.toFixed(1)+' '+sy.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-5" y="-5" width="10" height="10"/><text x="9" y="4">'+esc(n.live.name+(live?' · 하루 '+num(live.recent,0)+'척':''))+'</text></g>';
+   marks+='<g class="rp-mk rp-mk2 lv-'+n.level+'" data-node="'+esc(n.id)+'" transform="translate('+sx.toFixed(1)+' '+sy.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-5" y="-5" width="10" height="10"/><text x="9" y="4">'+esc(TRr(n.live.name+(live?' · 하루 '+num(live.recent,0)+'척':'')))+'</text></g>';
   }
-  marks+='<g class="rp-mk rp-kr" transform="translate('+KR[0].toFixed(1)+' '+KR[1].toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="8"/><text x="11" y="5">한국</text></g>';
+  marks+='<g class="rp-mk rp-kr" transform="translate('+KR[0].toFixed(1)+' '+KR[1].toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="8"/><text x="11" y="5">'+esc(TRr("한국"))+'</text></g>';
   host.innerHTML=(g+'<g>'+arcs+'</g>'+marks+'</svg>').replace(/<path /g,'<path vector-effect="non-scaling-stroke" ');
   declutter(host.querySelector("svg"));
   const zr=window.__pandoRes&&window.__pandoRes.zoomable;
@@ -5922,6 +5985,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    if(!host.dataset.zoomable){zr(host,Z,()=>base.slice(),drawMap);host.dataset.zt=t.id}host.classList.add("en-map");host.classList.toggle("zoomed",!!Z.vb)}
  }
 
+ // 이름표는 그릴 때 이미 보이는 언어로 바꿔 둔다: 겹침 정리(declutter)가 실제 글자 폭으로 재도록
+ function TRr(t){return window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR(t):t}
  // Nudge marker labels apart (several shocks sit in the Gulf); draw a leader line when moved.
  function declutter(svg){
   if(!svg)return;const placed=[];
