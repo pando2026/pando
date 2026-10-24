@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="155f604a83";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="b65b47cc13";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1779,6 +1779,9 @@ html,body{background:#fff;color:var(--ink)}
 .en-fhit,.en-hit{fill:none;stroke:transparent;stroke-width:12px;vector-effect:non-scaling-stroke;cursor:pointer;pointer-events:stroke}
 .en-flow,.en-prod{cursor:pointer}.en-flowdash{pointer-events:none}
 .en-tip{position:fixed;z-index:9999;background:#14222b;color:#fff;font-size:12.5px;line-height:1.45;padding:6px 9px;border-radius:6px;box-shadow:0 4px 14px #0003;pointer-events:none}
+.en-pick{list-style:none;margin:6px 0;padding:0;display:grid;gap:4px}.en-pick button{width:100%;text-align:left;border:1px solid #dfe5e8;background:#fff;border-radius:6px;padding:7px 10px;font:inherit;font-size:13px;cursor:pointer}.en-pick button:hover{background:#f3f6f8;border-color:#9fb0bb}
+@media (pointer:coarse){.en-fhit,.en-hit{stroke-width:24px}}
+.en-pick{max-height:320px;overflow:auto}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -4730,9 +4733,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const r=RT();if(!r)return "";
   const mine=new Set();for(const c of r.corridors)if(c.buyer===E.sel)[...(c.via||[]),...(c.alt||[])].forEach(v=>mine.add(v));
   const used=new Set();for(const f of flows())if(f.corr&&(f.cc===E.sel||E.layers.others))(f.corr.via||[]).forEach(v=>used.add(v));
-  let g='<g class="en-routes">';
+  let g='<g class="en-routes">';E.RS=[];
   for(const sg of r.segments){
    const KN0={sea:"바닷길",pipeline:"송유관",rail:"철도",sts:"선박 간 환적"},rtip=(KN0[sg.kind]||"")+' · '+sg.name+(sg.from||sg.to?' · '+[sg.from,sg.to].filter(Boolean).join(' → '):'')+(sg.status?' · '+sg.status:'')+(sg.capacity?' · '+sg.capacity:'')+' · 눌러서 자세히';
+   if((sg.kind!=="sea"||!used.has(sg.id))&&!(mine.has(sg.id)||(sg.users||[]).includes(E.sel))&&!E.layers.others){}else E.RS.push({id:sg.id,name:sg.name,kind:sg.kind,pp:unwrap(sg.path.map(p=>P(p[0],p[1]))),tip:rtip});
    if(sg.kind==="sea"&&used.has(sg.id)){g+='<path class="en-hit" data-rt="'+esc(sg.id)+'" data-tip="'+esc(rtip)+'" d="'+smooth(sg.path.map(p=>P(p[0],p[1])))+'"></path>';continue}   // 물량 선이 이미 그 바닷길을 그린다
    const on=mine.has(sg.id)||(sg.users||[]).includes(E.sel);
    if(!on&&!E.layers.others)continue;   // 기본은 고른 나라의 길만(다른 나라 경로는 아래 '다른 나라 경로' 켜면)
@@ -4809,6 +4813,26 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    (via?'<p class="en-rl">지나는 길: '+via+'</p>':'')+'<dl class="en-rd">'+rows.map(r=>'<div><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>').join("")+'</dl>'+
    (f.corr&&f.corr.note?'<p class="en-note">'+esc(f.corr.note)+'</p>':'')+(f.corr&&f.corr.src?'<p class="en-note">'+srcLinks(f.corr.src)+'</p>':'')+
    '<p class="en-note">지나는 길의 이름을 누르면 그 구간을 쓰는 다른 나라와 비중이 나옵니다.</p>';
+ }
+ // 눌린 자리 가까이 지나는 선을 모두 찾는다(겹친 선도 고를 수 있게): 하나면 바로 열고, 여럿이면 목록
+ function pickNear(ev){
+  const host=document.getElementById("en-map"),sv=host&&host.querySelector("svg");if(!sv||!sv.getScreenCTM())return false;
+  const pt=sv.createSVGPoint();pt.x=ev.clientX;pt.y=ev.clientY;const u=pt.matrixTransform(sv.getScreenCTM().inverse());
+  const vb=sv.viewBox.baseVal,K=vb.width/Math.max(1,sv.getBoundingClientRect().width),tol=(matchMedia("(pointer:coarse)").matches?20:11)*K,Wd=E.world.w;
+  const dist=(pp,x,y)=>{let best=1e9;for(let i=1;i<pp.length;i++){const a=pp[i-1],b=pp[i],ax=a[0],ay=a[1],dx=b[0]-ax,dy=b[1]-ay,l=dx*dx+dy*dy;let t=l?((x-ax)*dx+(y-ay)*dy)/l:0;t=Math.max(0,Math.min(1,t));const qx=ax+t*dx-x,qy=ay+t*dy-y;best=Math.min(best,qx*qx+qy*qy)}return Math.sqrt(best)};
+  const near=(pp)=>Math.min(...[-Wd,0,Wd,2*Wd,-2*Wd].map(o=>dist(pp,u.x-o,u.y)));
+  const hits=[];
+  (E.FL||[]).forEach((f,i)=>{if(f.pp&&(f.cc===E.sel||E.layers.others)){const d=near(f.pp);if(d<tol)hits.push({d,t:"fl",i,sh:f.share||0,label:(ON[f.o]||f.o)+'산 원유 → '+(CN[f.cc]||f.cc)+' · '+num(f.share,1)+'%'})}});
+  (E.PF||[]).forEach((f,i)=>{if(f.pp){const d=near(f.pp);if(d<tol)hits.push({d,t:"pf",i,sh:f.share||0,label:(CN[f.cc]||f.cc)+' → '+(ON[f.to]||CN[f.to]||f.to)+' 석유제품 · '+num(f.share,1)+'%'})}});
+  (E.RS||[]).forEach(r=>{const d=near(r.pp);if(d<tol)hits.push({d,t:"rt",id:r.id,label:({sea:"바닷길",pipeline:"송유관",rail:"철도",sts:"선박 간 환적"}[r.kind]||"")+' · '+r.name})});
+  if(!hits.length)return false;
+  hits.sort((a,b)=>(a.t==='rt')-(b.t==='rt')||(b.sh||0)-(a.sh||0)||a.d-b.d);
+  const seen=new Set(),uniq=hits.filter(h=>{const k=h.t+(h.i??h.id);if(seen.has(k))return false;seen.add(k);return true});
+  if(uniq.length===1){const h=uniq[0];h.t==="fl"?flowInfo(E.FL[h.i],false):h.t==="pf"?flowInfo(E.PF[h.i],true):routeInfo(h.id);return true}
+  const box=document.getElementById("en-route");box.hidden=false;
+  box.innerHTML='<div class="en-rh"><span class="en-rk">이 자리를 지나는 길</span><b>'+uniq.length+'개</b><button type="button" class="en-rx" data-rt-close aria-label="닫기">×</button></div><ul class="en-pick">'+
+   uniq.slice(0,30).map(h=>'<li><button type="button" '+(h.t==="rt"?'data-rt="'+esc(h.id)+'"':h.t==="fl"?'data-fl="'+h.i+'"':'data-pf="'+h.i+'"')+'>'+esc(h.label)+'</button></li>').join("")+'</ul><p class="en-note">고르면 자세한 내용이 나옵니다.</p>';
+  box.scrollIntoView({block:"nearest",behavior:"smooth"});return true;
  }
  // 선·점 위에 마우스를 올리면 어디서 어디로 가는지 바로 보이게(휴대폰은 누르면 오른쪽 상자에)
  (function(){let tipEl=null;
@@ -5101,6 +5125,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const sb=e.target.closest("[data-sat]");if(sb&&document.getElementById("en-app")?.contains(sb)){const [n,lo,la,nt]=sb.dataset.sat.split("|");satView(n,+lo,+la,nt);return}
   if(e.target.closest("[data-sat-close]")){const b=document.getElementById("en-sat");if(b)b.hidden=true;return}
   const zb=e.target.closest("[data-en-zoom]");if(zb){E.vb=E.vb?null:zoomBox();zb.setAttribute("aria-pressed",String(!!E.vb));zb.textContent=E.vb?"세계 전체 보기":"이 나라 경로 가까이 보기";drawMap();return}
+  const inMap=e.target.closest("#en-map");
+  if(inMap&&!e.target.closest(".en-hub,[data-sat],[data-en-cc],.en-zctl")&&pickNear(e))return;
   const rt=e.target.closest("[data-rt]");if(rt&&document.getElementById("en-app")?.contains(rt)){routeInfo(rt.dataset.rt);return}
   const fl=e.target.closest("[data-fl],[data-pf]");if(fl&&document.getElementById("en-app")?.contains(fl)){if(fl.dataset.fl!=null)flowInfo(E.FL[+fl.dataset.fl],false);else flowInfo(E.PF[+fl.dataset.pf],true);return}
   if(e.target.closest("[data-rt-close]")){const b=document.getElementById("en-route");if(b)b.hidden=true;return}
