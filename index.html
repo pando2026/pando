@@ -1336,6 +1336,7 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .story-hero figcaption{font-size:12px;color:#6b7b84;margin-top:5px}
 #detail .lead p,#detail .change p{margin:0 0 .75em}#detail .lead p:last-child,#detail .change p:last-child{margin-bottom:0}
 #detail .now-summary p{margin:0 0 .7em}
+.tr-pies--s{grid-template-columns:repeat(2,minmax(0,1fr))}.tr-pie--s h5{text-align:center}.tr-pie--s .tr-donut{width:130px;height:130px}.tr-pie--s .tr-donut span{inset:28px;font-size:12px;line-height:1.3}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -3748,7 +3749,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(S&&(S.srv!=null||S.ind!=null)){
    const parts=st=>{const mining=st.ind!=null&&st.manf!=null?Math.max(0,st.ind-st.manf):null;return [["농림어업",st.agr,st.agrUsd,"#8cb68d"],["제조업",st.manf,st.manfUsd,"#c72a34"],["광업·건설·전기",mining!=null?mining:st.ind,st.indUsd!=null&&st.manfUsd!=null?st.indUsd-st.manfUsd:st.indUsd,"#eeac69"],["서비스",st.srv,st.srvUsd,"#527eae"]].filter(x=>x[1]!=null)};
    const bar=(st,label)=>'<div class="tr-bar-row"><span class="tr-bar-name">'+esc(label)+' <small>'+esc(String(st.year||""))+'</small></span><div class="tr-bar">'+parts(st).map(([n,p,u,c])=>'<i style="width:'+Math.max(0,p).toFixed(2)+'%;background:'+c+'" title="'+esc(n+" "+number(p,1)+"% · "+usdK(u))+'"></i>').join("")+'</div></div>';
-   h+='<h4>산업 구조 <small>GDP(부가가치) 중 비중</small></h4>'+bar(S,name)+(k&&k.structure?bar(k.structure,"한국"):"")+
+   const pie=(st,label)=>{const ps=parts(st);const sum=ps.reduce((a,x)=>a+Math.max(0,x[1]),0);const rows=ps.concat(sum<99.5?[["기타(생산물세 등)",100-sum,null,"#d9e0e4"]]:[]);let acc=0;
+    const stops=rows.map(([n,p,u,c])=>{const a0=acc;acc+=Math.max(0,p);return c+" "+a0.toFixed(2)+"% "+Math.min(100,acc).toFixed(2)+"%"}).join(",");
+    return '<div class="tr-pie tr-pie--s"><h5>'+esc(label)+' <small>'+esc(String(st.year||""))+'</small></h5><div class="tr-donut" style="background:conic-gradient('+stops+')"><span>'+(st.manf!=null?'제조업<br>'+number(st.manf,1)+'%':'')+'</span></div></div>'};
+   h+='<h4>산업 구조 <small>GDP(부가가치) 중 비중</small></h4><div class="tr-pies tr-pies--s">'+pie(S,name)+(k&&k.structure?pie(k.structure,"한국"):"")+'</div>'+
     '<ul class="tr-legend">'+parts(S).map(([n,p,u,c])=>'<li><i style="background:'+c+'"></i><b>'+esc(n)+'</b> '+number(p,1)+'% <span>'+esc(usdK(u))+'</span>'+(k&&k.structure?'<em>한국 '+(()=>{const kk=parts(k.structure).find(x=>x[0]===n);return kk?number(kk[1],1)+'%':'–'})()+'</em>':"")+'</li>').join("")+'</ul>'+
     (S.rents!=null&&S.rents>=5?'<p class="tr-note">천연자원 지대(석유·가스·광물 등에서 나오는 초과 수익)가 GDP의 '+number(S.rents,1)+'%('+esc(String(S.rentsYear||S.year))+')로, 자원 의존이 큰 경제입니다.</p>':"")+
     '<p class="tr-note">세 부문 합은 100%가 되지 않을 수 있습니다(생산물세·보조금 조정분 제외). 제조업은 광공업의 일부입니다.</p>';
