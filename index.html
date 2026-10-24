@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="443435ad6d";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="6b7a8d0bb2";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1947,6 +1947,39 @@ html,body{background:#fff;color:var(--ink)}
 #ar-compare tbody tr{cursor:pointer}
 .ar-grid>*{min-width:0}
 .ar-deals td:nth-child(5),.ar-deals td:nth-child(6){white-space:nowrap}
+/* 자체 생산 vs 수입 */
+#ar-map svg.ar-selfmap .en-land path.imp{fill:#eef1f3;stroke:#b8c3ca;stroke-width:.4}#ar-map svg.ar-selfmap .en-land path.imp:hover{fill:#dfe6ea}
+#ar-map svg.ar-selfmap .en-land path.lv-self{fill:#155e63}#ar-map svg.ar-selfmap .en-land path.lv-mostly{fill:#4a9a96}#ar-map svg.ar-selfmap .en-land path.lv-mixed{fill:#a9d3cd}#ar-map svg.ar-selfmap .en-land path.lv-import{fill:#e39b5b}#ar-map svg.ar-selfmap .en-land path[class*="lv-"]:hover{fill-opacity:.8}
+#ar-map svg.ar-selfmap .en-land path.sel{stroke:#c41230;stroke-width:2px}#ar-map svg.ar-selfmap .en-land path.imp.sel:not([class*="lv-"]){fill:#ffc9cf}
+.ar-bub{fill:#1d2630;fill-opacity:.16;stroke:#1d2630;stroke-width:1px;stroke-opacity:.7;cursor:pointer}
+.ar-bub.on{fill:#c41230;fill-opacity:.22;stroke:#c41230;stroke-width:2px}
+.ar-blab{pointer-events:none}.ar-blab rect{fill:#fff;fill-opacity:.92;stroke:#c9d4da;stroke-width:.8}
+.ar-blab text{font-size:11px;font-weight:800;fill:#14222b;text-anchor:middle}.ar-blab text.v{font-size:10px;font-weight:700;fill:#4c5d68}
+.ar-blab.on rect{stroke:#c41230;stroke-width:1.4}
+.ar-sw{display:inline-block;width:12px;height:12px;vertical-align:-2px;margin-right:4px;border:1px solid #0002}
+.ar-sw.lv-self{background:#155e63}.ar-sw.lv-mostly{background:#4a9a96}.ar-sw.lv-mixed{background:#a9d3cd}.ar-sw.lv-import{background:#e39b5b}.ar-sw.none{background:#e9eef1}
+.ar-bubk{display:inline-block;width:14px;height:14px;border-radius:50%;background:#1d263028;border:1px solid #1d2630b0;vertical-align:-3px;margin-right:4px}
+.ar-self .en-self{margin:4px 0 8px}
+.ar-sk{font-style:normal;font-size:10px;font-weight:900;padding:1px 6px;border-radius:9px;border:1px solid currentColor;white-space:nowrap}
+.ar-sk.k-official{color:#1f6b45}.ar-sk.k-estimate{color:#2f6f93}.ar-sk.k-claim{color:#a0560b}
+.ar-split{display:flex;height:24px;border-radius:2px;overflow:hidden;margin:6px 0 10px;font-size:11px;font-weight:800}
+.ar-split i{display:flex;align-items:center;font-style:normal;min-width:0;white-space:nowrap;overflow:hidden}
+.ar-split i span{padding:0 8px}
+.ar-split .d{background:#155e63;color:#fff}.ar-split .m{background:#e39b5b;color:#2b1a05;justify-content:flex-end}
+.ar-lvl{font-size:12.5px;line-height:1.6;margin:6px 0;color:#2b3a44;word-break:keep-all}
+.ar-lvl small{font-size:10px;color:#7a8a93;margin:0 6px 0 4px}
+.ar-lv{display:inline-block;font-size:11.5px;font-weight:900;padding:2px 8px;border-radius:2px}
+.ar-lv.lv-self{background:#155e63;color:#fff}.ar-lv.lv-mostly{background:#4a9a96;color:#fff}.ar-lv.lv-mixed{background:#a9d3cd;color:#123}.ar-lv.lv-import{background:#e39b5b;color:#3b2a0f}
+.ar-two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
+.ar-two h6{margin:0 0 4px;font-size:11.5px;font-weight:900;color:#3e4f5a}
+.ar-two ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.ar-two li{background:#fff;border:1px solid #dce5ea;padding:5px 7px;font-size:12px;line-height:1.4}
+.ar-two li b{display:block;font-size:12.5px}.ar-two li small{color:#5b6d78;font-size:11px}
+@media(max-width:600px){.ar-two{grid-template-columns:1fr}}
+.ar-ind{margin-top:10px}
+.ar-cos{list-style:none;margin:6px 0 8px;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:3px 12px;font-size:12px}
+.ar-cos li{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dotted #d3dce2;padding:2px 0}
+.ar-cos li span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ar-cos li b{white-space:nowrap}
 
 </style>
 <div class="shell">
@@ -2539,6 +2572,33 @@ html,body{background:#fff;color:var(--ink)}
  setInterval(()=>{if(!on||drag)return;let h=false;try{h=on.matches(':hover')}catch{h=true}if(!h)hide()},200);
  // 보던 차트가 화면에서 사라지면(다른 나라·탭으로 바뀜) 설명도 지운다
  new MutationObserver(()=>{if(on&&!on.isConnected)hide()}).observe(document.documentElement,{childList:true,subtree:true});
+ // 지도 선·점 설명(data-tip, 에너지·무기 지도): 커서를 따라다니지 않는다. 한 선 위에 잠깐(0.25초) 머물면 그 자리 옆에 고정해서 띄우고,
+ // 선을 벗어나거나 스크롤·창 밖·클릭·화면 바뀜이면 바로 지운다. 휴대폰(터치)은 띄우지 않는다(누르면 오른쪽 상자에 나옴).
+ (function(){
+  const el=mk("en-tip");el.setAttribute("role","status");
+  if(document.body)document.body.appendChild(el);else document.addEventListener("DOMContentLoaded",()=>document.body.appendChild(el));
+  const SEL="#en-app [data-tip],#ar-app [data-tip]";let cur=null,timer=0;
+  const off=()=>{clearTimeout(timer);timer=0;cur=null;el.hidden=true};
+  document.addEventListener("pointermove",e=>{
+   if(e.pointerType==="touch")return;
+   const t=e.target&&e.target.closest&&e.target.closest(SEL);
+   if(!t){if(cur||timer||!el.hidden)off();return}
+   if(t===cur)return;
+   if(cur&&!el.hidden&&cur.getAttribute("data-tip")===t.getAttribute("data-tip")){cur=t;return}   // 같은 선(본선·누름 영역)
+   clearTimeout(timer);el.hidden=true;cur=t;const x0=e.clientX,y0=e.clientY;
+   timer=setTimeout(()=>{timer=0;if(cur!==t||!t.isConnected)return;
+    el.textContent=t.getAttribute("data-tip");el.hidden=false;
+    const vw=document.documentElement.clientWidth,vh=innerHeight;el.style.maxWidth=Math.min(320,vw-16)+"px";
+    const w=el.offsetWidth,h=el.offsetHeight;let x=x0+14,y=y0+18;if(x+w>vw-8)x=x0-w-14;if(x<8)x=8;if(y+h>vh-8)y=y0-h-12;
+    el.style.left=x.toFixed(0)+"px";el.style.top=Math.max(8,y).toFixed(0)+"px"},250);
+  },{passive:true,capture:true});
+  document.addEventListener("pointerdown",off,{passive:true,capture:true});
+  window.addEventListener("scroll",off,{passive:true,capture:true});window.addEventListener("wheel",off,{passive:true,capture:true});
+  window.addEventListener("blur",off);window.addEventListener("hashchange",off);
+  document.addEventListener("pointerout",e=>{if(!e.relatedTarget)off()},{passive:true});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape")off()});
+  setInterval(()=>{if(!cur)return;let h=false;try{h=cur.isConnected&&cur.matches(":hover")}catch{h=true}if(!h)off()},200);
+ })();
  // 차트 그리는 쪽이 쓰는 도우미: 점 목록 → data-ct 속성 문자열. a[3] = [[이름, 숫자, "표시용 값"], …](끌어서 잴 때 씀)
  window.__ct=list=>' data-ct="'+JSON.stringify(list.map(a=>{const o=[+(+a[0]).toFixed(1),+(+a[1]).toFixed(1),String(a[2])];if(a[3])o.push(a[3].filter(v=>v&&typeof v[1]==="number"&&isFinite(v[1])).map(v=>[String(v[0]||""),+(+v[1]).toPrecision(8),String(v[2]??"")]));return o})).replace(/&/g,"&amp;").replace(/"/g,"&quot;")+'"';
 })();
@@ -5073,13 +5133,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   box.scrollIntoView({block:"nearest",behavior:"smooth"});return true;
  }
  // 선·점 위에 마우스를 올리면 어디서 어디로 가는지 바로 보이게(휴대폰은 누르면 오른쪽 상자에)
- (function(){let tipEl=null;
-  document.addEventListener("mousemove",e=>{const t=e.target.closest&&e.target.closest("#en-app [data-tip]");
-   if(!t){if(tipEl)tipEl.hidden=true;return}
-   if(!tipEl){tipEl=document.createElement("div");tipEl.className="en-tip";document.body.appendChild(tipEl)}
-   tipEl.textContent=t.dataset.tip;tipEl.hidden=false;const w=Math.min(320,innerWidth-16);tipEl.style.maxWidth=w+"px";
-   const x=Math.min(innerWidth-w-8,e.clientX+14),y=e.clientY+16+tipEl.offsetHeight>innerHeight?e.clientY-tipEl.offsetHeight-10:e.clientY+16;tipEl.style.left=Math.max(8,x)+"px";tipEl.style.top=y+"px"});
- })();
+ // (마우스 설명 상자는 charttip.js 공통: 따라다니지 않고 머문 자리에 고정, 벗어나면 지움)
  function prodFlows(){
   const out=[];
   for(const cc of ORDER){const c=C(cc);const ex=c&&c.products&&c.products.exports;if(!ex||!ex.byDest)continue;
@@ -5944,31 +5998,95 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const tiv=v=>v>=1000?H().num(v/1000,1)+"천":H().num(v,0);
 
  function partners(cc){
-  const m=A.mode==="in"?imp(cc):exp(cc);const t=tot(m);
+  const m=A.mode!=="out"?imp(cc):exp(cc);const t=tot(m);
   return Object.entries(m).map(([k,s])=>({cc:k,v:sumW(s),ser:s})).filter(x=>x.v>0.4).sort((a,b)=>b.v-a.v).map(x=>Object.assign(x,{sh:t?x.v/t*100:0}));
  }
  function warFlows(cc){
   const out=[],seen=new Set();
   for(const [owner,r] of Object.entries(D().res||{}))for(const f of (r.flows||[])){
-   if(!(A.mode==="in"?f.to===cc:f.from===cc))continue;const k=f.from+"|"+f.to+"|"+(f.what||"").slice(0,30);if(seen.has(k))continue;seen.add(k);out.push(Object.assign({owner},f))}
+   if(!(A.mode!=="out"?f.to===cc:f.from===cc))continue;const k=f.from+"|"+f.to+"|"+(f.what||"").slice(0,30);if(seen.has(k))continue;seen.add(k);out.push(Object.assign({owner},f))}
   return out;
  }
  const pos=cc=>(D().pos||{})[cc];
+ /* ---------- 자체 생산 vs 수입 ---------- */
+ const SELF=cc=>(D().self||{})[cc];
+ const IND=cc=>D().ind&&D().ind.c?D().ind.c[cc]:null;
+ const LV={self:["거의 스스로 만든다","거의 자체 생산"],mostly:["대부분 스스로 만들고 핵심 몇 가지만 수입","대부분 자체 생산"],mixed:["자체 생산과 수입이 엇비슷","자체·수입 반반"],import:["대부분 수입(조립·면허생산 포함)","대부분 수입"]};
+ const SKIND={official:"공식 수치",estimate:"추정",claim:"정부 주장(검증 안 됨)"};
+ const usd=v=>H().num(v/100,v>=10000?0:1)+"억 달러";   // v: 백만 달러
+ const shareTxt=(s,short)=>{const v=H().num(+s.value,+s.value%1?1:0)+"%";return s.kind==="estimate"?"약 "+v:s.kind==="claim"?v+(short?"(주장)":" (주장)"):v};
+ function chipSub(c){const h=H(),s=SELF(c),out=[];
+  if(s&&s.share&&s.share.value!=null)out.push("국산 "+shareTxt(s.share,true));else if(s&&LV[s.level])out.push(LV[s.level][1]);
+  const m=imp(c),t=tot(m),top=Object.entries(m).map(([k,v])=>[k,sumW(v)]).sort((a,b)=>b[1]-a[1])[0];
+  if(top&&t>0)out.push("수입 "+ko(top[0])+" "+Math.round(top[1]/t*100)+"%");
+  else{const e=tot(exp(c));if(e>0)out.push("수출 "+tiv(e));else if(res(c))out.push("전시 공급")}
+  return out.map(x=>"<span>"+h.esc(x)+"</span>").join("");
+ }
+ function selfSec(c){
+  const h=H(),s=SELF(c),o=IND(c),I=D().ind;if(!s&&!(o&&o.ser&&o.ser.length))return "";
+  const S=s&&s.sources||[];
+  let x='<div class="en-sec ar-self"><h5>스스로 만드나, 사 오나 <small>'+(s&&s.asOf?'조사 '+h.esc(s.asOf):'SIPRI 100대 방산기업')+'</small></h5>';
+  if(s&&s.share&&s.share.value!=null){const v=Math.max(0,Math.min(100,+s.share.value)),m=100-v;
+   x+='<p class="en-self"><b>'+h.esc(shareTxt(s.share))+'</b> <span>'+h.esc(s.share.label||'국산 비중')+(s.share.basis?' — '+h.esc(s.share.basis):'')+(s.share.by?' · '+h.esc(s.share.by):'')+' <em class="ar-sk k-'+h.esc(s.share.kind||'')+'">'+h.esc(SKIND[s.share.kind]||'')+'</em> '+srcOf(s.share.src,S)+'</span></p>'+
+    '<div class="ar-split" role="img" aria-label="국산 '+h.num(v,0)+'%, 수입·해외 '+h.num(m,0)+'%"><i class="d" style="width:'+v.toFixed(1)+'%">'+(v>=18?'<span>국산 '+h.num(v,0)+'%</span>':'')+'</i><i class="m" style="width:'+m.toFixed(1)+'%">'+(m>=18?'<span>수입·해외 '+h.num(m,0)+'%</span>':'')+'</i></div>'}
+  if(s&&LV[s.level])x+='<p class="ar-lvl"><span class="ar-lv lv-'+s.level+'">'+LV[s.level][0]+'</span><small>판도 분류</small>'+(s.levelWhy?' '+h.esc(s.levelWhy):'')+'</p>';
+  if(s&&s.text)x+='<p class="ar-sum">'+h.esc(s.text)+'</p>';
+  if(s&&s.share&&(s.series||[]).length>1)x+=h.lineChart([{name:s.share.label||"국산 비중",pts:s.series.map(p=>[String(p[0]),+p[1]])}],{label:(s.share.label||"국산 비중")+" 추이",unit:"%",h:110});
+  const made=s&&s.made||[],rel=s&&s.relies||[];
+  if(made.length||rel.length)x+='<div class="ar-two">'+(made.length?'<div><h6>스스로 만드는 주력 무기</h6><ul>'+made.map(m=>'<li><b>'+h.esc(m.name)+'</b><small>'+h.esc([m.kind,m.maker].filter(Boolean).join(' · '))+'</small></li>').join("")+'</ul></div>':'')+
+   (rel.length?'<div><h6>들여오는 핵심</h6><ul>'+rel.map(r=>'<li><b>'+h.esc(r.what)+'</b><small>'+h.esc([r.from?ko(r.from):'',r.note].filter(Boolean).join(' · '))+'</small></li>').join("")+'</ul></div>':'')+'</div>';
+  if(s&&s.gaps)x+='<p class="en-note"><b>스스로 못 만드는 것</b> '+h.esc(s.gaps)+'</p>';
+  if(s&&s.production&&s.production.text)x+='<p class="en-note"><b>생산 규모</b> '+h.esc(s.production.text)+' '+srcOf(s.production.src,S)+'</p>';
+  if(o&&o.v)x+='<div class="en-kv ar-ind"><div><span>방산 매출 '+I.year+'</span><b>'+usd(o.v)+'</b><small>SIPRI 100대 방산기업 중 본사가 '+h.esc(ko(c))+'인 '+o.n+'곳 합계 · 세계 '+o.rank+'위 · 100대 매출의 '+h.num(o.sh,1)+'%</small></div></div>'+
+   '<ol class="ar-cos">'+(o.cos||[]).map(q=>'<li><span>'+h.esc(q[0])+'</span><b>'+usd(q[1])+'</b></li>').join("")+'</ol>';
+  else if(o&&o.ser&&o.ser.length)x+='<p class="en-note">'+I.year+'년 SIPRI 100대 방산기업에는 '+h.esc(ko(c))+' 회사가 없습니다(마지막으로 든 해 '+o.ser[o.ser.length-1][0]+'년).</p>';
+  if(o&&o.ser&&o.ser.length>2){const y0=o.ser[0][0],y1=o.ser[o.ser.length-1][0],m=new Map(o.ser.map(p=>[p[0],p[1]])),pts=[];for(let y=y0;y<=y1;y++)if(m.has(y))pts.push([String(y),Math.round(m.get(y)/10)/10]);
+   x+=h.lineChart([{name:"방산 매출",pts}],{label:"100대 기업 무기 매출 추이(2024년 물가 기준)",unit:"억 달러",zero:true,h:110})}
+  x+='<p class="en-note">방산 매출은 SIPRI 100대 방산기업 가운데 본사가 이 나라인 회사들의 무기 매출 합계(수출 포함)이고 100대 밖 회사는 빠집니다'+(c==="CN"?'(중국 회사는 2015년부터 집계)':'')+(["FR","DE","IT","ES","GB"].includes(c)?'. 에어버스·MBDA·KNDS처럼 여러 나라가 함께 가진 회사('+usd((IND("X-EU")||{}).v||0)+')는 어느 한 나라에 넣지 않았습니다':'')+'. 국산 비중은 나라마다 재는 방식(획득 예산 중 국내 계약 몫·부품 국산화율·정부 주장)이 달라 그대로 견주기 어렵습니다. 출처: <a href="'+h.esc(h.safe(I&&I.src?I.src[2]:"https://www.sipri.org/databases/armsindustry"))+'" target="_blank" rel="noopener noreferrer">SIPRI Arms Industry Database</a></p>';
+  if(S.length)x+='<details class="ar-src"><summary>국산 비중 출처 '+S.length+'개</summary><ol>'+S.map(q=>'<li><a href="'+h.esc(h.safe(q[2]))+'" target="_blank" rel="noopener noreferrer">'+h.esc(q[0])+' — '+h.esc(q[1])+'</a>'+(q[3]?' <small class="ar-tier">'+h.esc(TIERK[q[3]]||q[3])+'</small>':'')+(q[4]?' <small>'+h.esc(q[4])+'</small>':'')+'</li>').join("")+'</ol></details>';
+  return x+'</div>';
+ }
+ // 자체 생산 지도: 나라 색 = 판도 분류, 원 = 방산 매출(SIPRI 100대 기업 본사 나라)
+ function selfMap(){
+  const host=document.getElementById("ar-map"),h=H(),w=A.world,P=h.P,y0=P(0,72)[1],y1=P(0,-46)[1],base=()=>[0,y0,w.w,y1-y0],vb=(A.vb||base()).slice(),K=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000));
+  const SL=D().self||{},IC=(D().ind||{}).c||{},yr=(D().ind||{}).year;A.L=[];
+  const pick=new Set(Object.keys(D().imp).concat(Object.keys(A.ex),Object.keys(SL),Object.keys(IC)));
+  const tipOf=c=>{const s=SL[c],o=IC[c],t=[ko(c)];if(s&&s.share&&s.share.value!=null)t.push("국산 "+shareTxt(s.share)+"("+(s.share.label||"국산 비중")+")");else if(s&&LV[s.level])t.push(LV[s.level][0]);if(o&&o.v)t.push("방산 매출 "+usd(o.v)+"(세계 "+o.rank+"위)");return t.length>1?t.join(" · "):""};
+  let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" class="ar-selfmap" role="img" aria-label="나라별 무기 자체 생산 지도"><g id="ar-all"><g class="en-land">'+
+   w.countries.map(c=>{const s=SL[c.c],cls=(pick.has(c.c)?'imp':'')+(c.c===A.sel?' sel':'')+(s&&LV[s.level]?' lv-'+s.level:''),tp=tipOf(c.c);
+    return '<path d="'+c.d+'"'+(cls.trim()?' class="'+cls.trim()+'"':'')+(pick.has(c.c)?' data-ar-cc="'+c.c+'"':'')+(tp?' data-tip="'+h.esc(tp)+'"':'')+'/>'}).join("")+'</g>';
+  const L=Object.entries(IC).filter(([c,o])=>o.v&&pos(c)).sort((a,b)=>b[1].v-a[1].v),mx=L.length?L[0][1].v:1;
+  g+='<g class="ar-bubs">'+L.map(([c,o])=>{const [x,y]=P(...pos(c)),r=(3+24*Math.sqrt(o.v/mx))*K;return '<circle class="ar-bub'+(c===A.sel?' on':'')+'" cx="'+x.toFixed(1)+'" cy="'+y.toFixed(1)+'" r="'+r.toFixed(2)+'" data-ar-cc="'+c+'" data-tip="'+h.esc(tipOf(c)||ko(c)+' · 방산 매출 '+usd(o.v))+'"/>'}).join("")+'</g></g>';
+  // 이름표: 방산 매출 상위 10곳 + 고른 나라
+  const boxes=[],tw=(t,px)=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?px:px*0.58),0);let labs="";
+  const lab=(c,o,sel)=>{const p=pos(c);if(!p)return;const [ax,ay]=P(...p),r=o&&o.v?(3+24*Math.sqrt(o.v/mx))*K:4*K,t1=ko(c),t2=o&&o.v?usd(o.v):"",bw=(Math.max(tw(t1,11),tw(t2,10))+10)*K,bh=(t2?27:15)*K;
+   for(const [dx,dy] of [[1,0],[-1,0],[0,-1],[0,1],[1,-1],[-1,-1],[1,1],[-1,1]]){const cx=ax+dx*(r+bw/2+2*K),cy=ay+dy*(r+bh/2+2*K),b={x0:cx-bw/2,x1:cx+bw/2,y0:cy-bh/2,y1:cy+bh/2};
+    if(!sel&&(b.x0<vb[0]||b.x1>vb[0]+vb[2]||b.y0<vb[1]||b.y1>vb[1]+vb[3]||boxes.some(q=>b.x0<q.x1&&b.x1>q.x0&&b.y0<q.y1&&b.y1>q.y0)))continue;boxes.push(b);
+    labs+='<g class="ar-blab'+(sel?' on':'')+'" transform="translate('+cx.toFixed(1)+' '+cy.toFixed(1)+') scale('+K.toFixed(3)+')"><rect x="'+(-bw/2/K).toFixed(1)+'" y="'+(-bh/2/K).toFixed(1)+'" width="'+(bw/K).toFixed(1)+'" height="'+(bh/K).toFixed(1)+'"/><text y="'+(t2?-2:4)+'">'+h.esc(t1)+'</text>'+(t2?'<text class="v" y="11">'+h.esc(t2)+'</text>':'')+'</g>';return}};
+  if(pos(A.sel))lab(A.sel,IC[A.sel],true);
+  L.filter(([c])=>c!==A.sel).slice(0,10).forEach(([c,o])=>lab(c,o,false));
+  g+='<use href="#ar-all" x="'+(-w.w)+'"/><use href="#ar-all" x="'+w.w+'"/><g class="en-vlabs">'+labs+'</g>';
+  g=g.replace(/<path /g,'<path vector-effect="non-scaling-stroke" ').replace(/<circle /g,'<circle vector-effect="non-scaling-stroke" ');
+  host.innerHTML=g+'</svg>';
+  h.zoomable&&h.zoomable(host,A,base,map);host.classList.toggle("zoomed",!!A.vb);
+  const cap=document.getElementById("ar-cap");
+  if(cap)cap.innerHTML=Object.keys(LV).map(k=>'<span><i class="ar-sw lv-'+k+'"></i>'+LV[k][1]+'</span>').join("")+'<span><i class="ar-sw none"></i>조사 전</span><span><i class="ar-bubk"></i>원 = 방산 매출(SIPRI 100대 기업 본사 나라, '+(yr||"")+')</span><em>색은 판도 분류(국산 비중 숫자·정부 백서·SIPRI 설명 근거), 나라를 누르면 오른쪽에 국산 비중·주력 국산 무기·수입 의존 품목이 나옵니다. 여러 나라 합작사(에어버스·MBDA·KNDS, '+usd((IC["X-EU"]||{}).v||0)+')는 지도에 넣지 않았습니다.</em>';
+ }
 
  function mount(){
   const host=document.getElementById("ar-app"),h=H();if(!host||!h)return;
   if(!D()){host.innerHTML='<p class="empty">무기 이전 자료를 불러오지 못했습니다.</p>';return}
   const rk=ranks();
-  const chip=c=>'<button type="button" class="en-chip'+(c===A.sel?' on':'')+'" data-ar-cc="'+c+'" aria-pressed="'+(c===A.sel)+'"><b>'+h.esc(ko(c))+'</b><span>'+h.esc(partners0(c))+'</span></button>';
+  const chip=c=>'<button type="button" class="en-chip'+(c===A.sel?' on':'')+'" data-ar-cc="'+c+'" aria-pressed="'+(c===A.sel)+'"><b>'+h.esc(ko(c))+'</b>'+chipSub(c)+'</button>';
   const chips=GROUPS.map(([g,L])=>'<div class="en-chrow"><span class="en-chg">'+g+'</span><div class="en-chlist">'+L.filter(c=>D().imp[c]||A.ex[c]||res(c)).map(chip).join("")+'</div></div>').join("");
   const all=Object.keys(D().imp).concat(Object.keys(A.ex)).filter((c,i,a)=>a.indexOf(c)===i&&c[0]!=="?"&&!["X-UNK","X-MULTI"].includes(c)).sort((a,b)=>ko(a).localeCompare(ko(b),"ko"));
   host.innerHTML='<div class="en-head"><div><h4>누가 누구에게 무기를 대나</h4>'+
-   '<p>나라를 고르면 그 나라로 무기가 들어오는 길(또는 그 나라가 무기를 보내는 길)이 그려집니다. 실선은 스톡홀름국제평화연구소(SIPRI)가 집계한 주요 무기 인도량, 점선은 전쟁 중 지원·비밀 이전·제재 회피처럼 SIPRI 표에 다 잡히지 않는 공급(정부 발표·제재 문서·유엔 보고서로 확인).</p></div>'+
+   '<p>나라를 고르면 그 나라로 무기가 들어오는 길(또는 그 나라가 무기를 보내는 길)이 그려집니다. 실선은 스톡홀름국제평화연구소(SIPRI)가 집계한 주요 무기 인도량, 점선은 전쟁 중 지원·비밀 이전·제재 회피처럼 SIPRI 표에 다 잡히지 않는 공급(정부 발표·제재 문서·유엔 보고서로 확인). ‘스스로 만드는 무기’를 누르면 나라마다 무기를 얼마나 직접 만드는지(국산 비중·방산 매출)가 보입니다.</p></div>'+
    '<span class="en-asof">'+(D().asOf?'SIPRI 자료 '+h.esc(D().asOf)+' 받음':'')+'</span></div>'+
    '<div class="en-chips" aria-label="나라">'+chips+'<div class="en-chrow"><span class="en-chg">모든 나라</span><div class="en-chlist"><label class="ar-pick"><span>다른 나라</span><select id="ar-sel" aria-label="나라 고르기"><option value="">선택…</option>'+all.map(c=>'<option value="'+h.esc(c)+'"'+(c===A.sel?' selected':'')+'>'+h.esc(ko(c))+'</option>').join("")+'</select></label></div></div></div>'+
-   '<div class="ar-tools"><div class="ar-seg" role="group" aria-label="방향"><button type="button" data-ar-mode="in" aria-pressed="'+(A.mode==="in")+'">받는 무기(수입)</button><button type="button" data-ar-mode="out" aria-pressed="'+(A.mode==="out")+'">보내는 무기(수출)</button></div>'+
+   '<div class="ar-tools"><div class="ar-seg" role="group" aria-label="방향"><button type="button" data-ar-mode="in" aria-pressed="'+(A.mode==="in")+'">받는 무기(수입)</button><button type="button" data-ar-mode="out" aria-pressed="'+(A.mode==="out")+'">보내는 무기(수출)</button><button type="button" data-ar-mode="self" aria-pressed="'+(A.mode==="self")+'">스스로 만드는 무기(자체 생산)</button></div>'+
    '<div class="ar-seg" role="group" aria-label="기간"><button type="button" data-ar-win="5" aria-pressed="'+(A.win===5)+'">최근 5년</button><button type="button" data-ar-win="10" aria-pressed="'+(A.win===10)+'">10년</button><button type="button" data-ar-win="all" aria-pressed="'+(A.win==="all")+'">'+D().years[0]+'년 이후</button></div>'+
-   '<label class="ar-ck"><input type="checkbox" data-ar-lay="sipri"'+(A.lay.sipri?' checked':'')+'> 주요 무기 인도(SIPRI)</label><label class="ar-ck"><input type="checkbox" data-ar-lay="war"'+(A.lay.war?' checked':'')+'> 전시 지원·비공식 공급</label></div>'+
+   (A.mode==="self"?'':'<label class="ar-ck"><input type="checkbox" data-ar-lay="sipri"'+(A.lay.sipri?' checked':'')+'> 주요 무기 인도(SIPRI)</label><label class="ar-ck"><input type="checkbox" data-ar-lay="war"'+(A.lay.war?' checked':'')+'> 전시 지원·비공식 공급</label>')+'</div>'+
    '<div class="en-grid ar-grid"><figure class="en-mapbox"><div id="ar-map" class="en-map"></div><figcaption id="ar-cap"></figcaption></figure>'+
    '<aside class="en-route ar-route" id="ar-route" hidden></aside><aside class="en-card ar-card" id="ar-card"></aside></div><div class="en-compare" id="ar-compare"></div>';
   draw();
@@ -5989,20 +6107,21 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function map(){
   const host=document.getElementById("ar-map"),h=H();if(!host||!h||!A.world)return;
+  if(A.mode==="self")return selfMap();
   const w=A.world,P=h.P,y0=P(0,72)[1],y1=P(0,-46)[1],base=()=>[0,y0,w.w,y1-y0],vb=(A.vb||base()).slice(),K=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000));
   const sel=A.sel,me=pos(sel),PT=partners(sel),WF=A.lay.war?warFlows(sel):[];
-  const shade=new Map(PT.slice(0,25).map(x=>[x.cc,x.sh]));WF.forEach(f=>{const o=A.mode==="in"?f.from:f.to;if(!shade.has(o))shade.set(o,4)});
+  const shade=new Map(PT.slice(0,25).map(x=>[x.cc,x.sh]));WF.forEach(f=>{const o=A.mode!=="out"?f.from:f.to;if(!shade.has(o))shade.set(o,4)});
   const pick=new Set(Object.keys(D().imp).concat(Object.keys(A.ex)));
   let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="'+h.esc(ko(sel))+' 무기 공급 지도"><g id="ar-all"><g class="en-land">'+
    w.countries.map(c=>{const s=shade.get(c.c),cls=(pick.has(c.c)?'imp':'')+(c.c===sel?' sel':'')+(s!=null?' ar-p':'');
     return '<path d="'+c.d+'"'+(cls.trim()?' class="'+cls.trim()+'"':'')+(pick.has(c.c)?' data-ar-cc="'+c.c+'"':'')+(s!=null&&c.c!==sel?' style="fill-opacity:'+(0.18+0.7*Math.min(1,Math.sqrt(s/40))).toFixed(2)+'"':'')+'/>'}).join("")+'</g><g class="en-flows">';
   A.L=[];const maxV=Math.max(1,...PT.map(x=>x.v));
   if(me&&A.lay.sipri)for(const x of PT.slice(0,30).reverse()){const p=pos(x.cc);if(!p)continue;
-   const a=A.mode==="in"?arc(p,me):arc(me,p),wpx=0.7+5*Math.sqrt(x.v/maxV);
-   const tipT=(A.mode==="in"?ko(x.cc)+' → '+ko(sel):ko(sel)+' → '+ko(x.cc))+' · '+winTxt()+' 주요 무기 '+tiv(x.v)+' TIV · '+(A.mode==="in"?ko(sel)+' 수입의 ':ko(sel)+' 수출의 ')+h.num(x.sh,x.sh<1?1:0)+'%';
+   const a=A.mode!=="out"?arc(p,me):arc(me,p),wpx=0.7+5*Math.sqrt(x.v/maxV);
+   const tipT=(A.mode!=="out"?ko(x.cc)+' → '+ko(sel):ko(sel)+' → '+ko(x.cc))+' · '+winTxt()+' 주요 무기 '+tiv(x.v)+' TIV · '+(A.mode!=="out"?ko(sel)+' 수입의 ':ko(sel)+' 수출의 ')+h.num(x.sh,x.sh<1?1:0)+'%';
    const i=A.L.push({t:"s",x,a})-1;
    g+='<path class="ar-ln s" d="'+a.d+'" style="stroke-width:'+wpx.toFixed(2)+'"/><path class="en-fhit" data-ar-l="'+i+'" data-tip="'+h.esc(tipT)+'" d="'+a.d+'"/>'}
-  for(const f of WF){const o=A.mode==="in"?f.from:f.to,p=pos(o);if(!p||!me)continue;const a=A.mode==="in"?arc(p,me):arc(me,p);
+  for(const f of WF){const o=A.mode!=="out"?f.from:f.to,p=pos(o);if(!p||!me)continue;const a=A.mode!=="out"?arc(p,me):arc(me,p);
    const tipT=ko(f.from)+' → '+ko(f.to)+' · '+(KIND[f.kind]||f.kind||'')+(f.what?' · '+f.what:'')+(f.status?' · '+f.status:'');
    const i=A.L.push({t:"w",f,a})-1;
    g+='<path class="ar-ln w k-'+(KC[f.kind]||"a")+(f.status==="주장"||f.status==="부인"?' cl':'')+'" d="'+a.d+'"/><path class="en-fhit" data-ar-l="'+i+'" data-tip="'+h.esc(tipT)+'" d="'+a.d+'"/>'}
@@ -6037,7 +6156,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(hits.length===1){lineInfo(A.L[hits[0].i]);return true}
   const h=H(),box=document.getElementById("ar-route");box.hidden=false;
   box.innerHTML='<div class="en-rh"><span class="en-rk">이 자리를 지나는 선</span><b>'+hits.length+'개</b><button type="button" class="en-rx" data-ar-close aria-label="닫기">×</button></div><ul class="en-pick">'+
-   hits.sort((a,b)=>a.d-b.d).slice(0,20).map(x=>{const L=A.L[x.i];const t=L.t==="s"?(A.mode==="in"?ko(L.x.cc)+' → '+ko(A.sel):ko(A.sel)+' → '+ko(L.x.cc))+' · '+h.num(L.x.sh,1)+'%':ko(L.f.from)+' → '+ko(L.f.to)+' · '+(KIND[L.f.kind]||'');return '<li><button type="button" data-ar-l="'+x.i+'">'+h.esc(t)+'</button></li>'}).join("")+'</ul>';
+   hits.sort((a,b)=>a.d-b.d).slice(0,20).map(x=>{const L=A.L[x.i];const t=L.t==="s"?(A.mode!=="out"?ko(L.x.cc)+' → '+ko(A.sel):ko(A.sel)+' → '+ko(L.x.cc))+' · '+h.num(L.x.sh,1)+'%':ko(L.f.from)+' → '+ko(L.f.to)+' · '+(KIND[L.f.kind]||'');return '<li><button type="button" data-ar-l="'+x.i+'">'+h.esc(t)+'</button></li>'}).join("")+'</ul>';
   return true;
  }
  function dealsOf(rec,sup){return ((D().deals||{})[rec]||[]).filter(d=>!sup||d[0]===sup)}
@@ -6045,10 +6164,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function dealRows(L,showSup){const h=H();return L.map(d=>'<tr><th>'+h.esc(d[3])+'<small>'+h.esc(d[4])+(d[8]?' · '+h.esc(d[8]):'')+'</small></th>'+(showSup?'<td>'+h.esc(ko(d[0]))+'</td>':'')+'<td>'+h.esc(d[2]||'–')+'</td><td>'+h.esc(d[1]||'')+'</td><td>'+h.esc(String(d[6]||'').replace(/; /g,'·')||'미인도')+'</td><td>'+(d[9]!=null?tiv(d[9]):'–')+'</td></tr>').join("")}
  function lineInfo(L){
   const h=H(),box=document.getElementById("ar-route");if(!box||!L)return;box.hidden=false;
-  if(L.t==="s"){const x=L.x,rec=A.mode==="in"?A.sel:x.cc,sup=A.mode==="in"?x.cc:A.sel;const ds=dealsOf(rec,sup).slice(0,12);
+  if(L.t==="s"){const x=L.x,rec=A.mode!=="out"?A.sel:x.cc,sup=A.mode!=="out"?x.cc:A.sel;const ds=dealsOf(rec,sup).slice(0,12);
    const sm=new Map((x.ser||[]).map(p=>[p[0],p[1]])),y0=Math.max(Y1()-14,Math.min(...(x.ser||[[Y1()]]).map(p=>p[0]))),yrs=[];for(let y=y0;y<=Y1();y++)yrs.push([y,sm.get(y)||0]);
    box.innerHTML='<div class="en-rh"><span class="en-rk">주요 무기 인도 (SIPRI)</span><b>'+h.esc(ko(sup))+' → '+h.esc(ko(rec))+'</b><button type="button" class="en-rx" data-ar-close aria-label="닫기">×</button></div>'+
-    '<dl class="en-rd"><div><dt>'+h.esc(winTxt())+' 인도량</dt><dd>'+tiv(x.v)+' TIV</dd></div><div><dt>'+(A.mode==="in"?h.esc(ko(rec))+' 수입 중 몫':h.esc(ko(sup))+' 수출 중 몫')+'</dt><dd>'+h.num(x.sh,1)+'%</dd></div></dl>'+
+    '<dl class="en-rd"><div><dt>'+h.esc(winTxt())+' 인도량</dt><dd>'+tiv(x.v)+' TIV</dd></div><div><dt>'+(A.mode!=="out"?h.esc(ko(rec))+' 수입 중 몫':h.esc(ko(sup))+' 수출 중 몫')+'</dt><dd>'+h.num(x.sh,1)+'%</dd></div></dl>'+
     (yrs.length>1?h.lineChart([{name:"인도량",pts:yrs.map(p=>[String(p[0]),p[1]]),bars:true}],{label:"연도별 인도량",unit:"TIV",zero:true,h:110}):'')+
     (ds.length?'<div class="en-tablewrap"><table class="en-table ar-deals"><thead><tr><th>무기</th><th>수량</th><th>계약</th><th>인도</th><th>TIV</th></tr></thead><tbody>'+dealRows(ds,false)+'</tbody></table></div>':'<p class="en-note">최근 10년 계약 목록에는 없습니다(그 전 인도분).</p>')+
     '<p class="en-note">TIV는 SIPRI가 무기의 군사적 능력을 재는 단위로, 거래 금액(달러)이 아닙니다.</p>'}
@@ -6066,36 +6185,37 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const box=document.getElementById("ar-card"),h=H();if(!box)return;const c=A.sel,r=res(c),rk=ranks();
   const ti=tot(imp(c)),te=tot(exp(c)),kri=tot(imp("KR")),kre=tot(exp("KR"));
   const PT=partners(c),top=PT[0];
-  const auto=A.mode==="in"?(ti>0?winTxt()+' 주요 무기 수입 '+tiv(ti)+' TIV'+(rk.im.get(c)?' · 세계 '+rk.im.get(c)+'위':'')+(top?' · 1위 공급국 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수입 기록이 없습니다.'):(te>0?winTxt()+' 주요 무기 수출 '+tiv(te)+' TIV'+(rk.ex.get(c)?' · 세계 '+rk.ex.get(c)+'위':'')+(top?' · 가장 많이 받은 나라 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수출 기록이 없습니다.');
+  const auto=A.mode!=="out"?(ti>0?winTxt()+' 주요 무기 수입 '+tiv(ti)+' TIV'+(rk.im.get(c)?' · 세계 '+rk.im.get(c)+'위':'')+(top?' · 1위 공급국 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수입 기록이 없습니다.'):(te>0?winTxt()+' 주요 무기 수출 '+tiv(te)+' TIV'+(rk.ex.get(c)?' · 세계 '+rk.ex.get(c)+'위':'')+(top?' · 가장 많이 받은 나라 '+ko(top.cc)+' '+h.num(top.sh,0)+'%':''):'SIPRI 표에 '+winTxt()+' 주요 무기 수출 기록이 없습니다.');
   const kv=[["수입 "+winTxt(),ti>0?tiv(ti)+' TIV':'–',rk.im.get(c)?'세계 '+rk.im.get(c)+'위 / '+rk.ni+'곳 · 세계 수입의 '+h.num(ti/rk.wi*100,1)+'%':''],
    ["수출 "+winTxt(),te>0?tiv(te)+' TIV':'–',rk.ex.get(c)?'세계 '+rk.ex.get(c)+'위 / '+rk.ne+'곳 · 세계 수출의 '+h.num(te/rk.we*100,1)+'%':''],
    ...(c!=="KR"?[["한국과 비교",'수입 '+tiv(kri)+' · 수출 '+tiv(kre),'한국 수입 '+(rk.im.get("KR")||'–')+'위 · 수출 '+(rk.ex.get("KR")||'–')+'위'+(ti>0&&kri>0?' · 수입은 한국의 '+h.num(ti/kri,ti/kri<10?1:0)+'배':'')]]:[])];
-  const bars=PT.length?'<div class="en-sec"><h5>'+(A.mode==="in"?'어디서 받나':'누구에게 보내나')+' <small>'+h.esc(winTxt())+' · SIPRI TIV</small></h5><ol class="en-bars">'+PT.slice(0,8).map(x=>'<li><span class="nm">'+h.esc(ko(x.cc))+'</span><span class="bar"><i class="'+(x.cc==="KR"?'h':'o')+'" style="width:'+Math.min(100,x.sh).toFixed(1)+'%"></i></span><b>'+h.num(x.sh,x.sh<1?1:0)+'%</b><em>'+tiv(x.v)+'</em></li>').join("")+'</ol></div>':'';
+  const bars=PT.length?'<div class="en-sec"><h5>'+(A.mode!=="out"?'어디서 받나':'누구에게 보내나')+' <small>'+h.esc(winTxt())+' · SIPRI TIV</small></h5><ol class="en-bars">'+PT.slice(0,8).map(x=>'<li><span class="nm">'+h.esc(ko(x.cc))+'</span><span class="bar"><i class="'+(x.cc==="KR"?'h':'o')+'" style="width:'+Math.min(100,x.sh).toFixed(1)+'%"></i></span><b>'+h.num(x.sh,x.sh<1?1:0)+'%</b><em>'+tiv(x.v)+'</em></li>').join("")+'</ol></div>':'';
   // 연도별 추이(수입·수출)
   const yr=(m)=>{const o={};for(const s of Object.values(m))for(const [y,v] of s)o[y]=(o[y]||0)+v;return Object.entries(o).map(([y,v])=>[y,Math.round(v)]).sort()};
   const si=yr(imp(c)),se=yr(exp(c)),yrs=[...new Set(si.concat(se).map(p=>p[0]))].sort(),fill=s=>yrs.map(y=>[y,(s.find(p=>p[0]===y)||[0,0])[1]]);
   const chart=yrs.length>2?'<div class="en-sec"><h5>해마다 얼마나 <small>주요 무기 인도량, TIV</small></h5>'+h.lineChart([si.length?{name:"수입",pts:fill(si)}:null,se.length?{name:"수출",pts:fill(se)}:null].filter(Boolean),{label:"연도별 무기 수입·수출",zero:true,legend:true,h:130})+'</div>':'';
-  const ds=A.mode==="in"?dealsOf(c).slice().sort((a,b)=>(b[9]||b[10]||0)-(a[9]||a[10]||0)).slice(0,12):[];
+  const ds=A.mode!=="out"?dealsOf(c).slice().sort((a,b)=>(b[9]||b[10]||0)-(a[9]||a[10]||0)).slice(0,12):[];
   const deals=ds.length?'<div class="en-sec"><h5>핵심 무기 <small>최근 10년 인도·계약, 양이 큰 순</small></h5><div class="en-tablewrap"><table class="en-table ar-deals"><thead><tr><th>무기</th><th>공급국</th><th>수량</th><th>계약</th><th>인도</th><th>TIV</th></tr></thead><tbody>'+dealRows(ds,true)+'</tbody></table></div></div>':'';
   let R="";
   if(r){const S=r.sources||[];
    R+=(r.summary?'<p class="ar-sum">'+h.esc(r.summary)+'</p>':'')+(r.selfProduction&&r.selfProduction.text?'<p class="en-note"><b>자체 생산</b> '+h.esc(r.selfProduction.text)+' '+srcOf(r.selfProduction.src,S)+'</p>':'');
-   const fl=(r.flows||[]).filter(f=>A.mode==="in"?f.to===c:f.from===c);
-   if(fl.length)R+='<div class="en-sec"><h5>'+(A.mode==="in"?'전쟁·위기 속 공급':'전쟁·위기 속 보낸 것')+' <small>정부 발표·제재 문서·유엔 보고서</small></h5><ul class="ar-fl">'+fl.map(f=>'<li><span class="ar-k k-'+(KC[f.kind]||'a')+'">'+h.esc(KIND[f.kind]||f.kind)+'</span><b>'+h.esc(ko(f.from))+' → '+h.esc(ko(f.to))+'</b>'+(f.status?'<em class="ar-st '+(ST[f.status]||'')+'">'+h.esc(f.status)+'</em>':'')+'<p>'+h.esc(f.what||'')+(f.amount?' — '+h.esc(f.amount):'')+(f.period?' ('+h.esc(f.period)+')':'')+'</p>'+(f.claimBy?'<p class="en-note">주장: '+h.esc(f.claimBy)+'</p>':'')+(f.denial?'<p class="en-note">반박: '+h.esc(f.denial)+'</p>':'')+'<p class="en-note">'+srcOf(f.src,S)+'</p></li>').join("")+'</ul></div>';
+   const fl=(r.flows||[]).filter(f=>A.mode!=="out"?f.to===c:f.from===c);
+   if(fl.length)R+='<div class="en-sec"><h5>'+(A.mode!=="out"?'전쟁·위기 속 공급':'전쟁·위기 속 보낸 것')+' <small>정부 발표·제재 문서·유엔 보고서</small></h5><ul class="ar-fl">'+fl.map(f=>'<li><span class="ar-k k-'+(KC[f.kind]||'a')+'">'+h.esc(KIND[f.kind]||f.kind)+'</span><b>'+h.esc(ko(f.from))+' → '+h.esc(ko(f.to))+'</b>'+(f.status?'<em class="ar-st '+(ST[f.status]||'')+'">'+h.esc(f.status)+'</em>':'')+'<p>'+h.esc(f.what||'')+(f.amount?' — '+h.esc(f.amount):'')+(f.period?' ('+h.esc(f.period)+')':'')+'</p>'+(f.claimBy?'<p class="en-note">주장: '+h.esc(f.claimBy)+'</p>':'')+(f.denial?'<p class="en-note">반박: '+h.esc(f.denial)+'</p>':'')+'<p class="en-note">'+srcOf(f.src,S)+'</p></li>').join("")+'</ul></div>';
    if((r.embargo||[]).length)R+='<div class="en-sec"><h5>금수·제재</h5><ul class="en-pol">'+r.embargo.map(e=>'<li><time>'+h.esc(e.since||'')+'</time><span><b>'+h.esc(e.by||'')+'</b> '+h.esc(e.text||'')+(e.status?' — <b>'+h.esc(e.status)+'</b>':'')+' '+srcOf(e.src,S)+'</span></li>').join("")+'</ul></div>';
    if(r.korea)R+='<div class="en-sec"><h5>한국과는</h5><p class="ar-sum">'+h.esc(r.korea)+'</p></div>';
    if((r.watch||[]).length)R+='<div class="en-sec"><h5>다음에 볼 것</h5><ul class="en-pol">'+r.watch.map(w=>'<li><time>'+h.esc(w.date||'')+'</time><span>'+h.esc(w.text||'')+'</span></li>').join("")+'</ul></div>';
    if(S.length)R+='<details class="ar-src"><summary>출처 '+S.length+'개</summary><ol>'+S.map(s=>'<li><a href="'+h.esc(h.safe(s[2]))+'" target="_blank" rel="noopener noreferrer">'+h.esc(s[0])+' — '+h.esc(s[1])+'</a>'+(s[3]?' <small class="ar-tier">'+h.esc(TIERK[s[3]]||s[3])+'</small>':'')+(s[4]?' <small>'+h.esc(s[4])+'</small>':'')+'</li>').join("")+'</ol></details>'}
   box.innerHTML='<div class="en-ct"><b>'+h.esc(ko(c))+'</b><span>'+h.esc(r&&r.asOf?'조사 '+r.asOf:'')+'</span></div>'+
    '<p class="ar-head">'+h.esc(r&&r.headline||auto)+'</p>'+(r&&r.headline?'<p class="en-note">'+h.esc(auto)+'</p>':'')+
-   '<div class="en-kv">'+kv.map(x=>'<div><span>'+h.esc(x[0])+'</span><b>'+h.esc(x[1])+'</b><small>'+h.esc(x[2])+'</small></div>').join("")+'</div>'+bars+chart+R+deals+
+   (A.mode==="self"?selfSec(c):'')+'<div class="en-kv">'+kv.map(x=>'<div><span>'+h.esc(x[0])+'</span><b>'+h.esc(x[1])+'</b><small>'+h.esc(x[2])+'</small></div>').join("")+'</div>'+(A.mode==="self"?'':selfSec(c))+bars+chart+R+deals+
    '<p class="en-note">SIPRI는 항공기·함정·전차·포·미사일·방공체계 같은 주요 재래식 무기만 셉니다. 포탄·소총·탄약·재정 지원은 빠지고, TIV는 금액이 아니라 군사적 능력의 양입니다. 출처: <a href="https://www.sipri.org/databases/armstransfers" target="_blank" rel="noopener noreferrer">SIPRI Arms Transfers Database</a> (스톡홀름국제평화연구소 무기 이전 데이터베이스)</p>';
  }
  function compare(){
   const box=document.getElementById("ar-compare"),h=H();if(!box)return;const rk=ranks();
-  const rows=FOCUS.filter(c=>D().imp[c]||A.ex[c]).map(c=>{const m=imp(c),t=tot(m),top=Object.entries(m).map(([k,s])=>[k,sumW(s)]).sort((a,b)=>b[1]-a[1]).slice(0,2),e=tot(exp(c));
-   return '<tr class="'+(c===A.sel?'on':'')+'" data-ar-cc="'+c+'"><th>'+h.esc(ko(c))+'</th><td>'+(t?tiv(t):'–')+'</td><td>'+(rk.im.get(c)||'–')+'</td><td>'+top.map(x=>h.esc(ko(x[0]))+' '+h.num(t?x[1]/t*100:0,0)+'%').join(', ')+'</td><td>'+(e?tiv(e):'–')+'</td><td>'+(rk.ex.get(c)||'–')+'</td><td>'+(res(c)&&(res(c).flows||[]).length?(res(c).flows.length+'건'):'–')+'</td></tr>'}).join("");
-  box.innerHTML='<h5>한눈에 비교 <small>'+h.esc(winTxt())+' · SIPRI TIV · 줄을 누르면 그 나라로</small></h5><div class="en-tablewrap"><table class="en-table"><thead><tr><th>나라</th><th>수입</th><th>수입 순위</th><th>주요 공급국</th><th>수출</th><th>수출 순위</th><th>전시 공급 조사</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
+  const selfCell=c=>{const s=SELF(c);return s&&s.share&&s.share.value!=null?h.esc(shareTxt(s.share,true)):s&&LV[s.level]?'<small>'+h.esc(LV[s.level][1])+'</small>':'–'};
+  const rows=FOCUS.filter(c=>D().imp[c]||A.ex[c]).map(c=>{const o=IND(c);const m=imp(c),t=tot(m),top=Object.entries(m).map(([k,s])=>[k,sumW(s)]).sort((a,b)=>b[1]-a[1]).slice(0,2),e=tot(exp(c));
+   return '<tr class="'+(c===A.sel?'on':'')+'" data-ar-cc="'+c+'"><th>'+h.esc(ko(c))+'</th><td>'+(t?tiv(t):'–')+'</td><td>'+(rk.im.get(c)||'–')+'</td><td>'+top.map(x=>h.esc(ko(x[0]))+' '+h.num(t?x[1]/t*100:0,0)+'%').join(', ')+'</td><td>'+(e?tiv(e):'–')+'</td><td>'+(rk.ex.get(c)||'–')+'</td><td>'+selfCell(c)+'</td><td>'+(o&&o.v?usd(o.v)+' <small>'+o.rank+'위</small>':'–')+'</td><td>'+(res(c)&&(res(c).flows||[]).length?(res(c).flows.length+'건'):'–')+'</td></tr>'}).join("");
+  box.innerHTML='<h5>한눈에 비교 <small>'+h.esc(winTxt())+' · SIPRI TIV · 줄을 누르면 그 나라로</small></h5><div class="en-tablewrap"><table class="en-table"><thead><tr><th>나라</th><th>수입</th><th>수입 순위</th><th>주요 공급국</th><th>수출</th><th>수출 순위</th><th>국산 비중</th><th>방산 매출 '+((D().ind||{}).year||'')+'</th><th>전시 공급 조사</th></tr></thead><tbody>'+rows+'</tbody></table></div>';
  }
 
  function select(cc){if(!cc||cc===A.sel)return;A.sel=cc;const r=document.getElementById("ar-route");if(r)r.hidden=true;mount()}
@@ -6109,13 +6229,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const b=e.target.closest("[data-ar-cc]");if(b){select(b.dataset.arCc);if(b.closest("#ar-compare"))app.scrollIntoView({behavior:"smooth",block:"start"})}
  });
  document.addEventListener("change",e=>{const t=e.target;if(t.id==="ar-sel"&&t.value)select(t.value);else if(t.dataset&&t.dataset.arLay){A.lay[t.dataset.arLay]=t.checked;map()}});
- (function(){let tipEl=null;
-  document.addEventListener("mousemove",e=>{const t=e.target.closest&&e.target.closest("#ar-app [data-tip]");
-   if(!t){if(tipEl)tipEl.hidden=true;return}
-   if(!tipEl){tipEl=document.createElement("div");tipEl.className="en-tip";document.body.appendChild(tipEl)}
-   tipEl.textContent=t.dataset.tip;tipEl.hidden=false;const w=Math.min(320,innerWidth-16);tipEl.style.maxWidth=w+"px";
-   const x=Math.min(innerWidth-w-8,e.clientX+14),y=e.clientY+16+tipEl.offsetHeight>innerHeight?e.clientY-tipEl.offsetHeight-10:e.clientY+16;tipEl.style.left=Math.max(8,x)+"px";tipEl.style.top=y+"px"});
- })();
+ // (선 위 마우스 설명은 charttip.js 공통 처리)
  function start(){const host=document.getElementById("ar-app");if(!host)return;
   const m=location.hash.match(/^#arms(?:=([A-Z-]+))?/);if(m&&m[1])A.sel=m[1];
   const go=()=>ensure().then(mount);
