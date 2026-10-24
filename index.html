@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="e154f74070";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="29e24db52d";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1849,7 +1849,7 @@ html,body{background:#fff;color:var(--ink)}
 .en-buyers li{grid-template-columns:76px minmax(60px,1fr) 46px minmax(0,1fr)}.en-sells li{grid-template-columns:76px minmax(60px,1fr) 46px minmax(0,2.2fr)}
 .en-buyers .rt{grid-column:1 / -1;font-size:11.5px;color:#4d5d67;line-height:1.5;margin:-2px 0 5px;word-break:keep-all;overflow-wrap:anywhere}
 .en-buyers .nm{text-align:left;border:0;background:none;padding:0;font:inherit;font-weight:800;color:#1d2630;cursor:pointer}.en-buyers .nm:hover{color:#b51d2a;text-decoration:underline}
-.en-buyers em,.en-sells em{text-align:left;line-height:1.4;word-break:keep-all;min-width:0;overflow-wrap:anywhere}
+.en-buyers em,.en-sells em{white-space:normal;text-align:left;line-height:1.4;word-break:keep-all;min-width:0;overflow-wrap:anywhere}
 .en-buyers .rt button{border:0;background:none;padding:0;font:inherit;color:#b51d2a;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 .en-buyers details{display:inline}.en-buyers summary{display:inline;cursor:pointer;color:#5b6d78;font-size:10.5px}.en-buyers details small{display:block;margin-top:3px;color:#4d5d67}
 .en-bars i.p{background:#2e8b57}
@@ -3137,29 +3137,48 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(window.PANDO_I18N?.apply)window.PANDO_I18N.apply(box);
  }
  document.addEventListener("mouseover",e=>{const g=e.target.closest?.(".regime-seg");if(g)showRegime(g)});
- function regimeBand(code,years,px,y){
-  const rb=regimeBand0(code,years,px,y),eb=eventBand(code,years,px,y+rb.h);return {svg:rb.svg+eb.svg,h:rb.h+eb.h};
+ function regimeBand(code,years,px,y,W){
+  const rb=regimeBand0(code,years,px,y),eb=eventBand(code,years,px,y+rb.h,W);return {svg:rb.svg+eb.svg,h:rb.h+eb.h};
  }
+ // 글자 폭: 어림셈 대신 실제 글꼴로 잰다(캔버스). 흰 테두리(stroke 3px)만큼 더한다.
+ const TRL=t=>window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR(t):t;
+ let __tmCtx=null;const __tmFam=()=>{try{return getComputedStyle(document.body).fontFamily||"system-ui"}catch(e){return "system-ui"}};
+ function textW(t,size,weight){t=String(t||"");try{__tmCtx=__tmCtx||document.createElement("canvas").getContext("2d");__tmCtx.font=(weight||700)+" "+size+"px "+__tmFam();const w=__tmCtx.measureText(t).width;if(w>0)return w}catch(e){}
+  return [...t].reduce((w,c)=>w+(/[ᄀ-￿]/.test(c)?size*1.02:size*.6),0)}
  // 특별한 사건 띠(data/events.json): 세계 공통(금융위기·코로나 등) + 나라별(전쟁·쿠데타·디폴트·대지진·제재 등)
  const EVC={crisis:"#c62b33",pandemic:"#7a4fa0",war:"#5b1a1f",coup:"#2a2f33",disaster:"#8a5a12",sanction:"#2c5680",politics:"#4f6b2c",default:"#c62b33",other:"#5d6b75"};
- function eventBand(code,years,px,y){
+ function eventBand(code,years,px,y,W){
   const E=state.events;if(!E||years.length<2)return {svg:"",h:0};
   const Ys=years.map(Number),x0=px(years[0]),x1=px(years.at(-1));
   const frac=d=>{const m=String(d||"").match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);if(!m)return null;return +m[1]+((+m[2]||1)-1)/12+((+m[3]||1)-1)/365};
   const dx=v=>{if(v<=Ys[0])return x0;if(v>=Ys.at(-1))return x1;let i=0;while(i<Ys.length-2&&v>=Ys[i+1])i++;const a=Ys[i],b=Ys[i+1];return px(String(a))+(v-a)/(b-a)*(px(String(b))-px(String(a)))};
   const list=[...(E.global||[]).filter(e=>!e.only||e.only.includes(code)),...((E.countries||{})[code]||[])].map(e=>({e,a:frac(e.from),b:frac(e.to||e.from)})).filter(o=>o.a!=null&&o.b+.5>=Ys[0]&&o.a-.5<=Ys.at(-1)).sort((p,q)=>p.a-q.a);
   if(!list.length)return {svg:"",h:0};
-  const H=12,rows=[];const out=[];
-  const tw=t=>[...String(t)].reduce((w,c)=>w+(/[\u1100-\uffff]/.test(c)?8:4.8),0);
-  list.forEach((o,i)=>{let xa=Math.max(x0,dx(o.a-.5)),xb=Math.min(x1,dx(o.b-.5));if(xb-xa<5){const m=(xa+xb)/2;xa=m-2.5;xb=m+2.5}
-   const lab=o.e.short||o.e.name,w=Math.max(xb-xa,tw(lab)+4);let r=rows.findIndex(end=>end<=xa-2);if(r<0){r=rows.length;rows.push(0)}if(r>2)return;rows[r]=xa+w;
+  // 줄마다 차지한 구간(표시+이름)을 모두 기억하고, 겹치지 않는 첫 줄·첫 자리(막대 안 → 오른쪽 → 왼쪽)에 놓는다.
+  const H=12,GAP=5,MAXR=6,rows=[],out=[];
+  const lim0=0,lim1=Number.isFinite(W)?W-1:Infinity;
+  const free=(r,a,b)=>!(rows[r]||[]).some(([p,q])=>a<q+GAP&&b>p-GAP);
+  list.forEach(o=>{let xa=Math.max(x0,dx(o.a-.5)),xb=Math.min(x1,dx(o.b-.5));if(xb-xa<5){const m=(xa+xb)/2;xa=m-2.5;xb=m+2.5}
+   const lab=TRL(o.e.short||o.e.name),tw=textW(lab,8.5,800)+3; // 영어판은 번역된 글자로 재야 겹치지 않는다
+   const opts=[];
+   if(xb-xa>=tw+12)opts.push({kind:"in",a:xa,b:xb,tx:(xa+xb)/2,anchor:"middle"});
+   if(xb+4+tw<=lim1)opts.push({kind:"r",a:xa,b:xb+4+tw,tx:xb+4,anchor:"start"});
+   if(xa-4-tw>=lim0)opts.push({kind:"l",a:xa-4-tw,b:xb,tx:xa-4,anchor:"end"});
+   let pick=null,r=0;
+   for(;r<MAXR&&!pick;r++)for(const op of opts)if(free(r,op.a,op.b)){pick=op;break}
+   r--;
+   if(!pick){ // 이름 놓을 자리가 없으면 표시만(이름은 눌러서 보기)
+    for(r=0;r<MAXR;r++)if(free(r,xa,xb)){pick={kind:"none",a:xa,b:xb};break}
+    if(!pick)return;
+   }
+   (rows[r]=rows[r]||[]).push([pick.a,pick.b]);
    const yy=y+r*(H+2),c=EVC[o.e.kind]||EVC.other,per=String(o.e.from).slice(0,7).replace("-",".")+(o.e.to&&o.e.to!==o.e.from?"–"+String(o.e.to).slice(0,7).replace("-","."):"");
-   // |──── 코로나19 ────| 모양: 기간은 가는 선과 양 끝 눈금, 이름은 선 위(흰 테두리 글씨), 짧은 사건은 눈금 하나와 오른쪽 이름
-   const fits=xb-xa>=tw(lab)+14,ym=yy+H/2,cx=((xa+xb)/2).toFixed(1);
-   out.push('<g class="regime-seg event-seg" data-rname="'+esc(o.e.name)+'" data-roffice="'+esc(o.e.desc||"")+'" data-rparty="" data-rper="'+esc(per)+'" tabindex="0" style="color:'+c+'"><rect x="'+xa.toFixed(1)+'" y="'+yy+'" width="'+(xb-xa).toFixed(1)+'" height="'+H+'" fill="transparent"><title>'+esc(o.e.name+" "+per)+'</title></rect>'+
+   // |──── 코로나19 ────| 모양: 기간은 가는 선과 양 끝 눈금, 이름은 선 위(흰 테두리 글씨), 짧은 사건은 눈금 하나와 옆 이름
+   const ym=yy+H/2,cx=((xa+xb)/2).toFixed(1);
+   out.push('<g class="regime-seg event-seg" data-rname="'+esc(o.e.name)+'" data-roffice="'+esc(o.e.desc||"")+'" data-rparty="" data-rper="'+esc(per)+'" tabindex="0" style="color:'+c+'"><rect x="'+Math.min(xa,pick.a).toFixed(1)+'" y="'+yy+'" width="'+(Math.max(xb,pick.b)-Math.min(xa,pick.a)).toFixed(1)+'" height="'+H+'" fill="transparent"><title>'+esc(o.e.name+" "+per)+'</title></rect>'+
     (xb-xa<8?'<path class="event-br pt" d="M'+cx+' '+(yy+1)+'V'+(yy+H-1)+'"/><circle class="event-dot" cx="'+cx+'" cy="'+ym+'" r="2.4"/>':'<path class="event-br" d="M'+xa.toFixed(1)+' '+(yy+2)+'V'+(yy+H-2)+'M'+xa.toFixed(1)+' '+ym+'H'+xb.toFixed(1)+'M'+xb.toFixed(1)+' '+(yy+2)+'V'+(yy+H-2)+'"/>')+
-    '<text class="event-name" x="'+(fits?cx:(xb+4).toFixed(1))+'" y="'+(yy+9)+'" text-anchor="'+(fits?"middle":"start")+'">'+esc(lab)+'</text></g>')});
-  return {svg:'<g class="regime-band event-band">'+out.join("")+'</g>',h:rows.slice(0,3).length*(H+2)+4};
+    (pick.kind==="none"?"":'<text class="event-name" x="'+pick.tx.toFixed(1)+'" y="'+(yy+9)+'" text-anchor="'+pick.anchor+'">'+esc(lab)+'</text>')+'</g>')});
+  return {svg:'<g class="regime-band event-band">'+out.join("")+'</g>',h:rows.length*(H+2)+4};
  }
  function regimeBand0(code,years,px,y){
   const R=state.regimes?.countries?.[code];if(!R||!Array.isArray(R.terms)||years.length<2)return {svg:"",h:0};
@@ -3176,15 +3195,16 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   segs.forEach((o,i)=>{
    const xa=Math.max(x0,dx(o.a-.5)),xb=Math.min(x1,dx(o.b-.5));if(xb-xa<0.6)return;
    const [from,to,ko,en,party,partyEn,office]=o.t;let c=colorOf(party);if(prev&&prev.c===c&&prev.p!==party){let k=palette.indexOf(c);c=palette[(k+3+palette.length)%palette.length]}prev={c,p:party};
-   const short=String(ko||"").split(" ").at(-1);
-   const tw=t=>[...String(t)].reduce((w,c)=>w+(/[\u1100-\uffff]/.test(c)?8.9:5.2),0);const nm=String(ko||"").replace(/\(권한대행\)$/,"");const fits=nm&&tw(nm)<=xb-xa-5?nm:(short&&tw(short)<=xb-xa-5?short:"");
+   const EN=window.PANDO_LANG==="en"&&en;const nm0=EN?String(en).replace(/\s*\(acting\)$/i,"")+(/권한대행/.test(ko||"")?" (acting)":""):String(ko||"").replace(/\(권한대행\)$/,"");
+   const short=EN?String(en).replace(/\s*\(acting\)$/i,"").split(" ").at(-1):String(ko||"").split(" ").at(-1);
+   const tw=t=>textW(t,8.6,700);const nm=nm0;const fits=nm&&tw(nm)<=xb-xa-5?nm:(short&&tw(short)<=xb-xa-5?short:"");
    const per=from.slice(0,7).replace("-",".")+"–"+(to?to.slice(0,7).replace("-","."):"현재");
    out.push('<g class="regime-seg" data-regime="'+i+'" data-rname="'+esc(ko||"")+'" data-roffice="'+esc(office||R.office||"")+'" data-rparty="'+esc(party||"")+'" data-rper="'+esc(per)+'" tabindex="0"><rect x="'+xa.toFixed(1)+'" y="'+y+'" width="'+(xb-xa).toFixed(1)+'" height="'+H+'" fill="'+c+'" fill-opacity=".38" stroke="#fff" stroke-width="1"><title>'+esc(ko||"")+'</title></rect>'+(fits?'<text class="regime-name" x="'+((xa+xb)/2).toFixed(1)+'" y="'+(y+10.6)+'" text-anchor="middle">'+esc(fits)+'</text>':"")+'</g>');
   });
   return {svg:'<g class="regime-band">'+out.join("")+'</g>',h:H+6};
  }
  // 연도별 작은 그래프 아래에도 정권 띠(regimes.json): svg 문자열의 높이를 늘리고 띠를 붙인다
- function addBand(svg,yrs,xi,y0){if(!svg)return svg;const Y=yrs.map(String);const b=regimeBand(state.activeCode,Y,yr=>xi(Y.indexOf(String(yr))),y0);if(!b.h)return svg;
+ function addBand(svg,yrs,xi,y0){if(!svg)return svg;const Y=yrs.map(String);const VW=+(String(svg).match(/viewBox="0 0 ([\d.]+)/)||[])[1];const b=regimeBand(state.activeCode,Y,yr=>xi(Y.indexOf(String(yr))),y0,VW);if(!b.h)return svg;
   return svg.replace(/viewBox="0 0 ([\d.]+) ([\d.]+)"/,(m,w,h)=>'viewBox="0 0 '+w+' '+(+h+b.h+2)+'"').replace(/<\/svg>(?![\s\S]*<\/svg>)/,b.svg+'</svg>')+'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>'}
  function metricTrend(key,points,korea=null,name=""){
   const clean=a=>(Array.isArray(a)?a:[]).filter(p=>p&&Number.isFinite(Number(p.value))&&/^\d{4}/.test(String(p.year))).map(p=>({year:String(p.year).slice(0,4),value:Number(p.value)})).sort((a,b)=>a.year.localeCompare(b.year));
@@ -3216,7 +3236,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   }).join("");
   const krLayer=showKr?'<path class="trend-line trend-line--kr" d="'+line(kr)+'"/><g class="trend-points trend-points--kr">'+kr.map(p=>'<circle cx="'+px(p.year).toFixed(1)+'" cy="'+py(p.value).toFixed(1)+'" r="2.2"><title>한국 '+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>').join("")+'</g><text class="trend-kr-end" x="'+(px(kr.at(-1).year)+4).toFixed(1)+'" y="'+(py(kr.at(-1).value)+(kr.at(-1).value>=series.at(-1).value?-14:22)).toFixed(1)+'" text-anchor="end">한국 '+esc(metricValue(key,kr.at(-1).value))+'</text>':"";
   const legend=showKr?'<span class="trend-legend"><i class="trend-key"></i>'+esc(name||"이 나라")+' <i class="trend-key trend-key--kr"></i>한국</span>':"";
-  const band=regimeBand(state.activeCode,years,px,B+24);
+  const band=regimeBand(state.activeCode,years,px,B+24,400);
   return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart"'+(window.__ct?window.__ct(series.map(p=>{const kk=showKr&&kr.find(q=>q.year===p.year);return [px(p.year),py(p.value),p.year+"년\n"+(name||"이 나라")+" "+metricValue(key,p.value)+(kk?"\n한국 "+metricValue(key,kk.value):""),[[name||"이 나라",p.value,metricValue(key,p.value)],...(kk?[["한국",kk.value,metricValue(key,kk.value)]]:[])]]})):"")+' viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>':"");
  }
  function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
@@ -4338,6 +4358,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  // 용어·맥락 풀이(data/glossary.json): 창(#detail) 본문에서 처음 나오는 곳에 밑줄, 누르면 뜻·맥락
  const GL={};
  function glossaryMark(){
+  // 영어판에서는 밑줄을 달지 않는다: 한국어 용어로 문장을 쪼개면 번역 사전이 문장 단위로 맞지 않아 반쯤 한국어로 남는다
+  if(window.PANDO_LANG==="en")return;
   const root=$("#detail");if(!root||root.dataset.glDone===root.dataset.glKey)return;
   if(!GL.data){if(!GL.loading)GL.loading=fetch("data/glossary.json").then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{GL.data=d||{terms:{},alias:{}};const keys=[...Object.keys(GL.data.terms||{}),...Object.keys(GL.data.alias||{})].filter(k=>k.length>=2).sort((a,b)=>b.length-a.length);
    GL.re=keys.length?new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g"):null;glossaryMark()});return}
@@ -5406,7 +5428,18 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const [wk,id,nm] of cps){const [x,y]=P(...W[wk]);const L=live&&live[id];const lv=wk==="hormuz"?lvlOf("hormuz"):wk==="bab"?lvlOf("redsea"):0;
    const show=E.vb||usedCp.has(wk);
    g+='<g class="en-cp lv-'+lv+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><circle r="'+(show?4.5:3)+'"/>'+(show?'<text x="7" y="-5">'+esc(nm)+'</text>':'')+'<title>'+esc(nm+(L?' · 하루 통항 '+num(L.recent,0)+'척(IMF PortWatch)':''))+'</title></g>'}
-  for(const cc of ORDER){if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))continue;const [x,y]=P(...DEST[cc]);g+='<g class="en-dest'+(cc===E.sel?' sel':'')+'" data-en-cc="'+cc+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/>'+(cc===E.sel?'<text x="7" y="13">'+esc(CN[cc])+'</text>':'<text class="o" x="6" y="12">'+esc(CN[cc])+'</text>')+'<title>'+esc(CN[cc]+' · 누르면 이 나라로')+'</title></g>'}
+  // 도착국 이름표: 실제 보이는 언어의 글자 폭을 재서 서로(그리고 다른 나라 네모와) 겹치지 않는 쪽(오른쪽 아래 → 왼쪽 아래 → 오른쪽 위 → 왼쪽 위)에 둔다. 고른 나라를 먼저 놓는다.
+  {const TRd=window.PANDO_LANG==="en"&&window.PANDO_TR?window.PANDO_TR:x=>x;
+   const tw=(t,fs,wt)=>{try{const c=(tw.c=tw.c||document.createElement("canvas").getContext("2d"));c.font=wt+" "+fs+"px system-ui,sans-serif";return c.measureText(t).width+3}catch(e){return String(t).length*fs*.8}};
+   const list=ORDER.filter(cc=>C(cc)||(RT()&&RT().corridors.some(c=>c.buyer===cc))).map(cc=>{const [x,y]=P(...DEST[cc]);return {cc,x,y,sel:cc===E.sel,lab:TRd(CN[cc]||cc)}}).sort((a,b)=>b.sel-a.sel);
+   const boxes=list.map(o=>[o.x-5*k,o.y-5*k,o.x+5*k,o.y+5*k]);
+   const hit=(b)=>boxes.some(q=>b[0]<q[2]&&b[2]>q[0]&&b[1]<q[3]&&b[3]>q[1]);
+   for(const o of list){const fs=o.sel?10:9.5,w=tw(o.lab,fs,o.sel?800:700),h=fs+2;
+    const opts=[[6,12,"start"],[-6,12,"end"],[6,-5,"start"],[-6,-5,"end"],[0,20,"middle"]];let pick=opts[0],pb=null;
+    for(const [dx,dy,an] of opts){const x0=an==="start"?dx:an==="end"?dx-w:dx-w/2;const b=[o.x+k*x0,o.y+k*(dy-fs),o.x+k*(x0+w),o.y+k*(dy-fs+h)];if(!hit(b)){pick=[dx,dy,an];pb=b;break}}
+    if(!pb){const [dx,dy,an]=pick,x0=an==="start"?dx:an==="end"?dx-w:dx-w/2;pb=[o.x+k*x0,o.y+k*(dy-fs),o.x+k*(x0+w),o.y+k*(dy-fs+h)]}
+    boxes.push(pb);
+    g+='<g class="en-dest'+(o.sel?' sel':'')+'" data-en-cc="'+o.cc+'" transform="translate('+o.x.toFixed(1)+' '+o.y.toFixed(1)+') scale('+k.toFixed(3)+')"><rect x="-4" y="-4" width="8" height="8"/><text'+(o.sel?'':' class="o"')+' x="'+pick[0]+'" y="'+pick[1]+'" text-anchor="'+pick[2]+'">'+esc(o.lab)+'</text><title>'+esc(CN[o.cc]+' · 누르면 이 나라로')+'</title></g>'}}
   g+='</g></g>';
   g+='<use href="#en-all" x="'+(-w.w)+'"/><use href="#en-all" x="'+w.w+'"/>';
   g+='<g class="en-vlabs">'+labs+'</g>';   // 이름표는 맨 위(지도 복사본보다 뒤에)
