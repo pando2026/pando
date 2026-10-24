@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="bffedf2f50";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="ceca2b2320";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1776,6 +1776,9 @@ html,body{background:#fff;color:var(--ink)}
 .en-usec li{display:grid;grid-template-columns:86px 1fr 112px;gap:6px;align-items:center;font-size:11.5px}
 .en-usec li i{display:block;height:7px;background:#1d5f80;border-radius:1px;min-width:1px}.en-usec li em{font-style:normal;text-align:right;font-weight:700}
 .en-join{font-size:11.5px;color:#3e4f5a}.en-join button{border:0;background:none;padding:0;color:#1d5f80;font:inherit;font-weight:800;text-decoration:underline;cursor:pointer}
+.en-fhit,.en-hit{fill:none;stroke:transparent;stroke-width:12px;vector-effect:non-scaling-stroke;cursor:pointer;pointer-events:stroke}
+.en-flow,.en-prod{cursor:pointer}.en-flowdash{pointer-events:none}
+.en-tip{position:fixed;z-index:9999;background:#14222b;color:#fff;font-size:12.5px;line-height:1.45;padding:6px 9px;border-radius:6px;box-shadow:0 4px 14px #0003;pointer-events:none}
 
 /* 판도에 물어보기 + 오른쪽 고정 창 */
 .ask{border-top:1px solid var(--line);padding:14px 21px 18px;background:#fbfcfa}
@@ -4670,7 +4673,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function along(pts,t){let L=0;const seg=[];for(let i=1;i<pts.length;i++){const l=Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]);seg.push(l);L+=l}
   let want=L*t;for(let i=1;i<pts.length;i++){if(want<=seg[i-1]||i===pts.length-1){const r=seg[i-1]?Math.min(1,want/seg[i-1]):0,a=pts[i-1],b=pts[i];
    return {x:a[0]+(b[0]-a[0])*r,y:a[1]+(b[1]-a[1])*r,ang:Math.atan2(b[1]-a[1],b[0]-a[0])*180/Math.PI}}want-=seg[i-1]}return null}
- const mbd=v=>v>=1?num(v,2)+"백만":num(Math.round(v*100),0)+"만";
+ const mbd=v=>v>=1?num(v,2)+"백만":v<0.005?"1만 미만":num(Math.round(v*100),0)+"만";
+ const WN={hormuz:"호르무즈 해협",gulfOman:"오만만",arab:"아라비아해",bab:"바브엘만데브 해협",redsea:"홍해",suez:"수에즈 운하",medE:"동지중해",medW:"서지중해",gib:"지브롤터 해협",biscay:"비스케이만",channel:"영국 해협",skag:"스카게라크 해협",northsea:"북해",bosporus:"보스포루스 해협",aegean:"에게해",cape:"희망봉",safE:"남아공 동쪽 바다",ioS:"남인도양",srilanka:"스리랑카 앞바다",malacca:"말라카 해협",sing:"싱가포르 해협",scs:"남중국해",luzon:"루손 해협",ecs:"동중국해",tsushima:"대한해협",sunda:"순다 해협",natl:"북대서양",satl:"남대서양",carib:"카리브해",florida:"플로리다 해협",panama:"파나마 운하",pacE:"동태평양",pacMid:"중부 태평양",japanE:"일본 동쪽 바다",waf:"서아프리카 앞바다",canary:"카나리아 제도 앞바다",usE:"미국 동부 앞바다"};
  const usd=m=>m>=100?num(m/100,0)+"억":num(m,0)+"백만";   // 입력: 백만 달러 → 억 달러 표기
  function smooth(pts){
   // 지도 이음매(서경 30°)를 넘으면 자르지 않고 x를 한 바퀴 더하거나 빼서 잇는다(지도는 양옆에 한 벌씩 더 그린다)
@@ -4722,11 +4726,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const used=new Set();for(const f of flows())if(f.corr)(f.corr.via||[]).forEach(v=>used.add(v));
   let g='<g class="en-routes">';
   for(const sg of r.segments){
-   if(sg.kind==="sea"&&used.has(sg.id)){g+='<path class="en-hit" data-rt="'+esc(sg.id)+'" d="'+smooth(sg.path.map(p=>P(p[0],p[1])))+'"><title>'+esc(sg.name+' · 눌러서 이 길로 오는 원유 보기')+'</title></path>';continue}   // 물량 선이 이미 그 바닷길을 그린다
+   const KN0={sea:"바닷길",pipeline:"송유관",rail:"철도",sts:"선박 간 환적"},rtip=(KN0[sg.kind]||"")+' · '+sg.name+(sg.from||sg.to?' · '+[sg.from,sg.to].filter(Boolean).join(' → '):'')+(sg.status?' · '+sg.status:'')+(sg.capacity?' · '+sg.capacity:'')+' · 눌러서 자세히';
+   if(sg.kind==="sea"&&used.has(sg.id)){g+='<path class="en-hit" data-rt="'+esc(sg.id)+'" data-tip="'+esc(rtip)+'" d="'+smooth(sg.path.map(p=>P(p[0],p[1])))+'"></path>';continue}   // 물량 선이 이미 그 바닷길을 그린다
    const on=mine.has(sg.id)||(sg.users||[]).includes(E.sel);
    const st=/중단/.test(sg.status||"")?" stop":/차질|제한|일부/.test(sg.status||"")?" part":"";
    const pts=sg.path.map(p=>P(p[0],p[1]));
-   g+='<path class="en-rt k-'+esc(sg.kind)+st+(sg.certainty==="불분명"?" uq":"")+(on?" on":"")+'" data-rt="'+esc(sg.id)+'" d="'+smooth(pts)+'"><title>'+esc(sg.name+" · "+(sg.status||"")+" · "+sg.certainty)+'</title></path>';
+   g+='<path class="en-rt k-'+esc(sg.kind)+st+(sg.certainty==="불분명"?" uq":"")+(on?" on":"")+'" data-rt="'+esc(sg.id)+'" data-tip="'+esc(rtip)+'" d="'+smooth(pts)+'"></path><path class="en-hit" data-rt="'+esc(sg.id)+'" data-tip="'+esc(rtip)+'" d="'+smooth(pts)+'"></path>';
   }
   const near=k<0.42,hb=[],twh=t=>[...t].reduce((a,ch)=>a+(/[가-힣]/.test(ch)?9.5:5.6),0);
   for(const h of r.hubs){const [x,y]=P(h.lon,h.lat);hb.push({x0:x-4.5*k,x1:x+4.5*k,y0:y-4.5*k,y1:y+4.5*k})}
@@ -4737,7 +4742,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    return ""};
   for(const h of r.hubs){const [x,y]=P(h.lon,h.lat);const on=mine.has(h.id)||(h.who||[]).includes(E.sel);
    if(!near&&(h.kind==="refinery"||h.kind==="reserve"||!on))continue;
-   g+='<g class="en-hub k-'+esc(h.kind)+(on?" on":"")+(h.certainty==="불분명"?" uq":"")+'" data-rt="'+esc(h.id)+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')">'+(h.kind==="sts"?'<path d="M0,-5L5,0L0,5L-5,0Z"/>':'<rect x="-3.5" y="-3.5" width="7" height="7"/>')+
+   g+='<g class="en-hub k-'+esc(h.kind)+(on?" on":"")+(h.certainty==="불분명"?" uq":"")+'" data-rt="'+esc(h.id)+'" data-tip="'+esc(h.name+(h.what?' · '+h.what:'')+' · 눌러서 자세히')+'" transform="translate('+x.toFixed(1)+' '+y.toFixed(1)+') scale('+k.toFixed(3)+')">'+(h.kind==="sts"?'<path d="M0,-5L5,0L0,5L-5,0Z"/>':'<rect x="-3.5" y="-3.5" width="7" height="7"/>')+
     (on&&near?hubLab(h,x,y):'')+'<title>'+esc(h.name+" · "+h.certainty)+'</title></g>'}
   return g+'</g>';
  }
@@ -4788,6 +4793,24 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
       VN:[[129,34.2],[125.5,29.5],[121.3,20.4],[112,12],[107.5,9.6]],TH:[[129,34.2],[125.5,29.5],[121.3,20.4],[113,12],[105,8],[101,12.5]],
       ID:[[129,34.2],[125.5,29.5],[121.3,20.4],[113,12],[105,3],[106,-3]],US:[[130,36],[140.5,41.6],[150,43],[170,48],[190,50],[220,44],[238,36]],
       CA:[[130,36],[140.5,41.6],[150,43],[170,48],[190,51],[220,50],[235.5,48.6]],MX:[[129.5,34.6],[150,32],[180,28],[220,20],[250,17]]}};
+ function flowInfo(f,prod){
+  const box=document.getElementById("en-route");if(!box||!f)return;box.hidden=false;
+  const from=prod?(CN[f.cc]||f.cc):(ON[f.o]||f.o),to=prod?(ON[f.to]||CN[f.to]||f.to):(CN[f.cc]||f.cc);
+  const via=(f.via||[]).map(v=>{const x=segOf(v)||hubOf(v);return x?'<button type="button" data-rt="'+esc(v)+'">'+esc(x.short||x.name)+'</button>':esc(WN[v]||v)}).join(" → ");
+  const rows=[["어디서 어디로",from+(prod?' → ':'산 원유 → ')+to],[prod?"수출 중 비중":"원유 수입 중 비중",(f.share!=null?num(f.share,1)+'%':'–')],["하루 물량",f.vol!=null?mbd(f.vol)+' 배럴':''],["금액",f.val?periodTxt(f.period)+' '+usd(valMusd(f.val))+' 달러':''],["가격",f.price&&f.price.value!=null?num(f.price.value,1)+' '+(f.price.unit||'달러/배럴'):''],["무엇이",f.mix||''],["확실성",f.unsure?'경로 추정(배마다 다를 수 있음)':''],["제재",f.sanc?'제재 대상 원산지(실제 물량·경로가 숨겨질 수 있음)':'']].filter(r=>r[1]);
+  box.innerHTML='<div class="en-rh"><span class="en-rk">'+(prod?'석유제품 수출':'원유 수입 흐름')+'</span><b>'+esc(from)+' → '+esc(to)+'</b><button type="button" class="en-rx" data-rt-close aria-label="닫기">×</button></div>'+
+   (via?'<p class="en-rl">지나는 길: '+via+'</p>':'')+'<dl class="en-rd">'+rows.map(r=>'<div><dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd></div>').join("")+'</dl>'+
+   (f.corr&&f.corr.note?'<p class="en-note">'+esc(f.corr.note)+'</p>':'')+(f.corr&&f.corr.src?'<p class="en-note">'+srcLinks(f.corr.src)+'</p>':'')+
+   '<p class="en-note">지나는 길의 이름을 누르면 그 구간을 쓰는 다른 나라와 비중이 나옵니다.</p>';
+ }
+ // 선·점 위에 마우스를 올리면 어디서 어디로 가는지 바로 보이게(휴대폰은 누르면 오른쪽 상자에)
+ (function(){let tipEl=null;
+  document.addEventListener("mousemove",e=>{const t=e.target.closest&&e.target.closest("#en-app [data-tip]");
+   if(!t){if(tipEl)tipEl.hidden=true;return}
+   if(!tipEl){tipEl=document.createElement("div");tipEl.className="en-tip";document.body.appendChild(tipEl)}
+   tipEl.textContent=t.dataset.tip;tipEl.hidden=false;const w=Math.min(320,innerWidth-16);tipEl.style.maxWidth=w+"px";
+   const x=Math.min(innerWidth-w-8,e.clientX+14),y=e.clientY+16+tipEl.offsetHeight>innerHeight?e.clientY-tipEl.offsetHeight-10:e.clientY+16;tipEl.style.left=Math.max(8,x)+"px";tipEl.style.top=y+"px"});
+ })();
  function prodFlows(){
   const out=[];
   for(const cc of ORDER){const c=C(cc);const ex=c&&c.products&&c.products.exports;if(!ex||!ex.byDest)continue;
@@ -4900,7 +4923,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const host=document.getElementById("en-map");if(!host||!E.world)return;
   const w=E.world;let vb=(E.vb||baseVB()).slice();
   const live=window.__ripple&&window.__ripple.live&&window.__ripple.live.pw;
-  const F=flows(),maxV=Math.max(0.1,...F.map(f=>f.vol||0));
+  const F=flows(),maxV=Math.max(0.1,...F.map(f=>f.vol||0));E.FL=[];E.PF=[];
   const origSet=new Set(E.layers.crude?F.filter(f=>f.cc===E.sel).map(f=>f.o):[]);if(E.layers.crude&&!origSet.size&&RT())RT().corridors.filter(c=>c.buyer===E.sel).forEach(c=>origSet.add(c.origin));const prodLabs=[];
   let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="원유 수입 바닷길 지도"><g id="en-all"><g class="en-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(ORDER.includes(c.c)?' class="imp'+(c.c===E.sel?' sel':'')+(origSet.has(c.c)?' orig':'')+'" data-en-cc="'+c.c+'"':origSet.has(c.c)?' class="orig"':'')+'/>').join("")+'</g><g class="en-flows">';
   const ord=F.slice().sort((a,b)=>(a.cc===E.sel)-(b.cc===E.sel)||(a.vol||0)-(b.vol||0));
@@ -4910,8 +4933,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    const tip=ON[f.o]||f.o;const pr=f.price&&f.price.value!=null?' · '+num(f.price.value,1)+' '+(f.price.unit||"달러/배럴"):'';
    const pp=f.pts.map(p=>P(p[0],p[1])),d=smooth(pp);f.pp=unwrap(pp);f.w=wpx;
    const vtxt=(f.vol!=null?'하루 '+mbd(f.vol)+' 배럴':'')+(f.val?' · '+periodTxt(f.period)+' '+usd(valMusd(f.val))+' 달러':'');
-   g+='<path class="en-flow k-'+kind+(f.unsure?' uq':'')+(f.cc===E.sel?' on':' off')+'" d="'+d+'" style="stroke-width:'+wpx.toFixed(2)+'"><title>'+esc(tip+' → '+(CN[f.cc]||f.cc)+' · 수입의 '+num(f.share,1)+'%'+(vtxt?' · '+vtxt:'')+pr)+'</title></path>';
+   const fi=E.FL.push(f)-1,viaT=(f.via||[]).map(v=>{const x=segOf(v)||hubOf(v);return x?(x.short||x.name):(WN[v]||v)}).filter(Boolean),
+    ftip=tip+'산 원유 → '+(CN[f.cc]||f.cc)+' · '+(CN[f.cc]||f.cc)+' 원유 수입의 '+num(f.share,1)+'%'+(vtxt?' · '+vtxt:'')+pr+(viaT.length?' · 경유: '+viaT.join(' → '):'');
+   g+='<path class="en-flow k-'+kind+(f.unsure?' uq':'')+(f.cc===E.sel?' on':' off')+'" data-fl="'+fi+'" data-tip="'+esc(ftip)+'" d="'+d+'" style="stroke-width:'+wpx.toFixed(2)+'"></path>';
    if(f.cc===E.sel)g+='<path class="en-flowdash" d="'+d+'"/>';
+   g+='<path class="en-fhit" data-fl="'+fi+'" data-tip="'+esc(ftip)+'" d="'+d+'"/>';
   }
   // 고른 나라: 방향 화살표와 큰 흐름의 양·금액
   const K=vb[2]/Math.max(320,Math.min(1400,host.clientWidth||1000)),mine=F.filter(f=>f.cc===E.sel&&f.pp).sort((a,b)=>(b.vol||0)-(a.vol||0));
@@ -4921,7 +4947,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   // 석유제품 수출(고른 나라에서 나가는 흐름)
   if(E.layers.prod)for(const f of prodFlows().filter(f=>f.cc===E.sel)){const pp=f.pts.map(p=>P(p[0],p[1]));const d=smooth(pp);f.pp=unwrap(pp);
    const wpx=0.6+3.4*Math.sqrt((f.vol||0.01)/Math.max(0.05,maxV));
-   g+='<path class="en-prod" d="'+d+'" style="stroke-width:'+wpx.toFixed(2)+'"><title>'+esc((CN[f.cc]||f.cc)+' → '+(ON[f.to]||CN[f.to]||f.to)+' 석유제품 · 수출의 '+num(f.share,1)+'%'+(f.vol!=null?' · 하루 '+mbd(f.vol)+' 배럴':'')+(f.mix?' · '+f.mix:''))+'</title></path><path class="en-flowdash p" d="'+d+'"/>';
+   const pi=E.PF.push(f)-1,ptip=(CN[f.cc]||f.cc)+' → '+(ON[f.to]||CN[f.to]||f.to)+' 석유제품 수출 · '+(CN[f.cc]||f.cc)+' 석유제품 수출의 '+num(f.share,1)+'%'+(f.vol!=null?' · 하루 '+mbd(f.vol)+' 배럴':'')+(f.mix?' · '+f.mix:'');
+   g+='<path class="en-prod" data-pf="'+pi+'" data-tip="'+esc(ptip)+'" d="'+d+'" style="stroke-width:'+wpx.toFixed(2)+'"></path><path class="en-flowdash p" d="'+d+'"/><path class="en-fhit" data-pf="'+pi+'" data-tip="'+esc(ptip)+'" d="'+d+'"/>';
    for(const t of [0.35,0.7]){const a=along(f.pp,t);if(a)g+='<path class="en-arrow p" d="M-4,-3.2L3.5,0L-4,3.2Z" transform="translate('+a.x.toFixed(1)+' '+a.y.toFixed(1)+') rotate('+a.ang.toFixed(0)+') scale('+(K*(0.8+wpx*0.25)).toFixed(3)+')"/>'}
    prodLabs.push(f)}
   // 원산지 이름표: 고른 나라로 오는 흐름마다 출발지(원산지 항구) 옆에 나라 이름·비중·양·금액. 선·해협 이름·다른 이름표와 안 겹치는 자리를 찾아 끈으로 잇는다.
@@ -5068,6 +5095,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(e.target.closest("[data-sat-close]")){const b=document.getElementById("en-sat");if(b)b.hidden=true;return}
   const zb=e.target.closest("[data-en-zoom]");if(zb){E.vb=E.vb?null:zoomBox();zb.setAttribute("aria-pressed",String(!!E.vb));zb.textContent=E.vb?"세계 전체 보기":"이 나라 경로 가까이 보기";drawMap();return}
   const rt=e.target.closest("[data-rt]");if(rt&&document.getElementById("en-app")?.contains(rt)){routeInfo(rt.dataset.rt);return}
+  const fl=e.target.closest("[data-fl],[data-pf]");if(fl&&document.getElementById("en-app")?.contains(fl)){if(fl.dataset.fl!=null)flowInfo(E.FL[+fl.dataset.fl],false);else flowInfo(E.PF[+fl.dataset.pf],true);return}
   if(e.target.closest("[data-rt-close]")){const b=document.getElementById("en-route");if(b)b.hidden=true;return}
   const b=e.target.closest("[data-en-cc]");if(!b||!document.getElementById("en-app")?.contains(b))return;
   const cc=b.dataset.enCc;if(!C(cc)&&!(RT()&&RT().corridors.some(c=>c.buyer===cc)))return;E.sel=cc;
