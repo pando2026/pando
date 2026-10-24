@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="619be1c9f2";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="7167a37e0a";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -3925,19 +3925,21 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const a=(main||[]).filter(p=>p[1]!=null),b=(kor||[]).filter(p=>p[1]!=null);if(a.length<2)return "";
   const y0=Math.min(a[0][0],b.length?b[0][0]:1e9),y1=Math.max(a.at(-1)[0],b.length?b.at(-1)[0]:0);
   const vals=a.concat(b).map(p=>p[1]);let lo=Math.min(...vals),hi=Math.max(...vals);const pad=(hi-lo)*.12||1;lo=opt.zero&&lo>=0?0:lo-pad;hi+=pad;
+  // 눈금은 딱 떨어지는 값으로(1·2·2.5·5×10ⁿ 간격), 자료가 모두 양수면 0 아래로 내려가지 않게
+  const nraw=(hi-lo)/3,nmag=Math.pow(10,Math.floor(Math.log10(nraw||1))),nstep=[1,2,2.5,5,10].map(k=>k*nmag).find(v=>v>=nraw)||10*nmag;lo=Math.floor(lo/nstep)*nstep;hi=Math.ceil(hi/nstep)*nstep;if(Math.min(...vals)>=0&&lo<0)lo=0;const nticks=[];for(let v=lo;v<=hi+nstep/2;v+=nstep)nticks.push(+v.toFixed(10));
   const W=600,H=170,L=8,R=92,T=14,B=22;const X=y=>L+(y-y0)/(y1-y0||1)*(W-L-R),Y=v=>T+(hi-v)/(hi-lo||1)*(H-T-B);
   const path=pts=>pts.map((p,i)=>(i?"L":"M")+X(p[0]).toFixed(1)+" "+Y(p[1]).toFixed(1)).join("");
   const dots=(pts,c)=>pts.map(p=>'<circle cx="'+X(p[0]).toFixed(1)+'" cy="'+Y(p[1]).toFixed(1)+'" r="2.2" class="'+c+'"/>').join("");
   let cross="";if(b.length){const kb=new Map(b);let last=null;for(let i=1;i<a.length;i++){const k0=kb.get(a[i-1][0]),k1=kb.get(a[i][0]);if(k0==null||k1==null)continue;const d0=a[i-1][1]-k0,d1=a[i][1]-k1;if(d0*d1<0)last=[a[i][0],d1<0]}
    if(last)cross='<line x1="'+X(last[0]).toFixed(1)+'" x2="'+X(last[0]).toFixed(1)+'" y1="'+T+'" y2="'+(H-B)+'" class="lab-cross"/><text x="'+(X(last[0])-4).toFixed(1)+'" y="'+(T+9)+'" text-anchor="end" class="lab-cross-t">'+last[0]+(opt.rate?(last[1]?"년부터 한국보다 낮음":"년부터 한국보다 높음"):(last[1]?"년 한국이 앞지름":"년 한국을 앞지름"))+'</text>'}
   const end=(pts,c,name)=>{const p=pts.at(-1);return '<text x="'+(X(p[0])+6).toFixed(1)+'" y="'+(Y(p[1])+4).toFixed(1)+'" class="'+c+'"><tspan class="lab-end-v">'+esc(fmt(p[1]))+'</tspan> <tspan>'+esc(name)+'</tspan></text>'};
-  const grid=[0,.5,1].map(t=>{const v=lo+(hi-lo)*t;return '<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v).toFixed(1)+'" y2="'+Y(v).toFixed(1)+'" class="lab-grid"/>'}).join("");
+  const grid=nticks.map(v=>'<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v).toFixed(1)+'" y2="'+Y(v).toFixed(1)+'" class="lab-grid"/>').join("");
   const yrs=[...new Set([y0,y1,...(opt.marks||[])])].map(y=>'<text x="'+X(y).toFixed(1)+'" y="'+(H-6)+'" text-anchor="'+(y===y0?"start":y===y1?"end":"middle")+'" class="lab-yr">'+y+'</text>').join("");
   const kEnd=b.length&&Math.abs(Y(b.at(-1)[1])-Y(a.at(-1)[1]))<11?((Y(b.at(-1)[1])<Y(a.at(-1)[1]))?-6:6):0;
   const RY=[];for(let yy=y0;yy<=y1;yy++)RY.push(yy);
   const kb2=new Map(b);
   const ctL=a.map(p=>[X(p[0]),Y(p[1]),p[0]+"년\n"+(opt.name||"")+" "+fmt(p[1])+(kb2.has(p[0])?"\n한국 "+fmt(kb2.get(p[0])):"")]);
-  const dmin=Math.min(...vals),tkL=[0,.5,1].map(t=>{const v=lo+(hi-lo)*t;return [L+2,Y(v)-3,fmt(v)]}).filter((t,i)=>!(i===0&&lo<0&&dmin>=0));   // 자료가 모두 양수면 음수 눈금 글자는 빼기
+  const tkL=nticks.map(v=>[L+2,Y(v)-3,fmt(v)]);
   return addBand(chartAx('<svg class="lab-chart" viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+esc(opt.label||"추이")+'">'+grid+cross+(b.length?'<path d="'+path(b)+'" class="lab-k"/>'+dots(b,"lab-kd"):"")+'<path d="'+path(a)+'" class="lab-m"/>'+dots(a,"lab-md")+end(a,"lab-end",opt.name||"")+(b.length?'<g transform="translate(0 '+kEnd+')">'+end(b,"lab-end lab-end-k","한국")+'</g>':"")+yrs+'</svg>',ctL,tkL),RY,i=>X(RY[i]),H+2);
  }
  // 산업 구조와 교역(data/trade.json: 세계은행 WDI 부가가치·수출입 + 유엔 컴트레이드 HS 2단위 상품 교역·상대국)
