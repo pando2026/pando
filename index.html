@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="55f2d8ea57";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="5cf4cb1036";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -291,6 +291,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .watch-more:hover{border-color:#1d2630}
 /* 차트 공통 마우스 설명(charttip.js) */
 .ct-tip{position:fixed;z-index:9999;pointer-events:none;background:#1d2630;color:#fff;border-radius:3px;padding:6px 9px;font-size:12px;line-height:1.4;box-shadow:0 2px 10px rgba(0,0,0,.18);max-width:260px;display:flex;flex-direction:column;gap:1px}
+.ct-tip[hidden],.ct-line[hidden],.ct-dot[hidden],.ct-band[hidden],.en-tip[hidden]{display:none!important}
 .ct-tip b{font-weight:800;font-size:11px;color:#cfd8de}.ct-tip span{font-weight:700;font-variant-numeric:tabular-nums}
 .ct-line{position:fixed;z-index:9998;pointer-events:none;width:0;border-left:1px dashed rgba(29,38,48,.45)}
 .ct-dot{position:fixed;z-index:9998;pointer-events:none;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#c41230;box-shadow:0 0 0 2px #fff}
@@ -2532,7 +2533,8 @@ html,body{background:#fff;color:var(--ink)}
   if(svg.__ctSrc!==svg.getAttribute("data-ct")){svg.__ctSrc=svg.getAttribute("data-ct");try{svg.__ct=JSON.parse(svg.__ctSrc)||[]}catch{svg.__ct=[]}}
   return svg.__ct;
  }
- function hide(){clearTimeout(ttimer);ttimer=0;if(!on&&!held)return;on=null;held=false;drag=null;tip.hidden=line.hidden=line2.hidden=dot.hidden=band.hidden=true}
+ // hidden 속성만 믿지 않고 display도 직접 끈다(CSS의 display:flex가 [hidden]을 이기는 사고 방지)
+ function hide(){clearTimeout(ttimer);ttimer=0;on=null;held=false;drag=null;for(const el of [tip,line,line2,dot,band]){el.hidden=true;el.style.display="none"}}
  function near(svg,cx,cy){
   const P=pts(svg),M=svg.getScreenCTM();if(!P.length||!M)return -1;
   const p=svg.createSVGPoint();p.x=cx;p.y=cy;const q=p.matrixTransform(M.inverse());
@@ -2540,7 +2542,7 @@ html,body{background:#fff;color:var(--ink)}
  }
  function at(svg,a){const M=svg.getScreenCTM(),s=svg.createSVGPoint();s.x=a[0];s.y=a[1];return s.matrixTransform(M)}
  function place(html,c){
-  tip.innerHTML=html;tip.hidden=false;
+  tip.innerHTML=html;tip.hidden=false;tip.style.display="";
   const w=tip.offsetWidth,h=tip.offsetHeight,vw=document.documentElement.clientWidth;
   let x=c.x+12,y=c.y-h-10;if(x+w>vw-6)x=c.x-w-12;if(x<6)x=6;if(y<6)y=c.y+12;
   tip.style.left=x.toFixed(0)+"px";tip.style.top=y.toFixed(0)+"px";
@@ -2548,7 +2550,7 @@ html,body{background:#fff;color:var(--ink)}
  const lines=t=>String(t||"").split("\n");
  // 설명은 차트 윗부분 바깥에 둔다(선을 가리지 않게). 위에 자리가 없으면 차트 아래로
  function placeTop(html,c){
-  const svg=on;tip.innerHTML=html;tip.hidden=false;
+  const svg=on;tip.innerHTML=html;tip.hidden=false;tip.style.display="";
   const r=svg.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight,vw=document.documentElement.clientWidth;
   let x=c.x-w/2;x=Math.max(6,Math.min(vw-w-6,x));let y=r.top-h-6;if(y<6)y=r.bottom+6;
   tip.style.left=x.toFixed(0)+"px";tip.style.top=y.toFixed(0)+"px";
@@ -2562,7 +2564,7 @@ html,body{background:#fff;color:var(--ink)}
   const r=svg.getBoundingClientRect(),c=at(svg,P[i]);
   line.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
   dot.style.cssText="left:"+c.x.toFixed(1)+"px;top:"+c.y.toFixed(1)+"px";
-  line.hidden=dot.hidden=false;line2.hidden=band.hidden=true;
+  line.hidden=dot.hidden=false;line.style.display=dot.style.display="";line2.hidden=band.hidden=true;
   placeTop(lines(P[i][2]).map((t,k)=>(k?"<span>":"<b>")+esc(TR(t))+(k?"</span>":"</b>")).join("")+(P.length>2&&P[i][3]&&P[i][3].length?'<small>'+esc(TR("좌우로 끌면 기간 변화"))+'</small>':''),c);
   if(TOUCH())arm(2500);
  }
@@ -2574,7 +2576,7 @@ html,body{background:#fff;color:var(--ink)}
   band.style.cssText="left:"+ca.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;width:"+Math.max(1,cb.x-ca.x).toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
   line.style.cssText="left:"+ca.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
   line2.style.cssText="left:"+cb.x.toFixed(1)+"px;top:"+r.top.toFixed(1)+"px;height:"+r.height.toFixed(1)+"px";
-  band.hidden=line.hidden=line2.hidden=false;dot.hidden=true;shownAt=Date.now();
+  band.hidden=line.hidden=line2.hidden=false;band.style.display=line.style.display=line2.style.display="";dot.hidden=true;shownAt=Date.now();
   const va=A[3]||[],vb=B[3]||[];
   const rows=va.map(x=>{const y=vb.find(z=>z[0]===x[0]);if(!y||typeof x[1]!=="number"||typeof y[1]!=="number")return "";
    const d=y[1]-x[1],pctUnit=/%$/.test(String(x[2]||"")),rel=x[1]!==0?(d/Math.abs(x[1])*100):null,cls=d>0?"up":d<0?"dn":"";
@@ -2616,13 +2618,14 @@ html,body{background:#fff;color:var(--ink)}
  // 안전장치 2: 손가락·펜으로 띄운 것은 2.5초(끌어서 잰 결과는 4초)가 지나면 무조건 지운다.
  // 마우스는 '마지막으로 본 마우스 자리'가 지금 그 차트 네모 안에 있는지 0.2초마다 다시 재서, 아니면(스크롤로 차트가 밀려났어도) 지운다.
  let mx=-1,my=-1;document.addEventListener("mousemove",e=>{mx=e.clientX;my=e.clientY},{passive:true,capture:true});
- setInterval(()=>{if(tip.hidden&&band.hidden)return;if(!on){tip.hidden=line.hidden=line2.hidden=dot.hidden=band.hidden=true;return}
+ setInterval(()=>{if(tip.hidden&&band.hidden)return;if(!on){hide();return}
   if(drag)return;
   if(TOUCH()){if(Date.now()-shownAt>(held?4000:2500))hide();return}
   let h=false;try{h=on.isConnected&&on.matches(':hover')}catch{h=true}
   if(h&&mx>=0){const r=on.getBoundingClientRect();if(mx<r.left-2||mx>r.right+2||my<r.top-2||my>r.bottom+2)h=false}
   if(!h)hide()},200);
  window.addEventListener("wheel",hide,{passive:true,capture:true});
+ window.addEventListener("pageshow",hide);window.addEventListener("pagehide",hide);
  document.addEventListener("keydown",hide,{passive:true,capture:true});
  // 보던 차트가 화면에서 사라지면(다른 나라·탭으로 바뀜) 설명도 지운다
  new MutationObserver(()=>{if(on&&!on.isConnected)hide()}).observe(document.documentElement,{childList:true,subtree:true});
@@ -2632,7 +2635,7 @@ html,body{background:#fff;color:var(--ink)}
   const el=mk("en-tip");el.setAttribute("role","status");
   if(document.body)document.body.appendChild(el);else document.addEventListener("DOMContentLoaded",()=>document.body.appendChild(el));
   const SEL="#en-app [data-tip],#ar-app [data-tip]";let cur=null,timer=0;
-  const off=()=>{clearTimeout(timer);timer=0;cur=null;el.hidden=true};
+  const off=()=>{clearTimeout(timer);timer=0;cur=null;el.hidden=true;el.style.display="none"};
   document.addEventListener("pointermove",e=>{
    if(e.pointerType==="touch")return;
    const t=e.target&&e.target.closest&&e.target.closest(SEL);
@@ -2641,7 +2644,7 @@ html,body{background:#fff;color:var(--ink)}
    if(cur&&!el.hidden&&cur.getAttribute("data-tip")===t.getAttribute("data-tip")){cur=t;return}   // 같은 선(본선·누름 영역)
    clearTimeout(timer);el.hidden=true;cur=t;const x0=e.clientX,y0=e.clientY;
    timer=setTimeout(()=>{timer=0;if(cur!==t||!t.isConnected)return;
-    el.textContent=t.getAttribute("data-tip");el.hidden=false;
+    el.textContent=t.getAttribute("data-tip");el.hidden=false;el.style.display="";
     const vw=document.documentElement.clientWidth,vh=innerHeight;el.style.maxWidth=Math.min(320,vw-16)+"px";
     const w=el.offsetWidth,h=el.offsetHeight;let x=x0+14,y=y0+18;if(x+w>vw-8)x=x0-w-14;if(x<8)x=8;if(y+h>vh-8)y=y0-h-12;
     el.style.left=x.toFixed(0)+"px";el.style.top=Math.max(8,y).toFixed(0)+"px"},250);
