@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="8e6fb620e0";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="23e52f88f3";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -3469,12 +3469,12 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
 
 
  // ── 종교(data/religion.json): 국교·우대 종교·세속 국가 명시와 신자가 가장 많은 종교 ──
- const RELG=[["official","국교가 있는 나라"],["secular","세속 국가(헌법 명시)"],["islam","이슬람"],["islam-sunni","수니파"],["islam-shia","시아파"],["catholic","가톨릭"],["protestant","개신교"],["orthodox","정교회"],["buddhism","불교"],["hinduism","힌두교"],["judaism","유대교"],["unaffiliated","무종교가 가장 많은 나라"]];
+ const RELG=[["official","국교가 있는 나라"],["secular","세속 국가(헌법 명시)"],["hostile","국가가 종교를 통제"],["islam","이슬람"],["islam-sunni","수니파"],["islam-shia","시아파"],["christianity","기독교 전체"],["catholic","가톨릭"],["protestant","개신교"],["orthodox","정교회"],["buddhism","불교"],["hinduism","힌두교"],["judaism","유대교"],["unaffiliated","무종교가 가장 많은 나라"]];
  const RELST={official:"국교","established-church":"국가 교회",preferred:"우대 종교(국교는 아님)",secular:"세속 국가(정교분리 명시)",hostile:"국가가 종교를 통제",["none-specified"]:"헌법에 국교·세속 규정 없음"};
  async function loadReligion(){if(state.religion!==undefined)return state.religion;try{const r=await fetch("data/religion.json");state.religion=r.ok?await r.json():null}catch{state.religion=null}return state.religion}
  function renderRelBar(R){const bar=$("#rel-bar");if(!bar||!R||!R.countries)return;bar.hidden=false;
   bar.innerHTML='<div class="bloc-head"><strong>종교로 보기</strong><span>진한 색 = 국교·우대 종교로 정한 나라, 옅은 색 = 신자가 가장 많은 나라</span></div><div class="bloc-chips"><button type="button" class="bloc-chip" data-rel="" aria-pressed="true">끄기</button>'+RELG.map(([k,n])=>'<button type="button" class="bloc-chip" data-rel="'+k+'" aria-pressed="false">'+esc(n)+'</button>').join("")+'</div><div class="bloc-info" id="rel-info" aria-live="polite"></div>'}
- function relIs(key,g){return g===key||(key==="islam"&&/^islam/.test(g||""))}
+ function relIs(key,g){return g===key||(key==="islam"&&/^islam/.test(g||""))||(key==="christianity"&&/^(christian|catholic|protestant|orthodox)$/.test(g||""))}
  function selectRel(k){const R=state.religion?.countries||{};document.querySelectorAll("#rel-bar [data-rel]").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.rel===(k||""))));
   document.querySelectorAll("#bloc-bar [data-bloc]").forEach(x=>x.setAttribute("aria-pressed",String(x.dataset.bloc==="")));$("#bloc-info")&&($("#bloc-info").innerHTML="");
   const info=$("#rel-info");if(!k){atlas.setBloc&&atlas.setBloc(null);if(info)info.innerHTML="";return}
@@ -3482,12 +3482,13 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   for(const [cc,r] of Object.entries(R)){let v=null;
    if(k==="official"){if(r.status==="official"||r.status==="established-church")v="member";else if(r.status==="preferred")v="partner"}
    else if(k==="secular"){if(r.status==="secular")v="member"}
+   else if(k==="hostile"){if(r.status==="hostile")v="member"}
    else{if((r.status==="official"||r.status==="established-church"||r.status==="preferred")&&relIs(k,r.officialKey))v="member";else if(relIs(k,r.group))v="partner"}
    if(v){m[cc]=v;v==="member"?strong++:soft++}}
   atlas.setBloc&&atlas.setBloc(m);
   const name=RELG.find(x=>x[0]===k)?.[1]||k;
   const lst=Object.entries(m).filter(([,v])=>v==="member").map(([c])=>namedCountry(c)).sort((a,b)=>a.localeCompare(b,"ko"));
-  if(info)info.innerHTML='<p><b>'+esc(name)+'</b> · '+(k==="official"?'국교·국가 교회 '+strong+'개국 · 우대 종교(옅은 색) '+soft+'개국':k==="secular"?'헌법·법률로 세속 국가를 명시한 나라 '+strong+'개국':'국교·우대 종교로 정한 나라 '+strong+'개국 · 신자가 가장 많은 나라(옅은 색) '+soft+'개국')+'</p>'+(lst.length&&lst.length<=40?'<p class="bloc-notes">'+esc(lst.join(" · "))+'</p>':"")+'<p class="bloc-src">헌법 조문(Constitute Project 등)·퓨리서치센터·미 국무부 국제종교자유보고서 기준 · '+esc(state.religion.asOf||"")+' 확인</p>'}
+  if(info)info.innerHTML='<p><b>'+esc(name)+'</b> · '+(k==="official"?'국교·국가 교회 '+strong+'개국 · 우대 종교(옅은 색) '+soft+'개국':k==="secular"?'헌법·법률로 세속 국가를 명시한 나라 '+strong+'개국':k==="hostile"?'국가가 종교 활동을 등록·감시·제한하는 나라 '+strong+'개국':'국교·우대 종교로 정한 나라 '+strong+'개국 · 신자가 가장 많은 나라(옅은 색) '+soft+'개국')+'</p>'+(lst.length&&lst.length<=40?'<p class="bloc-notes">'+esc(lst.join(" · "))+'</p>':"")+'<p class="bloc-src">헌법 조문(Constitute Project 등)·퓨리서치센터·미 국무부 국제종교자유보고서 기준 · '+esc(state.religion.asOf||"")+' 확인</p>'}
  function countryReligion(code){const r=state.religion?.countries?.[code];if(!r)return "";
   return '<section class="section country-rel"><h3>국교와 종교</h3><p class="rel-line"><span class="rel-st rel-st--'+esc(r.status)+'">'+esc(RELST[r.status]||r.status)+'</span>'+(r.religion?' <b>'+esc(r.religion)+'</b>':"")+'</p>'+(r.basis?'<p class="rel-basis">'+esc(r.basis)+'</p>':"")+(r.note?'<p>'+esc(r.note)+'</p>':"")+(r.majority?'<p class="rel-maj"><span>신자 구성</span> '+esc(r.majority)+'</p>':"")+((r.sources||[]).length?'<small class="case-src">'+r.sources.slice(0,3).map(z=>sourceLink(z[2],z[0])).join(" · ")+'</small>':"")+'</section>'}
 
