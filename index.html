@@ -1359,6 +1359,7 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .rel-bar{margin-top:6px}.country-rel .rel-line{font-size:15px;margin:4px 0}.rel-st{display:inline-block;font-size:11.5px;padding:2px 8px;border-radius:999px;background:#eef1f3;color:#3a4a53;margin-right:6px;vertical-align:1px}
 .rel-st--official,.rel-st--established-church{background:#fbe9ea;color:#a3202a}.rel-st--secular{background:#e7eff7;color:#2c5680}.rel-st--hostile{background:#2a2f33;color:#fff}.rel-st--preferred{background:#fdf2e3;color:#8a5a12}
 .rel-basis{font-size:13px;color:#3a4a53;border-left:3px solid #dfe5e8;padding-left:8px}.rel-maj span{color:#8a979e;font-size:11.5px;margin-right:4px}
+.party-origin{font-size:13px;line-height:1.6;margin:2px 0 8px}.party-origin b{color:#14222b}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -3399,9 +3400,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const rg=state.regions?.parties?.[label];const region=rg?'<p class="party-region"><b>'+esc(rg.kind||"지역 정당")+'</b> · '+esc(rg.region||"")+'</p>':"";
   const ideology=Array.isArray(prof.ideology)&&prof.ideology.length?'<div class="party-tags">'+prof.ideology.map(t=>'<span>'+esc(t)+'</span>').join("")+'</div>':"";
   const positions=Array.isArray(prof.positions)&&prof.positions.length?'<h5>주요 주장</h5><ul class="party-positions">'+prof.positions.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
+  const O=prof.origin;const origin=O&&(O.why||O.founded)?'<h5>왜 생겼나</h5><p class="party-origin">'+(O.founded?'<b>'+esc(String(O.founded))+(/^\d{4}$/.test(String(O.founded))?'년':'')+' 창당</b>'+(O.founders?' · '+esc(O.founders):'')+' ':"")+esc(O.why||"")+'</p>':"";
   const now=prof.now?'<h5>지금 목소리</h5><p class="party-now">'+esc(prof.now)+'</p>':"";
   const src=Array.isArray(prof.sources)&&prof.sources.length?'<p class="party-sources">출처 '+prof.sources.slice(0,3).map(x=>sourceLink(x[2],x[0]||"원문")).join(" · ")+'</p>':"";
-  return '<header><strong dir="auto">'+esc(name.orig||label)+'</strong>'+(name.orig&&name.orig!==label?'<span>'+esc(name.ko||label)+'</span>':"")+'<button type="button" class="party-close" aria-label="닫기">×</button></header>'+lead+region+ideology+positions+now+pmini+src;
+  return '<header><strong dir="auto">'+esc(name.orig||label)+'</strong>'+(name.orig&&name.orig!==label?'<span>'+esc(name.ko||label)+'</span>':"")+'<button type="button" class="party-close" aria-label="닫기">×</button></header>'+lead+region+ideology+origin+positions+now+pmini+src;
  }
  function chamberHeadcounts(legislature){
   const chambers=Array.isArray(legislature?.chambers)?legislature.chambers:[];
@@ -3800,8 +3802,8 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   J58T60:"출판·영상·방송·음악(콘텐츠)",J61:"통신",J62_63:"소프트웨어·IT 서비스·데이터",J_X:"기타 정보통신",J:"정보통신",K:"금융·보험",L:"부동산",
   M:"전문·과학기술(연구개발·법률·회계·설계)",N:"사업지원(렌털·여행사·인력·경비)",MN:"전문·사업 서비스",MN_X:"기타 전문·사업 서비스",O:"공공행정·국방",OQ:"공공행정·교육·보건",P:"교육",Q:"보건·복지",RU:"문화·여가·기타 서비스",X:"기타·미분류",
   AB:"농림어업",D:"제조업",CE:"광업·전기·가스·수도",GH:"도소매·음식·숙박",I_UN:"운송·창고·통신",JP:"금융·부동산·IT·공공·교육·보건 등"};
- const SECFAM=k=>/^A|^AB$/.test(k)?"agr":/^B/.test(k)?"min":/^C(?!E)/.test(k)||k==="D"?"man":/^(DE|F|CE)$/.test(k)?"util":k==="X"?"x":"srv";
- const FAMN={agr:"농림어업",min:"광업",man:"제조업",util:"전기·수도·건설",srv:"서비스",x:"기타"},FAMC={agr:"#6f9e6f",min:"#8a5f52",man:"#b8202b",util:"#d99a4e",srv:"#3f6f9e",x:"#c3ccd2"};
+ const SECFAM=k=>/^A|^AB$/.test(k)?"agr":/^B/.test(k)||k==="CE"?"min":/^C(?!E)/.test(k)||k==="D"?"man":/^(DE|F)$/.test(k)?"util":k==="X"?"x":"srv";
+ const FAMN={agr:"농림어업",min:"광업·에너지",man:"제조업",util:"전기·수도·건설",srv:"서비스",x:"기타"},FAMC={agr:"#6f9e6f",min:"#8a5f52",man:"#b8202b",util:"#d99a4e",srv:"#3f6f9e",x:"#c3ccd2"};
  const SECC={A:"#8cb68d",AB:"#8cb68d",B05_06:"#6e4a3f",B07_08:"#a07a6b",B_X:"#c2a296",B:"#9a6e64",C26:"#c72a34",C29:"#e05561",C28:"#8f1d25",C20:"#e48aa0",C21:"#f3b3bd",C30:"#a8434b",C301:"#a8434b",C303:"#cf6f78",C24:"#b8574f",C27:"#d4707a",C25:"#c98b86",C22_23:"#e2a39d",C19:"#7a2b2b",C10T12:"#eab8a6",C13T15:"#f0c9c3",C16T18:"#dcc0bb",C31T33:"#e6d0cd",C_X:"#efdcda",C:"#c72a34",D:"#c72a34",
   DE:"#e9b766",CE:"#c9955c",F:"#eeac69",G:"#527eae",GH:"#527eae",H50:"#2f5d8a",H51:"#5f8fbf",H_X:"#7aa3c9",H:"#6a9fc0",I:"#75b6d5",I_UN:"#6a9fc0",J58T60:"#8a6fb0",J61:"#b8a6d1",J62_63:"#6b4f9a",J_X:"#cfc3e2",J:"#a38db8",K:"#123f5b",L:"#608e91",M:"#7f9fb3",N:"#a9bccb",MN:"#7f9fb3",MN_X:"#c4d1db",O:"#5d6b75",OQ:"#5d6b75",P:"#93a7b5",Q:"#b0c4cf",RU:"#c4d7df",JP:"#7d93a6",X:"#d9e0e4"};
  const krU=v=>v?"$"+krUnits(v):"–";
@@ -3815,7 +3817,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const fams=rs=>{const f={};for(const r of rs){const m=SECFAM(r.k);f[m]=f[m]||{p:0,u:0};f[m].p+=r.p;f[m].u+=r.u||0}return f};
   const order=["man","srv","agr","min","util","x"];
   const sorted=rs=>order.flatMap(m=>rs.filter(r=>SECFAM(r.k)===m).sort((a,b)=>b.p-a.p));
-  const sun=(rs,label,yr,G)=>{const tot=rs.reduce((a,r)=>a+Math.max(0,r.p),0)||100,R=G&&Gmax?Math.max(58,96*Math.sqrt(G/Gmax)):90,r1=R*.56,r0=R*.43,C=100;
+  const sun=(rs,label,yr,G)=>{const tot=rs.reduce((a,r)=>a+Math.max(0,r.p),0)||100,R=G&&Gmax?Math.max(16,97*Math.sqrt(G/Gmax)):90,r1=R*.56,r0=R*.43,C=100;
    const pt=(rad,a)=>(C+rad*Math.cos(a)).toFixed(1)+" "+(C+rad*Math.sin(a)).toFixed(1);
    const arc=(a0,a1,ro,ri)=>{const big=a1-a0>Math.PI?1:0;if(a1-a0>=2*Math.PI-1e-4)a1=a0+2*Math.PI-1e-4;return "M"+pt(ro,a0)+"A"+ro+" "+ro+" 0 "+big+" 1 "+pt(ro,a1)+"L"+pt(ri,a1)+"A"+ri+" "+ri+" 0 "+big+" 0 "+pt(ri,a0)+"Z"};
    let a=-Math.PI/2,out="",inner="";const fs=fams(rs);
@@ -3824,7 +3826,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
      out+='<path d="'+arc(a,a1,R,r1+1)+'" fill="'+(SECC[r.k]||"#ccc")+'" stroke="var(--paper,#fff)" stroke-width=".6"><title>'+esc((SECN[r.k]||r.k)+" "+number(r.p,1)+"% · "+krU(r.u))+'</title></path>'+
       (f>=.045&&R>70?'<text x="'+(C+(R+r1)/2*Math.cos(mid)).toFixed(1)+'" y="'+(C+(R+r1)/2*Math.sin(mid)+3).toFixed(1)+'" text-anchor="middle" class="sec-pct">'+number(r.p,0)+'%</text>':"");a=a1}
     inner+='<path d="'+arc(fa,a,r1,r0)+'" fill="'+FAMC[m]+'"><title>'+esc(FAMN[m]+" "+number(fs[m].p,1)+"%")+'</title></path>'}
-   return '<div class="tr-pie tr-pie--s"><h5>'+esc(label)+' <small>'+esc(String(yr||""))+'</small></h5><svg viewBox="0 0 200 200" class="tr-spie">'+out+inner+'<text x="100" y="95" text-anchor="middle" class="c1">GDP</text><text x="100" y="112" text-anchor="middle" class="c2">'+esc(krU(G))+'</text></svg></div>'};
+   return '<div class="tr-pie tr-pie--s"><h5>'+esc(label)+' <small>'+esc(String(yr||""))+'</small></h5><svg viewBox="0 0 200 200" class="tr-spie">'+out+inner+(R>=52?'<text x="100" y="95" text-anchor="middle" class="c1">GDP</text><text x="100" y="112" text-anchor="middle" class="c2">'+esc(krU(G))+'</text>':'<text x="100" y="'+(100+R+14).toFixed(0)+'" text-anchor="middle" class="c2">GDP '+esc(krU(G))+'</text>')+'</svg></div>'};
   const fsC=fams(rows),fsK=fams(krows),kOf=k=>krows.find(r=>r.k===k);
   const val=(p,u)=>'<b>'+number(p,1)+'%</b> <span>'+krU(u)+'</span>';
   const list=order.filter(m=>fsC[m]).map(m=>{const its=sorted(rows).filter(r=>SECFAM(r.k)===m);const one=its.length===1&&FAMN[m]===(SECN[its[0].k]||"");
