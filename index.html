@@ -3781,7 +3781,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   if(!GL.data){if(!GL.loading)GL.loading=fetch("data/glossary.json").then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{GL.data=d||{terms:{},alias:{}};const keys=[...Object.keys(GL.data.terms||{}),...Object.keys(GL.data.alias||{})].filter(k=>k.length>=2).sort((a,b)=>b.length-a.length);
    GL.re=keys.length?new RegExp(keys.map(k=>k.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")).join("|"),"g"):null;glossaryMark()});return}
   if(!GL.re)return;
-  const seen=new Set();const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;if(p.closest("a,button,script,style,svg,.gl,.gl-pop,h2,.detail-kicker,input,textarea,select,.xsources,.source"))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT}});
+  const seen=new Set([...root.querySelectorAll(".gl")].map(x=>x.dataset.gl));const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:n=>{const p=n.parentElement;if(!p||!n.nodeValue.trim())return NodeFilter.FILTER_REJECT;if(p.closest("a,button,script,style,svg,.gl,.gl-pop,h2,.detail-kicker,input,textarea,select,.xsources,.source"))return NodeFilter.FILTER_REJECT;return NodeFilter.FILTER_ACCEPT}});
   const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
   for(const n of nodes){const t=n.nodeValue;GL.re.lastIndex=0;let m,last=0,frag=null;
    while((m=GL.re.exec(t))){const term=GL.data.alias?.[m[0]]||m[0];if(seen.has(term))continue;seen.add(term);frag=frag||document.createDocumentFragment();frag.appendChild(document.createTextNode(t.slice(last,m.index)));
