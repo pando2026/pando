@@ -1330,6 +1330,13 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .watch-thumb img{width:100%;height:100%;object-fit:cover;display:block}.watch-thumb i{position:absolute;left:8px;bottom:8px;width:28px;height:28px;border-radius:50%;background:#000000b0;color:#fff;font-style:normal;font-size:12px;display:grid;place-items:center}
 .watch-thumb small{position:absolute;right:6px;bottom:6px;background:#000000a0;color:#fff;font-size:10.5px;padding:1px 5px;border-radius:2px}
 
+/* 기사 맨 위 사진 + 문단 */
+.story-hero{margin:12px 0 14px}.story-hero .vid-play{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;background:#111;cursor:pointer;overflow:hidden;border-radius:4px}
+.story-hero img{width:100%;height:100%;object-fit:cover;display:block}.story-hero i{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:#000000b3;color:#fff;font-style:normal;font-size:22px;display:grid;place-items:center}
+.story-hero figcaption{font-size:12px;color:#6b7b84;margin-top:5px}
+#detail .lead p,#detail .change p{margin:0 0 .75em}#detail .lead p:last-child,#detail .change p:last-child{margin-bottom:0}
+#detail .now-summary p{margin:0 0 .7em}
+
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
 html,body{background:#fff;color:var(--ink)}
@@ -3394,7 +3401,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    const points=Array.isArray(c.points)&&c.points.length?'<ul class="now-points">'+c.points.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ul>':"";
    const sources=Array.isArray(c.sources)?c.sources.map(s=>'<li>'+sourceLink(s[2],s[0]+(s[1]?" — "+s[1]:""))+'</li>').join(""):"";
    html+='<section class="now" aria-label="지금 상황"><div class="now-head"><span>지금 상황</span>'+(c.asOf?'<time>'+esc(c.asOf)+' 기준</time>':"")+'</div>'+
-    (c.headline?'<h3>'+esc(c.headline)+'</h3>':"")+'<p class="now-summary">'+esc(c.summary)+'</p>'+videosBlock(c.videos)+
+    (c.headline?'<h3>'+esc(c.headline)+'</h3>':"")+'<div class="now-summary">'+paras(c.summary,2)+'</div>'+videosBlock(c.videos)+
     (control?'<h4>'+(c.kind==="politics"?"권력 구도":"누가 무엇을 쥐고 있나")+'</h4>'+control:"")+(points?'<h4>지켜볼 점</h4>'+points:"")+
     fold("출처 "+(Array.isArray(c.sources)?c.sources.length:0)+"건",sources?'<ul class="now-sources">'+sources+'</ul>'+(c.note?'<p>'+esc(c.note)+'</p>':""):"")+'</section>';
   }
@@ -3760,6 +3767,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   return '<section class="section tradeb"><h3>산업 구조와 교역</h3>'+h+'<p class="tr-src">'+(S?sourceLink("https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations="+data.code,"세계은행 WDI(산업 비중·수출입)"):"")+(G&&G.source?' · '+sourceLink(G.source,"유엔 컴트레이드(품목·상대국)"):"")+(T.asOf?' · '+esc(T.asOf)+' 조회':"")+'</p></section>';
  }
  // 기사 '먼저 알아둘 맥락': 본문이 전제하는 지난 사건·협상을 날짜순으로(edition.json stories[].background)
+ // 긴 본문을 문장 2개씩 문단으로(숨 쉴 틈). 괄호 출처 뒤 마침표도 문장 끝으로 본다.
+ function paras(t,n){t=String(t||"");const ss=t.match(/[^.!?]+(?:\([^)]*\))?[.!?]+["'”’)]*(?:\([^)]*\)\.)?\s*|[^.!?]+$/g)||[t];const out=[];for(let i=0;i<ss.length;i+=n)out.push(ss.slice(i,i+n).join("").trim());return out.filter(Boolean).map(x=>'<p>'+esc(x)+'</p>').join("")}
+ // 기사 맨 위 사진: 연결된 방송사·통신사 영상의 큰 미리보기(누르면 그 자리에서 재생)
+ function storyHero(s){const v=(s.videos||[]).find(v=>ytId(v.url));if(!v)return "";const id=ytId(v.url);
+  return '<figure class="story-hero"><button type="button" class="vid-play" data-yt="'+esc(id)+'" aria-label="'+esc(v.title)+' 재생"><img src="https://i.ytimg.com/vi/'+esc(id)+'/hqdefault.jpg" alt="" loading="lazy"><i>▶</i></button><figcaption>'+esc(v.channel||"")+' · '+esc(v.title||"")+(v.date?' · '+esc(v.date):"")+'</figcaption></figure>'}
  function storyBackground(B){if(!B||!(B.items||[]).length)return "";
   return '<div class="section story-bg"><h3>먼저 알아둘 맥락</h3>'+(B.why?'<p class="story-bg-why">'+esc(B.why)+'</p>':"")+'<ol class="xtimeline">'+B.items.map(t=>'<li><time>'+esc(t.date||"")+'</time><p>'+esc(t.text||"")+(Array.isArray(t.src)&&t.src[2]?' '+sourceLink(t.src[2],t.src[0]||"출처"):"")+'</p></li>').join("")+'</ol></div>'}
  // 용어·맥락 풀이(data/glossary.json): 창(#detail) 본문에서 처음 나오는 곳에 밑줄, 누르면 뜻·맥락
@@ -4029,7 +4041,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function openStory(id){
   const s=state.edition?.stories.find(a=>a.id===id)||(state.archive||[]).find(a=>a.id===id);if(!s){if(!state.archive){loadArchive().then(()=>{if((state.archive||[]).some(a=>a.id===id))openStory(id)})}return}state.active=id;state.countryRequest++;
-  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2><p class="lead">'+esc(s.summary)+'</p><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+storyBackground(s.background)+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+esc(s.changed)+'</div></div>'+videosBlock(s.videos)+'<div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'<p class="photo-credits" data-for="actors"></p></div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
+  $("#detail").innerHTML='<div class="detail-kicker">'+esc(s.region)+" · "+esc(s.place)+" / "+esc(s.level)+'</div><div class="story-flags">'+(s.countryCodes||[]).slice(0,6).map(code=>'<button type="button" class="story-flag-link" data-country="'+esc(code)+'" title="'+esc(namedCountry(code))+' 국가 정보 보기" aria-label="'+esc(namedCountry(code))+' 국가 정보 보기">'+flag(code,"flag-story")+'</button>').join("")+'</div><h2>'+esc(s.headline)+'</h2>'+storyHero(s)+'<div class="lead">'+paras(s.summary,2)+'</div><div class="detail-meta">사건 '+esc(s.eventDate)+" · 위치 "+esc(s.locations)+' · 기사별 발행일은 아래 원문 참조</div>'+(Number.isFinite(s.lon)&&Number.isFinite(s.lat)?'<div class="section story-map"><h3>현장 지도</h3><div class="story-atlas"></div><p class="story-map-note"></p></div>':"")+storyBackground(s.background)+'<div class="section"><h3>01 / 무슨 일이 바뀌었나</h3><div class="change">'+paras(s.changed,2)+'</div></div>'+videosBlock(s.videos)+'<div class="section"><h3>02 / 관련 주체와 역할</h3>'+actorsBlock(s)+'<p class="photo-credits" data-for="actors"></p></div><div class="section"><h3>03 / 이권과 전략 자산</h3>'+entries(s.interests,s)+'</div><div class="section"><h3>04 / 기업·경제주체</h3>'+entries(s.economy,s)+'</div>'+(Array.isArray(s.outlook)&&s.outlook.length?'<div class="section outlook"><h3>05 / 전문가 평가·전망</h3>'+entries(s.outlook,s)+'</div>':"")+'<div class="section"><h3>확인되지 않은 점</h3><div class="caveat">'+esc(s.uncertainty)+'</div></div><div class="section"><h3>근거 기사</h3>'+s.sources.map((src,i)=>'<a class="source" href="'+safeUrl(src[3])+'" target="_blank" rel="noopener noreferrer"><span><strong>['+(i+1)+"] "+esc(src[0])+"</strong>"+esc(src[1])+'</span><i>'+esc(src[2])+" ↗</i></a>").join("")+'</div><div class="detail-nav"><button id="back-to-feed" type="button">← 목록으로</button><button id="copy-link" type="button">링크 복사 ↗</button></div>';
   mountStoryMap(s);
   activateDrawer("기사 상세 정보: "+s.headline);
   $("#back-to-feed").addEventListener("click",close);
