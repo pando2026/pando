@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="7167a37e0a";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="981ce178af";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -2424,8 +2424,10 @@ html,body{background:#fff;color:var(--ink)}
   let x=c.x+12,y=c.y-h-10;if(x+w>vw-6)x=c.x-w-12;if(x<6)x=6;if(y<6)y=c.y+12;
   tip.style.left=x.toFixed(0)+"px";tip.style.top=y.toFixed(0)+"px";
  }
- document.addEventListener("pointermove",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY);else hide()},{passive:true});
- document.addEventListener("pointerdown",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY)},{passive:true});
+ document.addEventListener("pointermove",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");const out=on&&(()=>{const r=on.getBoundingClientRect();return e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom})();if(out)hide();if(svg)show(svg,e.clientX,e.clientY);else hide()},{passive:true,capture:true});   // 캡처 단계: 다른 차트가 이벤트를 막아도 지운다
+ document.addEventListener("pointerdown",e=>{const svg=e.target&&e.target.closest&&e.target.closest("svg[data-ct]");if(svg)show(svg,e.clientX,e.clientY);else hide()},{passive:true,capture:true});
+ // 보던 차트가 화면에서 사라지면(다른 나라·탭으로 바뀜) 설명도 지운다
+ new MutationObserver(()=>{if(on&&!on.isConnected)hide()}).observe(document.documentElement,{childList:true,subtree:true});
  window.addEventListener("scroll",hide,{passive:true,capture:true});   // 서랍(상세 화면) 안 스크롤도
  window.addEventListener("hashchange",hide);window.addEventListener("blur",hide);
  document.addEventListener("pointerout",e=>{if(!e.relatedTarget)hide()},{passive:true});
