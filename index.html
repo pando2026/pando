@@ -1338,6 +1338,24 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 #detail .now-summary p{margin:0 0 .7em}
 .tr-pies--s{grid-template-columns:repeat(2,minmax(0,1fr))}.tr-pie--s h5{text-align:center}.tr-pie--s .tr-donut{width:130px;height:130px}.tr-pie--s .tr-donut span{inset:28px;font-size:12px;line-height:1.3}
 .tr-spie{width:100%;max-width:220px;display:block;margin:0 auto}.tr-spie text{font:700 8.5px system-ui,sans-serif;fill:#fff;paint-order:stroke;stroke:#0005;stroke-width:1.6px}.tr-spie text.c1{fill:#5a6a73;stroke:none;font-size:9px}.tr-spie text.c2{fill:#14222b;stroke:none;font-size:12px;font-weight:800}
+/* 세부 산업 구조 표 · 대표 품목 · 주력 산업 */
+.sec-list{list-style:none;margin:10px 0 6px;padding:0;font-size:12.5px}.sec-list ul{list-style:none;margin:0 0 6px;padding:0 0 0 14px}
+.sec-row{display:grid;grid-template-columns:12px 1fr auto;gap:2px 8px;align-items:baseline;padding:4px 0;border-bottom:1px solid #eef1f3}
+.sec-list--k .sec-row{grid-template-columns:12px 1fr auto}.sec-row .sec-k{grid-column:2/4;color:#6b7b84;font-size:11.5px}
+.sec-row i{width:10px;height:10px;border-radius:2px;align-self:center}.sec-row em{font-style:normal;color:#14222b}
+.sec-row--fam{border-bottom:2px solid #dfe5e8;padding-top:9px}.sec-row--fam em{font-weight:800}
+.sec-v{white-space:nowrap;text-align:right}.sec-v b,.sec-k b{font-weight:700}.sec-v span,.sec-k span{color:#5a6a73;margin-left:4px}
+@media(min-width:640px){.sec-list--k .sec-row{grid-template-columns:12px 1fr 150px 170px}.sec-row .sec-k{grid-column:auto;text-align:right}}
+.tr-spie text.sec-pct{font-size:7.5px}
+.pr-col{flex:1 1 300px;min-width:0}.pr-list{list-style:none;margin:0;padding:0;font-size:12.5px}
+.pr-list li{display:grid;grid-template-columns:1fr 64px auto auto;gap:2px 8px;align-items:center;padding:5px 0;border-bottom:1px solid #eef1f3}
+.pr-n{line-height:1.3}.pr-n small{display:block;color:#8a979e;font-size:10.5px}.pr-bar{height:7px;background:#f0f2f4;border-radius:4px;overflow:hidden}.pr-bar i{display:block;height:100%;background:#c72a34}
+.pr-col--m .pr-bar i{background:#3f6f9e}.pr-list b{white-space:nowrap}.pr-list em{font-style:normal;color:#6b7b84;font-size:11.5px;min-width:38px;text-align:right}.pr-k{grid-column:1/-1;color:#6b7b84;font-size:11px}
+.ind-sum{font-size:14px;line-height:1.6;margin:4px 0 10px}.ind-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px;margin-bottom:14px}
+.ind-card{border:1px solid #e3e8eb;border-left:4px solid #c72a34;border-radius:8px;padding:10px 12px;background:#fff;font-size:12.5px;line-height:1.5}
+.ind-card--service,.ind-card--finance,.ind-card--digital,.ind-card--tourism{border-left-color:#3f6f9e}.ind-card--resource{border-left-color:#8a5f52}.ind-card--agri{border-left-color:#6f9e6f}.ind-card--remittance,.ind-card--aid{border-left-color:#d99a4e}.ind-card--defense{border-left-color:#5d6b75}.ind-card--illicit{border-left-color:#222}
+.ind-card b{display:block;font-size:14.5px;margin:2px 0 4px}.ind-kind{font-size:10.5px;color:#7a8a93;letter-spacing:.04em}.ind-card p{margin:3px 0}.ind-card p span{display:inline-block;min-width:52px;color:#8a979e;font-size:11px}
+.ind-what{color:#14222b}.ind-scale{font-weight:600}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2334,6 +2352,8 @@ const interestBudgetStore=()=>once("interestBudget",()=>json("data/interest-budg
 const taxStore=()=>once("tax",()=>json("data/tax.json")).catch(()=>null);
 const laborStore=()=>once("labor",()=>json("data/labor.json")).catch(()=>null);
 const tradeStore=()=>once("trade",()=>json("data/trade.json")).catch(()=>null);
+const sectorStore=()=>once("sectors",()=>json("data/sectors.json")).catch(()=>null);
+const industryStore=()=>once("industry",()=>json("data/industry.json")).catch(()=>null);
 const powerStore=()=>once("power",()=>json("data/power.json")).catch(()=>null);
 const budgetPlanStore=()=>once("budgetPlan",()=>json("data/budget-plan.json")).catch(()=>null);
 const historyStore=()=>once("history",()=>json("data/history.json")).catch(()=>({}));
@@ -2396,7 +2416,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
     const edition=await currentEdition();
     const kr=code==="KR"?null:(await shard("KR")).KR;
     const [pidx,pstore]=await Promise.all([partyPhotoStore(),photoStore()]);const pphotos={};for(const [cc,m] of Object.entries(pidx))pphotos[cc]=Object.fromEntries(Object.entries(m).map(([l,f])=>[l,pstore[f]]).filter(([,v])=>v));
-    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),power:await (async()=>{const t=await powerStore();return t?.countries?.[code]||null})(),trade:await (async()=>{const t=await tradeStore();if(!t)return null;return {hs2:t.hs2||{},asOf:t.asOf,goodsSource:t.goodsSource,structureSource:t.structureSource,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
+    return ok({...entry.dossier,partyNames:b.partyNames[code]||null,partyProfiles:b.partyProfiles[code]||null,partyPhotos:pphotos[code]||null,civics:b.civics[code]||null,fights:(await fightStore())[code]||null,regions:(await regionStore())[code]||null,allies:(await allyStore())[code]||null,decisions:(await decisionStore())[code]||null,partymap:(await partyMapStore())[code]||null,income:(await incomeStore())[code]||null,problems:(await problemStore())[code]||null,ties:(await tieStore())[code]||null,history:(await historyStore())[code]||null,...await (async()=>{const t=await budgetPlanStore();const c=t?.countries||{};return {budgetPlan:c[code]||null,koreaBudgetPlan:code==="KR"?null:c.KR||null,koreaChambers:code==="KR"?null:b.civics.KR?.parliament?.chambers||null}})(),power:await (async()=>{const t=await powerStore();return t?.countries?.[code]||null})(),trade:await (async()=>{const t=await tradeStore();if(!t)return null;const sc=await sectorStore(),ind=await industryStore();return {hs2:t.hs2||{},products:t.products||[],asOf:t.asOf,goodsSource:t.goodsSource,structureSource:t.structureSource,entry:t.countries?.[code]||null,korea:code==="KR"?null:t.countries?.KR||null,sectors:sc?{asOf:sc.asOf,sources:sc.sources,entry:sc.countries?.[code]||null,korea:code==="KR"?null:sc.countries?.KR||null}:null,industry:ind?.countries?.[code]||null}})(),labor:await (async()=>{const t=await laborStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),tax:await (async()=>{const t=await taxStore();if(!t)return null;return {meta:t.meta,entry:t.countries[code]||null,korea:code==="KR"?null:t.countries.KR||null}})(),interest:await (async()=>{const i=await interestStore();if(!i)return null;const bb=await interestBudgetStore();return {meta:i.meta,entry:i.countries[code]||null,korea:code==="KR"?null:i.countries.KR||null,budget:bb?.countries?.[code]||null,budgetAsOf:bb?.asOf||null}})(),cases:(await caseStore())[code]||null,elections:await (async()=>{const e=await electionStore();if(!e)return null;return {meta:{edition:e.edition,indicator:e.indicator,total:e.total,source:e.source,vdem:e.vdem,provider:e.provider},entry:e.countries[code]||null,korea:code==='KR'?null:e.countries.KR||null}})(),cpi:await (async()=>{const c=await cpiStore();if(!c)return null;const e=c.countries[code];return {edition:c.edition,published:c.published,total:c.total,source:c.source,wiki:c.wiki,entry:e||null,korea:code==="KR"?null:c.countries.KR||null}})(),koreaLatest:kr?kr.dossier.metrics:null,context:await contextFor(code),watch:editionWatch(edition,b.changeWatch,codes).filter(i=>i.code===code)});
    }
    if(path==="/api/leaders"){
     const entry=(await shard(code))[code];if(!entry)return fail(404);
@@ -3744,9 +3764,82 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  // 산업 구조와 교역(data/trade.json: 세계은행 WDI 부가가치·수출입 + 유엔 컴트레이드 HS 2단위 상품 교역·상대국)
  const TRC=["#c72a34","#123f5b","#75b6d5","#eeac69","#608e91","#a38db8","#8cb68d","#9a6e64","#d9a961","#527eae","#c4d7df","#e48aa0","#7d8f3a","#b0b8bd"];
  const usdK=v=>Number.isFinite(+v)&&+v>0?"US$"+krUnits(+v):"–";
+ // 세부 산업 구조(data/sectors.json): OECD STAN 세부 산업 / 유엔 국민계정 7개 부문. 바깥 고리 = 세부 산업, 안쪽 고리 = 큰 갈래, 가운데 = GDP
+ const SECN={A:"농림어업",B05_06:"석유·가스·석탄 채굴",B07_08:"금속·광물 채굴",B_X:"광업 지원·기타",B:"광업",
+  C10T12:"식품·음료·담배",C13T15:"섬유·의류·가죽",C16T18:"목재·종이·인쇄",C19:"정유(휘발유·경유 등)",C20:"화학(석유화학·비료 등)",C21:"의약품·바이오",C22_23:"고무·플라스틱·유리·시멘트",
+  C24:"철강·비철금속",C25:"금속 가공품(무기 포함)",C26:"반도체·전자·광학(칩·디스플레이·휴대폰·컴퓨터)",C27:"전기장비(배터리·전선·가전)",C28:"기계(반도체 장비·공작기계·건설기계)",C29:"자동차·부품",
+  C301:"조선",C303:"항공·우주",C30:"조선·항공·철도(운송장비)",C31T33:"가구·의료기기·기타 제조·수리",C_X:"기타 제조(조선·항공·철도 등)",C:"제조업",
+  DE:"전기·가스·수도",F:"건설",G:"도소매(유통·무역)",H50:"해운",H51:"항공 운송",H_X:"육상 운송·물류·택배",H:"운송·물류",I:"숙박·음식(관광)",
+  J58T60:"출판·영상·방송·음악(콘텐츠)",J61:"통신",J62_63:"소프트웨어·IT 서비스·데이터",J_X:"기타 정보통신",J:"정보통신",K:"금융·보험",L:"부동산",
+  M:"전문·과학기술(연구개발·법률·회계·설계)",N:"사업지원(렌털·여행사·인력·경비)",MN:"전문·사업 서비스",MN_X:"기타 전문·사업 서비스",O:"공공행정·국방",OQ:"공공행정·교육·보건",P:"교육",Q:"보건·복지",RU:"문화·여가·기타 서비스",X:"기타·미분류",
+  AB:"농림어업",D:"제조업",CE:"광업·전기·가스·수도",GH:"도소매·음식·숙박",I_UN:"운송·창고·통신",JP:"금융·부동산·IT·공공·교육·보건 등"};
+ const SECFAM=k=>/^A|^AB$/.test(k)?"agr":/^B/.test(k)?"min":/^C(?!E)/.test(k)||k==="D"?"man":/^(DE|F|CE)$/.test(k)?"util":k==="X"?"x":"srv";
+ const FAMN={agr:"농림어업",min:"광업",man:"제조업",util:"전기·수도·건설",srv:"서비스",x:"기타"},FAMC={agr:"#6f9e6f",min:"#8a5f52",man:"#b8202b",util:"#d99a4e",srv:"#3f6f9e",x:"#c3ccd2"};
+ const SECC={A:"#8cb68d",AB:"#8cb68d",B05_06:"#6e4a3f",B07_08:"#a07a6b",B_X:"#c2a296",B:"#9a6e64",C26:"#c72a34",C29:"#e05561",C28:"#8f1d25",C20:"#e48aa0",C21:"#f3b3bd",C30:"#a8434b",C301:"#a8434b",C303:"#cf6f78",C24:"#b8574f",C27:"#d4707a",C25:"#c98b86",C22_23:"#e2a39d",C19:"#7a2b2b",C10T12:"#eab8a6",C13T15:"#f0c9c3",C16T18:"#dcc0bb",C31T33:"#e6d0cd",C_X:"#efdcda",C:"#c72a34",D:"#c72a34",
+  DE:"#e9b766",CE:"#c9955c",F:"#eeac69",G:"#527eae",GH:"#527eae",H50:"#2f5d8a",H51:"#5f8fbf",H_X:"#7aa3c9",H:"#6a9fc0",I:"#75b6d5",I_UN:"#6a9fc0",J58T60:"#8a6fb0",J61:"#b8a6d1",J62_63:"#6b4f9a",J_X:"#cfc3e2",J:"#a38db8",K:"#123f5b",L:"#608e91",M:"#7f9fb3",N:"#a9bccb",MN:"#7f9fb3",MN_X:"#c4d1db",O:"#5d6b75",OQ:"#5d6b75",P:"#93a7b5",Q:"#b0c4cf",RU:"#c4d7df",JP:"#7d93a6",X:"#d9e0e4"};
+ const krU=v=>v?"$"+krUnits(v):"–";
+ function sectorBlock(T,name,code){
+  const SE=T.sectors;if(!SE||!SE.entry)return "";const e=SE.entry,kk=SE.korea;
+  const D=e.detail||null,K=kk?(D?kk.detail:kk.broad)||null:null,B=D||e.broad;if(!B||!B.items?.length)return "";
+  const isUN=!D,key=k=>isUN&&k==="I"?"I_UN":k;
+  const rows=B.items.map(r=>isUN?{k:key(r[0]),p:r[1],u:r[2]}:{k:r[0],par:r[1],p:r[2],u:r[3]});
+  const krows=K?K.items.map(r=>isUN?{k:key(r[0]),p:r[1],u:r[2]}:{k:r[0],par:r[1],p:r[2],u:r[3]}):[];
+  const gdp=x=>x?.gdpUsd||x?.vaUsd||null,G1=gdp(B),G2=gdp(K),Gmax=Math.max(G1||0,G2||0);
+  const fams=rs=>{const f={};for(const r of rs){const m=SECFAM(r.k);f[m]=f[m]||{p:0,u:0};f[m].p+=r.p;f[m].u+=r.u||0}return f};
+  const order=["man","srv","agr","min","util","x"];
+  const sorted=rs=>order.flatMap(m=>rs.filter(r=>SECFAM(r.k)===m).sort((a,b)=>b.p-a.p));
+  const sun=(rs,label,yr,G)=>{const tot=rs.reduce((a,r)=>a+Math.max(0,r.p),0)||100,R=G&&Gmax?Math.max(58,96*Math.sqrt(G/Gmax)):90,r1=R*.56,r0=R*.43,C=100;
+   const pt=(rad,a)=>(C+rad*Math.cos(a)).toFixed(1)+" "+(C+rad*Math.sin(a)).toFixed(1);
+   const arc=(a0,a1,ro,ri)=>{const big=a1-a0>Math.PI?1:0;if(a1-a0>=2*Math.PI-1e-4)a1=a0+2*Math.PI-1e-4;return "M"+pt(ro,a0)+"A"+ro+" "+ro+" 0 "+big+" 1 "+pt(ro,a1)+"L"+pt(ri,a1)+"A"+ri+" "+ri+" 0 "+big+" 0 "+pt(ri,a0)+"Z"};
+   let a=-Math.PI/2,out="",inner="";const fs=fams(rs);
+   for(const m of order){const its=rs.filter(r=>SECFAM(r.k)===m).sort((x,y)=>y.p-x.p);if(!its.length)continue;const fa=a;
+    for(const r of its){const f=Math.max(0,r.p)/tot;if(f<=0)continue;const a1=a+f*2*Math.PI,mid=(a+a1)/2;
+     out+='<path d="'+arc(a,a1,R,r1+1)+'" fill="'+(SECC[r.k]||"#ccc")+'" stroke="var(--paper,#fff)" stroke-width=".6"><title>'+esc((SECN[r.k]||r.k)+" "+number(r.p,1)+"% · "+krU(r.u))+'</title></path>'+
+      (f>=.045&&R>70?'<text x="'+(C+(R+r1)/2*Math.cos(mid)).toFixed(1)+'" y="'+(C+(R+r1)/2*Math.sin(mid)+3).toFixed(1)+'" text-anchor="middle" class="sec-pct">'+number(r.p,0)+'%</text>':"");a=a1}
+    inner+='<path d="'+arc(fa,a,r1,r0)+'" fill="'+FAMC[m]+'"><title>'+esc(FAMN[m]+" "+number(fs[m].p,1)+"%")+'</title></path>'}
+   return '<div class="tr-pie tr-pie--s"><h5>'+esc(label)+' <small>'+esc(String(yr||""))+'</small></h5><svg viewBox="0 0 200 200" class="tr-spie">'+out+inner+'<text x="100" y="95" text-anchor="middle" class="c1">GDP</text><text x="100" y="112" text-anchor="middle" class="c2">'+esc(krU(G))+'</text></svg></div>'};
+  const fsC=fams(rows),fsK=fams(krows),kOf=k=>krows.find(r=>r.k===k);
+  const val=(p,u)=>'<b>'+number(p,1)+'%</b> <span>'+krU(u)+'</span>';
+  const list=order.filter(m=>fsC[m]).map(m=>{const its=sorted(rows).filter(r=>SECFAM(r.k)===m);const one=its.length===1&&FAMN[m]===(SECN[its[0].k]||"");
+   return '<li class="sec-fam"><div class="sec-row sec-row--fam"><i style="background:'+FAMC[m]+'"></i><em>'+esc(FAMN[m])+'</em><span class="sec-v">'+val(fsC[m].p,fsC[m].u)+'</span>'+(K?'<span class="sec-k">한국 '+(fsK[m]?val(fsK[m].p,fsK[m].u):"–")+'</span>':"")+'</div>'+
+    (one?"":'<ul>'+its.map(r=>{const kr=kOf(r.k);return '<li class="sec-row"><i style="background:'+(SECC[r.k]||"#ccc")+'"></i><em>'+esc(SECN[r.k]||r.k)+'</em><span class="sec-v">'+val(r.p,r.u)+'</span>'+(K?'<span class="sec-k">한국 '+(kr?val(kr.p,kr.u):"–")+'</span>':"")+'</li>'}).join("")+'</ul>')+'</li>'}).join("");
+  const top=sorted(rows).filter(r=>SECFAM(r.k)==="man").slice(0,3).map(r=>SECN[r.k]||r.k);
+  const sy=D&&D.subYears&&Object.keys(D.subYears).length?' 일부 세부 산업('+Object.entries(D.subYears).map(([k,y])=>(SECN[k]||k)+" "+y).join(", ")+'년)은 그해 세부 값이 아직 나오지 않아, 세부가 나온 가장 최근 해의 비율로 그해 금액을 나눴습니다.':"";
+  const src=s=>Array.isArray(s)?sourceLink(s[2],s[0]):"";
+  return '<h4>산업 구조 <small>'+(D?'세부 산업별 부가가치':'7개 부문 부가가치')+' · 원 크기 = 경제 규모 · 가운데 = GDP</small></h4>'+
+   '<div class="tr-pies tr-pies--s">'+sun(rows,name,B.year,G1)+(K?sun(krows,"한국",K.year,G2):"")+'</div>'+
+   '<ul class="sec-list'+(K?' sec-list--k':'')+'">'+list+'</ul>'+
+   '<p class="tr-note">비중과 금액은 산업별 부가가치(그 산업이 새로 만든 가치, 합하면 GDP에서 세금·보조금 조정분을 뺀 값) 기준이고, 금액은 미 달러입니다.'+(D?' 반도체 장비는 ‘기계’, 휴대폰·디스플레이는 ‘반도체·전자’에 들어갑니다. 화장품은 ‘화학’에 들어갑니다(품목별 수출은 아래 ‘대표 품목’).':' 이 나라는 세부 산업 통계를 국제기구에 내지 않아 유엔 국민계정의 7개 부문으로 나눴습니다. 무엇을 만들어 파는지는 아래 ‘주력 산업’과 ‘대표 품목’을 보세요.')+sy+(D&&D.usdFrom==="imf"?' 그해 미 달러 금액은 IMF 명목 GDP로 환산했습니다.':"")+'</p>'+
+   '<p class="tr-src">'+(D?src(SE.sources?.detail)+' · ':"")+src(SE.sources?.broad)+(D&&D.usdFrom==="imf"?' · '+src(SE.sources?.imf):"")+'</p>';
+ }
+ // 대표 품목(trade.json goods.detail × products): 반도체·장비·화장품·배터리·원유… 수출·수입액, 수출 중 비중, 한국 같은 품목
+ function productBlock(T,name){
+  const G=T.entry?.goods,P=T.products||[];if(!G||!G.detail||!P.length)return "";const KG=T.korea?.goods,kd=KG?.detail||{};
+  const xt=G.exports?.total||0,mt=G.imports?.total||0;
+  const rows=P.map(([c,n,g])=>{const v=G.detail[c]||[0,0];return {c,n,g,x:v[0],m:v[1],kx:(kd[c]||[0,0])[0],km:(kd[c]||[0,0])[1]}}).filter(r=>r.x>=Math.max(5e7,xt*.004)||r.m>=Math.max(5e7,mt*.01));
+  // 4단위 안에 6단위가 겹치는 품목(스마트폰⊂통신장비, 전기차⊂승용차, LNG⊂천연가스)은 그대로 둔다(이름에 표시)
+  if(!rows.length)return "";
+  const sx=[...rows].sort((a,b)=>b.x-a.x).filter(r=>r.x>0).slice(0,14),sm=[...rows].sort((a,b)=>b.m-a.m).filter(r=>r.m>0).slice(0,10);
+  const max=Math.max(...sx.map(r=>r.x),1),maxm=Math.max(...sm.map(r=>r.m),1);
+  const li=(r,v,tot,mx,kv,kind)=>'<li><span class="pr-n">'+esc(r.n)+'<small>'+esc(r.g)+'</small></span><span class="pr-bar"><i style="width:'+(100*v/mx).toFixed(1)+'%"></i></span><b>'+usdK(v)+'</b><em>'+(tot?number(100*v/tot,1)+'%':"")+'</em>'+(T.korea?'<small class="pr-k">한국 '+(kv?usdK(kv):"–")+'</small>':"")+'</li>';
+  return '<h4>대표 품목 <small>무엇을 만들어 팔고 사 오나 · '+esc(String(G.year))+'년 · % = 전체 상품 '+'수출(수입) 중 비중</small></h4><div class="tr-pies">'+
+   (sx.length?'<div class="pr-col"><h5>수출</h5><ol class="pr-list">'+sx.map(r=>li(r,r.x,xt,max,r.kx,"x")).join("")+'</ol></div>':"")+
+   (sm.length?'<div class="pr-col pr-col--m"><h5>수입</h5><ol class="pr-list">'+sm.map(r=>li(r,r.m,mt,maxm,r.km,"m")).join("")+'</ol></div>':"")+'</div>'+
+   '<p class="tr-note">유엔 컴트레이드 HS 품목 분류 기준(반도체 8542, 반도체·디스플레이 제조 장비 8486, 화장품 3304, 배터리 8507, 선박 8901, 원유 2709, LNG 271111 등). 스마트폰은 통신 장비에, 전기차는 승용차에, LNG는 천연가스 품목 안에도 들어 있어 합하면 겹칩니다.</p>';
+ }
+ // 주력 산업(data/industry.json): 무엇을 만들고 무엇으로 먹고사나 — 회사·규모·세계 순위·한국과의 관계
+ const INDK={manufacturing:"제조",service:"서비스",resource:"자원",agri:"농업",finance:"금융",digital:"디지털",defense:"방산",tourism:"관광",remittance:"해외 송금",aid:"원조",illicit:"불법 경제"};
+ function industryBlock(T){
+  const I=T.industry;if(!I||!(I.industries||[]).length)return "";
+  return '<h4>주력 산업 <small>무엇을 만들고 무엇으로 먹고사나 · '+esc(I.asOf||"")+' 기준</small></h4>'+(I.summary?'<p class="ind-sum">'+esc(I.summary)+'</p>':"")+
+   '<div class="ind-grid">'+I.industries.map(x=>'<article class="ind-card ind-card--'+esc(x.kind||"")+'"><span class="ind-kind">'+esc(INDK[x.kind]||x.kind||"")+'</span><b>'+esc(x.name)+'</b>'+(x.what?'<p class="ind-what">'+esc(x.what)+'</p>':"")+
+    (x.scale?'<p class="ind-scale"><span>규모</span> '+esc(x.scale)+'</p>':"")+(x.global?'<p class="ind-global"><span>세계 속</span> '+esc(x.global)+'</p>':"")+
+    ((x.companies||[]).length?'<p class="ind-co"><span>대표 기업</span> '+esc(x.companies.join(" · "))+'</p>':"")+(x.korea?'<p class="ind-kr"><span>한국과</span> '+esc(x.korea)+'</p>':"")+(x.trend?'<p class="ind-trend"><span>최근</span> '+esc(x.trend)+'</p>':"")+
+    ((x.sources||[]).length?'<small class="case-src">'+x.sources.slice(0,3).map(z=>sourceLink(z[2],z[0])).join(" · ")+'</small>':"")+'</article>').join("")+'</div>';
+ }
  function tradeBlock(data){
   const T=data.trade;if(!T||!T.entry)return "";const e=T.entry,k=T.korea,S=e.structure,G=e.goods,H=T.hs2||{},name=namedCountry(data.code);
-  let h="";
+  let h=industryBlock(T);const secH=sectorBlock(T,name,data.code);h+=secH;
   if(S&&(S.srv!=null||S.ind!=null)){
    const parts=st=>{const mining=st.ind!=null&&st.manf!=null?Math.max(0,st.ind-st.manf):null;return [["농림어업",st.agr,st.agrUsd,"#8cb68d"],["제조업",st.manf,st.manfUsd,"#c72a34"],["광업·건설·전기",mining!=null?mining:st.ind,st.indUsd!=null&&st.manfUsd!=null?st.indUsd-st.manfUsd:st.indUsd,"#eeac69"],["서비스",st.srv,st.srvUsd,"#527eae"]].filter(x=>x[1]!=null)};
    const bar=(st,label)=>'<div class="tr-bar-row"><span class="tr-bar-name">'+esc(label)+' <small>'+esc(String(st.year||""))+'</small></span><div class="tr-bar">'+parts(st).map(([n,p,u,c])=>'<i style="width:'+Math.max(0,p).toFixed(2)+'%;background:'+c+'" title="'+esc(n+" "+number(p,1)+"% · "+usdK(u))+'"></i>').join("")+'</div></div>';
@@ -3760,7 +3853,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
      const lab=f>=.09&&u?'<text x="'+(C+(R+r)/2*Math.cos(mid)).toFixed(1)+'" y="'+(C+(R+r)/2*Math.sin(mid)+3).toFixed(1)+'" text-anchor="middle">'+esc(usdK(u).replace("US$","$"))+'</text>':"";
      return '<path d="'+d+'" fill="'+c+'"><title>'+esc(n+" "+number(p,1)+"% · "+usdK(u))+'</title></path>'+lab}).join("");
     return '<div class="tr-pie tr-pie--s"><h5>'+esc(label)+' <small>'+esc(String(st.year||""))+'</small></h5><svg viewBox="0 0 200 200" class="tr-spie">'+sl+'<text x="100" y="96" text-anchor="middle" class="c1">GDP</text><text x="100" y="112" text-anchor="middle" class="c2">'+esc(G?usdK(G).replace("US$","$"):"")+'</text></svg></div>'};
-   h+='<h4>산업 구조 <small>GDP(부가가치) 중 비중 · 원 크기 = 경제 규모</small></h4><div class="tr-pies tr-pies--s">'+pie(S,name,G1)+(k&&k.structure?pie(k.structure,"한국",G2):"")+'</div>'+
+   if(!secH)h+='<h4>산업 구조 <small>GDP(부가가치) 중 비중 · 원 크기 = 경제 규모</small></h4><div class="tr-pies tr-pies--s">'+pie(S,name,G1)+(k&&k.structure?pie(k.structure,"한국",G2):"")+'</div>'+
     '<ul class="tr-legend">'+parts(S).map(([n,p,u,c])=>'<li><i style="background:'+c+'"></i><b>'+esc(n)+'</b> '+number(p,1)+'% <span>'+esc(usdK(u))+'</span>'+(k&&k.structure?'<em>한국 '+(()=>{const kk=parts(k.structure).find(x=>x[0]===n);return kk?number(kk[1],1)+'%':'–'})()+'</em>':"")+'</li>').join("")+'</ul>'+
     (S.rents!=null&&S.rents>=5?'<p class="tr-note">천연자원 지대(석유·가스·광물 등에서 나오는 초과 수익)가 GDP의 '+number(S.rents,1)+'%('+esc(String(S.rentsYear||S.year))+')로, 자원 의존이 큰 경제입니다.</p>':"")+
     '<p class="tr-note">세 부문 합은 100%가 되지 않을 수 있습니다(생산물세·보조금 조정분 제외). 제조업은 광공업의 일부입니다.</p>';
@@ -3774,6 +3867,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    h+='<h4>상품 수출·수입 <small>'+esc(String(G.year))+'년 · 이 나라 신고 기준</small></h4><div class="tr-pies">'+donut(G.exports,"수출 품목")+donut(G.imports,"수입 품목")+'</div>'+
     '<div class="tr-pies">'+partners(G.partnersX,"주요 수출 상대국",G.exports?.total)+partners(G.partnersM,"주요 수입 상대국",G.imports?.total)+'</div>'+
     (k&&k.goods?.exports?.total?'<p class="tr-note">한국 '+esc(String(k.goods.year))+'년 상품 수출 '+usdK(k.goods.exports.total)+' · 수입 '+usdK(k.goods.imports?.total)+' (같은 출처)</p>':"");
+   h+=productBlock(T,name);
   }else if(G&&G.checked)h+='<p class="tr-note">이 나라는 유엔 컴트레이드에 최근(2022~2025년) 품목별 교역을 신고하지 않았습니다.</p>';
   if(!h)return "";
   return '<section class="section tradeb"><h3>산업 구조와 교역</h3>'+h+'<p class="tr-src">'+(S?sourceLink("https://data.worldbank.org/indicator/NV.IND.MANF.ZS?locations="+data.code,"세계은행 WDI(산업 비중·수출입)"):"")+(G&&G.source?' · '+sourceLink(G.source,"유엔 컴트레이드(품목·상대국)"):"")+(T.asOf?' · '+esc(T.asOf)+' 조회':"")+'</p></section>';
@@ -3979,7 +4073,18 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function inRing(x,y,r){let c=false;for(let i=0,j=r.length-1;i<r.length;j=i++){const a=r[i],b=r[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c}return c}
  async function mountStoryMap(s){
   const box=$("#detail .story-atlas");if(!box)return;
-  const main=mainCodes(s);const tryA=async c=>{try{const u=(await getAdmin1(c)).units;return Array.isArray(u)&&u.length?u:null}catch(e){return null}};
+  const main=mainCodes(s);
+  // 여러 나라에서 동시에 벌어진 일(points가 두 나라 이상, 또는 주 당사국 3곳 이상): 세계 지도에 나라를 모두 칠하고 도시마다 점
+  const capOf=code=>{const c=state.countries.find(x=>x.code===code);return Number.isFinite(c?.capitalLon)&&Number.isFinite(c?.capitalLat)?[c.capitalLon,c.capitalLat,namedCountry(code),code]:null};
+  const P=Array.isArray(s.points)&&s.points.length?s.points:(main.length>=3?main.map(capOf).filter(Boolean):null);
+  if(P&&new Set(P.map(q=>q[3])).size>1){
+   const items=[...new Set([...main,...P.map(q=>q[3])])].filter(Boolean).map(c=>({type:"country",id:c,heat:1})).concat(P.map((q,i)=>({type:"story",id:s.id+"-"+i,lon:q[0],lat:q[1],label:q[2]||"",subtitle:s.headline,main:false})));
+   const m=window.FrontlineAtlas.mount(box,{items,focus:{points:P.map(q=>[q[0],q[1]]),span:12},nameOf:code=>namedCountry(code),onSelect:item=>item.type==="country"?openCountry(item.id):null});
+   loadOcc().then(list=>m.setOccupied&&m.setOccupied(list,true));
+   const note=box.parentElement?.querySelector(".story-map-note");if(note)note.textContent="여러 나라에서 함께 벌어진 일이에요. 칠한 나라가 관련국, 빨간 점이 일이 벌어진 도시입니다. 나라를 누르면 국가 정보가 열려요. 끌어서 옮기고 휠·+/−로 확대해요.";
+   return;
+  }
+  const tryA=async c=>{try{const u=(await getAdmin1(c)).units;return Array.isArray(u)&&u.length?u:null}catch(e){return null}};
   // the map is centred on the country where it happened: placeCode, else the main party whose provinces contain the point
   let cc=s.placeCode&&await tryA(s.placeCode)?s.placeCode:null;
   if(!cc)for(const c of main){const u=await tryA(c);if(u&&u.some(x=>x.r.some(r=>inRing(s.lon,s.lat,r)||inRing(s.lon+360,s.lat,r)||inRing(s.lon-360,s.lat,r)))){cc=c;break}}
