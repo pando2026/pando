@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="23e52f88f3";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="22482b18e1";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1365,6 +1365,7 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .ppp-how{margin:0 0 10px;font-size:13px}.ppp-how summary{cursor:pointer;color:#2c5680;font-weight:700}.ppp-how p{line-height:1.65;margin:6px 0}
 .ppp-card .ppp-plain{font-size:13.5px;line-height:1.6;color:#14222b;margin:6px 0 4px}.ppp-card small{display:block;color:#6b7b84;font-size:11.5px;margin-top:2px}.ppp-card .ppp-kr{color:#33505f;font-weight:600}
 .ind-more{margin:0 0 14px}.ind-more summary{cursor:pointer;font-size:13px;color:#2c5680;font-weight:700;line-height:1.5;padding:6px 0}
+.event-band .event-name{font:700 8px var(--font,system-ui);pointer-events:none}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2602,6 +2603,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  loadBlocs().then(renderBlocBar);loadReligion().then(renderRelBar);
  fetch("data/fx.json").then(r=>r.ok?r.json():null).then(j=>{state.fx=j}).catch(()=>{});
  fetch("data/kr-imf.json").then(r=>r.ok?r.json():null).then(j=>{state.krImf=j}).catch(()=>{});
+ fetch("data/events.json").then(r=>r.ok?r.json():null).then(j=>{state.events=j}).catch(()=>{});
  fetch("data/regimes.json").then(r=>r.ok?r.json():null).then(j=>{state.regimes=j}).catch(()=>{});
  async function loadExplainers(){
   try{const r=await api("/api/explainers");state.explainers=await r.json()}catch{state.explainers=[]}
@@ -2801,6 +2803,26 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  document.addEventListener("mouseover",e=>{const g=e.target.closest?.(".regime-seg");if(g)showRegime(g)});
  function regimeBand(code,years,px,y){
+  const rb=regimeBand0(code,years,px,y),eb=eventBand(code,years,px,y+rb.h);return {svg:rb.svg+eb.svg,h:rb.h+eb.h};
+ }
+ // 특별한 사건 띠(data/events.json): 세계 공통(금융위기·코로나 등) + 나라별(전쟁·쿠데타·디폴트·대지진·제재 등)
+ const EVC={crisis:"#c62b33",pandemic:"#7a4fa0",war:"#5b1a1f",coup:"#2a2f33",disaster:"#8a5a12",sanction:"#2c5680",politics:"#4f6b2c",default:"#c62b33",other:"#5d6b75"};
+ function eventBand(code,years,px,y){
+  const E=state.events;if(!E||years.length<2)return {svg:"",h:0};
+  const Ys=years.map(Number),x0=px(years[0]),x1=px(years.at(-1));
+  const frac=d=>{const m=String(d||"").match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);if(!m)return null;return +m[1]+((+m[2]||1)-1)/12+((+m[3]||1)-1)/365};
+  const dx=v=>{if(v<=Ys[0])return x0;if(v>=Ys.at(-1))return x1;let i=0;while(i<Ys.length-2&&v>=Ys[i+1])i++;const a=Ys[i],b=Ys[i+1];return px(String(a))+(v-a)/(b-a)*(px(String(b))-px(String(a)))};
+  const list=[...(E.global||[]).filter(e=>!e.only||e.only.includes(code)),...((E.countries||{})[code]||[])].map(e=>({e,a:frac(e.from),b:frac(e.to||e.from)})).filter(o=>o.a!=null&&o.b+.5>=Ys[0]&&o.a-.5<=Ys.at(-1)).sort((p,q)=>p.a-q.a);
+  if(!list.length)return {svg:"",h:0};
+  const H=12,rows=[];const out=[];
+  const tw=t=>[...String(t)].reduce((w,c)=>w+(/[\u1100-\uffff]/.test(c)?8:4.8),0);
+  list.forEach((o,i)=>{let xa=Math.max(x0,dx(o.a-.5)),xb=Math.min(x1,dx(o.b-.5));if(xb-xa<5){const m=(xa+xb)/2;xa=m-2.5;xb=m+2.5}
+   const lab=o.e.short||o.e.name,w=Math.max(xb-xa,tw(lab)+4);let r=rows.findIndex(end=>end<=xa-2);if(r<0){r=rows.length;rows.push(0)}if(r>2)return;rows[r]=xa+w;
+   const yy=y+r*(H+2),c=EVC[o.e.kind]||EVC.other,per=String(o.e.from).slice(0,7).replace("-",".")+(o.e.to&&o.e.to!==o.e.from?"–"+String(o.e.to).slice(0,7).replace("-","."):"");
+   out.push('<g class="regime-seg event-seg" data-rname="'+esc(o.e.name)+'" data-roffice="'+esc(o.e.desc||"")+'" data-rparty="" data-rper="'+esc(per)+'" tabindex="0"><rect x="'+xa.toFixed(1)+'" y="'+yy+'" width="'+(xb-xa).toFixed(1)+'" height="'+H+'" rx="2" fill="'+c+'" fill-opacity=".85"><title>'+esc(o.e.name+" "+per)+'</title></rect><text class="event-name" x="'+(xb-xa>=tw(lab)+4?((xa+xb)/2):(xb+3)).toFixed(1)+'" y="'+(yy+9)+'" text-anchor="'+(xb-xa>=tw(lab)+4?"middle":"start")+'" fill="'+(xb-xa>=tw(lab)+4?"#fff":c)+'">'+esc(lab)+'</text></g>')});
+  return {svg:'<g class="regime-band event-band">'+out.join("")+'</g>',h:rows.slice(0,3).length*(H+2)+4};
+ }
+ function regimeBand0(code,years,px,y){
   const R=state.regimes?.countries?.[code];if(!R||!Array.isArray(R.terms)||years.length<2)return {svg:"",h:0};
   const Ys=years.map(Number),x0=px(years[0]),x1=px(years.at(-1));
   const frac=d=>{const t=Date.parse(d+"T00:00:00Z");if(!Number.isFinite(t))return null;const yr=new Date(t).getUTCFullYear();return yr+(t-Date.UTC(yr,0,1))/(Date.UTC(yr+1,0,1)-Date.UTC(yr,0,1))};
@@ -2824,7 +2846,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  // 연도별 작은 그래프 아래에도 정권 띠(regimes.json): svg 문자열의 높이를 늘리고 띠를 붙인다
  function addBand(svg,yrs,xi,y0){if(!svg)return svg;const Y=yrs.map(String);const b=regimeBand(state.activeCode,Y,yr=>xi(Y.indexOf(String(yr))),y0);if(!b.h)return svg;
-  return svg.replace(/viewBox="0 0 ([\d.]+) ([\d.]+)"/,(m,w,h)=>'viewBox="0 0 '+w+' '+(+h+b.h+2)+'"').replace(/<\/svg>(?![\s\S]*<\/svg>)/,b.svg+'</svg>')+'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자입니다. 띠를 누르면 이름·정당이 보입니다.</span></p>'}
+  return svg.replace(/viewBox="0 0 ([\d.]+) ([\d.]+)"/,(m,w,h)=>'viewBox="0 0 '+w+' '+(+h+b.h+2)+'"').replace(/<\/svg>(?![\s\S]*<\/svg>)/,b.svg+'</svg>')+'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>'}
  function metricTrend(key,points,korea=null,name=""){
   const clean=a=>(Array.isArray(a)?a:[]).filter(p=>p&&Number.isFinite(Number(p.value))&&/^\d{4}/.test(String(p.year))).map(p=>({year:String(p.year).slice(0,4),value:Number(p.value)})).sort((a,b)=>a.year.localeCompare(b.year));
   const series=clean(points).slice(-24);
@@ -2853,7 +2875,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const krLayer=showKr?'<path class="trend-line trend-line--kr" d="'+line(kr)+'"/><g class="trend-points trend-points--kr">'+kr.map(p=>'<circle cx="'+px(p.year).toFixed(1)+'" cy="'+py(p.value).toFixed(1)+'" r="2.2"><title>한국 '+esc(p.year)+' · '+esc(metricValue(key,p.value))+'</title></circle>').join("")+'</g><text class="trend-kr-end" x="'+(px(kr.at(-1).year)+4).toFixed(1)+'" y="'+(py(kr.at(-1).value)+(kr.at(-1).value>=series.at(-1).value?-14:22)).toFixed(1)+'" text-anchor="end">한국 '+esc(metricValue(key,kr.at(-1).value))+'</text>':"";
   const legend=showKr?'<span class="trend-legend"><i class="trend-key"></i>'+esc(name||"이 나라")+' <i class="trend-key trend-key--kr"></i>한국</span>':"";
   const band=regimeBand(state.activeCode,years,px,B+24);
-  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자입니다. 띠를 누르면 이름·정당이 보입니다.</span></p>':"");
+  return '<div class="trend-head"><b>'+esc(y0)+' — '+esc(y1)+'</b>'+legend+'<span>'+series.length+'개 관측치</span></div><svg class="trend-chart" viewBox="0 0 400 '+(152+band.h)+'" role="img" aria-label="'+esc(series.map(p=>p.year+"년 "+metricValue(key,p.value)).join(", "))+'">'+grid+'<path class="trend-axis" d="M'+L+' '+B+'H'+R+'"/>'+krLayer+'<path class="trend-line" d="'+line(series)+'"/><g class="trend-points">'+dots+'</g>'+band.svg+'</svg>'+(band.h?'<p class="regime-note"><span class="regime-hint">그래프 아래 띠는 그 시기의 최고 지도자, 그 아래는 큰 사건(금융위기·코로나·전쟁 등)입니다. 띠를 누르면 자세히 보입니다.</span></p>':"");
  }
  function metricCard(key,label,item,korea=null,compare=false,koreaReference=null,koreaLatest=null){
   const valid=item&&item.value!==null&&Number.isFinite(Number(item.value))&&item.year;
