@@ -3780,7 +3780,10 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  // 기사 '먼저 알아둘 맥락': 본문이 전제하는 지난 사건·협상을 날짜순으로(edition.json stories[].background)
  // 긴 본문을 문장 2개씩 문단으로(숨 쉴 틈). 괄호 출처 뒤 마침표도 문장 끝으로 본다.
- function paras(t,n){t=String(t||"");const ss=t.match(/[^.!?]+(?:\([^)]*\))?[.!?]+["'”’)]*(?:\([^)]*\)\.)?\s*|[^.!?]+$/g)||[t];const out=[];for(let i=0;i<ss.length;i+=n)out.push(ss.slice(i,i+n).join("").trim());return out.filter(Boolean).map(x=>'<p>'+esc(x)+'</p>').join("")}
+ function paras(t,n){t=String(t||"").trim();if(!t)return "";
+  // 문장 끝 = 마침표·물음표·느낌표(+닫는 따옴표·괄호) 뒤 띄어쓰기. 17.1조·U.S.처럼 숫자·약어 속 점에서는 끊지 않는다.
+  const raw=t.split(/(?<=[.!?。]["'”’)\]]*)\s+/),ss=[];for(const x of raw){const prev=ss.at(-1);if(prev&&/(?:\b[A-Z]|\b(?:No|Mr|Dr|St|vs|etc))\.$/.test(prev))ss[ss.length-1]=prev+" "+x;else ss.push(x)}
+  const out=[];for(let i=0;i<ss.length;i+=n)out.push(ss.slice(i,i+n).join(" ").trim());return out.filter(Boolean).map(x=>'<p>'+esc(x)+'</p>').join("")}
  // 기사 맨 위 사진: 연결된 방송사·통신사 영상의 큰 미리보기(누르면 그 자리에서 재생)
  function storyHero(s){const v=(s.videos||[]).find(v=>ytId(v.url));if(!v)return "";const id=ytId(v.url);
   return '<figure class="story-hero"><button type="button" class="vid-play" data-yt="'+esc(id)+'" aria-label="'+esc(v.title)+' 재생"><img src="https://i.ytimg.com/vi/'+esc(id)+'/hqdefault.jpg" alt="" loading="lazy"><i>▶</i></button><figcaption>'+esc(v.channel||"")+' · '+esc(v.title||"")+(v.date?' · '+esc(v.date):"")+'</figcaption></figure>'}
