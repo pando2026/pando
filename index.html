@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="c9a89aad32";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="8e6fb620e0";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1364,6 +1364,7 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .ppp-sum{background:#f3f8f5;border-left:4px solid #1f6f4a;padding:10px 12px;border-radius:6px;font-size:14.5px;line-height:1.6;margin:6px 0 10px}.ppp-sum b{color:#1f6f4a;margin-right:6px}
 .ppp-how{margin:0 0 10px;font-size:13px}.ppp-how summary{cursor:pointer;color:#2c5680;font-weight:700}.ppp-how p{line-height:1.65;margin:6px 0}
 .ppp-card .ppp-plain{font-size:13.5px;line-height:1.6;color:#14222b;margin:6px 0 4px}.ppp-card small{display:block;color:#6b7b84;font-size:11.5px;margin-top:2px}.ppp-card .ppp-kr{color:#33505f;font-weight:600}
+.ind-more{margin:0 0 14px}.ind-more summary{cursor:pointer;font-size:13px;color:#2c5680;font-weight:700;line-height:1.5;padding:6px 0}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -3873,10 +3874,11 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function industryBlock(T){
   const I=T.industry;if(!I||!(I.industries||[]).length)return "";
   return '<h4>주력 산업 <small>무엇을 만들고 무엇으로 먹고사나 · '+esc(I.asOf||"")+' 기준</small></h4>'+(I.summary?'<p class="ind-sum">'+esc(I.summary)+'</p>':"")+
-   '<div class="ind-grid">'+I.industries.map(x=>'<article class="ind-card ind-card--'+esc(x.kind||"")+'"><span class="ind-kind">'+esc(INDK[x.kind]||x.kind||"")+'</span><b>'+esc(x.name)+'</b>'+(x.what?'<p class="ind-what">'+esc(x.what)+'</p>':"")+
+   (()=>{const cardOf=x=>'<article class="ind-card ind-card--'+esc(x.kind||"")+'"><span class="ind-kind">'+esc(INDK[x.kind]||x.kind||"")+'</span><b>'+esc(x.name)+'</b>'+(x.what?'<p class="ind-what">'+esc(x.what)+'</p>':"")+
     (x.scale?'<p class="ind-scale"><span>규모</span> '+esc(x.scale)+'</p>':"")+(x.global?'<p class="ind-global"><span>세계 속</span> '+esc(x.global)+'</p>':"")+
     ((x.companies||[]).length?'<p class="ind-co"><span>대표 기업</span> '+esc(x.companies.join(" · "))+'</p>':"")+(x.korea?'<p class="ind-kr"><span>한국과</span> '+esc(x.korea)+'</p>':"")+(x.trend?'<p class="ind-trend"><span>최근</span> '+esc(x.trend)+'</p>':"")+
-    ((x.sources||[]).length?'<small class="case-src">'+x.sources.slice(0,3).map(z=>sourceLink(z[2],z[0])).join(" · ")+'</small>':"")+'</article>').join("")+'</div>';
+    ((x.sources||[]).length?'<small class="case-src">'+x.sources.slice(0,3).map(z=>sourceLink(z[2],z[0])).join(" · ")+'</small>':"")+'</article>';const L=I.industries,first=L.slice(0,4),rest=L.slice(4);
+    return '<div class="ind-grid">'+first.map(cardOf).join("")+'</div>'+(rest.length?'<details class="ind-more"><summary>나머지 '+rest.length+'개 산업 더 보기 ('+esc(rest.map(x=>x.name).join(" · "))+')</summary><div class="ind-grid">'+rest.map(cardOf).join("")+'</div></details>':"")})();
  }
  function tradeBlock(data){
   const T=data.trade;if(!T||!T.entry)return "";const e=T.entry,k=T.korea,S=e.structure,G=e.goods,H=T.hs2||{},name=namedCountry(data.code);
