@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#ffffff"><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%274%27 fill=%27%23d52832%27/%3E%3Cpath d=%27M0 18 L32 10%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3Cpath d=%27M11 0 L15 32%27 stroke=%27white%27 stroke-width=%272.4%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="ceca2b2320";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="155f604a83";try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(d&&d.b&&d.b!==B){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");var u=new URL(location.href);u.searchParams.set("v",d.b);location.replace(u.toString())}}).catch(function(){})}catch(e){}})();</script><title>판도 · 세계 브리핑</title>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
 :root{--ink:#1d2b2b;--muted:#65736e;--line:#dce3de;--paper:#f5f6f2;--teal:#0b665b;--red:#cb563b;--font:system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
@@ -1954,6 +1954,8 @@ html,body{background:#fff;color:var(--ink)}
    '<div class="vmap-tip" hidden></div><p class="vmap-loading">지도를 그리는 중…</p>';
   const svg=frame.querySelector("svg"),occLayer=svg.querySelector(".vmap-occ"),land=svg.querySelector(".vmap-land"),pinLayer=svg.querySelector(".vmap-pins"),tip=frame.querySelector(".vmap-tip"),nameLayer=svg.querySelector(".vmap-names");
   const focusOpt=options.focus||null,nameOf=options.nameOf||null;
+  // 첫 화면 세계 지도는 좌우로 끝없이 돈다(지구처럼): 땅·점령지·표식을 왼쪽·가운데·오른쪽 세 벌 그리고, 보는 범위를 한 바퀴 안으로 되돌린다.
+  const WRAP=!focusOpt&&options.wrap!==false;const offs=()=>WRAP&&world?[0,world.w,-world.w]:[0];
   let focused=false,scaleNow=1,world=null,items=Array.isArray(options.items)?options.items:[],view=null,home=null;
   const project=(lon,lat)=>{const [x,y]=raw(((lon-(world.lon0||0))%360+540)%360-180,lat);return [world.w/2+x*world.k,(world.top-y)*world.k]};
 
@@ -1964,7 +1966,7 @@ html,body{background:#fff;color:var(--ink)}
    const bx=focusOpt?0:home.x,bw=focusOpt?world.w:home.w,by=focusOpt?0:home.y,bh=focusOpt?world.h:home.h;
    // fully zoomed out: centred; zoomed in: may slide only 10% past the map's edge, so it never flies off screen
    const ax=(p,len,b0,blen)=>len>=blen-.01?b0+(blen-len)/2:Math.min(b0+blen-len*.9,Math.max(b0-len*.1,p));
-   const x=ax(v.x,w,bx,bw),y=ax(v.y,h,by,bh);
+   const W0=world.w,x=WRAP?(((v.x%W0)+W0)%W0):ax(v.x,w,bx,bw),y=WRAP?Math.min(world.h-h*.5,Math.max(-h*.5,v.y)):ax(v.y,h,by,bh);
    view={x,y,w,h};
    svg.setAttribute("viewBox",[x,y,w,h].map(n=>n.toFixed(2)).join(" "));
    const s=w/home.w;scaleNow=w/(frame.clientWidth||w);
@@ -2005,7 +2007,7 @@ html,body{background:#fff;color:var(--ink)}
    }
   }
   function focusPins(){
-   const ps=[...pinLayer.querySelectorAll(".vmap-pin--story")].map(g=>[+g.dataset.x,+g.dataset.y]);
+   const ps=[...pinLayer.querySelectorAll(".vmap-pin--story:not(.vmap-pin--copy)")].map(g=>[+g.dataset.x,+g.dataset.y]);
    if(!ps.length)return;
    const med=arr=>arr.sort((a,b)=>a-b)[Math.floor(arr.length/2)];
    const cx=med(ps.map(p=>p[0])),cy=med(ps.map(p=>p[1]));
@@ -2014,11 +2016,13 @@ html,body{background:#fff;color:var(--ink)}
   }
   function drawLand(){
    const frag=document.createDocumentFragment();
-   for(const c of world.countries){
-    const p=el("path",{d:c.d,class:"vmap-country"+(c.c?" vmap-link":"")});
-    if(c.c){p.dataset.code=c.c;p.dataset.name=c.n}
-    frag.appendChild(p);
-   }
+   for(const off of offs()){const g=el("g",off?{transform:`translate(${off} 0)`,class:"vmap-copy"}:{});
+    for(const c of world.countries){
+     const p=el("path",{d:c.d,class:"vmap-country"+(c.c?" vmap-link":"")});
+     if(c.c){p.dataset.code=c.c;p.dataset.name=c.n}
+     g.appendChild(p);
+    }
+    frag.appendChild(g)}
    land.replaceChildren(frag);
   }
   // Focus mode (story detail): country names so the reader knows where the pin is.
@@ -2059,8 +2063,9 @@ html,body{background:#fff;color:var(--ink)}
     if(!Number.isFinite(lon)||!Number.isFinite(lat)){
      const c=world.countries.find(c=>c.c===it.id);if(!c)continue;lon=c.lon;lat=c.lat;
     }
-    const [x,y]=project(lon,lat);
-    const g=el("g",{class:"vmap-pin vmap-pin--"+it.type,transform:`translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${scaleNow.toFixed(4)})`,tabindex:"0",role:"button","aria-label":(it.label||"")+(it.subtitle?" · "+it.subtitle:"")});
+    const [x0,y]=project(lon,lat);
+    for(const off of offs()){const x=x0+off;
+    const g=el("g",{class:"vmap-pin vmap-pin--"+it.type+(off?" vmap-pin--copy":""),transform:`translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(${scaleNow.toFixed(4)})`,tabindex:"0",role:"button","aria-label":(it.label||"")+(it.subtitle?" · "+it.subtitle:"")});
     g.dataset.type=it.type;g.dataset.id=it.id;g.dataset.x=x.toFixed(1);g.dataset.y=y.toFixed(1);
     if(it.main)g.classList.add("vmap-pin--main");
     if(it.type==="story"){g.appendChild(el("circle",{class:"vmap-halo",r:it.main?"13":"9"}));g.appendChild(el("circle",{class:"vmap-dot",r:"4.5"}))}
@@ -2070,6 +2075,7 @@ html,body{background:#fff;color:var(--ink)}
     if(it.main&&nameOf){try{const pt=new DOMPoint(x,y);const host=[...land.querySelectorAll(".vmap-link")].find(p=>p.isPointInFill&&p.isPointInFill(pt));const nm=host&&nameOf(host.dataset.code);if(nm&&!(it.label||"").includes(nm))t.textContent+=" · "+nm}catch(e){}}
     g.appendChild(t);
     frag.appendChild(g);
+    }
    }
    pinLayer.replaceChildren(frag);
    // Narrow screens open framed on the story cluster, once, so pins are tappable.
@@ -2141,12 +2147,12 @@ html,body{background:#fff;color:var(--ink)}
 
   let occ=[],occOn=true;
   function drawOcc(){const frag=document.createDocumentFragment();
-   if(occOn)for(const o of occ){if(!o.d)continue;const p=el("path",{d:o.d,class:"vmap-occ-area vmap-occ-"+(o.extent==="partial"?"part":"full"),fill:o.extent==="partial"?"url(#occ-part)":"url(#occ-full)"});p.dataset.id=o.id;p.dataset.name=(o.holder||"")+" "+(o.kind||"")+" · "+(o.name||"");frag.appendChild(p)}
+   if(occOn)for(const off of offs()){const g=el("g",off?{transform:`translate(${off} 0)`}:{});for(const o of occ){if(!o.d)continue;const p=el("path",{d:o.d,class:"vmap-occ-area vmap-occ-"+(o.extent==="partial"?"part":"full"),fill:o.extent==="partial"?"url(#occ-part)":"url(#occ-full)"});p.dataset.id=o.id;p.dataset.name=(o.holder||"")+" "+(o.kind||"")+" · "+(o.name||"");g.appendChild(p)}frag.appendChild(g)}
    occLayer.replaceChildren(frag)}
   let bloc=null;
   function paintBloc(){land.querySelectorAll(".vmap-country").forEach(p=>{const r=bloc&&bloc[p.dataset.code];p.classList.toggle("vmap-bloc",r==="member");p.classList.toggle("vmap-bloc-partner",r==="partner")});frame.classList.toggle("vmap-bloc-on",!!bloc)}
   // Which country a point lies in (low-res world shapes; small states may be missed).
-  function countryAt(lon,lat){if(!world)return null;const [x,y]=project(lon,lat);const pt=new DOMPoint(x,y);const hit=[...land.querySelectorAll(".vmap-link")].find(p=>{try{return p.isPointInFill(pt)}catch(e){return false}});return hit?hit.dataset.code:null}
+  function countryAt(lon,lat){if(!world)return null;const [x,y]=project(lon,lat);const pt=new DOMPoint(x,y);const hit=[...land.querySelectorAll(":scope > g:first-child .vmap-link, :scope > .vmap-link")].find(p=>{try{return p.isPointInFill(pt)}catch(e){return false}});return hit?hit.dataset.code:null}
   return {countryAt,setOccupied(list,on){if(Array.isArray(list))occ=list;if(on!==undefined)occOn=!!on;drawOcc()},setItems(next){items=Array.isArray(next)?next:[];drawPins()},setBloc(next){bloc=next||null;if(world)paintBloc()},destroy(){frame.replaceChildren()}};
  }
  global.FrontlineAtlas={mount};
@@ -4538,7 +4544,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  const ON={CN:"중국",JP:"일본",KR:"한국",DE:"독일",FR:"프랑스",IN:"인도",TW:"대만",SG:"싱가포르",ZA:"남아공",CD:"콩고민주공화국",CL:"칠레",MM:"미얀마",LA:"라오스",PH:"필리핀",NL:"네덜란드",BE:"벨기에",SA:"사우디",IQ:"이라크",AE:"UAE",KW:"쿠웨이트",QA:"카타르",OM:"오만",IR:"이란",RU:"러시아",US:"미국",BR:"브라질",NO:"노르웨이",GB:"영국",VE:"베네수엘라",NG:"나이지리아",AO:"앙골라",KZ:"카자흐스탄",MX:"멕시코",CA:"캐나다",LY:"리비아",GY:"가이아나",DZ:"알제리",EG:"이집트",AZ:"아제르바이잔",MY:"말레이시아",ID:"인도네시아",AU:"호주",BN:"브루나이",CO:"콜롬비아",EC:"에콰도르",GA:"가봉",CG:"콩고",GQ:"적도기니",CM:"카메룬",GH:"가나",SD:"수단",YE:"예멘",TT:"트리니다드토바고",AR:"아르헨티나",VN:"베트남",TH:"태국",PE:"페루",OT:"기타"};
  const ORDER=["KR","JP","CN","IN","TW","SG","DE","FR","GB","US"];
  const TIER={official:"당사자 공식",counter:"상대측 공식",press:"언론",research:"연구·통계"};
- const E={data:null,world:null,sel:"KR",loading:null,layers:{crude:true,prod:false,fires:true,ships:true,ports:false},fires:null,ports:null,ais:null};
+ const E={data:null,world:null,sel:"KR",loading:null,layers:{crude:true,prod:false,others:false,fires:true,ships:true,ports:false},fires:null,ports:null,ais:null};
 
  /* ---------- geography: ports, waypoints, sea lanes ---------- */
  const PORT={SA:[50.2,26.6],IQ:[48.8,29.7],KW:[48.2,29.1],QA:[51.6,25.9],IR:[50.3,29.2],AE:[52.6,24.2],OM:[58.6,23.6],
@@ -4658,7 +4664,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
    '<div class="en-chips" role="tablist" aria-label="나라">'+have.map(cc=>{const h=C(cc)&&C(cc).exposure&&C(cc).exposure.hormuz;return '<button type="button" class="en-chip'+(cc===E.sel?' on':'')+'" data-en-cc="'+cc+'" aria-pressed="'+(cc===E.sel)+'"><b>'+esc(CN[cc])+'</b>'+(h&&h.share!=null?'<span>호르무즈 '+num(h.share,0)+'%</span>':C(cc)?'':'<span>경로</span>')+'</button>'}).join("")+'</div>'+
    '<div class="en-grid"><figure class="en-mapbox"><div class="en-mapcap" id="en-mapcap"></div><div id="en-map" class="en-map"></div><button type="button" class="en-zoom" data-en-zoom aria-pressed="false">이 나라 경로 가까이 보기</button><figcaption><span><i class="en-legimp"></i>누르면 고를 수 있는 나라</span><span><i class="en-legorig"></i>고른 나라의 원산지</span><span><i class="en-l h"></i>호르무즈 경유</span><span><i class="en-l r"></i>홍해·수에즈 경유</span><span><i class="en-l o"></i>그 밖의 바닷길</span><span><i class="en-l s"></i>제재 원유(신고 기준)</span><span><i class="en-l pl"></i>송유관</span><span><i class="en-l rl"></i>철도</span><span><i class="en-hk">◆</i>선박 간 환적</span><span><i class="en-hk t">■</i>환적·저장 터미널</span><span><i class="en-l uq"></i>경로 불분명</span><span class="en-wleg" id="en-wleg"></span><em>경로·환적지를 누르면 근거</em></figcaption></figure><div class="en-route" id="en-route" aria-live="polite" hidden></div><div class="en-route en-sat" id="en-sat" aria-live="polite" hidden></div>'+
    '<aside class="en-card" id="en-card" aria-live="polite"></aside></div>'+
-   '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["fires","위성 화재 감지"],["ships","유조선 위치(AIS)"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
+   '<div class="en-layers" role="group" aria-label="지도에 보일 것">'+[["crude","원유 수입"],["prod","석유제품 수출"],["others","다른 나라 경로도 흐리게"],["fires","위성 화재 감지"],["ships","유조선 위치(AIS)"],["ports","석유 항구 실시간"]].map(([k,l])=>'<label><input type="checkbox" data-en-layer="'+k+'"'+(E.layers[k]?' checked':'')+'> '+l+'</label>').join("")+'</div>'+
    '<div class="en-live" id="en-live"></div>'+
    '<div class="en-compare" id="en-compare"></div><div class="en-prices" id="en-prices"></div>';
   drawMap();card();compare();prices();loadLiveLayers();
@@ -4723,12 +4729,13 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  function routeLayer(k){
   const r=RT();if(!r)return "";
   const mine=new Set();for(const c of r.corridors)if(c.buyer===E.sel)[...(c.via||[]),...(c.alt||[])].forEach(v=>mine.add(v));
-  const used=new Set();for(const f of flows())if(f.corr)(f.corr.via||[]).forEach(v=>used.add(v));
+  const used=new Set();for(const f of flows())if(f.corr&&(f.cc===E.sel||E.layers.others))(f.corr.via||[]).forEach(v=>used.add(v));
   let g='<g class="en-routes">';
   for(const sg of r.segments){
    const KN0={sea:"바닷길",pipeline:"송유관",rail:"철도",sts:"선박 간 환적"},rtip=(KN0[sg.kind]||"")+' · '+sg.name+(sg.from||sg.to?' · '+[sg.from,sg.to].filter(Boolean).join(' → '):'')+(sg.status?' · '+sg.status:'')+(sg.capacity?' · '+sg.capacity:'')+' · 눌러서 자세히';
    if(sg.kind==="sea"&&used.has(sg.id)){g+='<path class="en-hit" data-rt="'+esc(sg.id)+'" data-tip="'+esc(rtip)+'" d="'+smooth(sg.path.map(p=>P(p[0],p[1])))+'"></path>';continue}   // 물량 선이 이미 그 바닷길을 그린다
    const on=mine.has(sg.id)||(sg.users||[]).includes(E.sel);
+   if(!on&&!E.layers.others)continue;   // 기본은 고른 나라의 길만(다른 나라 경로는 아래 '다른 나라 경로' 켜면)
    const st=/중단/.test(sg.status||"")?" stop":/차질|제한|일부/.test(sg.status||"")?" part":"";
    const pts=sg.path.map(p=>P(p[0],p[1]));
    g+='<path class="en-rt k-'+esc(sg.kind)+st+(sg.certainty==="불분명"?" uq":"")+(on?" on":"")+'" data-rt="'+esc(sg.id)+'" data-tip="'+esc(rtip)+'" d="'+smooth(pts)+'"></path><path class="en-hit" data-rt="'+esc(sg.id)+'" data-tip="'+esc(rtip)+'" d="'+smooth(pts)+'"></path>';
@@ -4926,7 +4933,7 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const F=flows(),maxV=Math.max(0.1,...F.map(f=>f.vol||0));E.FL=[];E.PF=[];
   const origSet=new Set(E.layers.crude?F.filter(f=>f.cc===E.sel).map(f=>f.o):[]);if(E.layers.crude&&!origSet.size&&RT())RT().corridors.filter(c=>c.buyer===E.sel).forEach(c=>origSet.add(c.origin));const prodLabs=[];
   let g='<svg viewBox="'+vb.map(v=>v.toFixed(1)).join(" ")+'" role="img" aria-label="원유 수입 바닷길 지도"><g id="en-all"><g class="en-land">'+w.countries.map(c=>'<path d="'+c.d+'"'+(ORDER.includes(c.c)?' class="imp'+(c.c===E.sel?' sel':'')+(origSet.has(c.c)?' orig':'')+'" data-en-cc="'+c.c+'"':origSet.has(c.c)?' class="orig"':'')+'/>').join("")+'</g><g class="en-flows">';
-  const ord=F.slice().sort((a,b)=>(a.cc===E.sel)-(b.cc===E.sel)||(a.vol||0)-(b.vol||0));
+  const ord=F.filter(f=>f.cc===E.sel||E.layers.others).sort((a,b)=>(a.cc===E.sel)-(b.cc===E.sel)||(a.vol||0)-(b.vol||0));
   for(const f of (E.layers.crude?ord:[])){
    const kind=f.sanc?"s":f.via.includes("hormuz")?"h":f.via.includes("bab")||f.via.includes("suez")?"r":"o";
    const wpx=0.5+3.6*Math.sqrt((f.vol||maxV*f.share/100*0.3)/maxV);
