@@ -1,5 +1,5 @@
 {
- "asOf": "2026-10-29",
+ "asOf": "2026-10-30",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -2165,6 +2165,160 @@
      "Gazeta.uz",
      "Senate of Uzbekistan approves law on 2026 state budget(상원, 2026 국가예산법 승인) · 2025-12-18",
      "https://www.gazeta.uz/en/2025/12/18/budget-2026-uzbekistan/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MG": {
+   "fiscalYear": "2026",
+   "status": "추경 반영",
+   "scope": "수정재정법(2026-07-16 공포) 일반예산 — 국가부채 이자(국내 + 대외), 회계 이체 제외",
+   "interest": {
+    "value": 980.4,
+    "unit": "십억 아리아리",
+    "label": "부채 이자(국내 645.7 + 대외 334.7)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 17450.4,
+    "unit": "십억 아리아리",
+    "label": "일반예산 총지출(회계 이체 3,186.0 제외)"
+   },
+   "share": 5.6,
+   "note": "이자는 본예산(2025-12)과 같고 수정 예산에서 바뀌지 않았다. 대외 채무 원금 상환 1,244.4와 국채 상환 2,095.4는 이 금액에 넣지 않았다. 상반기(6월 말) 이자 지급은 447.3(연간의 45.6%)이다. 법의 지출 한도 20,636.4(회계 이체 포함) 기준이면 비중은 4.8%다.",
+   "sources": [
+    [
+     "마다가스카르 국가입법위원회(CNLegis, 법령 공개 사이트)",
+     "Loi n° 2026-004 portant Loi de Finances Rectificative pour 2026 (2026년 수정재정법 제2026-004호, 설명서·세출표 포함) · 2026-07-16",
+     "https://cnlegis.gov.mg/uploads/L2026-004-VF.pdf"
+    ],
+    [
+     "마다가스카르 경제재정부(MEF)",
+     "Revue de Milieu d'Année 2026 (2026 중간 점검 보고서, 상반기 집행 실적) · 2026-08-14",
+     "https://www.dgbf.mg/storage/documentBudgetaire/attachment/20260814-rma-1787660923.pdf"
+    ],
+    [
+     "국제통화기금(IMF)",
+     "IMF Executive Board Completes the Combined Third and Fourth Reviews Under the ECF and RSF Arrangements with Madagascar (IMF 이사회, 마다가스카르 확대신용·회복력지속가능성 제3·4차 점검 완료) · 2026-09-30",
+     "https://www.imf.org/en/news/articles/2026/09/30/pr26312-republic-of-madagascar"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MY": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "연방정부 채무 이자·수익 지급(DSC, 원금 상환 제외) — 운영지출 중 항목",
+   "interest": {
+    "value": 61.013,
+    "unit": "십억 링깃",
+    "label": "채무 이자·수익 지급(DSC)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 376.84,
+    "unit": "십억 링깃",
+    "label": "운영지출(OE)"
+   },
+   "share": 16.2,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 57.3,
+    "unit": "십억 링깃"
+   },
+   "note": "재무부는 2027 채무 이자가 운영지출의 16.2%(연방정부 총지출 4,598.4억 링깃 대비 13.3%)이고 국내 채무가 98.4%라고 밝혔다. 2026 값은 수정 추정치(573억 링깃)이며 2027 예산안은 10월 29일 하원 정책 단계를 통과했고 위원회 단계가 남아 있다.",
+   "sources": [
+    [
+     "재무부(Ministry of Finance Malaysia)",
+     "Fiscal Outlook and Federal Government Revenue Estimates 2027(2027 재정 전망 및 연방정부 세입 추정) · 2026-10-09",
+     "https://belanjawan.mof.gov.my/pdf/belanjawan2027/revenue/fiscal_outlook_2027.pdf"
+    ],
+    [
+     "The Vibes",
+     "Debt servicing bill hits RM57.3b as Malaysia's federal debt climbs to RM1.38 trillion: MOF(채무 이자 573억 링깃, 연방 채무 1.38조 링깃) · 2026-10-10",
+     "https://www.thevibes.com/articles/news/128170/debt-servicing-bill-hits-rm57.3b-as-malaysias-federal-debt-climbs-to-rm1.38-trillion-mof"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MZ": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가예산 부채 비용(encargos da dívida, 시민사회 FMO 분석 기준)",
+   "interest": {
+    "value": 50.261,
+    "unit": "십억 메티칼",
+    "label": "부채 비용(이자 포함)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 496.6,
+    "unit": "십억 메티칼",
+    "label": "총지출(FMO 집계)"
+   },
+   "share": 10.1,
+   "note": "원금 상환 486.75억 메티칼은 별도이며 이 금액에 들어 있지 않다. 비율은 FMO가 쓴 총지출 4,966억 기준이고, 정부 발표 총 재원은 5,111.62억 메티칼이다. 2026년 정부안의 이자는 676억 메티칼(상환 총액 1,227억)이었다.",
+   "sources": [
+    [
+     "O Económico(시민사회 예산감시포럼 FMO 분석 보도)",
+     "Serviço da dívida supera investimento público em 24% no PESOE 2027 (PESOE 2027에서 부채 상환이 공공투자를 24% 웃돈다) · 2026-10-01",
+     "https://www.oeconomico.com/servico-da-divida-supera-investimento-publico-em-24-no-pesoe-2027/"
+    ],
+    [
+     "AIM(모잠비크 통신)",
+     "Governo prevê receitas de 427,8 mil milhões de meticais e inflação de 7% em 2027 (정부, 2027년 수입 4,278억 메티칼·물가 7% 전망) · 2026-10-13",
+     "https://aimnews.org/2026/10/13/governo-preve-receitas-de-4278-mil-milhoes-de-meticais-e-inflacao-de-7-em-2027/"
+    ],
+    [
+     "Club of Mozambique",
+     "Mozambique: Government expects to spend 7.4% GDP on debt servicing in 2026 (정부, 2026년 부채 상환에 GDP 7.4% 지출 전망) · 2025-11-04",
+     "https://clubofmozambique.com/news/mozambique-government-expects-to-spend-7-4-gdp-on-debt-servicing-in-2026/"
+    ]
+   ],
+   "tier": "research"
+  },
+  "PE": {
+   "fiscalYear": "2027",
+   "status": "추정",
+   "scope": "비금융공공부문(SPNF) 이자 지출 — 정부 재정 전망(MMM 2027-2030)",
+   "interest": {
+    "value": 236.85,
+    "unit": "억 솔",
+    "label": "비금융공공부문 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 2960.49,
+    "unit": "억 솔",
+    "label": "비금융 지출 2,723.64억 + 이자(판도 계산)"
+   },
+   "share": 8.0,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 212.72,
+    "unit": "억 솔"
+   },
+   "note": "이자는 GDP의 1.7%(2026년 1.6%)로 MEF 다년 거시경제 틀을 옮긴 재정위원회 표 수치다. 예산법안의 '공공부채 서비스'는 312.21억 솔(총지출 2,665.06억 솔의 11.7%)로 원금 상환을 포함하며 이자만 따로 나눈 표는 확인하지 못했다. 비중은 같은 표의 일반정부 비금융 지출에 이자를 더해 판도가 계산했다.",
+   "sources": [
+    [
+     "재정위원회(Consejo Fiscal)",
+     "Informe N° 04-2026-CF: Opinión sobre el proyecto de Marco Macroeconómico Multianual 2027-2030(2027-2030 다년 거시경제 틀 초안에 대한 의견), 부록 2 · 2026-08",
+     "https://cf.gob.pe/wp-content/uploads/2026/08/Informe-sobre-MMM-27-30-vf.pdf"
+    ],
+    [
+     "페루 경제재무부(MEF)",
+     "Ley de Presupuesto del Sector Público para el Año Fiscal 2027, proyecto(2027 회계연도 공공부문 예산법안 본문) · 2026-08",
+     "https://www.mef.gob.pe/contenidos/presu_publ/sectr_publ/proy_2027/PL_Presupuesto_SP_2027.pdf"
+    ],
+    [
+     "페루 경제재무부(MEF)",
+     "Proyecto de Ley de Presupuesto 2027, Anexo 1 · 범주·지출성격별 배분(2027 예산안 부록 1) · 2026-08-27",
+     "https://www.mef.gob.pe/contenidos/presu_publ/sectr_publ/proy_2027/Anexos/Anexo_1.pdf"
+    ],
+    [
+     "페루 경제재무부(MEF)",
+     "Exposición de Motivos, Ley de Endeudamiento del Sector Público 2027(2027 공공부문 차입법 제안 설명서) · 2026-08",
+     "https://www.mef.gob.pe/contenidos/presu_publ/sectr_publ/proy_2027/EM_PL_Endeudamiento_2027.pdf"
     ]
    ],
    "tier": "official"
