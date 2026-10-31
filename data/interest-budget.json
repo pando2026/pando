@@ -1,5 +1,5 @@
 {
- "asOf": "2026-10-30",
+ "asOf": "2026-10-31",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -2319,6 +2319,175 @@
      "페루 경제재무부(MEF)",
      "Exposición de Motivos, Ley de Endeudamiento del Sector Público 2027(2027 공공부문 차입법 제안 설명서) · 2026-08",
      "https://www.mef.gob.pe/contenidos/presu_publ/sectr_publ/proy_2027/EM_PL_Endeudamiento_2027.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "CI": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가 예산 전체의 채무 이자·수수료(charges financières de la dette publique: 이자·수수료·커미션)",
+   "interest": {
+    "value": 1893.7,
+    "unit": "십억 FCFA",
+    "label": "채무 이자·수수료(국내 부채 841.1 + 대외 부채 1,052.6)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 18466.1,
+    "unit": "십억 FCFA",
+    "label": "국가 예산 총액(원금 상환 4,692.5 포함)"
+   },
+   "share": 10.3,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 1757.9,
+    "unit": "십억 FCFA"
+   },
+   "note": "이자·수수료는 원금 상환(4,692.5십억 FCFA)과 따로 적혀 있고 여기에는 포함하지 않았다. 점유율은 같은 문서의 총액 18,466.1 대비 계산했다. 2026년 6월 말까지 실제 지급은 835.1십억으로 계획(827.1)을 조금 웃돌았다(재무부 연중 점검). IMF 직원 보고서의 이자 지출(GDP 대비) 정의는 이와 달라 직접 비교하지 않는다.",
+   "sources": [
+    [
+     "코트디부아르 경제재정예산부 예산총국(DGBF)",
+     "Annexe 3 – DPBEP 2027-2029, 표 40·표 43 및 IV.3.4절(부속서 3: 2027 정부안 지출·기능별 분석; 2026-09 게재)",
+     "https://www.dgbf.ci/wp-content/uploads/2026/09/Annexe-3-DPBEP-2027-2029.pdf"
+    ],
+    [
+     "코트디부아르 경제재정예산부 예산총국(DGBF)",
+     "Rapport de présentation du DPBEP 2027-2029(2027~2029 다년 예산·경제 프로그래밍 문서 보고서; 2026-06-03 각료회의 채택, 2026-09 게재)",
+     "https://www.dgbf.ci/wp-content/uploads/2026/09/Rapport-de-Presentation-du-DPBEP-2027-2029.pdf"
+    ],
+    [
+     "코트디부아르 경제재정예산부 예산총국(DGBF)",
+     "Loi de finances n° 2025-987 du 19 décembre 2025 portant budget de l'État pour 2026(2026년 예산법) · 2025-12-19",
+     "https://www.dgbf.ci/wp-content/uploads/2025/12/Loi-de-Finances-2026.pdf"
+    ],
+    [
+     "코트디부아르 경제재정예산부",
+     "Revue de milieu d'année 2026(2026 연중 점검: 6월 말 기준 상반기 집행; 2026-09 게재) 표 15·19·26·27",
+     "https://www.dgbf.ci/wp-content/uploads/2026/09/Revue_de_Milieu_Annee_2026.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "NP": {
+   "fiscalYear": "2083/84",
+   "status": "확정 예산",
+   "scope": "연방정부 총지출(채무 원금 상환·주·지방 이전 포함)",
+   "interest": {
+    "value": 9979.5,
+    "unit": "크로르 루피",
+    "label": "국내채 이자 8,225.00 + 외채 이자 1,754.50"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 212434.44,
+    "unit": "크로르 루피",
+    "label": "총지출(원금 상환·금융거래 포함)"
+   },
+   "share": 4.7,
+   "prev": {
+    "fiscalYear": "2082/83(개정 추정)",
+    "value": 10546.59,
+    "unit": "크로르 루피"
+   },
+   "note": "예산 연설 부록 7의 지출 코드 24000 '이자·수수료·은행 수수료'는 외채 이자(24111) 1,754.50과 국내채 이자(24211) 8,225.00을 합한 9,979.50크로르다(약 99.8십억 루피). 원금 상환 31,809.20크로르(국내 24,589.00·외채 7,220.20)는 이 금액에 포함되지 않고 부록 6의 '원금·이자 지급' 41,788.70에는 합쳐져 있다. 2081/82 결산은 7,044.86크로르다. 공공부채관리청 보고로 올해 첫 3개월(아소즈월 말까지) 실제 이자 지급은 21.13십억 루피(국내 17.63·외채 3.49)다.",
+   "sources": [
+    [
+     "네팔 재무부(Ministry of Finance) — 연설 원문 PDF(시민단체 jawabdehi.org 게시본)",
+     "आर्थिक वर्ष २०८३/८४ को बजेट वक्तव्य, 부록 7 '지출 항목별 지출 추정' 24000·24100·24200 · 2026-05-29",
+     "https://jawabdehi.org/budget-speech-2083.pdf"
+    ],
+    [
+     "पर्दाफास(Pardafas)",
+     "सार्वजनिक ऋण ३० खर्ब नाघ्यो, तीन महिनामै १ खर्ब २३ अर्ब ऋण परिचालन(공공부채 3,000십억 루피 돌파, 3개월 만에 123십억 차입) · 2026-10-30",
+     "https://www.pardafas.com/2026/10/30/193355/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "CM": {
+   "fiscalYear": "2026(2026.1~12)",
+   "status": "확정 예산",
+   "scope": "일반예산 이자·수수료(원금 상환 제외), 특별 배정 계정 제외",
+   "interest": {
+    "value": 532.5,
+    "unit": "십억 CFA프랑",
+    "label": "이자·수수료"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 6210.5,
+    "unit": "십억 CFA프랑",
+    "label": "원금 상환 제외 총지출"
+   },
+   "share": 8.6,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 431.0,
+    "unit": "십억 CFA프랑"
+   },
+   "note": "2026 재정법 해설서는 이자를 5,325억 CFA프랑으로 적고 전년보다 1,015억(+23.5%) 늘었다고 밝혔다. 2025년 값은 이 두 수에서 거꾸로 계산했다. 2027 예산 방향 토론 자료(DPEB)는 2026년 이자 추정치를 5,524억, 2027년 전망을 6,053억으로 적었고 집행표의 법 배정 항목은 3,791억으로 분류가 달라 해설서 수치를 썼다.",
+   "sources": [
+    [
+     "카메룬 재무부 예산총국(DGB)",
+     "Exposé des motifs de la loi de finances 2026(2026 재정법 제안 이유서) · 2025-12",
+     "https://www.dgb.cm/wp-content/uploads/2025/12/Expose-des-Motifs_LF-2026_fr.pdf"
+    ],
+    [
+     "카메룬 대통령실(PRC)",
+     "Law N°2025/012 of 17 December 2025 to lay down the Finance Law of the Republic of Cameroon for the 2026 financial year(2026 재정법, 2025-12-17) · 2025-12-17",
+     "https://www.prc.cm/en/multimedia/documents/10555-law-n-2025-012-of-17-12-2025"
+    ],
+    [
+     "카메룬 재무부 예산총국(DGB)",
+     "Débat d'orientation budgétaire 2027-2029(2027~2029 예산 방향 토론 자료) · 2026-06-24",
+     "https://www.dgb.cm/wp-content/uploads/2026/07/DPEB-2027_2029_24-06-2026-13h50_Fr.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "LK": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 이자 지출(예산 연설 부록 I·예산 추정서)",
+   "interest": {
+    "value": 2617.26,
+    "unit": "십억 루피",
+    "label": "국내채 이자 1조 7,820억 + 외채 이자 3,313억 + 국채·재정증권 할인액 5,040억"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 7057,
+    "unit": "십억 루피",
+    "label": "총지출(원금 상환 제외)"
+   },
+   "share": 37.1,
+   "prev": {
+    "fiscalYear": "2025 수정",
+    "value": 2650,
+    "unit": "십억 루피"
+   },
+   "note": "원금 상환 1조 8,777억 루피는 이자에 넣지 않았다. 2025-12 사이클론 복구 추경 5,000억으로 총지출이 7조 5,570억이 되면 비중은 34.6%다. 예산 추정서는 2025 수정치를 2조 9,500억으로 적어 연설 부록(2조 6,500억)과 다르다. 베리테 리서치는 2026년 이자가 세입의 49.2%라고 분석했다.",
+   "sources": [
+    [
+     "스리랑카 재무·계획·경제개발부(Ministry of Finance, Planning and Economic Development)",
+     "Budget Speech 2026(2026 예산 연설) · 2025-11-07",
+     "https://www.treasury.gov.lk/api/file/6dcc7475-cdf4-4c15-b167-0767ae17330b"
+    ],
+    [
+     "스리랑카 재무·계획·경제개발부(Ministry of Finance, Planning and Economic Development)",
+     "Key Expenditure Components of the Budget Estimates 2026(2026 예산 추정 부처별 주요 지출 항목) · 2025-09",
+     "https://www.treasury.gov.lk/api/file/356c4336-bf8f-4bc6-abde-81306d96d055"
+    ],
+    [
+     "Verité Research",
+     "State of the Budget 2026(2026 예산 평가 보고서) · 2026-01",
+     "https://www.veriteresearch.org/wp-content/uploads/2026/02/20260217_VeriteResearch_StateOfTheBudget2026.pdf"
+    ],
+    [
+     "Verité Research(PublicFinance.lk)",
+     "Budget 2026: LKR 500 Bn Supplementary Allocation for Cyclone Ditwah Recovery Narrows Fiscal Space(2026 예산: 디트와 복구 5,000억 루피 추경이 재정 여력을 줄인다) · 2026-01-12",
+     "https://publicfinance.lk/en/topics/budget-2026-lkr-500-billion-relief-bill-shrinks-fiscal-space-1766561006"
     ]
    ],
    "tier": "official"
