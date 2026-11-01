@@ -1,5 +1,5 @@
 {
- "asOf": "2026-10-31",
+ "asOf": "2026-11-01",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -2491,6 +2491,185 @@
     ]
    ],
    "tier": "official"
+  },
+  "KZ": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "공화국예산 지출(예산대출·금융자산 취득 제외)",
+   "interest": {
+    "value": 3.56,
+    "unit": "조 텡게",
+    "label": "정부채무 서비스(Үкіметтік борышқа қызмет көрсету)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 29.02,
+    "unit": "조 텡게",
+    "label": "공화국예산 지출(шығындар)"
+   },
+   "share": 12.3,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 3.47,
+    "unit": "조 텡게"
+   },
+   "note": "2027–2029 예산법안 부속서 1의 기능 그룹 14 '채무 서비스'(사업 013)이며 이자와 부대 비용이다. 원금 상환은 재원조달 항목으로 따로 잡는다. 2026년 값은 2025년 12월 서명된 예산법 원안으로, 같은 법의 2027년 전망치(4.19조)보다 낮아졌다. 2026년 1~9월 통합예산 기준 이자 지출은 2.8조 텡게다. 법안은 2026년 10월 14일 쿠릴타이 제1독회를 통과했다.",
+   "sources": [
+    [
+     "카자흐스탄 재무부(공개 법령 포털 Открытые НПА)",
+     "Проект Закона «О республиканском бюджете на 2027–2029 годы», приложение 1(2027–2029 공화국예산법 정부안, 부속서 1: 기능 그룹별 지출) · 2026-08-31",
+     "https://legalacts.egov.kz/application/downloadconceptfile?id=15900738"
+    ],
+    [
+     "Zakon.kz",
+     "Расходы на обслуживание госдолга Казахстана разъяснили в МНЭ(카자흐스탄 국채 서비스 지출을 국민경제부가 설명) · 2026-09-17",
+     "https://www.zakon.kz/finansy/6531787-raskhody-na-obsluzhivanie-gosdolga-kazakhstana-razyasnili-v-mne.html"
+    ],
+    [
+     "카자흐스탄 법령 데이터베이스(Zakon.uchet.kz)",
+     "Закон «О республиканском бюджете на 2026 – 2028 годы» № 239-VIII, приложение 1(2026–2028 공화국예산법, 부속서 1) · 2025-12",
+     "https://zakon.uchet.kz/rus/docs/Z2500000239"
+    ],
+    [
+     "BES.media",
+     "Бюджет Казахстана ушёл в минус на 3,1 трлн тенге к началу октября(카자흐스탄 예산, 10월 초 3.1조 텡게 적자) · 2026-10-12",
+     "https://bes.media/amp/byudzhet-kazahstana-ushel-v-minus-na-2-1-trln-tenge-k-nachalu-oktyabrya/"
+    ],
+    [
+     "NUR.KZ",
+     "Куда намерены потратить большую часть бюджета Казахстана в следующем году, озвучили в Минфине(내년 예산 대부분을 어디에 쓰는지 재무부가 밝혔다) · 2026-10-14",
+     "https://www.nur.kz/nurfin/economy/2442469-kuda-namereny-potratit-bolshuyu-chast-byudzheta-kazahstana-v-sleduyushchem-godu-ozvuchili-v-minfine/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MW": {
+   "fiscalYear": "2026/27(2026.4~2027.3)",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출(공공부채 이자, 경상+개발)",
+   "interest": {
+    "value": 2792.67,
+    "unit": "십억 콰차",
+    "label": "공공부채 이자(국내 2,728.21 · 대외 64.47)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 10978.49,
+    "unit": "십억 콰차",
+    "label": "총지출"
+   },
+   "share": 25.4,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 2332.2,
+    "unit": "십억 콰차"
+   },
+   "note": "국회가 2026-03-24 통과시킨 승인 예산서 기준이며, 원금 상환은 이 금액에 들어 있지 않다. 전년 값은 2025/26 연말 추정치이고, 재무장관 연설은 중간 개정치 2조 2,715억(2,271.5십억)과 견줘 22.9% 늘었다고 밝혔다. 이자는 국내 채무 이자가 97.7%이며 국내 세입의 43.3%에 해당한다. 중앙은행 자료로는 2026년 7월 한 달 이자 지급이 2,143억 콰차였다.",
+   "sources": [
+    [
+     "말라위 재무·경제계획·분권화부",
+     "Budget Document No. 3: Approved 2026/27 Financial Statement (예산서 3호: 2026/27 승인 재정 성명서) · 2026-06 게시",
+     "https://www.finance.gov.mw/documents/uploads/2026-06/Doc%203_%202026-27%20Approved%20Financial%20Statement.pdf"
+    ],
+    [
+     "말라위 재무·경제계획·분권화부",
+     "The 2026-27 Budget Policy Statement (2026-27 예산 정책 성명, 의회 연설문) · 2026-02-27",
+     "https://www.finance.gov.mw/documents/uploads/2026-03/Doc%201_2026-27%20Budget%20Policy%20Statement_0.pdf"
+    ],
+    [
+     "Nation Online",
+     "Treasury slips back into K211 billion fiscal deficit (재무부, 7월 2,110억 콰차 재정적자로 되돌아가) · 2026-09-15",
+     "https://mwnation.com/treasury-slips-back-into-k211-billion-fiscal-deficit/"
+    ],
+    [
+     "Center for Investigative Journalism Malawi",
+     "Malawi’s debt trap swallows budget recovery (말라위의 부채 함정이 예산 회복 계획을 삼킨다) · 2026-02-27",
+     "https://www.investigative-malawi.org/2963/malawi-budbet-2026-2027/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "TD": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가 일반예산(중앙정부) 지출",
+   "interest": {
+    "value": 125.5,
+    "unit": "십억 CFA프랑",
+    "label": "부채 금융비용(charges financières de la dette)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 2531.5,
+    "unit": "십억 CFA프랑",
+    "label": "총지출"
+   },
+   "share": 5.0,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 149,
+    "unit": "십억 CFA프랑"
+   },
+   "note": "2026 재정법 지출 2조 5,315억 CFA프랑 중 금융비용이 1,255억으로 전년보다 16% 줄었다. 전년 값 1,490억은 법안 단계 보도 기준이며, 법안 단계의 이자 1,450억(국내 1,140억·대외 310억) 수치는 최종안에서 바뀌었다.",
+   "sources": [
+    [
+     "알위하 인포(Alwihda Info)",
+     "Tchad : Budget 2026, recettes en baisse, dépenses en hausse, déficit à financer(차드: 2026 예산, 세입 감소·지출 증가, 적자 조달 과제) · 2025-12",
+     "https://www.alwihdainfo.com/tchad-budget-2026-recettes-en-baisse-depenses-en-hausse-deficit-a-financer-a146732/"
+    ],
+    [
+     "에코마탱(EcoMatin)",
+     "Recettes, dépenses, dette, salaires… : les grandes lignes du budget 2026 du Tchad(세입·지출·부채·급여: 차드 2026 예산의 큰 줄기) · 2025-12-09",
+     "https://ecomatin.net/recettes-depenses-dette-salaires-les-grandes-lignes-du-budget-2026-du-tchad"
+    ],
+    [
+     "르 페이 차드(Journal Le Pays)",
+     "Un million de FCFA pour comprendre les milliards du Tchad(수십억 CFA프랑을 이해하기 위한 100만 CFA프랑) · 2026-10-26",
+     "https://www.lepaystchad.com/un-million-de-fcfa-pour-comprendre-les-milliards-du-tchad/"
+    ]
+   ],
+   "tier": "press"
+  },
+  "ZM": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 2026 예산 — 국내 채무 이자만(외채 상환 K21.7십억은 원금 포함이라 제외)",
+   "interest": {
+    "value": 52.0,
+    "unit": "십억 콰차",
+    "label": "국내 채무 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 253.1,
+    "unit": "십억 콰차",
+    "label": "총지출"
+   },
+   "share": 20.6,
+   "note": "PwC·EY·ZICA는 2026 예산에 국내 채무 이자 K52.0십억이 잡혔다고 적었고 ZICA는 이것이 총지출의 20.6%라고 계산했다. 외채 상환 K21.7십억은 이자와 원금이 섞여 있어 뺐다. 상반기 실제 이자 지급(국내·대외)은 K27.3십억으로 목표 K26.5십억보다 3.1% 많았다(ZIPAR·유니세프). 2027년 예산은 11월 6일 제출 예정이다.",
+   "sources": [
+    [
+     "PwC Zambia",
+     "Zambia 2026 National Budget Bulletin: Getting back on track (2026 국가예산 소식지) · 2025-09",
+     "https://www.pwc.com/zm/en/assets/pdf/zambia-2026-national-budget-bulletin.pdf"
+    ],
+    [
+     "EY Zambia",
+     "2026 National Budget Analysis (2026 국가예산 분석) · 2025-09",
+     "https://www.ey.com/content/dam/ey-unified-site/ey-com/en-zm/documents/ey-zm-budget-economic-overview.pdf"
+    ],
+    [
+     "잠비아 공인회계사협회(ZICA)",
+     "Comments on the Budget Estimates for the 2026 Fiscal Year (2026 회계연도 예산 추정안에 대한 의견) · 2025-10",
+     "https://www.zica.co.zm/wp-content/uploads/2025/10/Comments-on-the-Budget-Estimates-for-the-2026-Fiscal-Year.pdf"
+    ],
+    [
+     "ZIPAR·유니세프 잠비아",
+     "2026 Mid-Year Budget Performance Analysis (2026 상반기 예산 집행 분석) · 2026-08-28",
+     "https://www.unicef.org/zambia/media/9741/file/2026%20Mid-Year%20Budget%20Performance%20Analysis.pdf.pdf"
+    ]
+   ],
+   "tier": "research"
   }
  }
 }
