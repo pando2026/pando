@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050607"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2040%2040%27%3E%3Crect%20width=%2740%27%20height=%2740%27%20rx=%277%27%20fill=%27%23050607%27/%3E%3Ccircle%20cx=%2720%27%20cy=%2720%27%20r=%2712.5%27%20fill=%27none%27%20stroke=%27%23e9edf0%27%20stroke-width=%272%27/%3E%3Cellipse%20cx=%2720%27%20cy=%2720%27%20rx=%275.5%27%20ry=%2712.5%27%20fill=%27none%27%20stroke=%27%23e9edf0%27%20stroke-width=%271.3%27%20opacity=%27.6%27/%3E%3Cpath%20d=%27M7.5%2020h25%27%20stroke=%27%23e9edf0%27%20stroke-width=%271.3%27%20opacity=%27.6%27/%3E%3Cpath%20d=%27M20%202v5M20%2033v5M2%2020h5M33%2020h5%27%20stroke=%27%23ff2a36%27%20stroke-width=%272.6%27/%3E%3Ccircle%20cx=%2720%27%20cy=%2720%27%20r=%272.8%27%20fill=%27%23ff2a36%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="b0f63af17f";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="48f30e1fd6";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <script>(function(){var d=document.documentElement,t=null,s=null;try{t=localStorage.getItem("pando.theme");s=sessionStorage.getItem("pando.intro")}catch(e){}if(t!=="light")d.classList.add("noir");var q=location.search,force=/[?&]intro=1/.test(q);var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(force||(!s&&!rm&&!navigator.webdriver&&!/=/.test(location.hash)))d.classList.add("pd-intro-on")})();</script>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
@@ -1408,10 +1408,16 @@ i.tie-kind,.tie-chips i{background:#7a8a95}
 .brief-card .clamp-toggle{align-self:flex-start}
 /* 카드 자체가 버튼이라 그 안에는 버튼을 둘 수 없다: 줄 수만 자르고, 누르면 기사 전문이 열린다 */
 .story-card>p{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
-.story-card .story-bottom>span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.story-card .story-bottom>span{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;min-width:0;flex:1 1 auto}
+.story-card .story-bottom>b{flex:none;white-space:nowrap}
 .story-card .meta-line>span{line-height:1.45;max-height:2.9em;overflow:hidden}
 .story-card .meta-line>span:first-child{flex:0 1 auto;max-width:42%;min-width:6em}
 .story-card .meta-line>.status{flex:1 1 0;min-width:0}
+
+/* 지도 범례: 좁은 화면에서 낱말이 세로로 쪼개지지 않게 줄바꿈 */
+.map-legend{flex-wrap:wrap;white-space:nowrap;row-gap:6px}
+/* 인물·주체 머리줄: 긴 배지 때문에 이름이 세로로 쪼개지지 않게(이름 먼저, 배지는 다음 줄로) */
+.entry-head{flex-wrap:wrap;row-gap:4px}.entry-head strong{flex:0 1 auto;min-width:min(6em,100%)}.entry-head .badge{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere}.actor-body{min-width:0}
 
 /* artifact.css — what changes when the site runs as a Claude artifact. */
 :root{color-scheme:light;--map-sea:#dfe9ef;--map-land:#f7f8f6;--map-edge:#b9c6cf;--map-hover:#e9eef2;--map-watch:#f6dcd8;--map-pin:#d32831;--map-diamond:#173447}
@@ -2217,6 +2223,8 @@ html.noir .ar-bub{fill:#9fb3c2}
   for(const sep of [" — "," · "," / ",", "," | ",": "," ↔ "," → "]){
    if(core.includes(sep)){const parts=core.split(sep),t=parts.map(p=>tr(p));if(t.some((x,i)=>x!==parts[i]))return lead+t.join(sep)+trail}
   }
+  // 차트 이름표 '나라 값'(오만 12% · 몰도바 US$3억 · 스웨덴 410백만 TIV): 앞 이름과 뒤 값을 따로 옮긴다
+  if(core.length<48&&(m=core.match(/^(\S+(?: \S+)*?) ([-+−$€£¥]?(?:US\$|\$)?[\d.,]+.*)$/))){const a=dict[m[1]],b=H.test(m[2])?tr(m[2]):m[2];if(a!=null&&!H.test(b))return lead+a+" "+b+trail}
   return s;
  }
  window.PANDO_TR=tr;
@@ -2232,6 +2240,10 @@ html.noir .ar-bub{fill:#9fb3c2}
    if(skip(el))continue;
    for(const a of ATTRS){const v=el.getAttribute(a);if(v&&H.test(v)){const x=tr(v);if(x!==v)el.setAttribute(a,x)}}
   }
+  // 사진 없는 인물의 머리글자: 번역된 이름의 첫 글자로(한 글자 '미'가 'U'로 옮겨지는 일 방지)
+  for(const e of (root.matches&&root.matches(".actor-entry")?[root]:[]).concat([...root.querySelectorAll(".actor-entry")])){
+   const s=e.querySelector(".entry-head strong"),b=e.querySelector(".actor-ph>b");if(!s||!b)continue;
+   const c=s.textContent.replace(/^['"‘“\s]+/,"").slice(0,1);if(c&&b.textContent!==c)b.textContent=c}
  }
  function toggle(){
   const box=document.createElement("div");box.className="lang-toggle";box.setAttribute("translate","no");box.setAttribute("role","group");box.setAttribute("aria-label","Language");
