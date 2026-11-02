@@ -88,9 +88,9 @@
  },
  "AF": {
   "kind": "politics",
-  "asOf": "2026-10-25",
-  "headline": "파키스탄과 '책임 떠넘기기' 공방 속 국경 교전…유엔 \"1년간 민간인 1,748명 사상\"",
-  "summary": "2021년 8월 재집권한 탈레반이 전국을 통치하며 여학생의 6학년 이후 교육을 막고 있다. 파키스탄은 탈레반이 파키스탄탈레반(TTP)을 숨겨준다며 2025년 10월부터 여러 차례 아프간을 공습했고, 탈레반은 이를 부인한다. 10월 10일 쿠람 국경 교전에서 파키스탄군 공보실(ISPR)은 12명을 사살하고 자국 병사 1명이 숨졌다고 밝혔다. 10월 12일 이샤크 다르 파키스탄 부총리 겸 외무장관이 탈레반에 무장세력 단속을 요구하자, 자비훌라 무자히드 탈레반 대변인은 아프간을 탓해도 파키스탄 문제는 풀리지 않는다고 반박했다. 유엔아프간지원단(UNAMA)은 10월 15일 지난 1년간 국경을 넘은 공격으로 아프간 민간인 1,748명이 죽거나 다쳤다고 밝혔다. 같은 보고서가 탈레반의 구금을 '자의적'이라 하자 무자히드는 법에 따른 조치라고 반박했다. 안에서는 7월부터 반탈레반 무장세력의 공격 주장이 늘었다. 유엔 사무총장 보고서(9월 9일)는 이들이 21개 주에서 88건의 공격을 주장했고 유엔이 55건을 확인했다고 썼다. 탈레반은 파키스탄이 이들을 돕는다고 주장하고, 파키스탄은 부인한다.",
+  "asOf": "2026-11-02",
+  "headline": "파키스탄 국경 교전 이어져…탈레반, 미국의 아프간인 파키스탄 경유 추방에 '협의 용의'",
+  "summary": "2021년 8월 재집권한 탈레반이 전국을 통치하며 여학생의 6학년 이후 교육을 막고 있다. 파키스탄은 탈레반이 파키스탄탈레반(TTP)을 숨겨준다며 국경 공격을 이어 가고, 탈레반은 이를 부인한다. 10월 27일 남와지리스탄 앙구르 아다에서 양측이 충돌했는데, 파키스탄 정보방송부는 탈레반이 먼저 쏴 민간인 1명이 숨지고 5명이 다쳤다며 초소 7곳을 부쉈다고 했고, 탈레반 국방부는 파키스탄 드론이 파크티카주 시장과 민간 사무소를 공격했다고 맞섰다. 11월 1일에도 파크티카주 슈킨에서 파키스탄군 로켓에 1명이 숨졌다고 탈레반 경찰이 밝혔고, 파키스탄은 이 건에 입장을 내지 않았다. 유엔인도지원조정실(OCHA)은 10월 31일 교전이 구호 인력까지 위협한다고 경고했다. 미국이 구금한 아프간인을 파키스탄으로 보내려 한다는 보도가 나오자 탈레반 외무부는 11월 2일 미국과 '실무적으로 협의할 용의가 있다'고 밝혔다.",
   "control": [
    {
     "actor": "탈레반 정부",
@@ -104,7 +104,7 @@
    },
    {
     "actor": "반탈레반 무장세력",
-    "holds": "민족저항전선(NRF, 아흐마드 마수드)·아프가니스탄자유전선(AFF, 야신 지아)·아프가니스탄연합전선(AUF, 사미 사다트, 2026년 8월 작전 개시)·조국병사전선(세파히얀에 미한, 카윰 말랑) 등. 바다흐샨·바글란·파르완·누리스탄 등에서 매복·암살 위주. 7월 17일 바다흐샨 야프탈파인 지구 청사를 몇 시간 장악했다가 물러났고, 상시 장악한 영토는 없다",
+    "holds": "민족저항전선(NRF)·아프가니스탄자유전선(AFF)·아프가니스탄연합전선(AUF, 사미 사다트)·조국병사전선 등. 매복·암살 위주이고 상시 장악한 영토는 없다. 바다흐샨 주지사 라흐마툴라 나집은 10월 31일 이들이 영토를 점령했다는 주장을 '거짓과 선전'이라 일축했다",
     "backers": "탈레반은 파키스탄이 은신처·기지를 내준다고 주장. 파키스탄 정보방송부는 '근거 없다'고 부인했고 AFF도 파키스탄 지원을 부인"
    },
    {
@@ -114,85 +114,55 @@
    }
   ],
   "points": [
-   "10월에도 교전 주장이 이어졌다. AFF 대변인 누스라툴라 파테는 10월 7일 캄데시 교전을 확인했고, AFF는 10월 20일 파르완주 탈레반 초소를 공격해 3명을 죽였다고 주장했다. 탈레반 반응은 나오지 않았다",
-   "누리스탄 캄데시 교전(9월 26~30일): AFF는 캄데시·쿠나르 나리에서 마을을 장악하고 탈레반 37명을 죽였다고 주장했다. 탈레반 국방부는 파키스탄의 도움으로 넘어온 '다에시 연계 세력'을 41명 사살·62명 체포했다고 했다. 탈레반 외무부는 9월 29일 파키스탄 대리대사를 불러 항의했다. 파키스탄 정보방송부는 '경솔하고 근거 없는' 주장이라며 부인했다. 양측 수치는 확인되지 않았다",
-   "파키스탄 후원 공방: 무자히드는 8월 13일 파키스탄이 탈레반 반대 세력에 사무실·은신처를 주려 한다고 주장했다. 압둘 바시르 마즈하리 탈레반 바다흐샨 보안사령관은 파키스탄이 치트랄에 반대 세력 기지를 지었다고 주장했다. 파키스탄 정보방송부는 '근거 없다'고 했고, AFF는 아프간 안 주민의 지지로 싸운다며 파키스탄 지원을 부인했다",
-   "8월 19일 파르완 북살랑에서 NRF 고위 지휘관 하십 판지시리가 탈레반 매복에 숨졌다(아무 TV 보도, 롱워저널 인용). NRF는 9월 4일 무크타르 쇼레시를 후임으로 지명했다",
-   "아프가니스탄연합전선(AUF): 전 아프간군 중장 사미 사다트가 8월 1일 '무하리브 작전'을 선언하고 칸다하르·헬만드·바드기스 공격을 주장했다. 롱워저널 집계로 AUF는 9월에만 21건을 주장했다. 사상자 수는 단체 주장이며 독립 확인되지 않았다",
-   "주마 칸 파테 사건: 바다흐샨 다르와즈를 지배하던 탈레반 지휘관 파테는 금광 수입·무장 인원 통제를 두고 지도부와 맞섰다. 8월 11일 저녁 누사이 지구에서 교전이 시작됐고 그는 주민에게 탈레반과 싸우라고 촉구했다. 8월 17일 피트라트 참모총장과 협상한 뒤 투항했다. 무자히드는 8월 22일 그를 재판에 넘기겠다고 했다. 이후 재판 결과는 공개되지 않았다",
-   "7월 17일 조국병사전선(세파히얀에 미한)이 바다흐샨 야프탈파인 지구 청사를 몇 시간 장악했다. 에산울라 캄가르 바다흐샨 경찰 대변인은 '무책임한 자들'이 일시 장악했다가 달아났다고 했다. 카리 파시후딘 피트라트 탈레반 육군참모총장은 대부분을 체포했다고 했지만 단체는 부인했다",
-   "유엔 사무총장 보고서(A/81/363–S/2026/724, 9월 9일): 반탈레반 세력이 '더 분산되고 파편화되고 지역화됐다'고 평가했다. 이들은 21개 주에서 88건의 공격을 주장했고, 유엔은 그중 55건(7월 30건)을 확인했다. 보고서가 이름을 든 단체는 AFF·NRF·AUF·안다랍저항전선·조국병사전선 등이다. 5월 1일~7월 31일 치안 사건 보고는 2,947건으로 1년 전보다 11% 늘었다",
-   "2025년 12월 하카니 내무장관은 호스트 연설에서 \"두려움으로만 다스리는 정부는 정부가 아니다\"라고 했다. 아훈드자다의 사위인 네다 모함마드 나딤 고등교육장관은 비판자를 '위선자'라 부르며 단결을 요구했다(아무 TV). 아훈드자다는 2026년 1월 초 14개 항 칙령에서 서로 불신하고 남의 일에 끼어들지 말라고 경고했다(자린 TV)",
-   "탈레반 지도부 균열(BBC, 2026년 1월): BBC 아프간어 서비스는 1년간 100명 넘게 인터뷰해 칸다하르의 아훈드자다 측근과 카불 장관들 사이 갈등을 보도했다. 아훈드자다는 2025년 9월 29일 전국 인터넷·이동통신 차단을 명령했다. 바라다르·하카니·야쿠브 장관이 하산 아훈드 총리실에서 명령 철회를 압박했고, 10월 1일 인터넷이 돌아왔다고 BBC는 전했다. 무자히드 대변인은 BBC에 \"분열을 결코 허용하지 않겠다\"며 이견은 가족 사이 의견 차이 같은 것이라고 했다. 탈레반 정부는 당시 차단을 '낡은 광케이블' 탓이라고 설명했다(AP)",
-   "10월 10일 쿠람 교전(ISPR, 10월 11일): 국경을 넘으려던 '하와리지'(TTP를 가리키는 파키스탄 정부 용어)와 아프간 탈레반 12명을 사살했고 나이브 수베다르 히다야트 아만이 숨졌다고 밝혔다. ISPR은 탈레반 초소가 침투를 엄호 사격했다며 탈레반 정권이 대테러 의무를 저버렸다고 주장했다",
-   "10월 12일 공방: 다르 외무장관은 \"좋은 이웃 관계는 공격을 묵묵히 견디는 것이 아니다\"라고 했다. 무자히드 대변인은 성명에서 파키스탄 관리들의 \"근거 없는 비난\"과 선전이 협상을 방해한다고 했다. 파키스탄 정보방송부는 X에서 대화는 하겠지만 카불이 검증 가능한 조치를 해야 한다고 재반박했다",
-   "아타울라 타라르 파키스탄 정보방송장관은 아프간에 TTP 6,000명을 포함해 무장대원 2만 명 이상이 있다고 주장했다. 파키스탄은 1월 이후 무장세력 공격 2,800여 건으로 약 3,000명이 죽거나 다쳤다고 밝혔다",
-   "UNAMA 보고서(10월 15일): 2025년 10월~2026년 9월 국경을 넘은 공격으로 민간인 512명 사망·1,236명 부상. 9월 29일 쿠나르 실탄 지구 공습으로 6명, 9월 30일~10월 1일 밤 헬만드 가름시르 공습으로 4명이 숨졌다. 파키스탄은 TTP와 그 지원망을 겨냥했다고 주장한다",
-   "같은 보고서는 권선징악부 등의 구금을 '자의적'이라고 했다. 무자히드는 10월 15일 구금이 법과 규정에 따라 잘못된 행동을 막고 사람을 바로잡기 위한 것이라며 UNAMA에 \"정확한 정보와 객관적 사실\"에 근거한 평가를 요구했다"
+   "앙구르 아다 교전(10월 27일): 파키스탄 정보방송부는 10월 28일 탈레반이 파키스탄 초소와 주거지에 '도발 없이' 사격·박격포 공격을 했고 대응으로 탈레반 초소 7곳을 파괴했다고 밝혔다. 같은 부처는 탈레반의 설명을 '조작'이라 했고, 증거 없이 인도의 사주라고 주장했다. AP는 박격포탄이 집에 떨어져 1명이 숨지고 가족 5명이 다쳤다고 전했다. 탈레반 국방부는 파키스탄이 드론으로 앙구르 아다 시장과 민간 사무소를 먼저 공격했고 자신들은 파키스탄 기지와 초소를 쳤다고 했다. 양측 주장 모두 독립 확인되지 않았다",
+   "11월 1일: 남와지리스탄 지구 행정관(디퓨티 커미셔너)은 탈레반이 앙구르 아다 쪽 초소를 쏴 파키스탄군이 초소·박격포 진지를 타격했고 탈레반이 초소를 버렸다고 X에 썼다. 파크티카주 탈레반 경찰은 오후 3시께 슈킨 지구 소르다그 마을에 파키스탄군 로켓이 떨어져 청년 1명이 숨지고 2명이 다쳤다고 밝혔다. 토르캄 국경 인근 교전은 현지 소식통이 전했다. 10월 30일 탈레반 파크티아주 경찰은 단드 파탄 지구에서 파키스탄에서 날아온 것으로 보이는 불발 박격포탄이 터져 어린이 1명이 숨지고 4명이 다쳤다고 밝혔다",
+   "OCHA는 10월 31일 보고서에서 1월~10월 초 토르캄으로 60만 명 이상이 넘어왔고 85%가 파키스탄에서 추방된 이주민이라고 밝혔다. 유엔난민기구·국제이주기구 집계로 1월 1일~10월 17일 파키스탄에서 돌아온 아프간인은 81만 2,131명(추방 8만 5,821명)이다. 유엔아프간지원단(UNAMA)은 10월 15일 지난 1년간 국경을 넘은 공격으로 민간인 1,748명이 죽거나 다쳤다고 밝혔다",
+   "미국 정부 관계자와 변호사들을 인용한 블룸버그 보도(10월 26일, 아무TV 전재)에 따르면 미국은 이민 구금 중인 아프간인을 몇 주 안에 파키스탄으로 추방할 준비를 하고 있다. 아프간이백 측은 11월 첫 주 루이지애나발 전세기가 예정됐고 목적지는 아프간 또는 파키스탄 경유로 엇갈린다고 했다. 미국 정부는 공식 발표를 하지 않았다. 탈레반 외무부는 11월 2일 성명에서 '제3국이 일시적 이익을 위해 다른 나라 국민의 운명을 흥정해선 안 된다'며 양자 협의를 제안했다",
+   "반탈레반 세력의 주장: AUF는 10월 22~29일 8개 주에서 16건 공격으로 탈레반 18명을 죽이고 9명을 다치게 했다고 밝혔다(단체 성명, 확인 안 됨). 10월 31일 누리스탄 와이갈 지구에서는 탈레반 대원이 헤드폰을 쓴 청년을 때린 일에 항의하는 주민 시위가 열렸고 탈레반이 개머리판으로 진압했다고 현지 소식통이 아프가니스탄 인터내셔널에 전했다. 탈레반 반응은 확인되지 않았다"
   ],
-  "parliamentNote": "2021년 탈레반 집권 뒤 의회는 해산됐고 입법은 최고지도자 칙령으로 이뤄진다. 공식 의회 통계가 있더라도 현재 권력 구조를 반영하지 않는다.",
   "sources": [
    [
     "아프가니스탄 인터내셔널",
-    "Three Taliban Fighters Killed In Attack Near Kabul-North Highway, Says AFF(AFF \"카불-북부 간선도로 인근 공격으로 탈레반 3명 사살\") · 2026-10-21",
-    "https://www.afintl.com/en/202610219305"
+    "Taliban's Statement Over Border Clashes Is False, Says Pakistan(파키스탄 \"탈레반의 국경 교전 성명은 거짓\") · 2026-10-28",
+    "https://www.afintl.com/en/202610293075"
    ],
    [
-    "익스프레스 트리뷴",
-    "Islamabad rejects Taliban's Nuristan allegations(파키스탄, 탈레반의 누리스탄 주장 일축) · 2026-09-28",
-    "https://tribune.com.pk/story/2631788/islamabad-rejects-talibans-nuristan-allegations-1"
-   ],
-   [
-    "아프가니스탄 인터내셔널",
-    "Pakistan Helped Armed Fighters Enter Nuristan, Says Taliban(탈레반 \"파키스탄이 무장대원 누리스탄 진입 도와\") · 2026-09-29",
-    "https://www.afintl.com/en/202609293304"
-   ],
-   [
-    "아프가니스탄 인터내셔널",
-    "Dissident Commander Juma Khan Fateh Will Face Trial, Says Taliban(탈레반 \"이반 지휘관 주마 칸 파테 재판에 넘길 것\") · 2026-08-22",
-    "https://www.afintl.com/en/202608226735"
+    "라디오 파키스탄(파키스탄 정부 방송, 정보방송부 발표)",
+    "MOIB rejects false claim of Afghan Taliban on Angoor Adda incident(정보방송부, 앙구르 아다 사건 관련 탈레반의 허위 주장 일축) · 2026-10-28",
+    "https://radio.gov.pk/28-10-2026/moib-rejects-false-claim-of-afghan-taliban-on-angoor-adda-incident"
    ],
    [
     "KabulNow",
-    "Taliban Confirms Brief Loss of Control Over District in Afghanistan's Badakhshan(탈레반, 바다흐샨 지구 일시 상실 확인) · 2026-07-17",
-    "https://kabulnow.com/2026/07/taliban-confirms-brief-loss-of-control-over-district-in-afghanistans-badakhshan/"
+    "One Killed, Two Injured in Latest Pakistani Attack in Eastern Afghanistan, Taliban Says(탈레반 \"파키스탄 공격으로 동부 아프간서 1명 사망·2명 부상\") · 2026-11-01",
+    "https://kabulnow.com/2026/11/one-civilian-killed-two-injured-in-pakistani-rocket-attack-in-eastern-afghanistan-taliban-says/"
    ],
    [
-    "유엔 사무총장 보고서",
-    "The situation in Afghanistan and its implications for international peace and security, A/81/363–S/2026/724(아프가니스탄 정세와 국제 평화·안보에 미치는 영향) · 2026-09-09",
-    "https://unama.unmissions.org/sites/default/files/2026-09/The%20situation%20in%20Afghanistan%20and%20its%20implications%20for%20international%20peace%20and%20security.pdf"
+    "아프가니스탄 인터내셔널(OCHA 보고 인용)",
+    "Taliban-Pakistan Clashes Threaten Aid Workers In Afghanistan, Says UN(유엔 \"탈레반-파키스탄 교전, 아프간 구호 인력 위협\") · 2026-10-31",
+    "https://www.afintl.com/en/202610313386"
    ],
    [
-    "BBC 뉴스 문도(Acento 전재)",
-    "Rebelión en la cúpula del Talibán: la BBC revela la división política interna en el gobierno de Afganistán(탈레반 수뇌부의 반란: BBC가 밝힌 정부 내부 분열) · 2026-01-31",
-    "https://acento.com.do/bbc-news-mundo/rebelion-en-la-cupula-del-taliban-la-bbc-revela-la-division-politica-interna-en-el-gobierno-de-afganistan-9614146.html"
+    "아무TV(블룸버그 인용)",
+    "US plans to deport detained Afghans to Pakistan: Bloomberg(미국, 구금 아프간인 파키스탄 추방 계획: 블룸버그) · 2026-10-27",
+    "https://amu.tv/255327/"
    ],
    [
-    "박타르 통신(탈레반 정부)",
-    "Zabihullah Mujahid: Blaming Afghanistan Will Not Solve Pakistan's Problems(무자히드 \"아프간 탓으로 파키스탄 문제 안 풀려\") · 2026-10-12",
-    "https://www.bakhtarnews.af/en/Zabihullah-Mujahid-Blaming-Afghanistan-Will-Not-Solve-Pakistans-Problems"
+    "아무TV(탈레반 외무부 성명)",
+    "Taliban tell US they are ready for 'engagement' on Afghan deportations(탈레반, 아프간인 추방 문제 미국과 '협의 용의') · 2026-11-02",
+    "https://amu.tv/255732/"
    ],
    [
-    "라디오 파키스탄(파키스탄 정부, ISPR 발표)",
-    "Security forces kill 12 Khwarij in Kurram district(보안군, 쿠람에서 하와리지 12명 사살) · 2026-10-11",
-    "https://radio.gov.pk/11-10-2026/security-forces-kill-12-khwarij-in-kurram-district"
+    "아프가니스탄 인터내셔널",
+    "16 Attacks Kill 18 Taliban Fighters In One Week, Says Afghanistan United Front(AUF \"일주일간 16건 공격으로 탈레반 18명 사살\") · 2026-10-30",
+    "https://www.afintl.com/en/202610307299"
    ],
    [
-    "AP(Japan Today 전재)",
-    "Pakistan urges Afghan Taliban to stop militants from carrying out cross-border attacks(파키스탄, 탈레반에 월경 공격 무장세력 단속 촉구) · 2026-10-12",
-    "https://japantoday.com/category/world/pakistan-urges-afghan-taliban-to-stop-militants-from-carrying-out-cross-border-attacks"
-   ],
-   [
-    "KabulNow",
-    "UN Records Over 1,700 Civilian Casualties in Afghanistan Amid Pakistan-Taliban Clashes(유엔, 파키스탄-탈레반 충돌 속 아프간 민간인 사상 1,700명 넘게 기록) · 2026-10-15",
-    "https://kabulnow.com/2026/10/un-documents-1748-civilian-casualties-in-afghanistan-from-cross-border-attacks/"
-   ],
-   [
-    "하시테 수브(8am)",
-    "Taliban Accuse UNAMA of Portraying Them Negatively(탈레반, UNAMA가 자신들을 부정적으로 그린다고 비난) · 2026-10-15",
-    "https://8am.media/eng/taliban-accuse-unama-of-portraying-them-negatively/"
+    "아프가니스탄 인터내셔널",
+    "Taliban Governor Dismisses Opposition Claims Of Capturing Territory(탈레반 주지사, 반대 세력의 영토 점령 주장 일축) · 2026-10-31",
+    "https://www.afintl.com/en/202610310241"
    ]
   ],
+  "parliamentNote": "2021년 탈레반 집권 뒤 의회는 해산됐고 입법은 최고지도자 칙령으로 이뤄진다. 공식 의회 통계가 있더라도 현재 권력 구조를 반영하지 않는다.",
   "videos": [
    {
     "url": "https://www.youtube.com/watch?v=tps12sHOJqY",
@@ -216,54 +186,64 @@
  },
  "AL": {
   "kind": "politics",
-  "asOf": "2026-10-24",
-  "headline": "학생 시위 연일 충돌, 부상 295명…라마 총리 '러시아·이란 배후' 주장하며 사퇴 거부",
-  "summary": "에디 라마 총리(사회당, 2013년~)가 2025년 5월 총선 승리로 네 번째 임기를 보내고 있다. 사회당은 의회 140석 중 82석이다. 남부 즈베르네츠 일대의 재러드 쿠슈너 연계 리조트 개발에 반대해 5월부터 이어진 시위에 10월 13일부터 대학생·고교생이 합류해, 높은 등록금과 낡은 캠퍼스, 부패를 들며 라마 퇴진을 요구한다. 17일 티라나에서 법원·은행·우체국이 불탔고 경찰은 처음 고무탄을 썼다(AFP). 부상자는 295명(경찰 186명)이다(BBC). 라마는 20일 러시아·이란 정보기관과 야당이 선동했다고 주장했지만 증거는 내놓지 않았다(BIRN).",
+  "asOf": "2026-11-02",
+  "headline": "학생 시위 3주째, 31일 티라나 화염병 충돌로 부상 약 350명…라마 '최고 5,500유로 벌금' 규제 도입, 사퇴 거부",
+  "summary": "에디 라마 총리(사회당, 2013년~)가 2025년 5월 총선 승리로 네 번째 임기를 보내고 있고, 사회당은 의회 140석 중 82석을 단독으로 쥔다. 남부 즈베르네츠 일대 쿠슈너 연계 리조트 개발에 반대해 5월 31일 시작된 시위에 10월 13일부터 학생이 합류했고, 11월 1일로 학생 시위는 20일째를 맞았다(Albinfo). 31일 티라나 교육부 앞에서 시위대가 화염병과 돌을 던졌고 경찰은 물대포·최루탄으로 맞섰다. 에르빈 데모 내무장관은 지금까지 부상자가 약 350명(경찰 약 200명)이라고 밝혔다(Il Fatto Quotidiano). 정부는 28일 폭력·약탈 군중에 남아 있는 사람에게 최고 50만 레크(약 5,500유로)를 물리는 규제를 승인했고, 2일 라마는 학생들에게 대화 초청을 되풀이했지만 학생들은 응하지 않았다(Arbresh).",
   "control": [
    {
     "actor": "라마 정부(사회당)",
-    "holds": "총리 에디 라마, 교육장관 미레라 쿰바로. 의회 140석 중 82석",
+    "holds": "총리 에디 라마, 내무장관 에르빈 데모. 의회 140석 중 82석. 10월 28일 집회법 개정과 소상공인 피해 보상 시행령 승인",
     "backers": "의회 단독 과반"
    },
    {
     "actor": "학생 시위대·'플라밍고' 운동",
-    "holds": "쿠슈너 연계 리조트 개발 반대에서 시작해 등록금·대학 여건·부패로 넓어졌고 라마 퇴진을 요구",
+    "holds": "쿠슈너 연계 리조트 개발 반대에서 출발해 교육 정책·생활 여건·부패로 넓어졌고 라마 퇴진을 요구. 라마의 대화 초청(11월 2일)을 아직 받지 않음",
     "backers": ""
    },
    {
     "actor": "야당 민주당 연합(PD)",
-    "holds": "의회 49석. 라마 총리는 야당이 충돌을 부추겼다고 비난",
+    "holds": "의회 49석, 대표 살리 베리샤. 10월 29일 의회에서 조명탄·연막탄으로 중앙은행법 표결을 막으려 했으나 실패. 31일 학생들은 베리샤 쪽 합류를 막으며 '야당은 우리'라고 외침",
     "backers": ""
    }
   ],
   "points": [
-   "10월 20일 라마 총리(티라나 고교 교장 회의): \"폭력 시위 현장에 있는 사람은 누구나 경찰의 표적\". 미성년자가 낸 피해는 가족이 배상하고 폭력 가담 학생은 장학금·무상교육을 잃을 수 있다고 경고. 총리실은 '집단 제재는 아니다'라고 해명(BIRN)",
-   "10월 19일 라마 총리, 경찰 지휘부 면담 뒤 경찰관 2,500유로 상여금 약속(BIRN)",
-   "10월 17일 티라나: 법원·은행·우체국 방화, 경찰 첫 고무탄 사용. 알베르트 누시 경찰 공공안전국장 \"54명 연행, 27명 형사 절차\"(AFP)",
-   "부상: 보건부 집계 18일까지 272명(경찰 169명), BBC 보도 295명(경찰 186명). 인권 변호사 겐티안 세자니는 연행자 100명 넘게 변호하며 경찰 대응이 \"혼란스럽고 무분별하다\"고 비판(BBC)",
-   "유럽연합 집행위원회는 폭력을 규탄하며 대응이 비례적이어야 한다고 했고, 주티라나 미국 대사관은 모든 쪽의 자제를 촉구. 라마의 19일 오스트리아 방문은 알바니아 쪽 요청으로 취소(AFP)",
-   "라마는 2030년 EU 가입을 목표로 내걸고, 폭력이 유럽 통합을 위협한다고 했다(BIRN)"
+   "10월 31일 티라나: 학생 무리가 교육부 앞에서 쓰레기통에 불을 붙이고 돌·화염병을 던졌고, 경찰이 물대포·최루탄을 썼다. 충돌은 약 30분 이어졌고 일부가 물러났다. 데모 내무장관은 지금까지 부상자 약 350명(경찰 약 200명, 시위대 약 100명, 행인 약 40명)이라고 밝혔다(Il Fatto Quotidiano)",
+   "11월 1일 시위 20일째: 학생·교사·시민이 교육부 앞에 다시 모였다가 총리실로 행진했다. 요구는 교육 정책 변화·생활 여건 개선·라마 퇴진이다(Albinfo). 11월 2일 라마는 페이스북 영상으로 대화 초청을 되풀이했고 총리실 앞에 '대화' 팻말을 다시 놓았지만 학생들은 받지 않았다(Arbresh)",
+   "10월 28일 정부 승인 규제: 폭력·약탈이 벌어지는 군중에 남은 사람은 최대 50만 레크(약 5,500유로) 벌금, 신분을 감춘 참가자도 대상이다. 즉시 시행되지만 45일 안에 의회 승인이 필요하다. 학교·병원·정부 청사 인근 등에서 집회를 제한하고 폭력 선동 게시물 삭제를 요구할 수 있으며 피해 소상공인은 보상한다(Euronews). 라마는 25일 이를 '폭력과 도시 무질서에 맞선 패키지'라 불렀다(BIRN)",
+   "인권 우려: 고무탄에 눈을 맞은 시위자 에리온 비시쿨리는 이탈리아로 이송돼 치료받았고, 시위대를 때린 경찰관 1명은 정직되고 행정 조사가 시작됐다(BIRN 10월 26일). 활동가들은 집회·표현의 자유 침해를 우려한다",
+   "10월 29일 의회: 베리샤와 민주당 의원들이 조명탄과 연막탄을 터뜨리며 중앙은행법 표결을 막으려다 실패했다. 베리샤는 여당 의원들을 '범죄자'라 불렀다(Al Jazeera)",
+   "라마는 폭력이 2030년 EU 가입 목표를 해친다고 했고, 배후로 '안티파 극단주의자와 외세'를 지목했다(BIRN). 유럽연합 집행위원회는 폭력을 규탄하며 대응이 비례적이어야 한다고 했다"
   ],
   "sources": [
    [
-    "AFP(Khaleej Times 게재)",
-    "Albanian PM Edi Rama refuses to quit as violent protests enter sixth day(라마 총리, 시위 엿새째 사퇴 거부) · 2026-10-18",
-    "https://www.khaleejtimes.com/world/europe/albanian-pm-edi-rama-refuse-resign-violent-protests-sixth-day"
+    "Il Fatto Quotidiano",
+    "Nuove proteste contro Rama in Albania: cassonetti in fiamme e bombe molotov a Tirana(라마 반대 새 시위: 쓰레기통 불길과 화염병) · 2026-10-31",
+    "https://www.ilfattoquotidiano.it/2026/10/31/proteste-albania-rama-scontri-tirana-notizie/8556463/"
+   ],
+   [
+    "Albinfo",
+    "Vazhdojnë protestat studentore në Tiranë, dita e 20-të, të rinjtë marshojnë drejt Kryeministrisë(티라나 학생 시위 20일째, 총리실로 행진) · 2026-11-01",
+    "https://www.albinfo.ch/vazhdojne-protestat-studentore-ne-tirane-dita-e-20-te-te-rinjte-marshojne-drejt-kryeministrise/"
+   ],
+   [
+    "Arbresh.info",
+    "Rama përsërit ftesën për protestuesit, vendos sërish fletë me mbishkrimin “Dialog” para Kryeministrisë(라마, 시위대에 초청 되풀이…총리실 앞 '대화' 팻말) · 2026-11-02",
+    "https://www.arbresh.info/shqiperi/rama-perserit-ftesen-per-protestuesit-vendos-serish-flete-me-mbishkrimin-dialog-para-kryeministrise-2/"
    ],
    [
     "BIRN(Balkan Insight)",
-    "Albanian PM Rama Steps Up Rhetoric Against Student Protesters(라마 총리, 학생 시위대 향해 수위 높여) · 2026-10-20",
-    "https://balkaninsight.com/2026/10/20/albanian-pm-rama-steps-up-rhetoric-against-student-protesters/bi/"
+    "Albanian Prime Minister Announces New Anti-Protest Legislation(라마 총리, 새 시위 규제 입법 발표) · 2026-10-26",
+    "https://balkaninsight.com/2026/10/26/albanian-prime-minister-announces-new-anti-protest-law/bi/"
    ],
    [
-    "UNN(BBC 인용)",
-    "Clashes with police have been ongoing in Albania for a week: hundreds injured(알바니아 일주일째 충돌, 수백 명 부상) · 2026-10-20",
-    "https://unn.ua/en/news/clashes-with-police-have-been-ongoing-in-albania-for-a-week-hundreds-injured"
+    "Euronews",
+    "Albania adopts measures to impose fines up to 5500 on people at protests that become violent(알바니아, 폭력화한 시위 군중에 최고 5,500유로 벌금) · 2026-10-29",
+    "https://www.euronews.com/2026/10/29/albania-adopts-measures-to-impose-fines-up-to-5500-on-people-at-protests-that-become-viole"
    ],
    [
-    "The Irish Times",
-    "Europe's angry autumn: what's driving the wave of protests?(유럽의 성난 가을) · 2026-10-21",
-    "https://www.irishtimes.com/world/europe/2026/10/21/europes-angry-autumn-whats-driving-the-wave-of-protests/"
+    "Al Jazeera",
+    "Albanian opposition storms parliament, sets off flares and smoke bombs(알바니아 야당, 의회에서 조명탄·연막탄) · 2026-10-29",
+    "https://www.aljazeera.com/news/2026/10/29/albanian-opposition-storms-parliament-sets-off-flares-and-smoke-bombs"
    ]
   ],
   "videos": [
@@ -460,74 +440,79 @@
  },
  "BE": {
   "kind": "politics",
-  "asOf": "2026-10-24",
-  "headline": "학생·노조 긴축 반대 시위에 195명 연행…국방장관 '헌병대 2.0' 제안",
-  "summary": "바르트 더 베버르 총리(신플랑드르연대)가 2025년 2월부터 5당 연정을 이끈다. 연정은 GDP의 5%가 넘는 적자를 줄이려 2029년까지 100억 유로 절감을 협상 중이다(AFP). 10월 1일 리에주에서 시작된 프랑스어권 중고생 시위는 대학 등록금을 835유로에서 1,194유로로 올린 결정과 교육 예산 삭감에 반대한다. 10월 9일 양대 노총 행진에는 경찰 집계 약 3만 명이 모였다. 17일 브뤼셀·리에주 충돌 뒤 경찰은 195명을 연행했고, 베르나르 캥탱 내무장관은 \"더는 단순한 시위가 아니다\"라고 했다(로이터).",
+  "asOf": "2026-11-02",
+  "headline": "더 베버르 총리, 2027년 예산 합의 무산에 내각 사표…국왕은 수리 보류, 금요일 재면담",
+  "summary": "총리 바르트 더 베버르(신플랑드르연대, N-VA)가 11월 2일 오전 필리프 국왕에게 5당 연정 내각의 사표를 냈다. 밤샘 협상에서 약 100억 유로 규모의 2027년 예산에 합의하지 못했기 때문이다. 국왕은 사표를 수리하지 않고 보류했고, 3일부터 연정 당 대표들과 협의한 뒤 금요일(11월 6일) 더 베버르를 다시 만난다. 쟁점은 세금이다. 포로이트·기민당(CD&V)·앙가제는 '가장 튼튼한 어깨'가 더 내라고 하고, N-VA와 개혁운동(MR)은 반대한다. 10월에는 프랑스어권 학생·노조 시위로 195명이 연행됐다.",
   "control": [
    {
-    "actor": "더 베버르 연방정부",
-    "holds": "신플랑드르연대(N-VA)·개혁운동(MR)·앙가제(LE)·포로이트·기민당(CD&V) 5당 연정. 내무장관 베르나르 캥탱(MR), 국방장관 테오 프랑컨(N-VA)",
-    "backers": "하원 과반"
+    "actor": "더 베버르 연방정부(5당 연정)",
+    "holds": "총리 바르트 더 베버르(N-VA). MR·앙가제(LE)·포로이트·기민당(CD&V)이 참여. 사표는 국왕이 보류해 내각은 당분간 유지",
+    "backers": "하원 과반(5당)"
    },
    {
-    "actor": "프랑스어권 공동체(왈로니-브뤼셀 연방) 정부",
-    "holds": "교육을 관할하며 등록금 인상과 교육 예산 삭감을 결정. 발레리 글라티니 교육장관(MR)은 교사 단체의 퇴진 요구를 받고 있다",
+    "actor": "필리프 국왕",
+    "holds": "사표 수리·보류·추가 협의 권한. 11월 2일 사표를 보류하고 연정 당 대표들과 협의, 6일 총리 재면담",
+    "backers": ""
+   },
+   {
+    "actor": "증세파 3당(포로이트·기민당·앙가제)",
+    "holds": "고소득·자산 과세로 10억~15억 유로를 마련하자는 입장",
+    "backers": ""
+   },
+   {
+    "actor": "감세·지출삭감파(N-VA·MR)",
+    "holds": "세금 인상에 반대하고 지출 구조조정을 주장. MR 다비드 클라리날 부총리(경제장관)가 대표 발언자",
     "backers": ""
    },
    {
     "actor": "학생·노조·좌파 야당",
-    "holds": "중고생·대학생 시위와 노조 긴축 반대 행진. 노동당(PVDA-PTB) 라울 헤더바우 대표는 폭력은 규탄하되 국방장관이 야당을 범죄시한다고 반박",
+    "holds": "등록금 인상·긴축 반대 시위. 노동당(PVDA-PTB)은 폭력은 규탄하되 국방장관이 야당을 범죄시한다고 반박",
     "backers": ""
    }
   ],
   "points": [
-   "10월 17일 브뤼셀·리에주 충돌: 경찰 연행 195명(브뤼셀 150명·리에주 45명), 그중 사법 체포 37명. 브뤼셀 경찰 5명 경상(Belga·Anadolu)",
-   "10월 17일 캥탱 내무장관(X): \"브뤼셀에서 벌어지는 일은 더는 단순한 시위가 아니다\", 질서 회복에 필요한 모든 수단을 쓰겠다(로이터)",
-   "10월 18일 프랑컨 국방장관: 군사 훈련을 받은 경찰 예비대 '헌병대 2.0'을 내무부 지휘 아래 두자고 제안. \"폭력이 이렇게 극단적이면 시민을 지켜야 한다\"(Brussels Times)",
-   "10월 9일 양대 노총 긴축 반대 행진 경찰 집계 약 3만 명. 행렬 밖 청년들과 충돌, 약 20명 연행(대부분 미성년자)(AFP)",
-   "등록금(미네르발) 835유로→1,194유로(43% 인상), 고등교육 학생 58%에 적용. 22일 브뤼셀자유대(ULB) 솔보슈 캠퍼스 봉쇄(BX1)",
-   "2027년 예산 협상: 연정 파트너들이 더 베버르 총리의 최신안을 거부해 교착(Brussels Times, 10월 19일)"
+   "11월 2일 오전 9시 30분쯤 더 베버르 총리가 필리프 국왕을 찾아 내각 사표를 냈다. 국왕은 수리하지 않고 '보류'했으며 3일부터 연정 당 대표들과 협의한다. 더 베버르는 금요일(11월 6일) 다시 궁에 간다(VRT·Brussels Times)",
+   "왕궁 성명: \"국왕은 오늘의 도전에 맞는 신뢰할 만한 예산에 합의하지 못한 것을 유감으로 생각한다\", 나라가 \"장기 정치 위기를 감당할 여유가 없다\"며 모든 정당에 정치적 책임을 요구했다(Brussels Times)",
+   "증세를 두고 갈렸다. 포로이트·CD&V·앙가제는 '가장 튼튼한 어깨'가 더 내라고 하고 N-VA·MR은 반대한다(VRT). 클라리날 부총리(MR)는 \"세금이 너무 많다\"며 일요일 저녁 마지막 안에 신규 세금이 30억 유로가 넘었다고 주장했다. 막심 프레보 외무장관(앙가제)은 쟁점을 다 말하려면 \"영원이 걸린다\"고 했다",
+   "규모: 2027년 예산에서 약 100억 유로를 줄이거나 거둬야 한다. 2025년 일반정부 적자는 GDP의 5.2%(332억 유로), 부채는 GDP의 약 108%다. 더 베버르는 10월 14~15일 다년 합의를 접고 2027년 1년 예산(절감 30~40억 유로, 부가세 개편 제외)으로 줄였지만 이마저 무산됐다(Brussels Signal)",
+   "예산안 제출 시한은 3일(화)로, 소식통은 사표 뒤에도 협상을 이어 맞출 수 있다고 본다. 더 베버르는 전년도 예산의 12분의 1씩 쓰는 임시예산을 거부해 왔다. 정치학자 카를 데보스(헨트대)는 선거가 해법으로 보이지 않고 임시예산이 필요할 공산이 크다고 내다봤다(VRT)",
+   "10월 17일 브뤼셀·리에주 충돌로 195명 연행(그중 사법 체포 37명), 24일 브뤼셀 시위에는 수백 명이 모여 최루탄이 쓰였다. 대학 등록금은 835유로에서 1,194유로로 오른다(Belga·Brussels Times)"
   ],
   "sources": [
    [
-    "Reuters(Internazionale 게재)",
-    "Protesters clash with police in Brussels(브뤼셀서 시위대·경찰 충돌) · 2026-10-17",
-    "https://www.internazionale.it/ultime-notizie-reuters/2026/10/17/protesters-clash-with-police-in-brussels"
+    "VRT NWS",
+    "Prime Minister De Wever offers resignation to King Filip(더 베버르 총리, 국왕에게 사표 제출) · 2026-11-02",
+    "https://www.vrt.be/vrtnws/en/2026/11/02/prime-minister-de-wever-offers-resignation-to-king-filip/"
+   ],
+   [
+    "VRT NWS",
+    "Begrotingsoverleg (voorlopig) mislukt: hoe is het zover kunnen komen? En wat nu?(예산 협상 일단 실패: 어떻게 여기까지, 이제 무엇을) · 2026-11-02",
+    "https://www.vrt.be/vrtnws/nl/2026/11/02/geen-begrotingsakkoord-politieke-crisis-overzicht/"
+   ],
+   [
+    "The Brussels Times",
+    "Belgian King calls for political responsibility as he considers PM De Wever's resignation(국왕, 정치적 책임 촉구하며 총리 사표 검토) · 2026-11-02",
+    "https://www.brusselstimes.com/belgium/2387762/belgian-pm-de-wever-to-offer-resignation-to-king-after-failed-budget-talks-tbtb"
+   ],
+   [
+    "Brussels Signal",
+    "Belgium settles for a one-year budget as full agreement stays out of reach(벨기에, 전면 합의 못 하고 1년 예산으로) · 2026-10-15",
+    "https://brusselssignal.eu/2026/10/belgium-settles-for-a-one-year-budget-as-full-agreement-stays-out-of-reach/"
+   ],
+   [
+    "Brussels Morning",
+    "Bart De Wever resigns over €10B talks in Belgium(100억 유로 협상 결렬에 더 베버르 사표) · 2026-11-02",
+    "https://brusselsmorning.com/bart-de-wever-resigns-over-e10b-talks-in-belgium-2026/106392/"
+   ],
+   [
+    "The Brussels Times",
+    "Police break up Brussels protests with tear gas and water cannon(경찰, 브뤼셀 시위 최루탄 해산) · 2026-10-24",
+    "https://www.brusselstimes.com/2376502/hundreds-protest-against-government-on-brussels-streets"
    ],
    [
     "The Eastern Herald(Belga·Anadolu 인용)",
     "Belgian Police Log 195 Protest Arrests, Only 37 of Them Judicial(벨기에 경찰, 시위 연행 195명) · 2026-10-18",
     "https://easternherald.com/2026/10/18/belgium-protest-arrests-brussels-liege/"
-   ],
-   [
-    "AFP(Fortuneo 게재)",
-    "Manifestation à Bruxelles contre la rigueur, marquée par des violences en marge du cortège(브뤼셀 긴축 반대 시위, 행렬 주변서 폭력) · 2026-10-09",
-    "https://bourse.fortuneo.fr/actualites/manifestation-a-bruxelles-contre-la-rigueur-marquee-par-des-violences-en-marge-du-cortege-9672376"
-   ],
-   [
-    "The Brussels Times",
-    "What was the Belgian Gendarmerie, and why is bringing it back so controversial?(헌병대 부활 논란) · 2026-10-20",
-    "https://www.brusselstimes.com/2368606/what-was-the-belgian-gendarmerie-and-why-is-bringing-it-back-so-controversial"
-   ],
-   [
-    "The Brussels Times",
-    "Belgium in Brief: Gendarmerie 2.0(벨기에 브리핑: 헌병대 2.0) · 2026-10-19",
-    "https://www.brusselstimes.com/2368281/belgium-in-brief-gendarmerie-2-0"
-   ],
-   [
-    "The Brussels Times(Belga)",
-    "Workers' Party shakes off links to Friday's Brussels riots(노동당, 브뤼셀 폭동 연관 부인) · 2026-10-11",
-    "https://www.brusselstimes.com/2356387/workers-party-shakes-off-links-to-fridays-brussels-riots"
-   ],
-   [
-    "BX1",
-    "Le campus du Solbosch de l'ULB bloqué jeudi pour protester contre la hausse du minerval(ULB 솔보슈 캠퍼스 봉쇄) · 2026-10-21",
-    "https://bx1.be/?p=837271"
-   ],
-   [
-    "Paris Match Belgique",
-    "\"Tu casses tout, casse-toi\" : le collectif Mars Attacks demande la démission de Valérie Glatigny(교사 단체, 글라티니 교육장관 퇴진 요구) · 2026-10-03",
-    "https://www.parismatch.be/actualites/societe/2026/10/03/tu-casses-tout-casse-toi-le-collectif-mars-attacks-demande-la-demission-de-valerie-glatigny-MXWYDO3XHFH37AUPFII6FYCDB4/"
    ]
   ],
   "videos": [
@@ -1224,42 +1209,49 @@
  },
  "DE": {
   "kind": "politics",
-  "asOf": "2026-10-24",
-  "headline": "AfD 전국 여론조사 8곳 모두 1위…작센안할트 12월 주총리 표결 앞둬",
-  "summary": "2025년 5월부터 기민·기사련(CDU/CSU)과 사민당(SPD)의 대연정이 프리드리히 메르츠 총리 아래 집권하고 있다. 10월 12일 베르벨 바스 노동사회장관 겸 SPD 공동대표가 의붓딸의 죽음과 연정 파트너의 공격을 이유로 두 자리를 모두 내려놓았다. 후임 알렉산더 슈바이처 노동장관은 13일 프랑크발터 슈타인마이어 대통령에게 임명장을 받고 14일 연방하원에서 선서했다. 메르츠는 연금개혁안을 연내 내각에서, 2027년 1분기 연방하원에서 처리하자고 요구하지만, 슈바이처는 45년 가입자 무감액 조기퇴직 폐지에 반대해 온 인물이다. 9월 작센안할트 주선거에서 43.8%로 1위를 한 독일대안당(AfD)은 12월 주총리 선출에 도전한다. INSA 조사(10월 16~19일)에서 AfD는 30%로 CDU/CSU(18%)를 앞섰고, 주요 조사기관 8곳 모두에서 1위다.",
+  "asOf": "2026-11-02",
+  "headline": "AfD 8개 조사기관 모두 1위…연정은 연금·SPD 대표 공석, 작센안할트 CDU는 내홍",
+  "summary": "2025년 5월부터 기민·기사련(CDU/CSU)과 사민당(SPD)의 대연정이 프리드리히 메르츠 총리 아래 집권하고 있다. 10월 12일 사퇴한 베르벨 바스 전 노동사회장관 겸 SPD 공동대표는 11월 2일 ARD 인터뷰에서 CDU/CSU 쪽 공격이 계속됐다고 말하면서도 자신의 표현은 후회한다고 했다. 후임 알렉산더 슈바이처 노동장관(10월 14일 선서)은 45년 가입자 무감액 조기퇴직 폐지를 두고 타협을 모색한다. 독일대안당(AfD)은 주요 조사기관 8곳 모두에서 1위(26~30%)이고, 10월 31일 INSA는 AfD 29%·CDU/CSU 20%였다. 작센안할트에서는 10월 6일 AfD의 토비아스 라우슈가 주의회 의장에 오른 뒤 CDU 원내에서 'AfD에 표를 주지 않았다'는 선서 초안이 돌다 철회돼 논란이 커졌고, 주총리 표결은 12월로 예정돼 있다. 베를린에서는 SPD·녹색당·좌파당이 11월 2일 연정 협상을 시작한다.",
   "control": [
    {
     "actor": "CDU/CSU–SPD 대연정",
-    "holds": "총리 메르츠, 부총리 겸 재무장관 라르스 클링바일(SPD 대표), 노동장관 슈바이처(10월 13일~). SPD 공동대표 한 자리는 공석",
+    "holds": "총리 메르츠, 부총리 겸 재무장관 라르스 클링바일(SPD 대표), 노동장관 슈바이처(10월 14일 선서). SPD 공동대표 한 자리는 공석이고 당은 지도부 재선출을 계획 중",
     "backers": "연방하원 과반"
    },
    {
     "actor": "독일대안당(AfD)",
-    "holds": "전국 지지율 1위(주요 조사기관 8곳 26~30%). 작센안할트 주의회 의장 토비아스 라우슈, 주총리 후보 울리히 지그문트",
-    "backers": "작센안할트에서 자라 바겐크네히트 동맹(BSW)이 의장 선출엔 찬성, 주총리 표결엔 기권 방침"
+    "holds": "전국 지지율 1위(8개 조사기관 26~30%). 작센안할트 주의회 의장 라우슈, 주총리 후보 울리히 지그문트",
+    "backers": "작센안할트에서 BSW는 의장 선출엔 찬성, 주총리 표결엔 기권 방침(10월 중순 보도)"
    },
    {
     "actor": "녹색당·좌파당(야당)",
-    "holds": "포르자(10월 13~19일) 기준 녹색당 17%, 좌파당 11%. 카타리나 드뢰게 녹색당 원내대표는 메르츠가 바스 사퇴에도 존중을 보이지 않았다고 비판",
+    "holds": "포르자(10월 27일) 녹색당 16%·좌파당 11%, INSA(10월 31일) 15%·10%",
+    "backers": ""
+   },
+   {
+    "actor": "작센안할트 CDU",
+    "holds": "주총리 겸 원내대표 젠 슐체. 원내 안에 AfD와의 협력 불가, 사안별 다수, 지그문트 선출 용인 세 갈래가 있다는 보도",
     "backers": ""
    }
   ],
   "points": [
-   "10월 21일 독일연방군, 러시아 사보타주 위협을 처음으로 '상당'(두 번째로 높은 단계)으로 평가(WDR·SZ 보도, 국방부 대변인 확인). 9월 분스토르프 공군기지 인근 폭약 드론이 군용기를 노렸다고 판단. 메르츠 \"러시아 허위정보·하이브리드 공격이 최대 위협\"(로이터)",
-   "10월 12일 바스 사퇴: \"의붓딸의 죽음 뒤 슬픔을 추스를 시간이 필요하다\"(인스타그램). 팀 클뤼센도르프 SPD 사무총장은 CDU/CSU가 사별을 알면서도 대결적 질문을 계속했다고 했고 CDU는 부인했다. 보리스 피스토리우스 국방장관은 SPD 대표 선거에 \"절대 나서지 않겠다\"며 클링바일 재출마를 지지했다",
-   "연금·노동: 메르츠는 \"6월 22일 받은 위원회 제안인데 너무 오래 걸린다\"며 45년 가입자 무감액 조기퇴직 폐지를 지지했고, 10월 17일 청년연합(JU) 대회에서 연금안 연내 내각 의결·내년 초 연방하원 최종 표결을 요구했다. 7월 1일 합의한 노동시장 개혁(병가 첫날 진단서, 기간제 확대 등)도 서두르라고 했다",
-   "작센안할트(83석: AfD 39·CDU 15·SPD·녹색당·좌파당 각 8·BSW 5): 10월 6일 비밀투표에서 AfD 토비아스 라우슈가 찬성 48·반대 29·기권 5로 독일 첫 AfD 주의회 의장이 됐다. AfD·BSW 의석(44석)보다 4표 많았고, CDU 원내 지도부는 기권을 권고했었다. 주총리 선출은 12월 예정이지만 날짜는 아직 없다",
-   "주총리 선출 규칙(주헌법 65조 2항): 1·2차 투표는 재적 과반(42표)이 필요하다. 2차도 실패하면 14일 안에 임기 조기 종료를 표결하고, 부결되면 곧바로 3차 투표를 해 '던져진 표의 과반'이면 당선된다. 기권은 던져진 표로 치지 않는다(51조). CDU 원내는 1·2차 때 퇴장, BSW는 기권 방침이다. 의석만으로 본 시나리오: 3차에서 CDU가 퇴장하고 BSW가 기권하면 39 대 24, CDU 15명이 남아 반대하면 39 대 39 동수다",
-   "메르츠 총리는 10월 17일 청년연합 대회에서 \"우리 중 그런 사람들을 국가 직위에 뽑아야 한다고 생각하는 사람은 독일 CDU에 있을 자리가 전혀 없다\"며 AfD 후보에 표를 주면 출당하겠다고 경고했다. 지그문트는 1차 투표에만 나서겠다고 했다",
-   "여론조사: 주요 조사기관 8곳의 최신 조사(10월 1~23일 발표)에서 AfD가 모두 1위(26~30%)다. INSA(10월 16~19일, 2,002명) AfD 30%·CDU/CSU 18%, 포르자(13~19일, 2,502명) 27%·20%. ARD 도이칠란트트렌트(9월 28~30일)에서 연정과 메르츠 총리 만족도는 모두 10%로 역대 최저였다",
-   "법적 지위: 연방헌법수호청(BfV)은 2025년 5월 2일 1,110쪽 감정서를 근거로 AfD를 '확실한 우익극단주의'로 격상했다. 쾰른 행정법원은 2026년 2월 26일 AfD의 가처분 신청을 받아들여 본안 판결 전까지 이 분류를 쓰지 못하게 했다(당 안에 헌법 적대적 움직임은 있지만 당 전체를 규정할 정도는 아니라는 판단). 내무부가 항고하지 않아 AfD는 지금 '우익극단주의 의심 사례'다",
-   "용어: '극우'는 언론·학계가 쓰는 정치적 위치 표현이고, '극단주의'는 헌법수호청의 법적 분류다. 헌법수호청은 \"급진적 정치 견해는 다원적 사회질서에서 정당한 자리를 가진다\"며 자유민주주의의 기본 가치를 없애려는 활동만 극단주의로 본다. 작센안할트·튀링겐 등 일부 주 헌법수호청은 그 주의 AfD를 이미 '확실한 우익극단주의'로 분류했다"
+   "여론조사(wahlrecht.de 집계, 10월 19~31일 발표 8곳): AfD 26~30%(GMS 30·INSA 29·베리안 28·유고브 28·포르자 27·알렌스바흐 27·FGW 26), CDU/CSU 18~23%. INSA(10월 31일) AfD 29·CDU/CSU 20·녹색당 15·SPD 14·좌파당 10·FDP 5·BSW 3. ZDF 폴리트바로미터(FGW, 10월 20~22일, 1,225명)에서 메르츠 총리 호감도는 -1.5(-5~+5 척도, 직전 -2.0), AfD 공동대표 알리체 바이델·티노 크루팔라는 -2.7",
+   "연금: 연금위원회가 6월 33개 권고를 냈고 메르츠 총리와 바스는 한 묶음으로 처리하겠다고 했다. 슈바이처 장관은 10월 17일 '타협에 자신 있다'며 위원회 제안은 구속력이 없다고 했고, 동독 주총리 슐체(작센안할트)·미하엘 크레치머(작센)·마리오 포이크트(튀링겐)는 폐지에 반대한다. 폴리트바로미터에서 '63세 조기퇴직' 폐지 반대가 74%, 찬성 21%였고 83%는 근본 개혁이 중요하다고 답했다. 메르츠는 10월 24일 CSU 전당대회에서 '이 개혁이 지금 필요하다'고 했다",
+   "SPD: 바스는 11월 2일 ARD 인터뷰에서 '이 정치판에는 인간성이 드물다', 연정에는 '서로 더 잘 지내라. 아니면 안 된다'고 말했다. 사퇴 성명에서 CDU/CSU의 '캠페인'을 비판했던 데 대해서는 표현을 후회한다고 했고, 메르츠에게 사정을 알렸지만 받아들여지지 않았다고 했다. 전 장관 후베르투스 하일은 대표 출마를 배제하지 않았다. 클링바일 재무장관은 10월 22일 세수 추계 발표에서 세수는 늘었지만 '새로운 여지는 없다'고 말했다",
+   "작센안할트(83석: AfD 39·CDU 15·SPD·녹색당·좌파당 각 8·BSW 5): 10월 28일 CDU 주의회 의원 울리히 토마스가 '10월 6일 선거에서 라우슈에게 투표하지 않았다'는 선서 진술서 초안을 돌렸다. 슐체는 자신이 낸 아이디어가 아니라고 했고 초안은 긴 토론 끝에 철회됐다. 주총리 선출 규칙(주헌법 65조 2항): 1·2차는 재적 과반(42표), 2차 실패 시 14일 안에 임기 조기 종료를 표결하고 부결되면 3차에서 '던져진 표의 과반'이면 당선된다. 기권은 던져진 표가 아니다(51조)",
+   "베를린: 좌파당 주 전당대회가 10월 31일 SPD·녹색당과의 연정 협상 개시에 찬성했고 협상은 11월 2일 시작한다. 연말까지 새 정부 구성이 목표이며, 반유대주의 반대·이스라엘 존재권을 담은 공동 성명을 연정 협약에 넣고 위반 시 원내 제명까지 둘 수 있다. 좌파당이 배제해 온 예산 절감은 재정 사정 때문에 불가피해 보인다는 ZDF 보도다. 엘리프 에랄프 후보가 성사되면 첫 좌파당 출신 베를린 시장이 된다",
+   "10월 21일 독일연방군이 러시아 사보타주 위협을 처음으로 '상당'(두 번째로 높은 단계)으로 평가했다(WDR·SZ 보도, 국방부 대변인 확인). 9월 분스토르프 공군기지 인근 폭약 드론이 군용기를 노렸다고 판단했으며, 메르츠 총리는 \"러시아 허위정보·하이브리드 공격이 최대 위협\"이라고 했다(로이터)"
   ],
   "sources": [
    [
-    "로이터(The Star 게재)",
-    "Germany's military warns of 'significant' Russian sabotage threat(독일군, 러시아 사보타주 위협 '상당' 경고) · 2026-10-21",
-    "https://www.thestar.com.my/news/world/2026/10/21/germany039s-military-warns-of-039significant039-russian-sabotage-threat"
+    "wahlrecht.de(조사기관 발표 집계)",
+    "Sonntagsfrage – Umfragen zur Bundestagswahl(연방의회 선거 여론조사) · 2026-10-31",
+    "https://www.wahlrecht.de/umfragen/index.htm"
+   ],
+   [
+    "leinetal24(INSA·FGW 인용)",
+    "Kleiner Lichtblick für Merz: AfD rutscht unter 30 Prozent(메르츠에 작은 희망: AfD 30% 아래로) · 2026-10-27",
+    "https://www.leinetal24.de/welt/kleiner-lichtblick-fuer-merz-afd-rutscht-unter-30-prozent-zr-94560427.html"
    ],
    [
     "독일 연방하원(Bundestag)",
@@ -1267,29 +1259,24 @@
     "https://www.bundestag.de/dokumente/textarchiv/2026/kw42-de-vereidigung-1224038"
    ],
    [
-    "Volksstimme(dpa)",
-    "Koalition: Steinmeier ernennt Schweitzer – Merz macht Druck(슈타인마이어, 슈바이처 임명…메르츠는 압박) · 2026-10-13",
-    "https://www.volksstimme.de/deutschland-und-welt/deutschland/pistorius-will-nicht-als-spd-chef-antreten-4338112"
+    "leinetal24(dpa·AFP 인용)",
+    "Rente mit 63: Arbeitsminister Schweitzer peilt Kompromiss an(63세 연금: 슈바이처 노동장관, 타협 모색) · 2026-10-17",
+    "https://www.leinetal24.de/welt/rente-mit-63-arbeitsminister-schweitzer-peilt-kompromiss-an-zr-94545745.html"
    ],
    [
     "ZDFheute",
-    "Setzt Schweitzer seine Ankündigungen bei der Rente um?(슈바이처, 연금 공언 지킬까) · 2026-10-13",
-    "https://www.zdfheute.de/politik/deutschland/schweitzer-arbeitsminister--spd-rente-reform-koalition-100.html"
+    "Bärbel Bas: 'Manchmal schwer, morgens überhaupt aufzustehen'(바스: '아침에 일어나는 것조차 힘들 때가 있다') · 2026-11-02",
+    "https://www.zdfheute.de/politik/deutschland/baerbel-bas-interview-ruecktritt-trauer-spd-cdu-merz-kampagne-100.html"
    ],
    [
-    "Stuttgarter Zeitung",
-    "Landtag in Sachsen-Anhalt: Welche Partei hat für die AfD gestimmt?(작센안할트 주의회: 어느 당이 AfD에 표를 줬나) · 2026-10-07",
-    "https://www.stuttgarter-zeitung.de/politik/landtag-in-sachsen-anhalt-welche-partei-hat-fuer-die-afd-gestimmt-79541752.html"
+    "ZDFheute(phoenix)",
+    "Klingbeil: Mehr Steuereinnahmen, aber 'keine neuen Spielräume'(클링바일: 세수는 늘었지만 '새 여지 없다') · 2026-10-22",
+    "https://www.zdfheute.de/video/phoenix-vor-ort/phoenix-klingbeil-mehr-steuereinnahmen-aber-keine-neuen-spielraeume-100.html"
    ],
    [
-    "Stuttgarter Zeitung",
-    "AfD in Sachsen-Anhalt: CDU will bei Siegmund-Wahl den Saal verlassen – doch es gibt einen Haken(작센안할트 AfD: CDU, 지그문트 표결 때 퇴장하려 하지만 함정이 있다) · 2026-10-13",
-    "https://www.stuttgarter-zeitung.de/politik/afd-in-sachsen-anhalt-cdu-will-bei-siegmund-wahl-den-saal-verlassen-doch-es-gibt-einen-haken-79565888.html"
-   ],
-   [
-    "Volksstimme(dpa)",
-    "Haseloff verteidigt CDU-Plan zur Siegmund-Wahl(하젤로프, 지그문트 선출 때 CDU 퇴장 계획 옹호) · 2026-10-21",
-    "https://www.volksstimme.de/panorama/haseloff-verteidigt-cdu-plan-zur-siegmund-wahl-4342834"
+    "ZDFheute",
+    "Der Treueschwur(충성 서약) · 2026-10-28",
+    "https://www.zdfheute.de/politik/deutschland/cdu-sachsen-anhalt-eid-erklaerung-afd-100.html"
    ],
    [
     "Verfassungsblog",
@@ -1298,33 +1285,13 @@
    ],
    [
     "ZDFheute",
-    "Junge Union: Bundeskanzler Merz positioniert sich klar gegen AfD(청년연합 대회: 메르츠 총리, AfD에 분명히 선 그어) · 2026-10-17",
-    "https://www.zdfheute.de/politik/deutschland/merz-junge-union-deutschlandtag-rentenreform-afd-linke-100.html"
+    "Berlin: Linken-Parteitag stimmt für Koalitionsverhandlungen(베를린: 좌파당 전당대회, 연정 협상 찬성) · 2026-10-31",
+    "https://www.zdfheute.de/politik/deutschland/berlin-linke-gruene-spd-koalitionsverhandlungen-wahl-100.html"
    ],
    [
-    "wahlrecht.de(조사기관 발표 집계)",
-    "Sonntagsfrage – Umfragen zur Bundestagswahl(연방의회 선거 여론조사) · 2026-10-23",
-    "https://www.wahlrecht.de/umfragen/index.htm"
-   ],
-   [
-    "infratest dimap(ARD)",
-    "ARD-DeutschlandTREND Oktober 2026(ARD 도이칠란트트렌트 2026년 10월) · 2026-10-01",
-    "https://www.infratest-dimap.de/umfragen-analysen/bundesweit/ard-deutschlandtrend/2026/oktober/"
-   ],
-   [
-    "LTO",
-    "VG Köln stoppt Hochstufung: AfD erstmal nicht \"gesichert rechtsextrem\"(쾰른 행정법원, 격상 제동: AfD 당분간 '확실한 우익극단주의' 아니다) · 2026-02-26",
-    "https://www.lto.de/recht/nachrichten/n/13l110925-vg-koeln-stoppt-hochstufung-afd-als-gesichert-rechtsextrem"
-   ],
-   [
-    "연방정치교육원(bpb)",
-    "Landtagswahl in Sachsen-Anhalt 2026: AfD stärkste Kraft(2026년 작센안할트 주선거: AfD 제1당) · 2026-09-08",
-    "https://www.bpb.de/kurz-knapp/hintergrund-aktuell/581006/landtagswahl-in-sachsen-anhalt-2026-afd-staerkste-kraft/"
-   ],
-   [
-    "연방헌법수호청(BfV)",
-    "Glossar: Extremismus(용어집: 극단주의)",
-    "https://www.verfassungsschutz.de/SharedDocs/glossareintraege/DE/E/extremismus.html"
+    "로이터(The Star 게재)",
+    "Germany's military warns of 'significant' Russian sabotage threat(독일군, 러시아 사보타주 위협 '상당' 경고) · 2026-10-21",
+    "https://www.thestar.com.my/news/world/2026/10/21/germany039s-military-warns-of-039significant039-russian-sabotage-threat"
    ]
   ],
   "videos": [
@@ -1475,50 +1442,90 @@
  },
  "ER": {
   "kind": "conflict",
-  "asOf": "2026-10-25",
-  "headline": "아비 \"매우 심각한 결과\" 경고에 에리트레아 \"합병은 권원 아니다\"…루비오 \"국경 양쪽 병력 증강\"",
-  "summary": "에리트레아는 1993년 독립 이후 이사이아스 아페웨르키 대통령이 선거 없이 통치해 왔다. 10월 1일 에티오피아가 아스마라 대사관을 닫고 외교관 10명을 추방하자 에리트레아는 단교했다. ACLED는 에리트레아군이 10월 7일 잘람베사로 국경을 넘었고, 에티오피아 드론 공습을 받은 뒤 12일 잘람베사를 거쳐 돌아갔다고 기록했다. AFP는 18일 주민 말을 빌려 일부 에리트레아군이 잘람베사 등 국경 에티오피아 쪽에 남아 있다고 전했다. 에리트레아는 파병을 확인도 부인도 하지 않고, 에티오피아의 침공 주장을 '전쟁 선포'라 부르며 안보리에 7장 조치를 요구했다. 아비 총리는 19일 에리트레아가 에티오피아의 적들에게 기지가 되면 '매우 심각한 결과'가 있을 것이라고 경고했다. 예마네 게브레메스켈 정보장관은 20일 에티오피아의 바다 출구 '회복' 주장에 \"합병과 강제 점령은 권원을 주지 않는다\"고 맞받았다. 미국과 러시아는 자제를 촉구하며 중재 의사를 밝혔다.",
+  "asOf": "2026-11-02",
+  "headline": "에티오피아 Su-35 인도 발표에 에리트레아 \"선제 침략 전쟁 준비\" 반발…이사이아스는 크렘린서 푸틴 회담",
+  "summary": "에리트레아는 1993년 독립 이후 이사이아스 아페웨르키 대통령이 선거 없이 통치해 왔다. 10월 1일 단교 뒤 에리트레아군은 잘람베사 일대에서 물러났고(ACLED), 전선은 티그라이 안쪽으로 옮겨 갔다. 에티오피아군 참모총장 비르하누 줄라는 25일 국영 매체를 통해 에리트레아가 티그라이 반군(TPLF)을 군사 지원한다고 비난했고, 에리트레아는 지원설을 부인해 왔다. 28일 아비 아머드 총리는 러시아 Su-35 12대를 받았고 S-400 4개 포대가 뒤따른다고 밝혔지만, 러시아 로스오보론엑스포르트는 로이터에 2대를 인도했다고 말했다. 예마네 게브레메스켈 에리트레아 정보장관은 같은 날 이를 에티오피아의 '선제 침략 전쟁' 준비라고 비판했다. 이사이아스는 30일 모스크바 크렘린에서 푸틴을 만났고, 러시아는 두 나라 중재 용의를 거듭 밝혔으나 어느 쪽도 수락을 공식 확인하지 않았다.",
   "control": [
    {
     "actor": "대통령 이사이아스 아페웨르키·PFDJ(유일 정당)",
-    "holds": "1993년 독립 후 계속 집권. 선거·헌법 시행 없음. 10/1 에티오피아와 단교",
+    "holds": "1993년 독립 후 계속 집권. 선거·헌법 시행 없음. 10/1 에티오피아와 단교. 10/30 크렘린에서 푸틴과 회담",
     "backers": ""
    },
    {
     "actor": "에리트레아군",
-    "holds": "10/7 잘람베사로 월경, 10/12 잘람베사 거쳐 철수(ACLED). AFP 10/18: 일부는 잘람베사 등 국경 에티오피아 쪽에 남음. 국경 북쪽 참호 구축 보도는 미확인",
+    "holds": "10/7 잘람베사로 월경, 10/12 잘람베사 거쳐 철수(ACLED). AFP 10/18: 일부는 잘람베사 등 국경 에티오피아 쪽에 남음. 에티오피아는 반군 지원이라 비난, 에리트레아는 부인",
     "backers": ""
    },
    {
-    "actor": "에티오피아 연방군·티그라이평화군(TPF, 친정부 민병대)",
-    "holds": "메켈레·아디그라트·아드와·악숨·시레 장악. 10/12~14 잘람베사·라마까지 갔다가 10/17~19 남쪽 중부로 재배치(ACLED·Critical Threats)",
-    "backers": ""
+    "actor": "에티오피아 연방군(ENDF)·티그라이평화군(TPF, 친정부 민병대)",
+    "holds": "10/4 메켈레 진입, 10/16 6개월 임시행정부 출범 발표. 10/27~30 국경 도시 라마 드론 공습. Su-35 인도 발표(10/28)",
+    "backers": "러시아(Su-35·S-400 도입)"
    },
    {
-    "actor": "TPLF 주도 반정부 동맹",
-    "holds": "중부 산악과 북부 국경 일부. 10/21~22 국경 도시 라마 재진입(ACLED). 에티오피아는 에리트레아·이집트·수단이 지원한다고 비난(세 나라 부인)",
+    "actor": "TPLF 주도 반정부 동맹(티그라이방위군 TDF)",
+    "holds": "중부 산악과 북부 국경 일부. 10/22 라마 재탈환 주장(반군 측 주장), 10/22 피세하 키다누 중장은 저항 계속 촉구. 에티오피아는 에리트레아·이집트·수단 지원을 주장(세 나라 부인)",
     "backers": ""
    }
   ],
   "points": [
-   "10월 17일 루비오 미 국무장관은 \"국경 양쪽에서 병력이 늘고 있다\"며 걱정했다. 9월 제재 해제는 아스마라와 대화 통로를 열려는 것이었다고 했다(The Reporter)",
-   "10월 15일 오스만 살레 외무장관은 아스마라 주재 외국 대표들에게 에티오피아가 \"부당한 침공\"을 벌이고 에리트레아 반정부 단체를 지원한다고 설명했다(Critical Threats)",
-   "10월 19일 아비 에티오피아 총리는 에리트레아가 \"발전의 동반자 대신 에티오피아 적들의 기지\"가 되면 \"매우, 매우, 매우 심각한 결과\"가 있을 것이라고 했다(AFP)",
-   "10월 25일 예마네 정보장관은 바히르다르 타나 포럼의 에티오피아 홍해 발언을 \"건강하지 못한 집착\"이라 부르고 \"이 촌극은 멈춰야 한다\"고 했다(Dawan Africa)",
-   "10월 20일 예마네 게브레메스켈 정보장관은 X에서 에티오피아가 가진 적 없는 항구를 '회복'할 수 없다며 \"합병과 강제 점령은 점령자에게 역사적·법적 권원을 주지 않는다\"고 했다(Dawan Africa)",
-   "외국 안보 소식통은 에리트레아군 5,000~8,000명이 에티오피아로 들어갔다가 물러난 것으로 추정했다(AFP, 10/14)",
-   "티그라이평화군 대변인 솔로몬 하일레마리암은 에리트레아군이 큰 손실을 입었다고 주장했고, 예마네 게브레메스켈 공보장관은 '거짓'이라고 반박했다(10/15)",
-   "예마네 공보장관은 에티오피아군이 에리트레아 국경을 넘었다는 소문도 '완전히 거짓'이라고 했다(AFP, 10/14)",
-   "10/13 정보 메모: 에리트레아는 프리토리아 협정 당사자가 아니며, 에티오피아가 RSADO 등 반에리트레아 무장단체와 수단 RSF를 지원한다고 주장했다",
-   "10/14 마코 루비오 미 국무장관이 아비 아머드 총리와 통화해 2018년 에티오피아·에리트레아 평화협정에 따른 대화와 이웃 나라 주권 존중을 촉구했다",
-   "9월 19일 미국이 2021년 티그라이 전쟁 때 부과한 에리트레아 제재를 해제했다"
+   "10월 16일 아비 아머드 총리는 티그라이를 6개월 맡을 임시행정부를 세우고 이후 자유선거를 하겠다고 밝혔다(알자지라). 23일 피세하 키다누 티그라이군 중장(22일 국영 TV)은 \"민병대와 자원자는 적과 교전해야 한다\"고 했고, 임시행정부의 레다에 할레폼은 \"보복할 때가 아니다\"라며 무장해제 프로그램 참여를 촉구했다. 마그누스 테일러 국제위기그룹(ICG) 부국장은 \"TPLF가 메켈레를 잃었다고 분쟁이 끝났다고 생각해선 안 된다\"고 말했다(AP)",
+   "10월 25일 비르하누 줄라 에티오피아군 참모총장은 에리트레아가 TPLF에 군사 지원을 한다고 비난하고 \"신이 에티오피아에 홍해를 쓰게 했다\"고 말했다(에티오피아 국영 매체 인용, Critical Threats). 23일 레드완 후세인 정보안보국장은 타나 포럼에서 \"연안국만 홍해를 관리해선 안 된다\"고 했다",
+   "10월 28일 아비 총리는 X에서 러시아 Su-35 12대가 1년 앞당겨 도착했고 S-400 4개 포대가 올 것이라며 \"선제적으로 침략을 억지하겠다\"고 했다. 로스오보론엑스포르트는 로이터에 2대를 인도했다고 밝혔다. 가격·배치 장소는 공개되지 않았다(로이터·Critical Threats)",
+   "10월 28일 예마네 게브레메스켈 에리트레아 정보장관은 X에서 러시아 전투기 인도가 에티오피아의 '선제' 침략 전쟁을 뒷받침할 것이라고 했다. 시빌린의 베네딕트 만진 분석가는 S-400이 에리트레아와의 전쟁에 쓰일 수 있으나 \"값싼 드론에 뚫릴 수 있다\"고 말했다(알자지라 10/29)",
+   "10월 27일 라브로프 러시아 외무장관은 중재 용의를 거듭 밝혔고, 30일 이사이아스는 푸틴과 만나 \"주권과 영토 보전은 국제법의 기둥\"이라고 말했다. 아비·이사이아스의 직접 협상은 확인되지 않았다(Critical Threats·Mereja·Borkena)",
+   "10월 27~30일 에티오피아군이 라마에 드론 공습을 이어갔고, 30일 공습으로 곡물을 옮기던 민간인 최소 12명이 숨졌다는 보도가 있다. 에티오피아 분쟁 지도 집계를 Critical Threats가 인용한 것으로 독립 확인은 안 됐다"
   ],
   "parliamentNote": "국회는 2002년 이후 소집되지 않았고 1997년 헌법도 시행되지 않아, 의석 통계는 실제 권력 구조를 반영하지 않는다.",
   "sources": [
    [
     "Critical Threats",
-    "Ethiopia War Security Review, October 16, 2026(에티오피아 전쟁 안보 리뷰) · 2026-10-16",
-    "https://www.criticalthreats.org/briefs/ethiopia-war-security-review/october-16-2026"
+    "Ethiopia War Security Review, October 30, 2026(에티오피아 전쟁 안보 점검 10월 30일) · 2026-10-30",
+    "https://www.criticalthreats.org/briefs/ethiopia-war-security-review/october-30-2026"
+   ],
+   [
+    "Critical Threats",
+    "Ethiopia War Security Review, October 27, 2026(에티오피아 전쟁 안보 점검 10월 27일) · 2026-10-27",
+    "https://www.criticalthreats.org/briefs/ethiopia-war-security-review/october-27-2026"
+   ],
+   [
+    "로이터(Internazionale 게재)",
+    "Ethiopia says it has taken delivery of 12 Russian Su-35 fighter jets(에티오피아, 러시아 Su-35 12대 인도 밝혀) · 2026-10-28",
+    "https://www.internazionale.it/ultime-notizie-reuters/2026/10/28/ethiopia-says-it-has-taken-delivery-of-12-russian-su-35-fighter-jets"
+   ],
+   [
+    "알자지라",
+    "Why is Russia sending fighter jets and air defences to Ethiopia?(러시아는 왜 에티오피아에 전투기와 방공망을 보내나) · 2026-10-29",
+    "https://www.aljazeera.com/news/2026/10/29/why-is-russia-sending-fighter-jets-and-air-defences-to-ethiopia"
+   ],
+   [
+    "AP(News4Jax 게재)",
+    "Ethiopia's Tigray rebels urged to disarm as commander vows to fight on(에티오피아 티그라이 반군에 무장해제 촉구, 사령관은 계속 싸우겠다고) · 2026-10-23",
+    "https://www.news4jax.com/news/world/2026/10/23/ethiopias-tigray-rebels-urged-to-disarm-as-commander-vows-to-fight-on/"
+   ],
+   [
+    "알자지라",
+    "Ethiopia announces instalment of interim government in Tigray(에티오피아, 티그라이 임시정부 수립 발표) · 2026-10-16",
+    "https://www.aljazeera.com/news/2026/10/16/ethiopia-announces-instalment-of-interim-government-in-tigray"
+   ],
+   [
+    "Mereja",
+    "Isaias meets Putin in Moscow after calling sanctions 'modern slavery' in Sputnik interview(이사이아스, 제재를 '현대판 노예제'라 한 뒤 모스크바서 푸틴 회담) · 2026-10-30",
+    "https://mereja.com/index/838470"
+   ],
+   [
+    "Borkena",
+    "Burhan, Abiy and Afwerki in Moscow: What Does Russia Want in the Horn of Africa?(모스크바의 부르한·아비·이사이아스: 러시아는 아프리카의 뿔에서 무엇을 원하나) · 2026-11-01",
+    "https://borkena.com/burhan-abiy-and-afwerki-in-moscow-what-does-russia-want-in-the-horn-of-africa"
+   ],
+   [
+    "에리트레아 정부(공보부 Shabait)",
+    "Information Note Regarding Eritrea-Ethiopia Relations(에리트레아·에티오피아 관계에 관한 정보 메모) · 2026-10-14",
+    "https://shabait.com/2026/10/14/information-note-regarding-eritrea-ethiopia-relations/"
+   ],
+   [
+    "Kuwait Times(AFP)",
+    "In Tigray, Ethiopians welcome departure of Eritrean troops(티그라이 주민들, 에리트레아군 철수 반겨) · 2026-10-18",
+    "https://kuwaittimes.com/article/51864/world/in-tigray-ethiopians-welcome-departure-of-eritrean-troops/"
    ],
    [
     "The Reporter",
@@ -1529,51 +1536,6 @@
     "ACLED",
     "Ethiopia Alerts archive(에티오피아 경보 모음) · 열람 2026-10-25",
     "https://acleddata.com/ethiopia-alerts-archive"
-   ],
-   [
-    "Kuwait Times(AFP)",
-    "In Tigray, Ethiopians welcome departure of Eritrean troops(티그라이 주민들, 에리트레아군 철수 반겨) · 2026-10-18",
-    "https://kuwaittimes.com/article/51864/world/in-tigray-ethiopians-welcome-departure-of-eritrean-troops/"
-   ],
-   [
-    "Africanews(AFP)",
-    "Ethiopia PM warns Eritrea of 'severe consequences' if supports enemies(에티오피아 총리, 적 지원하면 에리트레아에 '심각한 결과' 경고) · 2026-10-20",
-    "https://www.africanews.com/2026/10/20/ethiopia-pm-warns-eritrea-of-severe-consequences-if-supports-enemies/"
-   ],
-   [
-    "Dawan Africa",
-    "Eritrea's Information Minister Slams Ethiopia's Red Sea Remarks at Tana Forum(에리트레아 정보장관, 타나 포럼의 에티오피아 홍해 발언 비판) · 2026-10-25",
-    "https://www.dawan.africa/news/eritreas-information-minister-slams-ethiopias-red-sea-remarks-at-tana-forum"
-   ],
-   [
-    "Dawan Africa",
-    "Eritrea Rejects Ethiopia's Claim to \"Reclaim\" Sea Access(에리트레아, 에티오피아의 바다 출구 '회복' 주장 일축) · 2026-10-20",
-    "https://www.dawan.africa/news/eritrea-rejects-ethiopias-claim-to-reclaim-sea-access"
-   ],
-   [
-    "에리트레아 정부(공보부 Shabait)",
-    "Information Note Regarding Eritrea-Ethiopia Relations(에리트레아·에티오피아 관계에 관한 정보 메모) · 2026-10-14",
-    "https://shabait.com/2026/10/14/information-note-regarding-eritrea-ethiopia-relations/"
-   ],
-   [
-    "AP(KIRO 7)",
-    "Rubio urges restraint over Ethiopia-Eritrea tensions as rights group reports civilians killed(루비오, 에티오피아·에리트레아 자제 촉구) · 2026-10-15",
-    "https://www.kiro7.com/news/world/rubio-urges/4CM4K5EF2M5NRAJEAF43CIAGEA/"
-   ],
-   [
-    "AFP(Kuwait Times)",
-    "Ethiopian forces approach Eritrea border town(에티오피아군, 에리트레아 국경 도시 접근) · 2026-10-14",
-    "https://kuwaittimes.com/article/51612/world/africa/ethiopian-forces-approach-eritrea-border-town/"
-   ],
-   [
-    "Al Jazeera(AFP·Anadolu)",
-    "Ethiopian forces expand control in Tigray as militia claims Eritrean losses(에티오피아군 티그라이 장악 확대, 민병대는 에리트레아군 손실 주장) · 2026-10-15",
-    "https://www.aljazeera.com/news/2026/10/15/ethiopian-forces-expand-control-in-tigray-as-militia-claims-eritrean-losses"
-   ],
-   [
-    "Reuters(Jerusalem Post)",
-    "African Union urges de-escalation amid tension between Ethiopia, Eritrea, Egypt(아프리카연합, 에티오피아·에리트레아·이집트 긴장 완화 촉구) · 2026-10-02",
-    "https://www.jpost.com/international/article-910397"
    ]
   ],
   "videos": [
@@ -2222,14 +2184,24 @@
  },
  "GR": {
   "kind": "politics",
-  "asOf": "2026-10-24",
-  "headline": "교사·의사 파업 속 학생 시위…경찰 집계 아테네 약 1만 명",
-  "summary": "키리아코스 미초타키스 총리의 신민주주의당(ND)이 의회 300석 중 156석으로 단독 정부를 이끈다. 다음 총선은 2027년 중반으로 예상된다(TNND). 10월 13일 대학생들이 아테네 신타그마 광장에 텐트를 치고 월세 상한·주거 수당·학생 기숙사 확대를 요구했다(To Vima). 21일에는 초등교사 24시간 파업, 병원 의사 파업, 공무원 노조(ADEDY) 부분 파업 속에 학생·교사가 아테네·테살로니키·파트라스 등에서 행진했다. 경찰은 아테네와 교외에 약 1만 명이 모였다고 집계했고 시위는 평화롭게 끝났다(Africanews).",
+  "asOf": "2026-11-02",
+  "headline": "미초타키스, 2027 총선 앞두고 당을 선거 체제로… 튀르키예-리비아 해양 합의에 강력 반발",
+  "summary": "키리아코스 미초타키스 총리의 신민주주의당(ND)이 의회 300석 중 156석으로 단독 정부를 이끈다. 미초타키스는 11월 2일 각료회의에서 임기가 끝나기 전 정부 우선과제 90개를 추진하라고 주문했고, 임기를 끝까지 채우겠다는 뜻을 밝혔다(To Vima). 같은 날 ND는 새 집행 사무국 첫 회의를 열었고, 당 관계자들은 총선 소집까지 최소 6개월이 남았다고 했다(AMNA). 10월 17~20일 펄스 여론조사에서 ND는 30%, 알렉시스 치프라스 전 총리의 신당 ELAS는 16.5%, PASOK은 13%로, ND는 단독 과반에 필요한 약 38~40%에 못 미친다(iefimerida). 미초타키스는 10월 29일 유엔 안보리 공개토론과 로이터 인터뷰에서 튀르키예-리비아 해양 합의를 '명백히 불법이며 무효'라고 규정했고, 에르도안 대통령은 EU 등의 반응이 정당성이 없다고 맞받았다(Reuters). 10월 28일 그리스 선사 관리 컨테이너선이 흑해 불가리아 앞바다에서 드론에 맞아 침몰해 미초타키스는 흑해 휴전을 촉구했다(Reuters).",
   "control": [
    {
     "actor": "미초타키스 정부(신민주주의당)",
-    "holds": "총리 키리아코스 미초타키스, 교육장관 소피아 자하라키. 의회 300석 중 156석",
+    "holds": "총리 키리아코스 미초타키스, 부총리 코스티스 하치다키스, 교육장관 소피아 자하라키. 의회 300석 중 156석",
     "backers": "의회 단독 과반"
+   },
+   {
+    "actor": "ELAS(치프라스 신당)",
+    "holds": "펄스 여론조사 2위(16.5%). 대표 알렉시스 치프라스 전 총리",
+    "backers": ""
+   },
+   {
+    "actor": "PASOK",
+    "holds": "펄스 여론조사 3위(13%). 대표 닉 안드룰라키스",
+    "backers": ""
    },
    {
     "actor": "교원·의사·공무원 노조, 학생회",
@@ -2238,32 +2210,38 @@
    }
   ],
   "points": [
-   "10월 21일 전국 파업·행진: 경찰 집계 아테네·교외 약 1만 명(로이터, Africanews 인용). 구호 '그리스에서 프랑스까지, 무상 공교육을 위해 싸운다'(Proto Thema)",
-   "중등교원노조(OLME): 중등교사 최소 15,000명 부족, 학급당 최대 20명 제안. 교사 노조는 임금 20% 인상과 13·14번째 월급 복원을 요구(Proto Thema)",
-   "자하라키 교육장관은 7억 3,300만 유로가 넘는 학생 주거·시설 개선 사업을 들었다(TNND)",
-   "그리스 교육 지출은 2023년 GDP의 3.3%로 EU 평균 4.7%보다 낮다(유럽연합 통계청, TNND 인용)",
-   "10월 13일 대학생 신타그마 광장 텐트 농성: 월세 상한, 주거 수당 확대, 기숙사 확충, 전기·연료 가격 상한 요구. 프랑스·스페인 학생 시위를 계기로 들었다(To Vima)"
+   "11월 2일 각료회의: 우선과제 90개. 최저임금을 2028년 초 1,000유로로 올리는 목표, 빈집을 임대시장에 내놓는 정책, 군 유휴부지의 주택 전환이 들어 있고 새 정책은 발표하지 않았다. 미초타키스: \"많은 가구가 시험받고 있다는 것을 안다\"(To Vima)",
+   "펄스(스카이) 10월 17~20일, 1,107명: 선호 총리 미초타키스 29%, 치프라스 16%. 단독 정부 선호 43%, 연립 선호 36%. 의회가 최대 10개 정당으로 쪼개질 수 있다(iefimerida, 10월 23일)",
+   "10월 29일 미초타키스 로이터 인터뷰: 튀르키예-리비아 합의는 '명백히 불법이며 무효'이고 '지리를 완전히 무시한다'. 리비아 동부 의회가 직전 주 비준했고 이집트·바레인·UAE도 이를 비판했다. 셰브런 주도 컨소시엄의 크레타 앞바다 탐사는 '도전받을 위험이 없다'고 했다(Reuters)",
+   "10월 28일 그리스 선사 관리 컨테이너선이 불가리아 앞 흑해에서 해상 드론 공격으로 침몰했다. 공격 주체는 확인되지 않았다. 미초타키스는 '러시아는 실질 협상에 관심이 없어 보인다'고 했다(Reuters)",
+   "10월 30일 의회가 템피 열차 참사 현장 증거 변조 혐의의 특별법원 판사를 추첨했다. 피고는 크리스토스 트리안토풀로스 전 차관 등이다. 재판은 12월 말 전 시작될 전망이다(Greek City Times, Proto Thema 인용)",
+   "그리스 교육 지출은 2023년 GDP의 3.3%로 EU 평균 4.7%보다 낮다(유럽연합 통계청, TNND 인용). 10월 21일 교사·의사 파업 속 아테네·교외 행진에는 경찰 집계 약 1만 명이 모였다"
   ],
   "sources": [
    [
-    "Africanews",
-    "Greece: Thousands flood Athens streets in education protest(그리스 아테네 거리 메운 교육 시위) · 2026-10-21",
-    "https://www.africanews.com/2026/10/21/greece-thousands-flood-athens-streets-in-education-protest/"
+    "To Vima",
+    "Mitsotakis Presses Ministers to Deliver Ahead of Elections(미초타키스, 총선 앞두고 장관들에게 성과 주문) · 2026-11-02",
+    "https://www.tovima.com/politics/mitsotakis-presses-ministers-to-deliver-ahead-of-elections"
    ],
    [
-    "Proto Thema",
-    "Students and teachers take to the streets as nationwide strikes hit schools and hospitals in Greece(그리스 전국 파업 속 학생·교사 거리로) · 2026-10-21",
-    "https://en.protothema.gr/2026/10/21/students-and-teachers-take-to-the-streets-as-nationwide-strikes-hit-schools-and-hospitals-in-greece/"
+    "Greek City Times(AMNA 전재)",
+    "Mitsotakis Sets Priorities and Election Preparations for 2027(미초타키스, 우선과제와 2027 총선 준비 제시) · 2026-11-02",
+    "https://greekcitytimes.com/2026/11/02/mitsotakis-sets-priorities-and-election-preparations-for-2027"
    ],
    [
-    "TNND(WJAR 게재)",
-    "Inspired by France, Greek students protest as rising costs put education out of reach(프랑스에 자극받은 그리스 학생 시위) · 2026-10-21",
-    "https://turnto10.com/news/nation-world/inspired-by-france-greek-students-protest-as-rising-costs-put-education-out-of-reach"
+    "iefimerida",
+    "Greek Poll Shows Ruling Party Comfortably Ahead as Parliament Could Splinter Into 10 Parties(여당 여유 있게 앞서나 의회 10개 정당 분열 가능) · 2026-10-23",
+    "https://www.iefimerida.gr/english/greek-poll-shows-ruling-party-comfortably-ahead-parliament-could-splinter-10-parties"
    ],
    [
-    "To Vima(in.gr)",
-    "Athens Students Camp Outside Parliament Over Living Costs(아테네 대학생, 생활비 항의 의회 앞 농성) · 2026-10-13",
-    "https://www.tovima.com/society/athens-students-camp-outside-parliament-over-living-costs/"
+    "Reuters(Internazionale 게재)",
+    "Exclusive-Greek PM calls Turkey-Libya maritime deal 'void;' calls for global truce after Black Sea attacks(그리스 총리 '튀르키예-리비아 해양 합의 무효', 흑해 공격 뒤 전 세계 휴전 촉구) · 2026-10-29",
+    "https://www.internazionale.it/ultime-notizie-reuters/2026/10/29/exclusive-greek-pm-calls-turkey-libya-maritime-deal-void-calls-for-global-truce-after-black-sea-attacks"
+   ],
+   [
+    "Greek City Times",
+    "Greek Parliament Draws Judges for Tempi Crash Site Tampering Trial(의회, 템피 사고 현장 증거 변조 재판 판사 추첨) · 2026-10-31",
+    "https://greekcitytimes.com/2026/10/31/greek-parliament-draws-judges-for-tempi-crash-site-tampering-trial"
    ]
   ],
   "videos": [
@@ -2289,24 +2267,24 @@
  },
  "HT": {
   "kind": "conflict",
-  "asOf": "2026-10-25",
-  "headline": "실종 엘살바도르 요원 4명 행방 불명…부켈레, 인계된 불탄 시신 4구 \"우리 요원 아니다\"",
-  "summary": "2021년 대통령 암살 뒤 아이티에는 선출된 대통령도 의회도 없고, 알릭스 디디에 피스에메 총리의 과도정부가 통치한다. 유엔 전문가패널은 9월 최종 보고서에서 갱단이 수도권의 약 70%를 장악하고 있으며(85%에서 감소), 수도에서 지방으로 가는 국도는 여전히 갱단 손에 있다고 밝혔다. 피스에메 총리는 10월 8일 타바르의 베르티에르 기지에서 갱단진압군(GSF) 출범식을 열었다. GSF 병력은 9월 말 약 1,500명으로 목표 5,500명에 크게 못 미친다. 선관위(CEP)는 10월 6일 12월 13일로 잡혔던 1차 투표를 날짜 없이 연기했다. 유엔 안보리는 10월 14일 결의 2831호로 대아이티 무기 금수와 제재를 1년 연장했다.",
+  "asOf": "2026-11-02",
+  "headline": "엘살바도르, 2,000명 넘는 병력 파병 발표…실종 요원 4명은 행방 불명, 아이티 선거는 2027년 7월로 연기",
+  "summary": "2021년 대통령 암살 뒤 아이티에는 선출된 대통령도 의회도 없고, 알릭스 디디에 피스에메 총리의 과도정부가 통치한다. 10월 18일 크루아데부케에서 유엔 승인 갱단진압군(GSF) 소속 엘살바도르 항공 기술 요원 4명이 탄 장갑차가 매복 공격을 받아 불탔고, 4명은 아직 행방을 알 수 없다. 엘살바도르 외교부는 10월 29일 나이브 부켈레 대통령과 피스에메 총리의 통화 뒤 '2,000명 넘는' 병력 파견을 발표했고, 30일 수도 타바르에서 장갑차 행렬이 목격됐다(AP). 아이티 정부는 GSF 틀 안에서 협력을 강화한다고 했지만, 이 병력의 지휘 체계는 밝혀지지 않았다. 선관위(CEP)는 10월 28일 12월 13일 예정이던 1차 투표를 2027년 7월 18일로, 결선을 10월 4일로 미뤘다. 유엔 전문가패널은 갱단이 수도권 약 70%를 장악한 것으로 본다.",
   "control": [
    {
     "actor": "갱단 연합 '비브 안상'",
-    "holds": "수도권 약 70%와 수도-지방 간 국도, 아르티보니트 하류 일부. 2026년 내부 분열로 3~7월 시테솔레유·퀴드삭 교전 613명 사망",
+    "holds": "수도권 약 70%와 수도-지방 간 국도(유엔 전문가패널, 9월). 크루아데부케 산토 일대는 첸 메샨·400 마우조 구역이며 10월 18일 매복 공격을 주장한 조직은 없음",
     "backers": ""
    },
    {
     "actor": "과도정부(총리 알릭스 디디에 피스에메)",
-    "holds": "2026년 2월 7일 과도대통령위원회 해산 뒤 단독 집권. 선출되지 않은 총리",
+    "holds": "2026년 2월 7일 과도대통령위원회 해산 뒤 단독 집권. 선출되지 않은 총리. 납치된 엘살바도르 요원 석방을 '최우선 과제'로 밝힘",
     "backers": "미국, 유엔"
    },
    {
-    "actor": "갱단진압군(GSF)",
-    "holds": "약 1,500명(9월 말). 과테말라·엘살바도르·차드·몽골·자메이카·스리랑카. 사령관 에르데네바트 바추리 소장(몽골), 특별대표 잭 크리스토피데스",
-    "backers": "유엔 안보리 승인(2027년 3월 31일까지)"
+    "actor": "갱단진압군(GSF)과 엘살바도르군",
+    "holds": "GSF는 보도마다 1,500명 안팎에서 2,000명 넘게로 엇갈림(목표 5,500명). 엘살바도르는 별도로 2,000명 넘게 파견 발표, GSF 지휘 편입 여부 불명. 사령관 에르데네바트 바추리 소장(몽골), 특별대표 잭 크리스토피데스",
+    "backers": "유엔 안보리 승인"
    },
    {
     "actor": "아이티 국가경찰(PNH)·자경단",
@@ -2315,56 +2293,33 @@
    }
   ],
   "points": [
-   "10월 18일 크루아데부케 산토 지역에서 GSF 소속 엘살바도르 항공 기술 요원 4명이 탄 장갑차가 매복 공격을 받고 불탔고 4명은 실종(Al Jazeera). 마이애미헤럴드 소식통들은 첸 메찬·400 마우조 갱단을 지목. 공격을 주장한 조직은 없음",
-   "10월 24일 엘살바도르군 팀이 공항에서 한 비정부기구로부터 시신 4구를 넘겨받음. NYT는 실종 요원일 수 있다고 보도했지만 부켈레는 X에 \"우리 사람들이 아니다\", 어린이·다른 나라 군인 유해가 섞였다고 함. GSF는 논평 거부(AP·로이터)",
-   "10월 21일 부켈레 대통령 X: 구출 작전 시작, \"우리는 엘살바도르에서 갱단을 끝냈고 너희도 끝낼 수 있다\". 아이티 정부는 석방이 \"절대적 우선순위\"라고 발표. 22일 엘살바도르 특수부대 100명 파견(마이애미헤럴드)",
-   "폴커 튀르크 유엔 인권최고대표(10/2): 2026년 9월 11일까지 갱단 폭력 사상자 최소 5,700명, 성폭력 피해 여성·소녀 1,000명 이상, 납치 230건. 사상자의 절반 이상은 치안 작전 중 발생",
-   "결의 2831호는 찬성 14, 기권 1(러시아)로 통과했다. 쑨레이 중국 차석대사는 '주요 불법 무기 공급국'의 행동을 촉구했다",
-   "유엔 전문가패널 보고서(S/2026/714): 400 마우조 등 갱단 탄약 일부가 도미니카 경찰 비축분에서 유출. 도미니카 국방부는 경찰 탄약 약 90만8,000발 유출은 인정했지만 아이티로 간 경로는 모른다고 밝혔다",
-   "같은 보고서는 갱단 총기의 주 공급원이 미국, 특히 플로리다발 구매·컨테이너 반입이라고 적었다",
-   "선거는 당초 1차 12/13, 결선 2027/2/21이었다. CEP는 새 일정을 '곧' 내겠다고만 했다",
-   "국내 피란민 약 150만 명, 인구 약 1,100만 명의 7분의 1 수준(IOM)"
+   "10월 18일 크루아데부케 산토 지역에서 GSF 소속 엘살바도르 항공 기술 요원 4명이 탄 장갑차가 총격·폭발물 공격을 받고 불탔다. 4명은 차량에서 빠져나온 뒤 연락이 끊겼고 공격을 주장한 조직은 없다(Haitian Times)",
+   "10월 21일 부켈레 대통령 X: 4명을 살아서 무사히 돌려보내지 않으면 더 강한 대응이 따른다, \"우리 말을 빈말로 여기지 말라\". 22일 특수부대 100명이 먼저 도착했고, 29일 외교부가 '2,000명 넘는' 병력 파견을 발표했다(Al Jazeera·Haitian Times)",
+   "10월 30일 부켈레 X(아이티 크레올어): \"이것은 아이티 국민을 겨눈 작전도, 침공도 아니다\", 목적은 실종 요원 4명을 데려오는 것. 갱단 두목들은 영상으로 부켈레에 맞서 병력을 '화력으로 압도'하겠다고 했다(AP)",
+   "10월 24일 엘살바도르군이 한 비정부기구로부터 넘겨받은 시신 4구에 대해 부켈레는 X에 \"우리 사람들이 아니다\"라고 했다. GSF는 논평을 거부했다(로이터)",
+   "국경없는의사회(MSF) 10월 28일: 18~26일 타바레·시테솔레유 병원이 총상·드론 폭발 부상자 30명을 치료했고, 이동진료소와 식수 배급을 멈췄다. ACLED 분석가 마리아 페르난다 아로카는 갱단이 국제군과 정면으로 맞서려는 의지가 커졌다고 평가했다",
+   "CEP 새 일정: 1차 2027년 7월 18일, 결선·지방선거 10월 4일. 유권자 등록은 신분증 소지자 650만 명 중 90만 명 미만(마이애미헤럴드, Al Jazeera 인용). 급성 기아 인구는 594만 명(국제 평가). 아이티는 2016년 이후 선거가 없다"
   ],
   "sources": [
    [
     "Al Jazeera",
-    "부켈레, 납치된 군인 두고 아이티 갱단 위협 (El Salvador's Bukele threatens Haitian gangs over abducted soldiers) · 2026-10-22",
-    "https://www.aljazeera.com/news/2026/10/22/el-salvadors-bukele-threatens-haitian-gangs-over-abducted-soldiers"
+    "엘살바도르, 아이티 선거 연기 속 2,000명 넘는 병력 약속 (El Salvador pledges more than 2,000 soldiers as Haiti delays elections) · 2026-10-29",
+    "https://www.aljazeera.com/news/2026/10/29/el-salvador-pledges-more-than-2000-soldiers-as-haiti-delays-elections"
+   ],
+   [
+    "AP(Africanews 게재)",
+    "엘살바도르군 2,000명, 갱단 진압 돕기 위해 아이티에 주둔 (2,000 Salvadoran troops take quarters in Haiti to help fight gangs) · 2026-10-31",
+    "https://www.africanews.com/2026/10/31/2000-salvadoran-troops-take-quarters-in-haiti-to-help-fight-gangs/"
    ],
    [
     "Haitian Times",
-    "부켈레, 실종 엘살바도르 군인 4명 두고 갱단 경고 (Bukele warns Haitian gangs over four missing Salvadoran soldiers) · 2026-10-22",
-    "https://haitiantimes.com/2026/10/22/bukele-warns-haitian-gangs-over-missing-salvadoran-soldiers/"
+    "엘살바도르 특수부대, 실종 병사 수색 위해 아이티 도착 (Salvadoran special forces arrive in Haiti to find missing soldiers) · 2026-10-23",
+    "https://haitiantimes.com/2026/10/23/salvadoran-contingent-arrives-haiti-search-four-missing-soldiers/"
    ],
    [
-    "마이애미헤럴드(Yahoo 게재)",
-    "매복 갱단에 분노한 부켈레, 아이티에 특수부대 파견 (Angry at gangs that ambushed Salvadoran soldiers, Bukele deploys special forces to Haiti) · 2026-10-22",
-    "https://www.yahoo.com/news/world/articles/angry-gangs-ambushed-salvadoran-soldiers-203054050.html"
-   ],
-   [
-    "Le National(피스에메 총리 출범식)",
-    "Haïti: Les opérations de la Force de répression des gangs officiellement lancées(갱단진압군 작전 공식 출범) · 2026-10-09",
-    "https://www.lenational.org/article/politique/8510/haiti-les-operations-de-la-force-de-repression-des-gangs-officiellement-lancees"
-   ],
-   [
-    "RCI(AFP)",
-    "Haïti : l'ONU renouvelle ses sanctions et l'embargo sur les armes(유엔, 아이티 제재·무기 금수 연장) · 2026-10-14",
-    "https://rci.fm/deuxiles/infos/Caraibes/Haiti-lONU-renouvelle-ses-sanctions-et-lembargo-sur-les-armes"
-   ],
-   [
-    "Jamaica Observer(AFP)",
-    "At least 5,700 killed, wounded in Haiti gang crisis this year – UN(유엔: 올해 갱단 위기 사상자 최소 5,700명) · 2026-10-02",
-    "https://www.jamaicaobserver.com/2026/10/02/least-5700-killed-wounded-haiti-gang-crisis-year-un/"
-   ],
-   [
-    "TVN(AFP)",
-    "El Consejo Electoral de Haití posterga de manera indefinida las elecciones(아이티 선관위, 선거 무기한 연기) · 2026-10-06",
-    "https://www.tvn-2.com/mundo/consejo-electoral-haiti-posterga-manera_1_2264677.html"
-   ],
-   [
-    "Haiti Docs(유엔 안보리 문서)",
-    "Final Report of the Panel of Experts on Haiti, S/2026/714(아이티 전문가패널 최종 보고서) · 2026-09-08",
-    "https://www.haitidocs.org/doc/un-panel-experts-2026"
+    "국경없는의사회(MSF)",
+    "포르토프랭스 폭력 급증, 민간인과 의료시설 보호해야 (Haiti: civilians and medical facilities must be spared as violence surges in Port-au-Prince) · 2026-10-28",
+    "https://www.msf.org/haiti-civilians-and-medical-facilities-must-be-spared-surge-violence-port-au-prince"
    ],
    [
     "로이터(Spokesman-Review 게재)",
@@ -2372,9 +2327,14 @@
     "https://www.spokesman.com/stories/2026/oct/24/bodies-of-ambushed-salvadoran-soldiers-found-in-ha/"
    ],
    [
-    "AP(Journal Gazette 게재)",
-    "El Salvador's Bukele says bodies found in Haiti are not those of missing Salvadorans(부켈레 '아이티서 발견된 시신, 실종 엘살바도르인 아니다') · 2026-10-24",
-    "https://www.journalgazette.net/news/world/el-salvador-s-bukele-says-bodies-found-in-haiti-are-not-those-of-missing-salvadorans/article_d14a5599-137a-544a-a095-7ca09d0dd087.html"
+    "엘문도(엘살바도르)",
+    "Haití aplaza de nuevo las elecciones presidenciales y legislativas al 18 de julio de 2027(아이티, 대선·총선 2027년 7월 18일로 재연기) · 2026-10-29",
+    "https://diario.elmundo.sv/el-mundo/haiti-aplaza-de-nuevo-las-elecciones-presidenciales-y-legislativas-al-18-de-julio-de-2027"
+   ],
+   [
+    "Haiti Docs(유엔 안보리 문서)",
+    "Final Report of the Panel of Experts on Haiti, S/2026/714(아이티 전문가패널 최종 보고서) · 2026-09-08",
+    "https://www.haitidocs.org/doc/un-panel-experts-2026"
    ]
   ],
   "videos": [
@@ -2688,9 +2648,9 @@
  },
  "IN": {
   "kind": "politics",
-  "asOf": "2026-10-25",
-  "headline": "루비오 '무역협정 서명 직전', 뭄바이 미국-인도-UAE 3자 회의",
-  "summary": "나렌드라 모디 총리의 인도국민당(BJP)이 연정(NDA)으로 3기째 집권 중이다. 선관위의 유권자명부 특별 재검증(SIR)으로 1억 3,300만 명 이상이 명부에서 빠지자 야권과 청년운동 '바퀴벌레 인민당(CJP)'이 거의 매일 시위를 벌이고 있다. 라훌 간디 하원 야당 대표는 10월 12일 대법원까지 행진하며 선관위를 상대로 청원을 냈다. 선관위는 조작을 부인하면서도 10월 15일 명령으로 17개 주·연방직할지의 정기 명부 수정을 재개하고 검색 가능한 명부를 정당에 주기로 했다. 모디 총리는 시위에 대해 공개 발언을 하지 않았다. 중앙은행은 이란 전쟁발 유가 급등에 2023년 2월 이후 처음으로 금리를 올렸다.",
+  "asOf": "2026-11-02",
+  "headline": "INDIA 연합, 선관위원장 '대중 탄핵'·델리 대집회…대법원은 SIR 청원 심리 미뤄",
+  "summary": "나렌드라 모디 총리의 인도국민당(BJP)이 연정(NDA)으로 3기째 집권 중이다. 선관위의 유권자명부 특별 재검증(SIR)으로 1억 3,000만 명 넘게 명부에서 빠졌다고 주장하는 야권 INDIA 연합은 10월 31일 선거관리위원장 기아네시 쿠마르를 겨냥한 상징적 '대중 탄핵'을 열고, 11월 1일 델리 람릴라 마이단에서 대집회를 열었다. 라훌 간디 하원 야당 대표는 집회에서 쿠마르가 '감옥에 갈 것'이라 했고, J.P. 나다 보건장관은 '어리석은 연극'이라 비판했으며 BJP 총재 니틴 나빈은 같은 날 하리아나 로타크에서 맞행진을 했다. 대법원은 10월 27일 라훌 간디 등의 청원 심리를 미루며 청원인에게 선관위 진술서에 답할 10일을 줬다. 인도중앙은행은 10월 7일 기준금리를 5.50%로 올렸고, 9월 소비자물가 상승률은 5.54%였다.",
   "control": [
    {
     "actor": "NDA 연정(총리 나렌드라 모디, BJP)",
@@ -2704,12 +2664,12 @@
    },
    {
     "actor": "야권 INDIA 연합(하원 야당 대표 라훌 간디, 국민회의)",
-    "holds": "케랄라 등 일부 주 정부. 거리 시위와 대법원 청원 주도",
+    "holds": "케랄라 등 일부 주 정부. 거리 시위·대법원 청원·'대중 탄핵' 퍼포먼스 주도",
     "backers": ""
    },
    {
-    "actor": "바퀴벌레 인민당(CJP, 전국 대표 아비지트 딥케)",
-    "holds": "온라인에서 시작한 청년 운동. 7월 교육부 장관 사임을 이끌었고 선관위원장 사퇴까지 시위를 이어가겠다고 밝힘",
+    "actor": "바퀴벌레 인민당(CJP, 창립자 아비지트 딥케)",
+    "holds": "온라인에서 시작한 청년 운동. 11월 1일 집회 지지를 밝혔고 마마타 바네르지 트리나물회의 대표도 CJP와 'Z세대' 지지를 말했다",
     "backers": ""
    },
    {
@@ -2719,32 +2679,33 @@
    }
   ],
   "points": [
-   "10월 22일 샤트루지트 카푸르 인도-티베트국경경찰(ITBP) 청장은 \"최근 아루나찰 여러 곳에서 대치가 벌어졌고 지금도 이어진다\"고 말했다. 23일 란디르 자이스왈 외교부 대변인은 \"중국군이 기존 순찰 방식에서 벗어날 때 국경 상황이 때때로 흔들린다\"며 외교·군사 채널을 계속 쓴다고 했다. 중국 정부 반응은 아직 없다. 인도 정부 소식통들은 7월 순찰 중 마주친 뒤 중국군이 어퍼수반시리 탁싱 일대, 인도가 보는 실질통제선 안쪽 6~7km 고지에 천막을 쳤고 대치가 7월 말부터 이어졌다고 더힌두에 말했다(WION·The Wire 인용).",
-   "10월 16일 델리 경찰이 '바퀴벌레 인민당(CJP)' 창립자 아비지트 딥케를 '삼색기 행진' 직전 치안 방해 예방 조항(BNSS 126·170조)으로 구금했다. 17일 특별행정치안판사는 1년 평화 서약과 보증금 5만 루피를 조건으로 풀어 줬다. 경찰은 그날 약 150명을 구금했다고 밝혔고, CJP 법률 책임자 라트나 싱은 '불법 체포'라고 했다(더위크·로이터).",
-   "10월 20일 루비오 미 국무장관은 뭄바이에서 자이샨카르 외무장관을 만난 뒤 무역협정이 \"서명만 안 했을 뿐 가장 가까운 상태\"라고 했다. 관세는 2월 기본 합의로 18%(AP)",
-   "10월 20일 유엔 인권이사회가 임명한 독립 전문가 약 24명은 성명에서 시위 참가자들이 다치고 일부는 가혹행위를 당했다고 밝히며 '과도한 무력 사용'을 즉시 멈추고 일괄 집회 금지를 철회하라고 촉구했다. 인도 정부는 이런 비판을 내정 간섭이라며 거듭 일축해 왔고, 선관위는 중복·사망·이주·부적격자를 지우는 것이며 잘못 빠진 사람은 이의를 낼 수 있다고 한다(로이터·알자지라)",
-   "10월 6일 선관위 앞 농성 9시간 만에 라훌·프리양카 간디 등 야당 의원들이 경찰에 연행됐다가 약 2시간 뒤 풀려났다.",
-   "10월 10~11일 주말 시위에서 수천 명이 일시 연행됐다. 국경없는기자회는 기자 최소 16명이 '거칠게' 연행됐다고 밝혔다. 경찰은 오랜 시위 장소 잔타르 만타르를 지정 집회장에서 뺐다.",
-   "선관위는 SIR이 중복·사망·허위 등록을 지우는 작업이라며 잘못을 부인한다. 야권 자이람 라메시 국민회의 사무총장은 10월 18일 SIR 중단과 위원장 사퇴를 다시 요구했다.",
-   "인도중앙은행(RBI) 통화정책위원회는 10월 7일 만장일치로 기준금리를 0.25%p 올려 5.50%로 했다. 올해 물가 전망은 5.2%, 성장 전망은 7.1%다.",
-   "호르무즈 해협 공격이 이어져 10월 16일 인도인 선원 15명이 탄 유조선 'ST 3'가 발사체에 맞았다. 사르바난다 소노왈 해운부 장관은 선원이 모두 무사하다고 밝혔다.",
-   "10월 2일 국경경비대 총격으로 파키스탄인 2명이 숨졌다. 파키스탄은 '비무장 민간인'이라 했고, 인도 외교부는 경고를 무시하고 넘어온 3명이 '임박한 위협'이었다며 반박했다."
+   "10월 31일 INDIA 연합은 마이라 쿠마르 전 하원의장 사회로 3시간 반 '대중 탄핵'을 열고 말리카르준 카르게 국민회의 총재가 낸 쿠마르 선관위원장 상대 6개 혐의(1억 3,200만 명 삭제 등) 동의안을 거수로 채택했다. 11월 1일 람릴라 마이단 집회에서 국민회의는 '유례없는 규모'라 했으나 BJP 의원 삼비트 파트라는 자리의 약 40%가 비었다고 반박했다. 델리 상공회의소 브리제시 고얄 회장은 집회로 1,000억 루피 손실이 났다고 추산했다(단체 추산). 아미트 샤 내무장관은 상인들이 디왈리 뒤로 미루라고 요청했다고 말했다",
+   "대법원(수리야 칸트 대법원장, 조이말리아 바그치·V. 모하나 대법관)은 10월 15일 선관위·쿠마르 위원장·선관위원 2명에게 답변을 요구했고 10월 27일 심리를 미루며 청원인에게 선관위 진술서에 답할 10일을 줬다. 대법원은 청원인 가운데 샨자이 라우트 의원의 청원은 행동을 해명한다는 조건으로 잠정 수리하겠다고 했다. 선관위는 10월 31일 우타르프라데시 필리비트의 선거등록관 2명을 정직시키고 기존 고발장에 BNS 198조를 추가하라고 지시했다",
+   "서벵골에서는 선관위 측이 SIR 이후 명부에 포함된 유권자 161만 명(16.10 lakh)에 대해 이의 신청을 냈는데 누가 승인했는지 불분명하다고 야권이 따지고 있다. 선관위는 대법원 명령에 따라 주 공무원들이 신청한 것이라고 밝혔다(더힌두)",
+   "인도중앙은행(RBI) 통화정책위원회는 10월 7일 만장일치로 기준금리를 0.25%p 올려 5.50%로 했다. 통계청(MoSPI)에 따르면 9월 소비자물가 상승률은 5.54%(8월 4.83%), 식품물가 상승률은 7.74%였다",
+   "무역협정: 10월 20일 마르코 루비오 미 국무장관은 뭄바이에서 자이샨카르 외무장관을 만난 뒤 협정이 서명만 안 했을 뿐 가장 가까운 상태라고 했다. 피유시 고얄 상공부 장관은 10월 29일 '세부 내용이 공개되면 국민이 축하할 것'이라며 민감한 이익은 하나도 훼손되지 않았다고 했다. 국민회의는 협정 보류를 요구해 왔다",
+   "국경: 10월 22일 샤트루지트 카푸르 인도-티베트국경경찰(ITBP) 청장은 아루나찰 여러 곳에서 중국군과 대치가 이어진다고 밝혔고, 23일 란디르 자이스왈 외교부 대변인은 외교·군사 채널을 쓰고 있다고 했다. 이후 새 공식 발표는 확인하지 못했다"
   ],
   "sources": [
    [
-    "The Wire",
-    "아루나찰 여러 곳서 중국군과 대치 계속…ITBP 청장 (Face-Offs with Chinese Troops Continue at Several Points in Arunachal, Says ITBP Chief) · 2026-10-23",
-    "https://m.thewire.in/article/security/face-offs-with-chinese-troops-under-way-at-several-points-in-arunachal-says-itbp-chief"
+    "더힌두",
+    "INDIA bloc's 'Chalo Dilli' rally and 'public impeachment' of CEC live highlights(INDIA 연합 '델리로' 집회·선관위원장 대중 탄핵 하이라이트: '람릴라 마이단에 대규모 인파' 국민회의, 라훌 \"쿠마르는 감옥에 갈 것\") · 2026-11-01",
+    "https://www.thehindu.com/news/national/india-bloc-mega-delhi-rally-cec-gyanesh-kumar-impeachment-anti-cec-protests-sir-row-live-updates-november-1-2026/article71651970.ece"
    ],
    [
-    "ETV Bharat",
-    "외교부 'ITBP 청장 발언 뒤 외교·군사 채널로 LAC 문제 해결 중' (Diplomatic, Military Mechanisms Being Used To Resolve Issues Along LAC, Says MEA After ITBP DG's Statement) · 2026-10-23",
-    "https://www.etvbharat.com/en/bharat/diplomatic-military-mechanisms-being-used-to-resolve-issues-along-lac-says-mea-after-itbp-dgs-statement-enn26102306508"
+    "더힌두",
+    "INDIA bloc holds symbolic 'public impeachment' of CEC Gyanesh Kumar on six charges(INDIA 연합, 선관위원장 쿠마르 6개 혐의 상징적 '대중 탄핵') · 2026-10-31",
+    "https://www.thehindu.com/news/national/india-bloc-holds-symbolic-public-impeachment-of-cec-gyanesh-kumar-on-six-charges/article71650457.ece"
    ],
    [
-    "AP(Boston 25 News 게재)",
-    "루비오·자이샨카르 뭄바이 회담 (Marco Rubio and India's Subrahmanyam Jaishankar hold talks in Mumbai) · 2026-10-20",
-    "https://www.boston25news.com/news/politics/rubio-jaishankar/YZM3PT6EVM4JZOUHIGANOJCAOQ/"
+    "한스인디아",
+    "SC defers hearing on Rahul Gandhi, other Oppn leaders' plea against SIR(대법원, 라훌 간디 등 SIR 청원 심리 연기) · 2026-10-27",
+    "https://www.thehansindia.com/news/cities/new-delhi/sc-defers-hearing-on-rahul-gandhi-other-oppn-leaders-plea-against-sir-1136362"
+   ],
+   [
+    "더힌두",
+    "Pilibhit voters' list controversy: ECI orders suspension of two EROs(필리비트 명부 논란: 선관위, 선거등록관 2명 정직 지시) · 2026-10-31",
+    "https://www.thehindu.com/news/national/uttar-pradesh/pilibhit-voters-list-controversy-eci-orders-suspension-of-two-eros/article71652926.ece"
    ],
    [
     "인도중앙은행(RBI)",
@@ -2752,49 +2713,19 @@
     "https://rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63742"
    ],
    [
-    "AP(WRAL)",
-    "India's opposition parties march to top court as protests over voter lists escalate(인도 야권, 명부 시위 격화 속 대법원으로 행진) · 2026-10-12",
-    "https://www.wral.com/news/ap/4f8b0-indias-opposition-parties-march-to-top-court-as-protests-over-voter-lists-escalate/"
+    "비즈니스투데이(MoSPI 발표 보도)",
+    "India's retail inflation rises to 5.54% in September; food inflation hits 7.74%(인도 9월 소비자물가 5.54%, 식품물가 7.74%) · 2026-10-12",
+    "https://www.businesstoday.in/latest/economy/story/indias-retail-inflation-rises-to-5-54-in-september-food-inflation-hits-7-74-561057-2026-10-12"
    ],
    [
-    "알자지라(AFP·로이터)",
-    "Indian opposition protesters in New Delhi call on election chief to quit(뉴델리 야권 시위대, 선관위원장 사퇴 요구) · 2026-10-12",
-    "https://www.aljazeera.com/news/2026/10/12/india-opposition-plans-new-delhi-protest-to-demand-election-chief-resign"
+    "데일리 파이오니어",
+    "US trade deal will protect Indian interests: Goyal(고얄 \"미국 무역협정, 인도 이익 지킬 것\") · 2026-10-29",
+    "https://dailypioneer.com/amp/story/business/us-trade-deal-will-protect-indian-interests-goyal"
    ],
    [
-    "더한스인디아",
-    "Election Commission Announces Two Key Changes Amid Opposition Protests Over Voter Roll Revision(선관위, 명부 시위 속 두 가지 변경 발표) · 2026-10-16",
-    "https://www.thehansindia.com/news/national/election-commission-announces-two-key-changes-amid-opposition-protests-over-voter-roll-revision-1132977"
-   ],
-   [
-    "더내셔널",
-    "Oil tanker struck in Strait of Hormuz, says Indian ports minister(인도 해운부 장관 '호르무즈서 유조선 피격') · 2026-10-16",
-    "https://www.thenationalnews.com/news/mena/2026/10/16/india-hormuz-strait-tanker-attack/"
-   ],
-   [
-    "알자지라",
-    "UN experts call on India to stop using 'excessive force' against protesters(유엔 전문가들, 인도에 시위대 '과도한 무력' 중단 촉구) · 2026-10-21",
-    "https://www.aljazeera.com/news/2026/10/21/un-experts-call-on-india-to-stop-using-excessive-force-against-protesters"
-   ],
-   [
-    "로이터(The Star 게재)",
-    "UN experts urge Indian authorities to cease 'use of excessive force' to curb protests(유엔 전문가들, 인도 당국에 시위 진압 '과도한 무력' 중단 촉구) · 2026-10-21",
-    "https://www.thestar.com.my/news/world/2026/10/21/un-experts-urge-indian-authorities-to-cease-039use-of-excessive-force039-to-curb-protests"
-   ],
-   [
-    "WION",
-    "인도-중국, 아루나찰 탁싱 인근 대치 계속…ITBP 청장 첫 공식 확인 (India-China face-off continues near Arunachal's Taksing, reveals ITBP chief in first official confirmation of tensions) · 2026-10-23",
-    "https://www.wionews.com/india-news/india-china-standoff-continues-near-arunachal-s-taksing-reveals-itbp-chief-shatrujeet-kapur-in-first-official-confirmation-of-tensions-1792723851188"
-   ],
-   [
-    "The Week",
-    "CJP 창립자 아비지트 딥케 조건부 석방…평화 서약 요구 (CJP founder Abhijeet Dipke released on conditional bail; asked to sign peace bond) · 2026-10-17",
-    "https://www.theweek.in/news/india/2026/10/17/abhijeet-dipke-released-on-conditional-bail-peace-bond-by-court.html"
-   ],
-   [
-    "The New Arab(로이터)",
-    "인도 '바퀴벌레' 운동 창립자, 구금 뒤 체포 (India's 'cockroach' movement founder arrested after detention) · 2026-10-17",
-    "https://www.newarab.com/news/indias-cockroach-movement-founder-arrested-after-detention"
+    "The Wire",
+    "아루나찰 여러 곳서 중국군과 대치 계속…ITBP 청장 (Face-Offs with Chinese Troops Continue at Several Points in Arunachal, Says ITBP Chief) · 2026-10-23",
+    "https://m.thewire.in/article/security/face-offs-with-chinese-troops-under-way-at-several-points-in-arunachal-says-itbp-chief"
    ]
   ],
   "videos": [
@@ -3151,136 +3082,84 @@
  },
  "IT": {
   "kind": "politics",
-  "asOf": "2026-10-25",
-  "headline": "'10월 17일 운동' 운영자 지목 30세 테러 혐의 구금…24일 시위대 일부 콜로세움 진입",
-  "summary": "총리 조르자 멜로니의 이탈리아형제들(FdI)이 동맹(Lega)·전진이탈리아(FI)와 우파 연정으로 양원 과반을 유지한다. 10월 14일 상원 연설에서 멜로니는 트럼프의 러시아산 디젤 합의를 \"매우 위험하다\"며 모스크바를 정당화한다고 비판했다. 같은 날 부총리 마테오 살비니(Lega)는 우크라이나에 \"끝없이 수십억을 보낼 수 없다\"며 러시아 가스 구매 재개를 주장했다. 로베르토 바나치의 국가미래(FnV)도 하원 앞 시위로 반대했고, 멜로니는 이들에게 \"사퇴하는 편이 더 신뢰할 만하다\"고 맞받았다. 정부는 15일 2027년 예산 초안(DPB)을 EU에 보내 약 235억 유로 새 대책과 금융권 50억 유로 분담을 밝혔다. 야권의 민주당(PD)과 오성운동(M5S)은 14일 하원 우크라이나 표결에서 처음으로 서로의 결의안에 반대표를 던지지 않았다.",
+  "asOf": "2026-11-02",
+  "headline": "10월 30일 전국 40여 곳 행진(경찰 추산 25만 5천)…10월 물가 5.4%로 급등, 멜로니 '시에르 석방은 수치' 법원과 충돌",
+  "summary": "총리 조르자 멜로니의 이탈리아형제들(FdI)이 동맹(Lega)·전진이탈리아(FI)와 우파 연정으로 양원 과반을 유지한다. 10월 17~18일 밀라노 폭동과 24일 토요 시위로 이어진 항의는 30일 전국 40여 곳 행진으로 번졌고, 경찰 당국은 약 25만 5천 명, 기초노조 USB는 100만 명이 넘는다고 밝혔다(Adnkronos). 28일 밀라노 예심판사 티치아나 란도니가 '10월 17일 운동' 운영자로 지목된 유세프 시에르(30)의 구금을 승인하지 않고 풀어주자, 멜로니는 '수치스러운 결정'이라 비판했고 밀라노 법원 지도부는 발언을 받아들일 수 없다고 맞섰다. Istat 속보치로 10월 물가상승률은 5.4%(9월 4.2%)로 뛰었고 3분기 GDP는 전기와 같았다(30일). 정부는 28일 약 260억 유로 규모 2027년 예산안을 승인해 30일 하원에 냈다.",
   "control": [
    {
     "actor": "우파 연정",
-    "holds": "총리 멜로니(FdI), 부총리 겸 외무장관 안토니오 타야니(FI), 부총리 마테오 살비니(Lega), 경제재정장관 잔카를로 조르제티(Lega)",
+    "holds": "총리 멜로니(FdI), 부총리 겸 외무장관 안토니오 타야니(FI), 부총리 마테오 살비니(Lega), 경제재정장관 잔카를로 조르제티(Lega), 내무장관 마테오 피안테도시",
     "backers": "양원 과반"
    },
    {
     "actor": "국가미래 FnV(로베르토 바나치)",
-    "holds": "Lega에서 갈라져 나온 극우 세력. 하원 원내대표 에도아르도 치엘로, Lega 출신 라우라 라베토 의원 합류. 러시아와 연료 협정 요구",
+    "holds": "Lega에서 갈라져 나온 극우 세력. 하원 원내대표 에도아르도 치엘로. 우크라이나 지원 축소와 러시아와의 연료 협정을 요구",
     "backers": ""
    },
    {
     "actor": "중도좌파 진보 동맹",
-    "holds": "PD 엘리 슐라인, M5S 주세페 콘테, AVS 니콜라 프라토이안니. 우크라이나 무기 지원(PD 찬성, M5S·AVS 반대)과 지도자 선정에서 이견",
+    "holds": "PD 엘리 슐라인, M5S 주세페 콘테, AVS 니콜라 프라토이안니. 콘테는 예산안을 '할로윈 예산'이라 비판. 열린 경선 참가 범위는 미정",
+    "backers": ""
+   },
+   {
+    "actor": "노조·거리 운동",
+    "holds": "USB(기초노조)와 학생 모임이 전국 행진을 이끌고, 11월 1일 로마 텐트 농성을 콜로세움 앞으로 옮김. CGIL 마우리치오 란디니 사무총장은 11월 20일 총파업을 선언",
     "backers": ""
    },
    {
     "actor": "EU 집행위·유로그룹",
-    "holds": "국방·에너지 지출용 국가 회피조항 적용 범위 협의 중. 11월 9일 유로그룹 판단 예정",
+    "holds": "과잉재정적자 절차 아래 예산안 의견을 11월 24일께 낼 예정. 국방·에너지 지출용 국가 회피조항 적용 범위 협의",
     "backers": ""
    }
   ],
   "points": [
-   "10월 24~25일 밀라노 검찰: '10월 17일 운동' 인스타그램 페이지 운영자로 지목된 유세프 시에르(30) 구금·교도소 이송. 혐의는 범죄 선동·시위 중 조직적 폭력(새 안보 법령)·테러 목적 결사(형법 270조의2), 아내 불구속 입건. ISPI '2024년 이후 협력 안 해'(ANSA·Sky TG24)",
-   "10월 24일 피안테도시 내무장관: 경찰이 \"폭력 세력을 고립시키고 막아 냈다\", \"처벌받지 않고 행동할 수 있다고 착각하는 이들을 위한 자리는 없다\". 로마 시위대 일부 콜로세움 구역 진입, 토리노 모스카 다리 최루탄(ANSA·AP)",
-   "10월 24일 2차 토요 시위: 공공안전국 집계 전국 9명 체포·87명 입건·371명 연행(미성년 110명·외국인 69명)·4,292명 신원 확인. 로마 테르미니역 일대 물대포·최루탄, 토리노 폭죽·병 투척. 멜로니 '폭력 세력의 시도에도 안전은 지켜졌다'(Quotidiano.net). 마우리치오 란디니 CGIL 사무총장은 11월 20일 총파업을 선언했다(Sky TG24). 9월 물가상승률 4.2%(유럽연합 통계청)",
-   "10월 20일 시위 법령: 폭력 가담을 새 범죄로(최고 징역 5년·벌금 2만 유로), 미성년자 피해는 부모 배상, 14세 이상 책임능력 추정, 60일 안에 의회가 법률로 바꿔야 함. 밀라노 경찰 \"토요일 밤 폭동 청년 약 2,000명, 주말 체포 약 50명 중 30명 넘게 미성년자\"(AP)",
-   "10월 20일 내각, 주말 시위 충돌 뒤 밀라노에 군 500명 증파('안전한 거리' 작전, 12월 31일까지) 법령 승인. 군에 사법경찰 권한을 주는 안은 마타렐라 대통령 반대로 빠짐. 크로세토 국방장관 \"하이브리드전\", 피안테도시 내무장관 \"러시아·프랑스 연관 증거 아직 없다\"(Il Post·AGI)",
-   "2027년 예산 초안(13일 각의 승인, 15일 제출): 새 대책 약 235억 유로, 금융권 분담 2027년 50억·2028년 30억·2029년 20억 유로. 재정적자 올해 3% 아래 → 2027년 3.4%, 2028년 3.2%",
-   "은행권은 지난해 3년 100억 유로 합의가 있었다며 추가 부담에 반대(ANSA). 소득세(Irpef) 33% 구간을 6만 유로까지 넓히는 안은 재무부가 보류했지만 타야니는 '반드시 해야 한다'고 맞섬",
-   "예산안 의회 제출 시한(10월 20일, 강제 아님)은 11월 9일 유로그룹 결정 뒤로 밀릴 수 있다. 조르제티 장관: '먹구름이 몰려온다'",
-   "디젤 공방: 백악관 대변인은 '훌륭한 거래'라고 반박, 러시아 외무부 대변인 마리야 자하로바는 '멜로니가 상관할 일이 아니다', 젤렌스키 대통령은 멜로니에게 감사",
-   "경제: 산업연합 Confindustria(10월 14일) 2026년 성장 1%, 2027년 0.6% 전망. 브렌트유가 연평균 126달러면 성장 0%라고 경고",
-   "총선은 2027년. 새 선거법으로 승리 연합의 대표가 총리가 되며, ANSA는 중도좌파 경선 여론조사에서 콘테가 근소 우세라고 전함",
-   "10월 17~18일 첫 주말(경위): 17일 '광장의 이탈리아' 소집 시위가 밀라노 두오모 광장에서 폭력으로 번졌고(5,000명 넘게 모임), 18일 오후 두건 쓴 청소년 수백 명이 비아 토리노·코르두시오·가리발디 거리의 상점을 약탈했다. 월요일 오전 집계로 밀라노 경찰서에 연행된 271명 가운데 미성년이 220명이었고 32명이 체포됐으며 경찰 14명이 다쳤다(아베니레). AGI는 18일 전국 체포 28명, 볼로냐에서 경찰 75명 부상, 전국 경찰 부상 141명으로 보도했다(집계 시점이 달라 숫자가 다르다). 조르자 멜로니 총리는 \"시위는 권리지만 우리 도시를 불바다로 만드는 것은 권리가 아니다\"라며 총리실 회의를 소집했다",
-   "이스타트(통계청): 8월 실업률 6.2%(+0.2%p), 청년 실업률 20.3%(+0.6%p)(10월 1일 발표, 다음 발표 10월 29일). 경유 소비세 감면은 10월 5일 자정에 끝나 1,000L당 622.90유로에서 672.90유로로 돌아갔다(리터당 5센트, 부가세 포함 약 6.1센트). 멜로니 총리는 9월 16일 '이동식 소비세'로 이어받겠다고 했지만 6일 아침까지 시행 장관령은 나오지 않았다(Greenme)"
+   "10월 30일 행진: 전국 40여 곳, 공공안전 당국 추산 약 25만 5천 명, USB는 100만 명 초과. 로마에서 8명 연행·7명 입건·369명 신원 확인, 물대포 사용. 밀라노 동부 순환도로가 3시간 넘게 점거됐다. 경찰노조 Coisp는 경찰 11명·카라비니에리 2명이 다쳤다고 집계. 피안테도시 내무장관은 \"안전은 모든 자유를 행사하기 위한 기본 보장\"이라고 했다(Adnkronos)",
+   "10월 30일 경찰은 23개 도시에서 채팅방·SNS로 폭력을 부추긴 혐의자 60명에 대한 가택수색을 벌여 모의 권총 5정, 칼 등과 휴대전화 11대를 압수했다. 수사 대상은 17·18·24일 시위와 31일 시위 주최자다(Adnkronos)",
+   "시에르 사건: 24일 구금된 뒤 28일 란도니 판사가 37쪽 결정으로 중대한 유죄 근거가 없고 테러 가중 요건도 맞지 않는다며 석방했다(수사는 계속). 멜로니는 인스타그램 영상에서 \"수치스러운 결정\"이라 했고, 모임방이 폭동 다음 날 만들어졌다는 점이 드러나자 표현 오류를 인정했다. 살비니는 \"믿기 어렵다\", AVS 안젤로 보넬리는 총리의 발언이 \"용납될 수 없다\"고 했다(Euronews·Pagella Politica)",
+   "경제: 10월 물가 5.4%(에너지 재화 31.4%, 장바구니 2.5%, 근원 2.0%), 3분기 GDP 전기 대비 0%·전년 대비 0.8%(Istat 10월 30일). 9월 실업률 6.3%, 청년 실업률 19.9%(Istat 10월 29일, 다음 발표 12월 2일)",
+   "2027년 예산안: 28일 각의가 법정 시한(20일)을 넘겨 승인, 규모 약 260억 유로(예산 초안 235억 유로에서 확대), 157개 조항, 소득세 33% 구간을 5만 5천 유로까지 적용, 은행 IRES 할증 인상. 30일 하원 제출, 11월 5~12일 예결위 청문, 17일께 수정안 시한, 12월 31일까지 확정(Sky TG24). 살비니(Lega)는 \"의회가 은행에 더 큰 분담을 원하면 의회가 주권\"이라 했다(ANSA)",
+   "11월 1일 멜로니는 브루노 베스파 신간에서 \"퀴리날레(대통령직)는 내 계획에 없다\"며 5년 더 신임을 구하겠다고 했다. 총선은 2027년이며 새 선거법으로 승리 연합의 대표가 총리가 된다(ANSA)"
   ],
   "sources": [
    [
-    "ANSA",
-    "Fermato Youssef Siher, la mente della pagina Movimento 17 ottobre (‘10월 17일 운동’ 페이지 배후 유세프 시에르 구금) · 2026-10-25",
-    "https://www.ansa.it/sito/notizie/cronaca/2026/10/25/fermato-youssef-siher-la-mente-della-pagina-movimento-17-ottobre-il-profilo_7ea4ecc5-fc85-49fe-b151-c71e6855e75d.html"
+    "Adnkronos",
+    "Italia in piazza, cortei di studenti e lavoratori da Nord a Sud tra tensioni e scontri: la giornata(전국 광장에 학생·노동자 행진, 긴장과 충돌…하루 정리) · 2026-10-31",
+    "https://www.adnkronos.com/cronaca/cortei-italia-30-ottobre-la-giornata_EQuftzG07wWGmK63TdPfK"
+   ],
+   [
+    "Euronews 이탈리아",
+    "Youssef Siher scarcerato a Milano: per la gip mancano gravi indizi, Meloni attacca la magistratura(시에르 석방: 판사 '중대 근거 없다', 멜로니 사법부 비판) · 2026-10-28",
+    "https://it.euronews.com/2026/10/28/youssef-siher-scarcerato-a-milano-meloni-attacca-la-giudice-e-si-accende-lo-scontro-politi"
+   ],
+   [
+    "Pagella Politica",
+    "Perché Youssef Siher è stato liberato, al di là delle accuse di Meloni(멜로니의 비난 너머, 시에르는 왜 풀려났나)",
+    "https://pagellapolitica.it/articoli/meloni-siher"
+   ],
+   [
+    "이스타트(Istat, 공식)",
+    "Prezzi al consumo, dati provvisori ottobre 2026(소비자물가 잠정치 2026년 10월) · 2026-10-30",
+    "https://www.istat.it/comunicato-stampa/prezzi-al-consumo-dati-provvisori-ottobre-2026/"
+   ],
+   [
+    "이스타트(Istat, 공식)",
+    "Occupati e disoccupati, dati provvisori settembre 2026(취업·실업 잠정치 2026년 9월) · 2026-10-29",
+    "https://www.istat.it/comunicato-stampa/occupati-e-disoccupati-dati-provvisori-settembre-2026/"
+   ],
+   [
+    "Milano Finanza",
+    "Istat, si ferma la crescita economica e l'inflazione vola a 5,4%(Istat: 성장 멈추고 물가 5.4%로 급등) · 2026-10-30",
+    "https://milanofinanza.it/news/istat-si-ferma-la-crescita-economica-e-l-inflazione-vola-a-5-4-202610301233246409"
    ],
    [
     "Sky TG24",
-    "Proteste a Milano, fermato Youssef Siher. È ideatore del Movimento 17 ottobre (밀라노 시위, '10월 17일 운동' 고안자 구금) · 2026-10-25",
-    "https://tg24.sky.it/cronaca/2026/10/25/proteste-milano-youssef-siher"
+    "Manovra 2027, l'iter e il calendario fino all'approvazione della Legge di Bilancio(2027년 예산안 절차와 일정) · 2026-10-30",
+    "https://tg24.sky.it/politica/2026/10/30/manovra-2027-iter-calendario-legge-bilancio"
    ],
    [
     "ANSA",
-    "Città blindate, cortei in tutta Italia. Alta tensione a Torino (도시 봉쇄 속 전국 행진…토리노 긴장) · 2026-10-24",
-    "https://www.ansa.it/sito/notizie/cronaca/2026/10/24/oltre-150-perquisizioni-e-citta-blindate.-piantedosi-pronti-a-ogni-situazione_c947f80a-5c41-4c1b-bc3b-fe5603318029.html"
-   ],
-   [
-    "Quotidiano.net",
-    "Scontri a Roma, Torino, Bologna e Firenze. Proteste, la diretta dalle città (로마·토리노·볼로냐·피렌체 충돌…도시별 시위 실시간) · 2026-10-24",
-    "https://www.quotidiano.net/cronaca/cortei-e-proteste-italia-oggi-diretta-pte19emc"
-   ],
-   [
-    "Open",
-    "Movimento 17 ottobre, le chat Telegram dopo gli scontri di Milano: i manuali di protesta, l'anonimato e le manifestazioni ogni sabato('10월 17일 운동' 텔레그램 채팅방과 매주 토요일 시위) · 2026-10-19",
-    "https://www.open.online/2026/10/19/movimento-17-ottobre-chat-telegram-manifestazioni/"
-   ],
-   [
-    "Sky TG24",
-    "Corteo Cgil Roma, Landini: Sciopero generale il 20/11(CGIL 로마 행진, 란디니 '11월 20일 총파업') · 2026-10-17",
-    "https://tg24.sky.it/cronaca/2026/10/17/manifestazione-cgil-roma"
-   ],
-   [
-    "Il Post",
-    "E quindi cosa faranno i 500 soldati in più a Milano?(밀라노에 더 보내는 군 500명은 무엇을 하나) · 2026-10-21",
-    "https://www.ilpost.it/2026/10/21/500-soldati-milano-cosa-faranno-esercito/"
-   ],
-   [
-    "AGI",
-    "Milano: Piantedosi, \"Nessun legame con Russia e Francia\"(피안테도시 '러시아·프랑스와 연관 없다') · 2026-10-21",
-    "https://www.agi.it/cronaca/news/2026-10-21/milano-scontri-comitato-sicurezza-39643371/"
-   ],
-   [
-    "Governo italiano(이탈리아 정부, 공식)",
-    "Consiglio europeo del 15 e 16 ottobre, le Comunicazioni del Presidente Meloni in Parlamento(유럽이사회 앞 멜로니 총리 의회 연설) · 2026-10-14",
-    "https://www.governo.it/it/articolo/consiglio-europeo-del-15-e-16-ottobre-le-comunicazioni-del-presidente-meloni-parlamento"
-   ],
-   [
-    "ANSA",
-    "White House responds to Meloni, 'diesel accord is a great deal'(백악관, 멜로니에 '디젤 합의는 훌륭한 거래') · 2026-10-15",
-    "https://www.ansa.it/english/news/2026/10/15/white-house-responds-to-meloni-diesel-accord-is-a-great-deal_71b0ae7c-a01b-4dd7-8905-ee6d7917e41d.html"
-   ],
-   [
-    "ANSA",
-    "Lega e FnV le spine nel fianco del governo sull'Ucraina(우크라이나 문제로 정부를 찌르는 Lega와 FnV) · 2026-10-14",
-    "https://www.ansa.it/sito/notizie/politica/2026/10/14/lega-e-fnv-le-spine-nel-fianco-del-governo-sullucraina_149bf1f3-a13b-427d-825d-5d6189f71f65.html"
-   ],
-   [
-    "ANSA",
-    "Manovra da 23,5 miliardi nel 2027, dalle banche 5 miliardi(2027년 예산 235억 유로, 은행 50억 유로) · 2026-10-15",
-    "https://www.ansa.it/sito/notizie/economia/2026/10/15/manovra-da-235-miliardi-nel-2027-dalle-banche-5-miliardi_c3055dc9-ff3a-429b-ace4-53b8b73047e2.html"
-   ],
-   [
-    "ANSA",
-    "Tregua in Aula sull'Ucraina nel campo largo. Schlein: 'Passo in avanti'(중도좌파, 우크라이나 표결 휴전) · 2026-10-14",
-    "https://www.ansa.it/sito/notizie/politica/2026/10/14/tregua-in-aula-sullucraina-nel-campo-largo.-schlein-passo-in-avanti_0528f090-892f-4688-a73d-7e75bce4a908.html"
-   ],
-   [
-    "AP(News4JAX 게재)",
-    "Italy's Meloni approves tougher measures to crack down on protests after Milan riots (멜로니, 밀라노 폭동 뒤 시위 단속 강화 법령 승인) · 2026-10-20",
-    "https://www.news4jax.com/news/world/2026/10/20/italys-meloni-approves-tougher-measures-to-crack-down-on-protests-after-milan-riots/"
-   ],
-   [
-    "AGI",
-    "Guerriglia a Milano, Bologna e Torino(밀라노·볼로냐·토리노 게릴라식 충돌) · 2026-10-18",
-    "https://www.agi.it/cronaca/news/2026-10-18/guerriglia-milano-bologna-torino-39595257/"
-   ],
-   [
-    "아베니레(Avvenire)",
-    "La rivolta dei minorenni: bilancio di un weekend di saccheggi e guerriglia a Milano(미성년자의 폭동: 밀라노 약탈·게릴라 주말 결산)",
-    "https://www.avvenire.it/attualita/la-rivolta-dei-minorenni-bilancio-di-un-weekend-di-saccheggi-e-guerriglia-a-milano_114492"
-   ],
-   [
-    "이스타트(Istat)",
-    "Occupati e disoccupati, dati provvisori agosto 2026(취업·실업 잠정치 2026년 8월) · 2026-10-01",
-    "https://www.istat.it/comunicato-stampa/occupati-e-disoccupati-dati-provvisori-agosto-2026/"
-   ],
-   [
-    "Greenme",
-    "Diesel, stop allo sconto sulle accise(경유 소비세 감면 종료) · 2026-10-06",
-    "https://www.greenme.it/?p=1440075"
+    "Meloni, concentrata a chiedere altro mandato. Il Quirinale non è nei miei piani(멜로니 '다음 임기 신임 구할 것, 퀴리날레는 내 계획 아니다') · 2026-11-01",
+    "https://www.ansa.it/sito/notizie/politica/2026/11/01/meloni-concentrata-a-chiedere-altro-mandato.-il-quirinale-non-e-nei-miei-piani_a0038a28-b000-402c-8b26-b6dd6250e11e.html"
    ]
   ],
   "videos": [
@@ -3767,67 +3646,75 @@
  },
  "LB": {
   "kind": "conflict",
-  "asOf": "2026-10-25",
-  "headline": "탬파 레바논·이스라엘 군사 회담 돌파구 없이 끝나…검증 주체·합동 작전실 이견, 다음 회의 미정",
-  "summary": "3월 2일 헤즈볼라의 공격으로 시작된 전쟁 뒤 이스라엘군이 남부 국경지대를 점령하고 있다. 6월 26일 워싱턴에서 맺은 프레임워크는 헤즈볼라 무장해제 검증에 맞춰 이스라엘군이 단계적으로 철수하도록 했지만 이행이 멈췄다. 10월 20일부터 사흘 동안 미국 플로리다 탬파의 미 중부사령부에서 3자 군사 회담이 열렸고, 레바논은 이스라엘 공격 중단을 요구했다. 10월 16~17일에도 이스라엘군은 아이타 알자발 등에서 가옥을 폭파하고 남부 곳곳을 포격했다. 헤즈볼라 사무총장 나임 카셈은 10월 6일 해법은 이스라엘 철수에서 시작한다며 무기 반납을 약속하지 않았다.",
+  "asOf": "2026-11-02",
+  "headline": "카셈 \"점령 중 무장해제 논의 여지 없다\"…군사법원, 헤즈볼라 폭발물 트럭 13명 기소",
+  "summary": "3월 2일 헤즈볼라의 공격으로 시작된 전쟁 뒤 이스라엘군이 남부 국경지대를 점령하고 있고, 6월 워싱턴 프레임워크의 단계적 철수는 멈춰 있다. 10월 20~22일 미 플로리다 탬파의 3자 군사 회담은 돌파구 없이 끝났고 다음 회의 날짜도 없다. 헤즈볼라 사무총장 나임 카셈은 10월 28일 연설에서 점령이 이어지는 한 무장해제 논의 여지가 없다며 프레임워크를 \"사실상 무효\"라고 했다. 10월 30일 군사법원은 압수된 폭발물 780kg 사건으로 헤즈볼라 연계 13명을 기소했다. 내각은 이 사건의 사법위원회 회부를 미뤘고, 레바논군 장관들이 반발해 회의장을 떠났다.",
   "control": [
    {
     "actor": "이스라엘군",
-    "holds": "남부 국경지대 '보안구역'(55여단 구역에서 국경 약 12km). 보포르성·알리 알타헤르 능선",
+    "holds": "남부 국경지대 '보안구역'(55여단 구역에서 국경 약 12km). 보포르성·알리 알타헤르 능선. 점령 마을 가옥·기반시설 폭파 계속",
     "backers": "미국"
    },
    {
     "actor": "헤즈볼라(사무총장 나임 카셈)",
-    "holds": "남부 일부·베카·베이루트 남부 교외. 이스라엘군 주둔 중 무장해제 거부",
+    "holds": "남부 일부·베카·베이루트 남부 교외. 이스라엘군 주둔 중 무장해제 거부, 정부의 군사 활동 금지 결정 불인정",
     "backers": "이란"
    },
    {
     "actor": "레바논 정부(대통령 조제프 아운·총리 나와프 살람)·레바논군",
-    "holds": "베이루트와 북부. 프룬·스리파·자우타르 알샤르키야 '1차 시범 구역'부터 남부 인수 구상",
+    "holds": "베이루트와 북부. 살람 총리는 합법 틀 밖 무기에 \"단호히\" 대처하겠다고 밝힘. 프룬·스리파·자우타르 알샤르키야 '1차 시범 구역'부터 남부 인수 구상",
     "backers": "미국·프랑스"
    },
    {
+    "actor": "의회 의장 나비 베리(개발해방·아말)",
+    "holds": "내각의 헤즈볼라 사건 회부를 말렸다고 현지 언론이 전함. \"군대는 레드라인\"이라고 발언",
+    "backers": ""
+   },
+   {
     "actor": "유엔평화유지군(UNIFIL)",
-    "holds": "남부. 임무가 연말 종료 예정",
+    "holds": "남부. 안보리가 정한 임무 종료일은 12월 31일",
     "backers": "유엔 안보리"
    }
   ],
   "points": [
-   "10월 22일 탬파 3자 군사 회담이 돌파구 없이 끝났고 다음 회의 날짜도 없다(레바논군 소식통, The New Arab). 이스라엘은 제3자 검증을 거부하고 레바논군과 합동 작전실을 요구했으며, 레바논은 직접 조율을 거부했다. 미국 소식통은 레바논이 헤즈볼라 무장해제 감시 체계에 이스라엘이 참여하자는 제안을 거부했다고 했다(알하다스). 공식 발표는 없다",
-   "알자디드(외교 소식통): 미국은 연말 국제 병력 활동이 끝나 남부에 레바논군·이스라엘군만 남는다고 레바논에 말했고, 양자 협상을 원한다(Naharnet 10/23). 22일 이스라엘군은 마르자윤·나바티예·하스바야 일대에서 폭파·공습·전차 진격(The New Arab)",
-   "10월 20~22일 탬파 미 중부사령부에서 3자 군사 회담. 이스라엘은 폴리티스 주미 국방무관·레빈 전략국장이 나왔다. 아운 대통령은 이스라엘이 매일 합의를 어긴다고 했고, 이스라엘군(와웨야 대변인)은 레바논군이 헤즈볼라 무기 단속 의무를 어긴다고 주장, 레바논군은 '거짓'이라 반박했다. 네타냐후는 두 시범 구역 정리를 요구했다(Ynet)",
-   "레바논 보건부: 3월 2일~10월 11일 4,387명 사망·12,424명 부상(2023년 10월 8일 이후 누계 8,954명 사망)",
-   "10월 20일 탬파 3자 회의는 군사 문제만 다룬다. 레바논은 남부 작전 중단과 2차 시범 구역 철수를 요구할 예정(뉴아랍, 레바논 정부 소식통)",
-   "10월 17일 아운 대통령은 장노엘 바로 프랑스 외무장관에게 UNIFIL 연장이 안 되면 \"남부에 국제 주둔을 보장하는 어떤 방식도 환영한다\"고 말했다",
-   "카셈(10/6): \"미국의 강요 없이\" 국가의 무기 독점에 협력할 수 있지만 \"우리는 내줄 것이 없다\", 해법은 이스라엘의 철수",
-   "이스라엘군은 남부 병력을 '전진·공세적 방어' 태세로 바꾸고 겨울 주둔을 준비한다(Ynet 10/4 인용, LWJ). 아운은 이스라엘·미국 선거 뒤를 기다려야 한다고 말했다(알아크바르 10/9)",
-   "의회가 3월 9일 임기를 2년 연장해 5월 총선이 미뤄졌다"
+   "10월 28일 카셈 연설: 저항은 계속되고 어떤 공격에도 맞설 것이며, 6월 프레임워크는 레바논 주권을 이스라엘 요구에 내주는 것이라 \"사실상 무효\"라고 했다. 10월 6일에는 \"미국의 강요 없이\" 국가의 무기 독점에 협력할 수 있다고 했었다(Middle East Eye·L'Orient Today)",
+   "10월 30일 군사법원이 13명을 기소했다: 780kg(TNT·C-4 각 250kg) 폭발물 트럭 사건으로, 2명은 구금 중이고 11명은 궐석(5명은 별명만 알려짐). 수사판사 클로드 가넴에게 넘겨졌다(Times of Israel·국영 NNA). 헤즈볼라 하산 파들랄라 의원은 이스라엘군에 맞설 용도였다며 반환과 2명 석방을 요구했고, 후세인 하지 하산 의원은 피고들이 \"국가 안보를 해치지 않았다\"고 했다(알자지라)",
+   "10월 22일 내각이 사건의 사법위원회 회부를 수사가 끝날 때까지 미루자 레바논군 장관들이 퇴장했다. 조 이사 알쿠리 산업장관은 예전 사건은 하루이틀 만에 회부됐는데 \"거의 3주\"가 지났다고 했다. 베리 의장은 \"군대는 레드라인\"이라고 했다. 아말·헤즈볼라 장관들은 기습 표결이 없다는 보장을 받고 남았다고 보도됐다(LBCI·Naharnet)",
+   "10월 20~22일 탬파 3자 회담은 돌파구 없이 끝났고 다음 회의 날짜도 없다(레바논군 소식통, The New Arab). 이스라엘은 제3자 검증을 거부하고 레바논군과 합동 작전실을 요구했으며, 레바논은 직접 조율을 거부했다. 공식 발표는 없다",
+   "레바논 보건부: 3월 2일~10월 11일 4,387명 사망·12,424명 부상(2023년 10월 8일 이후 누계 8,954명 사망)(LBCI)",
+   "UNIFIL 임무는 12월 31일 종료 예정이며 연장은 채택되지 않았다. 아운 대통령은 10월 17일 장노엘 바로 프랑스 외무장관에게 \"남부에 국제 주둔을 보장하는 어떤 방식도 환영한다\"고 말했다(Times of Israel·AFP)",
+   "10월 27일 이스라엘 총선에서 어느 쪽도 크네세트 과반을 얻지 못했다는 개표 속보가 나왔다(JPost). 아운은 이스라엘·미국 선거 뒤를 기다려야 한다고 앞서 말했다(알아크바르 10/9)"
   ],
   "sources": [
+   [
+    "Middle East Eye",
+    "Hezbollah leader rules out group's disarmament(헤즈볼라 지도자, 무장해제 배제) · 2026-10-28",
+    "https://www.middleeasteye.net/live-blog/live-blog-update/hezbollah-leader-rules-out-groups-disarmament"
+   ],
+   [
+    "Times of Israel(국영 NNA 인용)",
+    "Lebanese military court charges 13 over Hezbollah explosives truck(레바논 군사법원, 헤즈볼라 폭발물 트럭 13명 기소) · 2026-10-30",
+    "https://www.timesofisrael.com/lebanese-military-court-charges-13-over-hezbollah-explosives-truck/"
+   ],
+   [
+    "Al Jazeera",
+    "Lebanon charges 13 over confiscated Hezbollah explosives(레바논, 압수 폭발물 관련 13명 기소) · 2026-10-31",
+    "https://www.aljazeera.com/news/2026/10/31/lebanon-charges-13-over-hezbollah-confiscated-explosives"
+   ],
+   [
+    "Naharnet",
+    "All you need to know about Thursday's Cabinet session(목요일 내각 회의 총정리) · 2026-10-23",
+    "https://www.naharnet.com/stories/en/323297-all-you-need-to-know-about-thursday-s-cabinet-session"
+   ],
+   [
+    "LBCI",
+    "Lebanese Forces ministers walk out of Cabinet over failure to refer explosives case to Judicial Council(레바논군 장관들, 폭발물 사건 회부 불발에 내각 퇴장) · 2026-10-22",
+    "https://www.lbcgroup.tv/news/lebanon-news/964269/lebanese-forces-ministers-walk-out-of-cabinet-over-failure-to-refer-ex/en"
+   ],
    [
     "The New Arab",
     "Lebanon-Israel talks in US end without breakthrough as attacks continue (미국서 열린 레바논·이스라엘 회담 돌파구 없이 끝나) · 2026-10-22",
     "https://www.newarab.com/news/lebanon-israel-talks-us-end-without-breakthrough"
-   ],
-   [
-    "Naharnet(알자디드 인용)",
-    "Report: Tampa talks were 'very bad' and 'political escalation' expected (보도: 탬파 회담 '아주 나빴다') · 2026-10-23",
-    "https://www.naharnet.com/stories/en/323296-report-tampa-talks-were-very-bad-and-political-escalation-expected"
-   ],
-   [
-    "Ynet News",
-    "이스라엘·레바논, 미국 중재 군사 회담 (Israel, Lebanon hold US-mediated military talks as tensions mount over Hezbollah disarmament) · 2026-10-21",
-    "https://www.ynetnews.com/article/hjqbypb2fl"
-   ],
-   [
-    "레바논 대통령실(Reuters 인용)",
-    "Lebanon says military delegation will press for halt to Israeli attacks at US talks(레바논, 미국 회담서 군 대표단이 이스라엘 공격 중단 요구) · 2026-10-17",
-    "https://www.aol.com/articles/lebanon-says-military-delegation-press-203058000.html"
-   ],
-   [
-    "Times of Israel(AFP)",
-    "Lebanon seeks international presence in south from French FM as peace keeper exit nears(레바논, 평화유지군 철수 앞두고 프랑스 외무장관에 국제 주둔 요청) · 2026-10-18",
-    "https://timesofisrael.com/lebanon-seeks-international-presence-in-south-from-french-fm-as-peace-keeper-exit-nears"
    ],
    [
     "LBCI(레바논 보건부 발표)",
@@ -3835,14 +3722,14 @@
     "https://www.lbcgroup.tv/news/lebanon-news/962291/lebanons-health-ministry-says-4387-killed-12424-wounded-since-march-2/en"
    ],
    [
-    "L'Orient Today",
-    "Israeli army demolishes journalist Radwan Mortada's home in Aita al-Jabal, continues attacks in southern Lebanon(이스라엘군, 아이타 알자발서 기자 집 폭파·남부 공격 계속) · 2026-10-17",
-    "https://today.lorientlejour.com/article/1551154/israeli-army-blows-up-the-house-of-journalist-radwan-mortada-in-aita-el-jabal-and-continues-attacks-in-southern-lebanon.html"
+    "Times of Israel(AFP)",
+    "Lebanon seeks international presence in south from French FM as peace keeper exit nears(레바논, 평화유지군 철수 앞두고 프랑스 외무장관에 국제 주둔 요청) · 2026-10-18",
+    "https://timesofisrael.com/lebanon-seeks-international-presence-in-south-from-french-fm-as-peace-keeper-exit-nears"
    ],
    [
-    "L'Orient Today",
-    "Qassem says ready to 'cooperate on state's monopoly on arms, but without diktats'(카셈 \"강요 없이 무기 독점 협력\") · 2026-10-06",
-    "https://today.lorientlejour.com/article/1549911/qassem-says-ready-to-cooperate-on-states-monopoly-on-arms-but-without-diktats.html"
+    "The Jerusalem Post",
+    "Live updates: Israel election(이스라엘 총선 개표 속보) · 2026-10-28",
+    "https://www.jpost.com/israel-election-2026/2026-10-28/live-updates-913081"
    ]
   ],
   "videos": [
@@ -3859,45 +3746,84 @@
  },
  "LY": {
   "kind": "politics",
-  "asOf": "2026-10-21",
-  "headline": "하원, 튀르키예 해양 경계 합의 승인…그리스·키프로스·EU 반발",
-  "summary": "2014년 이후 트리폴리의 국민통합정부(GNU)와 동부 하프타르 가문의 리비아국민군(LNA)·하원 세력으로 갈라져 있다. 8월 30일 유엔 중재 '4+4' 소협의체가 단일 행정부 아래 24개월 안에 총선·대선을 치르는 합의에 서명했고, 하원은 이를 승인했다. 무함마드 타칼라 국가최고위원회(HCS) 의장은 10월 12일 한나 테테 유엔 특별대표에게 서한을 보내 '4+4' 트랙과 하원 결의 7·8호(합의 승인·선거관리위원회 이사회 재구성)를 거부한다고 통보했다. 테테 특별대표는 10월 14일 안보리에서 \"리비아는 훼방꾼이 과정을 가로막게 둘 여유가 없다\"며 책임을 물으라고 요구했다. 하원은 10월 6일 아길라 살레 대신 살레힌 압둘나비를 의장으로 뽑았고, 최고헌법재판소는 하원 과반을 실제 재적 의원 기준으로 계산해야 한다고 해석했다.",
+  "asOf": "2026-11-02",
+  "headline": "안보리, UNSMIL 임무 1년 연장…튀르키예 해양 합의 반발 지속, 군 통합 문서 진위 공방",
+  "summary": "2014년 이후 트리폴리의 국민통합정부(GNU)와 동부 하프타르 가문의 리비아국민군(LNA)·하원 세력으로 갈라져 있다. 안보리는 10월 30일 결의 2835호로 유엔 리비아지원단(UNSMIL) 임무를 2027년 10월 31일까지 1년 연장했고, 유엔 보도자료는 만장일치 채택이라고 전했다. 결의는 8월 30일 '4+4' 합의와 24개월 안 총선·대선 로드맵을 바탕으로 통합 행정부 구성을 촉구하고, 정치 과정 방해자에 대한 제재를 재확인했다. 국가최고위원회(HCS)의 '4+4' 트랙 거부는 이어지고 있으며, 4+4 소협의체는 10월 28일 런던에서 한나 테테 특별대표 주재로 사법부 통합 협의를 넓히기로 했다. 사담 하프타르와 GNU 국방차관 압둘살람 알주비는 10월 23일 앙카라에서 군 통합을 협의했고, 28일 예비 문서 서명 보도가 나왔으나 GNU 관영 플랫폼 티비안은 유포된 문서가 위조라고 밝혔다. 하원이 10월 20일 승인한 튀르키예 해양 합의에는 이집트·그리스·UAE·바레인·EU가 반발한다.",
   "control": [
    {
     "actor": "국민통합정부(GNU)",
-    "holds": "트리폴리와 서부. 총리 압둘하미드 드베이바, 대통령위원회 의장 무함마드 알멘피",
+    "holds": "트리폴리와 서부. 총리 압둘하미드 드베이바, 대통령위원회 의장 무함마드 알멘피. 국방차관 알주비가 앙카라에서 군 통합 협의에 참여",
     "backers": "튀르키예"
    },
    {
     "actor": "리비아국민군(LNA)·국가안정정부",
     "holds": "벵가지와 동부·남부, 주요 유전. 부사령관 사담 하프타르, 총리 오사마 함마드",
-    "backers": "러시아·UAE·이집트"
+    "backers": "러시아·UAE·이집트(이집트는 튀르키예 해양 합의에는 반대)"
    },
    {
     "actor": "하원(의장 살레힌 압둘나비)",
-    "holds": "10/6 새 의장단 선출(의장 임기 최대 12개월 순환제). '4+4' 합의와 선관위 재구성 결의를 통과시켰다. 전 의장 아길라 살레는 선출 효력을 부정",
+    "holds": "10/6 새 의장단 선출(의장 임기 최대 12개월 순환제). 10월 20일 2019년 튀르키예 해양 양해각서를 승인. 전 의장 아길라 살레는 선출 효력을 부정",
     "backers": ""
    },
    {
     "actor": "국가최고위원회(HCS, 의장 무함마드 타칼라)",
-    "holds": "선거법 권한을 하원과 나눠 가진 서부 기반 협의 기구. '4+4' 트랙을 거부하고 2025년 8월 21일 자체 로드맵을 고수",
+    "holds": "선거법 권한을 하원과 나눠 가진 서부 기반 협의 기구. '4+4' 트랙을 거부하고 2025년 8월 21일 자체 로드맵을 고수하나 일부 위원은 추가 협의에 열려 있다고 테테가 안보리에 밝혔다",
     "backers": ""
    }
   ],
   "points": [
-   "10월 20일 하원이 2019년 튀르키예-GNA 지중해 해양관할 양해각서를 만장일치로 승인하고, 2020년 비준 거부·튀르키예 단교 결의를 폐지했다(하원 성명, 블리헤그 대변인). 사담 하프타르는 환영, GNU 외무부는 '긍정적 진전'. 그리스 외무부는 '불법·무효', 키프로스·EU도 반발. 같은 날 칼른 튀르키예 정보청장이 트리폴리에서 드베이바 총리를 만났다(Asharq Al-Awsat)",
-   "10월 14일 안보리 브리핑에서 테테 특별대표는 물가상승률 14% 이상, 1~9월 연료 수입의 30~50%(24억~44억 달러어치)가 밀수 등으로 사라진 것으로 추정, 9월 석유 시설 차질로 100만 배럴 생산 손실이라고 밝혔다.",
-   "테테는 벵가지에서 최근 두 달 동안 테러 관련 사형수 58명이 처형됐다며 집행 중단을 촉구했다. 이달 말 '4+4' 구성원을 만나 합의 5조에 따른 대안 메커니즘 가동을 검토하겠다고 했다.",
-   "안보리 회의에서 미국 대표는 선거를 방해하는 이들을 제재해야 한다고 했고, 리비아 대표(유엔 보도자료에 이름 없음)는 국가적 합의 없는 '평행 트랙'을 경계하며 UNSMIL이 공정한 중재자로 남아야 한다고 반박했다.",
-   "유엔 리비아지원단(UNSMIL)은 10월 5일 하원 회의에 102명이 참석해 98명이 의장 순환제에 찬성했고, 10월 6일 최소 111명이 참석해 압둘나비를 뽑았다고 밝혔다. 최고헌법재판소는 오사마 함마드 총리의 해석 요청에 과반을 재적 160명 기준 81명으로 봐야 한다고 했다(리비아 헤럴드 10/13 보도).",
-   "교사 노조는 9월 8일 임금·건강보험을 요구하며 무기한 파업을 선언했다. 교사 운동은 10월 13일 동부 정부(리비아 옵서버 표현 '평행 정부') 교육장관 줌아 알자디드의 등교 재개 지시를 14일 거부했다.",
-   "UNSMIL 임무는 10월 31일 갱신 예정이다. 멘피 대통령위원회 의장이 소집한 10월 18일 살레·타칼라·드베이바 회의의 성사 여부는 아직 확인되지 않았다."
+   "10월 30일 안보리 결의 2835호: UNSMIL 임무를 2027년 10월 31일까지 연장(유엔 보도자료 SC/16497). 로드맵은 '리비아가 주도하고 소유'해야 하며 당사자들이 '선결 조건·지체 없이' 협상해 통합 정부를 구성하고 선거관리위원회(HNEC) 이사회를 재구성하라고 촉구했다. 벵가지·세브하·시르테 활동 확대, 연료 밀수와 공공자원 전용을 감시하는 경제 담당 부서 유지, 2020년 10월 23일 휴전과 외국군·용병 철수 이행을 요구했다. 마시드 불로스 미 대통령 선임고문(아랍·아프리카 담당)은 11월 1일 X에서 \"정치 과도기를 의도적으로 방해하는 이들에 대한 제재를 주저하지 않겠다\"며 결의 2174호를 언급했다(리비아옵서버)",
+   "'4+4' 소협의체가 10월 28일 런던에서 테테 특별대표 주재로 8월 30일 합의 이행 상황과 총선·대선 쟁점을 논의했다. 통합되고 독립적인 사법부가 신뢰할 선거의 전제라며 사법 기관과의 협의를 넓히기로 했고, 2주 안에 다시 만난다. 테테는 10월 14일 안보리에서 HCS가 합의를 거부했다고 밝혔다. 10월 28일 UNSMIL은 시민사회법 최종안 합의도 발표했다",
+   "군 통합: 알주비와 사담 하프타르가 10월 23일 앙카라에서 튀르키예 중재로 만났고, 시르테 합동사령부 본부에는 합의했으나 정치적 감독 주체(알주비는 국방부, 하프타르는 대통령위원회 선호)에서 막혔다고 알아라비 알자디드가 전했다(휘리예트 10/26). 10월 28일 리비아옵서버는 파와셀 플랫폼을 인용해 지역별 참모총장 4명·합동지휘기구를 담은 예비 문서에 둘이 서명했다고 보도했으나 당사자 입장은 싣지 않았다. GNU 산하 티비안은 10월 27일 정부 명의로 유포된 군 통합 문서가 '위조'라고 밝혔다",
+   "해양 합의: 하원이 10월 20일 2019년 튀르키예-GNA 해양관할 양해각서를 만장일치로 승인했다. 10월 26일 그리스·이집트가 유엔에서 이의를 제기했고, 27일 이집트·바레인·UAE·그리스는 공동성명에서 \"지역 안보와 국제 법질서에 대한 위협\"이라고 했다. 게오르기오스 게라페트리티스 그리스 외무장관은 10월 31일 안토니우 구테흐스 유엔 사무총장을 만나 문제를 논의했고, 레제프 타이이프 에르도안 튀르키예 대통령은 EU 등의 반대가 \"정당한 근거가 없다\"고 했다. 드베이바 총리실은 10월 24일 하산 라샤드 이집트 정보국장에게 카이로의 우려를 대화로 풀겠다고 했다. 에르도안은 12월 8~9일 트리폴리 튀르키예-아프리카 정상회의에 올 전망이다(밀리예트 보도)",
+   "경제·민생: 테테는 10월 14일 안보리에서 물가상승률 14% 이상, 1~9월 연료 수입의 30~50%(24억~44억 달러어치)가 밀수 등으로 사라진 것으로 추정, 9월 석유 시설 차질로 100만 배럴 생산 손실이라고 밝혔다. 10월 말 무장 집단이 하마다 주 송유관 밸브를 잠가 자위야 정유시설로 가는 하루 1만 5천 배럴이 끊길 위험이라고 국영석유공사(NOC)가 밝혔다. 교사 파업은 이어지고, 학생회는 10월 31일 수업 재개 방안을, 트리폴리대 교수 노조는 급여 삭감 가능성에 수업 중단을 경고했다",
+   "10월 31일 미 국무부가 전 사법경찰 수장 오사마 니짐과 부인 아말 마클루프를 7031(c)에 따라 지정해 본인과 가족의 미국 입국을 막았다. 국무부는 미티가·알자디다 교도소에서 수감자 고문 등 중대한 인권 침해에 연루됐다고 밝혔다. 리비아 대표(유엔 보도자료에 이름 없음)는 10월 14일 안보리에서 국가적 합의 없는 '평행 트랙'을 경계하며 UNSMIL이 공정한 중재자로 남아야 한다고 했다"
   ],
   "sources": [
    [
-    "Asharq Al-Awsat",
-    "리비아, 논쟁적 튀르키예 해양 합의 승인 (Libya Approves Contentious Türkiye Deal Over Mediterranean Waters) · 2026-10-21",
-    "https://english.aawsat.com/arab-world/5331831-libya-approves-contentious-t%C3%BCrkiye-deal-over-mediterranean-waters"
+    "UN Press",
+    "Security Council Renews Mandate of United Nations Support Mission in Libya for One Year, Unanimously Adopting Resolution 2835 (2026)(안보리, UNSMIL 임무 1년 연장·결의 2835호 만장일치 채택) · 2026-10-30",
+    "https://press.un.org/en/2026/sc16497.doc.htm"
+   ],
+   [
+    "Libya Observer",
+    "Security Council extends UNSMIL mandate until October 2027, reaffirms support for political roadmap(안보리, UNSMIL 임무 2027년 10월까지 연장) · 2026-10-31",
+    "https://libyaobserver.ly/news/security-council-extends-unsmil-mandate-until-october-2027-reaffirms-support-political-roadmap"
+   ],
+   [
+    "Libya Observer",
+    "Boulos: US won't hesitate to sanction individuals who obstruct Libya's political transition(불로스: 미국, 정치 과도기 방해자 제재 주저 않겠다) · 2026-11-01",
+    "https://libyaobserver.ly/news/boulos-us-wont-hesitate-sanction-individuals-who-obstruct-libyas-political-transition"
+   ],
+   [
+    "Libya Observer",
+    "4+4 mini-dialogue group meets in London, agrees to expand consultations on unifying judiciary(4+4 소협의체 런던 회동, 사법부 통합 협의 확대) · 2026-10-29",
+    "https://libyaobserver.ly/news/44-mini-dialogue-group-meets-london-agrees-expand-consultations-unifying-judiciary"
+   ],
+   [
+    "Hürriyet Daily News",
+    "Türkiye hosts talks to unify Libya's rival forces(튀르키예, 리비아 적대 세력 통합 회담 주최) · 2026-10-26",
+    "https://www.hurriyetdailynews.com/turkiye-hosts-talks-to-unify-libyas-rival-forces-228596"
+   ],
+   [
+    "Libya Observer",
+    "Media sources: Al-Zubi and Saddam sign preliminary document on unifying Libya's military(소식통: 알주비·사담, 군 통합 예비 문서 서명) · 2026-10-28",
+    "https://libyaobserver.ly/news/media-sources-al-zubi-and-saddam-sign-preliminary-document-unifying-libyas-military-and"
+   ],
+   [
+    "Tibyan(GNU 관영 플랫폼, 리비아옵서버 게재)",
+    "Tibyan says document on military unification is forged(티비안: 군 통합 문서는 위조) · 2026-10-27",
+    "https://libyaobserver.ly/inbrief/tibyan-says-document-military-unification-forged"
+   ],
+   [
+    "Libya Observer",
+    "Egypt, Bahrain, UAE and Greece say Turkey-Libya maritime deal threatens regional security(이집트·바레인·UAE·그리스, 튀르키예-리비아 해양 합의는 지역 안보 위협) · 2026-10-27",
+    "https://libyaobserver.ly/news/egypt-bahrain-uae-and-greece-say-turkey-libya-maritime-deal-threatens-regional-security"
+   ],
+   [
+    "Libya Observer",
+    "Erdogan expected to visit Tripoli in December(에르도안, 12월 트리폴리 방문 예상) · 2026-10-27",
+    "https://libyaobserver.ly/news/erdogan-expected-visit-tripoli-december"
    ],
    [
     "UN Press",
@@ -3906,23 +3832,13 @@
    ],
    [
     "Libya Observer",
-    "Takala tells UNSMIL: HCS rejects '4+4' track(타칼라, 국가최고위의 '4+4' 트랙 거부를 UNSMIL에 통보) · 2026-10-12",
-    "https://libyaobserver.ly/news/takala-tells-unsmil-hcs-rejects-44-track"
-   ],
-   [
-    "Libya Observer",
-    "UNSMIL pledges to work with new HoR Presidency to advance political roadmap and elections(UNSMIL, 하원 새 의장단과 협력 약속) · 2026-10-08",
-    "https://libyaobserver.ly/news/unsmil-pledges-work-new-hor-presidency-advance-political-roadmap-and-elections"
+    "US State Department slaps visa restrictions on Osama Njeem and his wife over human rights violations(미 국무부, 오사마 니짐 부부 비자 제한) · 2026-10-31",
+    "https://libyaobserver.ly/news/us-state-department-slaps-visa-restrictions-osama-njeem-and-his-wife-over-human-rights"
    ],
    [
     "Libya Herald",
-    "Supreme Constitutional Court rules that HoR majority is based on actual number of members(최고헌법재판소, 하원 과반은 실제 재적 기준) · 2026-10-13",
-    "https://libyaherald.com/2026/10/supreme-constitutional-court-rules-that-hor-majority-is-based-on-actual-number-of-members-legally-retaining-status"
-   ],
-   [
-    "Libya Observer",
-    "Teachers' movement rejects call to reopen schools, vows to continue strike(교사 운동, 등교 재개 요구 거부·파업 지속) · 2026-10-15",
-    "https://libyaobserver.ly/news/teachers-movement-rejects-call-reopen-schools-vows-continue-strike"
+    "Armed group closes Al-Rayayna valve on main Al-Hamada crude oil pipeline(무장 집단, 하마다 송유관 라야이나 밸브 폐쇄) · 2026-10",
+    "https://www.libyaherald.com/2026/10/armed-group-closes-al-rayayna-valve-on-main-al-hamada-crude-oil-pipeline-connecting-hamada-field-to-zawia-refinery"
    ]
   ],
   "videos": [
@@ -3948,99 +3864,65 @@
  },
  "ML": {
   "kind": "conflict",
-  "asOf": "2026-10-25",
-  "headline": "말리군 \"메나카 타가다야트서 시신 54구\", IS 사헬주 지목",
-  "summary": "2020·2021년 쿠데타로 집권한 아시미 고이타 과도대통령의 군정은 러시아 국방부 직속 아프리카군단과 함께 JNIM·FLA와 싸우고 있다. 투아레그 반군 FLA가 '통제된 전략적 철수'를 하자 군은 10월 6일 다섯 달 만에 키달에 들어갔다. 과도정부는 국영TV 성명에서 '러시아 파트너의 지원'을 받아 진지를 굳혔다고 밝혔다. 군은 키달 주변 공습을 이어가지만 4월에 버린 테살리트 기지에는 아직 돌아가지 못했다. JNIM의 연료 봉쇄로 바마코의 연료는 군 호송 대열로 들어오고 있다. 10월 12일 세구 지역 자나코로 마을 공습으로 여성·어린이 최소 8명이 숨졌다고 RFI가 보도했지만 군은 아무 설명을 내지 않았다.",
+  "asOf": "2026-11-02",
+  "headline": "말리 고이타, 모스크바 러시아-아프리카 정상회의 뒤 귀국…HRW \"군·아프리카군단 공습에 4~8월 민간인 89명 사망\"",
+  "summary": "2020·2021년 쿠데타로 집권한 아시미 고이타 과도대통령의 군정은 러시아 국방부 직속 아프리카군단과 함께 JNIM·FLA와 싸우고 있다. 군은 10월 6일 5개월 만에 키달에 들어갔고, 24일에는 메나카 인근 타가다야트에서 시신 54구를 찾았다며 IS 사헬주를 지목했다. 휴먼라이츠워치는 19일 군과 아프리카군단의 공습이 4~8월 민간인 89명의 사망으로 이어졌다는 ACLED 집계를 인용해 보고했다. 고이타는 10월 28~29일 모스크바 러시아-아프리카 정상회의에 참석하고 11월 1일 바마코로 돌아왔다. 바마코 연료는 군 호송으로 들어와 10월에 4,000대 가까운 유조차가 도착했다고 상업경쟁총국이 밝혔다(9월 3,796대). 압둘라예 디오프 외교장관은 2일 러시아와의 군사 협력 덕에 방위·안보군 장비가 \"만족스러운 수준\"으로 갖춰졌다고 말했다.",
   "control": [
    {
     "actor": "과도대통령 아시미 고이타 군정(FAMa)",
-    "holds": "바마코와 남부 도시. 10/6 키달 재진입. 연료는 군 호송으로 반입",
+    "holds": "바마코와 남부 도시. 10/6 키달 재진입. 10/28~29 모스크바 정상회의 참석 후 11/1 귀국. 연료는 군 호송으로 반입(10/31 유조차 596대)",
     "backers": "러시아(아프리카군단)"
    },
    {
     "actor": "JNIM(알카에다 연계)",
-    "holds": "중부·북부 농촌 넓은 지역. 바마코행 연료 봉쇄, 9/10 디우라 기지 공격",
+    "holds": "중부·북부 농촌 넓은 지역. 바마코행 연료 봉쇄, 9/10 디우라 기지 공격. HRW: FLA와 함께 7/18 가오 호송대 공격 뒤 포로 병사 19명 이상을 고문·처형(JNIM은 포로 사망은 인정, 지시는 부인)",
     "backers": ""
    },
    {
     "actor": "아자와드해방전선(FLA, 투아레그)",
-    "holds": "키달에서 철수, 테살리트·알제리 국경 틴자우아텐 일대에서 활동",
+    "holds": "키달에서 철수, 테살리트·알제리 국경 틴자우아텐 일대에서 활동. HRW 지적 처형 의혹은 부인",
     "backers": ""
    },
    {
     "actor": "이슬람국가 사헬주(IS 사헬)",
-    "holds": "메나카 지역 대부분(메나카 시내는 정부군)",
+    "holds": "메나카 지역 대부분(메나카 시내는 정부군). 10/18~24 타가다야트 일대 민간인 피살로 지목. 부르키나·말리·니제르 접경에서 JNIM과 최근 몇 년 새 가장 치명적인 충돌(Critical Threats 10/15)",
     "backers": ""
    }
   ],
   "points": [
-   "미 재무부는 2월 27일 바그너 연루로 제재했던 사디오 카마라 당시 국방장관 등 말리인 3명을 제재 명단에서 뺐다. 로이터는 3월 미국이 말리 상공 정찰기·무인기 비행 재개 합의에 다가섰다고 보도했지만 합의 여부는 확인되지 않았다. 8월 1일부터 말리인의 미국 비자 신청은 다카르 주재 미 대사관이 맡는다",
-   "7월 22일 워싱턴포스트는 전·현직 미 관리를 인용해 트럼프 행정부가 JNIM 군사 행동을 검토하고 있으며 세바스천 고르카 백악관 국가안보회의(NSC) 대테러 선임국장이 무력 사용을 주장한다고 보도했다. 압둘라예 디오프 외교장관은 23일 \"미국으로부터 아무 확인도 공식 발표도 받지 못했다\"고 말했다. 10월 25일까지 미군의 말리 내 공격은 보도되지 않았다",
    "10월 24일 말리군 총참모부는 메나카 남동쪽 약 35km 타가다야트 거주지에서 시신 54구와 생존자 9명을 찾았다고 밝히고 IS 사헬주(EIGS)를 지목했다. 18일 공격 뒤 다우사학(이다크사학) 공동체는 최소 48명이 숨졌다고 했다. IS 사헬주는 주장하지 않았다(Bamada.net 성명 전문·AFP)",
+   "10월 19일 휴먼라이츠워치는 군·아프리카군단의 공습 49건이 4~8월 민간인 89명을 숨지게 했다고 ACLED 집계를 인용해 밝혔다(전년 같은 기간 22건·44명). 8월 19일 반디아가라 시장 드론 공습으로 6명이 숨지고 20명 이상이 다쳤다. HRW가 8월 5일 국방장관에게 보낸 질의에 답은 없었다(알자지라)",
+   "상업경쟁총국(DGCC) 집계: 10월 호송 유조차는 3일 643대·10일 957대·17일 734대·26일 1,107대에 이어 31일 596대가 군 호송으로 바마코에 닿았다. 10월 합계는 4,000대 가까이로 9월(3,796대)보다 많다(Bamada.net)",
    "익명의 메나카 관리는 로이터에 앞선 주 군·아프리카군단과 동행한 친정부 무장단체 MSA가 IS 정보원으로 의심한 주민 약 12명을 죽였다고 주장했다. 말리군 대변인과 러시아 대사관은 답하지 않았다",
-   "키달 주민 3만 명 가운데 약 100명만 남았다(전 시의원, RFI 10/9). 동부 작전 사령관 카림 트라오레 대령은 \"일은 이제 시작\"이라고 말했다",
-   "상업경쟁총국(DGCC) 집계: 9월 초 이후 유조차 5,396대가 바마코에 들어왔고 10/10에는 957대가 군 호송으로 도착했다",
-   "9/10 디우라 기지 피습으로 병사 100명 이상이 숨졌다(RFI, 복수 소식통). 군은 공식 사망자 수 없이 '수십 명 무력화'만 발표했다",
-   "학교 11,860곳 중 2,444곳(20% 이상)이 문을 닫아 어린이 73만3,200명이 영향을 받는다(교육 클러스터 6월)",
-   "망명 야권 연합 CFR 대변인 에티엔 파카바 시소코는 군의 키달 복귀는 인정하면서 FLA·JNIM을 포함한 대화를 요구했다",
-   "고이타는 10/13 올리비에 은두훙기레 르완다 외교장관을 만났고, 10/15에는 바시리키 트라오레 코트디부아르 정보수장이 바마코를 찾았다"
+   "고이타는 모스크바 회의에서 \"우리는 더 이상 후견인이 아니라 진정한 동반자를 찾는다\"고 했다고 소개됐다. 11월 1일 귀국 때 압둘라예 마이가 총리와 국가과도위원회(CNT) 의장이 공항에서 맞았다(Bamada.net). 2일 디오프 외교장관은 러시아와의 군사 협력으로 방위·안보군 장비가 \"만족스러운 수준\"이 됐다고 했다",
+   "키달 주민 3만 명 가운데 약 100명만 남았다(전 시의원, RFI 10/9). 동부 작전 사령관 카림 트라오레 대령은 \"일은 이제 시작\"이라고 말했다. 11월 2일 군은 니오노·사레응궤우 일대 '두구콜로코 작전'에서 테러리스트 여러 명을 무력화했다고 발표했다(Bamada.net, 군 발표 인용, 독립 확인 안 됨)"
   ],
   "parliamentNote": "선출 의회 대신 군정이 임명한 국가과도위원회(CNT)가 입법을 맡고 있으며, 정당은 2025년 해산됐다.",
   "sources": [
    [
-    "Dakaractu",
-    "Le rêve américain commence désormais à Dakar pour les Maliens(말리인의 미국 비자, 이제 다카르에서) · 2026-08-02",
-    "https://www.dakaractu.com/Le-reve-americain-commence-desormais-a-Dakar-pour-les-Maliens_a274590.html"
+    "Bamada.net(DGCC 집계 인용)",
+    "Ravitaillement massif à Bamako : un nouveau convoi de 596 citernes sécurisé par les FAMa(바마코 대규모 보급: 군이 유조차 596대 호송) · 2026-10-31",
+    "https://bamada.net/ravitaillement-massif-a-bamako-un-nouveau-convoi-de-596-citernes-securise-par-les-fama"
    ],
    [
-    "로이터(TimesLIVE 전재)",
-    "Mali sanctions lifted as US wants to use airspace to watch jihadists(미국, 지하디스트 감시 위해 말리 영공 원해…제재 해제) · 2026-03-10",
-    "https://www.timeslive.co.za/news/africa/2026-03-10-mali-sanctions-lifted-as-us-wants-to-use-airspace-to-watch-jihadists/"
+    "Bamada.net",
+    "Retour triomphal à Bamako : Assimi Goïta de retour du 3e sommet Russie-Afrique(고이타, 제3차 러시아-아프리카 정상회의 뒤 바마코 귀국) · 2026-11-01",
+    "https://bamada.net/retour-triomphal-a-bamako-le-general-darmee-assimi-goita-de-retour-du-3%e1%b5%89-sommet-russie-afrique"
    ],
    [
-    "미 재무부 해외자산통제실(OFAC)",
-    "Russia-related Designations Removals; Lebanon Designation Removal(러시아 관련 제재 대상 해제; 레바논 대상 해제) · 2026-02-27",
-    "https://ofac.treasury.gov/recent-actions/20260227"
+    "Bamada.net(Le Nouvel Horizon 전재)",
+    "Le ministre Abdoulaye Diop à propos de la coopération militaire russo-malienne(압둘라예 디오프 외교장관, 러시아-말리 군사 협력 언급) · 2026-11-02",
+    "https://bamada.net/le-ministre-abdoulaye-diop-a-propos-de-la-cooperation-militaire-russo-malienne-le-mali-a-reussi-a-equiper-a-un-niveau-satisfaisant-ses-forces-de-defense-et-de-securite-grace-au-partenariat"
    ],
    [
-    "Burkina24(Africanews 인용)",
-    "Mali : Bamako dément toute confirmation d'une intervention militaire américaine(말리, 미국 군사 개입 확인 사실 없다고 밝혀) · 2026-07-24",
-    "https://burkina24.com/2026/07/24/mali-bamako-dement-toute-confirmation-dune-intervention-militaire-americaine/"
+    "알자지라(HRW 보고서)",
+    "Mali's military and armed groups committing abuses against civilians: HRW(말리 군과 무장단체의 민간인 학대: HRW) · 2026-10-19",
+    "https://www.aljazeera.com/news/2026/10/19/malis-military-and-armed-groups-committing-abuses-against-civilians-hrw"
    ],
    [
-    "워싱턴포스트(Anchorage Daily News 전재)",
-    "Trump administration weighing military options in Mali, officials say(관리들 \"트럼프 행정부, 말리 군사 옵션 검토\") · 2026-07-22",
-    "https://www.adn.com/nation-world/2026/07/22/trump-administration-weighing-military-options-in-mali-officials-say/"
-   ],
-   [
-    "Studio Tamani",
-    "메나카: 유목민 거주지 공격으로 민간인 최소 48명 피살 (Ménaka : au moins 48 civils tués dans des attaques contre des campements) · 2026-10-20",
-    "https://www.studiotamani.org/209304-menaka-au-moins-48-civils-tues-dans-des-attaques-contre-des-campements"
-   ],
-   [
-    "Al Jazeera(말리 과도정부 국영TV 성명 인용)",
-    "Mali’s army says it has taken Kidal from Tuareg rebels, with Russia’s help(말리군, 러시아 지원으로 키달 장악 발표) · 2026-10-06",
-    "https://www.aljazeera.com/news/2026/10/6/tuareg-rebels-withdraw-from-strategic-town-of-kidal-in-northern-mali"
-   ],
-   [
-    "RFI",
-    "Mali: à Kidal, les soldats sont plus nombreux que les habitants(키달, 주민보다 군인이 많다) · 2026-10-09",
-    "https://www.rfi.fr/fr/afrique/20261009-mali-%C3%A0-kidal-les-soldats-sont-plus-nombreux-que-les-habitants"
-   ],
-   [
-    "RFI",
-    "Mali: au moins huit femmes et enfants tués par des bombardements de l'armée dans la région de Ségou(세구 지역 군 공습으로 여성·어린이 최소 8명 사망) · 2026-10-14",
-    "https://www.rfi.fr/fr/afrique/20261014-mali-au-moins-huit-femmes-et-enfants-tu%C3%A9s-par-des-bombardements-de-l-arm%C3%A9e-dans-la-r%C3%A9gion-de-s%C3%A9gou"
-   ],
-   [
-    "NotreAfrik(말리 DGCC·산업통상부 집계)",
-    "Citernes à Bamako : 5 396 camions escortés en un mois(바마코 유조차 5,396대 호송 반입) · 2026-10-15",
-    "https://notreafrik.com/citernes-bamako-convois-escortes/"
-   ],
-   [
-    "RFI",
-    "Mali: le bilan de l’attaque des jihadistes du Jnim à Dioura s’alourdit à une centaine de militaires tués(디우라 피습 사망 병사 100명으로 늘어) · 2026-09-19",
-    "https://www.rfi.fr/fr/afrique/20260919-mali-le-bilan-de-l-attaque-du-jnim-%C3%A0-dioura-s-alourdit-%C3%A0-une-centaine-de-militaires-tu%C3%A9s"
+    "Critical Threats",
+    "Africa File, October 15, 2026: Ethiopia Reaches Eritrean Border; M23 Rebrands with Kabila(아프리카 파일 10월 15일)",
+    "https://www.criticalthreats.org/analysis/Ethiopia-eritrea-tigray-drc-m23-fln-kabila-rwanda-jnim-issp"
    ],
    [
     "Bamada.net(말리군 총참모부 성명)",
@@ -4056,6 +3938,16 @@
     "로이터(TimesLIVE 게재)",
     "IS militants kill at least 48 civilians in Mali, say sources(소식통 'IS 무장대원들, 말리서 민간인 최소 48명 살해') · 2026-10-21",
     "https://www.timeslive.co.za/news/africa/2026-10-21-is-militants-kill-at-least-48-civilians-in-mali-say-sources/"
+   ],
+   [
+    "Al Jazeera(말리 과도정부 국영TV 성명 인용)",
+    "Mali’s army says it has taken Kidal from Tuareg rebels, with Russia’s help(말리군, 러시아 지원으로 키달 장악 발표) · 2026-10-06",
+    "https://www.aljazeera.com/news/2026/10/6/tuareg-rebels-withdraw-from-strategic-town-of-kidal-in-northern-mali"
+   ],
+   [
+    "RFI",
+    "Mali: à Kidal, les soldats sont plus nombreux que les habitants(키달, 주민보다 군인이 많다) · 2026-10-09",
+    "https://www.rfi.fr/fr/afrique/20261009-mali-%C3%A0-kidal-les-soldats-sont-plus-nombreux-que-les-habitants"
    ]
   ],
   "videos": [
@@ -4244,18 +4136,23 @@
  },
  "NE": {
   "kind": "conflict",
-  "asOf": "2026-10-25",
-  "headline": "반란 진압 뒤 비판자 단속… 변호사 징역 5년 구형, 언론인 비밀 구금",
-  "summary": "2023년 7월 쿠데타로 바줌 대통령을 축출한 압두라흐마네 치아니 장군의 군정이 통치하고 있으며, 정당과 일부 독립 노조는 해산됐다. 8월 29일 니아메 반란은 러시아 아프리카군단과 알제리 전투기의 지원으로 진압됐고, 이후 군 지휘부 교체와 체포가 이어졌다. 군 분열을 다룬 페이스북 글로 기소된 변호사 압두라마네 리르와나에게 검찰은 10월 6일 징역 5년을 구형했다. 8월 31일 사라진 언론인 무사 카카에 대해서는 알리오 다우다 법무장관이 9월 25일에야 구금 사실을 인정했고, 가족·변호인은 아직 그를 만나지 못했다. 국방부는 9월 23일 틸라베리주 파르텔 부근에서 '중무장한 용병' 공격으로 군인 '여러 명'이 숨졌다고 밝혔지만 숫자는 공개하지 않았다. 석유부는 10월 12일 국영TV 성명에서 9월 25일부터 아가뎀 유전 유정에서 원유·가스가 분출해 '아직 완전히 통제되지 않았다'고 발표했다.",
+  "asOf": "2026-11-02",
+  "headline": "알제리 지상군 파병 승인·차드 드론 공방… 변호사 징역 1년, 언론인 두 달째 구금",
+  "summary": "2023년 7월 쿠데타로 바줌 대통령을 축출한 압두라흐마네 치아니 장군의 군정이 통치하고 있으며, 정당과 일부 독립 노조는 해산됐다. 알제리 상원은 10월 25일 니제르 파병안을 174명 중 148명 찬성으로 승인했고, 알제리 상원의원 벨카셈 불기티는 부대가 전쟁이 아니라 경제 시설 보호를 맡는다고 했다(AFP, La Nouvelle Tribune). 니제르 정부는 10월 24일 아가데즈주 드론 공격으로 민간인 2명이 숨졌다며 차드가 프랑스의 지원으로 발사했다고 주장했고, 차드 정부는 부인하며 독립 국제조사를 지지한다고 밝혔다. 변호사 압두라마네 리르와나는 10월 13일 사이버범죄법 위반으로 징역 1년과 벌금 200만 CFA프랑을 선고받았다(검찰 구형은 징역 5년). 8월 31일 사라진 언론인 무사 카카는 9월 25일 알리오 다우다 법무장관이 구금 사실을 인정한 뒤에도 구금 장소와 사유가 공개되지 않았다(HRW). 휘발유난이 이어지는 가운데 11월 1일 알제리산 연료 유조차 53대가 아가데즈에 도착했다(ANP).",
   "control": [
    {
     "actor": "압두라흐마네 치아니 장군 군정(CNSP)",
-    "holds": "니아메와 주요 도시. 8월 반란 진압 후 육군참모총장 교체(9/11), 비판자 사이버범죄법 기소",
+    "holds": "니아메와 주요 도시. 총리 알리 마하만 라민 제인, 국방장관 살리푸 모디. 8월 반란 진압 후 육군참모총장 교체(9/11), 비판자를 사이버범죄법으로 기소",
     "backers": "러시아(아프리카군단), 알제리"
    },
    {
+    "actor": "알제리군",
+    "holds": "니아메 공군기지에 Su-30 4대(8/30 배치, 알제리 국방부는 니아메 요청이라고 설명). 10/25 상원이 지상군 파병 승인",
+    "backers": "알제리 대통령 압델마지드 테분"
+   },
+   {
     "actor": "JNIM·IS 사헬주",
-    "holds": "서부 틸라베리 등 말리·부르키나 접경 지대. 6/18 니아메 공항 공격, 9/23 파르텔 부근 군 공격",
+    "holds": "서부 틸라베리 등 말리·부르키나 접경 지대. 6/18 니아메 공항·대통령궁 공격 기도(사전 적발), 1/28 IS 사헬주의 공항 공격, 9/23 파르텔 부근 군 공격",
     "backers": ""
    },
    {
@@ -4265,13 +4162,12 @@
    }
   ],
   "points": [
-   "10월 25일 알제리 상원이 '에너지 시설 보호'를 위한 니제르 파병안을 174명 중 148명 찬성으로 승인(익명 상원의원, AFP). 실제 파병 시 알제리의 1973년 이후 첫 해외 파병. 니제르 정부 공식 반응은 확인하지 못함",
-   "8월 반란으로 최소 27명이 숨지고 약 100명이 체포됐다. 군정은 프랑스가 배후라고 주장하고 프랑스는 부인한다",
-   "리르와나 변호사: 9/21 구금, 10/6 공판에서 검찰이 징역 5년과 벌금 500만 CFA프랑을 구형했다(RFI). 문제가 된 9/12 글은 군이 이수푸·바줌 전 대통령 지지파로 갈라졌다는 내용이었다(HRW)",
-   "아프리카기자연맹 회장 오마르 파루크 오스만은 10/12 다카르 아프리카인권위원회 회의에 카카 사건을 '강제 실종'으로 다뤄 달라고 요청했다",
-   "HRW 집계: 바줌 전 대통령 부부, 하마 아마두 술레이 전 내무장관, 인권운동가 무사 치앙가리가 구금돼 있고, 9월 망명 비판자 5명이 추가로 국적을 박탈당했다",
-   "아가뎀 유정 사고: CNPC 자회사 운영, 직원 2명 부상, 다른 유정 2곳 손상. 정부는 알제리 전문가가 참여하는 독립 조사를 발표하고 범죄·테러 원인은 배제했다",
-   "미 DFC는 9월 다사 우라늄 광산에 4.14억 달러 투자를 승인했다"
+   "알제리 상원 10/25 파병안 174명 중 148명 찬성(익명 상원의원 인용, AFP). 실제 파병 시 1973년 이후 첫 해외 파병이다. ActuNiger는 양원 모두 만장일치로 승인했다고 전했고, 숫자는 보도마다 다르다",
+   "니제르 언론은 알제리 군이 10월 31일 주말 북부에 도착했다고 보도했으나 공식 확인은 없다(La Nouvelle Tribune). 이 건에 대한 니제르 정부의 공식 입장은 확인하지 못했다. 11월 1일 석유장관 하마두 티니는 알제리 대통령에게 감사를 표했다(ANP)",
+   "드론 공격: 10/24 새벽 1시경 아가데즈주 에밀룰루 일대에서 민간인 2명 사망. 니제르 정부는 10/27 성명에서 차드를 '전적으로 책임 있다'고 하며 안보리·아프리카연합 평화안보이사회 회부와 독립 국제조사를 요청했다. 차드 정부 대변인 가심 셰리프 마하마트는 증거를 요구하며 부인했고, 양국 외교장관(바카리 야우 상가레, 아흐메드 코그리)은 모스크바에서 만나 자제를 약속했다. 프랑스는 입장을 내지 않았다",
+   "리르와나 변호사: 9/22 구금, 10/6 공판, 10/13 니아메 법원이 징역 1년과 벌금 200만 CFA프랑 선고. 변호인단은 항소할 방침이다(Journal du Niger)",
+   "HRW(10/28): 카카는 8/31 사무실을 나선 뒤 실종됐고 두 달이 지나도 구금 장소와 사유가 공개되지 않았다. HRW는 정식 기소가 아니라면 석방하라고 촉구했고, 일리아리아 알레그로치 HRW 사헬 선임연구원은 당국이 장소와 사유를 밝히지 않았다고 지적했다. 국경없는기자회는 유엔 강제실종위원회에 사건을 회부했다",
+   "연료난: 10/12 명령으로 기술위원회(분과 4개)가 구성됐고 총리가 위기위원회를 맡는다. 석유장관 티니는 \"원유 생산국이라고 해서 정제품 자급이 자동으로 보장되지는 않는다\"고 했다. 11/1 총리 알리 마하만 라민 제인은 벵가지에서 사담 하프타르와 전략 협력 양해각서에 서명했다고 밝혔다(ANP)"
   ],
   "parliamentNote": "2023년 쿠데타 이후 국회가 해산돼 선출 의회가 없고, 정당도 해산됐다.",
   "sources": [
@@ -4281,29 +4177,34 @@
     "https://www.arabnews.com/middle-east/algeria-senate-approves-sending-troops-to-niger-3008233"
    ],
    [
-    "RFI(AllAfrica, 니제르 석유부 성명 인용)",
-    "Niger: Éruption de pétrole et de gaz «d'une gravité exceptionnelle» dans le nord-est du pays(니제르 북동부서 '매우 심각한' 원유·가스 분출) · 2026-10-14",
-    "https://fr.allafrica.com/stories/202610140181.html"
+    "Burkina 24(니제르 정부 성명 인용)",
+    "Agression territoriale au Niger : Niamey accuse le Tchad et la France après une frappe de drone et saisit l'ONU(니제르 '영토 침략' 주장, 차드·프랑스 지목하고 유엔에 회부) · 2026-10-27",
+    "https://burkina24.com/2026/10/27/agression-territoriale-au-niger-niamey-accuse-le-tchad-et-la-france-apres-une-frappe-de-drone-et-saisit-lonu/"
    ],
    [
-    "RFI(AllAfrica)",
-    "Niger: l'avocat Abdourahamane Lirwana jugé à Niamey, cinq ans de prison ferme requis(변호사 리르와나 니아메 재판, 징역 5년 구형) · 2026-10-07",
-    "https://fr.allafrica.com/stories/202610070251.html"
+    "Points Chauds",
+    "Frappe de drone près d'Agadez : à Moscou, les chefs de la diplomatie nigérienne et tchadienne s'engagent à l'« apaisement »(아가데즈 드론 공격, 모스크바서 양국 외교장관 '긴장 완화' 약속) · 2026-11-01",
+    "https://pointschauds.info/frappe-de-drone-pres-dagadez-a-moscou-les-chefs-de-la-diplomatie-nigerienne-et-tchadienne-sengagent-a-l-apaisement"
+   ],
+   [
+    "Journal du Niger",
+    "Niger : L'avocat Lirwana Abdourahmane condamné à un an de prison ferme(변호사 리르와나, 징역 1년 선고) · 2026-10-13",
+    "https://www.journalduniger.com/niger-avocat-lirwana-abdourahmane-condamnation-cybercriminalite/"
    ],
    [
     "Human Rights Watch",
-    "Niger's Junta Tightens Its Grip on Free Expression(니제르 군정, 표현의 자유 통제 강화) · 2026-10-08",
-    "https://www.hrw.org/news/2026/10/08/nigers-junta-tightens-its-grip-on-free-expression"
+    "Niger: Prominent Journalist Disappeared for 2 Months(니제르: 저명 언론인 두 달째 실종) · 2026-10-28",
+    "https://www.hrw.org/news/2026/10/28/niger-prominent-journalist-disappeared-for-2-months"
    ],
    [
-    "Fraternité Matin(AllAfrica, 니제르 국방부 성명 인용)",
-    "Niger: Mutinerie et attaque de Fartel, les failles du système de sécurité mises à nu(반란과 파르텔 공격이 드러낸 안보 허점) · 2026-09-26",
-    "https://fr.allafrica.com/stories/202609270111.html"
+    "ANP(니제르 국영통신, 당사자 공식)",
+    "Le ministre nigérien du Pétrole accueille à Agadez 53 camions-citernes transportant des produits pétroliers en provenance d'Algérie(석유장관, 아가데즈서 알제리산 유조차 53대 맞이) · 2026-11-01",
+    "https://anp.ne/le-ministre-nigerien-du-petrole-accueille-a-agadez-53-camions-citernes-transportant-des-produits-petroliers-en-provenance-dalgerie/"
    ],
    [
-    "Al Jazeera",
-    "Algeria sent fighter jets to Niger to thwart 'coup attempt', president says(알제리 대통령 '쿠데타 저지 위해 니제르에 전투기 파견') · 2026-10-03",
-    "https://www.aljazeera.com/news/2026/10/3/algeria-sent-fighter-jets-to-niger-to-thwart-coup-attempt-president-says"
+    "ANP(니제르 국영통신, 당사자 공식)",
+    "Benghazi : le Premier ministre nigérien reçu par Saddam Haftar, vice-commandant des forces armées libyennes(벵가지, 니제르 총리 사담 하프타르 면담) · 2026-11-01",
+    "https://anp.ne/benghazi-le-premier-ministre-nigerien-recu-par-saddam-haftar-vice-commandant-des-forces-armees-libyenne/"
    ]
   ],
   "videos": [
@@ -4825,64 +4726,64 @@
  },
  "PT": {
   "kind": "politics",
-  "asOf": "2026-10-24",
-  "headline": "주택 시위 농성장 철거·55명 연행…시위대 '임대법 철회' 요구하며 광장 복귀",
-  "summary": "루이스 몬테네그루 총리(사회민주당)가 사회민주당·국민당(CDS-PP) 연정으로 의회(230석) 과반 없는 정부를 이끈다. 3월 9일 사회당 출신 안토니우 주제 세구루가 대통령에 취임했다. 10월 17일 노동총동맹(CGTP)이 리스본·포르투 등에서 생활비 인상 반대 행진을 열었고, 주택 운동은 리스본 호시우 광장과 포르투에 농성장을 세웠다. 경찰은 20일 새벽 두 곳을 정리하며 55명을 연행했다(로이터). 시위대는 퇴거를 쉽게 하고 신규 임대 월세 상한을 없애는 정부 법안의 철회를 요구한다. 이 법안은 1차 표결에서 셰가(CH)의 기권으로 통과됐다.",
+  "asOf": "2026-11-02",
+  "headline": "로시우 광장 농성장 또 강제 철거…법원은 '25일까지 천막 허용', 정부는 임대법 '수정은 가능'",
+  "summary": "루이스 몬테네그루 총리(사회민주당)가 사회민주당·국민당(CDS-PP) 연정으로 의회(230석) 과반 없는 정부를 이끈다. 퇴거를 쉽게 하고 신규 임대 월세 상한을 없애는 임대법 개정안은 1차 표결을 셰가(CH)의 기권으로 통과해 위원회 심의 중이다. 몬테네그루 총리는 10월 29일 철회는 안 되지만 수정은 열려 있다고 했고, 최종 표결은 '몇 주 안'으로만 알려졌다. 주택 운동 농성장은 10월 20일에 이어 11월 1일 새벽 다시 경찰에 정리돼 리스본·포르투에서 13명이 연행됐다(경찰 집계). 리스본 행정법원은 11월 2일 보도에서 천막을 11월 25일까지 둘 수 있다고 결정했다. 2027년 예산안은 10월 28일 1차 표결을 통과했고 최종 표결은 11월 24일이다.",
   "control": [
    {
     "actor": "몬테네그루 정부",
-    "holds": "총리 루이스 몬테네그루(사회민주당). 사회민주당·국민당(CDS-PP) 91석으로 과반(116석)에 못 미치는 소수정부. 2027년 예산안 11월 24일 최종 표결",
-    "backers": "임대법 개정안 1차 표결은 셰가(CH) 기권으로 통과"
+    "holds": "총리 루이스 몬테네그루(사회민주당). 사회민주당·국민당(CDS-PP) 91석으로 과반(116석)에 못 미치는 소수정부. 루이스 네베스 내무장관은 경찰에 '전적인 신뢰'를 밝힘",
+    "backers": "예산안 1차 표결은 사회당 기권, 임대법 1차 표결은 셰가 기권으로 통과"
    },
    {
-    "actor": "주택 운동·노동총동맹(CGTP)",
-    "holds": "임대법 철회·월세 상한·퇴거 중단·공공주택 확대 등 6개 요구. 티아구 올리베이라 CGTP 사무총장은 11월 추가 시위 예고",
+    "actor": "주택 운동(카자 파라 비베르·리스본/포르투 아캄파다)",
+    "holds": "임대법 철회·퇴거 중단·월세 상한·공공주택 확대 등을 요구. 대변인 리타 실바는 \"정부의 경청 의지가 보이지 않는다\"며 시위를 이어가겠다고 함",
     "backers": ""
    },
    {
     "actor": "야당",
-    "holds": "사회당 대표 주제 루이스 카르네이루는 새 임대법을 사회적 '도화선'이라 비판. 셰가 대표 안드레 벤투라는 경찰 대응을 지지",
+    "holds": "사회당 대표 호세 루이스 카르네이루는 정부가 야당·시위대와 협상하지 않고 자기 뜻을 밀어붙인다고 비판. 셰가는 사회민주당과 임대법을 위원회 단계에서 고치기로 서면 합의했다고 주장",
     "backers": ""
    }
   ],
   "points": [
-   "10월 20일 새벽 경찰, 리스본 호시우 광장(텐트 약 200개)·포르투 동 주앙 1세 광장 농성장 정리, 55명 연행·2명 경상. 경찰(PSP) 간부 세르지우 소아르스 \"차분하고 비례적이며 적절했다\", 리스본 농성 대변인 카를라 발라당 \"매우 공격적\"(로이터)",
-   "10월 20일 저녁 시위대 두 광장에 다시 모임(주최 측 각 1,000명 넘게). 연행자 55명은 21일 법원 출석을 조건으로 풀려남(로이터)",
-   "10월 17일 CGTP 전국 행동(리스본·포르투·코임브라·푼샬 등): '더 많은 임금, 더 나은 연금과 공공서비스, 생활비 인상 반대'. 경찰 집계는 발표되지 않음(RTP·Lusa)",
-   "10월 15일 새벽 포르투 농성장 경찰 개입: 주택 운동 측은 37명 부상(2명 중상)을 주장. 검찰 수사 착수, 경찰 감찰(IGAI) 조사도 진행(DN·RTP)",
-   "10월 15~16일 몬테네그루 총리: 시위대에 공공질서를 두고 '이기적이지 말라'고 했다가, 정당·단체를 향한 말이었다고 해명. 자택에 벽돌을 던지자는 시위 연설 영상에 우려를 밝힘(DN·RTP)",
-   "세구루 대통령 \"누구도 집 없이 살아서는 안 된다\"(RTP). 집값은 2017년 이후 두 배 넘게, 신규 계약 월세는 두 배 가까이 올랐다(로이터)"
+   "11월 1일 새벽 4시 30분쯤 경찰(PSP) 개입부대가 리스본 로시우 광장과 포르투 농성장에 동시에 투입됐다. 경찰 대변인 세르지우 소아르스는 시위대가 페인트와 폭죽을 던진 뒤에야 물리력을 썼다고 했다(DN)",
+   "경찰 집계 연행 13명(리스본 6·포르투 7), 구급기관 INEM이 25명을 치료했다. 시위 측은 리스본 30명 이상, 포르투 38명 부상을 주장했고 경찰은 포르투에서 경찰관 13명이 다쳤다고 했다. 출처마다 숫자가 달라 잠정치다(DN)",
+   "11월 2일 보도: 리스본 행정법원이 천막을 허가가 필요한 야영이 아닌 시위의 일부로 보고 11월 25일까지 둘 수 있다고 결정했다. 안토니우 주제 세구루 대통령은 정부와 옴부즈맨에 상세 정보를 요청하고 몬테네그루 총리와 통화했다(SOL)",
+   "10월 29일 몬테네그루 총리: 임대법 철회는 배제하되 수정은 열려 있다, 정당들이 \"서로 가까워져야 한다\". 10월 31일 로시우에 수천 명이 다시 모였다(주최 측 추산, 경찰은 추산을 내지 않음, 로이터)",
+   "셰가의 마르타 실바 의원(10/28): 사회민주당이 위원회 단계에서 개정안을 고치기로 한 합의가 지켜지면 \"무자비한 퇴거는 없을 것\". 몬테네그루 총리는 이 요구에 답하지 않았다(DNoticias)",
+   "2027년 예산안 1차 표결(10/28): 사회민주당·국민당 찬성, 사회당·PAN·JPP 기권, 셰가·IL·Livre·PCP·BE 반대. 수정안 제출 11월 6일까지, 최종 표결 11월 24일. 카르네이루 사회당 대표는 \"이것은 나쁜 예산\"이지만 국민을 실망시키지 않겠다고 했다(RTP·정부)"
   ],
   "sources": [
    [
-    "Reuters(The Star 게재)",
-    "Portuguese police clear housing protest camps, arresting 55(포르투갈 경찰, 주택 시위 농성장 철거·55명 연행) · 2026-10-20",
-    "https://www.thestar.com.my/news/world/2026/10/20/portuguese-police-clear-housing-protest-camps-arresting-55"
-   ],
-   [
-    "Reuters(GDN 게재)",
-    "Portugal housing protesters return to squares, vow to press on(포르투갈 주택 시위대, 광장 복귀) · 2026-10-21",
-    "https://www.gdnonline.com/Details/1410395/Portugal-housing-protesters-return-to-squares,-vow-to-press-on"
-   ],
-   [
-    "RTP",
-    "Protestos pela habitação e contra aumento do custo de vida sobem de tom em manifestação nacional(주택·생활비 시위, 전국 집회서 목소리 높여) · 2026-10-17",
-    "https://www.rtp.pt/noticias/pais/protestos-pela-habitacao-e-contra-aumento-do-custo-de-vida-sobem-de-tom-em-manifestacao-nacional_e1772256"
-   ],
-   [
-    "RTP(Lusa)",
-    "Montenegro preocupado após ameaças de um manifestante contra a sua casa(몬테네그루, 자택 위협 발언에 우려) · 2026-10-16",
-    "https://www.rtp.pt/noticias/politica/montenegro-preocupado-apos-ameacas-de-um-manifestante-contra-a-sua-casa_n1772196"
-   ],
-   [
-    "DN",
-    "Montenegro defende forças policiais e pede a manifestantes que não sejam egoístas(몬테네그루, 경찰 옹호하며 '이기적이지 말라') · 2026-10-15",
-    "https://www.dn.pt/sociedade/montenegro-defende-foras-policiais-e-pede-a-manifestantes-que-no-sejam-egostas"
+    "로이터(Denver Gazette 게재)",
+    "Thousands press Portugal's government to scrap rental bill(수천 명, 포르투갈 정부에 임대법안 철회 촉구) · 2026-11-01",
+    "https://www.denvergazette.com/2026/11/01/thousands-press-portugals-government-to-scrap-rental-bill/"
    ],
    [
     "DN(Lusa)",
-    "Dia marcado por protestos contra aumento do custo de vida em várias cidades(여러 도시서 생활비 인상 항의 시위) · 2026-10-17",
-    "https://www.dn.pt/sociedade/dia-marcado-por-protestos-contra-aumento-do-custo-de-vida-em-vrias-cidades"
+    "Madrugada de violência no Rossio: manifestantes e polícias feridos após confrontos(로시우의 폭력의 새벽: 충돌로 시위대·경찰 부상) · 2026-11-01",
+    "https://www.dn.pt/sociedade/madrugada-de-violncia-no-rossio-manifestantes-e-polcias-feridos-aps-confrontos"
+   ],
+   [
+    "SOL",
+    "Manifestantes podem manter tendas no Rossio até 25 de novembro. Tribunal dá razão ao protesto(시위대, 11월 25일까지 로시우에 천막 유지 가능) · 2026-11-02",
+    "https://sol.iol.pt/sociedade/noticias/manifestantes-podem-manter-tendas-no-rossio-ate-25-de-novembro-tribunal-da-razao-ao-protesto/20261102/6ae869370cf2aafa0453cf42"
+   ],
+   [
+    "포르투갈 정부(XXV 정부)",
+    "OE 2027: Participação do Governo na discussão na especialidade(2027 예산: 특별 심의 정부 참여) · 2026-10-29",
+    "https://portugal.gov.pt/gc25/comunicacao/noticias/oe2027-esta-aprovado-na-generalidade"
+   ],
+   [
+    "RTP",
+    "OE2027 foi aprovado na generalidade com votos do PSD e CDS, PS abstém-se(2027 예산, 사민당·국민당 찬성 속 1차 통과, 사회당 기권) · 2026-10-28",
+    "https://www.rtp.pt/noticias/politica/oe2027-foi-aprovado-na-generalidade-com-votos-do-psd-e-cds-ps-abstem-se_e1774900"
+   ],
+   [
+    "DNoticias",
+    "Chega desafia Governo a cumprir acordo no arrendamento(셰가, 정부에 임대 합의 이행 촉구) · 2026-10-28",
+    "https://www.dnoticias.pt/2026/10/28/510799-chega-desafia-governo-a-cumprir-acordo-no-arrendamento-e-diz-que-solucoes-passam-pelo-parlamento/"
    ]
   ],
   "videos": [
@@ -5133,9 +5034,9 @@
  },
  "RW": {
   "kind": "politics",
-  "asOf": "2026-10-25",
-  "headline": "카빌라 새 반군 전선에 M23 합류, 르완다 F1 유치엔 콩고 반발",
-  "summary": "르완다는 2000년부터 대통령 폴 카가메와 르완다애국전선(RPF)이 통치하며, 카가메는 2024년 대선에서 99% 득표로 4선했다. 10월 12일 조제프 카빌라 전 콩고 대통령이 고마에서 M23 등 반정부 세력을 묶은 '국가재건전선(FRN)'을 출범시켰고 AFC/M23은 해산했다. FRN 사무총장 프레디 카니키는 10월 15일 FRN이 도하 협상을 포함한 AFC의 모든 약속을 이어받는다고 밝혔다. 콩고·미국·유엔 전문가들은 르완다가 M23을 지원한다고 보며, 르완다는 국경 너머 무장세력에 대비한 안보 조치라고 반박한다. 10월 13일 카가메와 F1이 2030년대 초 르완다 그랑프리 개최를 발표하자 테레즈 카이캄바 바그너 콩고 외교장관은 '권위주의 지도자의 이미지를 닦아 준다'고 반발했다.",
+  "asOf": "2026-11-02",
+  "headline": "미국, 르완다 국방부·지가마 제재…르완다 \"콩고도 약속 안 지켰다\"",
+  "summary": "르완다는 2000년부터 대통령 폴 카가메와 르완다애국전선(RPF)이 통치하며, 카가메는 2024년 대선에서 99% 득표로 4선했다. 미국 재무부(OFAC)는 10월 28일 르완다 국방부와 안보기관 급여·대출을 맡는 지가마 신용저축협동조합을 제재했다. 재무부는 국방부가 르완다방위군(RDF) 수천 명을 콩고 북·남키부에 보내 M23을 도왔다고 밝혔고, 스콧 베센트 재무장관은 \"르완다는 M23 지원을 멈추고 병력을 철수해야 한다\"고 했다. 욜랑드 마콜로 정부 대변인은 워싱턴 합의 이행 의지를 밝히면서도 FDLR 무력화 약속을 콩고가 지키지 않았다고 반박했고, 올리비에 은두훙기레헤 외교장관은 AFP에 르완다는 콩고 위기에 책임이 없다고 했다. 저스탱 은센기윰바 총리는 10월 29일 모스크바 러시아-아프리카 정상회의에서 FDLR이 존립을 위협한다며 합의를 모두 지키고 있다고 말했다. 10월 12일 조제프 카빌라 전 콩고 대통령이 AFC/M23을 잇는 '국가재건전선(FRN)'을 출범시킨 뒤 키부 지역 교전이 이어진다.",
   "control": [
    {
     "actor": "대통령 폴 카가메·르완다애국전선(RPF)",
@@ -5143,8 +5044,8 @@
     "backers": "하원 과반"
    },
    {
-    "actor": "르완다방위군(RDF)",
-    "holds": "콩고 동부 M23 지원 의혹(유엔·미국). 2026년 3월 미국이 조직과 고위 장교 4명을 제재했고 르완다는 '일방적'이라며 거부",
+    "actor": "르완다방위군(RDF)·국방부",
+    "holds": "콩고 동부 M23 지원 의혹(유엔·미국). 2026년 3월 2일 미국이 RDF와 고위 장교 4명을, 10월 28일 국방부와 지가마를 제재했다. 르완다는 M23 지원을 부인하고 '일방적'이라 반발",
     "backers": ""
    },
    {
@@ -5154,67 +5055,38 @@
    }
   ],
   "points": [
-   "르완다는 10/8 고마·부카부를 거쳐 콩고 난민 369명을 귀환시켰다고 밝혔다. 두 나라는 하반기 1만 명 귀환에 합의한 것으로 전해졌다(Critical Threats)",
-   "안보리는 10/2 언론성명(제롬 보나포르 의장 낭독)에서 FDLR 의정서의 신속한 이행을 촉구하는 한편 르완다군에 M23 지원 중단과 즉각·무조건 철수를 다시 요구했다",
-   "르완다는 9/29 유엔 안보리에 낸 답신에서도 의정서를 시간 끌기라 하고 콩고가 FDLR을 지원한다고 주장했다(Security Council Report)",
-   "7/28 콩고가 FDLR과 무장해제 의정서를 맺었다고 하자 올리비에 은두훙기레헤 외교장관은 '시간 끌기'라며 협정은 협상이 아닌 무력화를 요구한다고 했다. 카가메는 8/24 '언제나 피상적'이라며 '문제가 풀리지 않는 한 르완다는 우려할 것'이라고 했다",
-   "10월 12일 FRN 출범: 대표 카빌라, 부대표에 코르네유 낭가 등 옛 AFC/M23 지도부. 고문 클로드 이발랑키는 '무력을 포함한 모든 수단'으로 '폭정'을 끝내겠다고 했다(AP)",
-   "카빌라는 지난해 콩고 군사법원에서 반역 등으로 궐석 사형 선고를 받았고 올해 미국 제재 대상이 됐다. 그는 혐의를 부인한다(AP)",
-   "이봉 무야 오타와대 연구원은 AFC/M23 지도부가 새 조직에 들어가 도하 협상이 위태로워질 수 있다고 봤다(AP)",
-   "F1 아프리카 그랑프리: 키갈리 인근 부게세라에 새 서킷을 지어 2030년대 초 개최. F1의 아프리카 경주는 1993년 이후 처음. 콩고는 남아공 개최를 지지한다",
-   "9월 25일 올리비에 은두훙기레헤 외교장관은 르완다가 2027년 G77 의장국을 맡는다고 밝혔다",
-   "9월 16~17일 제네바 워싱턴 협정 공동안보조정기구 7차 회의는 공동성명 없이 끝났고, 10월 미국·콩고·르완다 3자 계획회의가 예정돼 있었다"
+   "10월 28일 제재: 미 재무부는 국방부를 행정명령 13413호로, 지가마를 'M23과 정치조직 AFC 지원 거래를 도운 금융기관'으로 지정했다. 재무부는 RDF가 지대공미사일과 전파교란 장비를 전장에 들여왔다고 밝혔다. 콩고 외교부는 환영하며 르완다에 철군을 촉구했다. 르완다는 지금까지 M23 지원을 부인해 왔다",
+   "르완다 반응: 마콜로 대변인은 \"워싱턴 합의에는 르완다 안보에 관한 분명한 약속, 곧 콩고가 지원하는 대량학살 민병대 FDLR의 무력화가 있다. 이 약속은 지켜지지 않았고 책임도 묻지 않았다\"고 했다(더이스트아프리칸). 10월 29일 총리 은센기윰바는 카가메 대신 모스크바 러시아-아프리카 정상회의에 참석해 르완다가 합의를 '완전히 준수'한다고 말했고, 은두훙기레헤 외교장관이 발언을 온라인에 알렸다",
+   "워싱턴 합의 공동안보조정기구(JSCM) 7차 회의가 10월 20~22일 독일 가르미슈에서 열려 콩고군의 FDLR 작전과 르완다군 철수를 담은 작전명령서 초안을 마무리하려 했다. 유엔콩고안정화단(MONUSCO)은 10월 28일 FDLR 대원 10명 포함 42명을 르완다로 자진 송환했다고 밝혔다",
+   "FRN과 콩고군·와자렌도 민병대 교전: 크리티컬 스레츠 집계로 10월 21~26일 남키부 왈룽구 고지대·루지지 평원·미넴베 일대에서 충돌이 이어졌고, 10월 26일 와자렌도가 북키부 루투시 서부에서 FRN 호송대를 매복 공격했다고 한다. 전황 주장은 양측 SNS 주장으로 독립 확인되지 않았다",
+   "펠릭스 치세케디 콩고 대통령은 10월 24일 국제사회에 르완다 제재와 압박을 요구했다. 콩고 야권 연합(마르탱 파윌루·모이스 카툼비 등 5인)은 10월 25~27일 로마에서 만나 개헌과 무장 반란을 모두 거부하고 치세케디·카빌라를 따로 만나겠다고 밝혔다",
+   "10월 13일 카가메와 F1이 2030년대 초 르완다 그랑프리 개최를 발표하자 테레즈 카이캄바 바그너 콩고 외교장관은 '권위주의 지도자의 이미지를 닦아 준다'고 반발했다"
   ],
   "sources": [
    [
+    "Eurasia Review(미 재무부 발표 전재)",
+    "US Treasury Sanctions Rwandan Ministry Of Defence And Financial Institution Supporting M23(미 재무부, M23 지원 르완다 국방부·금융기관 제재) · 2026-10-29",
+    "https://www.eurasiareview.com/29102026-us-treasury-sanctions-rwandan-ministry-of-defence-and-financial-institution-supporting-m23/"
+   ],
+   [
+    "더이스트아프리칸",
+    "Rwanda: 'Even Congo has not fulfilled Washington Accords'(르완다 \"콩고도 워싱턴 합의 이행 안 했다\") · 2026-10-30",
+    "https://www.theeastafrican.co.ke/tea/news/east-africa/rwanda-even-congo-has-not-fulfilled-washington-accords-5652640"
+   ],
+   [
+    "더스타(케냐)",
+    "US sanctions Rwanda's defence ministry over DR Congo conflict(미국, 콩고 분쟁 관련 르완다 국방부 제재) · 2026-10-29",
+    "https://www.the-star.co.ke/news/africa/2026-10-29-us-sanctions-rwandas-defence-ministry-over-dr-congo-conflict"
+   ],
+   [
+    "리오 타임스",
+    "Rwanda Takes Its Congo Case to Moscow(르완다, 콩고 문제를 모스크바로 가져가다) · 2026-10-30",
+    "https://www.riotimesonline.com/rwanda-pm-moscow-summit-fdlr-washington-accords/"
+   ],
+   [
     "Critical Threats",
-    "Congo War Security Review(콩고 전쟁 안보 리뷰) · 2026-10-21",
+    "Congo War Security Review(콩고 전쟁 안보 리뷰) · 2026-10-29",
     "https://www.criticalthreats.org/briefs/congo-war-security-review"
-   ],
-   [
-    "ACP(콩고 국영통신)",
-    "RDC: le Conseil de sécurité exige de nouveau le retrait des troupes rwandaises(안보리, 르완다군 철수 거듭 요구) · 2026-10-03",
-    "https://acp.cd/nation/rdc-le-conseil-de-securite-exige-de-nouveau-le-retrait-des-troupes-rwandaises/"
-   ],
-   [
-    "Security Council Report",
-    "Great Lakes Region: Briefing and Consultations(대호수 지역 브리핑·협의 예고) · 2026-10-12",
-    "https://www.securitycouncilreport.org/whatsinblue/2026/10/great-lakes-region-briefing-and-consultations-11.php"
-   ],
-   [
-    "Africanews",
-    "Rwanda's Kagame calls FDLR disarmament efforts superficial(카가메, FDLR 무장해제 노력은 '피상적') · 2026-08-25",
-    "https://africanews.com/2026/08/25/rwandas-kagame-calls-fdlr-disarmament-efforts-superficial"
-   ],
-   [
-    "AFP(Citizen Digital 게재)",
-    "Congo, Rwanda spar over protocol to disarm Rwandan rebels(콩고·르완다, 르완다 반군 무장해제 의정서 놓고 공방) · 2026-07-30",
-    "https://www.citizen.digital/article/congo-rwanda-spar-over-protocol-to-disarm-rwandan-rebels-n387370"
-   ],
-   [
-    "르완다 외교부(MINAFFET)",
-    "Rwanda Assumes G77 Chairmanship for 2027(르완다, 2027년 G77 의장국 맡아) · 2026-09-25",
-    "https://www.minaffet.gov.rw/updates/news-details/rwanda-assumes-g77-chairmanship-for-2027"
-   ],
-   [
-    "AP",
-    "Congo's former President Joseph Kabila launches an anti-government front with rebel groups(카빌라 전 콩고 대통령, 반군과 반정부 전선 출범) · 2026-10-13",
-    "https://apnews.com/article/congo-m23-rebels-kabila-tshisekedi-goma-f17c608d521bae51e1d0b811a33f1f61"
-   ],
-   [
-    "AP",
-    "Congo protests Formula 1's 'indefensible' decision to race in Rwanda(콩고, 르완다 F1 개최에 '변명 못 할 결정' 항의) · 2026-10-15",
-    "https://apnews.com/article/congo-rwanda-f1-africa-51130d9eb96629c36185709994099a3b"
-   ],
-   [
-    "The New Times(르완다)",
-    "Kabila-led FRN takes over Doha peace talks with Kinshasa(카빌라의 FRN, 콩고 정부와의 도하 협상 승계) · 2026-10-15",
-    "https://www.newtimes.co.rw/article/39695/news/africa/kabila-led-frn-takes-over-doha-peace-talks-with-kinshasa"
-   ],
-   [
-    "Security Council Report",
-    "Great Lakes Region (DRC) October 2026 Monthly Forecast(대호수 지역 10월 전망) · 2026-10-01",
-    "https://www.securitycouncilreport.org/monthly-forecast/2026-10/great-lakes-region-drc-10.php"
    ]
   ],
   "videos": [
@@ -6600,23 +6472,28 @@
  },
  "YE": {
   "kind": "conflict",
-  "asOf": "2026-10-25",
-  "headline": "후티, 아덴 공항에 이달 네 번째 미사일(교통부)…'사우디 공습에 16명 사망' 주장, 연합군 '탄도미사일 10발 요격'",
-  "summary": "2014년 안사르알라(후티)가 수도 사나를 장악한 뒤 예멘은 북서부의 후티와 아덴을 임시수도로 둔 국제 공인 정부(대통령지도위원회, PLC)로 갈라져 있다. 2022년 휴전으로 줄었던 교전이 2026년 여름 다시 커졌고, 후티는 9월 홍해 연안 모카를 점령하며 사우디 본토 공격을 늘렸다. 유엔 예멘 특사는 10월 9일 안보리에서 예멘이 여러 전선에 걸친 대규모 전쟁으로 돌아갔다고 평가했다.",
+  "asOf": "2026-11-02",
+  "headline": "후티, 아덴 공항·대통령궁에 미사일 계속…타이즈-아덴 도로 따라 진격 시도, 사우디 연합군 후티 미사일 시설 공습·피란민 29만 명",
+  "summary": "2014년 안사르알라(후티)가 수도 사나를 장악한 뒤 예멘은 북서부의 후티와 아덴을 임시수도로 둔 국제 공인 정부(대통령지도위원회, PLC)로 갈라져 있다. 2022년 휴전이 7월에 무너진 뒤 후티는 9월 홍해 연안 모카 일대를 점령했고 10월에는 타이즈를 포위했다. 10월 10일 후티의 리야드 킹칼리드 공항 공격으로 최소 13명이 숨지고 300명 넘게 다쳤으며, 미 국무부는 21일 사우디 주재 비필수 공무원과 가족에 출국을 명령했다. 30~31일 후티는 아덴 공항과 마아시크 대통령궁에 탄도미사일을 쐈고, 타이즈-아덴 도로를 따라 라헤즈주 쪽으로 진격하다 사우디 공습의 지원을 받은 정부군에 막혔다(ISW). 사우디 주도 연합군은 26일 후티 탄도미사일 발사대 4기와 저장 터널 5곳 파괴를, 11월 1일 후티의 미사일·드론 능력을 떠받치는 '핵심 자원' 타격을 발표했다.",
   "control": [
    {
     "actor": "안사르알라(후티)",
-    "holds": "사나와 북서부 인구 밀집 지역, 호데이다 등 홍해 연안. 9월 10~14일 모카·마윤(페림)섬·주카르섬·하니시 제도 장악, 10월 4일 투르바를 잡아 타이즈시를 포위",
+    "holds": "사나와 북서부 인구 밀집 지역, 호데이다 등 홍해 연안. 9월 모카·마윤(페림)섬 등 점령, 10월 4일 투르바를 잡아 타이즈를 포위. 10월 30~31일 타이즈-아덴 도로의 수크 알라보아 교차로 쪽 진격 시도(ISW)",
     "backers": "이란"
    },
    {
     "actor": "대통령지도위원회(PLC) 정부",
-    "holds": "아덴(임시수도), 마리브, 남부·동부 대부분. 10월 5일 두바브와 두바브 공항 탈환(AP). 모카 탈환 주장은 확인되지 않았다. 의장 라샤드 알알리미, 총리 샤야 알진다니(2026년 1월 취임)",
+    "holds": "아덴(임시수도), 마리브, 남부·동부 대부분. 의장 라샤드 알알리미, 총리 샤야 알진다니. 정부군은 10월 30~31일 알자우프 중부에서 알하즈므를 내려다보는 고지를 되찾았다고 발표(ISW). 대변인 마지드 알누자일리",
     "backers": "사우디아라비아"
    },
    {
     "actor": "서해안 정부 측 부대(국민저항군·자이언트 여단·국가방패군)",
-    "holds": "9월 모카 함락 뒤 두바브로 지휘소를 옮겼고, 10월 5일 두바브·바브·하데이드, 8일 카흐부브 산 장악을 발표. 국민저항군 지휘관 타리크 살레(PLC 부의장)는 함락 뒤 사우디로 갔다(AP)",
+    "holds": "9월 모카 함락 뒤 두바브로 지휘소를 옮겼고, 10월 5일 두바브·바브, 8일 카흐부브 장악을 발표. 국민저항군 지휘관 타리크 살레(PLC 부의장)는 함락 뒤 사우디로 갔다(AP)",
+    "backers": "사우디아라비아"
+   },
+   {
+    "actor": "사우디 주도 연합군",
+    "holds": "공습과 방공 담당, 대변인 투르키 알말리키. 후티 미사일·드론을 요격하고 발사대·저장고를 공습. 영국은 사우디 영공 방어 임무만 수행",
     "backers": "사우디아라비아"
    },
    {
@@ -6626,170 +6503,54 @@
    }
   ],
   "points": [
-   "미국: 트럼프 대통령은 9월 12일 '후티가 전화해 우리와 싸우고 싶지 않다고 했다'며 개입하지 않았다. 9월 13일 무스카트 미 대사관에서 미 관리들과 무함마드 압둘살람 등 후티 대표가 만났고(로이터 소식통 5명), 후티는 미국 선박을 공격하지 않겠다고 했다. 국무부는 회동을 확인하지 않았다",
-   "10월 4일 후티가 투르바와 사피야를 잡아 타이즈-아덴 간선도로를 끊었다(AFP 보안 소식통 4명). 같은 날 알알리미 PLC 의장이 '예멘의 새벽' 반격을 선포했고, 5일 정부군이 두바브를 되찾았다(AP). 국방부는 모카 함락을 발표했지만 ISW는 두바브 북쪽 진전이 없다고 봤고, 후티 군 대변인은 '지어낸 무용담'이라고 했다",
-   "책임 공방: 이름을 밝히지 않은 예멘 고위 소식통은 CNN에 사우디 공중 지원이 오지 않았다고 했고, 서방 소식통은 장부상 병력의 20%만 실재했다(유령 병사)고 했다. 아므르 알비드 STC 고위 관계자는 사우디가 UAE 지원 부대를 몰아내고 공백을 메우지 않았다고 비판했다. 타리크 살레는 '이란이 계획·지원한 공격'이라고 했다(9월 11일)",
-   "서해안 함락 경위: 9월 3일 후티 지상 공세 시작(뉴욕타임스). 정부군은 5일 호데이다 남부 하이스를 잡았지만 9~10일 밤 후티 역공에 포위를 피해 물러났고, 10일 모카, 11일 마윤(페림)섬, 14일 대·소하니시섬이 넘어갔다(ISW·AFP·AP). 국민저항군 대변인 사디크 두와이드: 병력 3만 명이 170km에 흩어져 후티 7만5천 명을 상대했고 500명을 잃었다(AP, 미확인)",
-   "10월 24일 예멘 교통부: 후티가 아덴 국제공항에 탄도미사일 2발, '이달 네 번째' 공격. 알누자일리 예멘군 대변인: 24시간 동안 작전 700여 차례로 후티 300명 무력화(미확인). 예멘군: 23일 후티 미사일 오작동으로 사나 주택에서 3명 사망. 25일 알말리키 연합군 대변인: 사우디 남부 향한 후티 탄도미사일 10발 요격(Al Jazeera·로이터)",
-   "10월 24일 후티 매체 알마시라: 사우디 공습으로 사나·사나주·호데이다 16명 사망(미확인). 연합군: 타이프·얀부 향한 탄도미사일 2발 파괴, 사우디 민방위: 파편이 메카·메디나 지역에 떨어짐. 후티는 메카·메디나 공격 부인. 사리 대변인은 아덴 알나스르 캠프·해군기지 공격 주장, 예멘 내무부는 해안경비대 건물 피격 발표(AFP)",
-   "10월 22일 유엔 OCHA: 8월 이후 피란 약 26만 명, 절반이 타이즈. OHCHR 확인 민간인 사상 251명(사망 57명, 절반이 어린이). 알누자일리 예멘군 대변인은 타이즈 일대 작전 835건으로 후티 285명 사상을 주장(미확인). 예멘 국방부는 후티 집회·'문화 강좌'를 군사 표적으로 보겠다고 경고(Al Jazeera)",
-   "10월 22일 사리 후티 군 대변인: 사우디 국방부·담맘 공항·얀부 아람코·아브하 공항 공격 주장. 사우디는 담맘 공항 피해(2명 사망)만 확인",
-   "10월 21일 후티 사리 대변인이 아덴 바드르 캠프의 연합군 작전실을 탄도미사일로 때렸다고 주장했다. 아덴 공항 근처에서 폭음·연기, 피해 보고 없음(Al Jazeera·TASS). 같은 날 새벽 알말리키 연합군 대변인은 메디나·동부주로 향한 드론 5대를 요격했다고 밝혔다(아나돌루)",
-   "10월 20일 영국 국방부는 RAF 타이푼이 사우디 영공에서 후티 드론·미사일을 막는 방어 임무만 맡는다고 발표했다(웨스 스트리팅 국방장관). 같은 날 샤브와 주지사는 알알람 훈련소 사망자가 73명(18~20세 신병)이라고 했고, 타이즈 주거지 피격으로 10대 소녀 2명이 숨졌다(AP)",
-   "10월 20일 샤브와 알알람 기지 훈련소 공격 사망자 60명으로 증가(익명 예멘 관리, AP), 200명 넘게 부상·10여 명 실종. 알와지르 주지사 \"전선과 관련 없는 치안 신병\". 같은 날 리야드 킹칼리드 공항 인근 폭음, 사우디 \"후티 탄도미사일 요격\"(AP)",
-   "10월 19일 후티 탄도미사일 3발이 샤브와주 아타크 인근 알알람 기지 훈련센터를 때려 신병 53명이 숨지고 200명 넘게 다쳤다(샤브와주 정부 잠정치). 알리미 PLC 의장은 '단호한 대응'을 약속했고, 후티 사리 대변인은 사우디 장교가 운영하는 기지를 노렸다고 주장했다(AP·BBC)",
-   "10월 16일 밤 아덴 국제공항 단지에 미사일 2발이 떨어졌다. 아덴 치안국은 사상자가 없는 것으로 보인다고 했고, 후티는 사우디군 사령부(바드르 캠프)를 노렸다고 주장했다(AP·AFP)",
-   "10월 15일 후티가 아덴 마아시크 대통령궁(정부 본부)에 미사일 5발을 쐈다(알에르야니 정보장관). 총리·각료는 무사했고 사망자는 출처마다 2~5명. 후티는 단지 안 사우디 군사작전 본부를 노렸다고 주장했다",
-   "후티가 밝힌 공격 이유: 압둘말리크 알후티는 7월 16일 사우디의 '봉쇄·공격'을 받아들일 수 없다며 석유·전략 시설을 노리겠다고 했다. 직전에 연합군이 이란 항공기 착륙을 막으려 사나 공항을 공격했다",
-   "민심: 자유로운 조사가 어렵다. 사나 전략연구센터의 2024년 소규모 조사(414명, 대표성 없음)에서 후티 지역 응답자 35%가 홍해 공격을 긍정 평가했지만 후티 자체 긍정 평가는 8%였다",
-   "10월 13일 연합군이 사나 예멘석유회사 사바하 중앙기지 등을 공습(연합군 발표). 후티 보건부는 호데이다주 석유회사 공습으로 2명 사망이라고 발표(사우디 확인 없음)",
-   "10월 10~11일: 연합군은 후티 표적 136곳 파괴를 발표했고, 후티 매체는 사나 공항·암란·이브 공습을 보도했다. 후티는 리야드·담맘 공항 공격과 사우디 전 공항 표적화를 경고",
-   "교전 전선: 모카·바브엘만데브 연안, 타이즈·라흐즈, 마리브·알자우프·하자(유엔 특사 10월 9일 브리핑)",
-   "홍해 해운: 모카 함락 직후 바브엘만데브 통과 선박이 하루 30척 안팎에서 12척으로 줄었다(Kpler 잠정치)",
-   "사우디 본토: 아브하·지잔·나지란·카미스무샤이트와 에너지 시설이 공격받았다",
-   "인도주의: 유엔 직원 72명이 후티 측에 억류돼 있다(10월 9일 기준). IMF는 예멘을 세계 최빈국으로 분류한다"
+   "10월 30일 아덴: 예멘군 대변인 마지드 알누자일리는 후티가 아덴 국제공항과 마아시크 대통령궁에 탄도미사일을 쐈다고 밝혔고, 정부는 궁에 최소 3발이 날아왔다고 했다. 공항은 28일 인근 알나스르 기지 쪽 미사일로 운항이 멈췄다가 29일 재개됐다(Al Jazeera). ISW는 후티가 31일에도 공항과 궁을 겨냥했다고 전한다",
+   "전선(ISW 10월 30~31일): 후티가 타이즈-아덴 도로의 수크 알라보아 교차로를 노려 마카티라 지구(라헤즈주)로 진격하다 사우디 전투기가 하이자트 알아브드 후티 차량 행렬을 폭격해 저지됐다. ISW는 아덴 공세를 준비하는 것으로 본다. 타이즈에서는 알누자일리가 \"24시간 동안 749회 작전, 후티 239명 사상\"이라 했다(미확인)",
+   "사우디 본토: 연합군 대변인 투르키 알말리키는 26일 후티 탄도미사일 발사대 4기·저장 터널 5곳·미사일 창고를 파괴했다고 했고, 27일 탄도미사일 3발·드론 4기를 요격했다고 밝혔다. 후티 군 대변인 야히야 사리는 킹칼리드 공항과 송유 펌프장 타격을 주장했고, 메디나를 겨냥한 드론 발사는 \"거짓말\"이라며 부인했다(Al Jazeera). 11월 1일 연합군은 '핵심 자원' 타격을 발표했고, 남부로 향한 탄도미사일 1발·드론 1기를 요격했다(Anadolu)",
+   "킹칼리드 공항 10월 10일 공격은 최소 13명 사망·300명 넘는 부상으로 10년 만에 사우디 본토 최악의 피해였고, 사우디 대표 투자 회의는 2027년으로 미뤄졌다. 운항은 25일 재개됐다. 미 국무부 대변인 토미 피곳은 21일 \"후티가 사우디를 상대로 적대 행위를 늘렸다\"며 사우디 공관 비필수 직원·가족 출국을 명령했고, 걸프 전체 철수 보도는 \"부정확\"하다고 했다(Al Jazeera·Reuters)",
+   "외교: 26일 테헤란에서 사우디(국방장관 칼리드 빈살만)·튀르키예(정보수장 이브라힘 칼른)·파키스탄(육군참모총장 아심 무니르)·이란 4개국 고위 인사가 만나 \"대화를 이어가겠다\"는 공동성명을 냈고, 이집트 의회는 사우디 방어에 군 투입을 승인했다. 31일 G20 외교장관 회의에서 사우디 파이살 빈파르한 외무장관은 미국·러시아·유럽 외무장관과 예멘 문제를 논의했다(Al Jazeera)",
+   "인도주의: OCHA(10월 30일) 8월 이후 피란민 최소 29만 명, 임신부 6,100명. 유엔이 확인한 민간인 사상 270명(사망 68명, 절반이 어린이). 타이즈 주민 약 80만 명이 고립돼 지원은 좁은 산길로만 들어간다(OCHA 29일). 홍해 해운: 모카 함락 직후 바브엘만데브 통과 선박이 하루 30척 안팎에서 12척으로 줄었다(Kpler 잠정치)"
   ],
   "parliamentNote": "하원은 2003년 선거 이후 새 선거를 치르지 못했고, 전쟁 뒤 사나(후티 측)와 정부 측 의원들이 따로 회의를 열어 왔다. 아래 의원 수는 IPU 등록값으로, 실제로 한 의회로 활동하는 숫자가 아니다.",
   "sources": [
    [
-    "Reuters(Internazionale 게재)",
-    "U.S. officials met Iran-backed Houthis in Oman over the weekend, sources say (소식통 '미 관리들, 주말 오만서 후티와 만나') · 2026-09-16",
-    "https://www.internazionale.it/ultime-notizie-reuters/2026/09/16/u-s-officials-met-iran-backed-houthis-in-oman-over-the-weekend-sources-say"
+    "Al Jazeera",
+    "New Yemen fighting displaces 290,000, says UN, with pregnant women at risk(예멘 새 교전으로 29만 명 피란, 임신부 위험) · 2026-10-31",
+    "https://www.aljazeera.com/news/2026/10/31/new-yemen-fighting-displaces-290000-says-un-with-pregnant-women-at-risk"
    ],
    [
     "Critical Threats(ISW)",
-    "Iran Update, October 6, 2026 (이란 업데이트 10월 6일) · 2026-10-06",
-    "https://www.criticalthreats.org/analysis/iran-update-october-6-2026"
-   ],
-   [
-    "AP(Irish News 게재)",
-    "Saudi-backed Yemeni forces expel Houthis from several areas, officials say (관리들 '사우디 지원 예멘군, 여러 지역서 후티 몰아내') · 2026-10-05",
-    "https://www.irishnews.com/news/world/saudi-backed-yemeni-forces-expel-houthis-from-several-areas-officials-say-R5POT62HOZLRRMH4JOEY5RZLIA/"
-   ],
-   [
-    "AFP(Malay Mail 게재)",
-    "Houthis cut Yemen's Taiz off from Aden in major battlefield gain (후티, 타이즈-아덴 보급로 끊어) · 2026-10-04",
-    "https://www.malaymail.com/amp/news/world/2026/10/04/houthis-cut-yemens-taiz-off-from-aden-in-major-battlefield-gain/237693"
-   ],
-   [
-    "AP(Boston Globe 게재)",
-    "Iranian advisers played key role in stunning advance by Yemen's Houthis (이란 고문단, 예멘 후티의 전격 진격에 핵심 역할) · 2026-09-23",
-    "https://www.bostonglobe.com/2026/09/23/world/mideast-houthi-rebels-iran/"
-   ],
-   [
-    "CNN(KEYT 게재)",
-    "'A f--- up of epic proportions': Blame game begins after Iran-backed Houthis' lightning advance down Red Sea coast ('엄청난 대실패': 후티의 홍해 연안 전격 진격 뒤 책임 공방) · 2026-09-11",
-    "https://keyt.com/news/national-world/cnn-world/2026/09/11/a-f-up-of-epic-proportions-blame-game-begins-after-iran-backed-houthis-lightning-advance-down-red-sea-coast/"
-   ],
-   [
-    "AFP(Prothom Alo 게재)",
-    "Houthis seize key Red Sea island, complete takeover of Bab al-Mandab area: Govt official to AFP (후티, 홍해 핵심 섬 장악…'바브엘만데브 일대 장악 완료') · 2026-09-11",
-    "https://en.prothomalo.com/international/middle-east/flwjy3jk9d"
-   ],
-   [
-    "Critical Threats(ISW)",
-    "Iran Update, September 10, 2026 (이란 업데이트 9월 10일) · 2026-09-10",
-    "https://www.criticalthreats.org/analysis/iran-update-september-10-2026"
-   ],
-   [
-    "Korea Times(AFP)",
-    "Houthis attack Yemen's Aden, say Saudi strikes kill 16 (후티, 예멘 아덴 공격…\"사우디 공습에 16명 사망\") · 2026-10-25",
-    "https://www.koreatimes.co.kr/world/20261025/houthis-attack-yemens-aden-say-saudi-strikes-kill-16"
+    "Iran Update, October 31, 2026(이란 업데이트 10월 31일) · 2026-10-31",
+    "https://www.criticalthreats.org/analysis/iran-update-october-31-2026"
    ],
    [
     "Al Jazeera",
-    "예멘 타이즈 격전…유엔 '피란민 26만 명 가까이' (Fighting rages in Yemen's Taiz as UN warns nearly 260,000 now displaced) · 2026-10-22",
-    "https://www.aljazeera.com/news/2026/10/22/fighting-rages-in-yemens-taiz-as-un-warns-nearly-260000-now-displaced"
-   ],
-   [
-    "This is Beirut",
-    "후티, 사우디 4곳 공격 주장하며 확전 위협 (Houthis Claim Four Attacks on Saudi Arabia, Threaten Further Escalation) · 2026-10-22",
-    "https://thisisbeirut.com.lb/news/politics/houthis-claim-four-attacks-on-saudi-arabia-threaten-further-escalation"
+    "Fighting rages near Yemen's Taiz as UN urges humanitarian access(타이즈 인근 교전 격화, 유엔 인도적 접근 촉구) · 2026-10-29",
+    "https://www.aljazeera.com/news/2026/10/29/fighting-rages-near-yemens-taiz-as-un-urges-humanitarian-access"
    ],
    [
     "Al Jazeera",
-    "예멘 아덴서 폭음…후티 '군 기지 공격' 주장 (Blast heard in Yemen's Aden as Houthis claim attack on military camp) · 2026-10-21",
-    "https://www.aljazeera.com/news/2026/10/21/blast-heard-in-yemens-aden-as-houthis-claim-attack-on-military-camp"
+    "Saudi-led coalition says it struck Houthi missile facilities(사우디 연합군, 후티 미사일 시설 타격 발표) · 2026-10-26",
+    "https://www.aljazeera.com/news/2026/10/26/saudi-led-coalition-says-it-struck-houthi-missile-facilities"
    ],
    [
-    "영국 국방부(GOV.UK)",
-    "10월 20일 작전 현황: 사우디아라비아 왕국 군사 지원 (Operational update 20 October: UK military support to the Kingdom of Saudi Arabia) · 2026-10-20",
-    "https://www.gov.uk/government/news/operational-update-20-october-uk-military-support-to-the-kingdom-of-saudi-arabia"
+    "Al Jazeera",
+    "Saudi-led coalition says it downed Houthi missiles, drones aimed at kingdom(연합군 '후티 미사일·드론 격추') · 2026-10-27",
+    "https://www.aljazeera.com/news/2026/10/27/saudi-led-coalition-destroys-four-houthi-drones"
    ],
    [
-    "AP(KIRO 7 게재)",
-    "후티 훈련소 공격 사망 60명으로 · 2026-10-20",
-    "https://www.kiro7.com/news/world/death-toll-rises-60/N4ET5AYWR46YVBTKAAGYFYIDQI/"
+    "Al Jazeera(Reuters)",
+    "US orders departure of personnel from Saudi Arabia, citing Houthi threat(미국, 후티 위협으로 사우디 주재 인력 출국 명령) · 2026-10-21",
+    "https://www.aljazeera.com/news/2026/10/21/us-orders-departure-of-personnel-from-saudi-arabia-citing-houthi-threat"
    ],
    [
-    "AP(Idaho State Journal 게재)",
-    "후티, 예멘 정부군 공격…최소 53명 사망 · 2026-10-19",
-    "https://www.idahostatejournal.com/news/world/houthi-rebels-strike-yemens-government-forces-killing-at-least-53/article_49a75c2f-2ae5-5152-882c-95b0c5b296fb.html"
-   ],
-   [
-    "AP(CP24 게재)",
-    "아덴 공항에 미사일 2발 · 2026-10-16",
-    "https://www.cp24.com/news/world/2026/10/16/2-missiles-strike-the-airport-in-yemens-port-city-of-aden-officials-say/"
-   ],
-   [
-    "Reuters(Algemeiner 게재)",
-    "후티, 아덴 대통령궁 단지 공격…총리 무사 · 2026-10-15",
-    "https://www.algemeiner.com/2026/10/15/houthis-attack-presidential-palace-complex-yemens-aden-pm-unharmed-officials-say/"
-   ],
-   [
-    "The New Arab",
-    "사우디·후티 위협 뒤 예멘 석유시설 피격 · 2026-10-13",
-    "https://www.newarab.com/news/yemen-oil-facility-hit-after-saudi-arabia-houthis-issue-threats"
-   ],
-   [
-    "신화통신",
-    "사우디 공습, 사나 공항 타격(후티 매체) · 2026-10-12",
-    "https://english.news.cn/20261012/5ecc6d3fb81e48e7b58284025bdccbc6/c.html"
+    "Anadolu(A News)",
+    "Saudi-led coalition intercepts Houthi missile, drone targeting kingdom(사우디 연합군, 왕국 겨냥 후티 미사일·드론 요격) · 2026-11-01",
+    "https://www.anews.com.tr/middle-east/2026/11/01/saudi-led-coalition-intercepts-houthi-missile-drone-targeting-kingdom"
    ],
    [
     "유엔 DPPA",
-    "특사 안보리 브리핑 · 2026-10-09",
+    "Yemen has returned to full-scale war, Special Envoy warns(예멘이 전면전으로 돌아갔다, 특사 경고) · 2026-10-09",
     "https://dppa.un.org/en/news/yemen-has-returned-to-full-scale-war-special-envoy-warns"
-   ],
-   [
-    "The National",
-    "후티, 모카 항 점령 · 2026-09-10",
-    "https://www.thenationalnews.com/news/mena/2026/09/10/houthis-seize-yemens-mokha-port-on-the-red-sea-as-attacks-on-saudi-arabia-escalate/"
-   ],
-   [
-    "Al Jazeera",
-    "정부, 새 총리 임명 · 2026-01-16",
-    "https://www.aljazeera.com/news/2026/1/16/yemens-saudi-backed-government-appoints-new-prime-minister-2"
-   ],
-   [
-    "Al Jazeera(Yahoo 전재)",
-    "2026년 예멘 지역별 장악 현황",
-    "https://www.yahoo.com/news/articles/mapping-controls-yemen-2026-181413965.html"
-   ],
-   [
-    "Wikipedia",
-    "2026년 예멘 연표(1월 STC 사태·7~9월 확전)",
-    "https://en.wikipedia.org/wiki/2026_in_Yemen"
-   ],
-   [
-    "Sana'a Center",
-    "예멘 민심 단면: 홍해 사태 여론 · 2024-10",
-    "https://sanaacenter.org/the-yemen-review/july-sept-2024/23516"
-   ],
-   [
-    "Eurasia Review(Al Bawaba)",
-    "압둘말리크 알후티, 사우디에 '다른 전쟁' 위협 · 2026-07-16",
-    "https://www.eurasiareview.com/16072026-houthi-leader-abdul-malik-al-houthi-threatens-different-war-against-saudi-arabia/"
-   ],
-   [
-    "Al Jazeera",
-    "Houthis launch attacks on Saudi Arabia and Yemen's Aden (후티, 사우디와 예멘 아덴 공격) · 2026-10-24",
-    "https://www.aljazeera.com/news/2026/10/24/houthis-launch-attacks-on-saudi-arabia-and-yemens-aden"
-   ],
-   [
-    "Business Recorder(로이터)",
-    "Saudi Arabia intercepts drones and missiles as fighting with Yemen's Houthis continues (후티와 교전 이어지며 사우디, 드론·미사일 요격) · 2026-10-25",
-    "https://brecorder.com/news/40445857/saudi-arabia-intercepts-drones-and-missiles-as-fighting-with-yemens-houthis-continues"
    ]
   ],
   "videos": [
