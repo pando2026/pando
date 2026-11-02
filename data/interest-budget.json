@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-01",
+ "asOf": "2026-11-02",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -2670,6 +2670,175 @@
     ]
    ],
    "tier": "research"
+  },
+  "CL": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 총지출(예산 외 이자 포함, 2027년 불변 페소)",
+   "interest": {
+    "value": 5.094,
+    "unit": "조 페소",
+    "label": "이자 지출"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 91.176,
+    "unit": "조 페소",
+    "label": "중앙정부 총지출"
+   },
+   "share": 5.6,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 4.755,
+    "unit": "조 페소"
+   },
+   "note": "예산청 3분기 재정 보고서(Cuadro II.4.1·A.VI.1)의 이자 5,093,706백만 페소로 GDP의 1.3%이며, 원금 상환은 포함하지 않는다. 2026년 값은 승인 예산 4,755,098백만이고, 마감 추정은 4,746,775백만이다. 예산법 제3조의 차입 한도(US$250억)는 원금 상환과 이자를 함께 포함하는 상한이다.",
+   "sources": [
+    [
+     "칠레 예산청(Dipres)",
+     "Informe de Finanzas Públicas Tercer Trimestre 2026(2026년 3분기 재정 보고서, 하원·상원 합동 예산위원회 제출) · 2026-10-06",
+     "https://www.dipres.gob.cl/598/articles-433299_Informe_PDF.pdf?ts=1791498080"
+    ],
+    [
+     "칠레 예산청(Dipres)",
+     "Proyecto de Ley de Presupuestos para el Sector Público 2027(2027 공공부문 예산안 설명 자료) · 2026-10-06",
+     "https://www.dipres.gob.cl/598/articles-433300_doc_pdf.pdf?ts=1791332147"
+    ],
+    [
+     "CNN 칠레",
+     "Presupuesto 2027: Gobierno contempla hasta US$25.000 millones de endeudamiento y promete proteger beneficios sociales(2027 예산: 최대 250억 달러 차입 승인 요청, 사회 급여 보호 약속) · 2026-10-05",
+     "https://www.cnnchile.com/negocios/presupuesto-2027-gobierno-contempla-us25000-millones-endeudamiento/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "RO": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "통합일반예산(국가·지방·사회보험·보건기금 합산) 경제 분류 '이자(Dobânzi)'",
+   "interest": {
+    "value": 60.8,
+    "unit": "십억 lei",
+    "label": "공공부채 이자(Dobânzi)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 864.28,
+    "unit": "십억 lei",
+    "label": "통합일반예산 총지출"
+   },
+   "share": 7.0,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 50.5,
+    "unit": "십억 lei"
+   },
+   "note": "2026 국가예산법(제43/2026호, 2026-03-27 공포)의 이자 지출 계획 608억 lei는 GDP의 3.0%다. 2026-10-30 정부가 승인한 첫 추경은 이자를 약 35억 lei(국가예산 +34.98억) 늘려 단순 합산하면 약 643억 lei가 되지만, 추경 후 재무부 총액표는 확인하지 못했다. 2025년 값은 결산이다.",
+   "sources": [
+    [
+     "루마니아 재무부(상원 사이트 게시본)",
+     "2026 예산안 정책 보고서(Coordonate ale construcției bugetare pe anul 2026 · Politica de cheltuieli 등, 경제 분류별 지출표) · 2026-03",
+     "https://www.senat.ro/legis/PDF/2026/26L146b989.pdf"
+    ],
+    [
+     "1asig.ro",
+     "Bugetul Romaniei pentru 2026 a fost aprobat de Guvern. Principalele cifre si prioritati (정부, 2026 예산 승인·주요 수치와 우선순위) · 2026-03-13",
+     "https://www.1asig.ro/Bugetul-Romaniei-pentru-2026-a-fost-aprobat-de-Guvern-Principalele-cifre-si-prioritati-articol-102-74511.htm"
+    ],
+    [
+     "Bursa.ro",
+     "Rectificarea bugetară - Statul se împrumută peste bugetul inițial numai pentru dobânzi, în rest mută bani de la un buget la altul (추경: 이자에만 당초 예산 이상으로 차입, 나머지는 예산 간 이동) · 2026-10-30",
+     "https://www.bursa.ro/rectificarea-bugetara-statul-se-imprumuta-peste-bugetul-initial-numai-pentru-dobanzi-in-rest-muta-bani-de-la-un-buget-la-altul-03358065"
+    ],
+    [
+     "Agerpres(재무부 발표)",
+     "Ministerul Finanțelor: Rectificarea bugetară menține deficitul la 6,2% din PIB și suplimentează fondurile pentru sănătate (재무부: 추경은 적자 6.2% 유지, 보건 재원 보강) · 2026-10-29",
+     "https://agerpres.ro/economic/2026/10/29/ministerul-finantelor-rectificarea-bugetara-mentine-deficitul-la-6-2-din-pib-si-suplimenteaza-fondur--1608201"
+    ]
+   ],
+   "tier": "official"
+  },
+  "SN": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "일반예산(Budget général) 지출 중 공공부채 이자·수수료(특별회계 제외)",
+   "interest": {
+    "value": 1303.9,
+    "unit": "십억 FCFA",
+    "label": "부채 이자·수수료(대외 625.7 + 국내 678.2)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 7005.6,
+    "unit": "십억 FCFA",
+    "label": "일반예산 지출(원금 상환 제외)"
+   },
+   "share": 18.6,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 1285.2,
+    "unit": "십억 FCFA"
+   },
+   "note": "이자·수수료는 원금 상환(4,552.0십억 FCFA)과 따로 적혀 있고 여기에는 포함하지 않았다. 점유율은 같은 문서의 일반예산 지출 7,005.6 대비 계산했고, 전년 값 1,285.2는 2026 추경 조정 법안 기준이다. 2026년 상반기에는 이자·수수료로 621.2십억 FCFA가 나갔다.",
+   "sources": [
+    [
+     "세네갈 경제재정계획부",
+     "Projet de Loi de Finances 2027(2027 재정법안, 부속서 IV·V·VII·VIII 포함) · 2026-10-14",
+     "https://www.vie-publique.sn/docs/8ff2ab7d-c73b-43d4-8843-c6ff36ec8906/projet-loi-finances-2027-senegal.pdf"
+    ],
+    [
+     "Seneweb",
+     "Dépenses, recettes, dette, enjeux : les chiffres clés du budget 2027(지출·세입·부채·쟁점: 2027 예산 핵심 수치) · 2026-10-14",
+     "https://www.seneweb.com/en/news/Economie/depenses-recettes-dette-enjeux-decouvrez-en-exclusivite-les-chiffres-cles-du-budget-2027-du-senegal_n_999000682.html"
+    ],
+    [
+     "Le Soleil",
+     "Exécution budgétaire 2e trimestre 2026 : les recettes fiscales ont atteint 2 458 milliards de FCFA(2026 2분기 예산 집행: 세수 2조 4,580억 FCFA) · 2026-09-12",
+     "https://lesoleil.sn/actualites/economie/execution-budgetaire-2e-trimestre-2026-les-recettes-fiscales-ont-atteint-2-458-milliards-de-fcfa/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "GT": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가 일반예산(행정부) 세출 — 의회 재정위 심사 중",
+   "interest": {
+    "value": 18717.0,
+    "unit": "백만 케찰",
+    "label": "공공부채 이자·수수료"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 192045.1,
+    "unit": "백만 케찰",
+    "label": "예산안 세출 총액"
+   },
+   "share": 9.7,
+   "note": "공공부채 서비스 24,601.1백만 케찰(총액의 12.8%) 중 이자·수수료만 18,717.0이고 나머지 약 5,884.1은 원금 상환이다. 이자·수수료는 예상 조세수입(131,635.9)의 14.2%이며 보건부 예산(18,615.5)보다 크다. ASIES는 이자 지출이 전년보다 5.4% 늘어난다고 계산했다.",
+   "sources": [
+    [
+     "Prensa Libre",
+     "Presupuesto 2027: analistas alertan por déficit fiscal de 4.4% y mayor deuda pública(2027 예산: 분석가들, 적자 4.4%·부채 증가 경고) · 2026-09-03",
+     "https://www.prensalibre.com/economia/presupuesto-2027-analistas-alertan-por-deficit-fiscal-de-4-4-y-mayor-deuda-publica/"
+    ],
+    [
+     "El Siglo",
+     "Pedir prestado para pagar la operación(운영비를 갚으려 빚을 내다, 칼럼) · 2026-10-28",
+     "https://elsiglo.com.gt/pedir-prestado-para-pagar-la-operacion/"
+    ],
+    [
+     "La Hora",
+     "MINFIN presenta al Congreso de la República un presupuesto de Q192 mil millones para 2027(재무부, 의회에 2027년 1,920억 케찰 예산안 제출) · 2026-09-02",
+     "https://lahora.gt/nacionales/kjordan/2026/09/02/minfin-presenta-al-congreso-de-la-republica-un-presupuesto-de-q192-mil-millones-para-2027/"
+    ],
+    [
+     "La Hora",
+     "Presupuesto 2027: Q192 mil millones de gasto y un déficit cercano a niveles de la pandemia, dice ASIES(2027 예산: 1,920억 케찰 지출·팬데믹 수준에 가까운 적자, ASIES) · 2026-09-27",
+     "https://lahora.gt/lh-economia/esmith/2026/09/27/presupuesto-2027-q192-mil-millones-de-gasto-y-un-deficit-cercano-a-niveles-de-la-pandemia-dice-asies-now/"
+    ]
+   ],
+   "tier": "press"
   }
  }
 }
