@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-02",
+ "asOf": "2026-11-03",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -2839,6 +2839,165 @@
     ]
    ],
    "tier": "press"
+  },
+  "EC": {
+   "fiscalYear": "2027",
+   "status": "추정",
+   "scope": "비금융공공부문(SPNF) 이자 지출 — IMF 2025년 12월 전망",
+   "interest": {
+    "value": 3295,
+    "unit": "백만 달러",
+    "label": "비금융공공부문 이자 지출"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 50177,
+    "unit": "백만 달러",
+    "label": "비금융공공부문 지출(IMF 전망)"
+   },
+   "share": 6.6,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 3269,
+    "unit": "백만 달러"
+   },
+   "note": "2027 예산안(총 502억 달러)은 이자 지출액을 따로 공개한 자료를 찾지 못했다. 그래서 IMF 2025년 12월 4차 점검 보고서의 2027년 전망을 썼으며, 일반회계 예산(PGE)이 아니라 국영기업을 포함한 비금융공공부문 범위다. 참고로 2026 예산안의 일반회계 이자는 40.378억 달러였다(Primicias 인용 Lexis).",
+   "sources": [
+    [
+     "국제통화기금(IMF)",
+     "Ecuador: Fourth Review Under the Extended Arrangement(에콰도르: 확대신용 4차 점검), IMF Country Report No. 25/341, 표 3a(비금융공공부문 운영) · 2025-12",
+     "https://www.finanzas.gob.ec/wp-content/uploads/2026/04/Staff-Report-Diciembre-2025-ingles.pdf"
+    ],
+    [
+     "Lexis(Primicias 인용)",
+     "Proforma 2026: Ecuador destinará más recursos al pago de intereses de la deuda que a seguridad(2026 예산안: 안보보다 이자에 더 많이) · 2025-11-07",
+     "https://www.lexis.com.ec/noticias/proforma-2026-ecuador-destinara-mas-recursos-al-pago-de-intereses-de-la-deuda-que-a-seguridad"
+    ]
+   ],
+   "tier": "research"
+  },
+  "NL": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 국채 이자 — 재무·국채 예산서 IXA 제11조(확정금리·단기 국채), EMU 관련",
+   "interest": {
+    "value": 11.642,
+    "unit": "십억 유로",
+    "label": "국채 이자(확정금리·단기 채무)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 516.8,
+    "unit": "십억 유로",
+    "label": "총순지출(EMU 관련)"
+   },
+   "share": 2.3,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 8.066,
+    "unit": "십억 유로"
+   },
+   "note": "2027년 정부안(2026-09-15 제출)의 제11조 이자 116.42억 유로(확정금리 93.12억·단기채 23.30억)이며 국채 만기 상환 324.19억 유로는 포함하지 않았다. 국고 예치금(제12조) 이자 38억 유로를 더한 총 이자는 154억 유로다. 비중은 같은 문서의 총순지출 5,168억 유로 대비 판도가 계산했다.",
+   "sources": [
+    [
+     "네덜란드 재무부",
+     "Ontwerpbegroting 2027 IXA/IXB Financiën en Nationale Schuld(2027 재무·국채 예산안, 하원 문서 37 020 IX nr.2) · 2026-09-15",
+     "https://www.rijksfinancien.nl/sites/default/files/kamerstuk_pdf/kst-37020-IX-2_0.pdf"
+    ],
+    [
+     "네덜란드 재무부(하원 제출 문서 37 020 nr.1)",
+     "Miljoenennota 2027(2027 국가재정보고서) · 2026-09-15",
+     "https://www.rijksoverheid.nl/site/binaries/site-content/collections/documents/2026/09/15/miljoenennota-2027/00-miljoenennota-pdf.pdf"
+    ],
+    [
+     "네덜란드 재무부(하원 제출 문서 37 020 nr.2)",
+     "Bijlagen bij Miljoenennota 2027(2027 국가재정보고서 부록: 표 1.2·2.2 등) · 2026-09-15",
+     "https://www.rijksoverheid.nl/site/binaries/site-content/collections/documents/2026/09/15/bijlagen-bij-miljoenennota-2027/01-miljoenennota-bijlage-pdf.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "ZW": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 2026 재정 틀(예산 연설 표 28) — 이자 지급, 지출·순대출 기준",
+   "interest": {
+    "value": 8.48,
+    "unit": "십억 ZiG",
+    "label": "이자 지급"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 290.88,
+    "unit": "십억 ZiG",
+    "label": "지출·순대출"
+   },
+   "share": 2.9,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 8.62,
+    "unit": "십억 ZiG"
+   },
+   "note": "이자 지급은 예산 연설의 중기 재정 틀 표 28 수치(ZiG8,482.8백만, GDP의 0.5%)로 원금은 빠져 있다. 2025년 값은 수정 재정 틀(8,618.6백만)이고 당초 2025 예산은 5,614.3백만이었다. 대출 원금 상환은 ZiG10.7십억(세출표)·11.5십억(차입 계획)으로 따로 있다. 2026년 상반기 실제 부채 상환은 국내 ZiG15.3십억과 대외 US$1.7억이며 이자·원금이 나뉘지 않았다.",
+   "sources": [
+    [
+     "짐바브웨 재무·경제개발·투자진흥부",
+     "2026 National Budget Statement: Enhancing Drivers of Economic Growth and Transformation Towards Vision 2030 (2026 국가예산 연설) 표 28·29·32~34·37·38·43 · 2025-11-27",
+     "https://ipec.co.zw/wp-content/uploads/2025/12/2026-National-Budget-Statement.pdf"
+    ],
+    [
+     "짐바브웨 재무부",
+     "Approved 2026 Estimates of Expenditure (2026 승인 세출 추계) · 2026-03",
+     "https://zimtreasury.co.zw/wp-content/uploads/2026/03/Approved-2026-Estimates-of-Expenditure.pdf"
+    ],
+    [
+     "짐바브웨 의회",
+     "Hansard, National Assembly: 2026 Mid-Term Budget and Economic Review (국민의회 의사록: 2026 중간 예산·경제 점검 연설) · 2026-07-30",
+     "https://e-portal.parlzim.gov.zw/files/HAN-1785429915691.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "GN": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "일반예산 부채 금융 비용(국내·대외 채무 이자)",
+   "interest": {
+    "value": 4764.85,
+    "unit": "십억 GNF",
+    "label": "부채 금융 비용(이자)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 64181.36,
+    "unit": "십억 GNF",
+    "label": "국가예산 총지출(본예산)"
+   },
+   "share": 7.4,
+   "prev": {
+    "fiscalYear": "2025 추경",
+    "value": 3031.0,
+    "unit": "십억 GNF"
+   },
+   "note": "국내 채무 이자 3,263.92십억, 대외 채무 이자 1,500.93십억이며 원금 상환(22,532십억)은 별도다. 10월 24일 제출된 추경안은 총지출을 약 67,903.5십억으로 늘렸으나 이자 항목의 수정액은 공개된 보도에서 확인하지 못했다.",
+   "sources": [
+    [
+     "기니 경제재정예산부 예산총국(DGB)",
+     "Projet de loi de finances 2026 – Rapport de présentation(2026 재정법안 – 제출 보고서) · 2026-03",
+     "https://dgb.gov.gn/wp-content/uploads/2026/03/Projet-de-loi-de-finances-Initiale-2026.pdf"
+    ],
+    [
+     "기니 과도국가평의회(CNT) 계획·재정·예산통제위원회",
+     "Rapport sur le volet dépenses de la LFI 2026(2026 본예산 지출 부문 심사 보고서) · 2026-03",
+     "https://lavoixdupeuple.info/wp-content/uploads/2026/04/RAPPORT-DEPENSES-LFI-2026-VF_OK.pdf"
+    ],
+    [
+     "Ecofinance Guinée",
+     "PLFR 2026 : les dépenses publiques progressent de 5,8 %(2026 추경안: 공공지출 5.8% 증가) · 2026-10-24",
+     "https://www.ecofinanceguinee.com/plfr-2026-les-depenses-publiques-progressent-de-58/"
+    ]
+   ],
+   "tier": "official"
   }
  }
 }
