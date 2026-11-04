@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T11:37:00Z",
+ "updatedAt": "2026-11-04T12:38:00Z",
  "source": {
   "name": "AP · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 앞서지만 주 당국의 다음 개표 갱신이 10일이다. 하원은 NBC 판정 의석 민주 227·공화 142가 판도가 마지막으로 확인한 수치이고(현지 4일 오전 2시 34분), 이번 확인에서는 더 새로운 전국 집계를 열지 못했다.",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 앞서지만 주 당국의 다음 개표 갱신이 10일이다. 하원은 NBC 판정 의석 민주 227·공화 142가 판도가 마지막으로 확인한 수치이고(현지 4일 오전 2시 34분), 이번 확인에서도 더 새로운 전국 집계를 열지 못했다. 메인 2구는 던랩(민)이 약 1000표 앞서지만 남은 약 5만 7000표에 승부가 달렸다.",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -643,18 +643,18 @@
        "n": "피트 리키츠",
        "n_en": "Pete Ricketts",
        "p": "R",
-       "v": 367378
+       "v": 370411
       },
       {
        "n": "댄 오스본(무소속)",
        "n_en": "Dan Osborn (I)",
        "p": "I",
-       "v": 319810
+       "v": 321218
       }
      ],
-     "reported": "개표구 1322곳 중 완료 1269·일부 53(주 국무장관실)",
-     "reported_en": "1269 of 1322 precincts complete, 53 partial (Nebraska SoS)",
-     "asOf": "2026-11-04T10:20:00Z",
+     "reported": "개표구 1322곳 중 완료 1309·일부 12(주 국무장관실)",
+     "reported_en": "1309 of 1322 precincts complete, 12 partial (Nebraska SoS)",
+     "asOf": "2026-11-04T11:58:00Z",
      "src": [
       "네브래스카 국무장관실 개표 결과",
       "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW",
@@ -1254,7 +1254,7 @@
   ],
   "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · totals are seats not up + confirmed AP calls",
   "note_en": "Includes seats not up this year (Democrats 34, Republicans 31). The Democratic total includes two independents who vote with them (Bernie Sanders, Angus King). AP called the Senate for Democrats on the night of Nov 3. Totals count only AP calls Pando has confirmed; Mississippi and Alaska remain uncalled.",
-  "asOf": "2026-11-04T11:37:00Z"
+  "asOf": "2026-11-04T12:38:00Z"
  },
  "house": {
   "dem": 227,
@@ -1795,7 +1795,7 @@
      ],
      "reported": "개표구 334곳 중 완료 334(주 국무장관실)",
      "reported_en": "334 of 334 precincts complete (Nebraska SoS)",
-     "asOf": "2026-11-04T08:30:00Z",
+     "asOf": "2026-11-04T11:58:00Z",
      "src": [
       "네브래스카 국무장관실 하원 개표 결과",
       "https://electionresults.nebraska.gov/resultsSW.aspx?type=CG",
@@ -2229,8 +2229,8 @@
     "cand_en": "Cait Conley",
     "vs": "마이크 롤러(현역)",
     "vs_en": "Mike Lawler (incumbent)",
-    "note": "개표기 오작동 보고, 주 선관위 \"유효표 모두 센다\"",
-    "note_en": "Ballot scanner malfunctions reported; state board says every valid vote will be counted",
+    "note": "AP 판정은 확인하지 못했지만, 현역 마이크 롤러가 현지 3일 밤 11시쯤 5%p 넘게 뒤진 상태에서 콘리에게 패배를 인정했다(타임스 유니언). 개표기 오작동이 보고돼 주 선관위는 \"유효표 모두 센다\"고 밝혔다",
+    "note_en": "AP call not confirmed, but incumbent Mike Lawler conceded to Conley around 11 p.m. Nov 3 while trailing by more than five points (Times Union). Ballot scanner malfunctions were reported; the state board says every valid vote will be counted",
     "tally": {
      "cands": [
       {
@@ -2434,8 +2434,19 @@
       "NBC News House results (AP data)"
      ]
     },
-    "note": "미판정. NBC 집계(현지 오전 2시 34분)는 던랩 앞섬, 같은 시각대 WGME는 르페이지 앞섬으로 전해 엇갈린다. 양쪽 다 추가 개표를 기다리는 중",
-    "note_en": "Uncalled. NBC data (2:34 a.m. ET) had Dunlap ahead while WGME, at about the same time, reported LePage ahead. Both campaigns are waiting for more results"
+    "note": "미판정. 던랩이 약 1000표 앞서지만 111개 타운의 약 5만 7000표가 남았고, 방고어 데일리 뉴스는 남은 표가 르페이지에게 유리해 그가 이길 가능성이 크다고 분석하면서도 \"판정은 아니다\"라고 밝혔다(현지 4일 새벽). 과반에 조금 못 미치면 선호투표 집계로 갈 수 있지만, 이 신문은 그럴 가능성을 낮게 봤다",
+    "note_en": "Uncalled. Dunlap leads by about 1,000 votes with about 57,000 left in 111 towns. The Bangor Daily News analysis says the remaining towns favor LePage, making him the likely winner, but stresses \"that is not a call\" (early Nov 4). A ranked-choice count is possible if the winner falls just short of a majority, though the paper considers that unlikely"
+   },
+   {
+    "d": "NY-21",
+    "status": "lead",
+    "party": "R",
+    "cand": "앤서니 콘스탄티노",
+    "cand_en": "Anthony Constantino",
+    "vs": "블레이크 젠드비언",
+    "vs_en": "Blake Gendebien",
+    "note": "엘리스 스터파닉이 물러난 공화당 의석. 콘스탄티노가 약 8000표 앞선 채 현지 3일 밤 11시 직후 승리를 선언했지만, AP 판정은 확인하지 못했다(타임스 유니언)",
+    "note_en": "GOP seat left open by Elise Stefanik. Constantino, ahead by around 8,000 votes, declared victory shortly after 11 p.m. Nov 3; AP call not confirmed (Times Union)"
    },
    {
     "d": "MI-4",
@@ -2558,18 +2569,18 @@
        "n": "마이크 플러드",
        "n_en": "Mike Flood",
        "p": "R",
-       "v": 121374
+       "v": 122874
       },
       {
        "n": "크리스 백마이어",
        "n_en": "Chris Backemeyer",
        "p": "D",
-       "v": 113134
+       "v": 113806
       }
      ],
-     "reported": "개표구 438곳 중 완료 414·일부 24(주 국무장관실)",
-     "reported_en": "414 of 438 precincts complete, 24 partial (Nebraska SoS)",
-     "asOf": "2026-11-04T10:20:00Z",
+     "reported": "개표구 438곳 중 완료 429·일부 9(주 국무장관실)",
+     "reported_en": "429 of 438 precincts complete, 9 partial (Nebraska SoS)",
+     "asOf": "2026-11-04T11:58:00Z",
      "src": [
       "네브래스카 국무장관실 하원 개표 결과",
       "https://electionresults.nebraska.gov/resultsSW.aspx?type=CG",
@@ -3041,6 +3052,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T12:38:00Z",
+   "text": "뉴욕 17구: 마이크 롤러(공·현역)가 케이트 콘리(민)에게 패배 인정(타임스 유니언, AP 판정 미확인). 메인 2구: 던랩(민) 약 1000표 앞섬, 약 5만 7000표 남음(방고어 데일리 뉴스). 네브래스카 주 공식 집계: 상원 리키츠(공) 370,411표·오스본(무소속) 321,218표, 하원 1구 플러드(공) 122,874표·백마이어(민) 113,806표.",
+   "text_en": "NY-17: Rep. Mike Lawler (R) conceded to Cait Conley (D) (Times Union; AP call not confirmed). ME-2: Dunlap (D) leads by about 1,000 votes with about 57,000 left (Bangor Daily News). Nebraska official count: Senate, Ricketts (R) 370,411, Osborn (I) 321,218; NE-1, Flood (R) 122,874, Backemeyer (D) 113,806."
+  },
+  {
    "t": "2026-11-04T11:37:00Z",
    "text": "미시시피 상원: AP 비공식 집계 콜럼(민) 462,821표·하이드스미스(공·현역) 462,778표, AP 미판정. 진술서 투표 수를 콜럼 측은 1만~1만 5000장 이상으로 추산. 네브래스카 주 공식 집계: 상원 리키츠(공) 367,378표·오스본(무소속) 319,810표, 하원 1구 플러드(공) 121,374표·백마이어(민) 113,134표.",
    "text_en": "Mississippi Senate: AP unofficial count has Colom (D) on 462,821 and Hyde-Smith (R) on 462,778, uncalled. Colom's side estimates 10,000 to more than 15,000 affidavit ballots. Nebraska official count: Senate, Ricketts (R) 367,378, Osborn (I) 319,810; NE-1, Flood (R) 121,374, Backemeyer (D) 113,134."
@@ -3194,11 +3210,6 @@
  ],
  "sources": [
   [
-   "미시시피 상원 접전(다크호스 프레스)",
-   "https://darkhorsepressnow.com/news/2026-11-04/mississippi-senate-race-too-close-to-call-jackson-voters-reject-tourism-tax/",
-   "Mississippi Senate too close to call (Dark Horse Press)"
-  ],
-  [
    "미시시피 상원 접전(매그놀리아 트리뷴)",
    "https://magnoliatribune.com/2026/11/04/too-close-to-call/",
    "Mississippi Senate too close to call (Magnolia Tribune)"
@@ -3214,9 +3225,14 @@
    "Nebraska Secretary of State results"
   ],
   [
-   "메인 2구 접전(WGME)",
-   "https://wgme.com/news/local/lepage-leads-dunlap-in-maines-2nd-district-race-remains-too-close-to-call",
-   "Maine 2nd District too close to call (WGME)"
+   "메인 2구 분석(방고어 데일리 뉴스)",
+   "https://www.bangordailynews.com/2026/11/04/politics/elections/paul-lepage-on-track-maine-republicans-bright-spot/",
+   "Maine 2nd District analysis (Bangor Daily News)"
+  ],
+  [
+   "롤러 패배 인정(타임스 유니언, 야후 뉴스 전재)",
+   "https://www.yahoo.com/news/politics/articles/lawlers-loss-contributes-democrats-taking-053730196.html",
+   "Lawler concedes (Times Union via Yahoo News)"
   ],
   [
    "NBC 뉴스 하원 개표 결과(집계 AP)",
@@ -3226,7 +3242,7 @@
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In Alaska, Sen. Dan Sullivan (R) is ahead of Mary Peltola (D), and the state's next count update is Nov 10. In the House, the last figure Pando confirmed is NBC-called Democrats 227, Republicans 142 (2:34 a.m. ET Nov 4); no newer national count could be opened in this check.",
+ "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In Alaska, Sen. Dan Sullivan (R) is ahead of Mary Peltola (D), and the state's next count update is Nov 10. In the House, the last figure Pando confirmed is NBC-called Democrats 227, Republicans 142 (2:34 a.m. ET Nov 4); no newer national count could be opened in this check. In Maine's 2nd District, Dunlap (D) leads by about 1,000 votes with about 57,000 still to count.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
