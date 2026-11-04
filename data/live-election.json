@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T09:30:00Z",
+ "updatedAt": "2026-11-04T10:42:00Z",
  "source": {
   "name": "AP · NBC News"
  },
- "headline": "AP가 상원과 하원 모두 민주당 다수로 판정한 가운데, 상원은 AP 판정 기준 민주 54·공화 44가 됐다. 앨라배마·몬태나·네브래스카를 공화당이 지키면서 남은 곳은 2곳뿐인데, 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 28표 앞선 채 미판정이고 알래스카는 댄 설리번(공·현역)이 앞서지만 판정이 없다. 하원은 NBC 판정 의석이 민주 227·공화 142다(현지 4일 오전 2시 34분 기준으로, 이번 확인에서 새 집계를 열지 못했다).",
+ "headline": "AP가 상원과 하원 모두 민주당 다수로 판정한 가운데, 상원은 AP 판정 기준 민주 54·공화 44로 그대로이고 남은 곳은 2곳이다. 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞선 채(현지 새벽 기준) 미판정인데, 진술서 투표가 수천 장 남아 있어 개표에 최대 영업일 5일이 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 앞서지만 판정이 없다. 하원은 NBC 판정 의석이 민주 227·공화 142이며(현지 4일 오전 2시 34분 기준), 이번 확인에서는 새 집계를 열지 못했다.",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -853,32 +853,30 @@
        "n": "스콧 콜럼",
        "n_en": "Scott Colom",
        "p": "D",
-       "v": 462779,
-       "pct": 48.9
+       "v": 462821
       },
       {
        "n": "신디 하이드스미스",
        "n_en": "Cindy Hyde-Smith",
        "p": "R",
-       "v": 462751,
-       "pct": 48.9
+       "v": 462778
       }
      ],
-     "reported": "예상 투표의 97.2% 개표(NBC)",
-     "reported_en": "97.2% of expected vote in (NBC)",
-     "asOf": "2026-11-04T07:34:00Z",
+     "reported": "95.6% 개표, 동부시각 오전 3시(WENG)",
+     "reported_en": "95.6% counted as of 3 a.m. (WENG)",
+     "asOf": "2026-11-04T08:00:00Z",
      "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
+      "43표 차 미시시피 상원(WENG)",
+      "https://www.wengradio.com/news/43-votes-mississippis-senate-race-still-undecided-with-95-6-counted/",
+      "Mississippi Senate 43-vote gap (WENG)"
      ]
     },
     "cand": "스콧 콜럼",
     "cand_en": "Scott Colom",
     "vs": "신디 하이드스미스(공·현역)",
     "vs_en": "Sen. Cindy Hyde-Smith (R)",
-    "note": "AP 미판정. 콜럼 측 선거대책본부장 제라드 헨더슨은 X 영상에서 진술서 투표(affidavit ballot) 1만 5000장 이상이 남았다고 말했다(슈퍼토크). 슈퍼토크는 판정까지 며칠 걸릴 수 있다고 전했다",
-    "note_en": "Uncalled by AP. Colom campaign manager Gerard Henderson said in a video on X that at least 15,000 affidavit ballots remain uncounted (SuperTalk), which SuperTalk says could delay a call by several days"
+    "note": "AP 미판정. 표차 43표(매그놀리아 트리뷴·WENG). 진술서 투표(affidavit ballot, 유권자 자격 확인이 끝나야 세는 표)가 수천 장 남았고 개표에 최대 영업일 5일이 걸릴 수 있다(매그놀리아 트리뷴). 콜럼 측은 1만 5000장 이상이라고 주장한다. 힌즈 카운티는 밤사이 개표를 멈췄다(미시시피 프리 프레스). 결선 없이 최다 득표자가 이긴다",
+    "note_en": "Uncalled by AP. Gap of 43 votes (Magnolia Tribune, WENG). Thousands of affidavit ballots, counted only once a voter's eligibility is checked, remain and could take up to five business days (Magnolia Tribune); the Colom campaign puts them at more than 15,000. Hinds County paused its count overnight (Mississippi Free Press). There is no runoff: the top vote-getter wins"
    },
    {
     "st": "AL",
@@ -1178,8 +1176,8 @@
     "cand_en": "Dan Sullivan",
     "vs": "메리 펠톨라",
     "vs_en": "Mary Peltola",
-    "note": "AP·NBC 미확정(NBC: 판정하기엔 이른 단계). 설리번(현역)이 펠톨라를 앞지름. 뉴스위크에 따르면 주 당국은 11월 10·13·18일에 개표를 갱신하고, 과반이 없으면 18일에 선호투표를 집계한다",
-    "note_en": "Uncalled by AP or NBC (NBC: too early to call). Sen. Sullivan has passed Peltola. Per Newsweek, the state plans count updates on Nov 10, 13 and 18, with a ranked-choice tabulation on Nov 18 if no one has a majority"
+    "note": "AP·NBC 미확정. 설리번(현역) 48.5%·펠톨라 47.5%, 개표구 4분의 3 넘게 보고(KTOO, 현지 3일 밤). 우편 투표는 10일(해외 발송 15일)까지 받고, 11월 18일에 과반이 없으면 선호투표를 집계한다(알래스카 퍼블릭 미디어). 뉴스위크에 따르면 주 당국은 10·13·18일에 개표를 갱신한다",
+    "note_en": "Uncalled by AP or NBC. Sen. Sullivan 48.5%, Peltola 47.5%, with more than three-quarters of precincts reporting (KTOO, Nov 3 night). Mail ballots are accepted for 10 days (15 from overseas), and ranked choices are tabulated on Nov 18 if no one has a majority (Alaska Public Media). Per Newsweek, the state plans count updates on Nov 10, 13 and 18"
    },
    {
     "st": "ID",
@@ -2262,8 +2260,8 @@
     "d": "AZ-6",
     "status": "lead",
     "party": "D",
-    "cand": "멘도사",
-    "cand_en": "Mendoza",
+    "cand": "조애나 멘도사",
+    "cand_en": "JoAnna Mendoza",
     "vs": "후안 시스코마니(현역)",
     "vs_en": "Juan Ciscomani (incumbent)",
     "tally": {
@@ -2291,7 +2289,9 @@
       "https://www.nbcnews.com/politics/2026-elections/house-results",
       "NBC News House results (AP data)"
      ]
-    }
+    },
+    "note": "멘도사가 승리를 선언했지만 AP는 아직 접전으로 판정을 미룸(KJZZ)",
+    "note_en": "Mendoza has declared victory, but AP says the race is still too close to call (KJZZ)"
    },
    {
     "d": "CA-22",
@@ -2334,8 +2334,8 @@
     "party": "D",
     "cand": "아미시 샤",
     "cand_en": "Amish Shah",
-    "vs": "필리",
-    "vs_en": "Feely",
+    "vs": "제이 필리",
+    "vs_en": "Jay Feely",
     "tally": {
      "cands": [
       {
@@ -2431,7 +2431,9 @@
       "https://www.nbcnews.com/politics/2026-elections/house-results",
       "NBC News House results (AP data)"
      ]
-    }
+    },
+    "note": "미판정. NBC 집계(현지 오전 2시 34분)는 던랩 앞섬, 같은 시각대 WGME는 르페이지 앞섬으로 전해 엇갈린다. 양쪽 다 추가 개표를 기다리는 중",
+    "note_en": "Uncalled. NBC data (2:34 a.m. ET) had Dunlap ahead while WGME, at about the same time, reported LePage ahead. Both campaigns are waiting for more results"
    },
    {
     "d": "MI-4",
@@ -3037,6 +3039,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T10:42:00Z",
+   "text": "미시시피 상원: 콜럼(민) 462,821표, 하이드스미스(공·현역) 462,778표, 43표 차로 미판정(95.6% 개표, WENG). 진술서 투표 개표에 최대 영업일 5일. 애리조나 6구 멘도사(민)가 승리를 선언했으나 AP는 판정 전.",
+   "text_en": "Mississippi Senate: Colom (D) 462,821, Sen. Hyde-Smith (R) 462,778, uncalled at a 43-vote gap (95.6% counted, WENG). Affidavit ballots may take up to five business days. In AZ-6, Mendoza (D) has declared victory, but AP has not called it."
+  },
+  {
    "t": "2026-11-04T09:30:00Z",
    "text": "상원: AP 네브래스카 리키츠(공)·몬태나 앨미(공)·앨라배마 무어(공) 확정 확인(민주 54·공화 44). 남은 곳은 미시시피·알래스카. 네브래스카 주 공식 집계 리키츠 366,063표·오스본 319,285표.",
    "text_en": "Senate: AP calls confirmed for Nebraska (Ricketts, R), Montana (Alme, R) and Alabama (Moore, R), making it Democrats 54, Republicans 44. Mississippi and Alaska remain. Nebraska official count: Ricketts 366,063, Osborn 319,285."
@@ -3180,39 +3187,39 @@
  ],
  "sources": [
   [
+   "43표 차 미시시피 상원(WENG)",
+   "https://www.wengradio.com/news/43-votes-mississippis-senate-race-still-undecided-with-95-6-counted/",
+   "Mississippi Senate 43-vote gap (WENG)"
+  ],
+  [
+   "미시시피 상원 접전(매그놀리아 트리뷴)",
+   "https://magnoliatribune.com/2026/11/04/too-close-to-call/",
+   "Mississippi Senate too close to call (Magnolia Tribune)"
+  ],
+  [
+   "알래스카 상원 접전(KTOO)",
+   "https://www.ktoo.org/2026/11/03/sullivan-and-peltola-locked-in-tight-u-s-senate-race-as-more-results-come-in-2/",
+   "Alaska Senate tight race (KTOO)"
+  ],
+  [
+   "애리조나 하원 결과(KJZZ)",
+   "https://www.kjzz.org/elections/2026-11-03/arizona-congressional-districts-election-results-elex",
+   "Arizona House results (KJZZ)"
+  ],
+  [
+   "메인 2구 접전(WGME)",
+   "https://wgme.com/news/local/lepage-leads-dunlap-in-maines-2nd-district-race-remains-too-close-to-call",
+   "Maine 2nd District too close to call (WGME)"
+  ],
+  [
    "NBC 뉴스 하원 개표 결과(집계 AP)",
    "https://www.nbcnews.com/politics/2026-elections/house-results",
    "NBC News House results (AP data)"
-  ],
-  [
-   "리키츠 네브래스카 상원 승리(AP)",
-   "https://www.live5news.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
-   "Ricketts wins Nebraska Senate seat (AP)"
-  ],
-  [
-   "앨미 몬태나 상원 승리(AP)",
-   "https://www.yahoo.com/news/politics/articles/republican-kurt-alme-wins-election-075448795.html",
-   "Alme wins Montana Senate seat (AP)"
-  ],
-  [
-   "무어 앨라배마 상원 승리(AP)",
-   "https://www.yahoo.com/news/politics/articles/republican-barry-moore-wins-election-042110397.html",
-   "Moore wins Alabama Senate seat (AP)"
-  ],
-  [
-   "미시시피 상원 28표 차·미개표 진술서 투표(슈퍼토크)",
-   "https://www.supertalk.fm/u-s-senate-race-between-hyde-smith-colom-too-close-to-call-as-of-early-wednesday-morning/",
-   "Mississippi Senate: 28-vote gap, affidavit ballots outstanding (SuperTalk)"
-  ],
-  [
-   "네브래스카 국무장관실 개표 결과",
-   "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW",
-   "Nebraska Secretary of State results"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "With AP having called both chambers for Democrats, AP-called Senate seats now stand at Democrats 54, Republicans 44. Republicans held Alabama, Montana and Nebraska, leaving two races: Mississippi, uncalled with Scott Colom (D) 28 votes ahead of Sen. Cindy Hyde-Smith (R), and Alaska, uncalled with Sen. Dan Sullivan (R) ahead. In the House, NBC-called seats are Democrats 227, Republicans 142 (as of 2:34 a.m. ET Nov 4; no newer count could be opened in this check).",
+ "headline_en": "With AP having called both chambers for Democrats, AP-called Senate seats stay at Democrats 54, Republicans 44, with two races left. In Mississippi, uncalled, Scott Colom (D) led Sen. Cindy Hyde-Smith (R) by 43 votes in the early hours, with thousands of affidavit ballots still to count, which could take up to five business days. In Alaska, Sen. Dan Sullivan (R) is ahead of Mary Peltola (D) but uncalled. In the House, NBC-called seats are Democrats 227, Republicans 142 (as of 2:34 a.m. ET Nov 4); no newer count could be opened in this check.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
