@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T17:34:00Z",
+ "updatedAt": "2026-11-04T18:17:00Z",
  "source": {
   "name": "AP · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 두 곳 모두 민주당 후보가 근소하게 앞서 있다. 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만 진술서 투표와 11월 10일까지 도착하는 우편 투표가 남았고, 알래스카는 메리 펠톨라(민)가 댄 설리번(공·현역)을 626표 앞서지만 NBC 추정으로 약 7만 4000표가 남았다. 하원은 NBC 판정 의석이 민주 236·공화 146이고(미 동부 4일 낮 12시 34분 확인) 53곳이 미판정인데, 메인 2구에서는 폴 르페이지(공)가 맷 던랩(민)을 62표 차로 앞질렀다.",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 두 곳 모두 민주당 후보가 근소하게 앞서 있다. 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만 진술서 투표와 11월 10일까지 도착하는 우편 투표가 남았고, 알래스카는 메리 펠톨라(민)가 댄 설리번(공·현역)을 626표 앞서지만 NBC 추정으로 약 7만 4000표가 남았다. 하원은 NBC 판정 의석이 민주 236·공화 146이고(미 동부 4일 낮 12시 34분 확인) 53곳이 미판정인데, 메인 2구에서는 폴 르페이지(공)가 맷 던랩(민)을 AP 집계로 62표 차로 앞질렀는데, 남은 약 3만 표는 대부분 공화당 강세인 농촌 표다(프레스 헤럴드).",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -877,8 +877,8 @@
     "cand_en": "Scott Colom",
     "vs": "신디 하이드스미스(공·현역)",
     "vs_en": "Sen. Cindy Hyde-Smith (R)",
-    "note": "AP 미판정. AP 비공식 집계로 94만 5000표 넘게 센 가운데 표차 43표이고, 무소속 타이 핑킨스가 1만 9935표(2.1%)를 얻었다(다크호스 프레스). 남은 진술서 투표(affidavit ballot, 유권자 자격 확인이 끝나야 세는 표)가 승부를 가르는데, 공식 수치는 없고 콜럼 선거대책본부장 제라드 헨더슨은 최소 1만 5000장(슈퍼토크), 콜럼 캠프는 다른 보도에서 1만~1만 5000장으로 추산했다(다크호스 프레스). 개표에 최대 영업일 5일이 걸릴 수 있다(매그놀리아 트리뷴). 힌즈 카운티는 자정 직후 개표를 멈추고 수요일 아침 재개할 계획이었다. 하이드스미스 캠프는 내부 집계로 이긴다고 주장한다. 결선 없이 최다 득표자가 이긴다. 콜럼은 현지 4일 기자회견에서 \"우리가 이긴다\"며 법정 다툼까지 준비했다고 말했다(NBC). 우편 투표는 11월 10일까지 도착하면 세는데, 신청하고 아직 돌려보내지 않은 표가 약 6500장이다(데모크라시 도킷)",
-    "note_en": "Uncalled by AP. In AP's unofficial count of more than 945,000 votes the gap is 43, with independent Ty Pinkins on 19,935 (2.1%) (Dark Horse Press). Affidavit ballots, counted only once a voter's eligibility is checked, will decide it. There is no official figure: Colom campaign manager Gerard Henderson says at least 15,000 (SuperTalk), and the campaign estimated 10,000 to 15,000 in another report (Dark Horse Press). Counting could take up to five business days (Magnolia Tribune). Hinds County paused shortly after midnight and planned to resume Wednesday morning. The Hyde-Smith campaign says its internal numbers show her winning. There is no runoff: the top vote-getter wins. At a Nov 4 news conference Colom said \"We are going to win this\" and that his team is prepared to go to court (NBC). Mail ballots count if they arrive by Nov 10, and roughly 6,500 requested ballots had not been returned (Democracy Docket)"
+    "note": "AP 미판정. AP 비공식 집계로 94만 5000표 넘게 센 가운데 표차 43표이고, 무소속 타이 핑킨스가 1만 9935표(2.1%)를 얻었다(다크호스 프레스). 남은 진술서 투표(affidavit ballot, 유권자 자격 확인이 끝나야 세는 표)가 승부를 가르는데, 공식 수치는 없고 콜럼 선거대책본부장 제라드 헨더슨은 최소 1만 5000장(슈퍼토크), 콜럼 캠프는 다른 보도에서 1만~1만 5000장으로 추산했다(다크호스 프레스). 개표에 최대 영업일 5일이 걸릴 수 있다(매그놀리아 트리뷴). 힌즈 카운티는 자정 직후 개표를 멈추고 수요일 아침 재개할 계획이었다. 하이드스미스 캠프는 내부 집계로 이긴다고 주장한다. 결선 없이 최다 득표자가 이긴다. 콜럼은 현지 4일 기자회견에서 \"우리가 이긴다\"며 법정 다툼까지 준비했다고 말했다(NBC). 우편 투표는 11월 10일까지 도착하면 세는데, 신청하고 아직 돌려보내지 않은 표가 약 6500장이다(데모크라시 도킷) 미시시피 국무장관실은 세지 않은 우편 부재자 투표가 3600장이 넘는다고 밝혔다(WJTV). 하이드스미스 선거대책본부장 제이크 몬슨은 표차가 \"수십 표\"에 불과하다고 말했다(WJTV).",
+    "note_en": "Uncalled by AP. In AP's unofficial count of more than 945,000 votes the gap is 43, with independent Ty Pinkins on 19,935 (2.1%) (Dark Horse Press). Affidavit ballots, counted only once a voter's eligibility is checked, will decide it. There is no official figure: Colom campaign manager Gerard Henderson says at least 15,000 (SuperTalk), and the campaign estimated 10,000 to 15,000 in another report (Dark Horse Press). Counting could take up to five business days (Magnolia Tribune). Hinds County paused shortly after midnight and planned to resume Wednesday morning. The Hyde-Smith campaign says its internal numbers show her winning. There is no runoff: the top vote-getter wins. At a Nov 4 news conference Colom said \"We are going to win this\" and that his team is prepared to go to court (NBC). Mail ballots count if they arrive by Nov 10, and roughly 6,500 requested ballots had not been returned (Democracy Docket) The Mississippi Secretary of State's Office said more than 3,600 mail absentee ballots remain uncounted (WJTV). Hyde-Smith campaign manager Jake Monssen said the margin is \"measured in just dozens of votes\" (WJTV)."
    },
    {
     "st": "AL",
@@ -2370,6 +2370,17 @@
     }
    },
    {
+    "d": "AZ-2",
+    "status": "lead",
+    "party": "D",
+    "cand": "조너선 네즈",
+    "cand_en": "Jonathan Nez",
+    "vs": "일라이 크레인(현역)",
+    "vs_en": "Eli Crane (inc.)",
+    "note": "미판정. 현지 4일 새벽 네즈가 공화당 현역 크레인을 0.5%p 안 되는 차로 앞섰다(애리조나 미러)",
+    "note_en": "Uncalled. Early on Nov 4 local time, Nez led Republican incumbent Crane by less than half a point (Arizona Mirror)"
+   },
+   {
     "d": "MI-10",
     "status": "proj",
     "party": "D",
@@ -2441,8 +2452,8 @@
       "NBC News House results (AP data)"
      ]
     },
-    "note": "미판정. 밤사이 선두가 바뀌어, NBC 집계(미 동부 4일 낮 12시 34분 확인)로 르페이지가 15만 2951표, 던랩이 15만 2889표로 62표 앞서고 약 4만 5000표가 남았다. 방고어 데일리 뉴스는 현지 4일 새벽 분석에서 남은 111개 타운이 르페이지에게 유리해 그가 이길 가능성이 크다고 보면서도 \"판정은 아니다\"라고 밝혔다. 과반에 조금 못 미치면 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계로 갈 수 있지만, 이 신문은 그럴 가능성을 낮게 봤다",
-    "note_en": "Uncalled. The lead changed overnight: NBC's count (checked 12:34 p.m. ET Nov 4) has LePage on 152,951 and Dunlap on 152,889, a 62-vote gap, with about 45,000 votes left. The Bangor Daily News analysis early on Nov 4 says the remaining 111 towns favor LePage, making him the likely winner, but stresses \"that is not a call.\" A ranked-choice count, which transfers voters' lower preferences, is possible if the winner falls just short of a majority, though the paper considers that unlikely"
+    "note": "미판정. 밤사이 선두가 바뀌어, AP 집계로 스트롱 타운 개표가 들어온 현지 낮 12시 18분 르페이지가 62표 앞섰고(12시 30분 집계도 같음, 프레스 헤럴드), NBC 집계(동부 낮 12시 34분 확인)로는 15만 2951표 대 15만 2889표다. 남은 표는 프레스 헤럴드가 약 3만 표, NBC가 약 4만 5000표로 추정하는데, 프레스 헤럴드는 대부분 공화당 강세인 농촌 표라고 전했다. 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계를 피하려면 표차가 등록된 기명 후보 그레고리 워드의 득표(낮 12시 45분 161표)보다 커야 한다고 이 신문은 설명했다.",
+    "note_en": "Uncalled. The lead changed overnight: per AP, LePage went 62 votes ahead when the town of Strong reported at 12:18 p.m. local time (unchanged at 12:30, Press Herald); NBC's count (checked 12:34 p.m. ET) shows 152,951 to 152,889. The Press Herald estimates about 30,000 votes remain, mostly in deep-red rural areas; NBC estimates about 45,000. The paper says the winning margin must exceed the 161 votes of declared write-in Gregory Ward (as of 12:45 p.m.) to avoid a ranked-choice runoff."
    },
    {
     "d": "NY-21",
@@ -3126,6 +3137,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T18:17:00Z",
+   "text": "새 판정 확인 없음. 메인 2구: AP 집계로 르페이지(공) 62표 앞섬, 남은 약 3만 표는 대부분 농촌(프레스 헤럴드). 미시시피 상원: 국무장관실 기준 세지 않은 우편 부재자 3600장 이상(WJTV). 애리조나 2구: 네즈(민)가 크레인(공·현역)을 0.5%p 안 되게 앞섬(애리조나 미러, 4일 새벽).",
+   "text_en": "No new calls confirmed. ME-2: LePage (R) up 62 votes per AP, with about 30,000 left, mostly rural (Press Herald). Mississippi Senate: more than 3,600 mail absentee ballots uncounted, per the Secretary of State's Office (WJTV). AZ-2: Nez (D) leads Crane (R, inc.) by under half a point (Arizona Mirror, early Nov 4)."
+  },
+  {
    "t": "2026-11-04T17:34:00Z",
    "text": "하원 NBC 판정 의석 민주 236·공화 146, 미판정 53곳(직전 231·144). 캘리포니아 22구 비예가스(민)가 발라다오(공·현역)를, 미시간 10구 하인스(민)가 부샤드(공)를 꺾은 것으로 예측돼 공화당 의석이 넘어갔다. 그 밖에 캘리포니아·뉴욕·텍사스에서도 판정이 늘었다. 메인 2구는 르페이지(공)가 던랩(민)을 62표 앞질렀다. 상원 미시시피·알래스카는 AP 미판정 그대로.",
    "text_en": "NBC-called House seats: Democrats 236, Republicans 146, 53 uncalled (was 231-144). Villegas (D) projected to beat Rep. Valadao (R) in CA-22 and Hines (D) to beat Bouchard (R) in MI-10, both GOP seats. More calls came in California, New York and Texas. In ME-2, LePage (R) moved 62 votes ahead of Dunlap (D). Mississippi and Alaska Senate races remain uncalled by AP."
@@ -3269,11 +3285,6 @@
    "t": "2026-11-04T03:47:00Z",
    "text": "아칸소 상원: AP, 공화당 톰 코튼 확정. 앨라배마: NBC 뉴스, 공화당 배리 무어 예측.",
    "text_en": "Arkansas Senate: AP calls it for Republican Tom Cotton. Alabama: NBC News projects Republican Barry Moore."
-  },
-  {
-   "t": "2026-11-04T03:43:00Z",
-   "text": "사우스캐롤라이나 상원: AP, 민주당 애니 앤드루스가 공화당 달린 그레이엄 의원을 꺾었다고 확정(공화당 의석).",
-   "text_en": "South Carolina Senate: AP calls it for Democrat Annie Andrews over Republican Sen. Darline Graham (GOP seat)."
   }
  ],
  "how": [
@@ -3299,9 +3310,9 @@
    "Mississippi Senate race undecided (WLBT)"
   ],
   [
-   "미시시피 상원과 우편 투표(데모크라시 도킷)",
-   "https://www.democracydocket.com/news-alerts/mississippi-senate-race-could-come-down-to-mail-ballots-the-gop-tried-to-throw-out/",
-   "Mississippi Senate and mail ballots (Democracy Docket)"
+   "미시시피 상원 콜럼 기자회견(WJTV, 야후)",
+   "https://www.yahoo.com/news/politics/articles/colom-addresses-supporters-vote-count-155203072.html",
+   "Colom addresses supporters as count continues (WJTV via Yahoo)"
   ],
   [
    "펠톨라 626표 앞섬(알래스카 스토리)",
@@ -3309,14 +3320,14 @@
    "Peltola leads Sullivan by 626 votes (Alaska Story)"
   ],
   [
-   "메인 2구 분석(방고어 데일리 뉴스)",
-   "https://www.bangordailynews.com/2026/11/04/politics/elections/paul-lepage-on-track-maine-republicans-bright-spot/",
-   "ME-2 analysis (Bangor Daily News)"
+   "메인 2구 미판정·르페이지 62표 앞섬(프레스 헤럴드)",
+   "https://www.pressherald.com/2026/11/04/the-maine-2nd-district-race-is-still-uncalled-but-paul-lepage-is-in-good-shape/",
+   "ME-2 still uncalled, LePage up 62 (Press Herald)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left, and Democrats narrowly lead in both. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes, with affidavit ballots and mail ballots arriving by Nov 10 still to come. In Alaska, Mary Peltola (D) leads Sen. Dan Sullivan (R) by 626, with about 74,000 votes left by NBC's estimate. NBC-called House seats stand at Democrats 236, Republicans 146 (checked 12:34 p.m. ET Nov 4) with 53 uncalled, and in ME-2 Paul LePage (R) has moved 62 votes ahead of Matt Dunlap (D).",
+ "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left, and Democrats narrowly lead in both. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes, with affidavit ballots and mail ballots arriving by Nov 10 still to come. In Alaska, Mary Peltola (D) leads Sen. Dan Sullivan (R) by 626, with about 74,000 votes left by NBC's estimate. NBC-called House seats stand at Democrats 236, Republicans 146 (checked 12:34 p.m. ET Nov 4) with 53 uncalled, and in ME-2 Paul LePage (R) has moved 62 votes ahead of Matt Dunlap (D) on AP's count, with about 30,000 votes left, mostly in deep-red rural areas (Press Herald).",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
