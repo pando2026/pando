@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T21:43:00Z",
+ "updatedAt": "2026-11-04T22:10:00Z",
  "source": {
   "name": "AP · Fox News · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 두 곳 모두 민주당 후보가 근소하게 앞서 있어도 승부는 다음 주에야 가려질 전망이다. 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞선 채 진술서 투표 유권자의 신분증 제출 기한인 11월 10일을 기다리고, 알래스카도 메리 펠톨라(민)가 댄 설리번(공·현역)을 앞서지만 주 당국의 다음 집계 공표가 10일이다. 하원은 폭스뉴스 결과 화면 기준 민주 237·공화 139(미 동부 4일 오후 3시 35분)로, 오후 들어 AP가 미시간 4구와 7구를 민주당 쪽으로 판정하면서 두 곳의 공화당 현역이 낙선했다. 메인 2구에서는 폴 르페이지(공)가 94% 개표에 49.9% 대 48.8%로 앞서 승리를 선언했지만, 맷 던랩(민)은 \"셀 표가 많이 남았다\"며 패배를 인정하지 않았고 AP 판정도 아직 나오지 않았다(메인 모닝 스타).",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 두 곳 모두 민주당 후보가 근소하게 앞서 있어도 승부는 다음 주 이후에야 가려질 전망이다. 하원은 폭스뉴스 결과 화면 기준 민주 237·공화 139(미 동부 4일 오후 3시 35분)가 판도가 확인한 마지막 수치다. 오늘 저녁 가장 눈에 띄는 곳은 메인 2구로, 폴 르페이지(공)가 동부 오후 5시 기준 91.7% 개표에 50.3% 대 49.7%로 앞서면서 \"상대에게 승리할 길이 없다\"고 말했지만, 맷 던랩(민)은 \"셀 표가 많이 남았다\"며 패배를 인정하지 않았고 AP 판정도 아직 없다(WABI).",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -2293,8 +2293,8 @@
       "NBC News House results (AP data)"
      ]
     },
-    "note": "멘도사가 승리를 선언했지만 AP는 아직 접전으로 판정을 미룸(KJZZ)",
-    "note_en": "Mendoza has declared victory, but AP says the race is still too close to call (KJZZ)"
+    "note": "멘도사가 승리를 선언했고 디시전 데스크 HQ는 멘도사 승리로 판정했지만, 현지 4일 아침까지 전국 언론의 판정은 없었다(센터 스퀘어). 당시 표차는 2만 3767표다. AP 판정은 확인하지 못했다.",
+    "note_en": "Mendoza has declared victory and Decision Desk HQ called it for her, but no national outlet had called it as of the morning of Nov 4 (The Center Square), when she led by 23,767 votes. AP call not confirmed."
    },
    {
     "d": "CA-22",
@@ -2367,7 +2367,9 @@
       "https://www.nbcnews.com/politics/2026-elections/house-results",
       "NBC News House results (AP data)"
      ]
-    }
+    },
+    "note": "현지 4일 아침까지 전국 언론의 판정 없음. 당시 샤가 2만 2388표 앞섬(52.54% 대 45.45%, 센터 스퀘어)",
+    "note_en": "No national outlet had called it as of the morning of Nov 4, when Shah led by 22,388 votes, 52.54% to 45.45% (The Center Square)"
    },
    {
     "d": "AZ-2",
@@ -2377,8 +2379,8 @@
     "cand_en": "Jonathan Nez",
     "vs": "일라이 크레인(현역)",
     "vs_en": "Eli Crane (inc.)",
-    "note": "미판정. 현지 4일 새벽 네즈가 공화당 현역 크레인을 0.5%p 안 되는 차로 앞섰다(애리조나 미러)",
-    "note_en": "Uncalled. Early on Nov 4 local time, Nez led Republican incumbent Crane by less than half a point (Arizona Mirror)"
+    "note": "미판정. 현지 4일 아침 네즈가 공화당 현역 크레인을 86표 앞섰다(49.13% 대 49.1%, 센터 스퀘어)",
+    "note_en": "Uncalled. On the morning of Nov 4, Nez led Republican incumbent Crane by 86 votes, 49.13% to 49.1% (The Center Square)"
    },
    {
     "d": "MI-10",
@@ -2426,8 +2428,8 @@
     "cand_en": "Paul LePage",
     "vs": "맷 던랩",
     "vs_en": "Matt Dunlap",
-    "note": "미판정. 현지 4일 오후 2시 45분 기준 94% 개표에 르페이지 49.9%·던랩 48.8%이고(뱅고어 데일리 뉴스 집계), AP 집계로는 89% 개표에 50.1% 대 49.9%다(메인 모닝 스타). 르페이지는 이날 오후 뱅고어의 양조장 시독 브루잉에서 승리를 선언했지만, 던랩은 성명에서 \"아주 박빙이고 셀 표가 많이 남았다\"며 패배를 인정하지 않았다. 다만 이 신문과 제휴사 디시전 데스크 HQ는 판정하지 않았고, 폭스뉴스 결과 화면의 AP 판정 목록에도 메인 2구는 없다. 그 전까지 AP 집계로는 스트롱 타운 개표가 들어온 낮 12시 18분 르페이지가 62표 앞섰고, 프레스 헤럴드는 약 3만 표가 남았는데 대부분 공화당 강세 농촌 표라고 전했다. 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계를 피하려면 표차가 등록된 기명 후보 그레고리 워드의 득표(낮 12시 45분 161표)보다 커야 한다고 이 신문은 설명했다.",
-    "note_en": "Uncalled. At 2:45 p.m. local on Nov 4, LePage had 49.9% to Dunlap's 48.8% with 94% counted (Bangor Daily News tally); AP had it 50.1% to 49.9% with 89% counted (Maine Morning Star). LePage declared victory that afternoon at Seadog Brewing Co. in Bangor, but Dunlap said in a statement that \"this race is very close and there are plenty of ballots left to count\" and has not conceded. The paper and its partner Decision Desk HQ have not called it, and ME-2 is not in the AP call list on the Fox News results page. Earlier, per AP, LePage went 62 votes ahead when the town of Strong reported at 12:18 p.m.; the Press Herald said about 30,000 votes remained, mostly in rural Republican towns. The paper says the winning margin must exceed the 161 votes of declared write-in Gregory Ward (as of 12:45 p.m.) to avoid a ranked-choice runoff."
+    "note": "AP 미판정. 동부 4일 오후 5시 기준 약 91.7% 개표에 르페이지 50.3%·던랩 49.7%다(WABI). 르페이지는 \"공개된 수치로 약 4000표 앞서 있고, 아직 보고하지 않은 마을에 모두 전화해 봤더니 상대에게 승리할 길이 없다\"고 말했지만, 던랩은 \"아주 박빙이고 셀 표가 많이 남았다\"며 패배를 인정하지 않았다. 앞서 동부 오후 2시 45분에는 뱅고어 데일리 뉴스 집계로 94% 개표에 49.9% 대 48.8%였고, 낮 12시 18분에는 AP 집계로 르페이지가 처음 62표 앞섰다. 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계를 피하려면 표차가 기명 후보 그레고리 워드의 득표(낮 12시 45분 161표)보다 커야 한다(프레스 헤럴드·메인 모닝 스타).",
+    "note_en": "AP has not called it. As of 5 p.m. ET Nov 4, with an estimated 91.7% in, LePage had 50.3% to Dunlap's 49.7% (WABI). LePage said: \"Public numbers have us up about 4,000, and the team has been calling all the towns that haven't come in yet, and there's no path to victory for my opponent.\" Dunlap said \"this race is very close and there are plenty of ballots left to count\" and has not conceded. Earlier, the Bangor Daily News tally had 49.9% to 48.8% with 94% in at 2:45 p.m., and AP had LePage first going 62 votes ahead at 12:18 p.m. To avoid a ranked-choice runoff, the margin must exceed the votes of declared write-in Gregory Ward (161 as of 12:45 p.m.) (Press Herald, Maine Morning Star)."
    },
    {
     "d": "NY-21",
@@ -3115,6 +3117,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T22:10:00Z",
+   "text": "새 AP 판정 확인 없음. 메인 2구: 동부 오후 5시 기준 약 91.7% 개표에 르페이지(공) 50.3%·던랩(민) 49.7%, AP 미판정. 르페이지는 \"약 4000표 앞서 있고 상대에게 승리할 길이 없다\"고 말했고 던랩은 패배를 인정하지 않았다(WABI). 애리조나 2구: 현지 4일 아침 네즈(민)가 크레인(공·현역)을 86표 앞섬, 6구는 디시전 데스크 HQ가 멘도사(민) 승리로 판정(센터 스퀘어). 상원 미시시피·알래스카는 새 판정 확인 없음. 하원 정당별 의석은 새 수치를 확인하지 못해 그대로.",
+   "text_en": "No new AP calls confirmed. ME-2: LePage (R) 50.3%, Dunlap (D) 49.7% with an estimated 91.7% in as of 5 p.m. ET, not called by AP. LePage says he is \"up about 4,000\" with \"no path to victory\" for his opponent; Dunlap has not conceded (WABI). AZ-2: Nez (D) led Crane (R, inc.) by 86 votes on the morning of Nov 4; AZ-6: Decision Desk HQ called it for Mendoza (D) (The Center Square). No new calls confirmed in the Mississippi and Alaska Senate races. House party totals unchanged; no newer figure confirmed."
+  },
+  {
    "t": "2026-11-04T21:43:00Z",
    "text": "새 판정 확인 없음. 메인 2구: 던랩(민)이 성명에서 \"아주 박빙이고 셀 표가 많이 남았다\"며 르페이지(공)의 승리 선언을 받아들이지 않았다. 94% 개표 49.9% 대 48.8%(뱅고어 데일리 뉴스 집계), AP 집계는 89% 개표 50.1% 대 49.9%(메인 모닝 스타). 상원 미시시피·알래스카도 미판정 그대로.",
    "text_en": "No new calls confirmed. ME-2: Dunlap (D) said in a statement that \"this race is very close and there are plenty of ballots left to count,\" not accepting LePage's (R) victory declaration. 49.9% to 48.8% with 94% counted (Bangor Daily News tally); AP has 50.1% to 49.9% with 89% counted (Maine Morning Star). Mississippi and Alaska Senate races also remain uncalled."
@@ -3258,11 +3265,6 @@
    "t": "2026-11-04T04:35:00Z",
    "text": "아이오와 상원: AP, 민주당 조시 투렉이 공화당 애슐리 힌슨을 꺾었다고 확정(공화당 의석).",
    "text_en": "Iowa Senate: AP calls it for Democrat Josh Turek over Republican Ashley Hinson (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T04:00:00Z",
-   "text": "오리건 상원: AP, 민주당 제프 머클리 재선 확정.",
-   "text_en": "Oregon Senate: AP calls it for Democrat Jeff Merkley."
   }
  ],
  "how": [
@@ -3278,14 +3280,14 @@
    "Fox News House results (AP race calls)"
   ],
   [
+   "르페이지 \"승리할 길 없다\" 메인 2구 미판정(WABI)",
+   "https://www.wabi.tv/2026/11/04/no-path-victory-lepage-claims-win-uncalled-maine-2nd-district-race/",
+   "LePage claims win in uncalled ME-2 (WABI)"
+  ],
+  [
    "던랩 \"아직 박빙\"(메인 모닝 스타, 야후)",
    "https://www.yahoo.com/news/politics/articles/lepage-declares-victory-maine-2nd-191234948.html",
    "Dunlap insists race too close to call (Maine Morning Star via Yahoo)"
-  ],
-  [
-   "메인 2구 미판정·르페이지 62표 앞섬(프레스 헤럴드)",
-   "https://www.pressherald.com/2026/11/04/the-maine-2nd-district-race-is-still-uncalled-but-paul-lepage-is-in-good-shape/",
-   "ME-2 uncalled, LePage up 62 (Press Herald)"
   ],
   [
    "미시시피 진술서 투표와 인증 일정(데모크라시 도킷)",
@@ -3298,14 +3300,14 @@
    "Peltola takes slight lead (The Hill via Yahoo)"
   ],
   [
-   "펠톨라 626표 앞섬(알래스카 스토리)",
-   "https://thealaskastory.com/peltola-leads-sen-sullivan-by-626-votes-as-alaskas-top-races-remain-unsettled/",
-   "Peltola leads Sullivan by 626 votes (Alaska Story)"
+   "애리조나 하원 선거구 현황(센터 스퀘어, 야후)",
+   "https://www.yahoo.com/news/politics/articles/arizona-democrats-maintain-blue-wave-190000696.html",
+   "Arizona House races (The Center Square via Yahoo)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left; Democrats narrowly lead in both, but neither is likely to be settled until next week. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes as the Nov 10 deadline for affidavit voters to show ID approaches, and in Alaska, Mary Peltola (D) leads Sen. Dan Sullivan (R), but the state's next count update is Nov 10. The Fox News results page has the House at Democrats 237, Republicans 139 (3:35 p.m. ET Nov 4), after AP called MI-4 and MI-7 for Democrats this afternoon, defeating both GOP incumbents. In ME-2, Paul LePage (R) declared victory leading 49.9% to 48.8% with 94% counted, but Matt Dunlap (D) says \"there are plenty of ballots left to count\" and AP has not called it (Maine Morning Star).",
+ "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left; Democrats narrowly lead in both, but neither is likely to be settled before next week. The last House figure Pando could confirm is Democrats 237, Republicans 139 on the Fox News results page (3:35 p.m. ET Nov 4). The race to watch this evening is ME-2: Paul LePage (R) led 50.3% to 49.7% with 91.7% in as of 5 p.m. ET and said his opponent has \"no path to victory,\" but Matt Dunlap (D) says \"there are plenty of ballots left to count\" and has not conceded, and AP has not called it (WABI).",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
