@@ -69,7 +69,9 @@
    {
     "st": "NH",
     "status": "won",
-    "party": "D"
+    "party": "D",
+    "cand": "크리스 패퍼스",
+    "cand_en": "Chris Pappas"
    },
    {
     "st": "MA",
@@ -104,7 +106,9 @@
    {
     "st": "KY",
     "status": "won",
-    "party": "R"
+    "party": "R",
+    "cand": "앤디 바",
+    "cand_en": "Andy Barr"
    },
    {
     "st": "WV",
@@ -115,7 +119,9 @@
     "st": "FL",
     "status": "won",
     "party": "R",
-    "special": true
+    "special": true,
+    "cand": "애슐리 무디",
+    "cand_en": "Ashley Moody"
    },
    {
     "st": "TX",
@@ -284,6 +290,11 @@
    "ABC News 라이브",
    "https://abcnews.com/Politics/live-updates/midterm-elections-live-updates/?id=137782085",
    "ABC News live"
+  ],
+  [
+   "ABC News 상원 결과 지도(AP 개표 자료)",
+   "https://abcnews.com/Elections/2026-us-senate-election-results-live-map/",
+   "ABC News Senate results map (AP vote data)"
   ]
  ],
  "title_en": "US midterms: live results",
