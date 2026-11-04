@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-03",
+ "asOf": "2026-11-04",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -2995,6 +2995,140 @@
      "Ecofinance Guinée",
      "PLFR 2026 : les dépenses publiques progressent de 5,8 %(2026 추경안: 공공지출 5.8% 증가) · 2026-10-24",
      "https://www.ecofinanceguinee.com/plfr-2026-les-depenses-publiques-progressent-de-58/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BJ": {
+   "fiscalYear": "2026",
+   "status": "추경 반영",
+   "scope": "2026 수정 예산법(LFR) 중앙정부 공공부채 이자(국내·대외)",
+   "interest": {
+    "value": 306.703,
+    "unit": "십억 FCFA",
+    "label": "공공부채 이자 및 금융비용(연간 수정 예상치)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 4148.357,
+    "unit": "십억 FCFA",
+    "label": "2026 수정 예산법 총액"
+   },
+   "share": 7.4,
+   "note": "2027 정부안(4,757.029십억)에는 이자 항목이 공개 자료에서 확인되지 않아 2026 수정 예산법의 수치를 썼다. 2026년 6월 말까지 이자 196.6십억 FCFA(국내 69.8, 대외 126.8)를 냈고 연간 예상치의 64.1%다.",
+   "sources": [
+    [
+     "베냉 예산총국(budgetbenin.bj)",
+     "Rapport d'exécution au 30 juin de la loi de finances 2026(2026 예산법 6월 말 집행 보고서) · 2026-09",
+     "https://budgetbenin.bj/storage/2026/09/RAPEX-FIN-JUIN-2026.pdf"
+    ],
+    [
+     "Portail d'informations générales(CAGD 자료 인용)",
+     "Dette publique : le Bénin franchit les 9 000 milliards Fcfa(공공부채 9조 FCFA 돌파) · 2026-08-17",
+     "https://www.portailinfo.bj/2026/08/17/dette-publique-le-benin-franchit-les-9-000-milliards-fcfa/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BI": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "국가 일반예산 지출(제2조)",
+   "interest": {
+    "value": 313.5,
+    "unit": "십억 BIF",
+    "label": "이자 지출(국내 2,890.7억·대외 233.4억 포함)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 6732.2,
+    "unit": "십억 BIF",
+    "label": "총지출(원금 상환 제외)"
+   },
+   "share": 4.7,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 312,
+    "unit": "십억 BIF"
+   },
+   "note": "예산법 표 B의 이자 항목 313,501,131,315 BIF(국채·TB 이자 포함)로 원금 상환 2조 1,214억 BIF은 제외했다. 전년 값은 Jimbere가 전한 직전 회계연도 이자 '312십억 BIF 남짓'이다.",
+   "sources": [
+    [
+     "재무부",
+     "Loi n°1/10 du 30 juin 2026 portant fixation du budget général de l'Etat pour l'exercice 2026/2027 (2026/27 회계연도 국가 일반예산 확정법) · 2026-06-30",
+     "https://finances.gov.bi/wp-content/uploads/2026/07/LOI-DE-FINANCES-2026-2027-PROMULGUEE.pdf"
+    ],
+    [
+     "Jimbere",
+     "Budget 2026-2027 : au-delà des 7 000 milliards de FBu, le défi des résultats (70조 BIF을 넘어, 성과가 관건) · 2026-06",
+     "https://www.jimberemag.org/budget-2026-2027-au-dela-des-7-000-milliards-de-fbu-le-defi-des-resultats/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BO": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "공공부문 통합 재정 흐름 지출(입법의회 제출 2027 일반예산안)",
+   "interest": {
+    "value": 222.59,
+    "unit": "억 볼리비아노(Bs)",
+    "label": "공공부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 2499.84,
+    "unit": "억 볼리비아노(Bs)",
+    "label": "통합 흐름 지출"
+   },
+   "share": 8.9,
+   "note": "경제재정부 발표를 옮긴 Correo del Sur 집계로, 통합 흐름 지출 2,499.84억 Bs 가운데 공공부채 이자는 222.59억 Bs다. 전년 이자 값은 확인하지 못했고 예산서 본문(경제재정부 사이트)은 열리지 않았다.",
+   "sources": [
+    [
+     "eju.tv(Correo del Sur 인용)",
+     "PGE 2027 excede déficit del FMI e incluye subvención a la gasolina(2027 예산, IMF 적자 한도 초과·휘발유 보조금 포함) · 2026-11-01",
+     "https://eju.tv/2026/11/pge-2027-excede-deficit-del-fmi-e-incluye-subvencion-a-la-gasolina/"
+    ],
+    [
+     "Unitel",
+     "Cifras clave del PGE 2027: Decrecimiento, inflación de dos dígitos, petróleo a $us 68,87 por barril y subvención(2027 예산 핵심 수치) · 2026-10-30",
+     "https://unitel.bo/noticias/economia/cifras-clave-del-pge-2027-decrecimiento-inflacion-de-dos-digitos-petroleo-a-us-6887-por-barril-y-subvencion-AK24487061"
+    ]
+   ],
+   "tier": "press"
+  },
+  "TN": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 국가 예산(지출 승인액)",
+   "interest": {
+    "value": 7.968,
+    "unit": "십억 디나르",
+    "label": "공공부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 68.895,
+    "unit": "십억 디나르",
+    "label": "국가 예산 지출(원금 상환 제외)"
+   },
+   "share": 11.6,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 7.1,
+    "unit": "십억 디나르"
+   },
+   "note": "이자는 내부채무 65.35억, 외부채무 14.33억 디나르이며 원금 상환 133.07억은 따로다. 비중은 이자÷지출 승인액 68.895로 판도가 계산했다. 2026 값은 같은 예산안 보도의 전년 비교 수치다.",
+   "sources": [
+    [
+     "La Presse de Tunisie(allAfrica 게재)",
+     "Tunisie: Le service de la dette publique devrait baisser de 7,4 % en 2027(튀니지: 2027년 국가채무 원리금 7.4% 감소 전망) · 2026-10-29",
+     "https://fr.allafrica.com/stories/202610290307.html"
+    ],
+    [
+     "Tunisie Numérique(아랍어판)",
+     "ميزانية تونس 2027: من يحظى بالحصة الأكبر من أموال الدولة؟(2027 튀니지 예산: 누가 가장 큰 몫을 받나) · 2026-10-21",
+     "https://ar.tunisienumerique.com/%D9%85%D9%8A%D8%B2%D8%A7%D9%86%D9%8A%D8%A9-%D8%AA%D9%88%D9%86%D8%B3-2027-%D9%85%D9%86-%D9%8A%D8%AD%D8%B8%D9%89-%D8%A8%D8%A7%D9%84%D8%AD%D8%B5%D8%A9-%D8%A7%D9%84%D8%A3%D9%83%D8%A8%D8%B1-%D9%85%D9%86/"
     ]
    ],
    "tier": "official"
