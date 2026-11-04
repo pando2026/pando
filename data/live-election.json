@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T13:33:00Z",
+ "updatedAt": "2026-11-04T13:56:00Z",
  "source": {
   "name": "AP · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 앞서고 약 8만 표가 남았다. 하원은 NBC 판정 의석이 민주 231·공화 144로 늘었고(현지 4일 오전 8시 33분), 아직 60곳이 미판정이다. 공화당 현역 빌 하위징아(미시간 4구)와 브래드 핀스태드(미네소타 1구)는 개표가 진행되면서 뒤지기 시작했다.",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 앞서고 약 8만 표가 남았다. 하원은 NBC 판정 의석이 민주 231·공화 144로 늘었고(현지 4일 오전 8시 33분), 아직 60곳이 미판정이다. 미네소타 1구는 개표구가 모두 보고된 가운데 제이크 존슨(민)이 현역 브래드 핀스태드(공)를 324표 앞서 승리를 선언했지만, 재검표 가능성이 크다. 미시간 4구에서도 공화당 현역 빌 하위징아가 개표가 진행되면서 뒤지기 시작했다.",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -2630,28 +2630,28 @@
        "n": "제이크 존슨",
        "n_en": "Jake Johnson",
        "p": "D",
-       "v": 163059,
-       "pct": 50
+       "v": 163057,
+       "pct": 49.99
       },
       {
        "n": "브래드 핀스태드",
        "n_en": "Brad Finstad",
        "p": "R",
-       "v": 162738,
-       "pct": 49.9
+       "v": 162733,
+       "pct": 49.89
       }
      ],
+     "reported": "개표구 전부 보고",
+     "reported_en": "All precincts reporting",
+     "asOf": "2026-11-04T13:02:00Z",
      "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ],
-     "reported": "예상 투표의 98.7% 개표(NBC)",
-     "reported_en": "98.7% of expected vote in (NBC)",
-     "asOf": "2026-11-04T13:33:00Z"
+      "미네소타 1구 접전(MPR 뉴스)",
+      "https://www.mprnews.org/story/2026/11/04/minnesotas-1st-congressional-district-race-too-close-to-call",
+      "Minnesota 1st District too close to call (MPR News)"
+     ]
     },
-    "note": "미판정. 민주당 후보가 근소하게 앞서 있고 약 4500표가 남았다(NBC 추정)",
-    "note_en": "Uncalled. The Democrat holds a narrow lead with about 4,500 votes left (NBC estimate)"
+    "note": "AP 판정은 확인하지 못했다. 개표구가 모두 보고된 현지 4일 아침 표차는 324표다(주 국무장관실 집계, MPR·KSTP). 존슨은 승리를 선언했고, 핀스태드는 4일 아침까지 성명도 패배 인정도 내지 않았다(KSTP). 미네소타는 재검표가 자동이 아니어서 진 쪽이 요청해야 하며, 표차가 0.25% 미만이면 공금으로 치른다(MPR). KSTP는 재검표 가능성이 크다고 전했다",
+    "note_en": "AP call not confirmed. With all precincts reporting on the morning of Nov 4, the gap is 324 votes (Secretary of State count, via MPR and KSTP). Johnson has declared victory; Finstad had issued no statement or concession as of that morning (KSTP). Minnesota recounts are not automatic: the trailing candidate must request one, and it is publicly funded if the margin is under 0.25% (MPR). KSTP says a recount is likely."
    },
    {
     "d": "FL-25",
@@ -3119,6 +3119,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T13:56:00Z",
+   "text": "미네소타 1구: 개표구 전부 보고, 존슨(민) 16만 3057표(49.99%)·핀스태드(공·현역) 16만 2733표(49.89%), 324표 차. 존슨 승리 선언, 핀스태드는 성명 없음, 재검표 가능성 큼(MPR·KSTP). AP 판정은 미확인.",
+   "text_en": "MN-1: All precincts reporting, Johnson (D) 163,057 (49.99%), Rep. Finstad (R) 162,733 (49.89%), a 324-vote gap. Johnson declared victory; Finstad has made no statement; a recount is likely (MPR, KSTP). AP call not confirmed."
+  },
+  {
    "t": "2026-11-04T13:33:00Z",
    "text": "하원: NBC 판정 의석 민주 231·공화 144, 미판정 60곳. 오하이오 9구 캡터(민·현역) 승리 예측. 개표 진행 중 미시간 4구 매캔(민)이 하위징아(공·현역)를, 미네소타 1구 존슨(민)이 핀스태드(공·현역)를 앞섰다. 노스캐롤라이나 5구 허버드(민)가 폭스(공·현역)를 99표 앞선다. 알래스카 상원: 설리번 10만 751표·펠톨라 9만 9074표(NBC).",
    "text_en": "House: NBC-called seats at Democrats 231, Republicans 144, with 60 uncalled. Kaptur (D) projected to win OH-9. McCann (D) now leads Rep. Huizenga (R) in MI-4, and Johnson (D) leads Rep. Finstad (R) in MN-1. In NC-5, Hubbard (D) leads Rep. Foxx (R) by 99 votes. Alaska Senate: Sullivan 100,751, Peltola 99,074 (NBC)."
@@ -3262,11 +3267,6 @@
    "t": "2026-11-04T04:05:00Z",
    "text": "텍사스 상원: AP, 민주당 제임스 탈라리코가 공화당 켄 팩스턴을 꺾었다고 확정(공화당 의석).",
    "text_en": "Texas Senate: AP calls it for Democrat James Talarico over Republican Ken Paxton (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T03:50:00Z",
-   "text": "사우스캐롤라이나 상원: ABC·NBC, 민주당 애니 앤드루스 승리 예측(공화당 의석). 하원: CNN·NBC 민주당 과반 예측, KY-6·NC-11·PA-8 민주당으로.",
-   "text_en": "South Carolina Senate: ABC and NBC project Democrat Annie Andrews wins (GOP seat). House: CNN and NBC project a Democratic majority; KY-6, NC-11 and PA-8 go Democratic."
   }
  ],
  "how": [
@@ -3302,14 +3302,14 @@
    "Maine 2nd District analysis (Bangor Daily News)"
   ],
   [
-   "네브래스카 국무장관실 개표 결과",
-   "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW",
-   "Nebraska Secretary of State results"
+   "미네소타 1구 접전(MPR 뉴스)",
+   "https://www.mprnews.org/story/2026/11/04/minnesotas-1st-congressional-district-race-too-close-to-call",
+   "Minnesota 1st District too close to call (MPR News)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In Alaska, Sen. Dan Sullivan (R) is ahead of Mary Peltola (D) with about 80,000 votes left. In the House, NBC-called seats have risen to Democrats 231, Republicans 144 (8:33 a.m. ET Nov 4), with 60 still uncalled. GOP Reps. Bill Huizenga (MI-4) and Brad Finstad (MN-1) have fallen behind as counting continued.",
+ "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In Alaska, Sen. Dan Sullivan (R) is ahead of Mary Peltola (D) with about 80,000 votes left. In the House, NBC-called seats have risen to Democrats 231, Republicans 144 (8:33 a.m. ET Nov 4), with 60 still uncalled. In MN-1, with all precincts reporting, Jake Johnson (D) leads Rep. Brad Finstad (R) by 324 votes and has declared victory, though a recount is likely. In MI-4, GOP Rep. Bill Huizenga has also fallen behind as counting continued.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
