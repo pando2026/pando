@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T22:10:00Z",
+ "updatedAt": "2026-11-04T23:11:00Z",
  "source": {
   "name": "AP · Fox News · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 두 곳 모두 민주당 후보가 근소하게 앞서 있어도 승부는 다음 주 이후에야 가려질 전망이다. 하원은 폭스뉴스 결과 화면 기준 민주 237·공화 139(미 동부 4일 오후 3시 35분)가 판도가 확인한 마지막 수치다. 오늘 저녁 가장 눈에 띄는 곳은 메인 2구로, 폴 르페이지(공)가 동부 오후 5시 기준 91.7% 개표에 50.3% 대 49.7%로 앞서면서 \"상대에게 승리할 길이 없다\"고 말했지만, 맷 던랩(민)은 \"셀 표가 많이 남았다\"며 패배를 인정하지 않았고 AP 판정도 아직 없다(WABI).",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 미시시피는 현지 4일 낮 기준 스콧 콜럼(민)이 94만 5000표 넘게 센 가운데 65표 앞서고, 진술서 투표(자격 확인 뒤 세는 표)가 몇 장인지 모르는 데다 11월 10일까지 기다려야 해 승부가 쉽게 가려지지 않는다. 하원은 폭스뉴스 결과 화면 기준 민주 237·공화 139(미 동부 4일 오후 3시 35분)가 판도가 확인한 마지막 수치이고, 메인 2구처럼 폴 르페이지(공)가 승리를 선언했는데도 AP 판정이 없는 접전이 남아 있다. 그 사이 하킴 제프리스 민주당 하원 대표는 하원의장 출마를 공식 발표하며 민주당이 최소 255석을 얻을 것으로 내다봤다(CBS).",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -853,32 +853,32 @@
        "n": "스콧 콜럼",
        "n_en": "Scott Colom",
        "p": "D",
-       "v": 462821,
-       "pct": 48.94
+       "v": 462857,
+       "pct": 48.95
       },
       {
        "n": "신디 하이드스미스",
        "n_en": "Cindy Hyde-Smith",
        "p": "R",
-       "v": 462778,
+       "v": 462792,
        "pct": 48.94
       }
      ],
-     "reported": "현지 4일 오전 10시 30분 기준, 카운티 어디도 우편 부재자·진술서 투표를 다 받지 못함(데일리 리더, AP 인용)",
-     "reported_en": "As of 10:30 a.m. local Nov 4; no county has all its mail absentee and affidavit ballots, per AP (Daily Leader)",
-     "asOf": "2026-11-04T16:30:00Z",
+     "reported": "현지 4일 오전 11시 45분 기준(선 헤럴드)",
+     "reported_en": "As of 11:45 a.m. Nov 4 (Sun Herald)",
+     "asOf": "2026-11-04T17:45:00Z",
      "src": [
-      "미시시피 상원 접전(데일리 리더)",
-      "https://dailyleader.com/2026/11/04/neck-and-neck-hyde-smith-colom-race-too-close-to-call/",
-      "Neck and neck: Hyde-Smith, Colom (Daily Leader)"
+      "미시시피 상원 다음 절차(선 헤럴드, 야후)",
+      "https://www.yahoo.com/news/politics/articles/next-deadlocked-u-senate-race-174810941.html",
+      "What's next in the deadlocked Senate race (Sun Herald via Yahoo)"
      ]
     },
     "cand": "스콧 콜럼",
     "cand_en": "Scott Colom",
     "vs": "신디 하이드스미스(공·현역)",
     "vs_en": "Sen. Cindy Hyde-Smith (R)",
-    "note": "AP 미판정. AP 비공식 집계로 94만 5000표 넘게 센 가운데 표차 43표이고, 무소속 타이 핑킨스가 1만 9935표(2.1%)를 얻었다(다크호스 프레스). 남은 진술서 투표(affidavit ballot, 유권자 자격 확인이 끝나야 세는 표)가 승부를 가르는데, 공식 수치는 없고 콜럼 선거대책본부장 제라드 헨더슨은 최소 1만 5000장(슈퍼토크), 콜럼 캠프는 다른 보도에서 1만~1만 5000장으로 추산했다(다크호스 프레스). 개표에 최대 영업일 5일이 걸릴 수 있다(매그놀리아 트리뷴). 힌즈 카운티는 자정 직후 개표를 멈추고 수요일 아침 재개할 계획이었다. 하이드스미스 캠프는 내부 집계로 이긴다고 주장한다. 결선 없이 최다 득표자가 이긴다. 콜럼은 현지 4일 기자회견에서 \"우리가 이긴다\"며 법정 다툼까지 준비했다고 말했다(NBC). 우편 투표는 11월 10일까지 도착하면 세는데, 신청하고 아직 돌려보내지 않은 표가 약 6500장이다(데모크라시 도킷). 미시시피 국무장관실은 세지 않은 우편 부재자 투표가 3600장이 넘는다고 밝혔다(WJTV). 하이드스미스 선거대책본부장 제이크 몬슨은 표차가 \"수십 표\"에 불과하다고 말했다(WJTV). AP는 현지 4일 낮까지 판정하지 않았다. 진술서 투표 유권자는 11월 10일까지 선거 사무소에 신분증을 내야 하는데, AP에 따르면 2022년에는 진술서 투표 7612장 중 5710장이 집계됐다(WXXV·티파 뉴스). 데일리 리더는 결과가 빨라야 선거 일주일 뒤에 나온다고 전했다. 카운티 인증은 11월 13일, 주 인증은 12월 3일까지이고, 미시시피에는 재검표 법이 없어 후보들은 소송으로 특정 표를 넣거나 빼 달라고 다툴 수 있다(데모크라시 도킷).",
-    "note_en": "Uncalled by AP. In AP's unofficial count of more than 945,000 votes the gap is 43, with independent Ty Pinkins on 19,935 (2.1%) (Dark Horse Press). Affidavit ballots, counted only once a voter's eligibility is checked, will decide it. There is no official figure: Colom campaign manager Gerard Henderson says at least 15,000 (SuperTalk), and the campaign estimated 10,000 to 15,000 in another report (Dark Horse Press). Counting could take up to five business days (Magnolia Tribune). Hinds County paused shortly after midnight and planned to resume Wednesday morning. The Hyde-Smith campaign says its internal numbers show her winning. There is no runoff: the top vote-getter wins. At a Nov 4 news conference Colom said \"We are going to win this\" and that his team is prepared to go to court (NBC). Mail ballots count if they arrive by Nov 10, and roughly 6,500 requested ballots had not been returned (Democracy Docket). The Mississippi Secretary of State's Office said more than 3,600 mail absentee ballots remain uncounted (WJTV). Hyde-Smith campaign manager Jake Monssen said the margin is \"measured in just dozens of votes\" (WJTV). AP had not called the race by midday Nov 4 local time. Affidavit voters have until Nov 10 to show ID at local election offices; per AP, 5,710 of 7,612 affidavit ballots were counted in 2022 (WXXV, Tippah News). The Daily Leader says results will not be available until at least a week after the election. Local certification is due Nov 13 and state certification Dec 3. Mississippi has no recount law, so candidates can sue to include or exclude ballots (Democracy Docket)."
+    "note": "AP 미판정. 현지 4일 오전 11시 45분 기준 94만 5000표 넘게 센 가운데 표차는 65표다(선 헤럴드). 무소속 타이 핑킨스가 1만 9935표(2.1%)를 얻었다(다크호스 프레스). 남은 진술서 투표(affidavit ballot, 유권자 자격 확인이 끝나야 세는 표)가 승부를 가르는데, 공식 수치는 없고 콜럼 선거대책본부장 제라드 헨더슨은 최소 1만 5000장(슈퍼토크), 콜럼 캠프는 다른 보도에서 1만~1만 5000장으로 추산했다(다크호스 프레스). 개표에 최대 영업일 5일이 걸릴 수 있다(매그놀리아 트리뷴). 힌즈 카운티는 자정 직후 개표를 멈추고 수요일 아침 재개할 계획이었다. 하이드스미스 캠프는 내부 집계로 이긴다고 주장한다. 결선 없이 최다 득표자가 이긴다. 콜럼은 현지 4일 기자회견에서 \"우리가 이긴다\"며 법정 다툼까지 준비했다고 말했다(NBC). 우편 투표는 11월 10일까지 도착하면 세는데, 신청하고 아직 돌려보내지 않은 표가 약 6500장이다(데모크라시 도킷). 미시시피 국무장관실은 세지 않은 우편 부재자 투표가 3600장이 넘는다고 밝혔다(WJTV). 하이드스미스 선거대책본부장 제이크 몬슨은 표차가 \"수십 표\"에 불과하다고 말했다(WJTV). AP는 현지 4일 낮까지 판정하지 않았다. 진술서 투표 유권자는 11월 10일까지 선거 사무소에 신분증을 내야 하는데, AP에 따르면 2022년에는 진술서 투표 7612장 중 5710장이 집계됐다(WXXV·티파 뉴스). 데일리 리더는 결과가 빨라야 선거 일주일 뒤에 나온다고 전했다. 카운티 인증은 11월 13일, 주 인증은 12월 3일까지이고, 미시시피에는 재검표 법이 없어 후보들은 소송으로 특정 표를 넣거나 빼 달라고 다툴 수 있다(데모크라시 도킷). 마이클 왓슨 주 국무장관은 현지 4일 아직 안 들어온 우편 부재자 투표가 약 3600장이고 진술서 투표는 몇 장인지 모른다고 밝혔다(선 헤럴드). 민주당 강세인 힌즈 카운티와 공화당 강세인 이웃 랭킨 카운티 모두 10%가 아직 집계되지 않았다(선 헤럴드).",
+    "note_en": "Uncalled by AP. As of 11:45 a.m. Nov 4 the gap is 65 of more than 945,000 votes counted (Sun Herald), with independent Ty Pinkins on 19,935 (2.1%) (Dark Horse Press). Affidavit ballots, counted only once a voter's eligibility is checked, will decide it. There is no official figure: Colom campaign manager Gerard Henderson says at least 15,000 (SuperTalk), and the campaign estimated 10,000 to 15,000 in another report (Dark Horse Press). Counting could take up to five business days (Magnolia Tribune). Hinds County paused shortly after midnight and planned to resume Wednesday morning. The Hyde-Smith campaign says its internal numbers show her winning. There is no runoff: the top vote-getter wins. At a Nov 4 news conference Colom said \"We are going to win this\" and that his team is prepared to go to court (NBC). Mail ballots count if they arrive by Nov 10, and roughly 6,500 requested ballots had not been returned (Democracy Docket). The Mississippi Secretary of State's Office said more than 3,600 mail absentee ballots remain uncounted (WJTV). Hyde-Smith campaign manager Jake Monssen said the margin is \"measured in just dozens of votes\" (WJTV). AP had not called the race by midday Nov 4 local time. Affidavit voters have until Nov 10 to show ID at local election offices; per AP, 5,710 of 7,612 affidavit ballots were counted in 2022 (WXXV, Tippah News). The Daily Leader says results will not be available until at least a week after the election. Local certification is due Nov 13 and state certification Dec 3. Mississippi has no recount law, so candidates can sue to include or exclude ballots (Democracy Docket). Secretary of State Michael Watson said on Nov 4 that about 3,600 mail absentee ballots are outstanding and the number of affidavit ballots is unknown (Sun Herald). In Democratic-leaning Hinds County and neighboring Republican-leaning Rankin County, 10% of the vote is still uncounted (Sun Herald)."
    },
    {
     "st": "AL",
@@ -1283,8 +1283,8 @@
     "cand_en": "Richard Ojeda II",
     "vs": "리처드 허드슨(현역)",
     "vs_en": "Richard Hudson (incumbent)",
-    "note": "공화당 하원 선거 사령탑(NRCC 위원장)을 꺾음(NBC 예측)",
-    "note_en": "Beat the chair of the House GOP campaign arm (NBC projection)",
+    "note": "공화당 하원 선거 사령탑(NRCC 위원장)을 꺾음(NBC 예측). 허드슨은 패배를 인정했고, CBS는 아직 예측하지 않았다",
+    "note_en": "Beat the chair of the House GOP campaign arm (NBC projection). Hudson has conceded; CBS has not yet projected the race",
     "tally": {
      "cands": [
       {
@@ -3117,6 +3117,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T23:11:00Z",
+   "text": "새 AP 판정 확인 없음. 상원 미시시피: 현지 4일 오전 11시 45분 콜럼(민) 46만 2857표, 하이드스미스(공) 46만 2792표로 표차 65표(선 헤럴드). 마이클 왓슨 주 국무장관은 우편 부재자 약 3600장이 남았고 진술서 투표 수는 모른다고 밝혔다. 하원: 제프리스 민주당 대표가 의장 출마를 공식 발표, 최소 255석 전망(CBS). 노스캐롤라이나 9구 허드슨(공·현역) 패배 인정(CBS).",
+   "text_en": "No new AP calls confirmed. Mississippi Senate: at 11:45 a.m. local Nov 4, Colom (D) 462,857, Hyde-Smith (R) 462,792, a 65-vote gap (Sun Herald). Secretary of State Michael Watson said about 3,600 mail absentee ballots are outstanding and the number of affidavit ballots is unknown. House: Democratic leader Jeffries formally announced his run for speaker and expects at least 255 seats (CBS). NC-9: Hudson (R, incumbent) conceded (CBS)."
+  },
+  {
    "t": "2026-11-04T22:10:00Z",
    "text": "새 AP 판정 확인 없음. 메인 2구: 동부 오후 5시 기준 약 91.7% 개표에 르페이지(공) 50.3%·던랩(민) 49.7%, AP 미판정. 르페이지는 \"약 4000표 앞서 있고 상대에게 승리할 길이 없다\"고 말했고 던랩은 패배를 인정하지 않았다(WABI). 애리조나 2구: 현지 4일 아침 네즈(민)가 크레인(공·현역)을 86표 앞섬, 6구는 디시전 데스크 HQ가 멘도사(민) 승리로 판정(센터 스퀘어). 상원 미시시피·알래스카는 새 판정 확인 없음. 하원 정당별 의석은 새 수치를 확인하지 못해 그대로.",
    "text_en": "No new AP calls confirmed. ME-2: LePage (R) 50.3%, Dunlap (D) 49.7% with an estimated 91.7% in as of 5 p.m. ET, not called by AP. LePage says he is \"up about 4,000\" with \"no path to victory\" for his opponent; Dunlap has not conceded (WABI). AZ-2: Nez (D) led Crane (R, inc.) by 86 votes on the morning of Nov 4; AZ-6: Decision Desk HQ called it for Mendoza (D) (The Center Square). No new calls confirmed in the Mississippi and Alaska Senate races. House party totals unchanged; no newer figure confirmed."
@@ -3260,11 +3265,6 @@
    "t": "2026-11-04T04:49:00Z",
    "text": "상원: AP, 민주당 다수 판정(타임 보도). 하원은 AP 판정 전.",
    "text_en": "Senate: AP calls control for Democrats (TIME). AP has not yet called the House."
-  },
-  {
-   "t": "2026-11-04T04:35:00Z",
-   "text": "아이오와 상원: AP, 민주당 조시 투렉이 공화당 애슐리 힌슨을 꺾었다고 확정(공화당 의석).",
-   "text_en": "Iowa Senate: AP calls it for Democrat Josh Turek over Republican Ashley Hinson (GOP seat)."
   }
  ],
  "how": [
@@ -3285,9 +3285,14 @@
    "LePage claims win in uncalled ME-2 (WABI)"
   ],
   [
-   "던랩 \"아직 박빙\"(메인 모닝 스타, 야후)",
-   "https://www.yahoo.com/news/politics/articles/lepage-declares-victory-maine-2nd-191234948.html",
-   "Dunlap insists race too close to call (Maine Morning Star via Yahoo)"
+   "미시시피 상원 다음 절차(선 헤럴드, 야후)",
+   "https://www.yahoo.com/news/politics/articles/next-deadlocked-u-senate-race-174810941.html",
+   "What's next in the deadlocked Senate race (Sun Herald via Yahoo)"
+  ],
+  [
+   "CBS 뉴스 하원 라이브(동부 4일 오후 6시 11분)",
+   "https://www.cbsnews.com/live-updates/house-election-results-2026/",
+   "CBS News House live updates (6:11 p.m. ET Nov 4)"
   ],
   [
    "미시시피 진술서 투표와 인증 일정(데모크라시 도킷)",
@@ -3298,16 +3303,11 @@
    "펠톨라 근소한 선두(더힐, 야후)",
    "https://www.yahoo.com/news/politics/articles/peltola-takes-slight-lead-alaska-160714174.html",
    "Peltola takes slight lead (The Hill via Yahoo)"
-  ],
-  [
-   "애리조나 하원 선거구 현황(센터 스퀘어, 야후)",
-   "https://www.yahoo.com/news/politics/articles/arizona-democrats-maintain-blue-wave-190000696.html",
-   "Arizona House races (The Center Square via Yahoo)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left; Democrats narrowly lead in both, but neither is likely to be settled before next week. The last House figure Pando could confirm is Democrats 237, Republicans 139 on the Fox News results page (3:35 p.m. ET Nov 4). The race to watch this evening is ME-2: Paul LePage (R) led 50.3% to 49.7% with 91.7% in as of 5 p.m. ET and said his opponent has \"no path to victory,\" but Matt Dunlap (D) says \"there are plenty of ballots left to count\" and has not conceded, and AP has not called it (WABI).",
+ "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) led by 65 of more than 945,000 votes at midday local time on Nov 4, and with an unknown number of affidavit ballots (counted after eligibility checks) and a Nov 10 deadline, it will not be settled quickly. The last House figure Pando could confirm is Democrats 237, Republicans 139 on the Fox News results page (3:35 p.m. ET Nov 4), and close races such as ME-2, where Paul LePage (R) has declared victory, remain uncalled by AP. Meanwhile House Democratic leader Hakeem Jeffries formally announced his run for speaker and said he expects Democrats to win at least 255 seats (CBS).",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
