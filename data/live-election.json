@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T13:56:00Z",
+ "updatedAt": "2026-11-04T15:17:00Z",
  "source": {
   "name": "AP · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 앞서고 약 8만 표가 남았다. 하원은 NBC 판정 의석이 민주 231·공화 144로 늘었고(현지 4일 오전 8시 33분), 아직 60곳이 미판정이다. 미네소타 1구는 개표구가 모두 보고된 가운데 제이크 존슨(민)이 현역 브래드 핀스태드(공)를 324표 앞서 승리를 선언했지만, 재검표 가능성이 크다. 미시간 4구에서도 공화당 현역 빌 하위징아가 개표가 진행되면서 뒤지기 시작했다.",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 1677표 앞서고 약 8만 표가 남았다. 하원은 마지막으로 확인한 NBC 판정 의석이 민주 231·공화 144이고(현지 4일 오전 8시 33분) 60곳이 미판정이었다. 초접전 선거구는 아직 판정이 없는데, 미네소타 1구는 324표 차로 재검표 가능성이 크고, 노스캐롤라이나 5구는 척 허버드(민)가 버지니아 폭스(공·현역)를 99표 앞서며, 메인 2구는 88% 개표에서 맷 던랩(민)이 폴 르페이지(공)를 50.09% 대 49.85%로 앞선다.",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -1178,8 +1178,8 @@
     "cand_en": "Dan Sullivan",
     "vs": "메리 펠톨라",
     "vs_en": "Mary Peltola",
-    "note": "AP·NBC 미확정. NBC 집계로 설리번(현역) 10만 751표(48.5%), 펠톨라 9만 9074표(47.7%)이고 약 8만 표가 남았다. 우편 투표는 10일(해외 발송 15일)까지 받고, 11월 18일에 과반이 없으면 선호투표를 집계한다(알래스카 퍼블릭 미디어). 뉴스위크에 따르면 주 당국은 10·13·18일에 개표를 갱신한다",
-    "note_en": "Uncalled by AP or NBC. NBC's count has Sen. Sullivan on 100,751 (48.5%) and Peltola on 99,074 (47.7%), with about 80,000 votes left. Mail ballots are accepted for 10 days (15 from overseas), and ranked choices are tabulated on Nov 18 if no one has a majority (Alaska Public Media). Per Newsweek, the state plans count updates on Nov 10, 13 and 18"
+    "note": "AP·NBC 미확정. NBC 집계로 설리번(현역) 10만 751표(48.5%), 펠톨라 9만 9074표(47.7%)이고 약 8만 표가 남았다. 우편 투표는 10일(해외 발송 15일)까지 받고, 11월 18일에 과반이 없으면 선호투표를 집계한다(알래스카 퍼블릭 미디어). 뉴스위크에 따르면 주 당국은 10·13·18일에 개표를 갱신한다. 3위는 공화당 제럴드 하이크스(4495표, 2.2%)이고, 4위는 이름이 같은 은퇴 교사 댄 설리번(3448표, 1.7%)이다. 공화당은 민주당이 표를 가르려고 내세운 후보라고 주장했고 펠톨라는 관여를 부인했다(보스턴25, 현지 4일 오전 7시 58분). 표차 1677표는 뉴욕타임스 집계를 인용한 같은 기사와 일치한다",
+    "note_en": "Uncalled by AP or NBC. NBC's count has Sen. Sullivan on 100,751 (48.5%) and Peltola on 99,074 (47.7%), with about 80,000 votes left. Mail ballots are accepted for 10 days (15 from overseas), and ranked choices are tabulated on Nov 18 if no one has a majority (Alaska Public Media). Per Newsweek, the state plans count updates on Nov 10, 13 and 18. Third is Republican Gerald Heikes (4,495, 2.2%), and fourth is a retired teacher also named Dan Sullivan (3,448, 1.7%). Republicans allege Democrats planted him as a spoiler; Peltola denies involvement (Boston 25, 7:58 a.m. ET Nov 4). The 1,677-vote gap matches the New York Times count cited in that report"
    },
    {
     "st": "ID",
@@ -2434,8 +2434,8 @@
       "NBC News House results (AP data)"
      ]
     },
-    "note": "미판정. NBC 집계로 던랩 14만 8454표, 르페이지 14만 7747표이고 약 5만 4000표가 남았다. 방고어 데일리 뉴스는 현지 4일 새벽 분석에서 남은 111개 타운이 르페이지에게 유리해 그가 이길 가능성이 크다고 보면서도 \"판정은 아니다\"라고 밝혔다. 과반에 조금 못 미치면 선호투표 집계로 갈 수 있지만, 이 신문은 그럴 가능성을 낮게 봤다",
-    "note_en": "Uncalled. NBC's count has Dunlap on 148,454 and LePage on 147,747, with about 54,000 votes left. The Bangor Daily News analysis early on Nov 4 says the remaining 111 towns favor LePage, making him the likely winner, but stresses \"that is not a call.\" A ranked-choice count is possible if the winner falls just short of a majority, though the paper considers that unlikely"
+    "note": "미판정. NBC 집계로 던랩 14만 8454표, 르페이지 14만 7747표이고 약 5만 4000표가 남았다. 방고어 데일리 뉴스는 현지 4일 새벽 분석에서 남은 111개 타운이 르페이지에게 유리해 그가 이길 가능성이 크다고 보면서도 \"판정은 아니다\"라고 밝혔다. 과반에 조금 못 미치면 선호투표 집계로 갈 수 있지만, 이 신문은 그럴 가능성을 낮게 봤다. 지역 매체 메인 와이어는 현지 4일 오전 9시 4분 기사에서 88% 개표 기준 던랩 50.09%, 르페이지 49.85%로 전했다",
+    "note_en": "Uncalled. NBC's count has Dunlap on 148,454 and LePage on 147,747, with about 54,000 votes left. The Bangor Daily News analysis early on Nov 4 says the remaining 111 towns favor LePage, making him the likely winner, but stresses \"that is not a call.\" A ranked-choice count is possible if the winner falls just short of a majority, though the paper considers that unlikely. The Maine Wire reported at 9:04 a.m. ET Nov 4 that with 88% in, Dunlap had 50.09% to LePage's 49.85%"
    },
    {
     "d": "NY-21",
@@ -2650,8 +2650,8 @@
       "Minnesota 1st District too close to call (MPR News)"
      ]
     },
-    "note": "AP 판정은 확인하지 못했다. 개표구가 모두 보고된 현지 4일 아침 표차는 324표다(주 국무장관실 집계, MPR·KSTP). 존슨은 승리를 선언했고, 핀스태드는 4일 아침까지 성명도 패배 인정도 내지 않았다(KSTP). 미네소타는 재검표가 자동이 아니어서 진 쪽이 요청해야 하며, 표차가 0.25% 미만이면 공금으로 치른다(MPR). KSTP는 재검표 가능성이 크다고 전했다",
-    "note_en": "AP call not confirmed. With all precincts reporting on the morning of Nov 4, the gap is 324 votes (Secretary of State count, via MPR and KSTP). Johnson has declared victory; Finstad had issued no statement or concession as of that morning (KSTP). Minnesota recounts are not automatic: the trailing candidate must request one, and it is publicly funded if the margin is under 0.25% (MPR). KSTP says a recount is likely."
+    "note": "AP 판정은 확인하지 못했다. 개표구가 모두 보고된 현지 4일 아침 표차는 324표다(주 국무장관실 집계, MPR·KSTP). 존슨은 승리를 선언했고, 핀스태드는 4일 아침까지 성명도 패배 인정도 내지 않았다(KSTP). 미네소타는 재검표가 자동이 아니어서 진 쪽이 요청해야 하며, 표차가 0.25% 미만이면 공금으로 치른다(MPR). KSTP는 재검표 가능성이 크다고 전했다. 현지 4일 오전 기사에서도 표차는 324표이고, 존슨은 그날 저녁 승리 연설을 할 계획이다(KAAL)",
+    "note_en": "AP call not confirmed. With all precincts reporting on the morning of Nov 4, the gap is 324 votes (Secretary of State count, via MPR and KSTP). Johnson has declared victory; Finstad had issued no statement or concession as of that morning (KSTP). Minnesota recounts are not automatic: the trailing candidate must request one, and it is publicly funded if the margin is under 0.25% (MPR). KSTP says a recount is likely. As of the morning of Nov 4 the gap was still 324, and Johnson planned a victory speech that evening (KAAL)"
    },
    {
     "d": "FL-25",
@@ -2883,8 +2883,8 @@
     "cand_en": "Chuck Hubbard",
     "vs": "버지니아 폭스(현역)",
     "vs_en": "Virginia Foxx (incumbent)",
-    "note": "미판정. 공화당 현역이 99표 뒤지고 있고 약 1300표가 남았다(NBC 추정)",
-    "note_en": "Uncalled. The GOP incumbent trails by 99 votes with about 1,300 left (NBC estimate)",
+    "note": "미판정. 공화당 현역이 99표 뒤지고 있고 약 1300표가 남았다(NBC 추정). 뉴스앤드옵서버는 개표구가 모두 보고된 가운데 48.7% 대 48.66%이고 폭스가 재검표를 요청할 수 있는 표차라고 전했다. 결과는 11월 13일 카운티 집계 확정 전까지 비공식이고, 재검표는 카운티 집계 확정 뒤 둘째 영업일 정오까지 주 선관위에 서면으로 요청한다(노스 스테이트 저널)",
+    "note_en": "Uncalled. The GOP incumbent trails by 99 votes with about 1,300 left (NBC estimate). The News & Observer reports 48.7% to 48.66% with all precincts in, a margin at which Foxx could request a recount. Results stay unofficial until the Nov 13 canvass, and a recount request goes in writing to the state board by noon on the second business day after the county canvass (North State Journal)",
     "tally": {
      "cands": [
       {
@@ -3119,6 +3119,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T15:17:00Z",
+   "text": "새 판정 확인 없음. 메인 2구: 88% 개표 던랩(민) 50.09%·르페이지(공) 49.85%(메인 와이어). 미네소타 1구: 표차 324표 그대로, 존슨(민)은 저녁 승리 연설 예정(KAAL). 노스캐롤라이나 5구: 허버드(민) 99표 앞섬, 폭스(공·현역) 재검표 요청 가능(뉴스앤드옵서버).",
+   "text_en": "No new calls confirmed. ME-2: 88% in, Dunlap (D) 50.09%, LePage (R) 49.85% (The Maine Wire). MN-1: gap still 324, and Johnson (D) plans a victory speech this evening (KAAL). NC-5: Hubbard (D) leads by 99, and Rep. Foxx (R) could request a recount (News & Observer)."
+  },
+  {
    "t": "2026-11-04T13:56:00Z",
    "text": "미네소타 1구: 개표구 전부 보고, 존슨(민) 16만 3057표(49.99%)·핀스태드(공·현역) 16만 2733표(49.89%), 324표 차. 존슨 승리 선언, 핀스태드는 성명 없음, 재검표 가능성 큼(MPR·KSTP). AP 판정은 미확인.",
    "text_en": "MN-1: All precincts reporting, Johnson (D) 163,057 (49.99%), Rep. Finstad (R) 162,733 (49.89%), a 324-vote gap. Johnson declared victory; Finstad has made no statement; a recount is likely (MPR, KSTP). AP call not confirmed."
@@ -3262,11 +3267,6 @@
    "t": "2026-11-04T04:10:00Z",
    "text": "오하이오 상원: AP, 민주당 셰러드 브라운이 공화당 존 허스테드를 꺾었다고 확정(공화당 의석).",
    "text_en": "Ohio Senate: AP calls it for Democrat Sherrod Brown over Republican Jon Husted (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T04:05:00Z",
-   "text": "텍사스 상원: AP, 민주당 제임스 탈라리코가 공화당 켄 팩스턴을 꺾었다고 확정(공화당 의석).",
-   "text_en": "Texas Senate: AP calls it for Democrat James Talarico over Republican Ken Paxton (GOP seat)."
   }
  ],
  "how": [
@@ -3292,24 +3292,24 @@
    "Mississippi Senate too close to call (Magnolia Tribune)"
   ],
   [
-   "민주당 상·하원 장악 요점(알자지라, AP 집계 인용)",
-   "https://www.aljazeera.com/news/2026/11/4/democrats-win-control-of-house-and-senate-key-us-midterms-takeaways",
-   "Democrats win House and Senate: key takeaways (Al Jazeera, citing AP tally)"
+   "노스캐롤라이나 5구 폭스 패배·재검표 가능(뉴스앤드옵서버, 야후 전재)",
+   "https://www.yahoo.com/news/politics/articles/nc-rep-virginia-foxx-loses-053802596.html",
+   "Foxx loses but within recount range in NC-5 (News & Observer via Yahoo)"
   ],
   [
-   "메인 2구 분석(방고어 데일리 뉴스)",
-   "https://www.bangordailynews.com/2026/11/04/politics/elections/paul-lepage-on-track-maine-republicans-bright-spot/",
-   "Maine 2nd District analysis (Bangor Daily News)"
+   "메인 2구 미확정(메인 와이어)",
+   "https://www.themainewire.com/2026/11/maine-second-congressional-district-election-results-still-undecided/",
+   "Maine 2nd District still undecided (The Maine Wire)"
   ],
   [
-   "미네소타 1구 접전(MPR 뉴스)",
-   "https://www.mprnews.org/story/2026/11/04/minnesotas-1st-congressional-district-race-too-close-to-call",
-   "Minnesota 1st District too close to call (MPR News)"
+   "미네소타 1구 존슨 승리 선언, 재검표 예상(KAAL)",
+   "https://www.kaaltv.com/news/top-news/jake-johnson-declares-victory-over-brad-finstad-in-1st-district-race-recount-expected/",
+   "Johnson declares victory in MN-1, recount expected (KAAL)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In Alaska, Sen. Dan Sullivan (R) is ahead of Mary Peltola (D) with about 80,000 votes left. In the House, NBC-called seats have risen to Democrats 231, Republicans 144 (8:33 a.m. ET Nov 4), with 60 still uncalled. In MN-1, with all precincts reporting, Jake Johnson (D) leads Rep. Brad Finstad (R) by 324 votes and has declared victory, though a recount is likely. In MI-4, GOP Rep. Bill Huizenga has also fallen behind as counting continued.",
+ "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In Alaska, Sen. Dan Sullivan (R) leads Mary Peltola (D) by 1,677 votes with about 80,000 left. In the House, the latest NBC-called seats Pando confirmed are Democrats 231, Republicans 144 (8:33 a.m. ET Nov 4), with 60 uncalled then. The closest districts remain uncalled: MN-1 is at a 324-vote gap with a recount likely, Chuck Hubbard (D) leads Rep. Virginia Foxx (R) by 99 votes in NC-5, and Matt Dunlap (D) leads Paul LePage (R) 50.09% to 49.85% with 88% in ME-2.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
