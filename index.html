@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050607"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2040%2040%27%3E%3Crect%20width=%2740%27%20height=%2740%27%20rx=%277%27%20fill=%27%23050607%27/%3E%3Ccircle%20cx=%2720%27%20cy=%2720%27%20r=%2712.5%27%20fill=%27none%27%20stroke=%27%23e9edf0%27%20stroke-width=%272%27/%3E%3Cellipse%20cx=%2720%27%20cy=%2720%27%20rx=%275.5%27%20ry=%2712.5%27%20fill=%27none%27%20stroke=%27%23e9edf0%27%20stroke-width=%271.3%27%20opacity=%27.6%27/%3E%3Cpath%20d=%27M7.5%2020h25%27%20stroke=%27%23e9edf0%27%20stroke-width=%271.3%27%20opacity=%27.6%27/%3E%3Cpath%20d=%27M20%202v5M20%2033v5M2%2020h5M33%2020h5%27%20stroke=%27%23ff2a36%27%20stroke-width=%272.6%27/%3E%3Ccircle%20cx=%2720%27%20cy=%2720%27%20r=%272.8%27%20fill=%27%23ff2a36%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="e1ed48107c";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="ecc2e63d88";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <script>(function(){var d=document.documentElement,t=null,s=null;try{t=localStorage.getItem("pando.theme");s=sessionStorage.getItem("pando.intro")}catch(e){}if(t!=="light")d.classList.add("noir");var q=location.search,force=/[?&]intro=1/.test(q);var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(force||(!s&&!rm&&!navigator.webdriver&&!/=/.test(location.hash)))d.classList.add("pd-intro-on")})();</script>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
@@ -2178,6 +2178,97 @@ html.noir .en-land path{fill:#141a1f;stroke:#2a333b}
 html.noir .en-land path.imp,html.noir #ar-map .en-land path.imp{fill:#19212a;stroke:#2c3741}
 html.noir .en-land path.imp:hover,html.noir #ar-map .en-land path.imp:hover{fill:#263340}
 html.noir .ar-bub{fill:#9fb3c2}
+
+/* 판도 특별 페이지(실시간 개표). 블랙 자동 변환에서 빠지도록 build.mjs가 noir 변환 뒤에 붙인다 — 두 테마 모두 같은 어두운 '선거 상황실' 화면. */
+.live-banner{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 4px;padding:11px 14px;border:1px solid #ff2a36;border-radius:8px;background:linear-gradient(90deg,#2a0508,#0b0d10 60%);color:#f2f4f6;text-decoration:none;font-size:13px;position:relative;overflow:hidden}
+.live-banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,#ff2a3622,transparent);transform:translateX(-100%);animation:lvSweep 3.2s linear infinite;pointer-events:none}
+@keyframes lvSweep{to{transform:translateX(100%)}}
+.live-banner:hover{border-color:#ff5a63}
+.lv-dot{width:9px;height:9px;border-radius:50%;background:#ff2a36;box-shadow:0 0 0 0 #ff2a36aa;animation:lvPulse 1.4s infinite;flex:none}
+@keyframes lvPulse{0%{box-shadow:0 0 0 0 #ff2a36aa}70%{box-shadow:0 0 0 9px #ff2a3600}100%{box-shadow:0 0 0 0 #ff2a3600}}
+.lv-tag{font:700 11px/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.14em;color:#ff2a36}
+.lv-ttl{font-weight:800}
+.lv-sum{font-family:"JetBrains Mono",ui-monospace,monospace;font-size:12px;color:#b9c0c7}
+.lv-sum i{font-style:normal;font-weight:800;font-size:14px}
+.lv-sum i.d,.lp-n.d b{color:#5aa2ff}.lv-sum i.r,.lp-n.r b{color:#ff5a5f}
+.lv-sep{color:#555}
+.lv-go{margin-left:auto;font-weight:800;color:#ff5a63;white-space:nowrap}
+.mastnav a.nav-live{color:#ff2a36!important;font-weight:800;display:inline-flex;align-items:center;gap:6px}
+.mastnav a.nav-live i{width:7px;height:7px;border-radius:50%;background:#ff2a36;animation:lvPulse 1.4s infinite}
+
+html.lp-on,html.lp-on body{overflow:hidden}
+.live-page{position:fixed;inset:0;z-index:2000;overflow:auto;background:#050607;color:#e9edf0;-webkit-overflow-scrolling:touch;
+ background-image:linear-gradient(#ffffff06 1px,transparent 1px),linear-gradient(90deg,#ffffff06 1px,transparent 1px);background-size:32px 32px}
+.live-page[hidden]{display:none}
+.lp-top{position:sticky;top:0;z-index:2;display:flex;align-items:center;gap:10px;padding:12px max(16px,calc(50% - 560px));background:#050607ee;backdrop-filter:blur(6px);border-bottom:1px solid #ff2a3655}
+.lp-kick{font:600 11px/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.16em;color:#8b949e}
+.lp-close{margin-left:auto;width:38px;height:38px;border-radius:50%;border:1px solid #ff2a36;background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer}
+.lp-body{max-width:1120px;margin:0 auto;padding:22px 16px 80px}
+.lp-head h2{font-size:clamp(26px,4.4vw,44px);line-height:1.12;letter-spacing:-.03em;margin:4px 0 8px;color:#fff}
+.lp-sub{color:#aab2ba;margin:0 0 10px;font-size:14px;line-height:1.55}
+.lp-meta{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:#8b949e;font-family:"JetBrains Mono",ui-monospace,monospace}
+.lp-upd b{color:#ffcf5a}
+.lp-auto::before{content:"↻ "}
+.lp-headline{margin:16px 0 4px;padding:12px 14px;border-left:3px solid #ff2a36;background:#ff2a3612;font-size:15px;line-height:1.55}
+.lp-headline b{color:#ff5a63;margin-right:6px}
+.lp-chambers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.lp-ch{border:1px solid #20262c;border-radius:10px;padding:16px;background:#0b0e11}
+.lp-ch-h{display:flex;align-items:baseline;gap:8px}.lp-ch-h h3{margin:0;font-size:17px;color:#fff}.lp-ch-h small{color:#8b949e;font-size:12px}
+.lp-nums{display:flex;align-items:flex-end;justify-content:space-between;gap:8px;margin:10px 0 10px}
+.lp-n{display:flex;flex-direction:column}.lp-n.r{align-items:flex-end}
+.lp-n b{font:700 clamp(40px,7vw,64px)/1 Oswald,"Pretendard",sans-serif;letter-spacing:-.01em}
+.lp-n span{font-size:12px;color:#aab2ba;font-weight:700}.lp-n em{font-style:normal;font-size:11px;color:#8b949e;font-family:"JetBrains Mono",monospace}
+.lp-mid{text-align:center;flex:1;min-width:0}
+.lp-maj{font:600 12px/1.2 "JetBrains Mono",monospace;color:#8b949e}
+.lp-proj{display:inline-block;padding:5px 9px;border-radius:5px;font-size:12px;font-weight:800;line-height:1.35}
+.lp-proj.d{background:#1d4ed833;color:#8cc0ff;border:1px solid #3b82f6}.lp-proj.r{background:#b91c1c33;color:#ff9a9d;border:1px solid #ef4444}
+.lp-bar{position:relative;display:flex;height:16px;border-radius:4px;overflow:visible;background:#1a1f24;margin:18px 0 6px}
+.lp-bar i{display:block;height:100%;transition:width .8s ease}
+.lp-bar i.d{background:#2563eb;border-radius:4px 0 0 4px}.lp-bar i.r{background:#dc2626;border-radius:0 4px 4px 0}.lp-bar i.o{background:#c8a96a}.lp-bar i.u{background:transparent}
+.lp-need{position:absolute;top:-7px;bottom:-7px;width:2px;background:#fff;transform:translateX(-1px)}
+.lp-need span{position:absolute;top:-17px;left:50%;transform:translateX(-50%);font:700 11px/1 "JetBrains Mono",monospace;color:#fff}
+.lp-bar--wait{align-items:center;justify-content:center;font-size:12px;color:#8b949e;height:28px}
+.lp-note{font-size:12px;color:#8b949e;line-height:1.55;margin:8px 0 0}
+.lp-sec{margin-top:26px}
+.lp-sec h3{font-size:16px;color:#fff;margin:0 0 10px;padding-bottom:8px;border-bottom:1px solid #20262c}.lp-sec h3 small{color:#8b949e;font-weight:500;font-size:12px;margin-left:6px}
+.lp-map{width:100%;max-width:640px;display:block;margin:4px auto 0}
+.lp-tile rect{fill:#14191e;stroke:#232a31;stroke-width:1}
+.lp-tile text{font:700 13px "JetBrains Mono",monospace;fill:#59636d;pointer-events:none}
+.lp-tile.t-none rect{fill:#0d1115;stroke:#161b20;stroke-dasharray:3 3}.lp-tile.t-none text{fill:#3a434c}
+.lp-tile[data-lp-st]{cursor:pointer}
+.lp-tile.s-wait rect,.lp-tile.s-count rect{fill:#2a3139;stroke:#46505a}.lp-tile.s-wait text,.lp-tile.s-count text{fill:#c3cad1}
+.lp-tile.t-D.s-won rect{fill:#2563eb;stroke:#60a5fa}.lp-tile.t-R.s-won rect{fill:#dc2626;stroke:#f87171}.lp-tile.t-I.s-won rect{fill:#b8955a}
+.lp-tile.t-D.s-lead rect{fill:#1e3a6e;stroke:#3b82f6;stroke-dasharray:4 2}.lp-tile.t-R.s-lead rect{fill:#6b1d22;stroke:#ef4444;stroke-dasharray:4 2}.lp-tile.t-I.s-lead rect{fill:#5a4a2c;stroke:#c8a96a;stroke-dasharray:4 2}
+.lp-tile.s-won text,.lp-tile.s-lead text{fill:#fff}
+.lp-flipdot{fill:#ffcf5a}
+.lp-legend{display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center;font-size:12px;color:#aab2ba;margin-top:10px}
+.lp-legend span{display:inline-flex;align-items:center;gap:5px}
+.lp-legend .k{display:inline-block;width:14px;height:14px;border-radius:3px;background:#2a3139}
+.lp-legend .k.d.won{background:#2563eb}.lp-legend .k.d.lead{background:#1e3a6e;outline:1px dashed #3b82f6}.lp-legend .k.r.won{background:#dc2626}.lp-legend .k.r.lead{background:#6b1d22;outline:1px dashed #ef4444}.lp-legend .k.i.lead{background:#5a4a2c;outline:1px dashed #c8a96a}.lp-legend .k.none{background:#0d1115;outline:1px dashed #2a3139}
+.lp-legend .k-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#ffcf5a}
+.lp-races{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:8px}
+.lp-race{display:grid;grid-template-columns:auto 1fr auto;grid-template-areas:"st stn chip" "st cand cand" "st note note";gap:2px 10px;align-items:center;padding:10px 12px;border:1px solid #20262c;border-left:4px solid #46505a;border-radius:7px;background:#0b0e11;cursor:pointer}
+.lp-race.p-D{border-left-color:#3b82f6}.lp-race.p-R{border-left-color:#ef4444}.lp-race.p-I{border-left-color:#c8a96a}
+.lp-st{grid-area:st;font:700 18px "JetBrains Mono",monospace;color:#fff;align-self:start}
+.lp-stn{grid-area:stn;font-weight:800;font-size:14px;color:#e9edf0}.lp-stn small{color:#ffcf5a;font-size:11px}
+.lp-cand{grid-area:cand;font-size:13px;color:#c3cad1;min-width:0}.lp-cand small{color:#8b949e}.lp-pct{display:block;font-family:"JetBrains Mono",monospace}
+.lp-chip{grid-area:chip;font-size:11px;font-weight:800;padding:3px 7px;border-radius:4px;background:#1a1f24;color:#c3cad1;white-space:nowrap}
+.lp-race.p-D.s-won .lp-chip{background:#2563eb;color:#fff}.lp-race.p-R.s-won .lp-chip{background:#dc2626;color:#fff}.lp-race.p-I.s-won .lp-chip{background:#b8955a;color:#111}
+.lp-race.p-D.s-lead .lp-chip{color:#8cc0ff;border:1px dashed #3b82f6}.lp-race.p-R.s-lead .lp-chip{color:#ff9a9d;border:1px dashed #ef4444}.lp-race.p-I.s-lead .lp-chip{color:#e6cf9c;border:1px dashed #c8a96a}
+.lp-rnote{grid-area:note;font-size:12px;color:#8b949e;line-height:1.45}
+.lp-races--done .lp-race{padding:8px 12px}
+.lp-hit{animation:lpHit 1.6s ease}
+@keyframes lpHit{0%,40%{box-shadow:0 0 0 2px #ffcf5a}100%{box-shadow:0 0 0 0 transparent}}
+.lp-flash{animation:lpFlash 2.4s ease 2}
+@keyframes lpFlash{0%,100%{filter:none}30%{filter:brightness(1.8) drop-shadow(0 0 6px #ffcf5a)}}
+.lp-feed{list-style:none;margin:0;padding:0;border-left:2px solid #20262c}
+.lp-feed li{display:flex;gap:10px;padding:6px 0 6px 12px;font-size:13px;line-height:1.5;position:relative}
+.lp-feed li::before{content:"";position:absolute;left:-5px;top:12px;width:8px;height:8px;border-radius:50%;background:#ff2a36}
+.lp-feed time{font:600 12px "JetBrains Mono",monospace;color:#ffcf5a;white-space:nowrap;padding-top:1px}
+.lp-how ul{margin:0;padding-left:18px;font-size:13px;color:#aab2ba;line-height:1.65}
+.lp-src{font-size:12px;color:#8b949e;line-height:1.6;margin-top:10px}.lp-src a{color:#8cc0ff}
+@media(max-width:720px){.lp-chambers{grid-template-columns:1fr}.lv-go{margin-left:0}.live-banner{font-size:12.5px}.lp-races{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){.lv-dot,.live-banner::after,.lp-flash,.mastnav a.nav-live i{animation:none}}
 
 </style>
 <div id="pd-intro" aria-hidden="true"><div class="half t"></div><div class="half b"></div><div class="slit"></div><div class="pdi-core"><svg class="pd-mark" viewBox="0 0 40 40" aria-hidden="true"><circle class="ring" cx="20" cy="20" r="15"/><ellipse class="grid" cx="20" cy="20" rx="6.5" ry="15"/><path class="grid" d="M5 20h30M7.6 12.5h24.8M7.6 27.5h24.8"/><path class="tick" d="M20 0v4M20 36v4M0 20h4M36 20h4"/><circle class="core" cx="20" cy="20" r="2.2"/></svg><div class="word" translate="no">PANDO</div><div class="sub" translate="no">GLOBAL INTELLIGENCE BRIEF</div><div class="log" translate="no"><div>&gt; ESTABLISHING SECURE LINK ........ <b>OK</b></div><div>&gt; LOADING 250 COUNTRY DOSSIERS .... <b>OK</b></div><div>&gt; CROSS-CHECKING SOURCES .......... <b>OK</b></div></div></div><div class="stamp" translate="no">ACCESS GRANTED</div><button class="skip" type="button" translate="no">SKIP ▸</button></div><script>(function(){var d=document.documentElement;var el=document.getElementById("pd-intro");if(!d.classList.contains("pd-intro-on")){if(el)el.remove();return}var T=[],ended=0;function at(ms,f){T.push(setTimeout(f,ms))}function fin(){d.classList.remove("pd-intro-on","pd-go","pd-slit","pd-open");try{sessionStorage.setItem("pando.intro","1")}catch(e){}if(el&&el.parentNode)el.parentNode.removeChild(el)}function end(){if(ended)return;ended=1;T.forEach(clearTimeout);d.classList.add("pd-slit");setTimeout(function(){d.classList.add("pd-open")},180);setTimeout(fin,1000)}at(1350,function(){d.classList.add("pd-go")});at(1750,function(){d.classList.add("pd-slit")});at(2150,function(){ended=1;d.classList.add("pd-open")});at(2950,fin);el.addEventListener("click",end);addEventListener("keydown",function(){if(d.classList.contains("pd-intro-on"))end()},{once:true})})();</script>
@@ -7144,6 +7235,147 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  setTimeout(decorate,800);
  if(pins.length){dock();setOpen(get(DK,1)===1);paint()}
  window.__pandoAsk={run,ask:q=>ensure().then(()=>ask(q))};
+})();
+
+</script>
+<script>
+/* 판도 특별 페이지: 실시간 개표(지금은 2026 미국 중간선거).
+   data/live-election.json 하나로 움직인다. active가 false이거나 파일이 없으면 아무것도 그리지 않는다
+   → 선거가 끝나면 active:false로 두고(또는 파일 삭제) 결과는 civics·contexts 등 본 자료에 옮긴다.
+   첫 화면 맨 위 LIVE 띠 + 메뉴 'LIVE' + 전체 화면 특별 페이지(#live). 열려 있는 동안 60초마다 다시 받아 바뀐 곳을 깜빡인다. */
+(function(){
+ "use strict";
+ const URL_="data/live-election.json";
+ const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+ const safe=u=>/^https?:\/\/[^\s"'<>]+$/i.test(String(u||""))?String(u):"#";
+ const EN=()=>window.PANDO_LANG==="en";
+ // 데이터 글: 영어판이면 같은 이름 + "_en" 칸을 쓴다(예약 작업이 함께 적는다)
+ const L=(o,k)=>o?(EN()&&o[k+"_en"]!=null?o[k+"_en"]:o[k]):"";
+ const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+ // 미국 주 타일 지도(11×8)
+ const GRID={AK:[0,0],ME:[10,0],VT:[9,1],NH:[10,1],WA:[0,2],ID:[1,2],MT:[2,2],ND:[3,2],MN:[4,2],IL:[5,2],WI:[6,2],MI:[7,2],NY:[8,2],RI:[9,2],MA:[10,2],
+  OR:[0,3],NV:[1,3],WY:[2,3],SD:[3,3],IA:[4,3],IN:[5,3],OH:[6,3],PA:[7,3],NJ:[8,3],CT:[9,3],CA:[0,4],UT:[1,4],CO:[2,4],NE:[3,4],MO:[4,4],KY:[5,4],WV:[6,4],VA:[7,4],MD:[8,4],DE:[9,4],
+  AZ:[1,5],NM:[2,5],KS:[3,5],AR:[4,5],TN:[5,5],NC:[6,5],SC:[7,5],OK:[3,6],LA:[4,6],MS:[5,6],AL:[6,6],GA:[7,6],HI:[0,7],TX:[3,7],FL:[8,7]};
+ const STK={AL:"앨라배마",AK:"알래스카",AZ:"애리조나",AR:"아칸소",CA:"캘리포니아",CO:"콜로라도",CT:"코네티컷",DE:"델라웨어",FL:"플로리다",GA:"조지아",HI:"하와이",ID:"아이다호",IL:"일리노이",IN:"인디애나",IA:"아이오와",KS:"캔자스",KY:"켄터키",LA:"루이지애나",ME:"메인",MD:"메릴랜드",MA:"매사추세츠",MI:"미시간",MN:"미네소타",MS:"미시시피",MO:"미주리",MT:"몬태나",NE:"네브래스카",NV:"네바다",NH:"뉴햄프셔",NJ:"뉴저지",NM:"뉴멕시코",NY:"뉴욕",NC:"노스캐롤라이나",ND:"노스다코타",OH:"오하이오",OK:"오클라호마",OR:"오리건",PA:"펜실베이니아",RI:"로드아일랜드",SC:"사우스캐롤라이나",SD:"사우스다코타",TN:"테네시",TX:"텍사스",UT:"유타",VT:"버몬트",VA:"버지니아",WA:"워싱턴",WV:"웨스트버지니아",WI:"위스콘신",WY:"와이오밍"};
+ const PN={D:"민주당",R:"공화당",I:"무소속"};
+ const ST={won:"확정",lead:"앞섬",wait:"개표 전",count:"개표 중",runoff:"결선"};
+ let data=null,prev=null,timer=0,tick=0;
+
+ function load(first){
+  return fetch(URL_+"?t="+Date.now(),{cache:"no-store"}).then(r=>r.ok?r.json():null).catch(()=>null).then(d=>{
+   if(!d||!d.active){if(first)return;data=null;teardown();return}
+   prev=data;data=d;banner();navLink();if(isOpen())renderPage();
+   if(first){const m=decodeURIComponent(location.hash||"").match(/^#live\b/);if(m)setTimeout(open,200)}
+  });
+ }
+ const ago=iso=>{const t=Date.parse(iso);if(!t)return "";const m=Math.max(0,Math.round((Date.now()-t)/60000)),h=Math.floor(m/60);
+  if(EN())return m<1?"just now":m<60?m+" min ago":h+" h "+(m%60)+" min ago";return m<1?"방금":m<60?m+"분 전":h+"시간 "+(m%60)+"분 전"};
+ const hm=d=>String(d.getUTCHours()).padStart(2,"0")+":"+String(d.getUTCMinutes()).padStart(2,"0");
+ const kst=(iso,short)=>{const t=Date.parse(iso);if(!t)return "";const d=new Date(t+9*3600e3);if(short)return hm(d)+" KST";
+  return EN()?MON[d.getUTCMonth()]+" "+d.getUTCDate()+", "+hm(d)+" KST":(d.getUTCMonth()+1)+"월 "+d.getUTCDate()+"일 "+hm(d)+" KST"};
+
+ // 첫 화면 맨 위 LIVE 띠
+ function banner(){
+  let b=document.getElementById("live-banner");
+  const main=document.querySelector("main");if(!main)return;
+  if(!b){b=document.createElement("a");b.id="live-banner";b.className="live-banner";b.href="#live";
+   const mh=document.querySelector(".masthead");mh?mh.after(b):main.prepend(b);
+   b.addEventListener("click",e=>{e.preventDefault();open()})}
+  const s=data.senate||{},h=data.house||{};
+  b.innerHTML='<span class="lv-dot" aria-hidden="true"></span><b class="lv-tag">LIVE</b><span class="lv-ttl">'+esc(L(data,"title"))+'</span>'+
+   '<span class="lv-sum"><span>상원</span> <i class="d">'+esc(s.dem??"–")+'</i> : <i class="r">'+esc(s.gop??"–")+'</i>'+
+   (h.projection?' <span class="lv-sep">·</span> <span>하원</span> <i class="'+(h.projection.party==="D"?"d":"r")+'">'+esc(L(h.projection,"short"))+'</i>':(h.dem!=null?' <span class="lv-sep">·</span> <span>하원</span> <i class="d">'+esc(h.dem)+'</i> : <i class="r">'+esc(h.gop)+'</i>':""))+
+   '</span><span class="lv-go">실시간 개표 보기 →</span>';
+ }
+ function navLink(){
+  const nav=document.querySelector(".mastnav");if(!nav||nav.querySelector(".nav-live"))return;
+  const a=document.createElement("a");a.href="#live";a.className="nav-live";a.innerHTML='<i aria-hidden="true"></i>LIVE 중간선거';
+  a.addEventListener("click",e=>{e.preventDefault();open()});
+  const first=nav.querySelector("a");first?first.before(a):nav.appendChild(a);
+ }
+ function teardown(){document.getElementById("live-banner")?.remove();document.querySelector(".mastnav .nav-live")?.remove();close()}
+
+ // 특별 페이지
+ function pageEl(){
+  let p=document.getElementById("live-page");if(p)return p;
+  p=document.createElement("div");p.id="live-page";p.className="live-page";p.hidden=true;p.setAttribute("role","dialog");p.setAttribute("aria-modal","true");p.setAttribute("aria-label",data?.title||"LIVE");
+  p.innerHTML='<div class="lp-top"><span class="lv-dot" aria-hidden="true"></span><b class="lv-tag">LIVE</b><span class="lp-kick">SPECIAL · ELECTION DESK</span><button type="button" class="lp-close" aria-label="닫기">×</button></div><div class="lp-body" id="lp-body"></div>';
+  document.body.appendChild(p);
+  p.querySelector(".lp-close").addEventListener("click",close);
+  p.addEventListener("click",e=>{const t=e.target.closest("[data-lp-st]");if(t)showState(t.dataset.lpSt)});
+  document.addEventListener("keydown",e=>{if(e.key==="Escape"&&isOpen())close()});
+  return p;
+ }
+ const isOpen=()=>{const p=document.getElementById("live-page");return p&&!p.hidden};
+ function open(){if(!data)return;const p=pageEl();p.hidden=false;document.documentElement.classList.add("lp-on");renderPage();
+  if(location.hash!=="#live")history.replaceState(null,"","#live");
+  clearInterval(timer);timer=setInterval(()=>load(false),60000);clearInterval(tick);tick=setInterval(clock,15000)}
+ function close(){const p=document.getElementById("live-page");if(p)p.hidden=true;document.documentElement.classList.remove("lp-on");clearInterval(timer);clearInterval(tick);
+  if(location.hash==="#live")history.replaceState(null,"",location.pathname+location.search)}
+ function clock(){const c=document.getElementById("lp-ago");if(c&&data)c.textContent=ago(data.updatedAt)}
+
+ function bar(c,kind){
+  const tot=c.total||100,need=c.control||Math.floor(tot/2)+1,d=+c.dem||0,r=+c.gop||0,o=+c.other||0;
+  const pct=x=>(x/tot*100).toFixed(2)+"%";
+  return '<div class="lp-bar" role="img" aria-label="'+esc(kind)+'"><i class="d" style="width:'+pct(d)+'"></i><i class="o" style="width:'+pct(o)+'"></i><i class="u" style="flex:1"></i><i class="r" style="width:'+pct(r)+'"></i>'+
+   '<b class="lp-need" style="left:'+pct(need)+'"></b></div>';
+ }
+ function chamber(c,kind,key){
+  if(!c)return "";
+  const was=prev&&prev[key]||{};const fl=(a,b)=>a!=null&&b!=null&&a!==b?" lp-flash":"";
+  const ch=c.change||{};const sg=x=>x>0?"+"+x:String(x);
+  return '<section class="lp-ch"><div class="lp-ch-h"><h3>'+esc(kind)+'</h3><small>'+esc(L(c,"sub"))+'</small></div>'+
+   '<div class="lp-nums"><div class="lp-n d'+fl(c.dem,was.dem)+'"><b data-n="'+esc(c.dem??"")+'">'+esc(c.dem??"–")+'</b><span>민주당</span>'+(ch.dem?'<em>'+esc(sg(ch.dem))+'</em>':"")+'</div>'+
+   '<div class="lp-mid">'+(c.projection?'<span class="lp-proj '+(c.projection.party==="D"?"d":"r")+'">'+esc(L(c.projection,"text"))+'</span>':'<span class="lp-maj">과반 '+esc(c.control||"")+'석</span>')+'</div>'+
+   '<div class="lp-n r'+fl(c.gop,was.gop)+'"><b>'+esc(c.gop??"–")+'</b><span>공화당</span>'+(ch.gop?'<em>'+esc(sg(ch.gop))+'</em>':"")+'</div></div>'+
+   (c.dem!=null&&c.gop!=null?bar(c,kind):'<div class="lp-bar lp-bar--wait"><span>의석 집계 중</span></div>')+
+   (c.note?'<p class="lp-note">'+esc(L(c,"note"))+'</p>':"")+'</section>';
+ }
+ function races(){return (data.senate&&data.senate.races)||[]}
+ function tileMap(){
+  const R={};for(const x of races())R[x.st]=x;
+  const W=11,H=8,S=44,G=4;
+  let g="";
+  for(const [st,[cx,cy]] of Object.entries(GRID)){
+   const r=R[st],cls=r?("t-"+(r.party||"x")+" s-"+(r.status||"wait")):"t-none";
+   const old=prev&&prev.senate&&(prev.senate.races||[]).find(z=>z.st===st);
+   const fl=r&&old&&(old.status!==r.status||old.party!==r.party)?" lp-flash":"";
+   g+='<g class="lp-tile '+cls+fl+'"'+(r?' data-lp-st="'+st+'" tabindex="0"':'')+' transform="translate('+(cx*(S+G))+' '+(cy*(S+G))+')"><rect width="'+S+'" height="'+S+'" rx="5"/>'+
+    '<text x="'+S/2+'" y="'+(S/2+4)+'" text-anchor="middle" translate="no">'+st+'</text>'+(r&&r.flip?'<circle cx="'+(S-7)+'" cy="7" r="3.2" class="lp-flipdot"/>':"")+
+    '<title>'+esc((STK[st]||st)+(r?" · "+(PN[r.party]||"")+" "+(ST[r.status]||""):" · 이번 선거 없음"))+'</title></g>';
+  }
+  return '<svg class="lp-map" viewBox="-2 -2 '+(W*(S+G)+2)+' '+(H*(S+G)+2)+'" role="img" aria-label="상원 선거 주별 결과">'+g+'</svg>'+
+   '<div class="lp-legend"><span><i class="k d won"></i>민주 확정</span><span><i class="k d lead"></i>민주 앞섬</span><span><i class="k r won"></i>공화 확정</span><span><i class="k r lead"></i>공화 앞섬</span><span><i class="k i lead"></i>무소속 앞섬</span><span><i class="k wait"></i>개표 전</span><span><i class="k none"></i>선거 없음</span><span><i class="lp-flipdot k-dot"></i>의석 주인 바뀜</span></div>';
+ }
+ function raceRow(x){
+  const p=x.party||"";
+  return '<li class="lp-race p-'+esc(p||"x")+' s-'+esc(x.status||"wait")+'" data-lp-st="'+esc(x.st)+'" id="lp-r-'+esc(x.st)+'"><span class="lp-st" translate="no">'+esc(x.st)+'</span><span class="lp-stn">'+esc(STK[x.st]||x.st)+(x.special?' <small>보궐</small>':"")+'</span>'+
+   '<span class="lp-cand">'+(x.cand?'<b>'+esc(L(x,"cand"))+'</b>'+(x.vs?' <small>vs '+esc(L(x,"vs"))+'</small>':""):"")+(x.pct?'<small class="lp-pct">'+esc(x.pct)+'</small>':"")+'</span>'+
+   '<span class="lp-chip">'+(p?esc(PN[p]||p)+" ":"")+esc(ST[x.status]||"")+(x.flip?' · 뒤집음':"")+'</span>'+(x.note?'<span class="lp-rnote">'+esc(L(x,"note"))+'</span>':"")+'</li>';
+ }
+ function showState(st){const li=document.getElementById("lp-r-"+st);if(!li)return;li.scrollIntoView({behavior:"smooth",block:"center"});li.classList.remove("lp-hit");void li.offsetWidth;li.classList.add("lp-hit")}
+ function renderPage(){
+  const p=pageEl(),b=p.querySelector("#lp-body");if(!data)return;
+  const order={lead:0,count:1,runoff:2,wait:3,won:4};
+  const rs=races().slice().sort((a,b)=>(order[a.status]??5)-(order[b.status]??5)||String(a.st).localeCompare(b.st));
+  const open_=rs.filter(x=>x.status!=="won"),done=rs.filter(x=>x.status==="won");
+  const sc=p.scrollTop;
+  b.innerHTML=
+   '<header class="lp-head"><h2>'+esc(L(data,"title"))+'</h2><p class="lp-sub">'+esc(L(data,"subtitle"))+'</p>'+
+   '<div class="lp-meta"><span class="lp-upd">마지막 갱신 <b id="lp-ago">'+esc(ago(data.updatedAt))+'</b> <small>('+esc(kst(data.updatedAt))+')</small></span><span>집계 '+'<span translate="no">'+esc((data.source&&data.source.name)||"")+'</span>'+'</span><span class="lp-auto">열어 두면 1분마다 자동 갱신</span></div></header>'+
+   (data.headline?'<div class="lp-headline"><b>지금</b> '+esc(L(data,"headline"))+'</div>':"")+
+   '<div class="lp-chambers">'+chamber(data.senate,"상원","senate")+chamber(data.house,"하원","house")+'</div>'+
+   '<section class="lp-sec"><h3>상원 주별 결과 <small>타일을 누르면 그 주로</small></h3>'+tileMap()+'</section>'+
+   (open_.length?'<section class="lp-sec"><h3>아직 확정 안 된 상원 선거 <small translate="no">'+open_.length+(EN()?" races":"곳")+'</small></h3><ul class="lp-races">'+open_.map(raceRow).join("")+'</ul></section>':"")+
+   (done.length?'<section class="lp-sec"><h3>확정된 상원 선거 <small translate="no">'+done.length+(EN()?" races":"곳")+'</small></h3><ul class="lp-races lp-races--done">'+done.map(raceRow).join("")+'</ul></section>':"")+
+   ((data.feed||[]).length?'<section class="lp-sec"><h3>개표 상황 기록</h3><ol class="lp-feed">'+data.feed.slice(0,30).map(f=>'<li><time>'+esc(kst(f.t,true))+'</time><span>'+esc(L(f,"text"))+'</span></li>').join("")+'</ol></section>':"")+
+   '<section class="lp-sec lp-how"><h3>이렇게 봅니다</h3><ul>'+((EN()&&data.how_en)||data.how||[]).map(x=>'<li>'+esc(x)+'</li>').join("")+'</ul>'+
+   ((data.sources||[]).length?'<p class="lp-src">출처: '+data.sources.map(s=>'<a href="'+safe(s[1])+'" target="_blank" rel="noopener">'+esc(EN()&&s[2]?s[2]:s[0])+'</a>').join(" · ")+'</p>':"")+'</section>';
+  p.scrollTop=sc;
+ }
+ window.addEventListener("hashchange",()=>{if(/^#live\b/.test(location.hash)){if(!isOpen())open()}else if(isOpen())close()});
+ // 첫 화면이 닫혀 있어도 띠 숫자는 5분마다 새로
+ load(true);setInterval(()=>{if(!isOpen())load(false)},300000);
 })();
 
 </script>
