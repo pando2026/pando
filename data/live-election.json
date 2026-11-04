@@ -150,7 +150,11 @@
     "cand": "댄 오스본(무소속)",
     "vs": "피트 리키츠",
     "cand_en": "Dan Osborn (I)",
-    "vs_en": "Pete Ricketts"
+    "vs_en": "Pete Ricketts",
+    "pct": "52% 대 42%(현지 오후 9:35)",
+    "pct_en": "52% to 42% (9:35 p.m. local)",
+    "note": "비공식 집계(WOWT). AP 미확정",
+    "note_en": "Unofficial count (WOWT). Not called by AP"
    },
    {
     "st": "MT",
@@ -295,6 +299,11 @@
    "ABC News 상원 결과 지도(AP 개표 자료)",
    "https://abcnews.com/Elections/2026-us-senate-election-results-live-map/",
    "ABC News Senate results map (AP vote data)"
+  ],
+  [
+   "WOWT 네브래스카 상원 개표(Election Night 2026: Nebraska Senate race updates)",
+   "https://wowt.com/2026/11/03/election-night-2026-nebraska-senate-race-updates",
+   "WOWT: Election Night 2026: Nebraska Senate race updates"
   ]
  ],
  "title_en": "US midterms: live results",
