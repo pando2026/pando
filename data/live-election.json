@@ -3,14 +3,14 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T08:30:00Z",
+ "updatedAt": "2026-11-04T09:30:00Z",
  "source": {
   "name": "AP · NBC News"
  },
- "headline": "AP는 상원과 하원 모두 민주당 다수로 판정했고, AP 판정을 확인한 상원 의석은 민주 54·공화 41이다. 남은 곳 가운데 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 28표 앞선 채 미판정이고, 네브래스카는 주 공식 집계에서 피트 리키츠(공) 355,492표, 댄 오스본(무소속) 311,791표다. 알래스카는 댄 설리번(공·현역)이 앞서지만 주 당국의 개표 갱신이 11월 18일까지 이어진다(뉴스위크). 하원은 NBC 판정 의석이 민주 227·공화 142다(현지 4일 오전 2시 34분 기준).",
+ "headline": "AP가 상원과 하원 모두 민주당 다수로 판정한 가운데, 상원은 AP 판정 기준 민주 54·공화 44가 됐다. 앨라배마·몬태나·네브래스카를 공화당이 지키면서 남은 곳은 2곳뿐인데, 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 28표 앞선 채 미판정이고 알래스카는 댄 설리번(공·현역)이 앞서지만 판정이 없다. 하원은 NBC 판정 의석이 민주 227·공화 142다(현지 4일 오전 2시 34분 기준으로, 이번 확인에서 새 집계를 열지 못했다).",
  "senate": {
   "dem": 54,
-  "gop": 41,
+  "gop": 44,
   "other": 0,
   "total": 100,
   "control": 51,
@@ -19,7 +19,7 @@
    "gop": -7
   },
   "sub": "100석 · 이번 선거 35석 · 선거 전 공화 53 대 민주 47 · 의석 수는 선거 없는 의석 + 확인된 AP 확정분",
-  "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. 타임에 따르면 AP는 현지 3일 밤 상원을 민주당 다수로 판정했다. 이 화면의 수는 판도가 AP 확정을 확인한 곳만 센 것이다. 앨라배마·몬태나(공화 우세)는 NBC 예측만 확인해 세지 않았다. 네브래스카·미시시피·알래스카도 아직 세지 않았다. NBC 뉴스 판정 기준으로는 민주 54·공화 43(현지 4일 오전 2시 34분, 미판정 3곳).",
+  "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. AP는 현지 3일 밤 상원을 민주당 다수로 판정했다. 이 화면의 수는 판도가 AP 확정을 확인한 곳만 센 것이고, 아직 판정이 없는 곳은 미시시피와 알래스카 2곳이다.",
   "races": [
    {
     "st": "NC",
@@ -629,32 +629,32 @@
    },
    {
     "st": "NE",
-    "status": "lead",
+    "status": "won",
     "party": "R",
     "cand": "피트 리키츠",
     "vs": "댄 오스본(무소속)",
     "cand_en": "Pete Ricketts",
     "vs_en": "Dan Osborn (I)",
-    "note": "AP·NBC 미확정(NBC: 판정하기엔 이른 단계). 지역 방송 WOWT: 리키츠 승리 선언",
-    "note_en": "Uncalled by AP or NBC (NBC: too early to call). Local station WOWT: Ricketts declares victory",
+    "note": "공화당 의석 지킴(AP 판정, 현지 4일 오전 3시 27분)",
+    "note_en": "GOP hold (AP call, 3:27 a.m. ET Nov 4)",
     "tally": {
      "cands": [
       {
        "n": "피트 리키츠",
        "n_en": "Pete Ricketts",
        "p": "R",
-       "v": 355492
+       "v": 366063
       },
       {
        "n": "댄 오스본(무소속)",
        "n_en": "Dan Osborn (I)",
        "p": "I",
-       "v": 311791
+       "v": 319285
       }
      ],
-     "reported": "개표구 1322곳 중 완료 1028·일부 279(주 국무장관실)",
-     "reported_en": "1028 of 1322 precincts complete, 279 partial (Nebraska SoS)",
-     "asOf": "2026-11-04T08:30:00Z",
+     "reported": "개표구 1322곳 중 완료 1269·일부 53(주 국무장관실)",
+     "reported_en": "1269 of 1322 precincts complete, 53 partial (Nebraska SoS)",
+     "asOf": "2026-11-04T09:30:00Z",
      "src": [
       "네브래스카 국무장관실 개표 결과",
       "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW",
@@ -664,14 +664,14 @@
    },
    {
     "st": "MT",
-    "status": "proj",
+    "status": "won",
     "party": "R",
     "cand": "커트 앨미",
     "cand_en": "Kurt Alme",
     "vs": "세스 보드너(무소속)",
     "vs_en": "Seth Bodnar (I)",
-    "note": "NBC 뉴스 예측. AP 판정은 확인 못 함. 민주당 알라니 뱅크헤드 12%(NBC)",
-    "note_en": "NBC News projection. AP call not confirmed. Democrat Alani Bankhead at 12% (NBC)",
+    "note": "공화당 의석 지킴(AP 판정, 현지 4일 오전 2시 54분). 세스 보드너는 보도자료로 패배 인정(몬태나 프리 프레스). 민주당 알라니 뱅크헤드는 3위",
+    "note_en": "GOP hold (AP call, 2:54 a.m. ET Nov 4). Seth Bodnar conceded in a press release (Montana Free Press). Democrat Alani Bankhead finished third",
     "tally": {
      "cands": [
       {
@@ -877,19 +877,19 @@
     "cand_en": "Scott Colom",
     "vs": "신디 하이드스미스(공·현역)",
     "vs_en": "Sen. Cindy Hyde-Smith (R)",
-    "note": "AP·NBC 미확정. 표차 28표, 득표율 동률(NBC: 판정하기엔 너무 근소)",
-    "note_en": "Uncalled by AP or NBC. 28-vote gap, tied by percentage (NBC: too close to call)"
+    "note": "AP 미판정. 콜럼 측 선거대책본부장 제라드 헨더슨은 X 영상에서 진술서 투표(affidavit ballot) 1만 5000장 이상이 남았다고 말했다(슈퍼토크). 슈퍼토크는 판정까지 며칠 걸릴 수 있다고 전했다",
+    "note_en": "Uncalled by AP. Colom campaign manager Gerard Henderson said in a video on X that at least 15,000 affidavit ballots remain uncounted (SuperTalk), which SuperTalk says could delay a call by several days"
    },
    {
     "st": "AL",
-    "status": "proj",
+    "status": "won",
     "party": "R",
     "cand": "배리 무어",
     "cand_en": "Barry Moore",
     "vs": "에버렛 웨스",
     "vs_en": "Everett Wess",
-    "note": "NBC 뉴스 예측. AP 판정은 확인 못 함",
-    "note_en": "NBC News projection. AP call not confirmed",
+    "note": "공화당 의석 지킴(AP 판정, 현지 3일 오후 11시 17분)",
+    "note_en": "GOP hold (AP call, 11:17 p.m. ET Nov 3)",
     "tally": {
      "cands": [
       {
@@ -1253,8 +1253,8 @@
    }
   ],
   "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · totals are seats not up + confirmed AP calls",
-  "note_en": "Includes seats not up this year (Dem 34, GOP 31). The Democratic total includes two independents who caucus with them (Bernie Sanders, Angus King). TIME reports AP called the Senate for Democrats late on Nov 3. Totals here count only AP calls Pando has confirmed. Alabama and Montana (leaning GOP) have only NBC projections confirmed, so they are not counted. Nebraska, Mississippi and Alaska are also not counted yet. By NBC News projections: Democrats 54, Republicans 43 (2:34 a.m. ET Nov 4; 3 uncalled).",
-  "asOf": "2026-11-04T07:34:00Z"
+  "note_en": "Includes seats not up this year (Democrats 34, Republicans 31). The Democratic total includes two independents who vote with them (Bernie Sanders, Angus King). AP called the Senate for Democrats on the night of Nov 3. Totals count only AP calls Pando has confirmed; Mississippi and Alaska remain uncalled.",
+  "asOf": "2026-11-04T09:30:00Z"
  },
  "house": {
   "dem": 227,
@@ -2554,18 +2554,18 @@
        "n": "마이크 플러드",
        "n_en": "Mike Flood",
        "p": "R",
-       "v": 113817
+       "v": 114909
       },
       {
        "n": "크리스 백마이어",
        "n_en": "Chris Backemeyer",
        "p": "D",
-       "v": 106940
+       "v": 107382
       }
      ],
-     "reported": "개표구 438곳 중 완료 188·일부 250(주 국무장관실)",
-     "reported_en": "188 of 438 precincts complete, 250 partial (Nebraska SoS)",
-     "asOf": "2026-11-04T08:30:00Z",
+     "reported": "개표구 438곳 중 완료 215·일부 223(주 국무장관실)",
+     "reported_en": "215 of 438 precincts complete, 223 partial (Nebraska SoS)",
+     "asOf": "2026-11-04T09:30:00Z",
      "src": [
       "네브래스카 국무장관실 하원 개표 결과",
       "https://electionresults.nebraska.gov/resultsSW.aspx?type=CG",
@@ -3037,6 +3037,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T09:30:00Z",
+   "text": "상원: AP 네브래스카 리키츠(공)·몬태나 앨미(공)·앨라배마 무어(공) 확정 확인(민주 54·공화 44). 남은 곳은 미시시피·알래스카. 네브래스카 주 공식 집계 리키츠 366,063표·오스본 319,285표.",
+   "text_en": "Senate: AP calls confirmed for Nebraska (Ricketts, R), Montana (Alme, R) and Alabama (Moore, R), making it Democrats 54, Republicans 44. Mississippi and Alaska remain. Nebraska official count: Ricketts 366,063, Osborn 319,285."
+  },
+  {
    "t": "2026-11-04T08:30:00Z",
    "text": "네브래스카 주 공식 집계: 상원 리키츠(공) 355,492표·오스본(무소속) 311,791표. 하원 1구 플러드(공) 113,817표·백마이어(민) 106,940표, 2구는 개표구 모두 완료, 파월(민) 138,733표·하딩(공) 100,895표.",
    "text_en": "Nebraska official count: Senate, Ricketts (R) 355,492, Osborn (I) 311,791. House NE-1, Flood (R) 113,817, Backemeyer (D) 106,940; NE-2, all precincts complete, Powell (D) 138,733, Harding (R) 100,895."
@@ -3180,34 +3185,34 @@
    "NBC News House results (AP data)"
   ],
   [
-   "NBC 뉴스 상원 개표 결과(집계 AP)",
-   "https://www.nbcnews.com/politics/2026-elections/senate-results",
-   "NBC News Senate results (AP data)"
+   "리키츠 네브래스카 상원 승리(AP)",
+   "https://www.live5news.com/2026/11/04/republican-pete-ricketts-wins-reelection-us-senate-over-independent-challenger-nebraska/",
+   "Ricketts wins Nebraska Senate seat (AP)"
   ],
   [
-   "AP, 상원·하원 민주당 다수 판정(타임)",
-   "https://time.com/article/2026/11/03/midterm-elections-2026-key-races-live-results-polls-latest-news-updates/",
-   "AP calls the Senate and House for Democrats (TIME)"
+   "앨미 몬태나 상원 승리(AP)",
+   "https://www.yahoo.com/news/politics/articles/republican-kurt-alme-wins-election-075448795.html",
+   "Alme wins Montana Senate seat (AP)"
   ],
   [
-   "엘사예드 미시간 상원 승리 AP 판정(야후 뉴스 라이브)",
-   "https://www.yahoo.com/news/politics/live/midterms-2026-live-updates-election-day-voters-head-to-the-polls-as-democrats-look-to-flip-gop-control-of-the-house-and-senate-110000715.html",
-   "AP calls Michigan Senate for El-Sayed (Yahoo News live)"
+   "무어 앨라배마 상원 승리(AP)",
+   "https://www.yahoo.com/news/politics/articles/republican-barry-moore-wins-election-042110397.html",
+   "Moore wins Alabama Senate seat (AP)"
+  ],
+  [
+   "미시시피 상원 28표 차·미개표 진술서 투표(슈퍼토크)",
+   "https://www.supertalk.fm/u-s-senate-race-between-hyde-smith-colom-too-close-to-call-as-of-early-wednesday-morning/",
+   "Mississippi Senate: 28-vote gap, affidavit ballots outstanding (SuperTalk)"
   ],
   [
    "네브래스카 국무장관실 개표 결과",
    "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW",
    "Nebraska Secretary of State results"
-  ],
-  [
-   "알래스카 상원 개표 일정(뉴스위크)",
-   "https://www.newsweek.com/democrats-congress-alaska-senate-race-12660748",
-   "Alaska Senate count schedule (Newsweek)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both the Senate and the House for Democrats, and confirmed AP calls put the Senate at Democrats 54, Republicans 41. Among the rest, Mississippi is uncalled with Scott Colom (D) 28 votes ahead of Sen. Cindy Hyde-Smith (R), and Nebraska's official count has Pete Ricketts (R) at 355,492 and Dan Osborn (I) at 311,791. Sen. Dan Sullivan (R) leads in Alaska, but the state's count updates run through Nov 18 (Newsweek). NBC-called House seats stand at Democrats 227, Republicans 142 (as of 2:34 a.m. ET Nov 4).",
+ "headline_en": "With AP having called both chambers for Democrats, AP-called Senate seats now stand at Democrats 54, Republicans 44. Republicans held Alabama, Montana and Nebraska, leaving two races: Mississippi, uncalled with Scott Colom (D) 28 votes ahead of Sen. Cindy Hyde-Smith (R), and Alaska, uncalled with Sen. Dan Sullivan (R) ahead. In the House, NBC-called seats are Democrats 227, Republicans 142 (as of 2:34 a.m. ET Nov 4; no newer count could be opened in this check).",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
