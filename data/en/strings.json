@@ -110997,5 +110997,8 @@
 "예측": "Projected",
 "민주당 예측": "Dem projected",
 "공화당 예측": "GOP projected",
-"민주 예측": "Dem projected"
+"민주 예측": "Dem projected",
+"집계 중": "Counting",
+"정당별 확정 의석 집계 중": "Party seat totals still being counted",
+"아래 뒤집힌 선거구 참고": "see flipped districts below"
 }
