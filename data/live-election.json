@@ -3,22 +3,22 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T03:50:00Z",
+ "updatedAt": "2026-11-04T04:25:00Z",
  "source": {
   "name": "AP(Associated Press)"
  },
- "headline": "민주당이 노스캐롤라이나를 뒤집어 상원 1석을 더 얻었고(AP), 사우스캐롤라이나도 ABC·NBC가 민주당 승리를 예측했다. 하원은 CNN·NBC가 민주당 과반을 예측했고, 켄터키 6·노스캐롤라이나 11·펜실베이니아 8 선거구 등 트럼프 우세 지역이 뒤집혔다. 텍사스·메인·미시간·오하이오·아이오와는 개표 중이다.",
+ "headline": "AP가 텍사스(제임스 탈라리코)와 오하이오(셰러드 브라운)의 민주당 승리를 확정해, 민주당은 노스캐롤라이나까지 공화당 상원 의석 3곳을 뒤집었다. 사우스캐롤라이나도 ABC·NBC가 민주당 승리를 예측해 AP 판정을 기다린다. 하원은 CNN·NBC 등이 민주당 과반을 예측했고 NBC는 약 248석으로 내다봤다. 상원 다수당은 메인·미시간·아이오와 등에 달렸다.",
  "senate": {
-  "dem": 45,
+  "dem": 47,
   "gop": 36,
   "other": 0,
   "total": 100,
   "control": 51,
   "change": {
-   "dem": 1,
-   "gop": -1
+   "dem": 3,
+   "gop": -3
   },
-  "sub": "100석 · 이번 선거 35석 · 선거 전 공화 53 대 민주 47 · 의석 수 AP 12:19 KST",
+  "sub": "100석 · 이번 선거 35석 · 선거 전 공화 53 대 민주 47 · 의석 수는 선거 없는 의석 + 확인된 AP 확정분(13:10 KST)",
   "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. 50 대 50이면 J.D. 밴스 부통령(공화)이 캐스팅보트를 쥐므로 민주당은 51석, 공화당은 50석이면 다수당이 된다.",
   "races": [
    {
@@ -125,14 +125,15 @@
    },
    {
     "st": "TX",
-    "status": "lead",
+    "status": "won",
     "party": "D",
     "cand": "제임스 탈라리코",
     "vs": "켄 팩스턴",
-    "note": "공화당 의석. 민주당 후보가 앞서 있다",
+    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
     "cand_en": "James Talarico",
     "vs_en": "Ken Paxton",
-    "note_en": "Republican-held seat; the Democrat leads"
+    "note_en": "Republican seat flipped to Democrats (AP call)",
+    "flip": true
    },
    {
     "st": "ME",
@@ -209,12 +210,16 @@
    },
    {
     "st": "OH",
-    "status": "count",
+    "status": "won",
     "special": true,
-    "cand": "존 허스테드(공)",
-    "vs": "셰러드 브라운(민)",
-    "cand_en": "Jon Husted (R)",
-    "vs_en": "Sherrod Brown (D)"
+    "cand": "셰러드 브라운",
+    "vs": "존 허스테드",
+    "cand_en": "Sherrod Brown",
+    "vs_en": "Jon Husted",
+    "party": "D",
+    "flip": true,
+    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
+    "note_en": "Republican seat flipped to Democrats (AP call)"
    },
    {
     "st": "IA",
@@ -253,9 +258,9 @@
     "status": "wait"
    }
   ],
-  "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · seat totals AP as of 12:19 KST",
+  "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · totals are seats not up + confirmed AP calls (as of 13:10 KST)",
   "note_en": "Includes seats not up this year (Dem 34, GOP 31). The Democratic total includes two independents who caucus with them (Bernie Sanders, Angus King). In a 50-50 Senate Vice President JD Vance (R) breaks ties, so Democrats need 51 seats and Republicans 50.",
-  "asOf": "2026-11-04T03:19:00Z"
+  "asOf": "2026-11-04T04:10:00Z"
  },
  "house": {
   "dem": null,
@@ -265,14 +270,14 @@
   "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214",
   "projection": {
    "party": "D",
-   "text": "민주당 과반 예측(CNN·NBC)",
+   "text": "민주당 과반 예측(CNN·NBC·MS NOW·DDHQ)",
    "short": "민주 과반 예측",
-   "text_en": "Dem majority projected (CNN, NBC)",
+   "text_en": "Dem majority projected (CNN, NBC, MS NOW, DDHQ)",
    "short_en": "Dem majority projected"
   },
-  "note": "CNN·NBC 뉴스가 현지 시각 3일 밤 민주당의 하원 장악을 예측했다. AP 판정과 정당별 확정 의석은 집계되는 대로 채운다. 아래 목록은 확인된 뒤집힘과 주요 접전이다.",
+  "note": "CNN·NBC·MS NOW·디시전 데스크 HQ가 민주당의 하원 장악을 예측했고, NBC는 민주당이 약 248석을 얻을 것으로 내다봤다. AP의 과반 판정과 정당별 확정 의석은 아직 확인하지 못했다. 아래 목록은 확인된 뒤집힘과 주요 접전이다. 선거구 번호를 확인하지 못한 뒤집힘: 버지니아 일레인 루리아(민)가 젠 키건스(공·현역)를, 콜로라도 매니 루티넬(민)이 게이브 에번스(공·현역)를 꺾었다(NBC).",
   "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214",
-  "note_en": "CNN and NBC News projected Democratic control of the House late on Nov 3 (ET). AP's call and party seat totals will be added as they come in. Below: confirmed flips and key close races.",
+  "note_en": "CNN, NBC, MS NOW and Decision Desk HQ projected Democratic control of the House; NBC estimates about 248 Democratic seats. AP's majority call and party seat totals are not yet confirmed. Below: confirmed flips and key close races. Flips whose district numbers are unconfirmed: Elaine Luria (D) beat Rep. Jen Kiggans (R) in Virginia; Manny Rutinel (D) beat Rep. Gabe Evans (R) in Colorado (NBC).",
   "races": [
    {
     "d": "KY-6",
@@ -292,7 +297,9 @@
     "cand": "제이미 에이거",
     "cand_en": "Jamie Ager",
     "note": "공화당 척 에드워즈 의원이 비위 의혹으로 출마 철회한 지역구, 트럼프 2024년 약 10%p 우세",
-    "note_en": "Seat vacated when GOP Rep. Chuck Edwards withdrew after misconduct allegations; Trump +10 in 2024"
+    "note_en": "Seat vacated when GOP Rep. Chuck Edwards withdrew after misconduct allegations; Trump +10 in 2024",
+    "vs": "제니퍼 발콤",
+    "vs_en": "Jennifer Balkcom"
    },
    {
     "d": "PA-8",
@@ -305,6 +312,30 @@
     "vs_en": "Rob Bresnahan (incumbent)",
     "note": "스크랜턴 시장, 트럼프 2024년 8%p 우세 지역",
     "note_en": "Scranton mayor; Trump +8 in 2024"
+   },
+   {
+    "d": "PA-7",
+    "status": "proj",
+    "party": "D",
+    "flip": true,
+    "cand": "밥 브룩스",
+    "cand_en": "Bob Brooks",
+    "vs": "라이언 매켄지(현역)",
+    "vs_en": "Ryan Mackenzie (incumbent)",
+    "note": "NBC 뉴스 보도",
+    "note_en": "Reported by NBC News"
+   },
+   {
+    "d": "PA-10",
+    "status": "proj",
+    "party": "D",
+    "flip": true,
+    "cand": "재닐 스텔슨",
+    "cand_en": "Janelle Stelson",
+    "vs": "스콧 페리(현역)",
+    "vs_en": "Scott Perry (incumbent)",
+    "note": "NBC 뉴스 보도",
+    "note_en": "Reported by NBC News"
    },
    {
     "d": "NC-9",
@@ -327,6 +358,16 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T04:10:00Z",
+   "text": "오하이오 상원: AP, 민주당 셰러드 브라운이 공화당 존 허스테드를 꺾었다고 확정(공화당 의석).",
+   "text_en": "Ohio Senate: AP calls it for Democrat Sherrod Brown over Republican Jon Husted (GOP seat)."
+  },
+  {
+   "t": "2026-11-04T04:05:00Z",
+   "text": "텍사스 상원: AP, 민주당 제임스 탈라리코가 공화당 켄 팩스턴을 꺾었다고 확정(공화당 의석).",
+   "text_en": "Texas Senate: AP calls it for Democrat James Talarico over Republican Ken Paxton (GOP seat)."
+  },
+  {
    "t": "2026-11-04T03:50:00Z",
    "text": "사우스캐롤라이나 상원: ABC·NBC, 민주당 애니 앤드루스 승리 예측(공화당 의석). 하원: CNN·NBC 민주당 과반 예측, KY-6·NC-11·PA-8 민주당으로.",
    "text_en": "South Carolina Senate: ABC and NBC project Democrat Annie Andrews wins (GOP seat). House: CNN and NBC project a Democratic majority; KY-6, NC-11 and PA-8 go Democratic."
@@ -345,6 +386,21 @@
  ],
  "sources": [
   [
+   "Democrat James Talarico to flip Texas Senate seat in historic upset(민주당 탈라리코, 텍사스 상원 의석 뒤집어, Scripps News·AP 판정)",
+   "https://www.scrippsnews.com/politics/america-votes/democrat-james-talarico-to-flip-texas-senate-seat-in-historic-upset",
+   "Democrat James Talarico to flip Texas Senate seat (Scripps News, AP call)"
+  ],
+  [
+   "Democrat Sherrod Brown wins Ohio Senate race(민주당 브라운, 오하이오 상원 승리, NPR·AP 판정)",
+   "https://www.wuga.org/national-news/2026-11-03/democrat-sherrod-brown-wins-ohio-senate-race",
+   "Democrat Sherrod Brown wins Ohio Senate race (NPR, AP call)"
+  ],
+  [
+   "Democrats win control of the House of Representatives(민주당 하원 장악, NBC 뉴스 예측)",
+   "https://www.aol.com/articles/democrats-win-control-house-representatives-030831000.html",
+   "Democrats win control of the House (NBC News via AOL)"
+  ],
+  [
    "Annie Andrews projected to win U.S. Senate race, flipping South Carolina seat blue (Fox Carolina)",
    "https://www.foxcarolina.com/2026/11/04/annie-andrews-projected-win-us-senate-race-flipping-south-carolina-seat-blue/",
    "Annie Andrews projected to win U.S. Senate race (Fox Carolina)"
@@ -358,26 +414,11 @@
    "AP 집계(Roy Cooper wins US Senate seat in North Carolina, AP projects — WBTV)",
    "https://www.wbtv.com/2026/11/04/roy-cooper-wins-2026-us-senate-race-north-carolina-ap-projects/",
    "AP call: Roy Cooper wins US Senate seat in North Carolina (WBTV)"
-  ],
-  [
-   "NBC News 라이브(Democrats win control of the House, NBC News Decision Desk projects)",
-   "https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763",
-   "NBC News live: Democrats win control of the House, NBC News Decision Desk projects"
-  ],
-  [
-   "ABC News 라이브",
-   "https://abcnews.com/Politics/live-updates/midterm-elections-live-updates/?id=137782085",
-   "ABC News live"
-  ],
-  [
-   "ABC News 상원 결과 지도(AP 개표 자료)",
-   "https://abcnews.com/Elections/2026-us-senate-election-results-live-map/",
-   "ABC News Senate results map (AP vote data)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "Democrats flipped North Carolina for a Senate gain (AP), and ABC and NBC project a Democratic win in South Carolina too. CNN and NBC project a Democratic House majority, with Trump-won districts such as KY-6, NC-11 and PA-8 flipping. Texas, Maine, Michigan, Ohio and Iowa are still counting.",
+ "headline_en": "AP called Texas (James Talarico) and Ohio (Sherrod Brown) for Democrats, who have now flipped three GOP Senate seats including North Carolina. ABC and NBC also project a Democratic win in South Carolina, awaiting an AP call. CNN, NBC and others project a Democratic House majority, with NBC estimating about 248 seats. Senate control hinges on Maine, Michigan, Iowa and others.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
