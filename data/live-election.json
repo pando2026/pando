@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T04:25:00Z",
+ "updatedAt": "2026-11-04T04:50:00Z",
  "source": {
   "name": "AP(Associated Press)"
  },
- "headline": "AP가 텍사스(제임스 탈라리코)와 오하이오(셰러드 브라운)의 민주당 승리를 확정해, 민주당은 노스캐롤라이나까지 공화당 상원 의석 3곳을 뒤집었다. 사우스캐롤라이나도 ABC·NBC가 민주당 승리를 예측해 AP 판정을 기다린다. 하원은 CNN·NBC 등이 민주당 과반을 예측했고 NBC는 약 248석으로 내다봤다. 상원 다수당은 메인·미시간·아이오와 등에 달렸다.",
+ "headline": "AP가 텍사스(제임스 탈라리코)와 오하이오(셰러드 브라운)의 민주당 승리를 확정해, 민주당은 노스캐롤라이나까지 공화당 상원 의석 3곳을 뒤집었다. 메인은 개표 35.9%에서 민주당 트로이 잭슨이 수전 콜린스를 1,667표 앞서고, 미시간은 개표 29.4%에서 민주당 압둘 엘사예드가 앞선다. 하원은 CNN·NBC 등이 민주당 과반을 예측했고 NBC는 약 248석으로 내다봤다.",
  "senate": {
   "dem": 47,
   "gop": 36,
@@ -19,7 +19,7 @@
    "gop": -3
   },
   "sub": "100석 · 이번 선거 35석 · 선거 전 공화 53 대 민주 47 · 의석 수는 선거 없는 의석 + 확인된 AP 확정분(13:10 KST)",
-  "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. 50 대 50이면 J.D. 밴스 부통령(공화)이 캐스팅보트를 쥐므로 민주당은 51석, 공화당은 50석이면 다수당이 된다.",
+  "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. 50 대 50이면 J.D. 밴스 부통령(공화)이 캐스팅보트를 쥐므로 민주당은 51석, 공화당은 50석이면 다수당이 된다. 04:03 UTC NBC 뉴스 집계는 민주 48·공화 39로, AP 확정만 센 이 화면의 수와 다르다.",
   "races": [
    {
     "st": "NC",
@@ -133,16 +133,68 @@
     "cand_en": "James Talarico",
     "vs_en": "Ken Paxton",
     "note_en": "Republican seat flipped to Democrats (AP call)",
-    "flip": true
+    "flip": true,
+    "tally": {
+     "cands": [
+      {
+       "n": "제임스 탈라리코",
+       "n_en": "James Talarico",
+       "p": "D",
+       "pct": 59.2
+      },
+      {
+       "n": "켄 팩스턴",
+       "n_en": "Ken Paxton",
+       "p": "R",
+       "pct": 39.2
+      }
+     ],
+     "reported": "개표 67%(AP 판정 시점)",
+     "reported_en": "67% counted (at AP call)",
+     "asOf": "2026-11-04T04:03:00Z",
+     "src": [
+      "텍사스 상원 AP 판정(Washington Examiner)",
+      "https://www.washingtonexaminer.com/news/campaigns/congressional/4789435/texas-senate-race-results-james-talarico-ken-paxton/",
+      "Texas Senate AP call (Washington Examiner)"
+     ]
+    }
    },
    {
     "st": "ME",
     "status": "lead",
-    "party": "R",
-    "cand": "수전 콜린스",
-    "vs": "트로이 잭슨",
-    "cand_en": "Susan Collins",
-    "vs_en": "Troy Jackson"
+    "party": "D",
+    "cand": "트로이 잭슨",
+    "vs": "수전 콜린스",
+    "cand_en": "Troy Jackson",
+    "vs_en": "Susan Collins",
+    "tally": {
+     "cands": [
+      {
+       "n": "트로이 잭슨",
+       "n_en": "Troy Jackson",
+       "p": "D",
+       "pct": 50.3,
+       "v": 143549
+      },
+      {
+       "n": "수전 콜린스",
+       "n_en": "Susan Collins",
+       "p": "R",
+       "pct": 49.7,
+       "v": 141882
+      }
+     ],
+     "reported": "개표 35.9%",
+     "reported_en": "35.9% counted",
+     "asOf": "2026-11-04T04:03:00Z",
+     "src": [
+      "메인 상원 집계(CryptoTicker, NBC 뉴스·AP 자료 인용)",
+      "https://cryptoticker.io/en/maine-senate-race-results-collins-jackson/",
+      "Maine Senate count (CryptoTicker, citing NBC News/AP data)"
+     ]
+    },
+    "note": "공화당 의석. AP 미확정",
+    "note_en": "Republican-held seat; not called by AP"
    },
    {
     "st": "NE",
@@ -200,13 +252,40 @@
    },
    {
     "st": "MI",
-    "status": "count",
-    "cand": "압둘 엘사예드(민)",
-    "vs": "마이크 로저스(공)",
-    "note": "민주당 의석",
-    "cand_en": "Abdul El-Sayed (D)",
-    "vs_en": "Mike Rogers (R)",
-    "note_en": "Democratic-held seat"
+    "status": "lead",
+    "cand": "압둘 엘사예드",
+    "vs": "마이크 로저스",
+    "note": "민주당 의석. AP 미확정",
+    "cand_en": "Abdul El-Sayed",
+    "vs_en": "Mike Rogers",
+    "note_en": "Democratic-held seat; not called by AP",
+    "tally": {
+     "cands": [
+      {
+       "n": "압둘 엘사예드",
+       "n_en": "Abdul El-Sayed",
+       "p": "D",
+       "pct": 51.7,
+       "v": 749998
+      },
+      {
+       "n": "마이크 로저스",
+       "n_en": "Mike Rogers",
+       "p": "R",
+       "pct": 46.5,
+       "v": 675202
+      }
+     ],
+     "reported": "개표 29.4%",
+     "reported_en": "29.4% counted",
+     "asOf": "2026-11-04T04:01:00Z",
+     "src": [
+      "미시간 상원 집계(CryptoTicker, NBC 뉴스·AP 자료 인용)",
+      "https://cryptoticker.io/en/michigan-senate-race-results-el-sayed-rogers/",
+      "Michigan Senate count (CryptoTicker, citing NBC News/AP data)"
+     ]
+    },
+    "party": "D"
    },
    {
     "st": "OH",
@@ -219,7 +298,33 @@
     "party": "D",
     "flip": true,
     "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
-    "note_en": "Republican seat flipped to Democrats (AP call)"
+    "note_en": "Republican seat flipped to Democrats (AP call)",
+    "tally": {
+     "cands": [
+      {
+       "n": "셰러드 브라운",
+       "n_en": "Sherrod Brown",
+       "p": "D",
+       "pct": 52.9,
+       "v": 1126936
+      },
+      {
+       "n": "존 허스테드",
+       "n_en": "Jon Husted",
+       "p": "R",
+       "pct": 43.1,
+       "v": 916461
+      }
+     ],
+     "reported": "개표 44%",
+     "reported_en": "44% counted",
+     "asOf": "2026-11-04T01:59:00Z",
+     "src": [
+      "오하이오 상원 집계(CryptoTicker, NBC 뉴스·AP 자료 인용)",
+      "https://cryptoticker.io/en/ohio-election-results-2026-sherrod-brown-crypto/",
+      "Ohio Senate count (CryptoTicker, citing NBC News/AP data)"
+     ]
+    }
    },
    {
     "st": "IA",
@@ -259,15 +364,15 @@
    }
   ],
   "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · totals are seats not up + confirmed AP calls (as of 13:10 KST)",
-  "note_en": "Includes seats not up this year (Dem 34, GOP 31). The Democratic total includes two independents who caucus with them (Bernie Sanders, Angus King). In a 50-50 Senate Vice President JD Vance (R) breaks ties, so Democrats need 51 seats and Republicans 50.",
+  "note_en": "Includes seats not up this year (Dem 34, GOP 31). The Democratic total includes two independents who caucus with them (Bernie Sanders, Angus King). In a 50-50 Senate Vice President JD Vance (R) breaks ties, so Democrats need 51 seats and Republicans 50. NBC News showed Dem 48, GOP 39 at 04:03 UTC, which differs from this count of confirmed AP calls only.",
   "asOf": "2026-11-04T04:10:00Z"
  },
  "house": {
-  "dem": null,
-  "gop": null,
+  "dem": 73,
+  "gop": 36,
   "total": 435,
   "control": 218,
-  "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214",
+  "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 확정 의석은 AP 집계 현지 3일 오후 9시 20분 기준(이후 값 미확인)",
   "projection": {
    "party": "D",
    "text": "민주당 과반 예측(CNN·NBC·MS NOW·DDHQ)",
@@ -276,7 +381,7 @@
    "short_en": "Dem majority projected"
   },
   "note": "CNN·NBC·MS NOW·디시전 데스크 HQ가 민주당의 하원 장악을 예측했고, NBC는 민주당이 약 248석을 얻을 것으로 내다봤다. AP의 과반 판정과 정당별 확정 의석은 아직 확인하지 못했다. 아래 목록은 확인된 뒤집힘과 주요 접전이다. 선거구 번호를 확인하지 못한 뒤집힘: 버지니아 일레인 루리아(민)가 젠 키건스(공·현역)를, 콜로라도 매니 루티넬(민)이 게이브 에번스(공·현역)를 꺾었다(NBC).",
-  "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214",
+  "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · called seats per AP as of 9:20 p.m. Nov 3 (later figures unconfirmed)",
   "note_en": "CNN, NBC, MS NOW and Decision Desk HQ projected Democratic control of the House; NBC estimates about 248 Democratic seats. AP's majority call and party seat totals are not yet confirmed. Below: confirmed flips and key close races. Flips whose district numbers are unconfirmed: Elaine Luria (D) beat Rep. Jen Kiggans (R) in Virginia; Manny Rutinel (D) beat Rep. Gabe Evans (R) in Colorado (NBC).",
   "races": [
    {
@@ -358,6 +463,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T04:03:00Z",
+   "text": "메인 상원: 개표 35.9%, 민주당 트로이 잭슨이 수전 콜린스(공)에 1,667표 앞섬. 미시간: 개표 29.4%, 민주당 압둘 엘사예드 51.7%로 앞섬(NBC·AP 자료 인용 보도).",
+   "text_en": "Maine Senate: with 35.9% counted, Democrat Troy Jackson leads Susan Collins (R) by 1,667 votes. Michigan: with 29.4% counted, Democrat Abdul El-Sayed leads with 51.7% (reports citing NBC/AP data)."
+  },
+  {
    "t": "2026-11-04T04:10:00Z",
    "text": "오하이오 상원: AP, 민주당 셰러드 브라운이 공화당 존 허스테드를 꺾었다고 확정(공화당 의석).",
    "text_en": "Ohio Senate: AP calls it for Democrat Sherrod Brown over Republican Jon Husted (GOP seat)."
@@ -386,9 +496,9 @@
  ],
  "sources": [
   [
-   "Democrat James Talarico to flip Texas Senate seat in historic upset(민주당 탈라리코, 텍사스 상원 의석 뒤집어, Scripps News·AP 판정)",
-   "https://www.scrippsnews.com/politics/america-votes/democrat-james-talarico-to-flip-texas-senate-seat-in-historic-upset",
-   "Democrat James Talarico to flip Texas Senate seat (Scripps News, AP call)"
+   "텍사스 상원 AP 판정(Washington Examiner)",
+   "https://www.washingtonexaminer.com/news/campaigns/congressional/4789435/texas-senate-race-results-james-talarico-ken-paxton/",
+   "Texas Senate AP call (Washington Examiner)"
   ],
   [
    "Democrat Sherrod Brown wins Ohio Senate race(민주당 브라운, 오하이오 상원 승리, NPR·AP 판정)",
@@ -401,24 +511,24 @@
    "Democrats win control of the House (NBC News via AOL)"
   ],
   [
-   "Annie Andrews projected to win U.S. Senate race, flipping South Carolina seat blue (Fox Carolina)",
-   "https://www.foxcarolina.com/2026/11/04/annie-andrews-projected-win-us-senate-race-flipping-south-carolina-seat-blue/",
-   "Annie Andrews projected to win U.S. Senate race (Fox Carolina)"
+   "Election results 2026: Balance of power(상·하원 세력 분포, NJ.com·AP 집계)",
+   "https://www.yahoo.com/news/politics/articles/election-results-2026-balance-power-015809470.html",
+   "Election results 2026: Balance of power (NJ.com, AP data)"
   ],
   [
-   "Democrats Win Control of the House in Shocking Sweep Across the Country (Washington Sun)",
-   "https://www.washingtonsun.com/campaigns/congress-control-house-results-2026",
-   "Democrats Win Control of the House (Washington Sun)"
+   "메인 상원 집계(CryptoTicker, NBC 뉴스·AP 자료 인용)",
+   "https://cryptoticker.io/en/maine-senate-race-results-collins-jackson/",
+   "Maine Senate count (CryptoTicker, citing NBC News/AP data)"
   ],
   [
-   "AP 집계(Roy Cooper wins US Senate seat in North Carolina, AP projects — WBTV)",
-   "https://www.wbtv.com/2026/11/04/roy-cooper-wins-2026-us-senate-race-north-carolina-ap-projects/",
-   "AP call: Roy Cooper wins US Senate seat in North Carolina (WBTV)"
+   "미시간 상원 집계(CryptoTicker, NBC 뉴스·AP 자료 인용)",
+   "https://cryptoticker.io/en/michigan-senate-race-results-el-sayed-rogers/",
+   "Michigan Senate count (CryptoTicker, citing NBC News/AP data)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP called Texas (James Talarico) and Ohio (Sherrod Brown) for Democrats, who have now flipped three GOP Senate seats including North Carolina. ABC and NBC also project a Democratic win in South Carolina, awaiting an AP call. CNN, NBC and others project a Democratic House majority, with NBC estimating about 248 seats. Senate control hinges on Maine, Michigan, Iowa and others.",
+ "headline_en": "AP called Texas (James Talarico) and Ohio (Sherrod Brown) for Democrats, who have now flipped three GOP Senate seats including North Carolina. In Maine, Democrat Troy Jackson leads Susan Collins by 1,667 votes with 35.9% counted; in Michigan, Democrat Abdul El-Sayed leads with 29.4% counted. CNN, NBC and others project a Democratic House majority, with NBC estimating about 248 seats.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
