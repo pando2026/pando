@@ -111000,5 +111000,19 @@
 "민주 예측": "Dem projected",
 "집계 중": "Counting",
 "정당별 확정 의석 집계 중": "Party seat totals still being counted",
-"아래 뒤집힌 선거구 참고": "see flipped districts below"
+"아래 뒤집힌 선거구 참고": "see flipped districts below",
+"하원 주별 결과": "House results by state",
+"지도 바꾸기": "Switch map",
+"민주 확정 많은 주": "More Dem seats called",
+"공화 확정 많은 주": "More GOP seats called",
+"확정 전·동률": "Not yet called / tied",
+"숫자 = 민주:공화 확정 의석(확정 전엔 주 전체 의석)": "Numbers = Dem:GOP seats called (state's total seats until any are called)",
+"주별 확정 의석은 확인되는 대로 채운다. 지금은 주마다 뽑는 의석 수만 표시한다.": "Called seats by state will be filled in as they are confirmed. For now each tile shows how many seats the state elects.",
+"전국 득표": "National vote",
+"하원 선거 주별 결과": "House results by state",
+"목록에 오른 선거구 없음": "no listed districts",
+"하원 {0}석": "{0} House seats",
+"민주 확정 {0}": "Dem called {0}",
+"공화 확정 {0}": "GOP called {0}",
+"미확정 {0}": "uncalled {0}"
 }
