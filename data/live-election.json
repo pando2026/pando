@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T15:17:00Z",
+ "updatedAt": "2026-11-04T16:39:00Z",
  "source": {
   "name": "AP · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 알래스카는 댄 설리번(공·현역)이 메리 펠톨라(민)를 1677표 앞서고 약 8만 표가 남았다. 하원은 마지막으로 확인한 NBC 판정 의석이 민주 231·공화 144이고(현지 4일 오전 8시 33분) 60곳이 미판정이었다. 초접전 선거구는 아직 판정이 없는데, 미네소타 1구는 324표 차로 재검표 가능성이 크고, 노스캐롤라이나 5구는 척 허버드(민)가 버지니아 폭스(공·현역)를 99표 앞서며, 메인 2구는 88% 개표에서 맷 던랩(민)이 폴 르페이지(공)를 50.09% 대 49.85%로 앞선다.",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카 2곳만 남았는데 두 곳 다 민주당 후보가 근소하게 앞선다. 알래스카에서는 밤사이 선두가 바뀌어, 현지 4일 새벽 3시 기준 메리 펠톨라(민)가 댄 설리번(공·현역)을 626표 앞서고, 아직 세지 않은 부재자·사전 투표가 수천 표 남았다. 미시시피는 AP 비공식 집계에서 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞서지만, 콜럼 측이 1만 장 넘게 남았다고 추산하는 진술서 투표에 승부가 달려 며칠 더 걸릴 수 있다. 하원은 마지막으로 확인한 NBC 판정 의석이 민주 231·공화 144이고(현지 4일 오전 8시 33분) 60곳이 미판정이었으며, 미네소타 1구(324표 차)와 노스캐롤라이나 5구(99표 차), 메인 2구 같은 초접전 선거구는 아직 판정이 확인되지 않았다.",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -1150,36 +1150,37 @@
     "tally": {
      "cands": [
       {
-       "n": "댄 설리번",
-       "n_en": "Dan Sullivan",
-       "p": "R",
-       "v": 100751,
-       "pct": 48.5
-      },
-      {
        "n": "메리 펠톨라",
        "n_en": "Mary Peltola",
        "p": "D",
-       "v": 99074,
-       "pct": 47.7
+       "v": 102701,
+       "pct": 48.02
+      },
+      {
+       "n": "댄 설리번",
+       "n_en": "Dan Sullivan",
+       "p": "R",
+       "v": 102075,
+       "pct": 47.73
       }
      ],
-     "reported": "예상 투표의 72.4% 개표(NBC)",
-     "reported_en": "72.4% of expected vote in (NBC)",
-     "asOf": "2026-11-04T13:33:00Z",
+     "reported": "401개 개표구 중 394곳 보고, 현지 4일 오전 3시 기준 주 선관위 비공식 집계(알래스카 스토리·알래스카 비컨)",
+     "reported_en": "394 of 401 precincts, unofficial state count as of 3 a.m. local Nov 4 (Alaska Story, Alaska Beacon)",
+     "asOf": "2026-11-04T12:00:00Z",
      "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
+      "펠톨라 626표 앞섬(알래스카 스토리)",
+      "https://thealaskastory.com/peltola-leads-sen-sullivan-by-626-votes-as-alaskas-top-races-remain-unsettled/",
+      "Peltola leads Sullivan by 626 votes (Alaska Story)"
      ]
     },
-    "party": "R",
-    "cand": "댄 설리번",
-    "cand_en": "Dan Sullivan",
-    "vs": "메리 펠톨라",
-    "vs_en": "Mary Peltola",
-    "note": "AP·NBC 미확정. NBC 집계로 설리번(현역) 10만 751표(48.5%), 펠톨라 9만 9074표(47.7%)이고 약 8만 표가 남았다. 우편 투표는 10일(해외 발송 15일)까지 받고, 11월 18일에 과반이 없으면 선호투표를 집계한다(알래스카 퍼블릭 미디어). 뉴스위크에 따르면 주 당국은 10·13·18일에 개표를 갱신한다. 3위는 공화당 제럴드 하이크스(4495표, 2.2%)이고, 4위는 이름이 같은 은퇴 교사 댄 설리번(3448표, 1.7%)이다. 공화당은 민주당이 표를 가르려고 내세운 후보라고 주장했고 펠톨라는 관여를 부인했다(보스턴25, 현지 4일 오전 7시 58분). 표차 1677표는 뉴욕타임스 집계를 인용한 같은 기사와 일치한다",
-    "note_en": "Uncalled by AP or NBC. NBC's count has Sen. Sullivan on 100,751 (48.5%) and Peltola on 99,074 (47.7%), with about 80,000 votes left. Mail ballots are accepted for 10 days (15 from overseas), and ranked choices are tabulated on Nov 18 if no one has a majority (Alaska Public Media). Per Newsweek, the state plans count updates on Nov 10, 13 and 18. Third is Republican Gerald Heikes (4,495, 2.2%), and fourth is a retired teacher also named Dan Sullivan (3,448, 1.7%). Republicans allege Democrats planted him as a spoiler; Peltola denies involvement (Boston 25, 7:58 a.m. ET Nov 4). The 1,677-vote gap matches the New York Times count cited in that report"
+    "party": "D",
+    "cand": "메리 펠톨라",
+    "cand_en": "Mary Peltola",
+    "vs": "댄 설리번(공·현역)",
+    "vs_en": "Sen. Dan Sullivan (R)",
+    "note": "AP 미판정. 밤사이 선두가 바뀌어 펠톨라가 앞서지만 뒤집힐 수 있어, 알래스카 비컨은 '박빙'이라고 표현했다. 현지 4일 새벽 3시 기준 전체 21만 3873표 중 표차는 626표다. 공화당 제럴드 하이크스가 4821표(2.3%), 이름이 같은 댄 J. 설리번이 3583표(1.7%)를 얻었다(공화당은 민주당이 표를 가르려고 내세운 후보라고 주장했고 펠톨라는 관여를 부인했다, 보스턴25). 세지 않은 부재자·사전 투표가 수천 표 남았고, 비컨은 펠톨라에게 유리할 것으로 보이는 농촌 개표구 일부도 남았다고 전했다. 우편 투표는 10일(해외 발송 15일)까지 받고, 주 당국은 10·13·18일에 개표를 갱신하며 18일에 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계 결과를 내고 25일까지 인증을 목표로 한다(뉴스위크)",
+    "note_en": "Uncalled by AP. The lead changed overnight and Peltola is ahead, but it could change again; the Alaska Beacon calls the race a tossup. As of 3 a.m. local on Nov 4 the gap is 626 of 213,873 votes. Republican Gerald Heikes has 4,821 (2.3%) and a second Dan Sullivan, Dan J. Sullivan, has 3,583 (1.7%); Republicans allege Democrats planted him as a spoiler and Peltola denies involvement (Boston 25). Thousands of absentee and early ballots remain uncounted, and the Beacon says some rural precincts believed to favor Peltola are also out. Mail ballots are accepted for 10 days (15 from overseas). The state plans count updates on Nov 10, 13 and 18, publishes the ranked-choice tabulation on Nov 18, and aims to certify by Nov 25 (Newsweek)",
+    "flip": true
    },
    {
     "st": "ID",
@@ -3119,6 +3120,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-04T16:39:00Z",
+   "text": "알래스카 상원 선두 교체: 펠톨라(민) 10만 2701표(48.02%)·설리번(공·현역) 10만 2075표(47.73%), 626표 차, 394/401 개표구(현지 새벽 3시, 알래스카 스토리·비컨). AP 미판정. 미시시피 상원도 미판정 그대로(WLBT). 하원은 새 집계·판정 확인 없음.",
+   "text_en": "Alaska Senate lead changes: Peltola (D) 102,701 (48.02%), Sen. Sullivan (R) 102,075 (47.73%), 626-vote gap, 394 of 401 precincts (3 a.m. local, Alaska Story, Beacon). Uncalled by AP. Mississippi Senate also still uncalled (WLBT). No new House tally or calls confirmed."
+  },
+  {
    "t": "2026-11-04T15:17:00Z",
    "text": "새 판정 확인 없음. 메인 2구: 88% 개표 던랩(민) 50.09%·르페이지(공) 49.85%(메인 와이어). 미네소타 1구: 표차 324표 그대로, 존슨(민)은 저녁 승리 연설 예정(KAAL). 노스캐롤라이나 5구: 허버드(민) 99표 앞섬, 폭스(공·현역) 재검표 요청 가능(뉴스앤드옵서버).",
    "text_en": "No new calls confirmed. ME-2: 88% in, Dunlap (D) 50.09%, LePage (R) 49.85% (The Maine Wire). MN-1: gap still 324, and Johnson (D) plans a victory speech this evening (KAAL). NC-5: Hubbard (D) leads by 99, and Rep. Foxx (R) could request a recount (News & Observer)."
@@ -3262,11 +3268,6 @@
    "t": "2026-11-04T04:03:00Z",
    "text": "메인 상원: 개표 35.9%, 민주당 트로이 잭슨이 수전 콜린스(공)에 1,667표 앞섬. 미시간: 개표 29.4%, 민주당 압둘 엘사예드 51.7%로 앞섬(NBC·AP 자료 인용 보도).",
    "text_en": "Maine Senate: with 35.9% counted, Democrat Troy Jackson leads Susan Collins (R) by 1,667 votes. Michigan: with 29.4% counted, Democrat Abdul El-Sayed leads with 51.7% (reports citing NBC/AP data)."
-  },
-  {
-   "t": "2026-11-04T04:10:00Z",
-   "text": "오하이오 상원: AP, 민주당 셰러드 브라운이 공화당 존 허스테드를 꺾었다고 확정(공화당 의석).",
-   "text_en": "Ohio Senate: AP calls it for Democrat Sherrod Brown over Republican Jon Husted (GOP seat)."
   }
  ],
  "how": [
@@ -3277,39 +3278,39 @@
  ],
  "sources": [
   [
+   "알래스카 상원 접전(알래스카 비컨, 주노 엠파이어 전재)",
+   "https://www.juneauempire.com/2026/11/04/alaskas-us-senate-race-a-tossup-with-many-absentee-and-early-votes-to-be-counted/",
+   "Alaska's US Senate race a tossup (Alaska Beacon via Juneau Empire)"
+  ],
+  [
+   "펠톨라 626표 앞섬(알래스카 스토리)",
+   "https://thealaskastory.com/peltola-leads-sen-sullivan-by-626-votes-as-alaskas-top-races-remain-unsettled/",
+   "Peltola leads Sullivan by 626 votes (Alaska Story)"
+  ],
+  [
+   "미시시피 상원 미판정(WLBT)",
+   "https://www.wlbt.com/2026/11/04/live-razor-thin-mississippi-senate-race-remains-undecided-colom-speaks-morning-after-election-day/",
+   "Mississippi Senate race undecided (WLBT)"
+  ],
+  [
+   "미네소타 1구 접전(MPR)",
+   "https://www.mprnews.org/story/2026/11/04/minnesotas-1st-congressional-district-race-too-close-to-call",
+   "MN-1 too close to call (MPR)"
+  ],
+  [
    "NBC 뉴스 하원 개표 결과(집계 AP)",
    "https://www.nbcnews.com/politics/2026-elections/house-results",
    "NBC News House results (AP data)"
   ],
   [
-   "NBC 뉴스 상원 개표 결과(집계 AP)",
-   "https://www.nbcnews.com/politics/2026-elections/senate-results",
-   "NBC News Senate results (AP data)"
-  ],
-  [
-   "미시시피 상원 접전(매그놀리아 트리뷴)",
-   "https://magnoliatribune.com/2026/11/04/too-close-to-call/",
-   "Mississippi Senate too close to call (Magnolia Tribune)"
-  ],
-  [
    "노스캐롤라이나 5구 폭스 패배·재검표 가능(뉴스앤드옵서버, 야후 전재)",
    "https://www.yahoo.com/news/politics/articles/nc-rep-virginia-foxx-loses-053802596.html",
    "Foxx loses but within recount range in NC-5 (News & Observer via Yahoo)"
-  ],
-  [
-   "메인 2구 미확정(메인 와이어)",
-   "https://www.themainewire.com/2026/11/maine-second-congressional-district-election-results-still-undecided/",
-   "Maine 2nd District still undecided (The Maine Wire)"
-  ],
-  [
-   "미네소타 1구 존슨 승리 선언, 재검표 예상(KAAL)",
-   "https://www.kaaltv.com/news/top-news/jake-johnson-declares-victory-over-brad-finstad-in-1st-district-race-recount-expected/",
-   "Johnson declares victory in MN-1, recount expected (KAAL)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In Alaska, Sen. Dan Sullivan (R) leads Mary Peltola (D) by 1,677 votes with about 80,000 left. In the House, the latest NBC-called seats Pando confirmed are Democrats 231, Republicans 144 (8:33 a.m. ET Nov 4), with 60 uncalled then. The closest districts remain uncalled: MN-1 is at a 324-vote gap with a recount likely, Chuck Hubbard (D) leads Rep. Virginia Foxx (R) by 99 votes in NC-5, and Matt Dunlap (D) leads Paul LePage (R) 50.09% to 49.85% with 88% in ME-2.",
+ "headline_en": "AP has called both chambers for Democrats, and AP-called Senate seats stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left, both with the Democrat narrowly ahead. The Alaska lead changed overnight: as of 3 a.m. local on Nov 4, Mary Peltola (D) led Sen. Dan Sullivan (R) by 626 votes, with thousands of absentee and early ballots still uncounted. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes in AP's unofficial count, but the outcome hangs on affidavit ballots that Colom's side estimates at more than 10,000, which could take days. In the House, the latest NBC-called seats Pando confirmed are Democrats 231, Republicans 144 (8:33 a.m. ET Nov 4), with 60 uncalled then, and no call has been confirmed in the closest districts, including MN-1 (324 votes), NC-5 (99 votes) and ME-2.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
