@@ -1,2627 +1,3166 @@
 {
- "active": true,
- "id": "us-midterms-2026",
- "title": "미국 중간선거 실시간 개표",
- "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T05:51:00Z",
- "source": {
-  "name": "AP · NBC News"
- },
- "headline": "NBC 뉴스는 민주당이 상원과 하원을 모두 가져간다고 판정했다. 하원은 판정된 의석이 민주 219·공화 124(공화당 의석 27곳 뒤집음)이고, NBC는 민주당이 최종 약 255석을 얻을 것으로 추정한다. 상원은 AP가 민주당 다수로 판정했고(타임 보도), 메인에서는 트로이 잭슨이 수전 콜린스를 꺾었다(NBC). 미시시피·네브래스카·미시간·몬태나·아이다호·알래스카는 아직 판정 전이다.",
- "senate": {
-  "dem": 52,
-  "gop": 38,
-  "other": 0,
-  "total": 100,
-  "control": 51,
-  "change": {
-   "dem": 6,
-   "gop": -6
+  "active": true,
+  "id": "us-midterms-2026",
+  "title": "미국 중간선거 실시간 개표",
+  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
+  "updatedAt": "2026-11-04T06:34:00Z",
+  "source": {
+    "name": "AP · NBC News"
   },
-  "sub": "100석 · 이번 선거 35석 · 선거 전 공화 53 대 민주 47 · 의석 수는 선거 없는 의석 + 확인된 AP 확정분",
-  "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. 타임에 따르면 AP는 현지 3일 밤 상원을 민주당 다수로 판정했다. 이 화면의 수는 판도가 AP 확정을 확인한 곳만 센 것이다. 메인(민주 우세)·앨라배마·테네시·루이지애나(공화 우세)는 다른 매체 예측·보도만 확인해 세지 않았다. 미시간·네브래스카·몬태나·미시시피·아이다호·알래스카도 아직 세지 않았다. NBC 뉴스 판정 기준으로는 민주 53·공화 41(현지 4일 0시 51분, 미판정 6곳: 미시시피·네브래스카·미시간·아이다호·몬태나·알래스카).",
-  "races": [
-   {
-    "st": "NC",
-    "status": "won",
-    "party": "D",
-    "flip": true,
-    "cand": "로이 쿠퍼",
-    "vs": "마이클 와틀리",
-    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
-    "cand_en": "Roy Cooper",
-    "vs_en": "Michael Whatley",
-    "note_en": "Republican seat flipped to Democrats (AP call)",
-    "tally": {
-     "cands": [
-      {
-       "n": "로이 쿠퍼",
-       "n_en": "Roy Cooper",
-       "p": "D",
-       "pct": 58.7
-      },
-      {
-       "n": "마이클 와틀리",
-       "n_en": "Michael Whatley",
-       "p": "R",
-       "pct": 39.1
-      }
-     ],
-     "reported": "예상 투표의 99.0% 개표(NBC)",
-     "reported_en": "99.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "GA",
-    "status": "won",
-    "party": "D",
-    "cand": "존 오소프",
-    "vs": "마이크 콜린스",
-    "cand_en": "Jon Ossoff",
-    "vs_en": "Mike Collins",
-    "tally": {
-     "cands": [
-      {
-       "n": "존 오소프",
-       "n_en": "Jon Ossoff",
-       "p": "D",
-       "pct": 58.9
-      },
-      {
-       "n": "마이크 콜린스",
-       "n_en": "Mike Collins",
-       "p": "R",
-       "pct": 41.1
-      }
-     ],
-     "reported": "예상 투표의 94.7% 개표(NBC)",
-     "reported_en": "94.7% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "VA",
-    "status": "won",
-    "party": "D",
-    "cand": "마크 워너",
-    "vs": "버트 미즈사와",
-    "cand_en": "Mark Warner",
-    "vs_en": "Bert Mizusawa",
-    "tally": {
-     "cands": [
-      {
-       "n": "마크 워너",
-       "n_en": "Mark Warner",
-       "p": "D",
-       "pct": 60.6
-      },
-      {
-       "n": "버트 미즈사와",
-       "n_en": "Bert Mizusawa",
-       "p": "R",
-       "pct": 39.1
-      }
-     ],
-     "reported": "예상 투표의 94.4% 개표(NBC)",
-     "reported_en": "94.4% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "CO",
-    "status": "won",
-    "party": "D",
-    "tally": {
-     "cands": [
-      {
-       "n": "히컨루퍼",
-       "n_en": "Hickenlooper",
-       "p": "D",
-       "pct": 60.7
-      },
-      {
-       "n": "베이슬리",
-       "n_en": "Baisley",
-       "p": "R",
-       "pct": 35.2
-      }
-     ],
-     "reported": "예상 투표의 72.4% 개표(NBC)",
-     "reported_en": "72.4% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "NM",
-    "status": "won",
-    "party": "D",
-    "tally": {
-     "cands": [
-      {
-       "n": "루한",
-       "n_en": "Luján",
-       "p": "D",
-       "pct": 62.8
-      },
-      {
-       "n": "마커",
-       "n_en": "Marker",
-       "p": "R",
-       "pct": 37.2
-      }
-     ],
-     "reported": "예상 투표의 91.6% 개표(NBC)",
-     "reported_en": "91.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "IL",
-    "status": "won",
-    "party": "D",
-    "tally": {
-     "cands": [
-      {
-       "n": "스트래턴",
-       "n_en": "Stratton",
-       "p": "D",
-       "pct": 61.0
-      },
-      {
-       "n": "트레이시",
-       "n_en": "Tracy",
-       "p": "R",
-       "pct": 37.4
-      }
-     ],
-     "reported": "예상 투표의 86.0% 개표(NBC)",
-     "reported_en": "86.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "NH",
-    "status": "won",
-    "party": "D",
-    "cand": "크리스 패퍼스",
-    "cand_en": "Chris Pappas",
-    "vs": "존 수누누",
-    "vs_en": "John Sununu",
-    "tally": {
-     "cands": [
-      {
-       "n": "크리스 패퍼스",
-       "n_en": "Chris Pappas",
-       "p": "D",
-       "pct": 56.1
-      },
-      {
-       "n": "존 수누누",
-       "n_en": "John Sununu",
-       "p": "R",
-       "pct": 42.0
-      }
-     ],
-     "reported": "예상 투표의 84.1% 개표(NBC)",
-     "reported_en": "84.1% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "MA",
-    "status": "won",
-    "party": "D",
-    "cand": "에드 마키",
-    "cand_en": "Ed Markey",
-    "vs": "존 디턴",
-    "vs_en": "John Deaton",
-    "tally": {
-     "cands": [
-      {
-       "n": "에드 마키",
-       "n_en": "Ed Markey",
-       "p": "D",
-       "pct": 64.5
-      },
-      {
-       "n": "존 디턴",
-       "n_en": "John Deaton",
-       "p": "R",
-       "pct": 30.9
-      }
-     ],
-     "reported": "예상 투표의 55.4% 개표(NBC)",
-     "reported_en": "55.4% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "RI",
-    "status": "won",
-    "party": "D",
-    "tally": {
-     "cands": [
-      {
-       "n": "리드",
-       "n_en": "Reed",
-       "p": "D",
-       "pct": 66.6
-      },
-      {
-       "n": "매케이",
-       "n_en": "McKay",
-       "p": "R",
-       "pct": 29.5
-      }
-     ],
-     "reported": "예상 투표의 93.6% 개표(NBC)",
-     "reported_en": "93.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "NJ",
-    "status": "won",
-    "party": "D",
-    "tally": {
-     "cands": [
-      {
-       "n": "부커",
-       "n_en": "Booker",
-       "p": "D",
-       "pct": 62.3
-      },
-      {
-       "n": "머피",
-       "n_en": "Murphy",
-       "p": "R",
-       "pct": 35.1
-      }
-     ],
-     "reported": "예상 투표의 92.3% 개표(NBC)",
-     "reported_en": "92.3% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "DE",
-    "status": "won",
-    "party": "D",
-    "tally": {
-     "cands": [
-      {
-       "n": "쿤스",
-       "n_en": "Coons",
-       "p": "D",
-       "pct": 63.6
-      },
-      {
-       "n": "카츠",
-       "n_en": "Katz",
-       "p": "R",
-       "pct": 36.4
-      }
-     ],
-     "reported": "예상 투표의 98.9% 개표(NBC)",
-     "reported_en": "98.9% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "WY",
-    "status": "won",
-    "party": "R",
-    "tally": {
-     "cands": [
-      {
-       "n": "헤이그먼",
-       "n_en": "Hageman",
-       "p": "R",
-       "pct": 65.8
-      },
-      {
-       "n": "버드",
-       "n_en": "Byrd",
-       "p": "D",
-       "pct": 34.2
-      }
-     ],
-     "reported": "예상 투표의 79.8% 개표(NBC)",
-     "reported_en": "79.8% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "OK",
-    "status": "won",
-    "party": "R",
-    "cand": "케빈 헌",
-    "cand_en": "Kevin Hern",
-    "vs": "느키일라 재스민 토머스",
-    "vs_en": "N'Kiyla Jasmine Thomas",
-    "tally": {
-     "cands": [
-      {
-       "n": "케빈 헌",
-       "n_en": "Kevin Hern",
-       "p": "R",
-       "pct": 57.3
-      },
-      {
-       "n": "느키일라 재스민 토머스",
-       "n_en": "Nkiyla Jasmine Thomas",
-       "p": "D",
-       "pct": 39.2
-      }
-     ],
-     "reported": "예상 투표의 97.5% 개표(NBC)",
-     "reported_en": "97.5% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "KY",
-    "status": "won",
-    "party": "R",
-    "cand": "앤디 바",
-    "cand_en": "Andy Barr",
-    "tally": {
-     "cands": [
-      {
-       "n": "앤디 바",
-       "n_en": "Andy Barr",
-       "p": "R",
-       "pct": 55.0
-      },
-      {
-       "n": "부커",
-       "n_en": "Booker",
-       "p": "D",
-       "pct": 42.9
-      }
-     ],
-     "reported": "예상 투표의 99.0% 개표(NBC)",
-     "reported_en": "99.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "WV",
-    "status": "won",
-    "party": "R",
-    "tally": {
-     "cands": [
-      {
-       "n": "무어 캐피토",
-       "n_en": "Moore Capito",
-       "p": "R",
-       "pct": 58.3
-      },
-      {
-       "n": "페티 앤더슨",
-       "n_en": "Fetty Anderson",
-       "p": "D",
-       "pct": 38.0
-      }
-     ],
-     "reported": "예상 투표의 93.5% 개표(NBC)",
-     "reported_en": "93.5% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "FL",
-    "status": "won",
-    "party": "R",
-    "special": true,
-    "cand": "애슐리 무디",
-    "cand_en": "Ashley Moody",
-    "vs": "앤지 닉슨",
-    "vs_en": "Angie Nixon",
-    "tally": {
-     "cands": [
-      {
-       "n": "애슐리 무디",
-       "n_en": "Ashley Moody",
-       "p": "R",
-       "pct": 50.9
-      },
-      {
-       "n": "앤지 닉슨",
-       "n_en": "Angie Nixon",
-       "p": "D",
-       "pct": 48.0
-      }
-     ],
-     "reported": "예상 투표의 99.0% 개표(NBC)",
-     "reported_en": "99.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "TX",
-    "status": "won",
-    "party": "D",
-    "cand": "제임스 탈라리코",
-    "vs": "켄 팩스턴",
-    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
-    "cand_en": "James Talarico",
-    "vs_en": "Ken Paxton",
-    "note_en": "Republican seat flipped to Democrats (AP call)",
-    "flip": true,
-    "tally": {
-     "cands": [
-      {
-       "n": "제임스 탈라리코",
-       "n_en": "James Talarico",
-       "p": "D",
-       "pct": 55.1
-      },
-      {
-       "n": "켄 팩스턴",
-       "n_en": "Ken Paxton",
-       "p": "R",
-       "pct": 43.1
-      }
-     ],
-     "reported": "예상 투표의 84.6% 개표(NBC)",
-     "reported_en": "84.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "ME",
-    "status": "proj",
-    "party": "D",
-    "cand": "트로이 잭슨",
-    "vs": "수전 콜린스",
-    "cand_en": "Troy Jackson",
-    "vs_en": "Susan Collins",
-    "note": "NBC 예측. 콜린스 패배 인정(메인 퍼블릭). AP 판정 미확인",
-    "note_en": "NBC projection; Collins conceded (Maine Public). AP call not confirmed",
-    "flip": true,
-    "tally": {
-     "cands": [
-      {
-       "n": "트로이 잭슨",
-       "n_en": "Troy Jackson",
-       "p": "D",
-       "pct": 52.7
-      },
-      {
-       "n": "수전 콜린스",
-       "n_en": "Susan Collins",
-       "p": "R",
-       "pct": 47.3
-      }
-     ],
-     "reported": "예상 투표의 71.6% 개표(NBC)",
-     "reported_en": "71.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "NE",
-    "status": "lead",
-    "party": "R",
-    "cand": "피트 리키츠",
-    "vs": "댄 오스본(무소속)",
-    "cand_en": "Pete Ricketts",
-    "vs_en": "Dan Osborn (I)",
-    "note": "AP·NBC 미확정. 저녁 9시 35분(중부) 지역 방송 집계에선 오스본이 앞섰으나 이후 뒤집혔다",
-    "note_en": "Not called by AP or NBC. Osborn led in a local TV count at 9:35 p.m. CT; Ricketts has since moved ahead",
-    "tally": {
-     "cands": [
-      {
-       "n": "피트 리키츠",
-       "n_en": "Pete Ricketts",
-       "p": "R",
-       "v": 245763
-      },
-      {
-       "n": "댄 오스본(무소속)",
-       "n_en": "Dan Osborn (I)",
-       "p": "I",
-       "v": 229515
-      }
-     ],
-     "reported": "개표구 1,322곳 중 완료 340·일부 670(주 공식)",
-     "reported_en": "Precincts: 340 of 1,322 complete, 670 partial (state official)",
-     "asOf": "2026-11-04T05:45:00Z",
-     "src": [
-      "네브래스카 국무장관실 비공식 개표 결과",
-      "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW&map=CTY",
-      "Nebraska Secretary of State unofficial results"
-     ]
-    }
-   },
-   {
-    "st": "MT",
-    "status": "lead",
-    "party": "R",
-    "cand": "커트 앨미",
-    "cand_en": "Kurt Alme",
-    "vs": "세스 보드너(무소속)",
-    "vs_en": "Seth Bodnar (I)",
-    "note": "AP·NBC 미확정. 민주당 알라니 뱅크헤드 11.7%(NBC)",
-    "note_en": "Not called by AP or NBC. Democrat Alani Bankhead 11.7% (NBC)",
-    "tally": {
-     "cands": [
-      {
-       "n": "커트 앨미",
-       "n_en": "Kurt Alme",
-       "p": "R",
-       "pct": 46.6
-      },
-      {
-       "n": "세스 보드너(무소속)",
-       "n_en": "Seth Bodnar (I)",
-       "p": "I",
-       "pct": 40.0
-      }
-     ],
-     "reported": "예상 투표의 48.6% 개표(NBC)",
-     "reported_en": "48.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "SD",
-    "status": "won",
-    "party": "R",
-    "cand": "마이크 라운즈",
-    "cand_en": "Mike Rounds",
-    "vs": "브라이언 벵스(무소속)",
-    "vs_en": "Brian Bengs (I)",
-    "tally": {
-     "cands": [
-      {
-       "n": "마이크 라운즈",
-       "n_en": "Mike Rounds",
-       "p": "R",
-       "pct": 61.4
-      },
-      {
-       "n": "브라이언 벵스(무소속)",
-       "n_en": "Brian Bengs (I)",
-       "p": "I",
-       "pct": 38.6
-      }
-     ],
-     "reported": "예상 투표의 72.3% 개표(NBC)",
-     "reported_en": "72.3% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "MN",
-    "status": "won",
-    "party": "D",
-    "note": "민주당 의석 지킴(AP 확정)",
-    "note_en": "Democratic seat held (AP call)",
-    "cand": "페기 플래너건",
-    "cand_en": "Peggy Flanagan",
-    "vs": "미셸 타포야",
-    "vs_en": "Michele Tafoya",
-    "tally": {
-     "cands": [
-      {
-       "n": "페기 플래너건",
-       "n_en": "Peggy Flanagan",
-       "p": "D",
-       "pct": 54.4
-      },
-      {
-       "n": "미셸 타포야",
-       "n_en": "Michele Tafoya",
-       "p": "R",
-       "pct": 42.9
-      }
-     ],
-     "reported": "예상 투표의 89.6% 개표(NBC)",
-     "reported_en": "89.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "AR",
-    "status": "won",
-    "party": "R",
-    "cand": "톰 코튼",
-    "cand_en": "Tom Cotton",
-    "vs": "핼리 쇼프너",
-    "vs_en": "Hallie Shoffner",
-    "tally": {
-     "cands": [
-      {
-       "n": "톰 코튼",
-       "n_en": "Tom Cotton",
-       "p": "R",
-       "pct": 54.2
-      },
-      {
-       "n": "핼리 쇼프너",
-       "n_en": "Hallie Shoffner",
-       "p": "D",
-       "pct": 42.5
-      }
-     ],
-     "reported": "예상 투표의 98.7% 개표(NBC)",
-     "reported_en": "98.7% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "LA",
-    "status": "proj",
-    "party": "R",
-    "cand": "줄리아 레틀로",
-    "cand_en": "Julia Letlow",
-    "vs": "제이미 데이비스",
-    "vs_en": "Jamie Davis",
-    "note": "KTBS 승리 보도(판정 주체 표기 없음). AP 판정은 확인 못 함",
-    "note_en": "KTBS reports a win (no race-caller named). AP call not confirmed",
-    "tally": {
-     "cands": [
-      {
-       "n": "줄리아 레틀로",
-       "n_en": "Julia Letlow",
-       "p": "R",
-       "pct": 50.9
-      },
-      {
-       "n": "제이미 데이비스",
-       "n_en": "Jamie Davis",
-       "p": "D",
-       "pct": 49.1
-      }
-     ],
-     "reported": "예상 투표의 99.0% 개표(NBC)",
-     "reported_en": "99.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "MS",
-    "status": "lead",
-    "party": "R",
-    "tally": {
-     "cands": [
-      {
-       "n": "하이드스미스",
-       "n_en": "Hyde-Smith",
-       "p": "R",
-       "pct": 49.2
-      },
-      {
-       "n": "콜럼",
-       "n_en": "Colom",
-       "p": "D",
-       "pct": 48.7
-      }
-     ],
-     "reported": "예상 투표의 96.5% 개표(NBC)",
-     "reported_en": "96.5% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
+  "headline": "타임에 따르면 AP는 상원에 이어 하원도 민주당 다수로 판정했다. 민주당은 상원에서 공화당 의석 7곳을 뒤집었고, 메인에서는 트로이 잭슨이 수전 콜린스를 꺾었다(AP). 하원은 NBC 판정 의석이 민주 226·공화 136이다. 상원 미판정 5곳 가운데 미시시피는 현지 4일 오전 1시 34분 기준 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 28표 앞선다(NBC).",
+  "senate": {
+    "dem": 53,
+    "gop": 39,
+    "other": 0,
+    "total": 100,
+    "control": 51,
+    "change": {
+      "dem": 7,
+      "gop": -7
     },
-    "cand": "신디 하이드스미스",
-    "cand_en": "Cindy Hyde-Smith",
-    "vs": "콜럼(민)",
-    "vs_en": "Colom (D)",
-    "note": "AP·NBC 미확정(NBC: 판정하기엔 너무 근소)",
-    "note_en": "Not called by AP or NBC (NBC: too close to call)"
-   },
-   {
-    "st": "AL",
-    "status": "proj",
-    "party": "R",
-    "cand": "배리 무어",
-    "cand_en": "Barry Moore",
-    "vs": "에버렛 웨스",
-    "vs_en": "Everett Wess",
-    "note": "NBC 뉴스 예측. AP 판정은 확인 못 함",
-    "note_en": "NBC News projection. AP call not confirmed",
-    "tally": {
-     "cands": [
+    "sub": "100석 · 이번 선거 35석 · 선거 전 공화 53 대 민주 47 · 의석 수는 선거 없는 의석 + 확인된 AP 확정분",
+    "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. 타임에 따르면 AP는 현지 3일 밤 상원을 민주당 다수로 판정했다. 이 화면의 수는 판도가 AP 확정을 확인한 곳만 센 것이다. 앨라배마·루이지애나·아이다호(공화 우세)는 NBC 예측만 확인해 세지 않았다. 미시간·네브래스카·몬태나·미시시피·알래스카도 아직 세지 않았다. NBC 뉴스 판정 기준으로는 민주 53·공화 42(현지 4일 오전 1시 34분, 미판정 5곳).",
+    "races": [
       {
-       "n": "배리 무어",
-       "n_en": "Barry Moore",
-       "p": "R",
-       "pct": 55.5
+        "st": "NC",
+        "status": "won",
+        "party": "D",
+        "flip": true,
+        "cand": "로이 쿠퍼",
+        "vs": "마이클 와틀리",
+        "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
+        "cand_en": "Roy Cooper",
+        "vs_en": "Michael Whatley",
+        "note_en": "Republican seat flipped to Democrats (AP call)",
+        "tally": {
+          "cands": [
+            {
+              "n": "로이 쿠퍼",
+              "n_en": "Roy Cooper",
+              "p": "D",
+              "v": 2462440,
+              "pct": 58.7
+            },
+            {
+              "n": "마이클 와틀리",
+              "n_en": "Michael Whatley",
+              "p": "R",
+              "v": 1640368,
+              "pct": 39.1
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "에버렛 웨스",
-       "n_en": "Everett Wess",
-       "p": "D",
-       "pct": 44.5
-      }
-     ],
-     "reported": "예상 투표의 89.3% 개표(NBC)",
-     "reported_en": "89.3% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "TN",
-    "status": "proj",
-    "party": "R",
-    "cand": "빌 해거티",
-    "cand_en": "Bill Hagerty",
-    "vs": "마르키타 브래드쇼",
-    "vs_en": "Marquita Bradshaw",
-    "note": "NBC 뉴스 예측. AP 판정은 확인 못 함",
-    "note_en": "NBC News projection. AP call not confirmed",
-    "tally": {
-     "cands": [
-      {
-       "n": "빌 해거티",
-       "n_en": "Bill Hagerty",
-       "p": "R",
-       "pct": 55.1
+        "st": "GA",
+        "status": "won",
+        "party": "D",
+        "cand": "존 오소프",
+        "vs": "마이크 콜린스",
+        "cand_en": "Jon Ossoff",
+        "vs_en": "Mike Collins",
+        "tally": {
+          "cands": [
+            {
+              "n": "존 오소프",
+              "n_en": "Jon Ossoff",
+              "p": "D",
+              "v": 2453525,
+              "pct": 58.9
+            },
+            {
+              "n": "마이크 콜린스",
+              "n_en": "Mike Collins",
+              "p": "R",
+              "v": 1709237,
+              "pct": 41.1
+            }
+          ],
+          "reported": "예상 투표의 96.1% 개표(NBC)",
+          "reported_en": "96.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "마르키타 브래드쇼",
-       "n_en": "Marquita Bradshaw",
-       "p": "D",
-       "pct": 42.9
-      }
-     ],
-     "reported": "예상 투표의 99.0% 개표(NBC)",
-     "reported_en": "99.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "MI",
-    "status": "lead",
-    "cand": "압둘 엘사예드",
-    "vs": "마이크 로저스",
-    "note": "AP·NBC 미확정(NBC: 민주당 쪽으로 기움). 민주당 의석",
-    "cand_en": "Abdul El-Sayed",
-    "vs_en": "Mike Rogers",
-    "note_en": "Not called by AP or NBC (NBC: leans Democratic). Democratic-held seat",
-    "party": "D",
-    "tally": {
-     "cands": [
-      {
-       "n": "압둘 엘사예드",
-       "n_en": "Abdul El-Sayed",
-       "p": "D",
-       "pct": 50.7
+        "st": "VA",
+        "status": "won",
+        "party": "D",
+        "cand": "마크 워너",
+        "vs": "버트 미즈사와",
+        "cand_en": "Mark Warner",
+        "vs_en": "Bert Mizusawa",
+        "tally": {
+          "cands": [
+            {
+              "n": "마크 워너",
+              "n_en": "Mark Warner",
+              "p": "D",
+              "v": 2150395,
+              "pct": 60.9
+            },
+            {
+              "n": "버트 미즈사와",
+              "n_en": "Bert Mizusawa",
+              "p": "R",
+              "v": 1370342,
+              "pct": 38.8
+            }
+          ],
+          "reported": "예상 투표의 95.7% 개표(NBC)",
+          "reported_en": "95.7% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "마이크 로저스",
-       "n_en": "Mike Rogers",
-       "p": "R",
-       "pct": 47.3
-      }
-     ],
-     "reported": "예상 투표의 60.7% 개표(NBC)",
-     "reported_en": "60.7% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "OH",
-    "status": "won",
-    "special": true,
-    "cand": "셰러드 브라운",
-    "vs": "존 허스테드",
-    "cand_en": "Sherrod Brown",
-    "vs_en": "Jon Husted",
-    "party": "D",
-    "flip": true,
-    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
-    "note_en": "Republican seat flipped to Democrats (AP call)",
-    "tally": {
-     "cands": [
-      {
-       "n": "셰러드 브라운",
-       "n_en": "Sherrod Brown",
-       "p": "D",
-       "pct": 48.9
+        "st": "CO",
+        "status": "won",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "히컨루퍼",
+              "n_en": "Hickenlooper",
+              "p": "D",
+              "v": 1265543,
+              "pct": 60.7
+            },
+            {
+              "n": "베이슬리",
+              "n_en": "Baisley",
+              "p": "R",
+              "v": 733266,
+              "pct": 35.2
+            }
+          ],
+          "reported": "예상 투표의 74.1% 개표(NBC)",
+          "reported_en": "74.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "존 허스테드",
-       "n_en": "Jon Husted",
-       "p": "R",
-       "pct": 46.2
-      }
-     ],
-     "reported": "예상 투표의 90.0% 개표(NBC)",
-     "reported_en": "90.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "IA",
-    "status": "won",
-    "cand": "조시 투렉",
-    "vs": "애슐리 힌슨",
-    "cand_en": "Josh Turek",
-    "vs_en": "Ashley Hinson",
-    "party": "D",
-    "flip": true,
-    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
-    "note_en": "Republican seat flipped to Democrats (AP call)",
-    "tally": {
-     "cands": [
-      {
-       "n": "조시 투렉",
-       "n_en": "Josh Turek",
-       "p": "D",
-       "pct": 50.5
+        "st": "NM",
+        "status": "won",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "루한",
+              "n_en": "Luján",
+              "p": "D",
+              "v": 450750,
+              "pct": 63.1
+            },
+            {
+              "n": "마커",
+              "n_en": "Marker",
+              "p": "R",
+              "v": 263687,
+              "pct": 36.9
+            }
+          ],
+          "reported": "예상 투표의 95.6% 개표(NBC)",
+          "reported_en": "95.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "애슐리 힌슨",
-       "n_en": "Ashley Hinson",
-       "p": "R",
-       "pct": 46.4
-      }
-     ],
-     "reported": "예상 투표의 97.0% 개표(NBC)",
-     "reported_en": "97.0% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "KS",
-    "status": "won",
-    "party": "D",
-    "flip": true,
-    "cand": "애덤 해밀턴",
-    "cand_en": "Adam Hamilton",
-    "vs": "로저 마셜",
-    "vs_en": "Roger Marshall",
-    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
-    "note_en": "Republican seat flipped to Democrats (AP call)",
-    "tally": {
-     "cands": [
-      {
-       "n": "애덤 해밀턴",
-       "n_en": "Adam Hamilton",
-       "p": "D",
-       "pct": 51.1
+        "st": "IL",
+        "status": "won",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "스트래턴",
+              "n_en": "Stratton",
+              "p": "D",
+              "v": 2352008,
+              "pct": 61
+            },
+            {
+              "n": "트레이시",
+              "n_en": "Tracy",
+              "p": "R",
+              "v": 1442355,
+              "pct": 37.4
+            }
+          ],
+          "reported": "예상 투표의 87.1% 개표(NBC)",
+          "reported_en": "87.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "로저 마셜",
-       "n_en": "Roger Marshall",
-       "p": "R",
-       "pct": 45.9
-      }
-     ],
-     "reported": "예상 투표의 94.1% 개표(NBC)",
-     "reported_en": "94.1% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "SC",
-    "status": "won",
-    "party": "D",
-    "flip": true,
-    "cand": "애니 앤드루스",
-    "vs": "달린 그레이엄",
-    "cand_en": "Annie Andrews",
-    "vs_en": "Darline Graham",
-    "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
-    "note_en": "Republican seat flipped to Democrats (AP call)",
-    "tally": {
-     "cands": [
-      {
-       "n": "애니 앤드루스",
-       "n_en": "Annie Andrews",
-       "p": "D",
-       "pct": 51.1
+        "st": "NH",
+        "status": "won",
+        "party": "D",
+        "cand": "크리스 패퍼스",
+        "cand_en": "Chris Pappas",
+        "vs": "존 수누누",
+        "vs_en": "John Sununu",
+        "tally": {
+          "cands": [
+            {
+              "n": "크리스 패퍼스",
+              "n_en": "Chris Pappas",
+              "p": "D",
+              "v": 323043,
+              "pct": 56.2
+            },
+            {
+              "n": "존 수누누",
+              "n_en": "John Sununu",
+              "p": "R",
+              "v": 241706,
+              "pct": 42
+            }
+          ],
+          "reported": "예상 투표의 85.4% 개표(NBC)",
+          "reported_en": "85.4% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "달린 그레이엄",
-       "n_en": "Darline Graham",
-       "p": "R",
-       "pct": 46.7
-      }
-     ],
-     "reported": "예상 투표의 94.5% 개표(NBC)",
-     "reported_en": "94.5% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
-    }
-   },
-   {
-    "st": "AK",
-    "status": "lead",
-    "tally": {
-     "cands": [
-      {
-       "n": "펠톨라",
-       "n_en": "Peltola",
-       "p": "D",
-       "pct": 54.1
+        "st": "MA",
+        "status": "won",
+        "party": "D",
+        "cand": "에드 마키",
+        "cand_en": "Ed Markey",
+        "vs": "존 디턴",
+        "vs_en": "John Deaton",
+        "tally": {
+          "cands": [
+            {
+              "n": "에드 마키",
+              "n_en": "Ed Markey",
+              "p": "D",
+              "v": 1149953,
+              "pct": 64.1
+            },
+            {
+              "n": "존 디턴",
+              "n_en": "John Deaton",
+              "p": "R",
+              "v": 562554,
+              "pct": 31.4
+            }
+          ],
+          "reported": "예상 투표의 63.6% 개표(NBC)",
+          "reported_en": "63.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       },
       {
-       "n": "설리번",
-       "n_en": "Sullivan",
-       "p": "R",
-       "pct": 42.8
+        "st": "RI",
+        "status": "won",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "리드",
+              "n_en": "Reed",
+              "p": "D",
+              "v": 236408,
+              "pct": 66.6
+            },
+            {
+              "n": "매케이",
+              "n_en": "McKay",
+              "p": "R",
+              "v": 104649,
+              "pct": 29.5
+            }
+          ],
+          "reported": "예상 투표의 93.9% 개표(NBC)",
+          "reported_en": "93.9% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "NJ",
+        "status": "won",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "부커",
+              "n_en": "Booker",
+              "p": "D",
+              "v": 1754917,
+              "pct": 62.3
+            },
+            {
+              "n": "머피",
+              "n_en": "Murphy",
+              "p": "R",
+              "v": 988046,
+              "pct": 35.1
+            }
+          ],
+          "reported": "예상 투표의 92.3% 개표(NBC)",
+          "reported_en": "92.3% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "DE",
+        "status": "won",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "쿤스",
+              "n_en": "Coons",
+              "p": "D",
+              "v": 240330,
+              "pct": 63.6
+            },
+            {
+              "n": "카츠",
+              "n_en": "Katz",
+              "p": "R",
+              "v": 137759,
+              "pct": 36.4
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "WY",
+        "status": "won",
+        "party": "R",
+        "tally": {
+          "cands": [
+            {
+              "n": "헤이그먼",
+              "n_en": "Hageman",
+              "p": "R",
+              "v": 114202,
+              "pct": 64.5
+            },
+            {
+              "n": "버드",
+              "n_en": "Byrd",
+              "p": "D",
+              "v": 62780,
+              "pct": 35.5
+            }
+          ],
+          "reported": "예상 투표의 90.3% 개표(NBC)",
+          "reported_en": "90.3% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "OK",
+        "status": "won",
+        "party": "R",
+        "cand": "케빈 헌",
+        "cand_en": "Kevin Hern",
+        "vs": "느키일라 재스민 토머스",
+        "vs_en": "N'Kiyla Jasmine Thomas",
+        "tally": {
+          "cands": [
+            {
+              "n": "케빈 헌",
+              "n_en": "Kevin Hern",
+              "p": "R",
+              "v": 626824,
+              "pct": 57.3
+            },
+            {
+              "n": "느키일라 재스민 토머스",
+              "n_en": "Nkiyla Jasmine Thomas",
+              "p": "D",
+              "v": 428791,
+              "pct": 39.2
+            }
+          ],
+          "reported": "예상 투표의 97.5% 개표(NBC)",
+          "reported_en": "97.5% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "KY",
+        "status": "won",
+        "party": "R",
+        "cand": "앤디 바",
+        "cand_en": "Andy Barr",
+        "tally": {
+          "cands": [
+            {
+              "n": "앤디 바",
+              "n_en": "Andy Barr",
+              "p": "R",
+              "v": 784000,
+              "pct": 55
+            },
+            {
+              "n": "부커",
+              "n_en": "Booker",
+              "p": "D",
+              "v": 611987,
+              "pct": 42.9
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "WV",
+        "status": "won",
+        "party": "R",
+        "tally": {
+          "cands": [
+            {
+              "n": "무어 캐피토",
+              "n_en": "Moore Capito",
+              "p": "R",
+              "v": 265331,
+              "pct": 58.3
+            },
+            {
+              "n": "페티 앤더슨",
+              "n_en": "Fetty Anderson",
+              "p": "D",
+              "v": 172753,
+              "pct": 38
+            }
+          ],
+          "reported": "예상 투표의 93.5% 개표(NBC)",
+          "reported_en": "93.5% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "FL",
+        "status": "won",
+        "party": "R",
+        "special": true,
+        "cand": "애슐리 무디",
+        "cand_en": "Ashley Moody",
+        "vs": "앤지 닉슨",
+        "vs_en": "Angie Nixon",
+        "tally": {
+          "cands": [
+            {
+              "n": "애슐리 무디",
+              "n_en": "Ashley Moody",
+              "p": "R",
+              "v": 4207426,
+              "pct": 50.9
+            },
+            {
+              "n": "앤지 닉슨",
+              "n_en": "Angie Nixon",
+              "p": "D",
+              "v": 3968054,
+              "pct": 48
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "TX",
+        "status": "won",
+        "party": "D",
+        "cand": "제임스 탈라리코",
+        "vs": "켄 팩스턴",
+        "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
+        "cand_en": "James Talarico",
+        "vs_en": "Ken Paxton",
+        "note_en": "Republican seat flipped to Democrats (AP call)",
+        "flip": true,
+        "tally": {
+          "cands": [
+            {
+              "n": "제임스 탈라리코",
+              "n_en": "James Talarico",
+              "p": "D",
+              "v": 5014302,
+              "pct": 55
+            },
+            {
+              "n": "켄 팩스턴",
+              "n_en": "Ken Paxton",
+              "p": "R",
+              "v": 3939711,
+              "pct": 43.2
+            }
+          ],
+          "reported": "예상 투표의 88.2% 개표(NBC)",
+          "reported_en": "88.2% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "ME",
+        "status": "won",
+        "party": "D",
+        "cand": "트로이 잭슨",
+        "vs": "수전 콜린스",
+        "cand_en": "Troy Jackson",
+        "vs_en": "Susan Collins",
+        "note": "공화당 의석을 민주당이 가져옴(AP 기사 \"잭슨 승리\"). 콜린스 패배 인정",
+        "note_en": "Republican seat flipped to Democrats (AP report: Jackson won). Collins conceded",
+        "flip": true,
+        "tally": {
+          "cands": [
+            {
+              "n": "트로이 잭슨",
+              "n_en": "Troy Jackson",
+              "p": "D",
+              "v": 291798,
+              "pct": 53
+            },
+            {
+              "n": "수전 콜린스",
+              "n_en": "Susan Collins",
+              "p": "R",
+              "v": 258555,
+              "pct": 46.9
+            }
+          ],
+          "reported": "예상 투표의 72.4% 개표(NBC)",
+          "reported_en": "72.4% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "NE",
+        "status": "lead",
+        "party": "R",
+        "cand": "피트 리키츠",
+        "vs": "댄 오스본(무소속)",
+        "cand_en": "Pete Ricketts",
+        "vs_en": "Dan Osborn (I)",
+        "note": "AP·NBC 미확정(NBC: 판정하기엔 이른 단계)",
+        "note_en": "Uncalled by AP or NBC (NBC: too early to call)",
+        "tally": {
+          "cands": [
+            {
+              "n": "피트 리키츠",
+              "n_en": "Pete Ricketts",
+              "p": "R",
+              "v": 293285,
+              "pct": 49
+            },
+            {
+              "n": "댄 오스본(무소속)",
+              "n_en": "Dan Osborn (I)",
+              "p": "I",
+              "v": 269832,
+              "pct": 45.1
+            }
+          ],
+          "reported": "예상 투표의 72.2% 개표(NBC)",
+          "reported_en": "72.2% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "MT",
+        "status": "lead",
+        "party": "R",
+        "cand": "커트 앨미",
+        "cand_en": "Kurt Alme",
+        "vs": "세스 보드너(무소속)",
+        "vs_en": "Seth Bodnar (I)",
+        "note": "AP·NBC 미확정(NBC: 판정하기엔 이른 단계). 민주당 알라니 뱅크헤드 12%(NBC)",
+        "note_en": "Uncalled by AP or NBC (NBC: too early to call). Democrat Alani Bankhead at 12% (NBC)",
+        "tally": {
+          "cands": [
+            {
+              "n": "커트 앨미",
+              "n_en": "Kurt Alme",
+              "p": "R",
+              "v": 169772,
+              "pct": 47.1
+            },
+            {
+              "n": "세스 보드너(무소속)",
+              "n_en": "Seth Bodnar (I)",
+              "p": "I",
+              "v": 140770,
+              "pct": 39.1
+            }
+          ],
+          "reported": "예상 투표의 71.3% 개표(NBC)",
+          "reported_en": "71.3% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "SD",
+        "status": "won",
+        "party": "R",
+        "cand": "마이크 라운즈",
+        "cand_en": "Mike Rounds",
+        "vs": "브라이언 벵스(무소속)",
+        "vs_en": "Brian Bengs (I)",
+        "tally": {
+          "cands": [
+            {
+              "n": "마이크 라운즈",
+              "n_en": "Mike Rounds",
+              "p": "R",
+              "v": 152716,
+              "pct": 61.4
+            },
+            {
+              "n": "브라이언 벵스(무소속)",
+              "n_en": "Brian Bengs (I)",
+              "p": "I",
+              "v": 95813,
+              "pct": 38.6
+            }
+          ],
+          "reported": "예상 투표의 77.6% 개표(NBC)",
+          "reported_en": "77.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "MN",
+        "status": "won",
+        "party": "D",
+        "note": "민주당 의석 지킴(AP 확정)",
+        "note_en": "Democratic seat held (AP call)",
+        "cand": "페기 플래너건",
+        "cand_en": "Peggy Flanagan",
+        "vs": "미셸 타포야",
+        "vs_en": "Michele Tafoya",
+        "tally": {
+          "cands": [
+            {
+              "n": "페기 플래너건",
+              "n_en": "Peggy Flanagan",
+              "p": "D",
+              "v": 1477792,
+              "pct": 54.3
+            },
+            {
+              "n": "미셸 타포야",
+              "n_en": "Michele Tafoya",
+              "p": "R",
+              "v": 1169445,
+              "pct": 43
+            }
+          ],
+          "reported": "예상 투표의 93.7% 개표(NBC)",
+          "reported_en": "93.7% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "AR",
+        "status": "won",
+        "party": "R",
+        "cand": "톰 코튼",
+        "cand_en": "Tom Cotton",
+        "vs": "핼리 쇼프너",
+        "vs_en": "Hallie Shoffner",
+        "tally": {
+          "cands": [
+            {
+              "n": "톰 코튼",
+              "n_en": "Tom Cotton",
+              "p": "R",
+              "v": 480526,
+              "pct": 54.3
+            },
+            {
+              "n": "핼리 쇼프너",
+              "n_en": "Hallie Shoffner",
+              "p": "D",
+              "v": 375596,
+              "pct": 42.4
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "LA",
+        "status": "proj",
+        "party": "R",
+        "cand": "줄리아 레틀로",
+        "cand_en": "Julia Letlow",
+        "vs": "제이미 데이비스",
+        "vs_en": "Jamie Davis",
+        "note": "NBC 뉴스 예측. AP 판정은 확인 못 함",
+        "note_en": "NBC News projection. AP call not confirmed",
+        "tally": {
+          "cands": [
+            {
+              "n": "줄리아 레틀로",
+              "n_en": "Julia Letlow",
+              "p": "R",
+              "v": 745963,
+              "pct": 50.9
+            },
+            {
+              "n": "제이미 데이비스",
+              "n_en": "Jamie Davis",
+              "p": "D",
+              "v": 720106,
+              "pct": 49.1
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "MS",
+        "status": "lead",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "스콧 콜럼",
+              "n_en": "Scott Colom",
+              "p": "D",
+              "v": 462779,
+              "pct": 48.9
+            },
+            {
+              "n": "신디 하이드스미스",
+              "n_en": "Cindy Hyde-Smith",
+              "p": "R",
+              "v": 462751,
+              "pct": 48.9
+            }
+          ],
+          "reported": "예상 투표의 96.6% 개표(NBC)",
+          "reported_en": "96.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        },
+        "cand": "스콧 콜럼",
+        "cand_en": "Scott Colom",
+        "vs": "신디 하이드스미스(공·현역)",
+        "vs_en": "Sen. Cindy Hyde-Smith (R)",
+        "note": "AP·NBC 미확정. 표차 28표, 득표율 동률(NBC: 판정하기엔 너무 근소)",
+        "note_en": "Uncalled by AP or NBC. 28-vote gap, tied by percentage (NBC: too close to call)"
+      },
+      {
+        "st": "AL",
+        "status": "proj",
+        "party": "R",
+        "cand": "배리 무어",
+        "cand_en": "Barry Moore",
+        "vs": "에버렛 웨스",
+        "vs_en": "Everett Wess",
+        "note": "NBC 뉴스 예측. AP 판정은 확인 못 함",
+        "note_en": "NBC News projection. AP call not confirmed",
+        "tally": {
+          "cands": [
+            {
+              "n": "배리 무어",
+              "n_en": "Barry Moore",
+              "p": "R",
+              "v": 917869,
+              "pct": 54.8
+            },
+            {
+              "n": "에버렛 웨스",
+              "n_en": "Everett Wess",
+              "p": "D",
+              "v": 758479,
+              "pct": 45.2
+            }
+          ],
+          "reported": "예상 투표의 95.9% 개표(NBC)",
+          "reported_en": "95.9% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "TN",
+        "status": "won",
+        "party": "R",
+        "cand": "빌 해거티",
+        "cand_en": "Bill Hagerty",
+        "vs": "마르키타 브래드쇼",
+        "vs_en": "Marquita Bradshaw",
+        "note": "공화당 의석 지킴(AP 판정, WVLT 보도)",
+        "note_en": "GOP hold (AP call, per WVLT)",
+        "tally": {
+          "cands": [
+            {
+              "n": "빌 해거티",
+              "n_en": "Bill Hagerty",
+              "p": "R",
+              "v": 1138407,
+              "pct": 55.1
+            },
+            {
+              "n": "마르키타 브래드쇼",
+              "n_en": "Marquita Bradshaw",
+              "p": "D",
+              "v": 886911,
+              "pct": 42.9
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "MI",
+        "status": "lead",
+        "cand": "압둘 엘사예드",
+        "vs": "마이크 로저스",
+        "note": "AP·NBC 미확정(NBC: 민주당 쪽으로 기움, 확신 75% 이상). 민주당 의석",
+        "cand_en": "Abdul El-Sayed",
+        "vs_en": "Mike Rogers",
+        "note_en": "Uncalled by AP or NBC (NBC: leans Democratic, at least 75% confident). Democratic seat",
+        "party": "D",
+        "tally": {
+          "cands": [
+            {
+              "n": "압둘 엘사예드",
+              "n_en": "Abdul El-Sayed",
+              "p": "D",
+              "v": 1997149,
+              "pct": 51.8
+            },
+            {
+              "n": "마이크 로저스",
+              "n_en": "Mike Rogers",
+              "p": "R",
+              "v": 1779464,
+              "pct": 46.2
+            }
+          ],
+          "reported": "예상 투표의 77.6% 개표(NBC)",
+          "reported_en": "77.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "OH",
+        "status": "won",
+        "special": true,
+        "cand": "셰러드 브라운",
+        "vs": "존 허스테드",
+        "cand_en": "Sherrod Brown",
+        "vs_en": "Jon Husted",
+        "party": "D",
+        "flip": true,
+        "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
+        "note_en": "Republican seat flipped to Democrats (AP call)",
+        "tally": {
+          "cands": [
+            {
+              "n": "셰러드 브라운",
+              "n_en": "Sherrod Brown",
+              "p": "D",
+              "v": 2109363,
+              "pct": 49
+            },
+            {
+              "n": "존 허스테드",
+              "n_en": "Jon Husted",
+              "p": "R",
+              "v": 1988140,
+              "pct": 46.2
+            }
+          ],
+          "reported": "예상 투표의 90.6% 개표(NBC)",
+          "reported_en": "90.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "IA",
+        "status": "won",
+        "cand": "조시 투렉",
+        "vs": "애슐리 힌슨",
+        "cand_en": "Josh Turek",
+        "vs_en": "Ashley Hinson",
+        "party": "D",
+        "flip": true,
+        "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
+        "note_en": "Republican seat flipped to Democrats (AP call)",
+        "tally": {
+          "cands": [
+            {
+              "n": "조시 투렉",
+              "n_en": "Josh Turek",
+              "p": "D",
+              "v": 678922,
+              "pct": 50.4
+            },
+            {
+              "n": "애슐리 힌슨",
+              "n_en": "Ashley Hinson",
+              "p": "R",
+              "v": 625618,
+              "pct": 46.5
+            }
+          ],
+          "reported": "예상 투표의 97.2% 개표(NBC)",
+          "reported_en": "97.2% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "KS",
+        "status": "won",
+        "party": "D",
+        "flip": true,
+        "cand": "애덤 해밀턴",
+        "cand_en": "Adam Hamilton",
+        "vs": "로저 마셜",
+        "vs_en": "Roger Marshall",
+        "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
+        "note_en": "Republican seat flipped to Democrats (AP call)",
+        "tally": {
+          "cands": [
+            {
+              "n": "애덤 해밀턴",
+              "n_en": "Adam Hamilton",
+              "p": "D",
+              "v": 555977,
+              "pct": 51.1
+            },
+            {
+              "n": "로저 마셜",
+              "n_en": "Roger Marshall",
+              "p": "R",
+              "v": 499574,
+              "pct": 45.9
+            }
+          ],
+          "reported": "예상 투표의 94.2% 개표(NBC)",
+          "reported_en": "94.2% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "SC",
+        "status": "won",
+        "party": "D",
+        "flip": true,
+        "cand": "애니 앤드루스",
+        "vs": "달린 그레이엄",
+        "cand_en": "Annie Andrews",
+        "vs_en": "Darline Graham",
+        "note": "공화당 의석을 민주당이 가져옴(AP 확정)",
+        "note_en": "Republican seat flipped to Democrats (AP call)",
+        "tally": {
+          "cands": [
+            {
+              "n": "애니 앤드루스",
+              "n_en": "Annie Andrews",
+              "p": "D",
+              "v": 1035543,
+              "pct": 51.1
+            },
+            {
+              "n": "달린 그레이엄",
+              "n_en": "Darline Graham",
+              "p": "R",
+              "v": 947775,
+              "pct": 46.7
+            }
+          ],
+          "reported": "예상 투표의 94.5% 개표(NBC)",
+          "reported_en": "94.5% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
+      },
+      {
+        "st": "AK",
+        "status": "lead",
+        "tally": {
+          "cands": [
+            {
+              "n": "메리 펠톨라",
+              "n_en": "Mary Peltola",
+              "p": "D",
+              "v": 35324,
+              "pct": 54.1
+            },
+            {
+              "n": "댄 설리번",
+              "n_en": "Dan Sullivan",
+              "p": "R",
+              "v": 27940,
+              "pct": 42.8
+            }
+          ],
+          "reported": "예상 투표의 21.6% 개표(NBC)",
+          "reported_en": "21.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        },
+        "party": "D",
+        "cand": "메리 펠톨라",
+        "cand_en": "Mary Peltola",
+        "vs": "댄 설리번(공·현역)",
+        "vs_en": "Sen. Dan Sullivan (R)",
+        "note": "AP·NBC 미확정. 개표 초반",
+        "note_en": "Uncalled by AP or NBC. Early count"
+      },
+      {
+        "st": "ID",
+        "status": "proj",
+        "tally": {
+          "cands": [
+            {
+              "n": "리시",
+              "n_en": "Risch",
+              "p": "R",
+              "v": 284332,
+              "pct": 54.4
+            },
+            {
+              "n": "아킬리스(무소속)",
+              "n_en": "Achilles (I)",
+              "p": "I",
+              "v": 187333,
+              "pct": 35.8
+            }
+          ],
+          "reported": "예상 투표의 75.6% 개표(NBC)",
+          "reported_en": "75.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        },
+        "party": "R",
+        "cand": "짐 리시(현역)",
+        "cand_en": "Jim Risch (incumbent)",
+        "vs": "토드 아킬리스(무소속)",
+        "vs_en": "Todd Achilles (I)",
+        "note": "NBC 뉴스 예측. AP 판정은 확인 못 함",
+        "note_en": "NBC News projection. AP call not confirmed"
+      },
+      {
+        "st": "OR",
+        "status": "won",
+        "party": "D",
+        "cand": "제프 머클리",
+        "cand_en": "Jeff Merkley",
+        "tally": {
+          "cands": [
+            {
+              "n": "제프 머클리",
+              "n_en": "Jeff Merkley",
+              "p": "D",
+              "v": 789816,
+              "pct": 57.2
+            },
+            {
+              "n": "스미스",
+              "n_en": "Smith",
+              "p": "R",
+              "v": 553249,
+              "pct": 40
+            }
+          ],
+          "reported": "예상 투표의 68.3% 개표(NBC)",
+          "reported_en": "68.3% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 상원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/senate-results",
+            "NBC News Senate results (AP data)"
+          ]
+        }
       }
-     ],
-     "reported": "예상 투표의 21.6% 개표(NBC)",
-     "reported_en": "21.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
+    ],
+    "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · totals are seats not up + confirmed AP calls",
+    "note_en": "Includes seats not up this year (Dem 34, GOP 31). The Democratic total includes two independents who caucus with them (Bernie Sanders, Angus King). TIME reports AP called the Senate for Democrats late on Nov 3. Totals here count only AP calls Pando has confirmed. Alabama, Louisiana and Idaho (leaning GOP) have only NBC projections confirmed, so they are not counted. Michigan, Nebraska, Montana, Mississippi and Alaska are also not counted yet. By NBC News projections: Democrats 53, Republicans 42 (1:34 a.m. ET Nov 4; 5 uncalled).",
+    "asOf": "2026-11-04T06:34:00Z"
+  },
+  "house": {
+    "dem": 226,
+    "gop": 136,
+    "total": 435,
+    "control": 218,
+    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 NBC 뉴스 디시전 데스크 판정(집계 자료 AP), 현지 4일 오전 1시 34분 기준 · 미판정 73석",
+    "projection": {
+      "party": "D",
+      "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 약 255석 추정",
+      "short": "민주 과반(AP)",
+      "text_en": "AP: Democrats win the House majority (per TIME). NBC estimates about 255 seats",
+      "short_en": "Dem majority (AP)"
     },
-    "party": "D",
-    "cand": "펠톨라",
-    "cand_en": "Peltola",
-    "vs": "설리번(공·현역)",
-    "vs_en": "Sullivan (R, incumbent)",
-    "note": "AP·NBC 미확정. 개표 초반",
-    "note_en": "Not called by AP or NBC. Early count"
-   },
-   {
-    "st": "ID",
-    "status": "lead",
-    "tally": {
-     "cands": [
+    "note": "타임에 따르면 AP는 현지 4일 새벽 하원을 민주당 다수로 판정했다. NBC 뉴스는 민주당이 최종 약 255석을 얻을 것으로 추정한다. 지금까지 NBC가 판정한 의석은 민주 226·공화 136, 공화당 의석 28곳을 뒤집었다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 NBC가 꼽은 접전 선거구와 확인된 뒤집힘(공화당 현역 낙선 등)이다.",
+    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · seats per NBC News Decision Desk projections (AP data) as of 1:34 a.m. ET Nov 4 · 73 uncalled",
+    "note_en": "TIME reports AP called the House for Democrats early on Nov 4. NBC News estimates about 255 Democratic seats in the end. NBC-called seats so far: Democrats 226, Republicans 136, with 28 GOP seats flipped. The map counts NBC-called seats by party in each state. Below: NBC battleground districts and confirmed flips (including defeated GOP incumbents).",
+    "races": [
       {
-       "n": "리시",
-       "n_en": "Risch",
-       "p": "R",
-       "pct": 52.9
+        "d": "NC-9",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "리처드 오헤다 2세",
+        "cand_en": "Richard Ojeda II",
+        "vs": "리처드 허드슨(현역)",
+        "vs_en": "Richard Hudson (incumbent)",
+        "note": "공화당 하원 선거 사령탑(NRCC 위원장)을 꺾음(NBC 예측)",
+        "note_en": "Beat the chair of the House GOP campaign arm (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "리처드 오헤다 2세",
+              "n_en": "Richard Ojeda II",
+              "p": "D",
+              "v": 138707,
+              "pct": 51.1
+            },
+            {
+              "n": "리처드 허드슨",
+              "n_en": "Richard Hudson",
+              "p": "R",
+              "v": 132692,
+              "pct": 48.9
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
       },
       {
-       "n": "아킬리스(무소속)",
-       "n_en": "Achilles (I)",
-       "p": "I",
-       "pct": 37.7
+        "d": "PA-1",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "밥 하비",
+        "cand_en": "Bob Harvie",
+        "vs": "브라이언 피츠패트릭(현역)",
+        "vs_en": "Brian Fitzpatrick (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "밥 하비",
+              "n_en": "Bob Harvie",
+              "p": "D",
+              "v": 188011,
+              "pct": 52.7
+            },
+            {
+              "n": "브라이언 피츠패트릭",
+              "n_en": "Brian Fitzpatrick",
+              "p": "R",
+              "v": 168470,
+              "pct": 47.3
+            }
+          ],
+          "reported": "예상 투표의 98% 개표(NBC)",
+          "reported_en": "98% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "PA-7",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "밥 브룩스",
+        "cand_en": "Bob Brooks",
+        "vs": "라이언 매켄지(현역)",
+        "vs_en": "Ryan Mackenzie (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "밥 브룩스",
+              "n_en": "Bob Brooks",
+              "p": "D",
+              "v": 163823,
+              "pct": 56
+            },
+            {
+              "n": "라이언 매켄지",
+              "n_en": "Ryan Mackenzie",
+              "p": "R",
+              "v": 128465,
+              "pct": 44
+            }
+          ],
+          "reported": "예상 투표의 97.5% 개표(NBC)",
+          "reported_en": "97.5% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "PA-8",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "페이지 코그네티",
+        "cand_en": "Paige Cognetti",
+        "vs": "롭 브레스너핸(현역)",
+        "vs_en": "Rob Bresnahan (incumbent)",
+        "note": "스크랜턴 시장, 트럼프 2024년 8%p 우세 지역(NBC 예측)",
+        "note_en": "Scranton mayor; Trump +8 in 2024 (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "페이지 코그네티",
+              "n_en": "Paige Cognetti",
+              "p": "D",
+              "v": 152583,
+              "pct": 54.4
+            },
+            {
+              "n": "롭 브레스너핸",
+              "n_en": "Rob Bresnahan",
+              "p": "R",
+              "v": 128081,
+              "pct": 45.6
+            }
+          ],
+          "reported": "예상 투표의 97.6% 개표(NBC)",
+          "reported_en": "97.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "PA-10",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "재닐 스텔슨",
+        "cand_en": "Janelle Stelson",
+        "vs": "스콧 페리(현역)",
+        "vs_en": "Scott Perry (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "재닐 스텔슨",
+              "n_en": "Janelle Stelson",
+              "p": "D",
+              "v": 173845,
+              "pct": 55
+            },
+            {
+              "n": "스콧 페리",
+              "n_en": "Scott Perry",
+              "p": "R",
+              "v": 142059,
+              "pct": 45
+            }
+          ],
+          "reported": "예상 투표의 98.8% 개표(NBC)",
+          "reported_en": "98.8% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "VA-1",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "섀넌 테일러",
+        "cand_en": "Shannon Taylor",
+        "vs": "롭 위트먼(현역)",
+        "vs_en": "Rob Wittman (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "섀넌 테일러",
+              "n_en": "Shannon Taylor",
+              "p": "D",
+              "v": 213608,
+              "pct": 50.5
+            },
+            {
+              "n": "롭 위트먼",
+              "n_en": "Rob Wittman",
+              "p": "R",
+              "v": 208515,
+              "pct": 49.3
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "VA-2",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "일레인 루리아",
+        "cand_en": "Elaine Luria",
+        "vs": "젠 키건스(현역)",
+        "vs_en": "Jen Kiggans (incumbent)",
+        "note": "전직 의원이 옛 지역구 탈환(NBC 예측)",
+        "note_en": "Former member wins back her old seat (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "일레인 루리아",
+              "n_en": "Elaine Luria",
+              "p": "D",
+              "v": 178696,
+              "pct": 53.1
+            },
+            {
+              "n": "젠 키건스",
+              "n_en": "Jen Kiggans",
+              "p": "R",
+              "v": 150080,
+              "pct": 44.6
+            }
+          ],
+          "reported": "예상 투표의 97.1% 개표(NBC)",
+          "reported_en": "97.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NJ-7",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "리베카 베넷",
+        "cand_en": "Rebecca Bennett",
+        "vs": "톰 킨 주니어(현역)",
+        "vs_en": "Tom Kean Jr. (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "리베카 베넷",
+              "n_en": "Rebecca Bennett",
+              "p": "D",
+              "v": 186422,
+              "pct": 57.1
+            },
+            {
+              "n": "톰 킨 주니어",
+              "n_en": "Tom Kean Jr.",
+              "p": "R",
+              "v": 135037,
+              "pct": 41.4
+            }
+          ],
+          "reported": "예상 투표의 94.3% 개표(NBC)",
+          "reported_en": "94.3% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "CO-8",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "매니 루티넬",
+        "cand_en": "Manny Rutinel",
+        "vs": "게이브 에번스(현역)",
+        "vs_en": "Gabe Evans (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "매니 루티넬",
+              "n_en": "Manny Rutinel",
+              "p": "D",
+              "v": 123653,
+              "pct": 55.6
+            },
+            {
+              "n": "게이브 에번스",
+              "n_en": "Gabe Evans",
+              "p": "R",
+              "v": 90488,
+              "pct": 40.7
+            }
+          ],
+          "reported": "예상 투표의 77.6% 개표(NBC)",
+          "reported_en": "77.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "OH-7",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "포인덱스터",
+        "cand_en": "Poindexter",
+        "vs": "맥스 밀러(현역)",
+        "vs_en": "Max Miller (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "포인덱스터",
+              "n_en": "Poindexter",
+              "p": "D",
+              "v": 154353,
+              "pct": 54.3
+            },
+            {
+              "n": "맥스 밀러",
+              "n_en": "Max Miller",
+              "p": "R",
+              "v": 129788,
+              "pct": 45.7
+            }
+          ],
+          "reported": "예상 투표의 88.1% 개표(NBC)",
+          "reported_en": "88.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "IA-1",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "보해넌",
+        "cand_en": "Bohannan",
+        "vs": "밀러믹스(현역)",
+        "vs_en": "Miller-Meeks (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "보해넌",
+              "n_en": "Bohannan",
+              "p": "D",
+              "v": 182396,
+              "pct": 52.8
+            },
+            {
+              "n": "밀러믹스",
+              "n_en": "Miller-Meeks",
+              "p": "R",
+              "v": 150471,
+              "pct": 43.6
+            }
+          ],
+          "reported": "예상 투표의 98.8% 개표(NBC)",
+          "reported_en": "98.8% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "IA-3",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "트론 개리엇",
+        "cand_en": "Trone Garriott",
+        "vs": "잭 넌(현역)",
+        "vs_en": "Zach Nunn (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "트론 개리엇",
+              "n_en": "Trone Garriott",
+              "p": "D",
+              "v": 178641,
+              "pct": 54.2
+            },
+            {
+              "n": "잭 넌",
+              "n_en": "Zach Nunn",
+              "p": "R",
+              "v": 150931,
+              "pct": 45.8
+            }
+          ],
+          "reported": "예상 투표의 90.4% 개표(NBC)",
+          "reported_en": "90.4% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "WI-3",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "쿡",
+        "cand_en": "Cooke",
+        "vs": "데릭 밴오든(현역)",
+        "vs_en": "Derrick Van Orden (incumbent)",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "쿡",
+              "n_en": "Cooke",
+              "p": "D",
+              "v": 172757,
+              "pct": 52.4
+            },
+            {
+              "n": "데릭 밴오든",
+              "n_en": "Derrick Van Orden",
+              "p": "R",
+              "v": 150872,
+              "pct": 45.8
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NE-2",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "데니스 파월",
+        "cand_en": "Denise Powell",
+        "vs": "브링커 하딩",
+        "vs_en": "Brinker Harding",
+        "note": "공화당 의석(NBC 예측)",
+        "note_en": "GOP-held seat (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "데니스 파월",
+              "n_en": "Denise Powell",
+              "p": "D",
+              "v": 125765,
+              "pct": 57
+            },
+            {
+              "n": "브링커 하딩",
+              "n_en": "Brinker Harding",
+              "p": "R",
+              "v": 89217,
+              "pct": 40.5
+            }
+          ],
+          "reported": "예상 투표의 80% 개표(NBC)",
+          "reported_en": "80% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NC-11",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "제이미 에이거",
+        "cand_en": "Jamie Ager",
+        "vs": "제니퍼 발콤",
+        "vs_en": "Jennifer Balkcom",
+        "note": "공화당 척 에드워즈 의원이 비위 의혹으로 출마 철회한 지역구(NBC 예측)",
+        "note_en": "Seat vacated when GOP Rep. Chuck Edwards withdrew after misconduct allegations (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "제이미 에이거",
+              "n_en": "Jamie Ager",
+              "p": "D",
+              "v": 195637,
+              "pct": 57.1
+            },
+            {
+              "n": "제니퍼 발콤",
+              "n_en": "Jennifer Balkcom",
+              "p": "R",
+              "v": 141427,
+              "pct": 41.3
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "KY-6",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "잭 뎀보",
+        "cand_en": "Zach Dembo",
+        "note": "2024년 트럼프가 15%p 이긴 공화당 지역구",
+        "note_en": "GOP seat Trump won by 15 points in 2024",
+        "tally": {
+          "cands": [
+            {
+              "n": "잭 뎀보",
+              "n_en": "Zach Dembo",
+              "p": "D",
+              "v": 138777,
+              "pct": 52.7
+            },
+            {
+              "n": "랠프 앨버라도",
+              "n_en": "Ralph Alvarado",
+              "p": "R",
+              "v": 114030,
+              "pct": 43.3
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        },
+        "vs": "랠프 앨버라도",
+        "vs_en": "Ralph Alvarado"
+      },
+      {
+        "d": "IN-5",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "제이디 포드",
+        "cand_en": "J.D. Ford",
+        "vs": "빅토리아 스파츠(현역)",
+        "vs_en": "Victoria Spartz (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "제이디 포드",
+              "n_en": "J.D. Ford",
+              "p": "D",
+              "v": 134476,
+              "pct": 51.7
+            },
+            {
+              "n": "빅토리아 스파츠",
+              "n_en": "Victoria Spartz",
+              "p": "R",
+              "v": 125851,
+              "pct": 48.3
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "MO-2",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "프레드 웰먼",
+        "cand_en": "Fred Wellman",
+        "vs": "앤 와그너(현역)",
+        "vs_en": "Ann Wagner (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "프레드 웰먼",
+              "n_en": "Fred Wellman",
+              "p": "D",
+              "v": 169477,
+              "pct": 51.1
+            },
+            {
+              "n": "앤 와그너",
+              "n_en": "Ann Wagner",
+              "p": "R",
+              "v": 153132,
+              "pct": 46.2
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NC-6",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "시릴 제퍼슨",
+        "cand_en": "Cyril Jefferson",
+        "vs": "애디슨 맥도웰(현역)",
+        "vs_en": "Addison McDowell (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "시릴 제퍼슨",
+              "n_en": "Cyril Jefferson",
+              "p": "D",
+              "v": 140001,
+              "pct": 51.1
+            },
+            {
+              "n": "애디슨 맥도웰",
+              "n_en": "Addison McDowell",
+              "p": "R",
+              "v": 133746,
+              "pct": 48.9
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NC-13",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "폴 배린저",
+        "cand_en": "Paul Barringer",
+        "vs": "브래드 노트(현역)",
+        "vs_en": "Brad Knott (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "폴 배린저",
+              "n_en": "Paul Barringer",
+              "p": "D",
+              "v": 159981,
+              "pct": 50.5
+            },
+            {
+              "n": "브래드 노트",
+              "n_en": "Brad Knott",
+              "p": "R",
+              "v": 152329,
+              "pct": 48.1
+            }
+          ],
+          "reported": "예상 투표의 98.1% 개표(NBC)",
+          "reported_en": "98.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NC-14",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "라케샤 워맥",
+        "cand_en": "Lakesha Womack",
+        "vs": "팀 무어(현역)",
+        "vs_en": "Tim Moore (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "라케샤 워맥",
+              "n_en": "Lakesha Womack",
+              "p": "D",
+              "v": 147388,
+              "pct": 51.1
+            },
+            {
+              "n": "팀 무어",
+              "n_en": "Tim Moore",
+              "p": "R",
+              "v": 140973,
+              "pct": 48.9
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "OH-15",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "돈 레너드",
+        "cand_en": "Don Leonard",
+        "vs": "마이크 캐리(현역)",
+        "vs_en": "Mike Carey (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "돈 레너드",
+              "n_en": "Don Leonard",
+              "p": "D",
+              "v": 149287,
+              "pct": 51.9
+            },
+            {
+              "n": "마이크 캐리",
+              "n_en": "Mike Carey",
+              "p": "R",
+              "v": 130225,
+              "pct": 45.3
+            }
+          ],
+          "reported": "예상 투표의 98.1% 개표(NBC)",
+          "reported_en": "98.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "TX-15",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "보비 풀리도",
+        "cand_en": "Bobby Pulido",
+        "vs": "모니카 데라크루스(현역)",
+        "vs_en": "Monica De La Cruz (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "보비 풀리도",
+              "n_en": "Bobby Pulido",
+              "p": "D",
+              "v": 117031,
+              "pct": 61.6
+            },
+            {
+              "n": "모니카 데라크루스",
+              "n_en": "Monica De La Cruz",
+              "p": "R",
+              "v": 72822,
+              "pct": 38.4
+            }
+          ],
+          "reported": "예상 투표의 89.2% 개표(NBC)",
+          "reported_en": "89.2% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "WI-1",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "미첼 버먼",
+        "cand_en": "Mitchell Berman",
+        "vs": "브라이언 스타일(현역)",
+        "vs_en": "Bryan Steil (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "미첼 버먼",
+              "n_en": "Mitchell Berman",
+              "p": "D",
+              "v": 153079,
+              "pct": 52.3
+            },
+            {
+              "n": "브라이언 스타일",
+              "n_en": "Bryan Steil",
+              "p": "R",
+              "v": 139637,
+              "pct": 47.7
+            }
+          ],
+          "reported": "예상 투표의 95.3% 개표(NBC)",
+          "reported_en": "95.3% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "CA-1",
+        "status": "proj",
+        "party": "D",
+        "flip": true,
+        "cand": "마이크 맥과이어",
+        "cand_en": "Mike McGuire",
+        "vs": "제임스 갤러거(현역)",
+        "vs_en": "James Gallagher (incumbent)",
+        "note": "공화당 현역 낙선(NBC 예측)",
+        "note_en": "GOP incumbent defeated (NBC projection)",
+        "tally": {
+          "cands": [
+            {
+              "n": "마이크 맥과이어",
+              "n_en": "Mike McGuire",
+              "p": "D",
+              "v": 83006,
+              "pct": 57.1
+            },
+            {
+              "n": "제임스 갤러거",
+              "n_en": "James Gallagher",
+              "p": "R",
+              "v": 62273,
+              "pct": 42.9
+            }
+          ],
+          "reported": "예상 투표의 47.1% 개표(NBC)",
+          "reported_en": "47.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NY-17",
+        "status": "lead",
+        "party": "D",
+        "cand": "케이트 콘리",
+        "cand_en": "Cait Conley",
+        "vs": "마이크 롤러(현역)",
+        "vs_en": "Mike Lawler (incumbent)",
+        "note": "개표기 오작동 보고, 주 선관위 \"유효표 모두 센다\"",
+        "note_en": "Ballot scanner malfunctions reported; state board says every valid vote will be counted",
+        "tally": {
+          "cands": [
+            {
+              "n": "케이트 콘리",
+              "n_en": "Cait Conley",
+              "p": "D",
+              "v": 133219,
+              "pct": 52.2
+            },
+            {
+              "n": "마이크 롤러",
+              "n_en": "Mike Lawler",
+              "p": "R",
+              "v": 121881,
+              "pct": 47.7
+            }
+          ],
+          "reported": "예상 투표의 60.9% 개표(NBC)",
+          "reported_en": "60.9% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "AZ-6",
+        "status": "lead",
+        "party": "D",
+        "cand": "멘도사",
+        "cand_en": "Mendoza",
+        "vs": "후안 시스코마니(현역)",
+        "vs_en": "Juan Ciscomani (incumbent)",
+        "tally": {
+          "cands": [
+            {
+              "n": "멘도사",
+              "n_en": "Mendoza",
+              "p": "D",
+              "v": 142264,
+              "pct": 55.4
+            },
+            {
+              "n": "후안 시스코마니",
+              "n_en": "Juan Ciscomani",
+              "p": "R",
+              "v": 109349,
+              "pct": 42.6
+            }
+          ],
+          "reported": "예상 투표의 69.7% 개표(NBC)",
+          "reported_en": "69.7% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "CA-22",
+        "status": "lead",
+        "party": "D",
+        "cand": "비예가스",
+        "cand_en": "Villegas",
+        "vs": "데이비드 발라다오(현역)",
+        "vs_en": "David Valadao (incumbent)",
+        "tally": {
+          "cands": [
+            {
+              "n": "비예가스",
+              "n_en": "Villegas",
+              "p": "D",
+              "v": 41211,
+              "pct": 65.1
+            },
+            {
+              "n": "데이비드 발라다오",
+              "n_en": "David Valadao",
+              "p": "R",
+              "v": 22140,
+              "pct": 34.9
+            }
+          ],
+          "reported": "예상 투표의 44.2% 개표(NBC)",
+          "reported_en": "44.2% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "AZ-1",
+        "status": "lead",
+        "party": "D",
+        "cand": "아미시 샤",
+        "cand_en": "Amish Shah",
+        "vs": "필리",
+        "vs_en": "Feely",
+        "tally": {
+          "cands": [
+            {
+              "n": "아미시 샤",
+              "n_en": "Amish Shah",
+              "p": "D",
+              "v": 141631,
+              "pct": 54.9
+            },
+            {
+              "n": "필리",
+              "n_en": "Feely",
+              "p": "R",
+              "v": 111699,
+              "pct": 43.3
+            }
+          ],
+          "reported": "예상 투표의 73.6% 개표(NBC)",
+          "reported_en": "73.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "MI-10",
+        "status": "lead",
+        "party": "D",
+        "cand": "하인스",
+        "cand_en": "Hines",
+        "vs": "부샤드",
+        "vs_en": "Bouchard",
+        "tally": {
+          "cands": [
+            {
+              "n": "하인스",
+              "n_en": "Hines",
+              "p": "D",
+              "v": 118153,
+              "pct": 50.3
+            },
+            {
+              "n": "부샤드",
+              "n_en": "Bouchard",
+              "p": "R",
+              "v": 111067,
+              "pct": 47.3
+            }
+          ],
+          "reported": "예상 투표의 61.9% 개표(NBC)",
+          "reported_en": "61.9% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "ME-2",
+        "status": "lead",
+        "party": "R",
+        "cand": "폴 르페이지",
+        "cand_en": "Paul LePage",
+        "vs": "던랩",
+        "vs_en": "Dunlap",
+        "tally": {
+          "cands": [
+            {
+              "n": "폴 르페이지",
+              "n_en": "Paul LePage",
+              "p": "R",
+              "v": 130249,
+              "pct": 50.1
+            },
+            {
+              "n": "던랩",
+              "n_en": "Dunlap",
+              "p": "D",
+              "v": 129660,
+              "pct": 49.9
+            }
+          ],
+          "reported": "예상 투표의 73.5% 개표(NBC)",
+          "reported_en": "73.5% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "MI-4",
+        "status": "lead",
+        "party": "R",
+        "cand": "빌 하위징아(현역)",
+        "cand_en": "Bill Huizenga (incumbent)",
+        "vs": "매캔",
+        "vs_en": "McCann",
+        "tally": {
+          "cands": [
+            {
+              "n": "빌 하위징아",
+              "n_en": "Bill Huizenga",
+              "p": "R",
+              "v": 116140,
+              "pct": 49.8
+            },
+            {
+              "n": "매캔",
+              "n_en": "McCann",
+              "p": "D",
+              "v": 113623,
+              "pct": 48.8
+            }
+          ],
+          "reported": "예상 투표의 60.6% 개표(NBC)",
+          "reported_en": "60.6% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "MI-7",
+        "status": "lead",
+        "party": "R",
+        "cand": "톰 배럿(현역)",
+        "cand_en": "Tom Barrett (incumbent)",
+        "vs": "로런스",
+        "vs_en": "Lawrence",
+        "tally": {
+          "cands": [
+            {
+              "n": "톰 배럿",
+              "n_en": "Tom Barrett",
+              "p": "R",
+              "v": 174995,
+              "pct": 49.8
+            },
+            {
+              "n": "로런스",
+              "n_en": "Lawrence",
+              "p": "D",
+              "v": 172006,
+              "pct": 48.9
+            }
+          ],
+          "reported": "예상 투표의 85% 개표(NBC)",
+          "reported_en": "85% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "OH-9",
+        "status": "lead",
+        "party": "R",
+        "cand": "메린",
+        "cand_en": "Merrin",
+        "vs": "마시 캡터(현역)",
+        "vs_en": "Marcy Kaptur (incumbent)",
+        "note": "민주당 최장수 여성 의원의 지역구",
+        "note_en": "Seat of the longest-serving woman in Congress",
+        "tally": {
+          "cands": [
+            {
+              "n": "메린",
+              "n_en": "Merrin",
+              "p": "R",
+              "v": 88808,
+              "pct": 59.1
+            },
+            {
+              "n": "마시 캡터",
+              "n_en": "Marcy Kaptur",
+              "p": "D",
+              "v": 61348,
+              "pct": 40.9
+            }
+          ],
+          "reported": "예상 투표의 47.7% 개표(NBC)",
+          "reported_en": "47.7% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NE-1",
+        "status": "lead",
+        "party": "D",
+        "cand": "크리스 백마이어",
+        "cand_en": "Chris Backemeyer",
+        "vs": "마이크 플러드(현역)",
+        "vs_en": "Mike Flood (incumbent)",
+        "tally": {
+          "cands": [
+            {
+              "n": "크리스 백마이어",
+              "n_en": "Chris Backemeyer",
+              "p": "D",
+              "v": 89193,
+              "pct": 48.8
+            },
+            {
+              "n": "마이크 플러드",
+              "n_en": "Mike Flood",
+              "p": "R",
+              "v": 87333,
+              "pct": 47.8
+            }
+          ],
+          "reported": "예상 투표의 67.1% 개표(NBC)",
+          "reported_en": "67.1% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "MN-1",
+        "status": "lead",
+        "party": "R",
+        "cand": "브래드 핀스태드(현역)",
+        "cand_en": "Brad Finstad (incumbent)",
+        "vs": "제이크 존슨",
+        "vs_en": "Jake Johnson",
+        "tally": {
+          "cands": [
+            {
+              "n": "브래드 핀스태드",
+              "n_en": "Brad Finstad",
+              "p": "R",
+              "v": 158001,
+              "pct": 50.3
+            },
+            {
+              "n": "제이크 존슨",
+              "n_en": "Jake Johnson",
+              "p": "D",
+              "v": 155525,
+              "pct": 49.5
+            }
+          ],
+          "reported": "예상 투표의 92.5% 개표(NBC)",
+          "reported_en": "92.5% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "FL-25",
+        "status": "proj",
+        "party": "D",
+        "cand": "재러드 모스코위츠(현역)",
+        "cand_en": "Jared Moskowitz (incumbent)",
+        "vs": "싱어",
+        "vs_en": "Singer",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "재러드 모스코위츠",
+              "n_en": "Jared Moskowitz",
+              "p": "D",
+              "v": 143639,
+              "pct": 51.3
+            },
+            {
+              "n": "싱어",
+              "n_en": "Singer",
+              "p": "R",
+              "v": 130728,
+              "pct": 46.6
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "NC-1",
+        "status": "proj",
+        "party": "D",
+        "cand": "돈 데이비스(현역)",
+        "cand_en": "Don Davis (incumbent)",
+        "vs": "벅아웃",
+        "vs_en": "Buckhout",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "돈 데이비스",
+              "n_en": "Don Davis",
+              "p": "D",
+              "v": 151134,
+              "pct": 49.6
+            },
+            {
+              "n": "벅아웃",
+              "n_en": "Buckhout",
+              "p": "R",
+              "v": 143559,
+              "pct": 47.2
+            }
+          ],
+          "reported": "예상 투표의 96.3% 개표(NBC)",
+          "reported_en": "96.3% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "TX-28",
+        "status": "proj",
+        "party": "D",
+        "cand": "헨리 쿠엘야르(현역)",
+        "cand_en": "Henry Cuellar (incumbent)",
+        "vs": "티에리나",
+        "vs_en": "Tijerina",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "헨리 쿠엘야르",
+              "n_en": "Henry Cuellar",
+              "p": "D",
+              "v": 105055,
+              "pct": 65.8
+            },
+            {
+              "n": "티에리나",
+              "n_en": "Tijerina",
+              "p": "R",
+              "v": 47208,
+              "pct": 29.5
+            }
+          ],
+          "reported": "예상 투표의 86.4% 개표(NBC)",
+          "reported_en": "86.4% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "TX-34",
+        "status": "proj",
+        "party": "D",
+        "cand": "곤살레스",
+        "cand_en": "Gonzalez",
+        "vs": "플로레스",
+        "vs_en": "Flores",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "곤살레스",
+              "n_en": "Gonzalez",
+              "p": "D",
+              "v": 112667,
+              "pct": 55.6
+            },
+            {
+              "n": "플로레스",
+              "n_en": "Flores",
+              "p": "R",
+              "v": 80572,
+              "pct": 39.8
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
+      },
+      {
+        "d": "WA-3",
+        "status": "proj",
+        "party": "D",
+        "cand": "마리 글루즌캠프 페레즈(현역)",
+        "cand_en": "Marie Gluesenkamp Perez (incumbent)",
+        "vs": "브라운",
+        "vs_en": "Braun",
+        "note": "NBC 예측",
+        "note_en": "NBC projection",
+        "tally": {
+          "cands": [
+            {
+              "n": "마리 글루즌캠프 페레즈",
+              "n_en": "Marie Gluesenkamp Perez",
+              "p": "D",
+              "v": 143417,
+              "pct": 55
+            },
+            {
+              "n": "브라운",
+              "n_en": "Braun",
+              "p": "R",
+              "v": 115271,
+              "pct": 44.2
+            }
+          ],
+          "reported": "예상 투표의 66.7% 개표(NBC)",
+          "reported_en": "66.7% of expected vote in (NBC)",
+          "asOf": "2026-11-04T06:34:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        }
       }
-     ],
-     "reported": "예상 투표의 56.7% 개표(NBC)",
-     "reported_en": "56.7% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-     ]
+    ],
+    "states": {
+      "IN": {
+        "d": 3,
+        "r": 6
+      },
+      "MT": {
+        "d": 0,
+        "r": 1
+      },
+      "NM": {
+        "d": 3,
+        "r": 0
+      },
+      "TX": {
+        "d": 13,
+        "r": 13
+      },
+      "ID": {
+        "d": 0,
+        "r": 1
+      },
+      "LA": {
+        "d": 1,
+        "r": 3
+      },
+      "CT": {
+        "d": 5,
+        "r": 0
+      },
+      "IA": {
+        "d": 3,
+        "r": 1
+      },
+      "DE": {
+        "d": 1,
+        "r": 0
+      },
+      "NC": {
+        "d": 9,
+        "r": 2
+      },
+      "UT": {
+        "d": 1,
+        "r": 2
+      },
+      "IL": {
+        "d": 14,
+        "r": 3
+      },
+      "OH": {
+        "d": 6,
+        "r": 7
+      },
+      "NE": {
+        "d": 1,
+        "r": 1
+      },
+      "WA": {
+        "d": 8,
+        "r": 0
+      },
+      "SC": {
+        "d": 1,
+        "r": 4
+      },
+      "HI": {
+        "d": 2,
+        "r": 0
+      },
+      "NH": {
+        "d": 2,
+        "r": 0
+      },
+      "SD": {
+        "d": 0,
+        "r": 1
+      },
+      "WV": {
+        "d": 0,
+        "r": 2
+      },
+      "NJ": {
+        "d": 10,
+        "r": 1
+      },
+      "CO": {
+        "d": 5,
+        "r": 0
+      },
+      "GA": {
+        "d": 5,
+        "r": 9
+      },
+      "MD": {
+        "d": 7,
+        "r": 1
+      },
+      "WY": {
+        "d": 0,
+        "r": 1
+      },
+      "CA": {
+        "d": 38,
+        "r": 1
+      },
+      "KY": {
+        "d": 2,
+        "r": 4
+      },
+      "ND": {
+        "d": 0,
+        "r": 1
+      },
+      "AL": {
+        "d": 2,
+        "r": 5
+      },
+      "OK": {
+        "d": 0,
+        "r": 5
+      },
+      "AK": {
+        "d": 0,
+        "r": 0
+      },
+      "MS": {
+        "d": 1,
+        "r": 3
+      },
+      "AZ": {
+        "d": 3,
+        "r": 1
+      },
+      "FL": {
+        "d": 7,
+        "r": 16
+      },
+      "OR": {
+        "d": 5,
+        "r": 1
+      },
+      "WI": {
+        "d": 4,
+        "r": 4
+      },
+      "MA": {
+        "d": 9,
+        "r": 0
+      },
+      "NV": {
+        "d": 0,
+        "r": 0
+      },
+      "VA": {
+        "d": 8,
+        "r": 2
+      },
+      "KS": {
+        "d": 1,
+        "r": 3
+      },
+      "MI": {
+        "d": 6,
+        "r": 4
+      },
+      "NY": {
+        "d": 18,
+        "r": 3
+      },
+      "AR": {
+        "d": 0,
+        "r": 4
+      },
+      "ME": {
+        "d": 1,
+        "r": 0
+      },
+      "TN": {
+        "d": 0,
+        "r": 7
+      },
+      "MN": {
+        "d": 4,
+        "r": 2
+      },
+      "PA": {
+        "d": 11,
+        "r": 6
+      },
+      "RI": {
+        "d": 2,
+        "r": 0
+      },
+      "MO": {
+        "d": 3,
+        "r": 5
+      },
+      "VT": {
+        "d": 1,
+        "r": 0
+      }
     },
-    "party": "R",
-    "cand": "리시(현역)",
-    "cand_en": "Risch (incumbent)",
-    "vs": "아킬리스(무소속)",
-    "vs_en": "Achilles (I)",
-    "note": "AP·NBC 미확정",
-    "note_en": "Not called by AP or NBC"
-   },
-   {
-    "st": "OR",
-    "status": "won",
-    "party": "D",
-    "cand": "제프 머클리",
-    "cand_en": "Jeff Merkley",
-    "tally": {
-     "cands": [
-      {
-       "n": "제프 머클리",
-       "n_en": "Jeff Merkley",
-       "p": "D",
-       "pct": 57.3
-      },
-      {
-       "n": "스미스",
-       "n_en": "Smith",
-       "p": "R",
-       "pct": 39.9
-      }
-     ],
-     "reported": "예상 투표의 67.5% 개표(NBC)",
-     "reported_en": "67.5% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
+    "asOf": "2026-11-04T06:34:00Z"
+  },
+  "feed": [
+    {
+      "t": "2026-11-04T06:34:00Z",
+      "text": "미시시피 상원: 표차 28표. 스콧 콜럼(민) 462,779표, 신디 하이드스미스(공·현역) 462,751표, 96.6% 개표(NBC·미판정).",
+      "text_en": "Mississippi Senate: 28-vote gap. Scott Colom (D) 462,779, Sen. Cindy Hyde-Smith (R) 462,751, 96.6% in (NBC, uncalled)."
+    },
+    {
+      "t": "2026-11-04T06:34:00Z",
+      "text": "하원: NBC 판정 의석 민주 226·공화 136, 미판정 73. 공화당 의석 28곳 뒤집힘. AP는 하원도 민주당 다수로 판정(타임).",
+      "text_en": "House: NBC-called seats Democrats 226, Republicans 136, 73 uncalled; 28 GOP seats flipped. AP also called the House for Democrats (TIME)."
+    },
+    {
+      "t": "2026-11-04T06:34:00Z",
+      "text": "상원: AP 메인 잭슨(민)·테네시 해거티(공) 확정 확인(민주 53·공화 39). 아이다호 리시(공) NBC 예측.",
+      "text_en": "Senate: AP calls confirmed for Maine (Jackson, D) and Tennessee (Hagerty, R), making it Democrats 53, Republicans 39. NBC projects Risch (R) in Idaho."
+    },
+    {
+      "t": "2026-11-04T05:51:00Z",
+      "text": "하원: NBC 판정 의석 민주 219·공화 124, 미판정 92. 공화당 의석 27곳 뒤집힘.",
+      "text_en": "House: NBC-called seats Democrats 219, Republicans 124, 92 uncalled; 27 GOP seats flipped."
+    },
+    {
+      "t": "2026-11-04T05:48:00Z",
+      "text": "메인 상원: NBC, 트로이 잭슨(민)이 수전 콜린스(공·현역)를 꺾었다고 예측.",
+      "text_en": "Maine Senate: NBC projects Troy Jackson (D) defeats Sen. Susan Collins (R)."
+    },
+    {
+      "t": "2026-11-04T05:45:00Z",
+      "text": "네브래스카 상원: 주 공식 집계에서 피트 리키츠(공) 245,763표, 댄 오스본(무소속) 229,515표로 리키츠가 앞섬.",
+      "text_en": "Nebraska Senate: in the state's official count, Pete Ricketts (R) leads with 245,763 votes to Dan Osborn's (I) 229,515."
+    },
+    {
+      "t": "2026-11-04T05:44:00Z",
+      "text": "하원: 펜실베이니아 공화당 현역 4명(피츠패트릭·매켄지·브레스너핸·페리), 버지니아 키건스·위트먼, 뉴저지 킨 주니어, 노스캐롤라이나 허드슨 낙선(NBC).",
+      "text_en": "House: four Pennsylvania GOP incumbents (Fitzpatrick, Mackenzie, Bresnahan, Perry), Virginia's Kiggans and Wittman, New Jersey's Kean Jr. and North Carolina's Hudson lose (NBC)."
+    },
+    {
+      "t": "2026-11-04T05:32:00Z",
+      "text": "메인 상원: 수전 콜린스 의원(공)이 트로이 잭슨(민)에게 패배 인정(메인 퍼블릭). AP 판정은 확인 못 함.",
+      "text_en": "Maine Senate: Sen. Susan Collins (R) concedes to Troy Jackson (D), per Maine Public. AP call not confirmed."
+    },
+    {
+      "t": "2026-11-04T05:12:00Z",
+      "text": "미네소타 상원: AP, 민주당 페기 플래너건이 공화당 미셸 타포야를 꺾었다고 확정(민주당 의석 유지).",
+      "text_en": "Minnesota Senate: AP calls it for Democrat Peggy Flanagan over Republican Michele Tafoya (Democratic hold)."
+    },
+    {
+      "t": "2026-11-04T05:04:00Z",
+      "text": "사우스다코타 상원: AP, 공화당 마이크 라운즈가 무소속 브라이언 벵스를 꺾었다고 확정.",
+      "text_en": "South Dakota Senate: AP calls it for Republican Mike Rounds over independent Brian Bengs."
+    },
+    {
+      "t": "2026-11-04T04:49:00Z",
+      "text": "상원: AP, 민주당 다수 판정(타임 보도). 하원은 AP 판정 전.",
+      "text_en": "Senate: AP calls control for Democrats (TIME). AP has not yet called the House."
+    },
+    {
+      "t": "2026-11-04T04:35:00Z",
+      "text": "아이오와 상원: AP, 민주당 조시 투렉이 공화당 애슐리 힌슨을 꺾었다고 확정(공화당 의석).",
+      "text_en": "Iowa Senate: AP calls it for Democrat Josh Turek over Republican Ashley Hinson (GOP seat)."
+    },
+    {
+      "t": "2026-11-04T04:00:00Z",
+      "text": "오리건 상원: AP, 민주당 제프 머클리 재선 확정.",
+      "text_en": "Oregon Senate: AP calls it for Democrat Jeff Merkley."
+    },
+    {
+      "t": "2026-11-04T04:33:00Z",
+      "text": "캔자스 상원: AP, 민주당 애덤 해밀턴이 공화당 로저 마셜 의원을 꺾었다고 확정(공화당 의석).",
+      "text_en": "Kansas Senate: AP calls it for Democrat Adam Hamilton over Republican Sen. Roger Marshall (GOP seat)."
+    },
+    {
+      "t": "2026-11-04T04:27:00Z",
+      "text": "아이오와 상원: NBC 뉴스, 민주당 조시 투렉 승리 예측(공화당 의석). NBC 집계 민주 51 : 공화 39로 민주당 상원 장악. AP 판정은 확인 못 함.",
+      "text_en": "Iowa Senate: NBC News projects Democrat Josh Turek (GOP seat). NBC tally: Dem 51, GOP 39, giving Democrats Senate control. AP call not confirmed."
+    },
+    {
+      "t": "2026-11-04T03:47:00Z",
+      "text": "아칸소 상원: AP, 공화당 톰 코튼 확정. 앨라배마: NBC 뉴스, 공화당 배리 무어 예측.",
+      "text_en": "Arkansas Senate: AP calls it for Republican Tom Cotton. Alabama: NBC News projects Republican Barry Moore."
+    },
+    {
+      "t": "2026-11-04T03:43:00Z",
+      "text": "사우스캐롤라이나 상원: AP, 민주당 애니 앤드루스가 공화당 달린 그레이엄 의원을 꺾었다고 확정(공화당 의석).",
+      "text_en": "South Carolina Senate: AP calls it for Democrat Annie Andrews over Republican Sen. Darline Graham (GOP seat)."
+    },
+    {
+      "t": "2026-11-04T04:03:00Z",
+      "text": "메인 상원: 개표 35.9%, 민주당 트로이 잭슨이 수전 콜린스(공)에 1,667표 앞섬. 미시간: 개표 29.4%, 민주당 압둘 엘사예드 51.7%로 앞섬(NBC·AP 자료 인용 보도).",
+      "text_en": "Maine Senate: with 35.9% counted, Democrat Troy Jackson leads Susan Collins (R) by 1,667 votes. Michigan: with 29.4% counted, Democrat Abdul El-Sayed leads with 51.7% (reports citing NBC/AP data)."
+    },
+    {
+      "t": "2026-11-04T04:10:00Z",
+      "text": "오하이오 상원: AP, 민주당 셰러드 브라운이 공화당 존 허스테드를 꺾었다고 확정(공화당 의석).",
+      "text_en": "Ohio Senate: AP calls it for Democrat Sherrod Brown over Republican Jon Husted (GOP seat)."
+    },
+    {
+      "t": "2026-11-04T04:05:00Z",
+      "text": "텍사스 상원: AP, 민주당 제임스 탈라리코가 공화당 켄 팩스턴을 꺾었다고 확정(공화당 의석).",
+      "text_en": "Texas Senate: AP calls it for Democrat James Talarico over Republican Ken Paxton (GOP seat)."
+    },
+    {
+      "t": "2026-11-04T03:50:00Z",
+      "text": "사우스캐롤라이나 상원: ABC·NBC, 민주당 애니 앤드루스 승리 예측(공화당 의석). 하원: CNN·NBC 민주당 과반 예측, KY-6·NC-11·PA-8 민주당으로.",
+      "text_en": "South Carolina Senate: ABC and NBC project Democrat Annie Andrews wins (GOP seat). House: CNN and NBC project a Democratic majority; KY-6, NC-11 and PA-8 go Democratic."
+    },
+    {
+      "t": "2026-11-04T03:19:00Z",
+      "text": "AP 집계 상원 민주 45 : 공화 36. 민주당 확정 11곳(노스캐롤라이나 뒤집음), 공화당 확정 5곳.",
+      "text_en": "AP count, Senate: Dem 45, GOP 36. Democrats have won 11 races (flipping North Carolina), Republicans 5."
+    }
+  ],
+  "how": [
+    "'확정'은 AP가 승자를 발표한 곳, '앞섬'은 개표 중 앞선 쪽이라 뒤집힐 수 있다.",
+    "상원 의석 수는 이번에 선거가 없는 의석까지 합친 전체다.",
+    "판도가 1시간마다 집계를 다시 확인해 고친다. 이 화면을 열어 두면 1분마다 새 판을 받아 바뀐 곳을 깜빡여 보여 준다.",
+    "개표가 끝나면 이 페이지는 내리고 결과를 미국 의회 구성·국가 화면에 반영한다."
+  ],
+  "sources": [
+    [
+      "NBC 뉴스 하원 개표 결과(집계 AP)",
+      "https://www.nbcnews.com/politics/2026-elections/house-results",
+      "NBC News House results (AP data)"
+    ],
+    [
       "NBC 뉴스 상원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/senate-results",
       "NBC News Senate results (AP data)"
-     ]
-    }
-   }
+    ],
+    [
+      "AP, 상원·하원 민주당 다수 판정(타임)",
+      "https://time.com/article/2026/11/04/democrats-win-control-of-senate-in-blue-wave-election/",
+      "AP calls the Senate and House for Democrats (TIME)"
+    ],
+    [
+      "트로이 잭슨, 메인 상원 승리(AP, 보스턴25 게재)",
+      "https://www.boston25news.com/news/local/troy-jackson-wins-maine-us-senate-race-over-gop-sen-susan-collins-key-democratic-victory/MT2CGV2AQBFHTNNXAF3GGD5V34/",
+      "Troy Jackson wins Maine Senate race (AP via Boston 25)"
+    ],
+    [
+      "해거티, 테네시 상원 재선 AP 판정(WVLT)",
+      "https://www.wvlt.tv/2026/11/04/hagerty-serve-second-us-senate-term-after-defeating-democrat-bradshaw/",
+      "AP calls Tennessee Senate for Hagerty (WVLT)"
+    ],
+    [
+      "NBC 뉴스 선거 라이브 블로그",
+      "https://www.nbcnews.com/politics/2026-election/live-blog/midterm-election-results-2026-news-trump-live-updates-rcna605763",
+      "NBC News election live blog"
+    ]
   ],
-  "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · totals are seats not up + confirmed AP calls",
-  "note_en": "Includes seats not up this year (Dem 34, GOP 31). The Democratic total includes two independents who caucus with them (Bernie Sanders, Angus King). TIME reports AP called the Senate for Democrats late on Nov 3. Totals here count only AP calls Pando has confirmed. Maine (leaning Dem) and Alabama, Tennessee and Louisiana (leaning GOP) have only other outlets' projections or reports confirmed, so they are not counted. Michigan, Nebraska, Montana, Mississippi, Idaho and Alaska are also not counted yet. By NBC News projections: Democrats 53, Republicans 41 (12:51 a.m. ET Nov 4; 6 uncalled: MS, NE, MI, ID, MT, AK).",
-  "asOf": "2026-11-04T05:46:00Z"
- },
- "house": {
-  "dem": 219,
-  "gop": 124,
-  "total": 435,
-  "control": 218,
-  "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 NBC 뉴스 디시전 데스크 판정(집계 자료 AP), 현지 4일 0시 51분 기준 · 미판정 92석",
-  "projection": {
-   "party": "D",
-   "text": "NBC: 민주당 하원 장악 판정(약 255석 추정). AP 판정은 미확인",
-   "short": "민주 과반(NBC)",
-   "text_en": "NBC: Democrats win the House (about 255 seats estimated). AP call not confirmed",
-   "short_en": "Dem majority (NBC)"
-  },
-  "note": "NBC 뉴스는 민주당이 하원을 장악한다고 판정했고, 최종 약 255석을 얻을 것으로 추정했다. 지금까지 판정된 의석은 민주 219·공화 124, 공화당 의석 27곳을 뒤집었다(NBC). 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 NBC가 꼽은 접전 선거구와 확인된 뒤집힘이다. 선거구 번호를 확인하지 못한 뒤집힘: 인디애나 빅토리아 스파츠(공·현역) 낙선(NBC).",
-  "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · seats per NBC News Decision Desk projections (AP data) as of 12:51 a.m. ET Nov 4 · 92 uncalled",
-  "note_en": "NBC News projects Democrats win the House, estimating about 255 seats in the end. Seats called so far: Democrats 219, Republicans 124, with 27 GOP seats flipped (NBC). The map counts NBC-called seats by party in each state. Below: NBC battleground districts and confirmed flips. Flip with district number unconfirmed: Rep. Victoria Spartz (R-Ind.) lost (NBC).",
-  "races": [
-   {
-    "d": "NC-9",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "리처드 오헤다 2세",
-    "cand_en": "Richard Ojeda II",
-    "vs": "리처드 허드슨(현역)",
-    "vs_en": "Richard Hudson (incumbent)",
-    "note": "공화당 하원 선거 사령탑(NRCC 위원장)을 꺾음(NBC 예측)",
-    "note_en": "Beat the chair of the House GOP campaign arm (NBC projection)"
-   },
-   {
-    "d": "PA-1",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "밥 하비",
-    "cand_en": "Bob Harvie",
-    "vs": "브라이언 피츠패트릭(현역)",
-    "vs_en": "Brian Fitzpatrick (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "밥 하비",
-       "n_en": "Bob Harvie",
-       "p": "D",
-       "pct": 52.7
-      },
-      {
-       "n": "브라이언 피츠패트릭",
-       "n_en": "Brian Fitzpatrick",
-       "p": "R",
-       "pct": 47.3
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "PA-7",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "밥 브룩스",
-    "cand_en": "Bob Brooks",
-    "vs": "라이언 매켄지(현역)",
-    "vs_en": "Ryan Mackenzie (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "밥 브룩스",
-       "n_en": "Bob Brooks",
-       "p": "D",
-       "pct": 56.0
-      },
-      {
-       "n": "라이언 매켄지",
-       "n_en": "Ryan Mackenzie",
-       "p": "R",
-       "pct": 44.0
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "PA-8",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "페이지 코그네티",
-    "cand_en": "Paige Cognetti",
-    "vs": "롭 브레스너핸(현역)",
-    "vs_en": "Rob Bresnahan (incumbent)",
-    "note": "스크랜턴 시장, 트럼프 2024년 8%p 우세 지역(NBC 예측)",
-    "note_en": "Scranton mayor; Trump +8 in 2024 (NBC projection)",
-    "tally": {
-     "cands": [
-      {
-       "n": "페이지 코그네티",
-       "n_en": "Paige Cognetti",
-       "p": "D",
-       "pct": 54.4
-      },
-      {
-       "n": "롭 브레스너핸",
-       "n_en": "Rob Bresnahan",
-       "p": "R",
-       "pct": 45.6
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "PA-10",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "재닐 스텔슨",
-    "cand_en": "Janelle Stelson",
-    "vs": "스콧 페리(현역)",
-    "vs_en": "Scott Perry (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "재닐 스텔슨",
-       "n_en": "Janelle Stelson",
-       "p": "D",
-       "pct": 55.0
-      },
-      {
-       "n": "스콧 페리",
-       "n_en": "Scott Perry",
-       "p": "R",
-       "pct": 45.0
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "VA-1",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "섀넌 테일러",
-    "cand_en": "Shannon Taylor",
-    "vs": "롭 위트먼(현역)",
-    "vs_en": "Rob Wittman (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "섀넌 테일러",
-       "n_en": "Shannon Taylor",
-       "p": "D",
-       "pct": 50.5
-      },
-      {
-       "n": "롭 위트먼",
-       "n_en": "Rob Wittman",
-       "p": "R",
-       "pct": 49.3
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "VA-2",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "일레인 루리아",
-    "cand_en": "Elaine Luria",
-    "vs": "젠 키건스(현역)",
-    "vs_en": "Jen Kiggans (incumbent)",
-    "note": "전직 의원이 옛 지역구 탈환(NBC 예측)",
-    "note_en": "Former member wins back her old seat (NBC projection)",
-    "tally": {
-     "cands": [
-      {
-       "n": "일레인 루리아",
-       "n_en": "Elaine Luria",
-       "p": "D",
-       "pct": 52.1
-      },
-      {
-       "n": "젠 키건스",
-       "n_en": "Jen Kiggans",
-       "p": "R",
-       "pct": 45.6
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "NJ-7",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "리베카 베넷",
-    "cand_en": "Rebecca Bennett",
-    "vs": "톰 킨 주니어(현역)",
-    "vs_en": "Tom Kean Jr. (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "리베카 베넷",
-       "n_en": "Rebecca Bennett",
-       "p": "D",
-       "pct": 57.1
-      },
-      {
-       "n": "톰 킨 주니어",
-       "n_en": "Tom Kean Jr.",
-       "p": "R",
-       "pct": 41.4
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "CO-8",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "매니 루티넬",
-    "cand_en": "Manny Rutinel",
-    "vs": "게이브 에번스(현역)",
-    "vs_en": "Gabe Evans (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "매니 루티넬",
-       "n_en": "Manny Rutinel",
-       "p": "D",
-       "pct": 55.6
-      },
-      {
-       "n": "게이브 에번스",
-       "n_en": "Gabe Evans",
-       "p": "R",
-       "pct": 40.7
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "OH-7",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "포인덱스터",
-    "cand_en": "Poindexter",
-    "vs": "맥스 밀러(현역)",
-    "vs_en": "Max Miller (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "포인덱스터",
-       "n_en": "Poindexter",
-       "p": "D",
-       "pct": 54.3
-      },
-      {
-       "n": "맥스 밀러",
-       "n_en": "Max Miller",
-       "p": "R",
-       "pct": 45.7
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "IA-1",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "보해넌",
-    "cand_en": "Bohannan",
-    "vs": "밀러믹스(현역)",
-    "vs_en": "Miller-Meeks (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "보해넌",
-       "n_en": "Bohannan",
-       "p": "D",
-       "pct": 53.6
-      },
-      {
-       "n": "밀러믹스",
-       "n_en": "Miller-Meeks",
-       "p": "R",
-       "pct": 42.8
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "IA-3",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "트론 개리엇",
-    "cand_en": "Trone Garriott",
-    "vs": "잭 넌(현역)",
-    "vs_en": "Zach Nunn (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "트론 개리엇",
-       "n_en": "Trone Garriott",
-       "p": "D",
-       "pct": 54.2
-      },
-      {
-       "n": "잭 넌",
-       "n_en": "Zach Nunn",
-       "p": "R",
-       "pct": 45.8
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "WI-3",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "쿡",
-    "cand_en": "Cooke",
-    "vs": "데릭 밴오든(현역)",
-    "vs_en": "Derrick Van Orden (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "쿡",
-       "n_en": "Cooke",
-       "p": "D",
-       "pct": 52.4
-      },
-      {
-       "n": "데릭 밴오든",
-       "n_en": "Derrick Van Orden",
-       "p": "R",
-       "pct": 45.8
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "NE-2",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "데니스 파월",
-    "cand_en": "Denise Powell",
-    "vs": "브링커 하딩",
-    "vs_en": "Brinker Harding",
-    "note": "공화당 의석(NBC 예측)",
-    "note_en": "GOP-held seat (NBC projection)",
-    "tally": {
-     "cands": [
-      {
-       "n": "데니스 파월",
-       "n_en": "Denise Powell",
-       "p": "D",
-       "pct": 57.5
-      },
-      {
-       "n": "브링커 하딩",
-       "n_en": "Brinker Harding",
-       "p": "R",
-       "pct": 40.0
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "NC-11",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "제이미 에이거",
-    "cand_en": "Jamie Ager",
-    "vs": "제니퍼 발콤",
-    "vs_en": "Jennifer Balkcom",
-    "note": "공화당 척 에드워즈 의원이 비위 의혹으로 출마 철회한 지역구(NBC 예측)",
-    "note_en": "Seat vacated when GOP Rep. Chuck Edwards withdrew after misconduct allegations (NBC projection)",
-    "tally": {
-     "cands": [
-      {
-       "n": "제이미 에이거",
-       "n_en": "Jamie Ager",
-       "p": "D",
-       "pct": 57.1
-      },
-      {
-       "n": "제니퍼 발콤",
-       "n_en": "Jennifer Balkcom",
-       "p": "R",
-       "pct": 41.3
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "KY-6",
-    "status": "proj",
-    "party": "D",
-    "flip": true,
-    "cand": "잭 뎀보",
-    "cand_en": "Zach Dembo",
-    "note": "2024년 트럼프가 15%p 이긴 공화당 지역구",
-    "note_en": "GOP seat Trump won by 15 points in 2024"
-   },
-   {
-    "d": "NY-17",
-    "status": "lead",
-    "party": "D",
-    "cand": "케이트 콘리",
-    "cand_en": "Cait Conley",
-    "vs": "마이크 롤러(현역)",
-    "vs_en": "Mike Lawler (incumbent)",
-    "note": "개표기 오작동 보고, 주 선관위 \"유효표 모두 센다\"",
-    "note_en": "Ballot scanner malfunctions reported; state board says every valid vote will be counted",
-    "tally": {
-     "cands": [
-      {
-       "n": "케이트 콘리",
-       "n_en": "Cait Conley",
-       "p": "D",
-       "pct": 52.1
-      },
-      {
-       "n": "마이크 롤러",
-       "n_en": "Mike Lawler",
-       "p": "R",
-       "pct": 47.8
-      }
-     ],
-     "reported": "예상 투표의 57.9% 개표(NBC)",
-     "reported_en": "57.9% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "AZ-6",
-    "status": "lead",
-    "party": "D",
-    "cand": "멘도사",
-    "cand_en": "Mendoza",
-    "vs": "후안 시스코마니(현역)",
-    "vs_en": "Juan Ciscomani (incumbent)",
-    "tally": {
-     "cands": [
-      {
-       "n": "멘도사",
-       "n_en": "Mendoza",
-       "p": "D",
-       "pct": 55.8
-      },
-      {
-       "n": "후안 시스코마니",
-       "n_en": "Juan Ciscomani",
-       "p": "R",
-       "pct": 42.2
-      }
-     ],
-     "reported": "예상 투표의 68.6% 개표(NBC)",
-     "reported_en": "68.6% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "CA-22",
-    "status": "lead",
-    "party": "D",
-    "cand": "비예가스",
-    "cand_en": "Villegas",
-    "vs": "데이비드 발라다오(현역)",
-    "vs_en": "David Valadao (incumbent)",
-    "tally": {
-     "cands": [
-      {
-       "n": "비예가스",
-       "n_en": "Villegas",
-       "p": "D",
-       "pct": 64.9
-      },
-      {
-       "n": "데이비드 발라다오",
-       "n_en": "David Valadao",
-       "p": "R",
-       "pct": 35.1
-      }
-     ],
-     "reported": "예상 투표의 43.1% 개표(NBC)",
-     "reported_en": "43.1% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "AZ-1",
-    "status": "lead",
-    "party": "D",
-    "cand": "아미시 샤",
-    "cand_en": "Amish Shah",
-    "vs": "필리",
-    "vs_en": "Feely",
-    "tally": {
-     "cands": [
-      {
-       "n": "아미시 샤",
-       "n_en": "Amish Shah",
-       "p": "D",
-       "pct": 54.9
-      },
-      {
-       "n": "필리",
-       "n_en": "Feely",
-       "p": "R",
-       "pct": 43.2
-      }
-     ],
-     "reported": "예상 투표의 70.8% 개표(NBC)",
-     "reported_en": "70.8% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "MI-10",
-    "status": "lead",
-    "party": "D",
-    "cand": "하인스",
-    "cand_en": "Hines",
-    "vs": "부샤드",
-    "vs_en": "Bouchard",
-    "tally": {
-     "cands": [
-      {
-       "n": "하인스",
-       "n_en": "Hines",
-       "p": "D",
-       "pct": 50.1
-      },
-      {
-       "n": "부샤드",
-       "n_en": "Bouchard",
-       "p": "R",
-       "pct": 47.4
-      }
-     ],
-     "reported": "예상 투표의 50% 개표(NBC)",
-     "reported_en": "50% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "ME-2",
-    "status": "lead",
-    "party": "R",
-    "cand": "폴 르페이지",
-    "cand_en": "Paul LePage",
-    "vs": "던랩",
-    "vs_en": "Dunlap",
-    "tally": {
-     "cands": [
-      {
-       "n": "폴 르페이지",
-       "n_en": "Paul LePage",
-       "p": "R",
-       "pct": 50.4
-      },
-      {
-       "n": "던랩",
-       "n_en": "Dunlap",
-       "p": "D",
-       "pct": 49.6
-      }
-     ],
-     "reported": "예상 투표의 72.7% 개표(NBC)",
-     "reported_en": "72.7% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "MI-4",
-    "status": "lead",
-    "party": "R",
-    "cand": "빌 하위징아(현역)",
-    "cand_en": "Bill Huizenga (incumbent)",
-    "vs": "매캔",
-    "vs_en": "McCann",
-    "tally": {
-     "cands": [
-      {
-       "n": "빌 하위징아",
-       "n_en": "Bill Huizenga",
-       "p": "R",
-       "pct": 49.3
-      },
-      {
-       "n": "매캔",
-       "n_en": "McCann",
-       "p": "D",
-       "pct": 49.1
-      }
-     ],
-     "reported": "예상 투표의 34.4% 개표(NBC)",
-     "reported_en": "34.4% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "MI-7",
-    "status": "lead",
-    "party": "R",
-    "cand": "톰 배럿(현역)",
-    "cand_en": "Tom Barrett (incumbent)",
-    "vs": "로런스",
-    "vs_en": "Lawrence",
-    "tally": {
-     "cands": [
-      {
-       "n": "톰 배럿",
-       "n_en": "Tom Barrett",
-       "p": "R",
-       "pct": 51.7
-      },
-      {
-       "n": "로런스",
-       "n_en": "Lawrence",
-       "p": "D",
-       "pct": 47.0
-      }
-     ],
-     "reported": "예상 투표의 78.8% 개표(NBC)",
-     "reported_en": "78.8% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "OH-9",
-    "status": "lead",
-    "party": "R",
-    "cand": "메린",
-    "cand_en": "Merrin",
-    "vs": "마시 캡터(현역)",
-    "vs_en": "Marcy Kaptur (incumbent)",
-    "note": "민주당 최장수 여성 의원의 지역구",
-    "note_en": "Seat of the longest-serving woman in Congress",
-    "tally": {
-     "cands": [
-      {
-       "n": "메린",
-       "n_en": "Merrin",
-       "p": "R",
-       "pct": 59.1
-      },
-      {
-       "n": "마시 캡터",
-       "n_en": "Marcy Kaptur",
-       "p": "D",
-       "pct": 40.9
-      }
-     ],
-     "reported": "예상 투표의 47.7% 개표(NBC)",
-     "reported_en": "47.7% of expected vote in (NBC)",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "NE-1",
-    "status": "lead",
-    "party": "D",
-    "cand": "크리스 백마이어",
-    "cand_en": "Chris Backemeyer",
-    "vs": "마이크 플러드(현역)",
-    "vs_en": "Mike Flood (incumbent)",
-    "tally": {
-     "cands": [
-      {
-       "n": "크리스 백마이어",
-       "n_en": "Chris Backemeyer",
-       "p": "D",
-       "v": 71043
-      },
-      {
-       "n": "마이크 플러드",
-       "n_en": "Mike Flood",
-       "p": "R",
-       "v": 68711
-      }
-     ],
-     "reported": "개표구 438곳 중 완료 24·일부 414(주 공식)",
-     "reported_en": "Precincts: 24 of 438 complete, 414 partial (state official)",
-     "asOf": "2026-11-04T05:45:00Z",
-     "src": [
-      "네브래스카 국무장관실 비공식 개표 결과(하원)",
-      "https://electionresults.nebraska.gov/resultsSW.aspx?type=CG&map=DIST",
-      "Nebraska Secretary of State unofficial results (House)"
-     ]
-    }
-   },
-   {
-    "d": "MN-1",
-    "status": "lead",
-    "party": "R",
-    "cand": "브래드 핀스태드(현역)",
-    "cand_en": "Brad Finstad (incumbent)",
-    "vs": "제이크 존슨",
-    "vs_en": "Jake Johnson",
-    "tally": {
-     "cands": [
-      {
-       "n": "브래드 핀스태드",
-       "n_en": "Brad Finstad",
-       "p": "R",
-       "v": 144439,
-       "pct": 50.29
-      },
-      {
-       "n": "제이크 존슨",
-       "n_en": "Jake Johnson",
-       "p": "D",
-       "v": 142453,
-       "pct": 49.6
-      }
-     ],
-     "reported": "개표구 750곳 중 654곳 개표(주 공식)",
-     "reported_en": "654 of 750 precincts reported (state official)",
-     "asOf": "2026-11-04T05:48:00Z",
-     "src": [
-      "미네소타 국무장관실 비공식 개표 결과(하원)",
-      "https://electionresults.sos.mn.gov/Results/Index?ersElectionId=201&scenario=USRepresentative",
-      "Minnesota Secretary of State unofficial results (House)"
-     ]
-    }
-   },
-   {
-    "d": "FL-25",
-    "status": "proj",
-    "party": "D",
-    "cand": "재러드 모스코위츠(현역)",
-    "cand_en": "Jared Moskowitz (incumbent)",
-    "vs": "싱어",
-    "vs_en": "Singer",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "재러드 모스코위츠",
-       "n_en": "Jared Moskowitz",
-       "p": "D",
-       "pct": 51.3
-      },
-      {
-       "n": "싱어",
-       "n_en": "Singer",
-       "p": "R",
-       "pct": 46.6
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "NC-1",
-    "status": "proj",
-    "party": "D",
-    "cand": "돈 데이비스(현역)",
-    "cand_en": "Don Davis (incumbent)",
-    "vs": "벅아웃",
-    "vs_en": "Buckhout",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "돈 데이비스",
-       "n_en": "Don Davis",
-       "p": "D",
-       "pct": 49.6
-      },
-      {
-       "n": "벅아웃",
-       "n_en": "Buckhout",
-       "p": "R",
-       "pct": 47.2
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "TX-28",
-    "status": "proj",
-    "party": "D",
-    "cand": "헨리 쿠엘야르(현역)",
-    "cand_en": "Henry Cuellar (incumbent)",
-    "vs": "티에리나",
-    "vs_en": "Tijerina",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "헨리 쿠엘야르",
-       "n_en": "Henry Cuellar",
-       "p": "D",
-       "pct": 66.1
-      },
-      {
-       "n": "티에리나",
-       "n_en": "Tijerina",
-       "p": "R",
-       "pct": 29.2
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "TX-34",
-    "status": "proj",
-    "party": "D",
-    "cand": "곤살레스",
-    "cand_en": "Gonzalez",
-    "vs": "플로레스",
-    "vs_en": "Flores",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "곤살레스",
-       "n_en": "Gonzalez",
-       "p": "D",
-       "pct": 55.7
-      },
-      {
-       "n": "플로레스",
-       "n_en": "Flores",
-       "p": "R",
-       "pct": 39.7
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   },
-   {
-    "d": "WA-3",
-    "status": "proj",
-    "party": "D",
-    "cand": "마리 글루즌캠프 페레즈(현역)",
-    "cand_en": "Marie Gluesenkamp Perez (incumbent)",
-    "vs": "브라운",
-    "vs_en": "Braun",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
-    "tally": {
-     "cands": [
-      {
-       "n": "마리 글루즌캠프 페레즈",
-       "n_en": "Marie Gluesenkamp Perez",
-       "p": "D",
-       "pct": 55.0
-      },
-      {
-       "n": "브라운",
-       "n_en": "Braun",
-       "p": "R",
-       "pct": 44.2
-      }
-     ],
-     "reported": "NBC 판정 시점 집계",
-     "reported_en": "Count at NBC projection",
-     "asOf": "2026-11-04T05:51:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    }
-   }
-  ],
-  "states": {
-   "AL": {
-    "d": 2,
-    "r": 5
-   },
-   "AK": {
-    "d": 0,
-    "r": 0
-   },
-   "AZ": {
-    "d": 3,
-    "r": 0
-   },
-   "AR": {
-    "d": 0,
-    "r": 3
-   },
-   "CA": {
-    "d": 36,
-    "r": 1
-   },
-   "CO": {
-    "d": 5,
-    "r": 0
-   },
-   "CT": {
-    "d": 5,
-    "r": 0
-   },
-   "DE": {
-    "d": 1,
-    "r": 0
-   },
-   "FL": {
-    "d": 7,
-    "r": 16
-   },
-   "GA": {
-    "d": 5,
-    "r": 9
-   },
-   "HI": {
-    "d": 0,
-    "r": 0
-   },
-   "ID": {
-    "d": 0,
-    "r": 1
-   },
-   "IL": {
-    "d": 14,
-    "r": 3
-   },
-   "IN": {
-    "d": 3,
-    "r": 6
-   },
-   "IA": {
-    "d": 3,
-    "r": 1
-   },
-   "KS": {
-    "d": 1,
-    "r": 3
-   },
-   "KY": {
-    "d": 2,
-    "r": 4
-   },
-   "LA": {
-    "d": 1,
-    "r": 3
-   },
-   "ME": {
-    "d": 1,
-    "r": 0
-   },
-   "MD": {
-    "d": 7,
-    "r": 1
-   },
-   "MA": {
-    "d": 9,
-    "r": 0
-   },
-   "MI": {
-    "d": 5,
-    "r": 3
-   },
-   "MN": {
-    "d": 4,
-    "r": 1
-   },
-   "MS": {
-    "d": 1,
-    "r": 3
-   },
-   "MO": {
-    "d": 3,
-    "r": 5
-   },
-   "MT": {
-    "d": 0,
-    "r": 1
-   },
-   "NE": {
-    "d": 1,
-    "r": 1
-   },
-   "NV": {
-    "d": 0,
-    "r": 0
-   },
-   "NH": {
-    "d": 2,
-    "r": 0
-   },
-   "NJ": {
-    "d": 10,
-    "r": 1
-   },
-   "NM": {
-    "d": 3,
-    "r": 0
-   },
-   "NY": {
-    "d": 18,
-    "r": 3
-   },
-   "NC": {
-    "d": 9,
-    "r": 1
-   },
-   "ND": {
-    "d": 0,
-    "r": 1
-   },
-   "OH": {
-    "d": 6,
-    "r": 7
-   },
-   "OK": {
-    "d": 0,
-    "r": 4
-   },
-   "OR": {
-    "d": 4,
-    "r": 1
-   },
-   "PA": {
-    "d": 11,
-    "r": 6
-   },
-   "RI": {
-    "d": 2,
-    "r": 0
-   },
-   "SC": {
-    "d": 1,
-    "r": 4
-   },
-   "SD": {
-    "d": 0,
-    "r": 1
-   },
-   "TN": {
-    "d": 0,
-    "r": 6
-   },
-   "TX": {
-    "d": 12,
-    "r": 9
-   },
-   "UT": {
-    "d": 1,
-    "r": 1
-   },
-   "VT": {
-    "d": 1,
-    "r": 0
-   },
-   "VA": {
-    "d": 8,
-    "r": 2
-   },
-   "WA": {
-    "d": 8,
-    "r": 0
-   },
-   "WV": {
-    "d": 0,
-    "r": 2
-   },
-   "WI": {
-    "d": 4,
-    "r": 4
-   },
-   "WY": {
-    "d": 0,
-    "r": 1
-   }
-  },
-  "asOf": "2026-11-04T05:51:00Z"
- },
- "feed": [
-  {
-   "t": "2026-11-04T05:51:00Z",
-   "text": "하원: NBC 판정 의석 민주 219·공화 124, 미판정 92. 공화당 의석 27곳 뒤집힘.",
-   "text_en": "House: NBC-called seats Democrats 219, Republicans 124, 92 uncalled; 27 GOP seats flipped."
-  },
-  {
-   "t": "2026-11-04T05:48:00Z",
-   "text": "메인 상원: NBC, 트로이 잭슨(민)이 수전 콜린스(공·현역)를 꺾었다고 예측.",
-   "text_en": "Maine Senate: NBC projects Troy Jackson (D) defeats Sen. Susan Collins (R)."
-  },
-  {
-   "t": "2026-11-04T05:45:00Z",
-   "text": "네브래스카 상원: 주 공식 집계에서 피트 리키츠(공) 245,763표, 댄 오스본(무소속) 229,515표로 리키츠가 앞섬.",
-   "text_en": "Nebraska Senate: in the state's official count, Pete Ricketts (R) leads with 245,763 votes to Dan Osborn's (I) 229,515."
-  },
-  {
-   "t": "2026-11-04T05:44:00Z",
-   "text": "하원: 펜실베이니아 공화당 현역 4명(피츠패트릭·매켄지·브레스너핸·페리), 버지니아 키건스·위트먼, 뉴저지 킨 주니어, 노스캐롤라이나 허드슨 낙선(NBC).",
-   "text_en": "House: four Pennsylvania GOP incumbents (Fitzpatrick, Mackenzie, Bresnahan, Perry), Virginia's Kiggans and Wittman, New Jersey's Kean Jr. and North Carolina's Hudson lose (NBC)."
-  },
-  {
-   "t": "2026-11-04T05:32:00Z",
-   "text": "메인 상원: 수전 콜린스 의원(공)이 트로이 잭슨(민)에게 패배 인정(메인 퍼블릭). AP 판정은 확인 못 함.",
-   "text_en": "Maine Senate: Sen. Susan Collins (R) concedes to Troy Jackson (D), per Maine Public. AP call not confirmed."
-  },
-  {
-   "t": "2026-11-04T05:12:00Z",
-   "text": "미네소타 상원: AP, 민주당 페기 플래너건이 공화당 미셸 타포야를 꺾었다고 확정(민주당 의석 유지).",
-   "text_en": "Minnesota Senate: AP calls it for Democrat Peggy Flanagan over Republican Michele Tafoya (Democratic hold)."
-  },
-  {
-   "t": "2026-11-04T05:04:00Z",
-   "text": "사우스다코타 상원: AP, 공화당 마이크 라운즈가 무소속 브라이언 벵스를 꺾었다고 확정.",
-   "text_en": "South Dakota Senate: AP calls it for Republican Mike Rounds over independent Brian Bengs."
-  },
-  {
-   "t": "2026-11-04T04:49:00Z",
-   "text": "상원: AP, 민주당 다수 판정(타임 보도). 하원은 AP 판정 전.",
-   "text_en": "Senate: AP calls control for Democrats (TIME). AP has not yet called the House."
-  },
-  {
-   "t": "2026-11-04T04:35:00Z",
-   "text": "아이오와 상원: AP, 민주당 조시 투렉이 공화당 애슐리 힌슨을 꺾었다고 확정(공화당 의석).",
-   "text_en": "Iowa Senate: AP calls it for Democrat Josh Turek over Republican Ashley Hinson (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T04:00:00Z",
-   "text": "오리건 상원: AP, 민주당 제프 머클리 재선 확정.",
-   "text_en": "Oregon Senate: AP calls it for Democrat Jeff Merkley."
-  },
-  {
-   "t": "2026-11-04T04:33:00Z",
-   "text": "캔자스 상원: AP, 민주당 애덤 해밀턴이 공화당 로저 마셜 의원을 꺾었다고 확정(공화당 의석).",
-   "text_en": "Kansas Senate: AP calls it for Democrat Adam Hamilton over Republican Sen. Roger Marshall (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T04:27:00Z",
-   "text": "아이오와 상원: NBC 뉴스, 민주당 조시 투렉 승리 예측(공화당 의석). NBC 집계 민주 51 : 공화 39로 민주당 상원 장악. AP 판정은 확인 못 함.",
-   "text_en": "Iowa Senate: NBC News projects Democrat Josh Turek (GOP seat). NBC tally: Dem 51, GOP 39, giving Democrats Senate control. AP call not confirmed."
-  },
-  {
-   "t": "2026-11-04T03:47:00Z",
-   "text": "아칸소 상원: AP, 공화당 톰 코튼 확정. 앨라배마: NBC 뉴스, 공화당 배리 무어 예측.",
-   "text_en": "Arkansas Senate: AP calls it for Republican Tom Cotton. Alabama: NBC News projects Republican Barry Moore."
-  },
-  {
-   "t": "2026-11-04T03:43:00Z",
-   "text": "사우스캐롤라이나 상원: AP, 민주당 애니 앤드루스가 공화당 달린 그레이엄 의원을 꺾었다고 확정(공화당 의석).",
-   "text_en": "South Carolina Senate: AP calls it for Democrat Annie Andrews over Republican Sen. Darline Graham (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T04:03:00Z",
-   "text": "메인 상원: 개표 35.9%, 민주당 트로이 잭슨이 수전 콜린스(공)에 1,667표 앞섬. 미시간: 개표 29.4%, 민주당 압둘 엘사예드 51.7%로 앞섬(NBC·AP 자료 인용 보도).",
-   "text_en": "Maine Senate: with 35.9% counted, Democrat Troy Jackson leads Susan Collins (R) by 1,667 votes. Michigan: with 29.4% counted, Democrat Abdul El-Sayed leads with 51.7% (reports citing NBC/AP data)."
-  },
-  {
-   "t": "2026-11-04T04:10:00Z",
-   "text": "오하이오 상원: AP, 민주당 셰러드 브라운이 공화당 존 허스테드를 꺾었다고 확정(공화당 의석).",
-   "text_en": "Ohio Senate: AP calls it for Democrat Sherrod Brown over Republican Jon Husted (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T04:05:00Z",
-   "text": "텍사스 상원: AP, 민주당 제임스 탈라리코가 공화당 켄 팩스턴을 꺾었다고 확정(공화당 의석).",
-   "text_en": "Texas Senate: AP calls it for Democrat James Talarico over Republican Ken Paxton (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T03:50:00Z",
-   "text": "사우스캐롤라이나 상원: ABC·NBC, 민주당 애니 앤드루스 승리 예측(공화당 의석). 하원: CNN·NBC 민주당 과반 예측, KY-6·NC-11·PA-8 민주당으로.",
-   "text_en": "South Carolina Senate: ABC and NBC project Democrat Annie Andrews wins (GOP seat). House: CNN and NBC project a Democratic majority; KY-6, NC-11 and PA-8 go Democratic."
-  },
-  {
-   "t": "2026-11-04T03:19:00Z",
-   "text": "AP 집계 상원 민주 45 : 공화 36. 민주당 확정 11곳(노스캐롤라이나 뒤집음), 공화당 확정 5곳.",
-   "text_en": "AP count, Senate: Dem 45, GOP 36. Democrats have won 11 races (flipping North Carolina), Republicans 5."
-  }
- ],
- "how": [
-  "'확정'은 AP가 승자를 발표한 곳, '앞섬'은 개표 중 앞선 쪽이라 뒤집힐 수 있다.",
-  "상원 의석 수는 이번에 선거가 없는 의석까지 합친 전체다.",
-  "판도가 1시간마다 집계를 다시 확인해 고친다. 이 화면을 열어 두면 1분마다 새 판을 받아 바뀐 곳을 깜빡여 보여 준다.",
-  "개표가 끝나면 이 페이지는 내리고 결과를 미국 의회 구성·국가 화면에 반영한다."
- ],
- "sources": [
-  [
-   "NBC 뉴스 하원 개표 결과(집계 AP)",
-   "https://www.nbcnews.com/politics/2026-elections/house-results",
-   "NBC News House results (AP data)"
-  ],
-  [
-   "NBC 뉴스 상원 개표 결과(집계 AP)",
-   "https://www.nbcnews.com/politics/2026-elections/senate-results",
-   "NBC News Senate results (AP data)"
-  ],
-  [
-   "민주당 하원 장악(NBC 뉴스)",
-   "https://nbcnews.com/politics/2026-election/democrats-house-control-midterm-election-wins-trump-check-rcna603397",
-   "Democrats win the House (NBC News)"
-  ],
-  [
-   "네브래스카 국무장관실 비공식 개표 결과",
-   "https://electionresults.nebraska.gov/resultsSW.aspx?type=SW&map=CTY",
-   "Nebraska Secretary of State unofficial results"
-  ],
-  [
-   "AP, 상원 민주당 다수 판정(타임)",
-   "https://time.com/article/2026/11/04/democrats-win-control-of-senate-in-blue-wave-election/",
-   "AP calls the Senate for Democrats (TIME)"
-  ],
-  [
-   "아이오와 상원 AP 판정(아이오와 캐피털 디스패치, 야후 게재)",
-   "https://www.yahoo.com/news/politics/articles/democrat-josh-turek-wins-iowa-045154016.html",
-   "Iowa Senate AP projection (Iowa Capital Dispatch via Yahoo)"
+  "title_en": "US midterms: live results",
+  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
+  "headline_en": "TIME reports AP has called both the Senate and the House for Democrats. Democrats flipped seven GOP Senate seats, and Troy Jackson beat Sen. Susan Collins in Maine (AP). NBC-called House seats stand at Democrats 226, Republicans 136. Of five uncalled Senate races, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 28 votes in Mississippi as of 1:34 a.m. ET Nov 4 (NBC).",
+  "how_en": [
+    "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
+    "Senate totals include seats not up this year.",
+    "PANDO rechecks the count every hour. Keep this page open and it pulls each new update every minute, flashing what changed.",
+    "When counting is over this page comes down and the results go into the US Congress and country pages."
   ]
- ],
- "title_en": "US midterms: live results",
- "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "NBC News projects Democrats win both the Senate and the House. In the House, called seats stand at Democrats 219, Republicans 124 (27 GOP seats flipped), and NBC estimates about 255 Democratic seats in the end. AP has called the Senate for Democrats (per TIME), and Troy Jackson beat Sen. Susan Collins in Maine (NBC). Mississippi, Nebraska, Michigan, Montana, Idaho and Alaska remain uncalled.",
- "how_en": [
-  "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
-  "Senate totals include seats not up this year.",
-  "PANDO rechecks the count every hour. Keep this page open and it pulls each new update every minute, flashing what changed.",
-  "When counting is over this page comes down and the results go into the US Congress and country pages."
- ]
 }
