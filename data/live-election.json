@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-04T19:44:00Z",
+ "updatedAt": "2026-11-04T20:35:00Z",
  "source": {
-  "name": "AP · NBC News"
+  "name": "AP · Fox News · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 두 곳 모두 민주당 후보가 근소하게 앞서 있어도 승부는 다음 주에야 가려질 전망이다. 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞선 채 집계가 멈춰 있고, 진술서 투표 유권자는 11월 10일까지 신분증을 내야 하기 때문이다. 알래스카도 메리 펠톨라(민)가 댄 설리번(공·현역)을 앞서지만 주 당국의 다음 집계 공표가 10일이다(더힐). 하원은 NBC 판정 의석이 민주 236·공화 146이고(미 동부 4일 낮 12시 34분 확인, 이후 수치는 확인하지 못함) 53곳이 미판정인데, 메인 2구에서는 폴 르페이지(공)가 맷 던랩(민)을 AP 집계로 62표 앞선 데다 아직 AP 집계에 들어가지 않은 마을 개표까지 더하면 격차가 더 벌어진다(프레스 헤럴드).",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 두 곳 모두 민주당 후보가 근소하게 앞서 있어도 승부는 다음 주에야 가려질 전망이다. 미시시피는 스콧 콜럼(민)이 신디 하이드스미스(공·현역)를 43표 앞선 채 진술서 투표 유권자의 신분증 제출 기한인 11월 10일을 기다리고, 알래스카도 메리 펠톨라(민)가 댄 설리번(공·현역)을 앞서지만 주 당국의 다음 집계 공표가 10일이다. 하원은 폭스뉴스 결과 화면 기준 민주 237·공화 139(미 동부 4일 오후 3시 35분)로, 오후 들어 AP가 미시간 4구와 7구를 민주당 쪽으로 판정하면서 두 곳의 공화당 현역이 낙선했다. 메인 2구에서는 폴 르페이지(공)가 예상 투표의 93%가 개표된 가운데 49.9% 대 48.8%로 앞서 승리를 선언했지만 아직 판정은 나오지 않았다(뱅고어 데일리 뉴스).",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -877,8 +877,8 @@
     "cand_en": "Scott Colom",
     "vs": "신디 하이드스미스(공·현역)",
     "vs_en": "Sen. Cindy Hyde-Smith (R)",
-    "note": "AP 미판정. AP 비공식 집계로 94만 5000표 넘게 센 가운데 표차 43표이고, 무소속 타이 핑킨스가 1만 9935표(2.1%)를 얻었다(다크호스 프레스). 남은 진술서 투표(affidavit ballot, 유권자 자격 확인이 끝나야 세는 표)가 승부를 가르는데, 공식 수치는 없고 콜럼 선거대책본부장 제라드 헨더슨은 최소 1만 5000장(슈퍼토크), 콜럼 캠프는 다른 보도에서 1만~1만 5000장으로 추산했다(다크호스 프레스). 개표에 최대 영업일 5일이 걸릴 수 있다(매그놀리아 트리뷴). 힌즈 카운티는 자정 직후 개표를 멈추고 수요일 아침 재개할 계획이었다. 하이드스미스 캠프는 내부 집계로 이긴다고 주장한다. 결선 없이 최다 득표자가 이긴다. 콜럼은 현지 4일 기자회견에서 \"우리가 이긴다\"며 법정 다툼까지 준비했다고 말했다(NBC). 우편 투표는 11월 10일까지 도착하면 세는데, 신청하고 아직 돌려보내지 않은 표가 약 6500장이다(데모크라시 도킷). 미시시피 국무장관실은 세지 않은 우편 부재자 투표가 3600장이 넘는다고 밝혔다(WJTV). 하이드스미스 선거대책본부장 제이크 몬슨은 표차가 \"수십 표\"에 불과하다고 말했다(WJTV). AP는 현지 4일 낮까지 판정하지 않았다. 진술서 투표 유권자는 11월 10일까지 선거 사무소에 신분증을 내야 하는데, AP에 따르면 2022년에는 진술서 투표 7612장 중 5710장이 집계됐다(WXXV·티파 뉴스). 데일리 리더는 결과가 빨라야 선거 일주일 뒤에 나온다고 전했다.",
-    "note_en": "Uncalled by AP. In AP's unofficial count of more than 945,000 votes the gap is 43, with independent Ty Pinkins on 19,935 (2.1%) (Dark Horse Press). Affidavit ballots, counted only once a voter's eligibility is checked, will decide it. There is no official figure: Colom campaign manager Gerard Henderson says at least 15,000 (SuperTalk), and the campaign estimated 10,000 to 15,000 in another report (Dark Horse Press). Counting could take up to five business days (Magnolia Tribune). Hinds County paused shortly after midnight and planned to resume Wednesday morning. The Hyde-Smith campaign says its internal numbers show her winning. There is no runoff: the top vote-getter wins. At a Nov 4 news conference Colom said \"We are going to win this\" and that his team is prepared to go to court (NBC). Mail ballots count if they arrive by Nov 10, and roughly 6,500 requested ballots had not been returned (Democracy Docket). The Mississippi Secretary of State's Office said more than 3,600 mail absentee ballots remain uncounted (WJTV). Hyde-Smith campaign manager Jake Monssen said the margin is \"measured in just dozens of votes\" (WJTV). AP had not called the race by midday Nov 4 local time. Affidavit voters have until Nov 10 to show ID at local election offices; per AP, 5,710 of 7,612 affidavit ballots were counted in 2022 (WXXV, Tippah News). The Daily Leader says results will not be available until at least a week after the election."
+    "note": "AP 미판정. AP 비공식 집계로 94만 5000표 넘게 센 가운데 표차 43표이고, 무소속 타이 핑킨스가 1만 9935표(2.1%)를 얻었다(다크호스 프레스). 남은 진술서 투표(affidavit ballot, 유권자 자격 확인이 끝나야 세는 표)가 승부를 가르는데, 공식 수치는 없고 콜럼 선거대책본부장 제라드 헨더슨은 최소 1만 5000장(슈퍼토크), 콜럼 캠프는 다른 보도에서 1만~1만 5000장으로 추산했다(다크호스 프레스). 개표에 최대 영업일 5일이 걸릴 수 있다(매그놀리아 트리뷴). 힌즈 카운티는 자정 직후 개표를 멈추고 수요일 아침 재개할 계획이었다. 하이드스미스 캠프는 내부 집계로 이긴다고 주장한다. 결선 없이 최다 득표자가 이긴다. 콜럼은 현지 4일 기자회견에서 \"우리가 이긴다\"며 법정 다툼까지 준비했다고 말했다(NBC). 우편 투표는 11월 10일까지 도착하면 세는데, 신청하고 아직 돌려보내지 않은 표가 약 6500장이다(데모크라시 도킷). 미시시피 국무장관실은 세지 않은 우편 부재자 투표가 3600장이 넘는다고 밝혔다(WJTV). 하이드스미스 선거대책본부장 제이크 몬슨은 표차가 \"수십 표\"에 불과하다고 말했다(WJTV). AP는 현지 4일 낮까지 판정하지 않았다. 진술서 투표 유권자는 11월 10일까지 선거 사무소에 신분증을 내야 하는데, AP에 따르면 2022년에는 진술서 투표 7612장 중 5710장이 집계됐다(WXXV·티파 뉴스). 데일리 리더는 결과가 빨라야 선거 일주일 뒤에 나온다고 전했다. 카운티 인증은 11월 13일, 주 인증은 12월 3일까지이고, 미시시피에는 재검표 법이 없어 후보들은 소송으로 특정 표를 넣거나 빼 달라고 다툴 수 있다(데모크라시 도킷).",
+    "note_en": "Uncalled by AP. In AP's unofficial count of more than 945,000 votes the gap is 43, with independent Ty Pinkins on 19,935 (2.1%) (Dark Horse Press). Affidavit ballots, counted only once a voter's eligibility is checked, will decide it. There is no official figure: Colom campaign manager Gerard Henderson says at least 15,000 (SuperTalk), and the campaign estimated 10,000 to 15,000 in another report (Dark Horse Press). Counting could take up to five business days (Magnolia Tribune). Hinds County paused shortly after midnight and planned to resume Wednesday morning. The Hyde-Smith campaign says its internal numbers show her winning. There is no runoff: the top vote-getter wins. At a Nov 4 news conference Colom said \"We are going to win this\" and that his team is prepared to go to court (NBC). Mail ballots count if they arrive by Nov 10, and roughly 6,500 requested ballots had not been returned (Democracy Docket). The Mississippi Secretary of State's Office said more than 3,600 mail absentee ballots remain uncounted (WJTV). Hyde-Smith campaign manager Jake Monssen said the margin is \"measured in just dozens of votes\" (WJTV). AP had not called the race by midday Nov 4 local time. Affidavit voters have until Nov 10 to show ID at local election offices; per AP, 5,710 of 7,612 affidavit ballots were counted in 2022 (WXXV, Tippah News). The Daily Leader says results will not be available until at least a week after the election. Local certification is due Nov 13 and state certification Dec 3. Mississippi has no recount law, so candidates can sue to include or exclude ballots (Democracy Docket)."
    },
    {
     "st": "AL",
@@ -1258,11 +1258,11 @@
   "asOf": "2026-11-04T17:34:00Z"
  },
  "house": {
-  "dem": 236,
-  "gop": 146,
+  "dem": 237,
+  "gop": 139,
   "total": 435,
   "control": 218,
-  "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 NBC 뉴스 디시전 데스크 판정(집계 자료 AP), 미 동부 4일 낮 12시 34분 확인 · 미판정 53석",
+  "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 4일 오후 3시 35분 · 두 당 합계 밖 59석 · 주별 지도는 NBC 판정(동부 낮 12시 34분 확인)으로 합계와 다를 수 있음",
   "projection": {
    "party": "D",
    "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주 258석·공화 177석 추정",
@@ -1270,9 +1270,9 @@
    "text_en": "AP: Democrats win the House majority (per TIME). NBC estimates 258 Democratic and 177 Republican seats",
    "short_en": "Dem majority (AP)"
   },
-  "note": "타임에 따르면 AP는 현지 4일 새벽 하원을 민주당 다수로 판정했다. NBC 뉴스는 최종 의석을 민주 258·공화 177로 추정한다(81석 차). 지금까지 NBC가 판정한 의석은 민주 236·공화 146이고, NBC는 공화당 의석 31곳이 뒤집힌 것으로 집계한다. 알자지라는 AP 집계로 민주 228석에 34곳 앞섬이라고 전했다(4일 보도). 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 NBC가 꼽은 접전 선거구와 판도가 확인한 뒤집힘(공화당 현역 낙선 등)으로, 뒤집힌 곳 전부는 아니다.",
-  "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · seats per NBC News Decision Desk projections (AP data), checked 12:34 p.m. ET Nov 4 · 53 uncalled",
-  "note_en": "TIME reports AP called the House for Democrats early on Nov 4. NBC News estimates a final 258 Democrats to 177 Republicans (an 81-seat gap). NBC-called seats so far: Democrats 236, Republicans 146, and NBC counts 31 GOP seats flipped. Al Jazeera, citing AP's tally on Nov 4, reported 228 Democratic wins and leads in 34 more. The map counts NBC-called seats by party in each state. Below: NBC battleground districts and flips Pando has confirmed (including defeated GOP incumbents); not every flip is listed.",
+  "note": "타임에 따르면 AP는 현지 4일 새벽 하원을 민주당 다수로 판정했다. 폭스뉴스 결과 화면은 미 동부 4일 오후 3시 35분 기준 민주 237·공화 139, 뒤집힌 의석 29곳을 보여 준다. 판도가 앞서 쓰던 NBC 판정 의석(낮 12시 34분 민주 236·공화 146, 뒤집힘 31곳)은 판정 기관이 달라 숫자가 같지 않으며, 이번에는 NBC 화면을 다시 확인하지 못했다. NBC 뉴스는 최종 의석을 민주 258·공화 177로 추정한다(81석 차). 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 NBC가 꼽은 접전 선거구와 판도가 확인한 뒤집힘(공화당 현역 낙선 등)으로, 뒤집힌 곳 전부는 아니다.",
+  "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), 3:35 p.m. ET Nov 4 · 59 seats outside the two totals · state map uses NBC calls (checked 12:34 p.m. ET) and may differ from the totals",
+  "note_en": "TIME reports AP called the House for Democrats early on Nov 4. The Fox News results page shows Democrats 237, Republicans 139 and 29 flipped seats as of 3:35 p.m. ET Nov 4. The NBC-called seats Pando used earlier (Democrats 236, Republicans 146, 31 flips at 12:34 p.m.) come from a different decision desk, so the numbers differ, and the NBC page could not be rechecked this time. NBC News estimates a final 258 Democrats to 177 Republicans (an 81-seat gap). The map counts NBC-called seats by party in each state. Below: NBC battleground districts and flips Pando has confirmed (including defeated GOP incumbents); not every flip is listed.",
   "races": [
    {
     "d": "NC-9",
@@ -1314,15 +1314,15 @@
    },
    {
     "d": "PA-1",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
     "cand": "밥 하비",
     "cand_en": "Bob Harvie",
     "vs": "브라이언 피츠패트릭(현역)",
     "vs_en": "Brian Fitzpatrick (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
+    "note": "AP 판정, 미 동부 4일 0시 37분",
+    "note_en": "AP call, 12:37 a.m. ET Nov 4",
     "tally": {
      "cands": [
       {
@@ -1618,20 +1618,20 @@
    },
    {
     "d": "OH-7",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
-    "cand": "포인덱스터",
-    "cand_en": "Poindexter",
+    "cand": "브라이언 포인덱스터",
+    "cand_en": "Brian Poindexter",
     "vs": "맥스 밀러(현역)",
     "vs_en": "Max Miller (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
+    "note": "AP 판정, 미 동부 4일 오전 1시 23분",
+    "note_en": "AP call, 1:23 a.m. ET Nov 4",
     "tally": {
      "cands": [
       {
-       "n": "포인덱스터",
-       "n_en": "Poindexter",
+       "n": "브라이언 포인덱스터",
+       "n_en": "Brian Poindexter",
        "p": "D",
        "v": 180614,
        "pct": 54.9
@@ -1656,20 +1656,20 @@
    },
    {
     "d": "IA-1",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
-    "cand": "보해넌",
-    "cand_en": "Bohannan",
+    "cand": "크리스티나 보해넌",
+    "cand_en": "Christina Bohannan",
     "vs": "밀러믹스(현역)",
     "vs_en": "Miller-Meeks (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
+    "note": "AP 판정, 미 동부 4일 0시 8분",
+    "note_en": "AP call, 12:08 a.m. ET Nov 4",
     "tally": {
      "cands": [
       {
-       "n": "보해넌",
-       "n_en": "Bohannan",
+       "n": "크리스티나 보해넌",
+       "n_en": "Christina Bohannan",
        "p": "D",
        "v": 182396,
        "pct": 52.8
@@ -1694,20 +1694,20 @@
    },
    {
     "d": "IA-3",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
-    "cand": "트론 개리엇",
-    "cand_en": "Trone Garriott",
+    "cand": "세라 트론 개리엇",
+    "cand_en": "Sarah Trone Garriott",
     "vs": "잭 넌(현역)",
     "vs_en": "Zach Nunn (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
+    "note": "AP 판정, 미 동부 4일 0시 3분",
+    "note_en": "AP call, 12:03 a.m. ET Nov 4",
     "tally": {
      "cands": [
       {
-       "n": "트론 개리엇",
-       "n_en": "Trone Garriott",
+       "n": "세라 트론 개리엇",
+       "n_en": "Sarah Trone Garriott",
        "p": "D",
        "v": 189217,
        "pct": 53.7
@@ -1732,20 +1732,20 @@
    },
    {
     "d": "WI-3",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
-    "cand": "쿡",
-    "cand_en": "Cooke",
+    "cand": "레베카 쿡",
+    "cand_en": "Rebecca Cooke",
     "vs": "데릭 밴오든(현역)",
     "vs_en": "Derrick Van Orden (incumbent)",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
+    "note": "AP 판정, 미 동부 4일 0시 48분",
+    "note_en": "AP call, 12:48 a.m. ET Nov 4",
     "tally": {
      "cands": [
       {
-       "n": "쿡",
-       "n_en": "Cooke",
+       "n": "레베카 쿡",
+       "n_en": "Rebecca Cooke",
        "p": "D",
        "v": 172757,
        "pct": 52.4
@@ -1882,15 +1882,15 @@
    },
    {
     "d": "IN-5",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
     "cand": "제이디 포드",
     "cand_en": "J.D. Ford",
     "vs": "빅토리아 스파츠(현역)",
     "vs_en": "Victoria Spartz (incumbent)",
-    "note": "공화당 현역 낙선(NBC 예측)",
-    "note_en": "GOP incumbent defeated (NBC projection)",
+    "note": "공화당 현역 낙선(AP 판정, 미 동부 4일 오전 1시 3분)",
+    "note_en": "GOP incumbent defeated (AP call, 1:03 a.m. ET Nov 4)",
     "tally": {
      "cands": [
       {
@@ -2110,15 +2110,15 @@
    },
    {
     "d": "TX-15",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
     "cand": "보비 풀리도",
     "cand_en": "Bobby Pulido",
     "vs": "모니카 데라크루스(현역)",
     "vs_en": "Monica De La Cruz (incumbent)",
-    "note": "공화당 현역 낙선(NBC 예측)",
-    "note_en": "GOP incumbent defeated (NBC projection)",
+    "note": "공화당 현역 낙선(AP 판정, 미 동부 4일 0시 37분)",
+    "note_en": "GOP incumbent defeated (AP call, 12:37 a.m. ET Nov 4)",
     "tally": {
      "cands": [
       {
@@ -2148,15 +2148,15 @@
    },
    {
     "d": "WI-1",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "flip": true,
     "cand": "미첼 버먼",
     "cand_en": "Mitchell Berman",
     "vs": "브라이언 스타일(현역)",
     "vs_en": "Bryan Steil (incumbent)",
-    "note": "공화당 현역 낙선(NBC 예측)",
-    "note_en": "GOP incumbent defeated (NBC projection)",
+    "note": "공화당 현역 낙선(AP 판정, 미 동부 4일 0시 48분)",
+    "note_en": "GOP incumbent defeated (AP call, 12:48 a.m. ET Nov 4)",
     "tally": {
      "cands": [
       {
@@ -2298,17 +2298,17 @@
    },
    {
     "d": "CA-22",
-    "status": "proj",
+    "status": "won",
     "party": "D",
-    "cand": "비예가스",
-    "cand_en": "Villegas",
+    "cand": "랜디 비예가스",
+    "cand_en": "Randy Villegas",
     "vs": "데이비드 발라다오(현역)",
     "vs_en": "David Valadao (incumbent)",
     "tally": {
      "cands": [
       {
-       "n": "비예가스",
-       "n_en": "Villegas",
+       "n": "랜디 비예가스",
+       "n_en": "Randy Villegas",
        "p": "D",
        "v": 54337,
        "pct": 66.4
@@ -2331,8 +2331,8 @@
      ]
     },
     "flip": true,
-    "note": "공화당 현역 낙선(NBC 예측)",
-    "note_en": "GOP incumbent defeated (NBC projection)"
+    "note": "공화당 현역 낙선(AP 판정, 미 동부 4일 오후 1시 17분)",
+    "note_en": "GOP incumbent defeated (AP call, 1:17 p.m. ET Nov 4)"
    },
    {
     "d": "AZ-1",
@@ -2382,17 +2382,17 @@
    },
    {
     "d": "MI-10",
-    "status": "proj",
+    "status": "won",
     "party": "D",
-    "cand": "하인스",
-    "cand_en": "Hines",
+    "cand": "크리스티나 하인스",
+    "cand_en": "Christina Hines",
     "vs": "부샤드",
     "vs_en": "Bouchard",
     "tally": {
      "cands": [
       {
-       "n": "하인스",
-       "n_en": "Hines",
+       "n": "크리스티나 하인스",
+       "n_en": "Christina Hines",
        "p": "D",
        "v": 188078,
        "pct": 52.4
@@ -2415,8 +2415,8 @@
      ]
     },
     "flip": true,
-    "note": "존 제임스가 비운 공화당 의석(NBC 예측)",
-    "note_en": "Open GOP seat left by John James (NBC projection)"
+    "note": "존 제임스가 비운 공화당 의석(AP 판정, 미 동부 4일 낮 12시 26분)",
+    "note_en": "Open GOP seat left by John James (AP call, 12:26 p.m. ET Nov 4)"
    },
    {
     "d": "ME-2",
@@ -2426,34 +2426,10 @@
     "cand_en": "Paul LePage",
     "vs": "맷 던랩",
     "vs_en": "Matt Dunlap",
-    "tally": {
-     "cands": [
-      {
-       "n": "폴 르페이지",
-       "n_en": "Paul LePage",
-       "p": "R",
-       "v": 152951,
-       "pct": 50
-      },
-      {
-       "n": "던랩",
-       "n_en": "Dunlap",
-       "p": "D",
-       "v": 152889,
-       "pct": 50
-      }
-     ],
-     "reported": "예상 투표의 87.4% 개표(NBC)",
-     "reported_en": "87.4% of expected vote in (NBC)",
-     "asOf": "2026-11-04T17:34:00Z",
-     "src": [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-     ]
-    },
-    "note": "미판정. 밤사이 선두가 바뀌어, AP 집계로 스트롱 타운 개표가 들어온 현지 낮 12시 18분 르페이지가 62표 앞섰고(12시 30분 집계도 같음, 프레스 헤럴드), NBC 집계(동부 낮 12시 34분 확인)로는 15만 2951표 대 15만 2889표다. 남은 표는 프레스 헤럴드가 약 3만 표, NBC가 약 4만 5000표로 추정하는데, 프레스 헤럴드는 대부분 공화당 강세인 농촌 표라고 전했다. 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계를 피하려면 표차가 등록된 기명 후보 그레고리 워드의 득표(낮 12시 45분 161표)보다 커야 한다고 이 신문은 설명했다. 프레스 헤럴드는 옥스퍼드·프라이버그와 메인 중부 일부 마을에서 르페이지가 거의 600표를 더 얻었지만 현지 4일 이른 오후까지 AP 집계에 들어가지 않았다고 전했다.",
-    "note_en": "Uncalled. The lead changed overnight: per AP, LePage went 62 votes ahead when the town of Strong reported at 12:18 p.m. local time (unchanged at 12:30, Press Herald); NBC's count (checked 12:34 p.m. ET) shows 152,951 to 152,889. The Press Herald estimates about 30,000 votes remain, mostly in deep-red rural areas; NBC estimates about 45,000. The paper says the winning margin must exceed the 161 votes of declared write-in Gregory Ward (as of 12:45 p.m.) to avoid a ranked-choice runoff. The paper adds that LePage netted almost 600 votes from Oxford, Fryeburg and some central Maine towns that AP had not yet added as of early afternoon Nov 4."
+    "note": "미판정. 현지 4일 오후 2시 30분 기준 예상 투표의 93%가 개표된 가운데 르페이지 49.9%·던랩 48.8%이고, 르페이지는 이날 오후 뱅고어의 양조장 시독 브루잉에서 승리를 선언했다(뱅고어 데일리 뉴스). 다만 이 신문과 제휴사 디시전 데스크 HQ는 판정하지 않았고, 폭스뉴스 결과 화면의 AP 판정 목록에도 메인 2구는 없다. 그 전까지 AP 집계로는 스트롱 타운 개표가 들어온 낮 12시 18분 르페이지가 62표 앞섰고, 프레스 헤럴드는 약 3만 표가 남았는데 대부분 공화당 강세 농촌 표라고 전했다. 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계를 피하려면 표차가 등록된 기명 후보 그레고리 워드의 득표(낮 12시 45분 161표)보다 커야 한다고 이 신문은 설명했다.",
+    "note_en": "Uncalled. At 2:30 p.m. local on Nov 4, with an estimated 93% of votes tallied, LePage had 49.9% to Dunlap's 48.8%, and LePage declared victory that afternoon at Seadog Brewing Co. in Bangor (Bangor Daily News). The paper and its partner Decision Desk HQ have not called it, and ME-2 is not in the AP call list on the Fox News results page. Earlier, per AP, LePage went 62 votes ahead when the town of Strong reported at 12:18 p.m.; the Press Herald said about 30,000 votes remained, mostly in rural Republican towns. The paper says the winning margin must exceed the 161 votes of declared write-in Gregory Ward (as of 12:45 p.m.) to avoid a ranked-choice runoff.",
+    "pct": "개표 93% · 49.9% 대 48.8%(뱅고어 데일리 뉴스)",
+    "pct_en": "93% in · 49.9% to 48.8% (Bangor Daily News)"
    },
    {
     "d": "NY-21",
@@ -2494,7 +2470,7 @@
    },
    {
     "d": "MI-4",
-    "status": "lead",
+    "status": "won",
     "party": "D",
     "cand": "숀 매캔",
     "cand_en": "Sean McCann",
@@ -2526,22 +2502,23 @@
      "reported_en": "97.6% of expected vote in (NBC)",
      "asOf": "2026-11-04T17:34:00Z"
     },
-    "note": "미판정. 공화당 현역이 뒤지고 있다(NBC 집계)",
-    "note_en": "Uncalled. The GOP incumbent is trailing (NBC count)"
+    "note": "공화당 현역 낙선(AP 판정, 미 동부 4일 오후 1시 13분)",
+    "note_en": "GOP incumbent defeated (AP call, 1:13 p.m. ET Nov 4)",
+    "flip": true
    },
    {
     "d": "MI-7",
-    "status": "lead",
+    "status": "won",
     "party": "D",
-    "cand": "로런스",
-    "cand_en": "Lawrence",
+    "cand": "윌리엄 로런스",
+    "cand_en": "William Lawrence",
     "vs": "톰 배럿(현역)",
     "vs_en": "Tom Barrett (incumbent)",
     "tally": {
      "cands": [
       {
-       "n": "로런스",
-       "n_en": "Lawrence",
+       "n": "윌리엄 로런스",
+       "n_en": "William Lawrence",
        "p": "D",
        "v": 201719,
        "pct": 51
@@ -2562,18 +2539,21 @@
       "https://www.nbcnews.com/politics/2026-elections/house-results",
       "NBC News House results (AP data)"
      ]
-    }
+    },
+    "flip": true,
+    "note": "공화당 현역 낙선(AP 판정, 미 동부 4일 오후 2시 5분)",
+    "note_en": "GOP incumbent defeated (AP call, 2:05 p.m. ET Nov 4)"
    },
    {
     "d": "OH-9",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "cand": "마시 캡터(현역)",
     "cand_en": "Marcy Kaptur (incumbent)",
     "vs": "메린",
     "vs_en": "Merrin",
-    "note": "민주당 최장수 여성 의원의 지역구(NBC 예측)",
-    "note_en": "Seat of the longest-serving woman in Congress (NBC projection)",
+    "note": "민주당 최장수 여성 의원의 지역구(AP 판정, 미 동부 4일 오전 2시 53분)",
+    "note_en": "Seat of the longest-serving woman in Congress (AP call, 2:53 a.m. ET Nov 4)",
     "tally": {
      "cands": [
       {
@@ -2747,14 +2727,14 @@
    },
    {
     "d": "TX-28",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "cand": "헨리 쿠엘야르(현역)",
     "cand_en": "Henry Cuellar (incumbent)",
     "vs": "티에리나",
     "vs_en": "Tijerina",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
+    "note": "AP 판정, 미 동부 4일 0시 31분",
+    "note_en": "AP call, 12:31 a.m. ET Nov 4",
     "tally": {
      "cands": [
       {
@@ -2821,14 +2801,14 @@
    },
    {
     "d": "WA-3",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "cand": "마리 글루즌캠프 페레즈(현역)",
     "cand_en": "Marie Gluesenkamp Perez (incumbent)",
     "vs": "브라운",
     "vs_en": "Braun",
-    "note": "NBC 예측",
-    "note_en": "NBC projection",
+    "note": "AP 판정, 미 동부 4일 오후 1시 4분",
+    "note_en": "AP call, 1:04 p.m. ET Nov 4",
     "tally": {
      "cands": [
       {
@@ -2858,14 +2838,14 @@
    },
    {
     "d": "CA-6",
-    "status": "proj",
+    "status": "won",
     "party": "D",
     "cand": "리처드 팬",
     "cand_en": "Richard Pan",
     "vs": "케빈 카일리(현역·무소속)",
     "vs_en": "Kevin Kiley (incumbent, no party preference)",
-    "note": "NBC 예측. 현역 카일리는 정당 없이 출마",
-    "note_en": "NBC projection. Incumbent Kiley ran with no party preference",
+    "note": "AP 판정, 미 동부 4일 오전 2시. 현역 카일리는 정당 없이 출마",
+    "note_en": "AP call, 2:00 a.m. ET Nov 4. Incumbent Kiley ran with no party preference",
     "tally": {
      "cands": [
       {
@@ -3133,9 +3113,14 @@
     "r": 1
    }
   },
-  "asOf": "2026-11-04T17:34:00Z"
+  "asOf": "2026-11-04T20:35:00Z"
  },
  "feed": [
+  {
+   "t": "2026-11-04T20:35:00Z",
+   "text": "AP 판정: 미시간 4구 숀 매캔(민)이 빌 하위징아(공·현역)를(동부 오후 1시 13분), 미시간 7구 윌리엄 로런스(민)가 톰 배럿(공·현역)을(오후 2시 5분) 꺾었다. 캘리포니아 22구 랜디 비예가스(민), 미시간 10구 크리스티나 하인스(민), 워싱턴 3구 글루즌캠프 페레즈(민·현역)도 AP 판정. 폭스뉴스 결과 화면 기준 하원 민주 237·공화 139. 메인 2구: 르페이지(공) 승리 선언, 49.9% 대 48.8%, 93% 개표, 미판정(뱅고어 데일리 뉴스). 상원 미시시피·알래스카는 새 판정 확인 없음.",
+   "text_en": "AP calls: Sean McCann (D) beat Rep. Bill Huizenga (R) in MI-4 (1:13 p.m. ET) and William Lawrence (D) beat Rep. Tom Barrett (R) in MI-7 (2:05 p.m.). AP also called CA-22 for Randy Villegas (D), MI-10 for Christina Hines (D) and WA-3 for Rep. Gluesenkamp Perez (D). Fox News results page: House Democrats 237, Republicans 139. ME-2: LePage (R) declared victory, 49.9% to 48.8% with 93% tallied, uncalled (Bangor Daily News). No new call confirmed for the Mississippi or Alaska Senate races."
+  },
   {
    "t": "2026-11-04T19:44:00Z",
    "text": "새 판정 확인 없음. 미시시피 상원: AP 미판정, 표차 43표 그대로(현지 오전 10시 30분, 데일리 리더). 진술서 투표 신분증 제출 기한은 11월 10일. 알래스카 상원: 더힐은 DDHQ 집계로 펠톨라(민) 약 500표 앞섬, 다음 주 당국 공표는 10일이라고 전했다. 메인 2구: AP 집계에 아직 안 들어간 마을에서 르페이지(공)가 거의 600표 더 얻음(프레스 헤럴드). 하원 정당별 의석은 새 수치를 확인하지 못해 그대로.",
@@ -3280,11 +3265,6 @@
    "t": "2026-11-04T04:33:00Z",
    "text": "캔자스 상원: AP, 민주당 애덤 해밀턴이 공화당 로저 마셜 의원을 꺾었다고 확정(공화당 의석).",
    "text_en": "Kansas Senate: AP calls it for Democrat Adam Hamilton over Republican Sen. Roger Marshall (GOP seat)."
-  },
-  {
-   "t": "2026-11-04T04:27:00Z",
-   "text": "아이오와 상원: NBC 뉴스, 민주당 조시 투렉 승리 예측(공화당 의석). NBC 집계 민주 51 : 공화 39로 민주당 상원 장악. AP 판정은 확인 못 함.",
-   "text_en": "Iowa Senate: NBC News projects Democrat Josh Turek (GOP seat). NBC tally: Dem 51, GOP 39, giving Democrats Senate control. AP call not confirmed."
   }
  ],
  "how": [
@@ -3295,19 +3275,24 @@
  ],
  "sources": [
   [
-   "NBC 뉴스 하원 개표 결과(집계 AP)",
-   "https://www.nbcnews.com/politics/2026-elections/house-results",
-   "NBC News House results (AP data)"
+   "폭스뉴스 하원 결과(AP 판정 목록)",
+   "https://www.foxnews.com/elections/2026/midterm-results/house",
+   "Fox News House results (AP race calls)"
   ],
   [
-   "미시시피 상원 접전(데일리 리더)",
-   "https://dailyleader.com/2026/11/04/neck-and-neck-hyde-smith-colom-race-too-close-to-call/",
-   "Neck and neck: Hyde-Smith, Colom (Daily Leader)"
+   "르페이지 승리 선언(뱅고어 데일리 뉴스)",
+   "https://www.bangordailynews.com/2026/11/04/politics/elections/paul-lepage-declares-victory-over-matt-dunlap/",
+   "LePage declares victory (Bangor Daily News)"
   ],
   [
-   "AP 미판정·진술서 투표 기한(티파 뉴스)",
-   "https://tippahnews.com/mississippi-news/colom-says-outstanding-mississippi-senate-ballots-will-go-his-way-urges-affidavit-voters-to-show-id-by-nov-10-2026/",
-   "AP has not called; affidavit deadline (Tippah News)"
+   "메인 2구 미판정·르페이지 62표 앞섬(프레스 헤럴드)",
+   "https://www.pressherald.com/2026/11/04/the-maine-2nd-district-race-is-still-uncalled-but-paul-lepage-is-in-good-shape/",
+   "ME-2 uncalled, LePage up 62 (Press Herald)"
+  ],
+  [
+   "미시시피 진술서 투표와 인증 일정(데모크라시 도킷)",
+   "https://www.democracydocket.com/news-alerts/mississippis-tight-senate-race-could-hinge-on-affidavit-ballots/",
+   "Mississippi affidavit ballots and certification (Democracy Docket)"
   ],
   [
    "펠톨라 근소한 선두(더힐, 야후)",
@@ -3318,16 +3303,11 @@
    "펠톨라 626표 앞섬(알래스카 스토리)",
    "https://thealaskastory.com/peltola-leads-sen-sullivan-by-626-votes-as-alaskas-top-races-remain-unsettled/",
    "Peltola leads Sullivan by 626 votes (Alaska Story)"
-  ],
-  [
-   "메인 2구 미판정·르페이지 62표 앞섬(프레스 헤럴드)",
-   "https://www.pressherald.com/2026/11/04/the-maine-2nd-district-race-is-still-uncalled-but-paul-lepage-is-in-good-shape/",
-   "ME-2 still uncalled, LePage up 62 (Press Herald)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left; Democrats narrowly lead in both, but neither is likely to be settled until next week. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes with the count stalled, and affidavit voters have until Nov 10 to show ID. In Alaska, Mary Peltola (D) leads Sen. Dan Sullivan (R), but the state's next count update is Nov 10 (The Hill). NBC-called House seats stand at Democrats 236, Republicans 146 (checked 12:34 p.m. ET Nov 4; no later figure confirmed) with 53 uncalled. In ME-2, Paul LePage (R) leads Matt Dunlap (D) by 62 on AP's count, and town results not yet in AP's count would widen that (Press Herald).",
+ "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is the size of the margins. The Senate stands at Democrats 54, Republicans 44 on AP calls, with only Mississippi and Alaska left; Democrats narrowly lead in both, but neither is likely to be settled until next week. In Mississippi, Scott Colom (D) leads Sen. Cindy Hyde-Smith (R) by 43 votes as the Nov 10 deadline for affidavit voters to show ID approaches, and in Alaska, Mary Peltola (D) leads Sen. Dan Sullivan (R), but the state's next count update is Nov 10. The Fox News results page has the House at Democrats 237, Republicans 139 (3:35 p.m. ET Nov 4), after AP called MI-4 and MI-7 for Democrats this afternoon, defeating both GOP incumbents. In ME-2, Paul LePage (R) leads Matt Dunlap (D) 49.9% to 48.8% with an estimated 93% tallied and has declared victory, but the race is not yet called (Bangor Daily News).",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
