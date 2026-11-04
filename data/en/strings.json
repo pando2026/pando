@@ -111014,5 +111014,7 @@
 "하원 {0}석": "{0} House seats",
 "민주 확정 {0}": "Dem called {0}",
 "공화 확정 {0}": "GOP called {0}",
-"미확정 {0}": "uncalled {0}"
+"미확정 {0}": "uncalled {0}",
+"갈등도를 그리는 중…": "Drawing conflict map…",
+"지도 자료를 불러오지 못했습니다.": "Could not load map data."
 }
