@@ -3,7 +3,7 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-05T11:40:00Z",
+ "updatedAt": "2026-11-05T12:42:00Z",
  "source": {
   "name": "AP · Fox News · NBC News"
  },
@@ -3591,6 +3591,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-05T12:42:00Z",
+   "text": "새 AP 판정 확인 없음. 더비즈니스스탠더드(방글라데시, 힌두스탄 타임스 인용)는 5일 AP가 미시시피와 알래스카를 판정하지 않았다고 전했다. 미시시피는 콜럼(민) 1138표 차로 직전 값과 같고, 알래스카는 같은 기사가 AP 수치로 펠톨라(민) 626표 차(예상 투표의 약 74%)를 적어 직전 값 637표와 조금 다르다. 집계 시각을 확인하지 못해 득표 수는 그대로 둔다. 이번 확인에서 NBC·폭스·AP 결과 화면은 열리지 않아 하원 의석도 직전 값 그대로다.",
+   "text_en": "No new AP calls confirmed. The Business Standard (Bangladesh, citing Hindustan Times) says AP had not called Mississippi or Alaska as of Nov 5. Mississippi is unchanged at Colom (D) up 1,138. For Alaska the same article gives AP figures of Peltola (D) up 626 with about 74% in, slightly off the earlier 637; its time stamp could not be confirmed, so the vote counts stay as they were. NBC, Fox and AP results pages did not open on this check, so House seats are also carried over."
+  },
+  {
    "t": "2026-11-05T11:40:00Z",
    "text": "새 AP 판정 확인 없음. ABC 뉴스 개표표(미 동부 5일 오전 1시 18분)는 미시시피 콜럼(민) 46만4926표 대 하이드스미스(공) 46만3788표, 알래스카 펠톨라(민) 10만2962표 대 설리번(공) 10만2325표로 직전 값과 같다. 이번 확인에서 NBC 결과 화면은 열리지 않았고 폭스 화면은 선거 전 내용이어서, 하원 의석은 직전 값 그대로다.",
    "text_en": "No new AP calls confirmed. ABC News's results table (1:18 a.m. ET Nov 5) matches the previous figures: in Mississippi, Colom (D) 464,926 to Hyde-Smith (R) 463,788; in Alaska, Peltola (D) 102,962 to Sullivan (R) 102,325. On this check the NBC results page did not open and the Fox pages showed pre-election content, so House seat totals are unchanged."
@@ -3734,11 +3739,6 @@
    "t": "2026-11-04T07:34:00Z",
    "text": "하원: NBC 판정 의석 민주 227·공화 142, 미판정 66. 공화당 의석 29곳 뒤집힘. 메인 2구 던랩(민)·미시간 7구 로런스(민)·오하이오 9구 캡터(민)·네브래스카 1구 플러드(공)가 앞서는 쪽 바뀜.",
    "text_en": "House: NBC-called seats Democrats 227, Republicans 142, 66 uncalled; 29 GOP seats flipped. Leads change in ME-2 (Dunlap, D), MI-7 (Lawrence, D), OH-9 (Kaptur, D) and NE-1 (Flood, R)."
-  },
-  {
-   "t": "2026-11-04T06:34:00Z",
-   "text": "미시시피 상원: 표차 28표. 스콧 콜럼(민) 462,779표, 신디 하이드스미스(공·현역) 462,751표, 96.6% 개표(NBC·미판정).",
-   "text_en": "Mississippi Senate: 28-vote gap. Scott Colom (D) 462,779, Sen. Cindy Hyde-Smith (R) 462,751, 96.6% in (NBC, uncalled)."
   }
  ],
  "how": [
@@ -3748,6 +3748,11 @@
   "개표가 끝나면 이 페이지는 내리고 결과를 미국 의회 구성·국가 화면에 반영한다."
  ],
  "sources": [
+  [
+   "미시시피·알래스카 상원 AP 미판정(더비즈니스스탠더드)",
+   "https://www.tbsnews.net/worldbiz/usa/why-us-senate-races-alaska-and-mississippi-havent-been-called-yet-and-how-long-it-could",
+   "Why the Alaska and Mississippi Senate races haven't been called (The Business Standard)"
+  ],
   [
    "폭스뉴스 하원 결과(AP 판정 목록)",
    "https://www.foxnews.com/elections/2026/midterm-results/house",
@@ -3772,11 +3777,6 @@
    "알래스카 상원 개표 일정(뉴스위크)",
    "https://www.newsweek.com/democrats-congress-alaska-senate-race-12660748",
    "Alaska Senate count schedule (Newsweek)"
-  ],
-  [
-   "미시시피 상원 표차와 판정 시점(WLBT)",
-   "https://www.wlbt.com/2026/11/05/did-your-county-help-make-mississippis-senate-race-this-close/",
-   "Mississippi Senate margin and call timing (WLBT)"
   ]
  ],
  "title_en": "US midterms: live results",
