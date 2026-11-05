@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-05T00:34:00Z",
+ "updatedAt": "2026-11-05T02:37:00Z",
  "source": {
   "name": "AP · Fox News · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 미시시피는 낮에 65표이던 스콧 콜럼(민)의 표차가 저녁에 1138표로 벌어졌지만 세지 않은 표가 많아 AP는 판정하지 않았다. 하원은 폭스뉴스 결과 화면 기준 민주 237·공화 147(미 동부 4일 오후 7시 34분)이고, 텍사스 32구에서 공화당이 이번 선거 첫 뒤집기를 판정받았다. 애리조나 2구는 일라이 크레인(공·현역)이 다시 선두로 올라섰고, 콜로라도 4구의 로렌 보버트(공·현역) 등 뒤지는 공화당 현역의 승부도 아직 판정이 없다.",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 AP 판정 기준 민주 54·공화 44에 미시시피와 알래스카만 남았는데, 미시시피는 낮에 65표이던 스콧 콜럼(민)의 표차가 저녁에 1138표로 벌어졌지만 세지 않은 표가 많아 AP는 판정하지 않았다. 하원은 폭스뉴스 결과 화면 기준 민주 237·공화 147(미 동부 4일 오후 7시 34분)이고, 텍사스 32구에서 공화당이 이번 선거 첫 뒤집기를 판정받았다. 애리조나 2구는 일라이 크레인(공·현역)이 다시 선두로 올라섰고, 콜로라도 4구의 로렌 보버트(공·현역)는 94% 개표에 5073표 뒤지는 등, 뒤지는 공화당 현역들의 승부도 아직 판정이 없다.",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -3205,8 +3205,8 @@
     "cand_en": "Eileen Laubacher",
     "vs": "로렌 보버트(현역)",
     "vs_en": "Rep. Lauren Boebert",
-    "note": "미판정. 공화당 현역이 뒤지고 있고 약 5만 7000표가 남았다(NBC 추정)",
-    "note_en": "Uncalled. The GOP incumbent trails with about 57,000 votes left (NBC estimate)",
+    "note": "미판정. 현지 4일 오후 2시까지 공개된 개표로 94%가 집계된 가운데 로배커가 5073표(1.5%p) 앞섰고, 자유당 더글러스 맨제리스는 3.12%다(콜로라도 폴리틱스). 이 표차는 자동 재검표 기준보다 크지만, 이 매체는 아직 승부를 단정하기 이르다고 전했다. AP 판정은 확인하지 못했다",
+    "note_en": "Not called. In returns posted through 2 p.m. local time Nov 4, with 94% counted, Laubacher led by 5,073 votes (1.5 points); Libertarian Douglas Mangeris had 3.12% (Colorado Politics). The margin is too wide for an automatic recount, but the outlet still described the race as too close to call. No AP call confirmed.",
     "tally": {
      "cands": [
       {
@@ -3232,7 +3232,9 @@
       "https://www.nbcnews.com/politics/2026-elections/house-results",
       "NBC News House results (AP data)"
      ]
-    }
+    },
+    "pct": "개표 94% · 49.18% 대 47.7%",
+    "pct_en": "94% counted · 49.18% to 47.7%"
    },
    {
     "d": "TN-4",
@@ -3589,6 +3591,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-05T02:37:00Z",
+   "text": "새 AP 판정 확인 없음. 콜로라도 4구: 현지 4일 오후 2시까지 94% 개표에 로배커(민) 49.18%·보버트(공·현역) 47.7%, 5073표 차로 자동 재검표 기준보다 벌어졌지만 아직 판정은 없다(콜로라도 폴리틱스). 이번 확인에서 NBC 결과 화면은 열리지 않았고 폭스 화면은 선거 전 내용이어서, 의석·득표 수는 직전 값 그대로다.",
+   "text_en": "No new AP calls confirmed. Colorado 4th: in returns through 2 p.m. local time Nov 4, with 94% counted, Laubacher (D) 49.18%, Boebert (R, inc.) 47.7%. The 5,073-vote gap is too wide for an automatic recount, but the race remains uncalled (Colorado Politics). On this check the NBC results page would not open and the Fox page showed pre-election content, so seat and vote counts are unchanged."
+  },
+  {
    "t": "2026-11-05T01:42:00Z",
    "text": "새 AP 판정 확인 없음. 미시시피: 주 국무장관실은 후보가 재검표를 요청할 수도 자동으로 시작될 수도 없다고 ABC 뉴스에 답했다. 오하이오 10구: 니커보커(민)가 승리를 선언했으나 AP는 현지 4일 오전 10시 30분까지 판정하지 않았다(데이턴 데일리 뉴스). 이번 확인에서 결과 화면을 열지 못해 의석·득표 수는 직전 값 그대로다.",
    "text_en": "No new AP calls confirmed. Mississippi: the Secretary of State's office told ABC News a candidate cannot request a recount and none is triggered automatically. Ohio 10th: Knickerbocker (D) has declared victory, but AP had not called it as of 10:30 a.m. Nov 4 (Dayton Daily News). The results pages could not be opened on this check, so seat and vote counts are unchanged from the last update."
@@ -3732,11 +3739,6 @@
    "t": "2026-11-04T05:32:00Z",
    "text": "메인 상원: 수전 콜린스 의원(공)이 트로이 잭슨(민)에게 패배 인정(메인 퍼블릭). AP 판정은 확인 못 함.",
    "text_en": "Maine Senate: Sen. Susan Collins (R) concedes to Troy Jackson (D), per Maine Public. AP call not confirmed."
-  },
-  {
-   "t": "2026-11-04T05:12:00Z",
-   "text": "미네소타 상원: AP, 민주당 페기 플래너건이 공화당 미셸 타포야를 꺾었다고 확정(민주당 의석 유지).",
-   "text_en": "Minnesota Senate: AP calls it for Democrat Peggy Flanagan over Republican Michele Tafoya (Democratic hold)."
   }
  ],
  "how": [
@@ -3772,14 +3774,14 @@
    "Mississippi recount rules and the margin (ABC News)"
   ],
   [
-   "미시시피 진술서 투표와 인증 일정(데모크라시 도킷)",
-   "https://www.democracydocket.com/news-alerts/mississippis-tight-senate-race-could-hinge-on-affidavit-ballots/",
-   "Mississippi affidavit ballots and certification (Democracy Docket)"
+   "콜로라도 4구 개표(콜로라도 폴리틱스)",
+   "https://www.coloradopolitics.com/2026/11/04/eileen-laubacher-hangs-on-to-slim-lead-over-lauren-boebert-in-4th-cd/",
+   "Colorado 4th count (Colorado Politics)"
   ]
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. In the Senate, AP calls stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom's (D) lead grew from 65 votes at midday to 1,138 by evening, but many ballots are uncounted and AP has not called it. In the House, the Fox News results page shows Democrats 237, Republicans 147 (7:34 p.m. ET Nov 4), and AP called Texas's 32nd for Republicans, their first flip of this election. In Arizona's 2nd, Rep. Eli Crane (R) has retaken the lead, and contests where GOP incumbents such as Colorado's Lauren Boebert trail remain uncalled.",
+ "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. In the Senate, AP calls stand at Democrats 54, Republicans 44, with only Mississippi and Alaska left. In Mississippi, Scott Colom's (D) lead grew from 65 votes at midday to 1,138 by evening, but many ballots are uncounted and AP has not called it. In the House, the Fox News results page shows Democrats 237, Republicans 147 (7:34 p.m. ET Nov 4), and AP called Texas's 32nd for Republicans, their first flip of this election. In Arizona's 2nd, Rep. Eli Crane (R) has retaken the lead, and contests where GOP incumbents trail remain uncalled, including Colorado's Lauren Boebert, down 5,073 votes with 94% counted.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
