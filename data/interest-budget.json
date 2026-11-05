@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-04",
+ "asOf": "2026-11-05",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -3129,6 +3129,175 @@
      "Tunisie Numérique(아랍어판)",
      "ميزانية تونس 2027: من يحظى بالحصة الأكبر من أموال الدولة؟(2027 튀니지 예산: 누가 가장 큰 몫을 받나) · 2026-10-21",
      "https://ar.tunisienumerique.com/%D9%85%D9%8A%D8%B2%D8%A7%D9%86%D9%8A%D8%A9-%D8%AA%D9%88%D9%86%D8%B3-2027-%D9%85%D9%86-%D9%8A%D8%AD%D8%B8%D9%89-%D8%A8%D8%A7%D9%84%D8%AD%D8%B5%D8%A9-%D8%A7%D9%84%D8%A3%D9%83%D8%A8%D8%B1-%D9%85%D9%86/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "DO": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부(Gobierno Central) 2027 예산안 경제분류 '부채 이자(2.1.4 Intereses de la deuda)'",
+   "interest": {
+    "value": 351327.1,
+    "unit": "백만 도미니카 페소(RD$)",
+    "label": "부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1837856.0,
+    "unit": "백만 도미니카 페소(RD$)",
+    "label": "중앙정부 총지출(금융 지출 제외)"
+   },
+   "share": 19.1,
+   "prev": {
+    "fiscalYear": "2026(법 43-26 반영 현행 예산)",
+    "value": 311003.4,
+    "unit": "백만 도미니카 페소(RD$)"
+   },
+   "note": "법안 표 7의 이자 351,327.1백만 페소(GDP 3.7%)는 이자만이며 원금 상환(110,226.8)은 금융 지출로 따로 있다. 부채 관리 장(수수료 포함)은 395,882.9이고, 2026 초기 예산의 이자는 324,257.1이었다. 전년 비교는 예산총국 집행 보고서 표 1의 현행 예산이다.",
+   "sources": [
+    [
+     "도미니카공화국 예산총국(DIGEPRES)",
+     "Proyecto de Ley de Presupuesto General del Estado para el ejercicio presupuestario del año 2027(2027 회계연도 일반회계 예산안 법안; 표 7·8·14·16·20) · 2026-09-23",
+     "https://digepres.gob.do/wp-content/uploads/2026/10/PL-PGE-2027-1.pdf"
+    ],
+    [
+     "도미니카공화국 예산총국(DIGEPRES)",
+     "Informe de Ejecución Presupuestaria Enero-Septiembre 2026(2026년 1~9월 예산 집행 보고서; 표 1·9·11·17, 기관별 설명) · 2026-10-30",
+     "https://digepres.gob.do/wp-content/uploads/2026/10/Informe-Ejecucion-Presupuestaria-Enero-Septiembre-2026.pdf"
+    ],
+    [
+     "Economía con Datos",
+     "El proyecto de presupuesto 2027 prevé gastos de RD$1,837,856 millones y un déficit de 3.4 % del PIB(2027 예산안, 지출 1조 8,378.6억 페소·적자 GDP의 3.4%) · 2026-09",
+     "https://economiacondatos.org/actualidad/proyecto-presupuesto-2027-deficit-3-4-del-pib/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "HN": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부(Administración Central) 순 총지출(원금 상환 제외) — 2026-09-14 의회 제출, 심사 중",
+   "interest": {
+    "value": 33804.3,
+    "unit": "백만 렘피라",
+    "label": "공공부채 이자(내채 21,998.9 + 외채 11,805.4)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 239296.9,
+    "unit": "백만 렘피라",
+    "label": "중앙정부 순 총지출(상환 제외)"
+   },
+   "share": 14.1,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 31895.7,
+    "unit": "백만 렘피라"
+   },
+   "note": "재무부 중기 거시재정 틀의 중앙정부 지출표 값이며 부채 수수료 1,109.1은 따로 있어 포함하지 않았다. 2026 값은 같은 문서의 추정치다. 예산 분류의 '공공부채 서비스' 745.778억(중앙정부)·932.083억(공공부문)은 원금 상환을 포함해 이자 금액과 다르다. 2026년 1~6월 실제 이자 지급액은 5억 1,300만 달러(137.069억 렘피라)였다.",
+   "sources": [
+    [
+     "온두라스 재무부(SEFIN)",
+     "Marco Macro Fiscal de Mediano Plazo 2027-2030(2027~2030 중기 거시재정 틀) · 2026-09",
+     "https://www.sefin.gob.hn/wp-content/uploads/Presupuesto/2027/Proyecto/index_html_files/Marco-Macro-Fiscal-Mediano-Plazo-2027.pdf"
+    ],
+    [
+     "온두라스 재무부(SEFIN)",
+     "Proyecto de Presupuesto General de Ingresos y Egresos 2027, Tomo I Exposición de Motivos(2027 일반 세입·세출 예산안 제1권 제안 이유서) · 2026-09-14",
+     "https://www.sefin.gob.hn/wp-content/uploads/Presupuesto/2027/Proyecto/index_html_files/Exposicion-Motivos-2027.pdf"
+    ],
+    [
+     "온두라스 재무부(SEFIN)",
+     "Informe Deuda Pública Honduras II Trimestre 2026(온두라스 공공부채 보고서 2026년 2분기) · 2026-08",
+     "https://www.sefin.gob.hn/wp-content/uploads/2026/08/Informe_Deuda_Publica_Honduras_II_Trimestre_2026_publicacion_web.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "CZ": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 국가예산 '국채' 장(396) — 재무부 예산안 보고서 표 37, EU·재정메커니즘 포함 국가예산 총지출 기준",
+   "interest": {
+    "value": 128.967,
+    "unit": "십억 코루나",
+    "label": "국채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 2584.65,
+    "unit": "십억 코루나",
+    "label": "국가예산 총지출"
+   },
+   "share": 5.0,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 108.967,
+    "unit": "십억 코루나"
+   },
+   "note": "2027년 정부안(2026-09-21 확정, 하원 1독회 통과)의 국채 장 지출 1,299.67억 코루나 중 이자가 1,289.67억 코루나이고 수수료 10억은 뺐으며 원금 상환은 이 장에 없다. 비중은 같은 문서의 총지출 대비 판도가 계산했다. 2026년 1~10월 실제 국가 부채 관리비는 821억 코루나(전년 대비 +11.6%)다.",
+   "sources": [
+    [
+     "체코 재무부",
+     "Zpráva k návrhu zákona o státním rozpočtu ČR na rok 2027 (2027년 국가예산안 보고서, 문서 D03) · 2026-09-29",
+     "https://www.mfcr.cz/assets/attachments/2026-10-21_Dokumentace-k-navrhu-zakona-o-statnim-rozpoctu-CR-na-rok-2027.zip"
+    ],
+    [
+     "체코 재무부",
+     "Vláda se dohodla na podobě rozpočtu, MF nyní připraví finální dokumentaci (정부, 예산안 확정에 합의) · 2026-09-21",
+     "https://www.mfcr.cz/cs/ministerstvo/media/tiskove-zpravy/2026/vlada-se-dohodla-na-podobe-rozpoctu-mf-nyni-pripra-65253"
+    ],
+    [
+     "체코 재무부",
+     "Plnění státního rozpočtu ČR za leden až říjen 2026 (1~10월 국가예산 집행 실적) · 2026-11-02",
+     "https://www.mfcr.cz/cs/ministerstvo/media/tiskove-zpravy/2026/pokladni-plneni-sr-65609"
+    ]
+   ],
+   "tier": "official"
+  },
+  "SE": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가예산 분야 26 '국채 이자 등' 중 1:1 국채 이자(중앙정부 국채, 현금 기준)",
+   "interest": {
+    "value": 26.8,
+    "unit": "십억 크로나",
+    "label": "국채 이자(분야 26의 1:1 항목)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1543.3,
+    "unit": "십억 크로나",
+    "label": "국가예산 지출 27개 분야 합계"
+   },
+   "share": 1.7,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 28.6,
+    "unit": "십억 크로나"
+   },
+   "note": "2026년 예산(prop. 2025/26:1, 2025-11-26 릭스다그 틀 결정)의 국채 이자 항목 268.0억 크로나이고 원금 상환은 포함하지 않는다. 전년 값 286.0억은 2025년 예산(추경 반영)이며 2025년 실적 전망은 305억이다. 국채청 5월 전망은 2026년 현금 이자 지급을 280억 크로나로 봤고, 2026년 9월까지 최근 12개월 이자 지급은 258.8억이다.",
+   "sources": [
+    [
+     "스웨덴 정부(Regeringen)",
+     "Prop. 2025/26:1 Utgiftsområde 26 Statsskuldsräntor m.m.(분야 26 국채 이자 등) · 2025-09-22",
+     "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/budgetpropositionen-for-2026-utgiftsomrade-26_hd031d28/html/"
+    ],
+    [
+     "릭스다그(스웨덴 의회)",
+     "Betänkande 2025/26:FiU1 Statens budget 2026 – Rambeslutet(2026 국가예산 틀 결정) · 2025-11-26",
+     "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/betankande/statens-budget-2026-rambeslutet_hd01fiu1/"
+    ],
+    [
+     "국채청(Riksgälden)",
+     "Statsupplåning — Prognos och analys 2026:1(국가 차입 — 전망과 분석 2026년 1호) · 2026-05-28",
+     "https://www.riksgalden.se/contentassets/27fcc0e426c54e508344a41630b84c99/statsupplaning-2026-1.pdf"
+    ],
+    [
+     "국채청(Riksgälden)",
+     "Deficit for Swedish central government in September 2026(2026년 9월 국가 수지 적자) · 2026-10-07",
+     "https://mfn.se/a/riksgalden/deficit-for-swedish-central-government-in-september-2026"
     ]
    ],
    "tier": "official"
