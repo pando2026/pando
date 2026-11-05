@@ -3,11 +3,11 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-05T18:11:00Z",
+  "updatedAt": "2026-11-05T20:33:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 민주 54·공화 44에서 멈춰 있는데, AP는 미 동부 5일 오후 1시 11분 기사에서 미시시피와 알래스카를 여전히 미판정으로 적었다. 미시시피는 96%가 개표된 가운데 스콧 콜럼(민)이 1145표 앞서고, 11월 10일까지 처리할 수천 장의 잠정 투표가 승부를 가른다고 AP는 전했다. 알래스카는 메리 펠톨라(민)가 637표 앞서지만 약 74% 개표에 그쳤고, 과반 후보가 없으면 순위선택 집계로 넘어간다. 하원은 마지막으로 확인한 AP 판정 기준 민주 240·공화 147(미 동부 5일 오전 1시 33분)이고, AP는 정당이 바뀔 수 있는 35곳이 아직 미판정이라고 밝혔다.",
+  "headline": "민주당이 상·하원을 모두 가져간 가운데, AP가 5일 오후까지 하원 판정을 이어 가면서 민주당 의석은 251석까지 늘었다(공화 155, 미 동부 오후 3시 31분). 민주당이 뒤집은 의석은 41곳이고 공화당은 텍사스 32구와 테네시 9구 2곳을 뒤집었으며, 아직 29곳이 남았다. 상원은 민주 54·공화 44에서 멈춰 있다. 미시시피는 스콧 콜럼(민)이 1724표 앞서지만 약 4만 4000표(NBC 추정)와 11월 10일까지 처리할 진술서 투표가 남았고, 알래스카는 메리 펠톨라(민)가 637표 앞선 채 약 74% 개표에 머물러 있다.",
   "senate": {
     "dem": 54,
     "gop": 44,
@@ -51,7 +51,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -73,20 +73,20 @@
               "n": "존 오소프",
               "n_en": "Jon Ossoff",
               "p": "D",
-              "v": 2466207,
+              "v": 2466235,
               "pct": 59
             },
             {
               "n": "마이크 콜린스",
               "n_en": "Mike Collins",
               "p": "R",
-              "v": 1711747,
+              "v": 1712056,
               "pct": 41
             }
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -108,20 +108,20 @@
               "n": "마크 워너",
               "n_en": "Mark Warner",
               "p": "D",
-              "v": 2183072,
+              "v": 2183134,
               "pct": 61.2
             },
             {
               "n": "버트 미즈사와",
               "n_en": "Bert Mizusawa",
               "p": "R",
-              "v": 1376676,
+              "v": 1376810,
               "pct": 38.6
             }
           ],
           "reported": "예상 투표의 97.5% 개표(NBC)",
           "reported_en": "97.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -139,20 +139,20 @@
               "n": "히컨루퍼",
               "n_en": "Hickenlooper",
               "p": "D",
-              "v": 1424709,
+              "v": 1437096,
               "pct": 59.8
             },
             {
               "n": "베이슬리",
               "n_en": "Baisley",
               "p": "R",
-              "v": 853374,
+              "v": 861498,
               "pct": 35.8
             }
           ],
-          "reported": "예상 투표의 87.7% 개표(NBC)",
-          "reported_en": "87.7% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 89.2% 개표(NBC)",
+          "reported_en": "89.2% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -170,20 +170,20 @@
               "n": "루한",
               "n_en": "Luján",
               "p": "D",
-              "v": 455165,
+              "v": 458007,
               "pct": 63.2
             },
             {
               "n": "마커",
               "n_en": "Marker",
               "p": "R",
-              "v": 265557,
+              "v": 266260,
               "pct": 36.8
             }
           ],
-          "reported": "예상 투표의 98% 개표(NBC)",
-          "reported_en": "98% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 98.5% 개표(NBC)",
+          "reported_en": "98.5% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -201,20 +201,20 @@
               "n": "스트래턴",
               "n_en": "Stratton",
               "p": "D",
-              "v": 2431012,
-              "pct": 60.8
+              "v": 2435142,
+              "pct": 60.9
             },
             {
               "n": "트레이시",
               "n_en": "Tracy",
               "p": "R",
-              "v": 1501458,
-              "pct": 37.6
+              "v": 1501979,
+              "pct": 37.5
             }
           ],
-          "reported": "예상 투표의 93.2% 개표(NBC)",
-          "reported_en": "93.2% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 93.3% 개표(NBC)",
+          "reported_en": "93.3% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -236,20 +236,20 @@
               "n": "크리스 패퍼스",
               "n_en": "Chris Pappas",
               "p": "D",
-              "v": 341737,
-              "pct": 56
+              "v": 349865,
+              "pct": 56.1
             },
             {
               "n": "존 수누누",
               "n_en": "John Sununu",
               "p": "R",
-              "v": 257453,
-              "pct": 42.2
+              "v": 261804,
+              "pct": 42
             }
           ],
-          "reported": "예상 투표의 94% 개표(NBC)",
-          "reported_en": "94% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 96.4% 개표(NBC)",
+          "reported_en": "96.4% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -271,20 +271,20 @@
               "n": "에드 마키",
               "n_en": "Ed Markey",
               "p": "D",
-              "v": 1590089,
-              "pct": 63.3
+              "v": 1645703,
+              "pct": 63.4
             },
             {
               "n": "존 디턴",
               "n_en": "John Deaton",
               "p": "R",
-              "v": 811327,
-              "pct": 32.3
+              "v": 834062,
+              "pct": 32.1
             }
           ],
-          "reported": "예상 투표의 95.3% 개표(NBC)",
-          "reported_en": "95.3% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 98.3% 개표(NBC)",
+          "reported_en": "98.3% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -315,7 +315,7 @@
           ],
           "reported": "예상 투표의 98% 개표(NBC)",
           "reported_en": "98% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -333,20 +333,20 @@
               "n": "부커",
               "n_en": "Booker",
               "p": "D",
-              "v": 1787172,
-              "pct": 62.1
+              "v": 1797759,
+              "pct": 62.2
             },
             {
               "n": "머피",
               "n_en": "Murphy",
               "p": "R",
-              "v": 1015941,
-              "pct": 35.3
+              "v": 1018307,
+              "pct": 35.2
             }
           ],
-          "reported": "예상 투표의 94.4% 개표(NBC)",
-          "reported_en": "94.4% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 95% 개표(NBC)",
+          "reported_en": "95% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -377,7 +377,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -408,7 +408,7 @@
           ],
           "reported": "예상 투표의 97% 개표(NBC)",
           "reported_en": "97% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -443,7 +443,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -476,7 +476,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -494,7 +494,7 @@
               "n": "무어 캐피토",
               "n_en": "Moore Capito",
               "p": "R",
-              "v": 266068,
+              "v": 266067,
               "pct": 58.3
             },
             {
@@ -505,9 +505,9 @@
               "pct": 37.9
             }
           ],
-          "reported": "예상 투표의 98.9% 개표(NBC)",
-          "reported_en": "98.9% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -530,20 +530,20 @@
               "n": "애슐리 무디",
               "n_en": "Ashley Moody",
               "p": "R",
-              "v": 4208022,
+              "v": 4208028,
               "pct": 50.9
             },
             {
               "n": "앤지 닉슨",
               "n_en": "Angie Nixon",
               "p": "D",
-              "v": 3969303,
+              "v": 3969319,
               "pct": 48
             }
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -568,20 +568,20 @@
               "n": "제임스 탈라리코",
               "n_en": "James Talarico",
               "p": "D",
-              "v": 5445121,
+              "v": 5445156,
               "pct": 55.1
             },
             {
               "n": "켄 팩스턴",
               "n_en": "Ken Paxton",
               "p": "R",
-              "v": 4249752,
+              "v": 4249763,
               "pct": 43
             }
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -606,20 +606,20 @@
               "n": "트로이 잭슨",
               "n_en": "Troy Jackson",
               "p": "D",
-              "v": 368429,
-              "pct": 53.4
+              "v": 372238,
+              "pct": 53.3
             },
             {
               "n": "수전 콜린스",
               "n_en": "Susan Collins",
               "p": "R",
-              "v": 320926,
-              "pct": 46.5
+              "v": 326151,
+              "pct": 46.7
             }
           ],
-          "reported": "예상 투표의 91% 개표(NBC)",
-          "reported_en": "91% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 92.4% 개표(NBC)",
+          "reported_en": "92.4% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -678,20 +678,20 @@
               "n": "커트 앨미",
               "n_en": "Kurt Alme",
               "p": "R",
-              "v": 230117,
-              "pct": 48.6
+              "v": 232863,
+              "pct": 48.3
             },
             {
               "n": "세스 보드너(무소속)",
               "n_en": "Seth Bodnar (I)",
               "p": "I",
-              "v": 177762,
-              "pct": 37.5
+              "v": 181659,
+              "pct": 37.7
             }
           ],
-          "reported": "예상 투표의 95% 개표(NBC)",
-          "reported_en": "95% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 97.2% 개표(NBC)",
+          "reported_en": "97.2% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -713,20 +713,20 @@
               "n": "마이크 라운즈",
               "n_en": "Mike Rounds",
               "p": "R",
-              "v": 184584,
+              "v": 184587,
               "pct": 60.5
             },
             {
               "n": "브라이언 벵스(무소속)",
               "n_en": "Brian Bengs (I)",
               "p": "I",
-              "v": 120502,
+              "v": 120507,
               "pct": 39.5
             }
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -750,20 +750,20 @@
               "n": "페기 플래너건",
               "n_en": "Peggy Flanagan",
               "p": "D",
-              "v": 1520869,
+              "v": 1520872,
               "pct": 53.7
             },
             {
               "n": "미셸 타포야",
               "n_en": "Michele Tafoya",
               "p": "R",
-              "v": 1233470,
+              "v": 1233468,
               "pct": 43.6
             }
           ],
           "reported": "예상 투표의 98.9% 개표(NBC)",
           "reported_en": "98.9% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -798,7 +798,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -835,7 +835,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -853,20 +853,20 @@
               "n": "스콧 콜럼",
               "n_en": "Scott Colom",
               "p": "D",
-              "v": 464926,
+              "v": 466226,
               "pct": 49
             },
             {
               "n": "신디 하이드스미스",
               "n_en": "Cindy Hyde-Smith",
               "p": "R",
-              "v": 463788,
+              "v": 464502,
               "pct": 48.9
             }
           ],
           "reported": "예상 투표의 95.6% 개표(NBC)",
           "reported_en": "95.6% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -877,8 +877,8 @@
         "cand_en": "Scott Colom",
         "vs": "신디 하이드스미스(공·현역)",
         "vs_en": "Sen. Cindy Hyde-Smith (R)",
-        "note": "AP 미판정(미 동부 5일 오후 1시 11분). AP에 따르면 96%가 개표된 가운데 콜럼이 1145표 앞선다. 잠정 투표 수천 장을 11월 10일까지 처리해야 하고 AP는 이 표가 승부를 가른다고 본다(2022년에는 약 5700장). 자동 재검표는 없고 법원 명령을 받아야 한다. 아래는 그 전 집계다. 표차가 낮의 65표에서 1138표로 벌어졌다: 예상 투표의 95.6%가 개표된 현지 4일 저녁 콜럼 46만 4926표, 하이드스미스 46만 3788표다(미시시피 프리 프레스가 전한 AP 집계, NBC). 그래도 승부는 아직 남은 표에 달려 있다. 마이클 왓슨 주 국무장관에 따르면 카운티 12곳을 뺀 나머지는 비공식 결과를 보고했고, 남은 카운티는 클레이본(추정 투표의 88%)을 빼면 모두 90% 이상 개표했다(WDAM, 현지 5일 아침). NBC는 약 4만 5000표가 남았다고 추정하고, 민주당 강세인 힌즈 카운티 표도 그중 일부다. 유권자 자격 확인 뒤에 세는 진술서 투표(affidavit ballot)는 공식 수치가 없는데, 콜럼 측은 1만~1만 5000장으로 추산하고, 매그놀리아 트리뷴은 최대 1만 8000장이라는 확인되지 않은 보도가 있다고 전했다. 해리슨 카운티는 11월 10일에야 이를 센다(프리 프레스). 마이클 왓슨 주 국무장관은 돌아오지 않은 우편 부재자 투표가 약 3600장이며, 선거일 소인이 찍히고 영업일 5일 안에 도착하면 센다고 밝혔다. 무소속 타이 핑킨스는 약 2.1%를 얻었다. 미시시피는 결선이 없어 최다 득표자가 이기고, 재검표도 없다. 주 국무장관실은 ABC 뉴스에 후보가 재검표를 요청할 수도, 자동으로 시작될 수도 없다고 답했고, 인증 뒤 후보는 투표함 검사를 거쳐 문제가 나오면 소송을 낼 수 있다. 콜럼은 \"우리가 이긴다\"고 했고, 하이드스미스 캠프도 모든 표를 세면 재선된다고 주장한다. 민주당 변호사 마크 일라이어스는 자기 로펌이 콜럼 쪽 법적 대응을 맡는다고 밝혔다. 진술서 투표 유권자의 신분증 제출 기한은 11월 10일, 카운티 인증은 11월 13일, 주 인증은 12월 3일까지다(데모크라시 도킷). WLBT는 현지 4일 저녁 주 국무장관실이 판정까지 다음 주 금요일이 걸릴 수 있다고 했다고 전했다.",
-        "note_en": "No AP call as of 1:11 p.m. ET Nov. 5. AP says Colom leads by 1,145 votes with 96% counted. Several thousand provisional ballots must be resolved by Nov. 10, and AP says they will be decisive (about 5,700 were counted in 2022). There is no automatic recount; a challenger can seek a court order. Earlier count follows. Uncalled by AP. The gap widened from 65 votes at midday to 1,138: on the evening of Nov 4, with an estimated 95.6% in, Colom has 464,926 and Hyde-Smith 463,788 (AP count via Mississippi Free Press; NBC). The race still turns on what remains. Secretary of State Michael Watson says all but 12 counties have reported unofficial results; of those 12, all but Claiborne (88% of estimated votes) are at 90% or more (WDAM, morning of Nov 5). NBC estimates about 45,000 votes are left, including some in Democratic-leaning Hinds County. There is no official figure for affidavit ballots, counted once a voter's eligibility is checked; the Colom side estimates 10,000 to 15,000, and Magnolia Tribune cites unconfirmed reports of up to 18,000. Harrison County will not count its affidavits until Nov 10 (Free Press). Secretary of State Michael Watson says about 3,600 mail absentee ballots have not been returned; they count if postmarked by Election Day and received within five business days. Independent Ty Pinkins has about 2.1%. Mississippi has no runoff, so the top vote-getter wins, and no recount: the Secretary of State's office told ABC News a candidate cannot request one and none is triggered automatically. After certification a candidate can examine the ballot boxes and, if problems turn up, sue. Colom says \"we're gonna win\"; the Hyde-Smith campaign says she will be reelected once every vote is counted. Democratic lawyer Marc Elias says his firm is leading Colom's legal effort. Affidavit voters have until Nov 10 to show ID; county certification is due Nov 13 and state certification Dec 3 (Democracy Docket). WLBT reported on the evening of Nov 4 that the Secretary of State's office says a call could take until next Friday."
+        "note": "AP 미판정(폭스·NBC 화면, 미 동부 5일 오후 3시 33분). 콜럼이 46만 6226표, 하이드스미스가 46만 4502표로 표차가 1724표까지 벌어졌지만, 승부는 아직 남은 표에 달려 있다. NBC는 약 4만 4000표가 남았다고 추정한다. 유권자 자격을 확인한 뒤 세는 진술서 투표(affidavit ballot, 잠정 투표)는 공식 수치가 없다. 콜럼 측은 1만~1만 5000장으로 추산하고, 매그놀리아 트리뷴은 최대 1만 8000장이라는 확인되지 않은 보도가 있다고 전했다. 콜럼이 앞서는 디소토 카운티에는 약 2100장이 남았고 잠정적으로 11월 10일 저녁에 센다(로라 에들러 카운티 선거관리위원, 미시시피 프리 프레스). 해리슨 카운티도 10일에야 센다. 마이클 왓슨 주 국무장관은 돌아오지 않은 우편 부재자 투표가 약 3600장이며, 선거일 소인이 찍히고 영업일 5일 안에 도착하면 센다고 밝혔다. 무소속 타이 핑킨스는 2.1%를 얻었다. 미시시피는 결선 없이 최다 득표자가 이기고 재검표 제도도 없다. 주 국무장관실은 ABC 뉴스에 후보가 요청할 수도 자동으로 시작될 수도 없다고 답했고, 인증 뒤 후보는 투표함 검사를 거쳐 문제가 나오면 소송을 낼 수 있다. 콜럼은 \"우리가 이긴다\"고 했고, 하이드스미스 캠프도 모든 표를 세면 재선된다고 주장한다. 진술서 투표 유권자의 신분증 제출 기한은 11월 10일, 카운티 인증은 13일, 주 인증은 12월 3일까지다(데모크라시 도킷).",
+        "note_en": "No AP call (Fox and NBC pages, 3:33 p.m. ET Nov 5). Colom has 466,226 and Hyde-Smith 464,502, widening the gap to 1,724, but the race still turns on what remains. NBC estimates about 44,000 votes are left. There is no official figure for affidavit (provisional) ballots, counted once a voter's eligibility is checked: the Colom side estimates 10,000 to 15,000, and Magnolia Tribune cites unconfirmed reports of up to 18,000. DeSoto County, where Colom leads, has about 2,100 left, tentatively to be counted on the evening of Nov 10 (county election commissioner Laura Edler, Mississippi Free Press). Harrison County also counts on Nov 10. Secretary of State Michael Watson says about 3,600 mail absentee ballots have not been returned; they count if postmarked by Election Day and received within five business days. Independent Ty Pinkins has 2.1%. Mississippi has no runoff, so the top vote-getter wins, and no recount: the Secretary of State's office told ABC News a candidate cannot request one and none is triggered automatically. After certification a candidate can examine the ballot boxes and, if problems turn up, sue. Colom says \"we're gonna win\"; the Hyde-Smith campaign says she will be reelected once every vote is counted. Affidavit voters have until Nov 10 to show ID; county certification is due Nov 13 and state certification Dec 3 (Democracy Docket)."
       },
       {
         "st": "AL",
@@ -909,7 +909,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -946,7 +946,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -970,20 +970,20 @@
               "n": "압둘 엘사예드",
               "n_en": "Abdul El-Sayed",
               "p": "D",
-              "v": 2507454,
+              "v": 2507616,
               "pct": 52.5
             },
             {
               "n": "마이크 로저스",
               "n_en": "Mike Rogers",
               "p": "R",
-              "v": 2172586,
+              "v": 2172814,
               "pct": 45.5
             }
           ],
-          "reported": "예상 투표의 97.5% 개표(NBC)",
-          "reported_en": "97.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 97.6% 개표(NBC)",
+          "reported_en": "97.6% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1022,7 +1022,7 @@
           ],
           "reported": "예상 투표의 98% 개표(NBC)",
           "reported_en": "98% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1047,20 +1047,20 @@
               "n": "조시 투렉",
               "n_en": "Josh Turek",
               "p": "D",
-              "v": 686487,
+              "v": 686629,
               "pct": 50.5
             },
             {
               "n": "애슐리 힌슨",
               "n_en": "Ashley Hinson",
               "p": "R",
-              "v": 630615,
+              "v": 630789,
               "pct": 46.4
             }
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1096,9 +1096,9 @@
               "pct": 46
             }
           ],
-          "reported": "예상 투표의 98.8% 개표(NBC)",
-          "reported_en": "98.8% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 98.5% 개표(NBC)",
+          "reported_en": "98.5% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1136,7 +1136,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1164,9 +1164,9 @@
               "pct": 47.9
             }
           ],
-          "reported": "예상 투표의 75.5% 개표(NBC)",
-          "reported_en": "75.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 74.1% 개표(NBC)",
+          "reported_en": "74.1% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1178,8 +1178,8 @@
         "cand_en": "Mary Peltola",
         "vs": "댄 설리번(공·현역)",
         "vs_en": "Sen. Dan Sullivan (R)",
-        "note": "AP 미판정(미 동부 5일 오후 1시 11분): 펠톨라가 637표 앞서고 AP 추정 약 74% 개표, 48.2% 대 47.9%다. 아무도 50%를 넘지 못하면 순위선택 집계로 넘어간다. 밤사이 선두가 바뀌어 펠톨라가 앞서지만 뒤집힐 수 있어, 알래스카 비컨은 '박빙'이라고 표현했다. NBC 최신 화면 기준 펠톨라 10만 2962표, 설리번 10만 2325표로 예상 투표의 75.5%가 개표됐다. 공화당 제럴드 하이크스가 4846표(2.3%), 이름이 같은 댄 J. 설리번이 3600표(1.7%)를 얻었다(공화당은 민주당이 표를 가르려고 내세운 후보라고 주장했고 펠톨라는 관여를 부인했다, 보스턴25). 세지 않은 부재자·사전 투표가 수천 표 남았고, 비컨은 펠톨라에게 유리할 것으로 보이는 농촌 개표구 일부도 남았다고 전했다. 우편 투표는 10일(해외 발송 15일)까지 받고, 주 당국은 10·13·18일에 개표를 갱신하며 18일에 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계 결과를 내고 25일까지 인증을 목표로 한다(뉴스위크). NBC는 약 7만 4000표가 남았다고 추정한다. 더힐은 DDHQ(디시전 데스크 HQ) 집계로 미 동부 4일 오전 11시 무렵 펠톨라 48.2%·설리번 47.9%, 약 500표 차에 예상 투표의 70%가 개표됐고, 대부분의 사전·우편 투표가 집계되는 10일까지 주 당국의 추가 공표가 없다고 전했다. 알래스카 퍼블릭 미디어는 주 당국이 투표 자료 파일을 공개할 예정이어서 AP가 자체 집계로 18일보다 먼저 판정할 수도 있다고 전했다.",
-        "note_en": "No AP call as of 1:11 p.m. ET Nov. 5: Peltola leads by 637 votes with an estimated 74% counted, 48.2% to 47.9%; if no one tops 50%, it goes to ranked-choice tabulation. Uncalled by AP. The lead changed overnight and Peltola is ahead, but it could change again; the Alaska Beacon calls the race a tossup. On the latest NBC results page Peltola has 102,962 and Sullivan 102,325, with 75.5% of the expected vote in. Republican Gerald Heikes has 4,846 (2.3%) and a second Dan Sullivan, Dan J. Sullivan, has 3,600 (1.7%); Republicans allege Democrats planted him as a spoiler and Peltola denies involvement (Boston 25). Thousands of absentee and early ballots remain uncounted, and the Beacon says some rural precincts believed to favor Peltola are also out. Mail ballots are accepted for 10 days (15 from overseas). The state plans count updates on Nov 10, 13 and 18, publishes the ranked-choice tabulation on Nov 18, and aims to certify by Nov 25 (Newsweek). NBC estimates about 74,000 votes are left. The Hill, citing Decision Desk HQ, had Peltola 48.2% to Sullivan 47.9% around 11 a.m. ET Nov 4, a gap of about 500 with 70% of the expected vote in, and says Alaska reports no more votes until Nov 10, when most remaining early and mail ballots are counted. Alaska Public Media says the state will release its ballot data file, so AP could run its own tabulation and call the race before Nov 18.",
+        "note": "AP 미판정(폭스·NBC 화면, 미 동부 5일 오후 3시 33분). 펠톨라가 637표 앞서고 AP 추정 약 74% 개표, 48.2% 대 47.9%다. 아무도 50%를 넘지 못하면 순위선택 집계로 넘어간다. 밤사이 선두가 바뀌어 펠톨라가 앞서지만 뒤집힐 수 있어, 알래스카 비컨은 '박빙'이라고 표현했다. NBC 최신 화면 기준 펠톨라 10만 2962표, 설리번 10만 2325표로 예상 투표의 75.5%가 개표됐다. 공화당 제럴드 하이크스가 4846표(2.3%), 이름이 같은 댄 J. 설리번이 3600표(1.7%)를 얻었다(공화당은 민주당이 표를 가르려고 내세운 후보라고 주장했고 펠톨라는 관여를 부인했다, 보스턴25). 세지 않은 부재자·사전 투표가 수천 표 남았고, 비컨은 펠톨라에게 유리할 것으로 보이는 농촌 개표구 일부도 남았다고 전했다. 우편 투표는 10일(해외 발송 15일)까지 받고, 주 당국은 10·13·18일에 개표를 갱신하며 18일에 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계 결과를 내고 25일까지 인증을 목표로 한다(뉴스위크). NBC는 약 7만 4000표가 남았다고 추정한다. 더힐은 DDHQ(디시전 데스크 HQ) 집계로 미 동부 4일 오전 11시 무렵 펠톨라 48.2%·설리번 47.9%, 약 500표 차에 예상 투표의 70%가 개표됐고, 대부분의 사전·우편 투표가 집계되는 10일까지 주 당국의 추가 공표가 없다고 전했다. 알래스카 퍼블릭 미디어는 주 당국이 투표 자료 파일을 공개할 예정이어서 AP가 자체 집계로 18일보다 먼저 판정할 수도 있다고 전했다.",
+        "note_en": "No AP call (Fox and NBC pages, 3:33 p.m. ET Nov 5). No AP call as of 1:11 p.m. ET Nov. 5: Peltola leads by 637 votes with an estimated 74% counted, 48.2% to 47.9%; if no one tops 50%, it goes to ranked-choice tabulation. Uncalled by AP. The lead changed overnight and Peltola is ahead, but it could change again; the Alaska Beacon calls the race a tossup. On the latest NBC results page Peltola has 102,962 and Sullivan 102,325, with 75.5% of the expected vote in. Republican Gerald Heikes has 4,846 (2.3%) and a second Dan Sullivan, Dan J. Sullivan, has 3,600 (1.7%); Republicans allege Democrats planted him as a spoiler and Peltola denies involvement (Boston 25). Thousands of absentee and early ballots remain uncounted, and the Beacon says some rural precincts believed to favor Peltola are also out. Mail ballots are accepted for 10 days (15 from overseas). The state plans count updates on Nov 10, 13 and 18, publishes the ranked-choice tabulation on Nov 18, and aims to certify by Nov 25 (Newsweek). NBC estimates about 74,000 votes are left. The Hill, citing Decision Desk HQ, had Peltola 48.2% to Sullivan 47.9% around 11 a.m. ET Nov 4, a gap of about 500 with 70% of the expected vote in, and says Alaska reports no more votes until Nov 10, when most remaining early and mail ballots are counted. Alaska Public Media says the state will release its ballot data file, so AP could run its own tabulation and call the race before Nov 18.",
         "flip": true
       },
       {
@@ -1191,20 +1191,20 @@
               "n": "리시",
               "n_en": "Risch",
               "p": "R",
-              "v": 401731,
+              "v": 401717,
               "pct": 56.5
             },
             {
               "n": "아킬리스(무소속)",
               "n_en": "Achilles (I)",
               "p": "I",
-              "v": 238348,
+              "v": 238329,
               "pct": 33.5
             }
           ],
           "reported": "예상 투표의 98.9% 개표(NBC)",
           "reported_en": "98.9% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1244,7 +1244,7 @@
           ],
           "reported": "예상 투표의 79.5% 개표(NBC)",
           "reported_en": "79.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/senate-results",
@@ -1258,11 +1258,11 @@
     "asOf": "2026-11-05T08:34:00Z"
   },
   "house": {
-    "dem": 240,
-    "gop": 147,
+    "dem": 251,
+    "gop": 155,
     "total": 435,
     "control": 218,
-    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 5일 오전 1시 33분 · 두 당 합계 밖 48석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
+    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 5일 오후 3시 31분 · 두 당 합계 밖 29석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
     "projection": {
       "party": "D",
       "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 259석 전망",
@@ -1270,21 +1270,21 @@
       "text_en": "AP: Democrats win the House majority (per TIME). NBC expects Democrats to win 259 seats",
       "short_en": "Dem majority (AP)"
     },
-    "note": "AP는 미 동부 5일 오후 1시 11분 기사에서 정당이 바뀔 수 있는 35곳이 아직 미판정이라고 밝혔다. 타임에 따르면 AP는 현지 4일 새벽 하원을 민주당 다수로 판정했다. 폭스뉴스 결과 화면은 미 동부 5일 오전 1시 33분 기준 민주 240·공화 147, 민주당이 뒤집은 의석 31곳과 공화당이 뒤집은 의석 1곳을 보여 준다. NBC는 미 동부 5일 오전 기준 41곳이 미판정이고 민주당이 공화당 의석 35곳을 뒤집어 259석을 차지할 것으로 전망한다. 공화당이 뒤집은 텍사스 32구를 빼면 민주당 순증은 34석이다(GV 와이어). 판정 기관이 달라 폭스의 숫자와 다르다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 NBC가 뒤집힌 의석으로 표시한 곳과 주요 접전 선거구다.",
-    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), 1:33 a.m. ET Nov 5 · 48 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
-    "note_en": "AP said at 1:11 p.m. ET Nov. 5 that 35 races in which party control is at stake remain uncalled. TIME reports AP called the House for Democrats early on Nov 4. The Fox News results page shows Democrats 240, Republicans 147 at 1:33 a.m. ET Nov 5, with 31 seats flipped by Democrats and 1 by Republicans. NBC, as of the morning of Nov 5 ET, has 41 races uncalled and projects Democrats will flip 35 Republican-held seats and hold 259. Republicans flipped Texas's 32nd, leaving a net Democratic gain of 34 (GV Wire). The decision desks differ, so these numbers differ from Fox's. The map counts NBC-called seats by party in each state. Below: seats NBC marks as flipped, plus key close races.",
+    "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 5일 낮과 오후에 노스캐롤라이나·애리조나·콜로라도·오하이오 등의 판정을 잇따라 내놓았다. 폭스뉴스 결과 화면은 미 동부 5일 오후 3시 31분 기준 민주 251·공화 155, 민주당이 뒤집은 의석 41곳과 공화당이 뒤집은 의석 2곳(텍사스 32구·테네시 9구)을 보여 준다. 같은 시각 NBC 판정은 민주 247·공화 157에 미판정 31곳이고, NBC는 최종 민주 259·공화 176을 전망한다. 판정 기관이 달라 숫자가 다르다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
+    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), 3:31 p.m. ET Nov 5 · 29 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
+    "note_en": "AP called the House for Democrats early on Nov 4 (TIME), and on Nov 5 it issued a run of calls in North Carolina, Arizona, Colorado, Ohio and elsewhere. The Fox News results page at 3:31 p.m. ET Nov 5 shows Democrats 251, Republicans 155, with 41 seats flipped by Democrats and 2 by Republicans (Texas's 32nd and Tennessee's 9th). NBC's calls at about the same time stand at Democrats 247, Republicans 157 with 31 uncalled, and NBC projects a final 259-176. The decision desks differ, so the numbers differ. The map counts NBC-called seats by party in each state. Below: flipped seats and key close races.",
     "races": [
       {
         "d": "NC-9",
-        "status": "proj",
+        "status": "won",
         "party": "D",
         "flip": true,
         "cand": "리처드 오헤다 2세",
         "cand_en": "Richard Ojeda II",
         "vs": "리처드 허드슨(현역)",
         "vs_en": "Richard Hudson (incumbent)",
-        "note": "공화당 하원 선거 사령탑(NRCC 위원장)을 꺾음(NBC 예측). 허드슨은 패배를 인정했고, CBS는 아직 예측하지 않았다",
-        "note_en": "Beat the chair of the House GOP campaign arm (NBC projection). Hudson has conceded; CBS has not yet projected the race",
+        "note": "공화당 하원 선거 사령탑(NRCC 위원장)을 꺾음. 허드슨은 패배를 인정했다(AP 판정, 미 동부 5일 오후 2시 39분)",
+        "note_en": "Beat the chair of the House GOP campaign arm; Hudson has conceded (AP call, 2:39 p.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -1342,7 +1342,7 @@
           ],
           "reported": "예상 투표의 98.5% 개표(NBC)",
           "reported_en": "98.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1380,7 +1380,7 @@
           ],
           "reported": "예상 투표의 98.9% 개표(NBC)",
           "reported_en": "98.9% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1405,20 +1405,20 @@
               "n": "페이지 코그네티",
               "n_en": "Paige Cognetti",
               "p": "D",
-              "v": 152583,
+              "v": 152616,
               "pct": 54.4
             },
             {
               "n": "롭 브레스너핸",
               "n_en": "Rob Bresnahan",
               "p": "R",
-              "v": 128081,
+              "v": 128135,
               "pct": 45.6
             }
           ],
           "reported": "예상 투표의 98.2% 개표(NBC)",
           "reported_en": "98.2% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1443,20 +1443,20 @@
               "n": "재닐 스텔슨",
               "n_en": "Janelle Stelson",
               "p": "D",
-              "v": 173845,
+              "v": 173500,
               "pct": 55
             },
             {
               "n": "스콧 페리",
               "n_en": "Scott Perry",
               "p": "R",
-              "v": 142059,
+              "v": 141690,
               "pct": 45
             }
           ],
-          "reported": "예상 투표의 98.9% 개표(NBC)",
-          "reported_en": "98.9% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 98.7% 개표(NBC)",
+          "reported_en": "98.7% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1466,22 +1466,22 @@
       },
       {
         "d": "VA-1",
-        "status": "proj",
+        "status": "won",
         "party": "D",
         "flip": true,
         "cand": "섀넌 테일러",
         "cand_en": "Shannon Taylor",
         "vs": "롭 위트먼(현역)",
         "vs_en": "Rob Wittman (incumbent)",
-        "note": "NBC 예측",
-        "note_en": "NBC projection",
+        "note": "공화당 현역 낙선(AP 판정, 미 동부 5일 오전 11시 59분)",
+        "note_en": "GOP incumbent defeated (AP call, 11:59 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
               "n": "섀넌 테일러",
               "n_en": "Shannon Taylor",
               "p": "D",
-              "v": 207877,
+              "v": 207882,
               "pct": 51
             },
             {
@@ -1494,7 +1494,7 @@
           ],
           "reported": "예상 투표의 98.5% 개표(NBC)",
           "reported_en": "98.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1520,19 +1520,19 @@
               "n_en": "Elaine Luria",
               "p": "D",
               "v": 178741,
-              "pct": 53.1
+              "pct": 53
             },
             {
               "n": "젠 키건스",
               "n_en": "Jen Kiggans",
               "p": "R",
               "v": 150095,
-              "pct": 44.6
+              "pct": 44.5
             }
           ],
           "reported": "예상 투표의 97.7% 개표(NBC)",
           "reported_en": "97.7% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1557,20 +1557,20 @@
               "n": "리베카 베넷",
               "n_en": "Rebecca Bennett",
               "p": "D",
-              "v": 186879,
+              "v": 186932,
               "pct": 57.1
             },
             {
               "n": "톰 킨 주니어",
               "n_en": "Tom Kean Jr.",
               "p": "R",
-              "v": 135392,
+              "v": 135411,
               "pct": 41.4
             }
           ],
           "reported": "예상 투표의 94.6% 개표(NBC)",
           "reported_en": "94.6% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1595,20 +1595,20 @@
               "n": "매니 루티넬",
               "n_en": "Manny Rutinel",
               "p": "D",
-              "v": 137200,
-              "pct": 54.5
+              "v": 139650,
+              "pct": 54.6
             },
             {
               "n": "게이브 에번스",
               "n_en": "Gabe Evans",
               "p": "R",
-              "v": 104702,
+              "v": 106390,
               "pct": 41.6
             }
           ],
-          "reported": "예상 투표의 90.7% 개표(NBC)",
-          "reported_en": "90.7% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 92.3% 개표(NBC)",
+          "reported_en": "92.3% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1646,7 +1646,7 @@
           ],
           "reported": "예상 투표의 98% 개표(NBC)",
           "reported_en": "98% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1684,7 +1684,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1709,20 +1709,20 @@
               "n": "세라 트론 개리엇",
               "n_en": "Sarah Trone Garriott",
               "p": "D",
-              "v": 189217,
-              "pct": 53.7
+              "v": 189349,
+              "pct": 53.6
             },
             {
               "n": "잭 넌",
               "n_en": "Zach Nunn",
               "p": "R",
-              "v": 163441,
-              "pct": 46.3
+              "v": 163631,
+              "pct": 46.4
             }
           ],
           "reported": "예상 투표의 98.8% 개표(NBC)",
           "reported_en": "98.8% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1760,7 +1760,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1798,7 +1798,7 @@
           ],
           "reported": "예상 투표의 92.1% 개표(NBC)",
           "reported_en": "92.1% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1836,7 +1836,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1872,7 +1872,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1912,7 +1912,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1950,7 +1950,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1960,15 +1960,15 @@
       },
       {
         "d": "NC-6",
-        "status": "proj",
+        "status": "won",
         "party": "D",
         "flip": true,
         "cand": "시릴 제퍼슨",
         "cand_en": "Cyril Jefferson",
         "vs": "애디슨 맥도웰(현역)",
         "vs_en": "Addison McDowell (incumbent)",
-        "note": "공화당 현역 낙선(NBC 예측)",
-        "note_en": "GOP incumbent defeated (NBC projection)",
+        "note": "공화당 현역 낙선(AP 판정, 미 동부 5일 오전 11시 58분)",
+        "note_en": "GOP incumbent defeated (AP call, 11:58 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -1988,7 +1988,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -1998,15 +1998,15 @@
       },
       {
         "d": "NC-13",
-        "status": "proj",
+        "status": "won",
         "party": "D",
         "flip": true,
         "cand": "폴 배린저",
         "cand_en": "Paul Barringer",
         "vs": "브래드 노트(현역)",
         "vs_en": "Brad Knott (incumbent)",
-        "note": "공화당 현역 낙선(NBC 예측)",
-        "note_en": "GOP incumbent defeated (NBC projection)",
+        "note": "공화당 현역 낙선(AP 판정, 미 동부 5일 오전 11시 59분)",
+        "note_en": "GOP incumbent defeated (AP call, 11:59 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -2026,7 +2026,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2036,15 +2036,15 @@
       },
       {
         "d": "NC-14",
-        "status": "proj",
+        "status": "won",
         "party": "D",
         "flip": true,
         "cand": "라케샤 워맥",
         "cand_en": "Lakesha Womack",
         "vs": "팀 무어(현역)",
         "vs_en": "Tim Moore (incumbent)",
-        "note": "공화당 현역 낙선(NBC 예측)",
-        "note_en": "GOP incumbent defeated (NBC projection)",
+        "note": "공화당 현역 낙선(AP 판정, 미 동부 5일 오전 11시 59분)",
+        "note_en": "GOP incumbent defeated (AP call, 11:59 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -2064,7 +2064,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2100,9 +2100,9 @@
               "pct": 45.3
             }
           ],
-          "reported": "예상 투표의 98% 개표(NBC)",
-          "reported_en": "98% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 97.9% 개표(NBC)",
+          "reported_en": "97.9% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2140,7 +2140,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2178,7 +2178,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2216,7 +2216,7 @@
           ],
           "reported": "예상 투표의 50.1% 개표(NBC)",
           "reported_en": "50.1% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2232,28 +2232,28 @@
         "cand_en": "Cait Conley",
         "vs": "마이크 롤러(현역)",
         "vs_en": "Mike Lawler (incumbent)",
-        "note": "AP 판정은 확인하지 못했지만, 현역 마이크 롤러가 현지 3일 밤 11시쯤 5%p 넘게 뒤진 상태에서 콘리에게 패배를 인정했다(타임스 유니언). 개표기 오작동이 보고돼 주 선관위는 \"유효표 모두 센다\"고 밝혔다",
-        "note_en": "AP call not confirmed, but incumbent Mike Lawler conceded to Conley around 11 p.m. Nov 3 while trailing by more than five points (Times Union). Ballot scanner malfunctions were reported; the state board says every valid vote will be counted",
+        "note": "폭스 화면의 AP 판정 목록에 아직 없다(미 동부 5일 오후 3시 31분). 현역 롤러는 현지 3일 밤 패배를 인정했다(타임스 유니언). 개표기 오작동이 보고돼 주 선관위는 \"유효표 모두 센다\"고 밝혔다",
+        "note_en": "Not yet on the AP call list on the Fox page (3:31 p.m. ET Nov 5). Incumbent Lawler conceded on the night of Nov 3 (Times Union). Ballot scanner malfunctions were reported; the state board says every valid vote will be counted",
         "tally": {
           "cands": [
             {
               "n": "케이트 콘리",
               "n_en": "Cait Conley",
               "p": "D",
-              "v": 137005,
+              "v": 140109,
               "pct": 52.1
             },
             {
               "n": "마이크 롤러",
               "n_en": "Mike Lawler",
               "p": "R",
-              "v": 125617,
-              "pct": 47.8
+              "v": 128285,
+              "pct": 47.7
             }
           ],
-          "reported": "예상 투표의 85.7% 개표(NBC)",
-          "reported_en": "85.7% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 87.6% 개표(NBC)",
+          "reported_en": "87.6% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2263,7 +2263,7 @@
       },
       {
         "d": "AZ-6",
-        "status": "lead",
+        "status": "won",
         "party": "D",
         "cand": "조애나 멘도사",
         "cand_en": "JoAnna Mendoza",
@@ -2286,17 +2286,18 @@
               "pct": 44.9
             }
           ],
-          "reported": "예상 투표의 83.6% 개표(NBC)",
-          "reported_en": "83.6% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 84% 개표(NBC)",
+          "reported_en": "84% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
             "NBC News House results (AP data)"
           ]
         },
-        "note": "멘도사가 승리를 선언했고 디시전 데스크 HQ는 멘도사 승리로 판정했지만, 현지 4일 아침까지 전국 언론의 판정은 없었다(센터 스퀘어). NBC 최신 화면 기준 표차는 2만 4962표다. AP 판정은 확인하지 못했다.",
-        "note_en": "Mendoza has declared victory and Decision Desk HQ called it for her, but no national outlet had called it as of the morning of Nov 4 (The Center Square). The gap on the latest NBC page is 24,962 votes. AP call not confirmed."
+        "note": "공화당 현역 낙선(AP 판정, 미 동부 5일 오후 2시 38분)",
+        "note_en": "GOP incumbent defeated (AP call, 2:38 p.m. ET Nov 5)",
+        "flip": true
       },
       {
         "d": "CA-22",
@@ -2325,7 +2326,7 @@
           ],
           "reported": "예상 투표의 57.1% 개표(NBC)",
           "reported_en": "57.1% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2338,7 +2339,7 @@
       },
       {
         "d": "AZ-1",
-        "status": "lead",
+        "status": "won",
         "party": "D",
         "cand": "아미시 샤",
         "cand_en": "Amish Shah",
@@ -2350,28 +2351,29 @@
               "n": "아미시 샤",
               "n_en": "Amish Shah",
               "p": "D",
-              "v": 167807,
+              "v": 169687,
               "pct": 52.5
             },
             {
               "n": "필리",
               "n_en": "Feely",
               "p": "R",
-              "v": 145313,
-              "pct": 45.5
+              "v": 146978,
+              "pct": 45.4
             }
           ],
-          "reported": "예상 투표의 86.4% 개표(NBC)",
-          "reported_en": "86.4% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 87.8% 개표(NBC)",
+          "reported_en": "87.8% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
             "NBC News House results (AP data)"
           ]
         },
-        "note": "현지 4일 아침까지 전국 언론의 판정 없음. 당시 샤가 2만 2388표 앞섬(52.54% 대 45.45%, 센터 스퀘어)",
-        "note_en": "No national outlet had called it as of the morning of Nov 4, when Shah led by 22,388 votes, 52.54% to 45.45% (The Center Square)"
+        "note": "공화당 의석을 민주당이 가져옴(AP 판정, 미 동부 5일 낮 12시 2분)",
+        "note_en": "Republican seat flipped to Democrats (AP call, 12:02 p.m. ET Nov 5)",
+        "flip": true
       },
       {
         "d": "AZ-2",
@@ -2400,9 +2402,9 @@
               "pct": 48.7
             }
           ],
-          "reported": "예상 투표의 86.4% 개표(NBC)",
-          "reported_en": "86.4% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 86.5% 개표(NBC)",
+          "reported_en": "86.5% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2437,7 +2439,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2456,28 +2458,28 @@
         "cand_en": "Paul LePage",
         "vs": "맷 던랩",
         "vs_en": "Matt Dunlap",
-        "note": "AP 미판정. 동부 4일 오후 5시 기준 약 91.7% 개표에 르페이지 50.3%·던랩 49.7%다(WABI). 르페이지는 \"공개된 수치로 약 4000표 앞서 있고, 아직 보고하지 않은 마을에 모두 전화해 봤더니 상대에게 승리할 길이 없다\"고 말했지만, 던랩은 \"아주 박빙이고 셀 표가 많이 남았다\"며 패배를 인정하지 않았다. 앞서 동부 오후 2시 45분에는 뱅고어 데일리 뉴스 집계로 94% 개표에 49.9% 대 48.8%였고, 낮 12시 18분에는 AP 집계로 르페이지가 처음 62표 앞섰다. 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계를 피하려면 표차가 기명 후보 그레고리 워드의 득표(낮 12시 45분 161표)보다 커야 한다(프레스 헤럴드·메인 모닝 스타).",
-        "note_en": "AP has not called it. As of 5 p.m. ET Nov 4, with an estimated 91.7% in, LePage had 50.3% to Dunlap's 49.7% (WABI). LePage said: \"Public numbers have us up about 4,000, and the team has been calling all the towns that haven't come in yet, and there's no path to victory for my opponent.\" Dunlap said \"this race is very close and there are plenty of ballots left to count\" and has not conceded. Earlier, the Bangor Daily News tally had 49.9% to 48.8% with 94% in at 2:45 p.m., and AP had LePage first going 62 votes ahead at 12:18 p.m. To avoid a ranked-choice runoff, the margin must exceed the votes of declared write-in Gregory Ward (161 as of 12:45 p.m.) (Press Herald, Maine Morning Star).",
+        "note": "AP 미판정. 예상 투표의 97.8%가 개표된 미 동부 5일 오후 3시 33분 르페이지 49.9%·던랩 48.3%로 5477표 차다(NBC). 그 전 집계: 동부 4일 오후 5시 기준 약 91.7% 개표에 르페이지 50.3%·던랩 49.7%다(WABI). 르페이지는 \"공개된 수치로 약 4000표 앞서 있고, 아직 보고하지 않은 마을에 모두 전화해 봤더니 상대에게 승리할 길이 없다\"고 말했지만, 던랩은 \"아주 박빙이고 셀 표가 많이 남았다\"며 패배를 인정하지 않았다. 앞서 동부 오후 2시 45분에는 뱅고어 데일리 뉴스 집계로 94% 개표에 49.9% 대 48.8%였고, 낮 12시 18분에는 AP 집계로 르페이지가 처음 62표 앞섰다. 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계를 피하려면 표차가 기명 후보 그레고리 워드의 득표(낮 12시 45분 161표)보다 커야 한다(프레스 헤럴드·메인 모닝 스타).",
+        "note_en": "AP has not called it. At 3:33 p.m. ET Nov 5, with 97.8% of the expected vote in, LePage has 49.9% to Dunlap's 48.3%, a gap of 5,477 (NBC). Earlier count: As of 5 p.m. ET Nov 4, with an estimated 91.7% in, LePage had 50.3% to Dunlap's 49.7% (WABI). LePage said: \"Public numbers have us up about 4,000, and the team has been calling all the towns that haven't come in yet, and there's no path to victory for my opponent.\" Dunlap said \"this race is very close and there are plenty of ballots left to count\" and has not conceded. Earlier, the Bangor Daily News tally had 49.9% to 48.8% with 94% in at 2:45 p.m., and AP had LePage first going 62 votes ahead at 12:18 p.m. To avoid a ranked-choice runoff, the margin must exceed the votes of declared write-in Gregory Ward (161 as of 12:45 p.m.) (Press Herald, Maine Morning Star).",
         "tally": {
           "cands": [
             {
               "n": "폴 르페이지",
               "n_en": "Paul LePage",
               "p": "R",
-              "v": 158825,
-              "pct": 50.3
+              "v": 170329,
+              "pct": 49.9
             },
             {
               "n": "맷 던랩",
               "n_en": "Matt Dunlap",
               "p": "D",
-              "v": 156995,
-              "pct": 49.7
+              "v": 164852,
+              "pct": 48.3
             }
           ],
-          "reported": "예상 투표의 91.8% 개표(NBC)",
-          "reported_en": "91.8% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 97.8% 개표(NBC)",
+          "reported_en": "97.8% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2493,8 +2495,8 @@
         "cand_en": "Anthony Constantino",
         "vs": "블레이크 젠드비언",
         "vs_en": "Blake Gendebien",
-        "note": "엘리스 스터파닉이 물러난 공화당 의석. 콘스탄티노가 약 8000표 앞선 채 현지 3일 밤 11시 직후 승리를 선언했지만, AP 판정은 확인하지 못했다(타임스 유니언)",
-        "note_en": "GOP seat left open by Elise Stefanik. Constantino, ahead by around 8,000 votes, declared victory shortly after 11 p.m. Nov 3; AP call not confirmed (Times Union)",
+        "note": "엘리스 스터파닉이 물러난 공화당 의석. 콘스탄티노가 현지 3일 밤 승리를 선언했지만 폭스 화면의 AP 판정 목록에는 아직 없다(미 동부 5일 오후 3시 31분)",
+        "note_en": "GOP seat left open by Elise Stefanik. Constantino declared victory on the night of Nov 3, but it is not yet on the AP call list on the Fox page (3:31 p.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -2509,7 +2511,7 @@
               "n_en": "Blake Gendebien",
               "p": "D",
               "v": 134390,
-              "pct": 48.9
+              "pct": 48.8
             }
           ],
           "src": [
@@ -2517,9 +2519,9 @@
             "https://www.nbcnews.com/politics/2026-elections/house-results",
             "NBC News House results (AP data)"
           ],
-          "reported": "예상 투표의 95.6% 개표(NBC)",
-          "reported_en": "95.6% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z"
+          "reported": "예상 투표의 95.7% 개표(NBC)",
+          "reported_en": "95.7% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z"
         }
       },
       {
@@ -2554,7 +2556,7 @@
           ],
           "reported": "예상 투표의 96.9% 개표(NBC)",
           "reported_en": "96.9% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z"
+          "asOf": "2026-11-05T20:33:00Z"
         },
         "note": "공화당 현역 낙선(AP 판정, 미 동부 4일 오후 1시 13분)",
         "note_en": "GOP incumbent defeated (AP call, 1:13 p.m. ET Nov 4)",
@@ -2587,7 +2589,7 @@
           ],
           "reported": "예상 투표의 97.9% 개표(NBC)",
           "reported_en": "97.9% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2627,7 +2629,7 @@
           ],
           "reported": "예상 투표의 98.1% 개표(NBC)",
           "reported_en": "98.1% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2662,7 +2664,7 @@
           ],
           "reported": "예상 투표의 92.2% 개표(NBC)",
           "reported_en": "92.2% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2686,20 +2688,20 @@
               "n": "제이크 존슨",
               "n_en": "Jake Johnson",
               "p": "D",
-              "v": 163056,
+              "v": 163057,
               "pct": 50
             },
             {
               "n": "브래드 핀스태드",
               "n_en": "Brad Finstad",
               "p": "R",
-              "v": 162733,
+              "v": 162734,
               "pct": 49.9
             }
           ],
           "reported": "예상 투표의 98.8% 개표(NBC)",
           "reported_en": "98.8% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2725,7 +2727,7 @@
               "n": "재러드 모스코위츠",
               "n_en": "Jared Moskowitz",
               "p": "D",
-              "v": 143755,
+              "v": 143756,
               "pct": 51.3
             },
             {
@@ -2738,7 +2740,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2748,14 +2750,14 @@
       },
       {
         "d": "NC-1",
-        "status": "proj",
+        "status": "won",
         "party": "D",
         "cand": "돈 데이비스(현역)",
         "cand_en": "Don Davis (incumbent)",
         "vs": "벅아웃",
         "vs_en": "Buckhout",
-        "note": "NBC 예측",
-        "note_en": "NBC projection",
+        "note": "민주당 현역 지킴(AP 판정, 미 동부 5일 오전 11시 58분)",
+        "note_en": "Democratic incumbent holds (AP call, 11:58 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -2773,9 +2775,9 @@
               "pct": 46.8
             }
           ],
-          "reported": "예상 투표의 98.7% 개표(NBC)",
-          "reported_en": "98.7% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2812,7 +2814,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2849,7 +2851,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2886,7 +2888,7 @@
           ],
           "reported": "예상 투표의 79.5% 개표(NBC)",
           "reported_en": "79.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2923,7 +2925,7 @@
           ],
           "reported": "예상 투표의 50.1% 개표(NBC)",
           "reported_en": "50.1% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -2966,7 +2968,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z"
+          "asOf": "2026-11-05T20:33:00Z"
         }
       },
       {
@@ -2998,7 +3000,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3036,7 +3038,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3072,9 +3074,9 @@
               "pct": 24.9
             }
           ],
-          "reported": "예상 투표의 60% 개표(NBC)",
-          "reported_en": "60% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 67.5% 개표(NBC)",
+          "reported_en": "67.5% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3091,8 +3093,8 @@
         "cand_en": "Jace Yarbrough",
         "vs": "댄 바리오스",
         "vs_en": "Dan Barrios",
-        "note": "이번 선거에서 공화당이 뒤집은 유일한 의석(폭스·NBC 집계 모두 1곳, AP 판정 미 동부 4일 오후 5시 12분)",
-        "note_en": "The only seat Republicans flipped (Fox and NBC both show one; AP call, 5:12 p.m. ET Nov 4)",
+        "note": "공화당이 뒤집은 의석 2곳 중 하나(다른 하나는 테네시 9구). AP 판정, 미 동부 4일 오후 5시 12분",
+        "note_en": "One of two seats Republicans flipped, along with Tennessee's 9th (AP call, 5:12 p.m. ET Nov 4)",
         "tally": {
           "cands": [
             {
@@ -3112,7 +3114,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3137,20 +3139,20 @@
               "n": "테리사 베니테스톰프슨",
               "n_en": "Teresa Benitez-Thompson",
               "p": "D",
-              "v": 150333,
-              "pct": 50.3
+              "v": 152120,
+              "pct": 50
             },
             {
               "n": "데이비드 플리포",
               "n_en": "David Flippo",
               "p": "R",
-              "v": 132762,
-              "pct": 44.4
+              "v": 135760,
+              "pct": 44.6
             }
           ],
-          "reported": "예상 투표의 92.7% 개표(NBC)",
-          "reported_en": "92.7% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 93.9% 개표(NBC)",
+          "reported_en": "93.9% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3186,9 +3188,9 @@
               "pct": 40.5
             }
           ],
-          "reported": "예상 투표의 53.7% 개표(NBC)",
-          "reported_en": "53.7% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 52.3% 개표(NBC)",
+          "reported_en": "52.3% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3205,28 +3207,28 @@
         "cand_en": "Eileen Laubacher",
         "vs": "로렌 보버트(현역)",
         "vs_en": "Rep. Lauren Boebert",
-        "note": "미판정. NBC·폭스 화면의 AP 집계로 로배커 17만 6162표, 보버트 17만 3649표로 2513표 차이고 NBC는 예상 투표의 92.8%가 개표됐다고 본다. 앞서 콜로라도 폴리틱스는 현지 4일 오후 2시까지 공개된 개표로 94% 집계, 5073표 차(1.5%p)라고 전해 집계 기준에 따라 수치가 다르다. 자유당 더글러스 맨제리스는 3.12%(콜로라도 폴리틱스). AP 판정은 확인하지 못했다",
-        "note_en": "Uncalled. On the NBC and Fox pages (AP data), Laubacher has 176,162 and Boebert 173,649, a gap of 2,513, with NBC estimating 92.8% of the expected vote in. Colorado Politics earlier reported returns through 2 p.m. local time Nov 4 at 94% counted with a 5,073-vote gap (1.5 points), so figures differ by tally. Libertarian Douglas Mangeris has 3.12% (Colorado Politics). No AP call confirmed",
+        "note": "미판정. 로배커가 2376표 앞서고 예상 투표의 93.2%가 개표됐다(NBC, 미 동부 5일 오후 3시 33분). 자유당 더글러스 맨제리스는 3.12%다(콜로라도 폴리틱스)",
+        "note_en": "Uncalled. Laubacher leads by 2,376 votes with 93.2% of the expected vote in (NBC, 3:33 p.m. ET Nov 5). Libertarian Douglas Mangeris has 3.12% (Colorado Politics)",
         "tally": {
           "cands": [
             {
               "n": "아일린 로배커",
               "n_en": "Eileen Laubacher",
               "p": "D",
-              "v": 176162,
+              "v": 176859,
               "pct": 48.7
             },
             {
               "n": "로렌 보버트",
               "n_en": "Lauren Boebert",
               "p": "R",
-              "v": 173649,
-              "pct": 48
+              "v": 174483,
+              "pct": 48.1
             }
           ],
-          "reported": "예상 투표의 92.8% 개표(NBC)",
-          "reported_en": "92.8% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 93.2% 개표(NBC)",
+          "reported_en": "93.2% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3265,7 +3267,7 @@
           ],
           "reported": "예상 투표의 99% 개표(NBC)",
           "reported_en": "99% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3281,28 +3283,28 @@
         "cand_en": "Zack Mullock",
         "vs": "제프 밴드루(현역)",
         "vs_en": "Rep. Jeff Van Drew",
-        "note": "AP 판정은 확인하지 못했다. 디시전 데스크 HQ는 멀럭 승리로 판정했고(51 대 48) 밴드루는 패배를 인정했다(스테이트 캐피털 로비스트 집계, 미 동부 5일 오전 8시 30분)",
-        "note_en": "AP call not confirmed. Decision Desk HQ called it for Mullock (51-48) and Van Drew conceded (State Capital Lobbyist tally, 8:30 a.m. ET Nov 5)",
+        "note": "폭스 화면의 AP 판정 목록에 아직 없다(미 동부 5일 오후 3시 31분). 디시전 데스크 HQ는 멀럭 승리로 판정했고 밴드루는 패배를 인정했다(스테이트 캐피털 로비스트 집계, 미 동부 5일 오전 8시 30분)",
+        "note_en": "Not yet on the AP call list on the Fox page (3:31 p.m. ET Nov 5). Decision Desk HQ called it for Mullock and Van Drew conceded (State Capital Lobbyist tally, 8:30 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
               "n": "잭 멀럭",
               "n_en": "Zack Mullock",
               "p": "D",
-              "v": 136703,
+              "v": 137166,
               "pct": 50.8
             },
             {
               "n": "제프 밴드루",
               "n_en": "Jeff Van Drew",
               "p": "R",
-              "v": 129620,
+              "v": 130084,
               "pct": 48.2
             }
           ],
-          "reported": "예상 투표의 95.5% 개표(NBC)",
-          "reported_en": "95.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 97% 개표(NBC)",
+          "reported_en": "97% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3312,14 +3314,14 @@
       },
       {
         "d": "OH-10",
-        "status": "lead",
+        "status": "won",
         "party": "D",
         "cand": "크리스티나 니커보커",
         "cand_en": "Kristina Knickerbocker",
         "vs": "마이크 터너(현역)",
         "vs_en": "Rep. Mike Turner",
-        "note": "AP 판정은 확인하지 못했다. 디시전 데스크 HQ는 니커보커 승리로 판정했다(스테이트 캐피털 로비스트 집계, 미 동부 5일 오전 8시 30분). 니커보커는 승리를 선언했고, 터너의 입장은 데이턴 데일리 뉴스 기사에 실리지 않았다",
-        "note_en": "AP call not confirmed. Decision Desk HQ called it for Knickerbocker (State Capital Lobbyist tally, 8:30 a.m. ET Nov 5). Knickerbocker has declared victory; the Dayton Daily News report carries no response from Turner",
+        "note": "공화당 현역 낙선(AP 판정, 미 동부 5일 오후 2시 39분)",
+        "note_en": "GOP incumbent defeated (AP call, 2:39 p.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -3337,9 +3339,237 @@
               "pct": 47.7
             }
           ],
-          "reported": "예상 투표의 97.8% 개표(NBC)",
-          "reported_en": "97.8% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 97.5% 개표(NBC)",
+          "reported_en": "97.5% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        },
+        "flip": true
+      },
+      {
+        "d": "MT-1",
+        "status": "won",
+        "party": "D",
+        "cand": "샘 포스태그",
+        "cand_en": "Sam Forstag",
+        "vs": "에런 플린트",
+        "vs_en": "Aaron Flint",
+        "note": "공화당 의석을 민주당이 가져옴(AP 판정, 미 동부 5일 낮 12시 2분)",
+        "note_en": "Republican seat flipped to Democrats (AP call, 12:02 p.m. ET Nov 5)",
+        "tally": {
+          "cands": [
+            {
+              "n": "샘 포스태그",
+              "n_en": "Sam Forstag",
+              "p": "D",
+              "v": 132003,
+              "pct": 50.3
+            },
+            {
+              "n": "에런 플린트",
+              "n_en": "Aaron Flint",
+              "p": "R",
+              "v": 122694,
+              "pct": 46.8
+            }
+          ],
+          "reported": "예상 투표의 97.1% 개표(NBC)",
+          "reported_en": "97.1% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        },
+        "flip": true
+      },
+      {
+        "d": "TN-9",
+        "status": "won",
+        "party": "R",
+        "cand": "브렌트 테일러",
+        "cand_en": "Brent Taylor",
+        "vs": "저스틴 피어슨",
+        "vs_en": "Justin Pearson",
+        "note": "새로 그은 멤피스 지역구. 공화당이 뒤집은 의석 2곳 중 하나(AP 판정, 미 동부 5일 오후 2시 40분)",
+        "note_en": "Redrawn Memphis-area district; one of two seats Republicans flipped (AP call, 2:40 p.m. ET Nov 5)",
+        "tally": {
+          "cands": [
+            {
+              "n": "브렌트 테일러",
+              "n_en": "Brent Taylor",
+              "p": "R",
+              "v": 111968,
+              "pct": 49.6
+            },
+            {
+              "n": "저스틴 피어슨",
+              "n_en": "Justin Pearson",
+              "p": "D",
+              "v": 109429,
+              "pct": 48.5
+            }
+          ],
+          "reported": "예상 투표의 99% 개표(NBC)",
+          "reported_en": "99% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        },
+        "flip": true
+      },
+      {
+        "d": "CO-5",
+        "status": "won",
+        "party": "D",
+        "cand": "제시카 킬린",
+        "cand_en": "Jessica Killin",
+        "vs": "제프 크랭크(현역)",
+        "vs_en": "Jeff Crank (incumbent)",
+        "note": "공화당 현역 낙선(AP 판정, 미 동부 5일 오후 2시 38분)",
+        "note_en": "GOP incumbent defeated (AP call, 2:38 p.m. ET Nov 5)",
+        "tally": {
+          "cands": [
+            {
+              "n": "제시카 킬린",
+              "n_en": "Jessica Killin",
+              "p": "D",
+              "v": 140713,
+              "pct": 50.6
+            },
+            {
+              "n": "제프 크랭크",
+              "n_en": "Jeff Crank",
+              "p": "R",
+              "v": 127946,
+              "pct": 46
+            }
+          ],
+          "reported": "예상 투표의 94% 개표(NBC)",
+          "reported_en": "94% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        },
+        "flip": true
+      },
+      {
+        "d": "CA-3",
+        "status": "won",
+        "party": "D",
+        "cand": "아미 베라(현역)",
+        "cand_en": "Ami Bera (incumbent)",
+        "vs": "롭 터커",
+        "vs_en": "Robb Tucker",
+        "note": "폭스 화면(AP 판정 목록)이 뒤집힌 의석으로 표시. 민주당 현역이 이겼다(AP 판정, 미 동부 4일 0시 36분)",
+        "note_en": "Marked as a flip on the Fox page with AP calls; a Democratic incumbent won (AP call, 12:36 a.m. ET Nov 4)",
+        "tally": {
+          "cands": [
+            {
+              "n": "아미 베라",
+              "n_en": "Ami Bera",
+              "p": "D",
+              "v": 95372,
+              "pct": 57.1
+            },
+            {
+              "n": "롭 터커",
+              "n_en": "Robb Tucker",
+              "p": "R",
+              "v": 71774,
+              "pct": 42.9
+            }
+          ],
+          "reported": "예상 투표의 49.4% 개표(NBC)",
+          "reported_en": "49.4% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        },
+        "flip": true
+      },
+      {
+        "d": "CA-41",
+        "status": "won",
+        "party": "D",
+        "cand": "린다 산체스(현역)",
+        "cand_en": "Linda Sánchez (incumbent)",
+        "vs": "미치 클레먼스",
+        "vs_en": "Mitch Clemmons",
+        "note": "폭스 화면(AP 판정 목록)이 뒤집힌 의석으로 표시. 민주당 현역이 이겼다(AP 판정, 미 동부 4일 0시 39분)",
+        "note_en": "Marked as a flip on the Fox page with AP calls; a Democratic incumbent won (AP call, 12:39 a.m. ET Nov 4)",
+        "tally": {
+          "cands": [
+            {
+              "n": "린다 산체스",
+              "n_en": "Linda Sánchez",
+              "p": "D",
+              "v": 125248,
+              "pct": 65.9
+            },
+            {
+              "n": "미치 클레먼스",
+              "n_en": "Mitch Clemmons",
+              "p": "R",
+              "v": 64793,
+              "pct": 34.1
+            }
+          ],
+          "reported": "예상 투표의 76.7% 개표(NBC)",
+          "reported_en": "76.7% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
+          "src": [
+            "NBC 뉴스 하원 개표 결과(집계 AP)",
+            "https://www.nbcnews.com/politics/2026-elections/house-results",
+            "NBC News House results (AP data)"
+          ]
+        },
+        "flip": true
+      },
+      {
+        "d": "NC-3",
+        "status": "lead",
+        "party": "R",
+        "cand": "그레그 머피(현역)",
+        "cand_en": "Greg Murphy (incumbent)",
+        "vs": "레이먼드 스미스",
+        "vs_en": "Raymond Smith",
+        "note": "미판정. 머피가 233표 앞선다(NBC, 미 동부 5일 오후 3시 33분)",
+        "note_en": "Uncalled. Murphy leads by 233 votes (NBC, 3:33 p.m. ET Nov 5)",
+        "tally": {
+          "cands": [
+            {
+              "n": "그레그 머피",
+              "n_en": "Greg Murphy",
+              "p": "R",
+              "v": 117583,
+              "pct": 49.4
+            },
+            {
+              "n": "레이먼드 스미스",
+              "n_en": "Raymond Smith",
+              "p": "D",
+              "v": 117350,
+              "pct": 49.3
+            }
+          ],
+          "reported": "예상 투표의 98.8% 개표(NBC)",
+          "reported_en": "98.8% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3348,35 +3578,35 @@
         }
       },
       {
-        "d": "MT-1",
+        "d": "SC-1",
         "status": "lead",
         "party": "D",
-        "cand": "샘 포스태그",
-        "cand_en": "Sam Forstag",
-        "vs": "에런 플린트",
-        "vs_en": "Aaron Flint",
-        "note": "미판정. 약 1만 5000표가 남았다(NBC 추정)",
-        "note_en": "Uncalled. About 15,000 votes left (NBC estimate)",
+        "cand": "낸시 라코어",
+        "cand_en": "Nancy Lacore",
+        "vs": "제니 코스타 허니컷",
+        "vs_en": "Jenny Costa Honeycutt",
+        "note": "미판정. 라코어가 3308표 앞선다(NBC, 미 동부 5일 오후 3시 33분)",
+        "note_en": "Uncalled. Lacore leads by 3,308 votes (NBC, 3:33 p.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
-              "n": "샘 포스태그",
-              "n_en": "Sam Forstag",
+              "n": "낸시 라코어",
+              "n_en": "Nancy Lacore",
               "p": "D",
-              "v": 127263,
-              "pct": 50
+              "v": 161878,
+              "pct": 49.7
             },
             {
-              "n": "에런 플린트",
-              "n_en": "Aaron Flint",
+              "n": "제니 코스타 허니컷",
+              "n_en": "Jenny Costa Honeycutt",
               "p": "R",
-              "v": 120108,
-              "pct": 47.2
+              "v": 158570,
+              "pct": 48.6
             }
           ],
-          "reported": "예상 투표의 94.5% 개표(NBC)",
-          "reported_en": "94.5% of expected vote in (NBC)",
-          "asOf": "2026-11-05T06:19:00Z",
+          "reported": "예상 투표의 98.9% 개표(NBC)",
+          "reported_en": "98.9% of expected vote in (NBC)",
+          "asOf": "2026-11-05T20:33:00Z",
           "src": [
             "NBC 뉴스 하원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3395,7 +3625,7 @@
         "r": 0
       },
       "CO": {
-        "d": 5,
+        "d": 6,
         "r": 0
       },
       "MI": {
@@ -3403,7 +3633,7 @@
         "r": 4
       },
       "AZ": {
-        "d": 3,
+        "d": 5,
         "r": 1
       },
       "IL": {
@@ -3451,7 +3681,7 @@
         "r": 5
       },
       "MT": {
-        "d": 0,
+        "d": 1,
         "r": 1
       },
       "HI": {
@@ -3463,7 +3693,7 @@
         "r": 0
       },
       "OH": {
-        "d": 7,
+        "d": 8,
         "r": 7
       },
       "AL": {
@@ -3472,7 +3702,7 @@
       },
       "TN": {
         "d": 0,
-        "r": 7
+        "r": 8
       },
       "TX": {
         "d": 14,
@@ -3500,7 +3730,7 @@
       },
       "FL": {
         "d": 7,
-        "r": 16
+        "r": 17
       },
       "MD": {
         "d": 7,
@@ -3520,7 +3750,7 @@
       },
       "VA": {
         "d": 8,
-        "r": 2
+        "r": 3
       },
       "DE": {
         "d": 1,
@@ -3568,11 +3798,11 @@
       },
       "NY": {
         "d": 19,
-        "r": 3
+        "r": 5
       },
       "UT": {
         "d": 1,
-        "r": 2
+        "r": 3
       },
       "AR": {
         "d": 0,
@@ -3587,9 +3817,14 @@
         "r": 1
       }
     },
-    "asOf": "2026-11-05T05:33:00Z"
+    "asOf": "2026-11-05T20:31:00Z"
   },
   "feed": [
+    {
+      "t": "2026-11-05T20:33:00Z",
+      "text": "AP 하원 집계 민주 251·공화 155로 늘었다(폭스 화면, 미 동부 오후 3시 31분). 5일 새 AP 판정: 노스캐롤라이나 1·6·9·13·14구, 버지니아 1구, 애리조나 1·6구, 몬태나 1구(민주당 승), 콜로라도 5구·오하이오 10구도 민주당이 뒤집었다. 공화당은 테네시 9구(브렌트 테일러)를 뒤집어 뒤집은 의석이 2곳이 됐다. 상원은 미시시피·알래스카 미판정 그대로이고, 미시시피 표차는 콜럼(민) 1724표로 벌어졌다.",
+      "text_en": "The AP House count rises to Democrats 251, Republicans 155 (Fox page, 3:31 p.m. ET). New AP calls on Nov 5: North Carolina's 1st, 6th, 9th, 13th and 14th, Virginia's 1st, Arizona's 1st and 6th, and Montana's 1st for Democrats, who also flipped Colorado's 5th and Ohio's 10th. Republicans flipped Tennessee's 9th (Brent Taylor), their second flip. The Senate's Mississippi and Alaska races remain uncalled; Colom (D) now leads Mississippi by 1,724."
+    },
     {
       "t": "2026-11-05T18:11:00Z",
       "text": "새 AP 판정 없음. AP(미 동부 5일 오후 1시 11분)는 미시시피에서 콜럼(민)의 표차가 96% 개표 기준 1145표로 늘었고 잠정 투표가 승부를 가른다고 전했다. 알래스카 상원은 펠톨라(민)가 637표 앞서고 약 74% 개표로 미판정이다. 하원은 정당이 바뀔 수 있는 35곳이 미판정이다. AP 기준 정당별 합계는 새 화면을 열지 못해 240 대 147 그대로다.",
@@ -3734,11 +3969,6 @@
       "t": "2026-11-04T12:38:00Z",
       "text": "뉴욕 17구: 마이크 롤러(공·현역)가 케이트 콘리(민)에게 패배 인정(타임스 유니언, AP 판정 미확인). 메인 2구: 던랩(민) 약 1000표 앞섬, 약 5만 7000표 남음(방고어 데일리 뉴스). 네브래스카 주 공식 집계: 상원 리키츠(공) 370,411표·오스본(무소속) 321,218표, 하원 1구 플러드(공) 122,874표·백마이어(민) 113,806표.",
       "text_en": "NY-17: Rep. Mike Lawler (R) conceded to Cait Conley (D) (Times Union; AP call not confirmed). ME-2: Dunlap (D) leads by about 1,000 votes with about 57,000 left (Bangor Daily News). Nebraska official count: Senate, Ricketts (R) 370,411, Osborn (I) 321,218; NE-1, Flood (R) 122,874, Backemeyer (D) 113,806."
-    },
-    {
-      "t": "2026-11-04T11:37:00Z",
-      "text": "미시시피 상원: AP 비공식 집계 콜럼(민) 462,821표·하이드스미스(공·현역) 462,778표, AP 미판정. 진술서 투표 수를 콜럼 측은 1만~1만 5000장 이상으로 추산. 네브래스카 주 공식 집계: 상원 리키츠(공) 367,378표·오스본(무소속) 319,810표, 하원 1구 플러드(공) 121,374표·백마이어(민) 113,134표.",
-      "text_en": "Mississippi Senate: AP unofficial count has Colom (D) on 462,821 and Hyde-Smith (R) on 462,778, uncalled. Colom's side estimates 10,000 to more than 15,000 affidavit ballots. Nebraska official count: Senate, Ricketts (R) 367,378, Osborn (I) 319,810; NE-1, Flood (R) 121,374, Backemeyer (D) 113,134."
     }
   ],
   "how": [
@@ -3749,39 +3979,39 @@
   ],
   "sources": [
     [
-      "AP가 아직 판정하지 않은 상원·주지사 선거(AP, WFTV 게재)",
-      "https://www.wftv.com/news/politics/what-races-ap-has/3HFFWPIKQQ5ULBFDYZCEAXL3Q4/",
-      "What races AP has not yet called (AP via WFTV)"
-    ],
-    [
-      "미시시피 상원 개표 3일째(WDAM)",
-      "https://www.wdam.com/2026/11/05/colom-leads-senate-race-against-hyde-smith-day-3-ballot-counting/",
-      "Colom leads on day 3 of ballot counting (WDAM)"
-    ],
-    [
-      "하원 뒤집힘·미판정 41곳(GV 와이어)",
-      "https://gvwire.com/2026/11/05/republican-flips-house-seat-cutting-democrats-net-gain-to-34-as-41-races-remain-uncalled/",
-      "Republican flips House seat; 41 races uncalled (GV Wire)"
-    ],
-    [
-      "미시시피 상원 남은 표(매그놀리아 트리뷴)",
-      "https://magnoliatribune.com/2026/11/05/colom-extends-lead-over-hyde-smith-with-thousands-of-affidavit-and-mail-in-absentee-ballots-to-be-counted/",
-      "Colom extends lead over Hyde-Smith (Magnolia Tribune)"
-    ],
-    [
-      "미네소타 1구 재검표 전망(MPR 뉴스)",
-      "https://mprnews.org/story/2026/11/05/jake-johnson-claims-victory-against-brad-finstad-district-1-election-recount-likely",
-      "Jake Johnson claims victory; recount likely (MPR News)"
-    ],
-    [
       "폭스뉴스 하원 결과(AP 판정 목록)",
       "https://www.foxnews.com/elections/2026/midterm-results/house",
       "Fox News House results (AP race calls)"
+    ],
+    [
+      "NBC 뉴스 하원 개표 결과(집계 AP)",
+      "https://www.nbcnews.com/politics/2026-elections/house-results",
+      "NBC News House results (AP data)"
+    ],
+    [
+      "NBC 뉴스 상원 개표 결과(집계 AP)",
+      "https://www.nbcnews.com/politics/2026-elections/senate-results",
+      "NBC News Senate results (AP data)"
+    ],
+    [
+      "미시시피 상원 접전(CBS 뉴스)",
+      "https://www.cbsnews.com/news/mississippi-senate-race-results-2026-midterms/",
+      "Mississippi Senate race still a toss-up (CBS News)"
+    ],
+    [
+      "미시시피 상원 라이브 블로그(미시시피 프리 프레스)",
+      "https://www.mississippifreepress.org/liveblog-mississippis-2026-u-s-senate-election-results/",
+      "Mississippi Senate liveblog (Mississippi Free Press)"
+    ],
+    [
+      "미 하원 미판정 선거 인터뷰(NPR)",
+      "https://www.npr.org/2026/11/05/nx-s1-6028843/some-house-and-senate-races-remain-undecided-where-those-contests-stand",
+      "Some House and Senate races remain undecided (NPR)"
     ]
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "AP has called both the Senate and the House for Democrats, so what remains is how wide the margins get. The Senate stands at Democrats 54, Republicans 44, and AP's story at 1:11 p.m. ET on Nov. 5 still lists Mississippi and Alaska as uncalled. In Mississippi, Scott Colom (D) leads by 1,145 votes with 96% counted, and AP says several thousand provisional ballots, due to be resolved by Nov. 10, will be decisive. In Alaska, Mary Peltola (D) leads by 637 votes with about 74% counted, and the race goes to ranked-choice tabulation if no one tops 50%. The House stands at Democrats 240, Republicans 147 on the last AP count we confirmed (1:33 a.m. ET Nov. 5), and AP says 35 races in which party control is at stake remain uncalled.",
+  "headline_en": "With both chambers already in Democratic hands, AP kept calling House races through the afternoon of Nov. 5, lifting Democrats to 251 seats to Republicans' 155 (3:31 p.m. ET). Democrats have flipped 41 seats and Republicans 2 (Texas's 32nd and Tennessee's 9th), with 29 still open. The Senate stays at Democrats 54, Republicans 44. In Mississippi, Scott Colom (D) leads by 1,724 votes with about 44,000 left by NBC's estimate plus affidavit ballots to be resolved by Nov. 10; in Alaska, Mary Peltola (D) leads by 637 votes with about 74% counted.",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
