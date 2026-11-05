@@ -3,11 +3,11 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-05T14:41:00Z",
+  "updatedAt": "2026-11-05T15:43:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 폭스뉴스 화면(미 동부 5일 오전 4시 35분) 기준 민주 54·공화 44로 그대로이고, 미시시피는 스콧 콜럼(민)이 1138표, 알래스카는 메리 펠톨라(민)가 637표 앞서지만 둘 다 판정이 없다. 하원은 AP 판정 기준 민주 240·공화 147(미 동부 5일 오전 1시 33분)로, 현지 4일 밤 AP가 캘리포니아 47·48구와 네바다 2구를 민주당으로 판정하면서 민주당이 뒤집은 의석이 31곳으로 늘었다. 뒤지는 공화당 현역 가운데 콜로라도 4구의 로렌 보버트는 표차가 2513표로 줄었고, 애리조나 2구의 일라이 크레인은 2235표 앞서 나가는 등 아직 판정이 없는 곳이 남아 있다.",
+  "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 민주 54·공화 44에서 멈춰 있는데, 미시시피는 스콧 콜럼(민)이 1138표, 알래스카는 메리 펠톨라(민)가 637표 앞서지만 둘 다 판정이 없고, 미시시피는 선서 투표지를 세는 중이며 알래스카는 11월 18일에야 순위선택 집계를 할 수 있어 결론이 늦어질 수 있다. 하원은 마지막으로 확인한 AP 판정 기준 민주 240·공화 147(미 동부 5일 오전 1시 33분)이다. AP·NBC·디시전 데스크 HQ 가운데 한 곳이라도 판정한 곳까지 세면 미 동부 5일 오전 8시 30분 기준 민주 252·공화 158, 미판정 25곳이라는 집계도 있다(스테이트 캐피털 로비스트).",
   "senate": {
     "dem": 54,
     "gop": 44,
@@ -3244,8 +3244,8 @@
         "cand_en": "Victoria Broderick",
         "vs": "스콧 데잘레이(현역)",
         "vs_en": "Rep. Scott DesJarlais",
-        "note": "미판정. 공화당 현역이 뒤지고 있고 약 2000표가 남았다(NBC 추정)",
-        "note_en": "Uncalled. The GOP incumbent trails with about 2,000 votes left (NBC estimate)",
+        "note": "미판정. 개표구가 모두 보고된 상태에서 공화당 현역이 280표 뒤지고, 브로더릭은 승리를 선언했다(스테이트 캐피털 로비스트 집계, 미 동부 5일 오전 8시 30분)",
+        "note_en": "Uncalled. With all precincts reporting the GOP incumbent trails by 280 votes, and Broderick has claimed victory (State Capital Lobbyist tally, 8:30 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -3281,8 +3281,8 @@
         "cand_en": "Zack Mullock",
         "vs": "제프 밴드루(현역)",
         "vs_en": "Rep. Jeff Van Drew",
-        "note": "미판정. 공화당 현역이 뒤지고 있고 약 1만 3000표가 남았다(NBC 추정)",
-        "note_en": "Uncalled. The GOP incumbent trails with about 13,000 votes left (NBC estimate)",
+        "note": "AP 판정은 확인하지 못했다. 디시전 데스크 HQ는 멀럭 승리로 판정했고(51 대 48) 밴드루는 패배를 인정했다(스테이트 캐피털 로비스트 집계, 미 동부 5일 오전 8시 30분)",
+        "note_en": "AP call not confirmed. Decision Desk HQ called it for Mullock (51-48) and Van Drew conceded (State Capital Lobbyist tally, 8:30 a.m. ET Nov 5)",
         "tally": {
           "cands": [
             {
@@ -3318,8 +3318,8 @@
         "cand_en": "Kristina Knickerbocker",
         "vs": "마이크 터너(현역)",
         "vs_en": "Rep. Mike Turner",
-        "note": "미판정. 공화당 현역이 뒤지고 있고 약 7000표가 남았다(NBC 추정). 니커보커는 승리를 선언했고, 터너의 입장은 데이턴 데일리 뉴스 기사에 실리지 않았다",
-        "note_en": "Uncalled. The GOP incumbent trails with about 7,000 votes left (NBC estimate). Knickerbocker has declared victory; the Dayton Daily News report carries no response from Turner",
+        "note": "AP 판정은 확인하지 못했다. 디시전 데스크 HQ는 니커보커 승리로 판정했다(스테이트 캐피털 로비스트 집계, 미 동부 5일 오전 8시 30분). 니커보커는 승리를 선언했고, 터너의 입장은 데이턴 데일리 뉴스 기사에 실리지 않았다",
+        "note_en": "AP call not confirmed. Decision Desk HQ called it for Knickerbocker (State Capital Lobbyist tally, 8:30 a.m. ET Nov 5). Knickerbocker has declared victory; the Dayton Daily News report carries no response from Turner",
         "tally": {
           "cands": [
             {
@@ -3591,6 +3591,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-05T15:43:00Z",
+      "text": "새 AP 판정 확인 없음. USA 투데이는 미 동부 5일 오전 AP 집계로 펠톨라(민)가 설리번(공)을 48.2% 대 47.9%, 약 600표 차로 앞서고 75%가 개표됐으며 미판정이라고 전했다. 스테이트 캐피털 로비스트는 미 동부 오전 8시 30분 기준 미시시피를 미판정으로 적었고, 세 기관 판정을 합친 하원 집계는 민주 252·공화 158, 미판정 25곳이다. 이 집계에서 디시전 데스크 HQ가 뉴저지 2구·오하이오 10구를 민주당 승리로 판정했다는 점도 확인했다. AP 기준 하원 240 대 147은 새 화면을 열지 못해 직전 값 그대로다.",
+      "text_en": "No new AP calls confirmed. USA Today, citing AP's tally on the morning of Nov 5 ET, has Peltola (D) ahead of Sullivan (R) 48.2% to 47.9%, by about 600 votes with 75% counted, uncalled. State Capital Lobbyist, as of 8:30 a.m. ET, lists Mississippi as uncalled and puts the House at Democrats 252, Republicans 158, with 25 uncalled across three decision desks; it also shows Decision Desk HQ calling New Jersey's 2nd and Ohio's 10th for Democrats. The AP-based House figure of 240-147 stays at its previous value because no newer results page could be opened."
+    },
+    {
       "t": "2026-11-05T14:41:00Z",
       "text": "새 AP 판정 확인 없음. ABC 뉴스의 재검표 기사(미 동부 4일 밤 10시 42분)는 미시시피와 알래스카 모두 미판정으로 적었고, 표 수는 콜럼(민) 46만4926표 대 하이드스미스(공) 46만3788표, 펠톨라(민) 10만2962표 대 설리번(공) 10만2325표로 직전 값과 같다. 직전 확인에서 차이가 났던 알래스카 626표 차는 ABC의 더 이른 화면 값이고, 637표 차가 더 새 값이다. 미시시피는 재검표를 자동으로 하거나 후보가 요청할 수 없으며, 마이클 왓슨 주 국무장관은 우편 표 약 3600장과 수를 모르는 선서 투표가 남았고 카운티 인증 시한이 13일이라고 했다. 이번 확인에서 NBC 화면은 열리지 않았고 폭스 하원 화면은 선거 전 내용이어서, 하원 의석은 직전 값 그대로다.",
       "text_en": "No new AP calls confirmed. An ABC News recount story (10:42 p.m. ET Nov 4) lists both Mississippi and Alaska as uncalled, with counts unchanged: Colom (D) 464,926, Hyde-Smith (R) 463,788; Peltola (D) 102,962, Sullivan (R) 102,325. The 626-vote Alaska margin that differed at the last check was an earlier ABC snapshot; 637 is the newer figure. Mississippi has no automatic recount and candidates cannot request one, and Secretary of State Michael Watson said about 3,600 mail ballots and an unknown number of affidavit ballots remain, with county certification due Nov 13. NBC's results page did not open this time and Fox's House page showed pre-election content, so House seats stay at the previous values."
@@ -3734,11 +3739,6 @@
       "t": "2026-11-04T08:30:00Z",
       "text": "네브래스카 주 공식 집계: 상원 리키츠(공) 355,492표·오스본(무소속) 311,791표. 하원 1구 플러드(공) 113,817표·백마이어(민) 106,940표, 2구는 개표구 모두 완료, 파월(민) 138,733표·하딩(공) 100,895표.",
       "text_en": "Nebraska official count: Senate, Ricketts (R) 355,492, Osborn (I) 311,791. House NE-1, Flood (R) 113,817, Backemeyer (D) 106,940; NE-2, all precincts complete, Powell (D) 138,733, Harding (R) 100,895."
-    },
-    {
-      "t": "2026-11-04T07:34:00Z",
-      "text": "상원: AP 미시간 엘사예드(민)·루이지애나 레틀로(공)·아이다호 리시(공) 확정 확인(민주 54·공화 41). 몬태나 앨미(공) NBC 예측.",
-      "text_en": "Senate: AP calls confirmed for Michigan (El-Sayed, D), Louisiana (Letlow, R) and Idaho (Risch, R), making it Democrats 54, Republicans 41. NBC projects Alme (R) in Montana."
     }
   ],
   "how": [
@@ -3749,9 +3749,24 @@
   ],
   "sources": [
     [
-      "미시시피 재검표 규정과 남은 표(ABC 뉴스)",
-      "https://abcnews.com/Politics/recounts-mississippi-razor-thin-margin-senate-race/story?id=137844445",
-      "What to know about recounts in Mississippi (ABC News)"
+      "알래스카 상원 개표(USA 투데이, 야후 뉴스 게재)",
+      "https://www.yahoo.com/news/politics/articles/live-results-alaska-senate-election-142227368.html",
+      "Alaska Senate count (USA Today via Yahoo News)"
+    ],
+    [
+      "2026 중간선거 현황(스테이트 캐피털 로비스트)",
+      "https://statecapitallobbyist.com/elections/2026-midterm-elections-where-things-stand/",
+      "2026 Midterm Elections: Where Things Stand (State Capital Lobbyist)"
+    ],
+    [
+      "알래스카 상원 다음 절차(로이터, 하와이 트리뷴헤럴드 게재)",
+      "https://www.hawaiitribune-herald.com/2026/11/05/nation-world-news/whats-next-for-alaskas-unusual-us-senate-race/",
+      "What's next for Alaska's unusual US Senate race (Reuters via Hawaii Tribune-Herald)"
+    ],
+    [
+      "미시시피 상원 접전(타임)",
+      "https://time.com/article/2026/11/05/mississippi-senate-race-2026-midterm-elections-colom-hyde-smith/",
+      "How the Mississippi Senate Race Became a Nail-Biter (TIME)"
     ],
     [
       "폭스뉴스 하원 결과(AP 판정 목록)",
@@ -3762,26 +3777,11 @@
       "폭스뉴스 상원 결과",
       "https://www.foxnews.com/elections/2026/midterm-results/senate",
       "Fox News Senate results"
-    ],
-    [
-      "NBC 뉴스 하원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/house-results",
-      "NBC News House results (AP data)"
-    ],
-    [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
-    ],
-    [
-      "알래스카 상원 개표 일정(뉴스위크)",
-      "https://www.newsweek.com/democrats-congress-alaska-senate-race-12660748",
-      "Alaska Senate count schedule (Newsweek)"
     ]
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. In the Senate, the Fox News page (4:35 a.m. ET Nov 5) still shows Democrats 54, Republicans 44; Scott Colom (D) leads by 1,138 in Mississippi and Mary Peltola (D) by 637 in Alaska, neither called. In the House, AP calls stand at Democrats 240, Republicans 147 (1:33 a.m. ET Nov 5). On the night of Nov 4 AP called California's 47th and 48th and Nevada's 2nd for Democrats, bringing their flips to 31. Several races remain uncalled: Colorado's Lauren Boebert (R) now trails by 2,513, while Arizona's Eli Crane (R) has pulled 2,235 ahead.",
+  "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. The Senate stands at Democrats 54, Republicans 44: Scott Colom (D) leads by 1,138 in Mississippi and Mary Peltola (D) by 637 in Alaska, neither called. Mississippi is still counting affidavit ballots, and Alaska cannot run its ranked-choice tabulation before Nov 18, so the results may come late. In the House, the last AP count confirmed is Democrats 240, Republicans 147 (1:33 a.m. ET Nov 5). Counting any race called by AP, NBC or Decision Desk HQ, one tally has Democrats 252, Republicans 158, with 25 uncalled as of 8:30 a.m. ET Nov 5 (State Capital Lobbyist).",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
