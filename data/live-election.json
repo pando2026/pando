@@ -3,11 +3,11 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-05T16:41:00Z",
+  "updatedAt": "2026-11-05T17:42:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 민주 54·공화 44에서 멈춰 있는데, 미시시피는 스콧 콜럼(민)이 1138표, 알래스카는 메리 펠톨라(민)가 637표 앞서지만 둘 다 판정이 없고, 미시시피는 선서 투표지를 세는 중이며 알래스카는 11월 18일에야 순위선택 집계를 할 수 있어 결론이 늦어질 수 있다. 하원은 마지막으로 확인한 AP 판정 기준 민주 240·공화 147(미 동부 5일 오전 1시 33분)이다. AP·NBC·디시전 데스크 HQ 가운데 한 곳이라도 판정한 곳까지 세면 미 동부 5일 오전 8시 30분 기준 민주 252·공화 158, 미판정 25곳이라는 집계도 있다(스테이트 캐피털 로비스트).",
+  "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 민주 54·공화 44에서 멈춰 있는데, 미시시피는 스콧 콜럼(민)이 1138표, 알래스카는 메리 펠톨라(민)가 637표 앞서지만 둘 다 판정이 없고, 미시시피는 선서 투표지를 세는 중이며 알래스카는 11월 18일에야 순위선택 집계를 할 수 있어 결론이 늦어질 수 있다. 하원은 마지막으로 확인한 AP 판정 기준 민주 240·공화 147(미 동부 5일 오전 1시 33분)이다. AP·NBC·디시전 데스크 HQ 가운데 한 곳이라도 판정한 곳까지 세면 미 동부 5일 오전 8시 30분 기준 민주 252·공화 158, 미판정 25곳이라는 집계도 있고(스테이트 캐피털 로비스트), NBC는 41곳이 미판정인 가운데 민주당 259석을 전망한다.",
   "senate": {
     "dem": 54,
     "gop": 44,
@@ -877,8 +877,8 @@
         "cand_en": "Scott Colom",
         "vs": "신디 하이드스미스(공·현역)",
         "vs_en": "Sen. Cindy Hyde-Smith (R)",
-        "note": "AP 미판정. 표차가 낮의 65표에서 1138표로 벌어졌다: 예상 투표의 95.6%가 개표된 현지 4일 저녁 콜럼 46만 4926표, 하이드스미스 46만 3788표다(미시시피 프리 프레스가 전한 AP 집계, NBC). 그래도 승부는 아직 남은 표에 달려 있다. NBC는 약 4만 5000표가 남았다고 추정하고, 민주당 강세인 힌즈 카운티 표도 그중 일부다. 유권자 자격 확인 뒤에 세는 진술서 투표(affidavit ballot)는 공식 수치가 없는데, 콜럼 측은 1만~1만 5000장으로 추산하고, 매그놀리아 트리뷴은 최대 1만 8000장이라는 확인되지 않은 보도가 있다고 전했다. 해리슨 카운티는 11월 10일에야 이를 센다(프리 프레스). 마이클 왓슨 주 국무장관은 돌아오지 않은 우편 부재자 투표가 약 3600장이며, 선거일 소인이 찍히고 영업일 5일 안에 도착하면 센다고 밝혔다. 무소속 타이 핑킨스는 약 2.1%를 얻었다. 미시시피는 결선이 없어 최다 득표자가 이기고, 재검표도 없다. 주 국무장관실은 ABC 뉴스에 후보가 재검표를 요청할 수도, 자동으로 시작될 수도 없다고 답했고, 인증 뒤 후보는 투표함 검사를 거쳐 문제가 나오면 소송을 낼 수 있다. 콜럼은 \"우리가 이긴다\"고 했고, 하이드스미스 캠프도 모든 표를 세면 재선된다고 주장한다. 민주당 변호사 마크 일라이어스는 자기 로펌이 콜럼 쪽 법적 대응을 맡는다고 밝혔다. 진술서 투표 유권자의 신분증 제출 기한은 11월 10일, 카운티 인증은 11월 13일, 주 인증은 12월 3일까지다(데모크라시 도킷). WLBT는 현지 4일 저녁 주 국무장관실이 판정까지 다음 주 금요일이 걸릴 수 있다고 했다고 전했다.",
-        "note_en": "Uncalled by AP. The gap widened from 65 votes at midday to 1,138: on the evening of Nov 4, with an estimated 95.6% in, Colom has 464,926 and Hyde-Smith 463,788 (AP count via Mississippi Free Press; NBC). The race still turns on what remains. NBC estimates about 45,000 votes are left, including some in Democratic-leaning Hinds County. There is no official figure for affidavit ballots, counted once a voter's eligibility is checked; the Colom side estimates 10,000 to 15,000, and Magnolia Tribune cites unconfirmed reports of up to 18,000. Harrison County will not count its affidavits until Nov 10 (Free Press). Secretary of State Michael Watson says about 3,600 mail absentee ballots have not been returned; they count if postmarked by Election Day and received within five business days. Independent Ty Pinkins has about 2.1%. Mississippi has no runoff, so the top vote-getter wins, and no recount: the Secretary of State's office told ABC News a candidate cannot request one and none is triggered automatically. After certification a candidate can examine the ballot boxes and, if problems turn up, sue. Colom says \"we're gonna win\"; the Hyde-Smith campaign says she will be reelected once every vote is counted. Democratic lawyer Marc Elias says his firm is leading Colom's legal effort. Affidavit voters have until Nov 10 to show ID; county certification is due Nov 13 and state certification Dec 3 (Democracy Docket). WLBT reported on the evening of Nov 4 that the Secretary of State's office says a call could take until next Friday."
+        "note": "AP 미판정. 표차가 낮의 65표에서 1138표로 벌어졌다: 예상 투표의 95.6%가 개표된 현지 4일 저녁 콜럼 46만 4926표, 하이드스미스 46만 3788표다(미시시피 프리 프레스가 전한 AP 집계, NBC). 그래도 승부는 아직 남은 표에 달려 있다. 마이클 왓슨 주 국무장관에 따르면 카운티 12곳을 뺀 나머지는 비공식 결과를 보고했고, 남은 카운티는 클레이본(추정 투표의 88%)을 빼면 모두 90% 이상 개표했다(WDAM, 현지 5일 아침). NBC는 약 4만 5000표가 남았다고 추정하고, 민주당 강세인 힌즈 카운티 표도 그중 일부다. 유권자 자격 확인 뒤에 세는 진술서 투표(affidavit ballot)는 공식 수치가 없는데, 콜럼 측은 1만~1만 5000장으로 추산하고, 매그놀리아 트리뷴은 최대 1만 8000장이라는 확인되지 않은 보도가 있다고 전했다. 해리슨 카운티는 11월 10일에야 이를 센다(프리 프레스). 마이클 왓슨 주 국무장관은 돌아오지 않은 우편 부재자 투표가 약 3600장이며, 선거일 소인이 찍히고 영업일 5일 안에 도착하면 센다고 밝혔다. 무소속 타이 핑킨스는 약 2.1%를 얻었다. 미시시피는 결선이 없어 최다 득표자가 이기고, 재검표도 없다. 주 국무장관실은 ABC 뉴스에 후보가 재검표를 요청할 수도, 자동으로 시작될 수도 없다고 답했고, 인증 뒤 후보는 투표함 검사를 거쳐 문제가 나오면 소송을 낼 수 있다. 콜럼은 \"우리가 이긴다\"고 했고, 하이드스미스 캠프도 모든 표를 세면 재선된다고 주장한다. 민주당 변호사 마크 일라이어스는 자기 로펌이 콜럼 쪽 법적 대응을 맡는다고 밝혔다. 진술서 투표 유권자의 신분증 제출 기한은 11월 10일, 카운티 인증은 11월 13일, 주 인증은 12월 3일까지다(데모크라시 도킷). WLBT는 현지 4일 저녁 주 국무장관실이 판정까지 다음 주 금요일이 걸릴 수 있다고 했다고 전했다.",
+        "note_en": "Uncalled by AP. The gap widened from 65 votes at midday to 1,138: on the evening of Nov 4, with an estimated 95.6% in, Colom has 464,926 and Hyde-Smith 463,788 (AP count via Mississippi Free Press; NBC). The race still turns on what remains. Secretary of State Michael Watson says all but 12 counties have reported unofficial results; of those 12, all but Claiborne (88% of estimated votes) are at 90% or more (WDAM, morning of Nov 5). NBC estimates about 45,000 votes are left, including some in Democratic-leaning Hinds County. There is no official figure for affidavit ballots, counted once a voter's eligibility is checked; the Colom side estimates 10,000 to 15,000, and Magnolia Tribune cites unconfirmed reports of up to 18,000. Harrison County will not count its affidavits until Nov 10 (Free Press). Secretary of State Michael Watson says about 3,600 mail absentee ballots have not been returned; they count if postmarked by Election Day and received within five business days. Independent Ty Pinkins has about 2.1%. Mississippi has no runoff, so the top vote-getter wins, and no recount: the Secretary of State's office told ABC News a candidate cannot request one and none is triggered automatically. After certification a candidate can examine the ballot boxes and, if problems turn up, sue. Colom says \"we're gonna win\"; the Hyde-Smith campaign says she will be reelected once every vote is counted. Democratic lawyer Marc Elias says his firm is leading Colom's legal effort. Affidavit voters have until Nov 10 to show ID; county certification is due Nov 13 and state certification Dec 3 (Democracy Docket). WLBT reported on the evening of Nov 4 that the Secretary of State's office says a call could take until next Friday."
       },
       {
         "st": "AL",
@@ -1265,14 +1265,14 @@
     "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 5일 오전 1시 33분 · 두 당 합계 밖 48석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
     "projection": {
       "party": "D",
-      "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 최소 258석 전망",
+      "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 259석 전망",
       "short": "민주 과반(AP)",
-      "text_en": "AP: Democrats win the House majority (per TIME). NBC expects Democrats to win at least 258 seats",
+      "text_en": "AP: Democrats win the House majority (per TIME). NBC expects Democrats to win 259 seats",
       "short_en": "Dem majority (AP)"
     },
-    "note": "타임에 따르면 AP는 현지 4일 새벽 하원을 민주당 다수로 판정했다. 폭스뉴스 결과 화면은 미 동부 5일 오전 1시 33분 기준 민주 240·공화 147, 민주당이 뒤집은 의석 31곳과 공화당이 뒤집은 의석 1곳을 보여 준다. NBC 판정은 민주 242·공화 151, 미판정 42곳, 뒤집힘 민주 35·공화 1곳으로 판정 기관이 달라 숫자가 다르다. NBC 뉴스 디시전 데스크는 민주당이 최소 258석을 얻을 것으로 본다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 NBC가 뒤집힌 의석으로 표시한 곳과 주요 접전 선거구다.",
+    "note": "타임에 따르면 AP는 현지 4일 새벽 하원을 민주당 다수로 판정했다. 폭스뉴스 결과 화면은 미 동부 5일 오전 1시 33분 기준 민주 240·공화 147, 민주당이 뒤집은 의석 31곳과 공화당이 뒤집은 의석 1곳을 보여 준다. NBC는 미 동부 5일 오전 기준 41곳이 미판정이고 민주당이 공화당 의석 35곳을 뒤집어 259석을 차지할 것으로 전망한다. 공화당이 뒤집은 텍사스 32구를 빼면 민주당 순증은 34석이다(GV 와이어). 판정 기관이 달라 폭스의 숫자와 다르다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 NBC가 뒤집힌 의석으로 표시한 곳과 주요 접전 선거구다.",
     "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), 1:33 a.m. ET Nov 5 · 48 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
-    "note_en": "TIME reports AP called the House for Democrats early on Nov 4. The Fox News results page shows Democrats 240, Republicans 147 at 1:33 a.m. ET Nov 5, with 31 seats flipped by Democrats and 1 by Republicans. NBC calls stand at Democrats 242, Republicans 151, 42 uncalled, with 35 Democratic flips and 1 Republican; the decision desks differ, so the numbers do too. The NBC News Decision Desk expects Democrats to win at least 258 seats. The map counts NBC-called seats by party in each state. Below: seats NBC marks as flipped, plus key close races.",
+    "note_en": "TIME reports AP called the House for Democrats early on Nov 4. The Fox News results page shows Democrats 240, Republicans 147 at 1:33 a.m. ET Nov 5, with 31 seats flipped by Democrats and 1 by Republicans. NBC, as of the morning of Nov 5 ET, has 41 races uncalled and projects Democrats will flip 35 Republican-held seats and hold 259. Republicans flipped Texas's 32nd, leaving a net Democratic gain of 34 (GV Wire). The decision desks differ, so these numbers differ from Fox's. The map counts NBC-called seats by party in each state. Below: seats NBC marks as flipped, plus key close races.",
     "races": [
       {
         "d": "NC-9",
@@ -3591,6 +3591,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-05T17:42:00Z",
+      "text": "새 AP 판정 확인 없음. 미시시피는 콜럼(민)이 1138표 앞선 그대로이며, 왓슨 주 국무장관은 카운티 12곳이 아직 비공식 결과를 보고하지 않았다고 밝혔다(WDAM). NBC는 하원 전망을 민주 259석으로 올렸고 미판정은 41곳이다(GV 와이어). NBC·폭스 결과 화면은 이번에도 열리지 않아 AP 기준 240 대 147과 알래스카 표 수는 직전 값 그대로다.",
+      "text_en": "No new AP calls confirmed. Colom (D) still leads by 1,138 in Mississippi, and Secretary of State Michael Watson says 12 counties have yet to report unofficial results (WDAM). NBC now projects 259 House seats for Democrats, with 41 uncalled (GV Wire). The NBC and Fox results pages again did not open, so the AP count of 240-147 and the Alaska vote totals are unchanged."
+    },
+    {
       "t": "2026-11-05T16:41:00Z",
       "text": "새 AP 판정 확인 없음. 미시시피는 콜럼(민)이 1138표 앞선 그대로이고, 매그놀리아 트리뷴(현지 5일)은 주 국무장관실 기준 우편 표 약 3600장에 더해 진술서 투표가 최대 1만 8000장이라는 확인되지 않은 보도를 전했다. 미네소타 1구는 MPR(현지 5일) 기준 존슨(민)이 323표 앞서고 AP 판정이 없다. NBC·폭스·AP 결과 화면은 이번에 열리지 않아, AP 기준 하원 240 대 147과 알래스카 표 수는 직전 값 그대로다.",
       "text_en": "No new AP calls confirmed. Colom (D) still leads by 1,138 in Mississippi; Magnolia Tribune (Nov 5) cites the Secretary of State's office for about 3,600 mail ballots outstanding, plus unconfirmed reports of up to 18,000 affidavit ballots. In MN-1, MPR (Nov 5) has Johnson (D) up 323 with no AP call. The NBC, Fox and AP results pages did not open this time, so the AP House count of 240-147 and the Alaska vote totals are unchanged."
@@ -3734,11 +3739,6 @@
       "t": "2026-11-04T10:42:00Z",
       "text": "미시시피 상원: 콜럼(민) 462,821표, 하이드스미스(공·현역) 462,778표, 43표 차로 미판정(95.6% 개표, WENG). 진술서 투표 개표에 최대 영업일 5일. 애리조나 6구 멘도사(민)가 승리를 선언했으나 AP는 판정 전.",
       "text_en": "Mississippi Senate: Colom (D) 462,821, Sen. Hyde-Smith (R) 462,778, uncalled at a 43-vote gap (95.6% counted, WENG). Affidavit ballots may take up to five business days. In AZ-6, Mendoza (D) has declared victory, but AP has not called it."
-    },
-    {
-      "t": "2026-11-04T09:30:00Z",
-      "text": "상원: AP 네브래스카 리키츠(공)·몬태나 앨미(공)·앨라배마 무어(공) 확정 확인(민주 54·공화 44). 남은 곳은 미시시피·알래스카. 네브래스카 주 공식 집계 리키츠 366,063표·오스본 319,285표.",
-      "text_en": "Senate: AP calls confirmed for Nebraska (Ricketts, R), Montana (Alme, R) and Alabama (Moore, R), making it Democrats 54, Republicans 44. Mississippi and Alaska remain. Nebraska official count: Ricketts 366,063, Osborn 319,285."
     }
   ],
   "how": [
@@ -3748,6 +3748,16 @@
     "개표가 끝나면 이 페이지는 내리고 결과를 미국 의회 구성·국가 화면에 반영한다."
   ],
   "sources": [
+    [
+      "미시시피 상원 개표 3일째(WDAM)",
+      "https://www.wdam.com/2026/11/05/colom-leads-senate-race-against-hyde-smith-day-3-ballot-counting/",
+      "Colom leads on day 3 of ballot counting (WDAM)"
+    ],
+    [
+      "하원 뒤집힘·미판정 41곳(GV 와이어)",
+      "https://gvwire.com/2026/11/05/republican-flips-house-seat-cutting-democrats-net-gain-to-34-as-41-races-remain-uncalled/",
+      "Republican flips House seat; 41 races uncalled (GV Wire)"
+    ],
     [
       "미시시피 상원 남은 표(매그놀리아 트리뷴)",
       "https://magnoliatribune.com/2026/11/05/colom-extends-lead-over-hyde-smith-with-thousands-of-affidavit-and-mail-in-absentee-ballots-to-be-counted/",
@@ -3764,11 +3774,6 @@
       "2026 Midterm Elections: Where Things Stand (State Capital Lobbyist)"
     ],
     [
-      "알래스카 상원 다음 절차(로이터, 하와이 트리뷴헤럴드 게재)",
-      "https://www.hawaiitribune-herald.com/2026/11/05/nation-world-news/whats-next-for-alaskas-unusual-us-senate-race/",
-      "What's next for Alaska's unusual US Senate race (Reuters via Hawaii Tribune-Herald)"
-    ],
-    [
       "폭스뉴스 하원 결과(AP 판정 목록)",
       "https://www.foxnews.com/elections/2026/midterm-results/house",
       "Fox News House results (AP race calls)"
@@ -3776,7 +3781,7 @@
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. The Senate stands at Democrats 54, Republicans 44: Scott Colom (D) leads by 1,138 in Mississippi and Mary Peltola (D) by 637 in Alaska, neither called. Mississippi is still counting affidavit ballots, and Alaska cannot run its ranked-choice tabulation before Nov 18, so the results may come late. In the House, the last AP count confirmed is Democrats 240, Republicans 147 (1:33 a.m. ET Nov 5). Counting any race called by AP, NBC or Decision Desk HQ, one tally has Democrats 252, Republicans 158, with 25 uncalled as of 8:30 a.m. ET Nov 5 (State Capital Lobbyist).",
+  "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. The Senate stands at Democrats 54, Republicans 44: Scott Colom (D) leads by 1,138 in Mississippi and Mary Peltola (D) by 637 in Alaska, neither called. Mississippi is still counting affidavit ballots, and Alaska cannot run its ranked-choice tabulation before Nov 18, so the results may come late. In the House, the last AP count confirmed is Democrats 240, Republicans 147 (1:33 a.m. ET Nov 5). Counting any race called by AP, NBC or Decision Desk HQ, one tally has Democrats 252, Republicans 158, with 25 uncalled as of 8:30 a.m. ET Nov 5 (State Capital Lobbyist), while NBC, with 41 uncalled, projects Democrats at 259 seats.",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
