@@ -3,7 +3,7 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-05T03:41:00Z",
+ "updatedAt": "2026-11-05T05:47:00Z",
  "source": {
   "name": "AP · Fox News · NBC News"
  },
@@ -3591,6 +3591,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-05T05:47:00Z",
+   "text": "새 AP 판정 확인 없음. 폭스뉴스 상원 화면(미 동부 5일 0시 41분)도 민주 54·공화 44다. 알자지라가 전한 AP 집계로 현지 4일 밤 미시시피는 콜럼(민) 1138표, 알래스카는 펠톨라(민) 637표 앞서 직전 값과 같다. NBC·AP 결과 화면과 폭스 하원 화면은 이번에 열리지 않아 하원 의석·득표 수는 직전 값 그대로다.",
+   "text_en": "No new AP calls found. The Fox News Senate page (12:41 a.m. ET Nov 5) also shows Democrats 54, Republicans 44. AP figures reported by Al Jazeera for Wednesday night have Colom (D) up 1,138 in Mississippi and Peltola (D) up 637 in Alaska, unchanged from the last check. The NBC and AP results pages and the Fox House page did not open this time, so House seat and vote numbers are carried over."
+  },
+  {
    "t": "2026-11-05T03:41:00Z",
    "text": "새 AP 판정 확인 없음. 미시시피 상원: 주 국무장관실은 판정까지 다음 주 금요일이 걸릴 수 있다고 했다(WLBT). 알래스카 상원: 주 당국이 투표 자료 파일을 공개하면 AP가 자체 집계로 18일보다 먼저 판정할 수도 있다(알래스카 퍼블릭 미디어). 이번 확인에서 NBC·폭스 결과 화면은 열리지 않아 의석·득표 수는 직전 값 그대로다.",
    "text_en": "No new AP calls confirmed. Mississippi Senate: the Secretary of State's office says a call could take until next Friday (WLBT). Alaska Senate: once the state releases its ballot data file, AP could run its own tabulation and call the race before Nov 18 (Alaska Public Media). The NBC and Fox results pages would not open on this check, so seat and vote counts are unchanged."
@@ -3734,11 +3739,6 @@
    "t": "2026-11-04T05:45:00Z",
    "text": "네브래스카 상원: 주 공식 집계에서 피트 리키츠(공) 245,763표, 댄 오스본(무소속) 229,515표로 리키츠가 앞섬.",
    "text_en": "Nebraska Senate: in the state's official count, Pete Ricketts (R) leads with 245,763 votes to Dan Osborn's (I) 229,515."
-  },
-  {
-   "t": "2026-11-04T05:44:00Z",
-   "text": "하원: 펜실베이니아 공화당 현역 4명(피츠패트릭·매켄지·브레스너핸·페리), 버지니아 키건스·위트먼, 뉴저지 킨 주니어, 노스캐롤라이나 허드슨 낙선(NBC).",
-   "text_en": "House: four Pennsylvania GOP incumbents (Fitzpatrick, Mackenzie, Bresnahan, Perry), Virginia's Kiggans and Wittman, New Jersey's Kean Jr. and North Carolina's Hudson lose (NBC)."
   }
  ],
  "how": [
@@ -3748,6 +3748,16 @@
   "개표가 끝나면 이 페이지는 내리고 결과를 미국 의회 구성·국가 화면에 반영한다."
  ],
  "sources": [
+  [
+   "폭스뉴스 상원 결과",
+   "https://www.foxnews.com/elections/2026/midterm-results/senate",
+   "Fox News Senate results"
+  ],
+  [
+   "미시시피·알래스카 판정이 늦는 이유(알자지라, AP 집계 인용)",
+   "https://www.aljazeera.com/news/2026/11/5/whats-delaying-us-midterm-election-calls-in-mississippi-and-alaska",
+   "What's delaying the Mississippi and Alaska calls (Al Jazeera, citing AP)"
+  ],
   [
    "폭스뉴스 하원 결과(AP 판정 목록)",
    "https://www.foxnews.com/elections/2026/midterm-results/house",
@@ -3759,11 +3769,6 @@
    "NBC News House results (AP data)"
   ],
   [
-   "NBC 뉴스 상원 개표 결과(집계 AP)",
-   "https://www.nbcnews.com/politics/2026-elections/senate-results",
-   "NBC News Senate results (AP data)"
-  ],
-  [
    "미시시피 상원 표차와 판정 시점(WLBT)",
    "https://www.wlbt.com/2026/11/05/did-your-county-help-make-mississippis-senate-race-this-close/",
    "Mississippi Senate margin and call timing (WLBT)"
@@ -3772,11 +3777,6 @@
    "미시시피 재검표 규정과 표차(ABC 뉴스)",
    "https://abcnews.com/Politics/recounts-mississippi-razor-thin-margin-senate-race/story?id=137844445",
    "Mississippi recount rules and the margin (ABC News)"
-  ],
-  [
-   "콜로라도 4구 개표(콜로라도 폴리틱스)",
-   "https://www.coloradopolitics.com/2026/11/04/eileen-laubacher-hangs-on-to-slim-lead-over-lauren-boebert-in-4th-cd/",
-   "Colorado 4th count (Colorado Politics)"
   ]
  ],
  "title_en": "US midterms: live results",
