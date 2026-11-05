@@ -3,11 +3,11 @@
  "id": "us-midterms-2026",
  "title": "미국 중간선거 실시간 개표",
  "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
- "updatedAt": "2026-11-05T08:34:00Z",
+ "updatedAt": "2026-11-05T09:35:00Z",
  "source": {
   "name": "AP · Fox News · NBC News"
  },
- "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 폭스뉴스 화면(미 동부 5일 오전 3시 34분) 기준 민주 54·공화 44로 그대로이고, 미시시피는 스콧 콜럼(민)이 1138표, 알래스카는 메리 펠톨라(민)가 637표 앞서지만 둘 다 판정이 없다. 하원은 AP 판정 기준 민주 240·공화 147(미 동부 5일 오전 1시 33분)로, 현지 4일 밤 AP가 캘리포니아 47·48구와 네바다 2구를 민주당으로 판정하면서 민주당이 뒤집은 의석이 31곳으로 늘었다. 뒤지는 공화당 현역 가운데 콜로라도 4구의 로렌 보버트는 표차가 2513표로 줄었고, 애리조나 2구의 일라이 크레인은 2235표 앞서 나가는 등 아직 판정이 없는 곳이 남아 있다.",
+ "headline": "상원과 하원 모두 AP가 민주당 다수로 판정했고, 이제 남은 관심은 표차가 얼마나 벌어지느냐다. 상원은 폭스뉴스 화면(미 동부 5일 오전 4시 35분) 기준 민주 54·공화 44로 그대로이고, 미시시피는 스콧 콜럼(민)이 1138표, 알래스카는 메리 펠톨라(민)가 637표 앞서지만 둘 다 판정이 없다. 하원은 AP 판정 기준 민주 240·공화 147(미 동부 5일 오전 1시 33분)로, 현지 4일 밤 AP가 캘리포니아 47·48구와 네바다 2구를 민주당으로 판정하면서 민주당이 뒤집은 의석이 31곳으로 늘었다. 뒤지는 공화당 현역 가운데 콜로라도 4구의 로렌 보버트는 표차가 2513표로 줄었고, 애리조나 2구의 일라이 크레인은 2235표 앞서 나가는 등 아직 판정이 없는 곳이 남아 있다.",
  "senate": {
   "dem": 54,
   "gop": 44,
@@ -3591,6 +3591,11 @@
  },
  "feed": [
   {
+   "t": "2026-11-05T09:40:00Z",
+   "text": "새 AP 판정 확인 없음. 폭스뉴스 상원 화면(미 동부 5일 오전 4시 35분)은 민주 54·공화 44 그대로이고, 미시시피와 알래스카의 득표 수도 직전 값과 같다. 이번 확인에서 하원 결과 화면은 열리지 않아 하원 의석은 직전 값 그대로다.",
+   "text_en": "No new AP calls found. The Fox News Senate page (4:35 a.m. ET Nov 5) still shows Democrats 54, Republicans 44, and the Mississippi and Alaska vote counts match the last check. House results pages would not open on this check, so House seats are carried over."
+  },
+  {
    "t": "2026-11-05T08:40:00Z",
    "text": "새 AP 판정 확인 없음. 폭스뉴스 상원 화면(미 동부 5일 오전 3시 34분)은 민주 54·공화 44 그대로이고, 미시시피 콜럼(민) 46만4926표 대 하이드스미스(공) 46만3788표, 알래스카 펠톨라(민) 10만2962표 대 설리번(공) 10만2325표로 직전 값과 같다. 알래스카는 주 당국이 11월 10·13·18일에 결과를 갱신하고 과반 후보가 없으면 18일에 순위선택 집계를 한다(뉴스위크). 이번 확인에서 하원 결과 화면은 열리지 않아 하원 의석은 직전 값 그대로다.",
    "text_en": "No new AP calls found. The Fox News Senate page (3:34 a.m. ET Nov 5) still shows Democrats 54, Republicans 44, with Mississippi at Colom (D) 464,926 to Hyde-Smith (R) 463,788 and Alaska at Peltola (D) 102,962 to Sullivan (R) 102,325, unchanged. Alaska updates its count on Nov 10, 13 and 18, with ranked-choice tabulation on Nov 18 if no one tops 50% (Newsweek). House results pages would not open on this check, so House seats are carried over."
@@ -3734,11 +3739,6 @@
    "t": "2026-11-04T06:34:00Z",
    "text": "하원: NBC 판정 의석 민주 226·공화 136, 미판정 73. 공화당 의석 28곳 뒤집힘. AP는 하원도 민주당 다수로 판정(타임).",
    "text_en": "House: NBC-called seats Democrats 226, Republicans 136, 73 uncalled; 28 GOP seats flipped. AP also called the House for Democrats (TIME)."
-  },
-  {
-   "t": "2026-11-04T06:34:00Z",
-   "text": "상원: AP 메인 잭슨(민)·테네시 해거티(공) 확정 확인(민주 53·공화 39). 아이다호 리시(공) NBC 예측.",
-   "text_en": "Senate: AP calls confirmed for Maine (Jackson, D) and Tennessee (Hagerty, R), making it Democrats 53, Republicans 39. NBC projects Risch (R) in Idaho."
   }
  ],
  "how": [
@@ -3781,7 +3781,7 @@
  ],
  "title_en": "US midterms: live results",
  "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
- "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. In the Senate, the Fox News page (3:34 a.m. ET Nov 5) still shows Democrats 54, Republicans 44; Scott Colom (D) leads by 1,138 in Mississippi and Mary Peltola (D) by 637 in Alaska, neither called. In the House, AP calls stand at Democrats 240, Republicans 147 (1:33 a.m. ET Nov 5). On the night of Nov 4 AP called California's 47th and 48th and Nevada's 2nd for Democrats, bringing their flips to 31. Several races remain uncalled: Colorado's Lauren Boebert (R) now trails by 2,513, while Arizona's Eli Crane (R) has pulled 2,235 ahead.",
+ "headline_en": "AP has called both chambers for Democrats, so the remaining question is how wide the margins get. In the Senate, the Fox News page (4:35 a.m. ET Nov 5) still shows Democrats 54, Republicans 44; Scott Colom (D) leads by 1,138 in Mississippi and Mary Peltola (D) by 637 in Alaska, neither called. In the House, AP calls stand at Democrats 240, Republicans 147 (1:33 a.m. ET Nov 5). On the night of Nov 4 AP called California's 47th and 48th and Nevada's 2nd for Democrats, bringing their flips to 31. Several races remain uncalled: Colorado's Lauren Boebert (R) now trails by 2,513, while Arizona's Eli Crane (R) has pulled 2,235 ahead.",
  "how_en": [
   "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
   "Senate totals include seats not up this year.",
