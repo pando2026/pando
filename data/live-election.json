@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-05T23:33:00Z",
+  "updatedAt": "2026-11-06T00:41:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -2709,8 +2709,8 @@
             "NBC News House results (AP data)"
           ]
         },
-        "note": "AP 판정은 확인하지 못했다. 개표구가 모두 보고된 현지 4일 아침 표차는 324표다(주 국무장관실 집계, MPR·KSTP). 존슨은 승리를 선언했고, 핀스태드는 4일 아침까지 성명도 패배 인정도 내지 않았다(KSTP). 미네소타는 재검표가 자동이 아니어서 진 쪽이 요청해야 하며, 표차가 0.25% 미만이면 공금으로 치른다(MPR). KSTP는 재검표 가능성이 크다고 전했다. 현지 4일 오전 기사에서도 표차는 324표이고, 존슨은 그날 저녁 승리 연설을 할 계획이다(KAAL). NBC 집계로는 미 동부 4일 낮 12시 34분 현재 321표 차다. 현지 5일 MPR 기사는 주 국무장관실 비공식 집계로 323표 차(49.99% 대 49.89%)이고, AP 판정이 아직 없으며 핀스태드가 패배를 인정하지 않았다고 전했다. NBC 최신 화면(미 동부 5일 오후 6시 33분)의 표차는 321표다",
-        "note_en": "AP call not confirmed. With all precincts reporting on the morning of Nov 4, the gap is 324 votes (Secretary of State count, via MPR and KSTP). Johnson has declared victory; Finstad had issued no statement or concession as of that morning (KSTP). Minnesota recounts are not automatic: the trailing candidate must request one, and it is publicly funded if the margin is under 0.25% (MPR). KSTP says a recount is likely. As of the morning of Nov 4 the gap was still 324, and Johnson planned a victory speech that evening (KAAL). NBC's count shows a 321-vote gap as of 12:34 p.m. ET Nov 4. MPR on Nov 5 reports a 323-vote gap (49.99% to 49.89%) in the Secretary of State's unofficial count, no AP call yet, and no concession from Finstad. The latest NBC page (6:33 p.m. ET Nov 5) shows a 321-vote gap"
+        "note": "AP 판정은 확인하지 못했다. 현역 핀스태드(공)가 323표 뒤진 채(주 국무장관실 집계, 표차 0.1% 미만) 현지 5일 오후 이메일 성명으로 재검표를 진행하겠다고 밝혔다. 미네소타는 재검표가 자동이 아니어서 후보가 요청해야 하고, 표차가 0.25% 안이면 공금으로 치른다. 스티브 사이먼 주 국무장관은 카운티별로 한곳에 모여 손으로 다시 세고, 그 결과를 주 개표심사위원회가 인증하며, 인증 결과에는 어느 쪽이든 소송을 낼 수 있다고 설명했다. 재검표는 며칠에서 몇 주까지 걸릴 수 있다. 존슨(민)은 4일 밤 로체스터에서 승리를 선언했다. 래리 제이컵스 미네소타대 정치학자는 \"미네소타에서는 표차가 수백 표면 대체로 결과가 유지된다\"고 말했다(MPR).",
+        "note_en": "No AP call confirmed. Trailing by 323 votes (Secretary of State tabulation, under 0.1%), Rep. Brad Finstad (R) said in an emailed statement on the afternoon of Nov 5 that he will let the recount process proceed. Minnesota recounts are not automatic: a candidate must request one, and it is taxpayer-funded if the margin is within 0.25%. Secretary of State Steve Simon said counties hand-count at a central location, the state canvassing board certifies, and any party can contest the certified result in court. It can take days or weeks. Jake Johnson (D) declared victory in Rochester on the night of Nov 4. University of Minnesota political scientist Larry Jacobs said that generally in Minnesota, if the margin is in the hundreds, the race stands (MPR)."
       },
       {
         "d": "FL-25",
@@ -3823,6 +3823,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-06T00:41:00Z",
+      "text": "새 AP 판정은 확인되지 않았다(결과 화면을 열지 못해 의석 수는 직전 값, 미 동부 5일 오후 6시 33분 기준). 미네소타 1구에서는 323표 뒤진 현역 핀스태드(공)가 재검표를 진행하겠다고 밝혔다(MPR).",
+      "text_en": "No new AP calls confirmed (results pages could not be opened, so seat counts remain as of 6:33 p.m. ET Nov 5). In Minnesota's 1st, Rep. Finstad (R), trailing by 323 votes, said he will let a recount proceed (MPR)."
+    },
+    {
       "t": "2026-11-05T23:33:00Z",
       "text": "AP가 뉴욕 17구를 케이트 콘리(민) 승리로 판정해(미 동부 오후 6시 12분) 민주당이 뒤집은 의석이 43곳, 하원이 민주 253·공화 155가 됐다. 상원 새 판정은 없다. 마이크 허스트 미시시피 공화당 의장은 남은 표를 약 2만 장으로 추정했다.",
       "text_en": "AP called New York's 17th for Cait Conley (D) at 6:12 p.m. ET, making 43 Democratic flips and a House count of 253-155. No new Senate calls. Mississippi GOP chair Mike Hurst estimated about 20,000 ballots remain."
@@ -3966,11 +3971,6 @@
       "t": "2026-11-04T16:39:00Z",
       "text": "알래스카 상원 선두 교체: 펠톨라(민) 10만 2701표(48.02%)·설리번(공·현역) 10만 2075표(47.73%), 626표 차, 394/401 개표구(현지 새벽 3시, 알래스카 스토리·비컨). AP 미판정. 미시시피 상원도 미판정 그대로(WLBT). 하원은 새 집계·판정 확인 없음.",
       "text_en": "Alaska Senate lead changes: Peltola (D) 102,701 (48.02%), Sen. Sullivan (R) 102,075 (47.73%), 626-vote gap, 394 of 401 precincts (3 a.m. local, Alaska Story, Beacon). Uncalled by AP. Mississippi Senate also still uncalled (WLBT). No new House tally or calls confirmed."
-    },
-    {
-      "t": "2026-11-04T15:17:00Z",
-      "text": "새 판정 확인 없음. 메인 2구: 88% 개표 던랩(민) 50.09%·르페이지(공) 49.85%(메인 와이어). 미네소타 1구: 표차 324표 그대로, 존슨(민)은 저녁 승리 연설 예정(KAAL). 노스캐롤라이나 5구: 허버드(민) 99표 앞섬, 폭스(공·현역) 재검표 요청 가능(뉴스앤드옵서버).",
-      "text_en": "No new calls confirmed. ME-2: 88% in, Dunlap (D) 50.09%, LePage (R) 49.85% (The Maine Wire). MN-1: gap still 324, and Johnson (D) plans a victory speech this evening (KAAL). NC-5: Hubbard (D) leads by 99, and Rep. Foxx (R) could request a recount (News & Observer)."
     }
   ],
   "how": [
@@ -4006,9 +4006,9 @@
       "Mississippi Senate liveblog (Mississippi Free Press)"
     ],
     [
-      "미 하원 미판정 선거 인터뷰(NPR)",
-      "https://www.npr.org/2026/11/05/nx-s1-6028843/some-house-and-senate-races-remain-undecided-where-those-contests-stand",
-      "Some House and Senate races remain undecided (NPR)"
+      "핀스태드 재검표 진행 성명(MPR 뉴스)",
+      "https://www.mprnews.org/story/2026/11/05/minnesota-1st-congressional-district-republican-rep-brad-finstad-calls-for-recount",
+      "Finstad calls for recount in Minnesota's 1st (MPR News)"
     ]
   ],
   "title_en": "US midterms: live results",
