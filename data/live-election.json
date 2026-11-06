@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-06T06:33:00Z",
+  "updatedAt": "2026-11-06T06:45:20Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -5989,21 +5989,21 @@
             [
               "Jimmy Patronis",
               "R",
-              181723,
-              62.6,
+              181882,
+              62.5,
               1
             ],
             [
               "Gay Valimont",
               "D",
-              103429,
+              103661,
               35.6,
               0
             ],
             [
               "Tyler Davis",
               "NPA",
-              5322,
+              5332,
               1.8,
               0
             ]
@@ -15502,7 +15502,7 @@
         ]
       ]
     },
-    "districtsAsOf": "2026-11-06T05:40:19Z",
+    "districtsAsOf": "2026-11-06T06:45:20Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
