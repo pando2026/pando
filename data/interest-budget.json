@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-05",
+ "asOf": "2026-11-06",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -3301,6 +3301,130 @@
     ]
    ],
    "tier": "official"
+  },
+  "CU": {
+   "status": "자료 없음",
+   "note": "쿠바 예산법(181호 법)은 총수입·총지출·적자 한도와 국채 한도(최대 1,237억 7,230만 페소, 평균 이자율 2.5%)만 밝히고 이자 지출 금액은 공개하지 않았다. Directorio Cubano·CiberCuba·프렌사 라티나·쿠바디바테 2026 예산·결산 보도에서 이자 항목을 찾지 못했고 IMF 보고서는 찾지 못했다.",
+   "sources": [
+    [
+     "Directorio Cubano",
+     "El presupuesto cubano para 2026 confirma un elevado déficit y más endeudamiento(쿠바 2026 예산, 높은 적자와 부채 확대 확인) · 2025-12-30",
+     "https://www.directoriocubano.info/acontecer/el-presupuesto-cubano-para-2026-confirma-un-elevado-deficit-y-mas-endeudamiento/"
+    ]
+   ]
+  },
+  "TJ": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "공화국 예산 지출(경제 분류, 국가예산법 제8조)",
+   "interest": {
+    "value": 1.002522,
+    "unit": "십억 소모니",
+    "label": "대내 채무 이자 0.047 + 대외 채무 이자 0.956"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 32.605035,
+    "unit": "십억 소모니",
+    "label": "공화국 예산 지출"
+   },
+   "share": 3.1,
+   "note": "법 제8조는 채무 서비스 43.4억 소모니를 이자 10.0억(대내 0.47억, 대외 9.56억)과 대외 채무 원금 33.4억으로 나눴다. 이자만 따로 뽑았고, 통합예산 전체 지출(670억) 기준 비율은 아니다.",
+   "sources": [
+    [
+     "타지키스탄 정부(Narodnaya Gazeta 게재)",
+     "Закон Республики Таджикистан «О государственном бюджете Республики Таджикистан на 2026 год» (2026년 국가예산법) · 2025-12-17 (신문 제51호)",
+     "https://narodnaya.tj/2025/12/18/zakon-respubliki-tadzhikistan-o-gosudarstvennom-bjudzhete-respubliki-tadzhikistan-na-2026-god/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "PG": {
+   "fiscalYear": "2026",
+   "status": "추경 반영",
+   "scope": "중앙정부 총지출(비과세 수입 행정기관 보유분 제외)",
+   "interest": {
+    "value": 4023.0,
+    "unit": "백만 키나",
+    "label": "이자 및 수수료"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 31595.6,
+    "unit": "백만 키나",
+    "label": "추경 후 총지출(보유분 제외)"
+   },
+   "share": 12.7,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 3403.5,
+    "unit": "백만 키나"
+   },
+   "note": "본예산은 37억 2,300만 키나(총지출의 12.3%)였고, 2026-09 추경이 채무 이자 상환에 3억 키나를 얹어 40억 2,300만 키나가 됐다. 비율은 본예산 총지출 30,265.2에 추경 증액분 1,330.4를 더한 값으로 계산했다. 2025년 값은 결산액이다.",
+   "sources": [
+    [
+     "PNG 재무부",
+     "2026 Mid-Year Economic and Fiscal Outlook Report (2026 중간 경제·재정 전망 보고서) · 2026-08-31",
+     "https://www.treasury.gov.pg/wp-content/uploads/2026/09/2026-MID-YEAR-ECONOMIC-AND-FISCAL-OUTLOOK-REPORT-1.pdf"
+    ],
+    [
+     "PNG 재무부",
+     "Supplementary (Appropriation) Bill 2026 (2026 추가경정 세출법안) · 2026-08-31",
+     "https://www.treasury.gov.pg/wp-content/uploads/2026/09/SUPPLEMENTARY-APPROPRIATION-BILL-2026.pdf"
+    ],
+    [
+     "PNG 재무부",
+     "2026 National Budget Volume 1 (2026 국가예산 제1권) · 2025-12-11",
+     "https://www.treasury.gov.pg/wp-content/uploads/2025/12/2026-National-Budget-Volume-1-Master-Version-Final-for-Uploading_Updated_11_Dec_0200pm.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "AZ": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가예산 공공부채 서비스(대내·대외)",
+   "interest": {
+    "value": 999.3,
+    "unit": "백만 마나트",
+    "label": "공공부채 이자(대외 364.0 + 대내 635.3)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 42400.0,
+    "unit": "백만 마나트",
+    "label": "국가예산 총지출"
+   },
+   "share": 2.4,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 1380.0,
+    "unit": "백만 마나트"
+   },
+   "note": "재무부 중기지출틀은 2027년 공공부채 서비스 상한을 2,200백만 마나트로 잡았고 이 가운데 원금 상환이 1,200.7백만 마나트, 이자가 999.3백만 마나트다. 2026년 값은 2026~2029 중기 예산틀의 이자 전망(대외 460백만, 대내 920.6백만 마나트)이며, 재무부 집계로 2026년 1~9월 실제 이자 지급은 702.1백만 마나트다.",
+   "sources": [
+    [
+     "Trend 아제르바이잔어판(재무부 중기지출틀 인용)",
+     "Azərbaycanın dövlət büdcəsindən müdafiə və təhlükəsizliyə 8,8 milyard manat ayrılacaq(국가예산에서 국방·안보에 88억 마나트 배정) · 2026-10-16",
+     "https://az.trend.az/business/4235439.html"
+    ],
+    [
+     "Trend",
+     "Azerbaijan's parliament receives draft state budget for 2027(아제르바이잔 의회, 2027년 국가예산안 접수) · 2026-10-23",
+     "https://www.trend.az/azerbaijan/4238187.html"
+    ],
+    [
+     "SİA(재무부 2026~2029 중기 예산틀 인용)",
+     "Azerbaijan to allocate 1.4B manats to repay its external government debt in 2026(2026년 대외 정부 부채 상환에 14억 마나트 배정) · 2025-10-16",
+     "https://sia.az/en/news/economy/1292169.html"
+    ],
+    [
+     "1news.az(재무부 보도자료 인용)",
+     "Data on the execution of the state and consolidated budgets for the first nine months of 2026 released(2026년 1~9월 국가·통합예산 집행 자료 공개) · 2026-10-29",
+     "https://1news.az/en/news/20261029131549544-Data-on-the-execution-of-the-state-and-consolidated-budgets-for-the-first-nine-months-of-2026-released-PHOTO"
+    ]
+   ],
+   "tier": "press"
   }
  }
 }
