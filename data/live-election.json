@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-07T16:34:00Z",
+  "updatedAt": "2026-11-07T17:34:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3910,7 +3910,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",118735,57.1,1],["Vince George","D",82347,39.6,0],["Belinda Fox-Spencer","CST",6904,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",143756,59.4,1],["Ace Parsi","D",98235,40.6,0]]]],
     "WY":[[1,"won","R",0,96.6,[["Chuck Gray","R",99891,54.5,0],["Lisa Kinney","D",61684,33.7,0],["Shawn Johnson","Lib",13665,7.5,0]]]]
   },
-    "districtsAsOf": "2026-11-07T16:31:57Z",
+    "districtsAsOf": "2026-11-07T17:35:03Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3918,6 +3918,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-07T17:34:00Z",
+      "text": "새 판정 없음(미 동부 7일 오후 12시 34분 확인): 폭스뉴스 하원 화면의 마지막 AP 판정은 여전히 6일 오후 8시 46분 캘리포니아 14구로, 민주 254·공화 162(민주가 뒤집은 곳 44, 공화가 뒤집은 곳 2)다. NBC 하원 미판정도 21곳 그대로다. 상원은 미시시피(개표 96.92%, 스콧 콜럼(민) 46만 7930표 대 신디 하이드스미스(공) 46만 5356표)와 알래스카(개표 74.09%, 메리 펠톨라(민)가 0.3%포인트 앞섬)의 숫자가 바뀌지 않아 민주 54·공화 44가 유지된다. 알래스카 순위선택 집계는 18일 전에는 하지 않는다(알래스카 뉴스 소스).",
+      "text_en": "No new calls (checked 12:34 p.m. ET Nov 7): the last AP call on Fox News's House page is still California's 14th at 8:46 p.m. Nov 6, leaving Democrats 254, Republicans 162 (44 seats flipped by Democrats, 2 by Republicans). NBC still has 21 House races uncalled. In the Senate, Mississippi (96.92% in, Scott Colom (D) 467,930 to Cindy Hyde-Smith (R) 465,356) and Alaska (74.09% in, Mary Peltola (D) ahead by 0.3 points) are unchanged, so it stays Democrats 54, Republicans 44. Alaska's ranked-choice tabulation will not happen before Nov 18 (Alaska's News Source)."
+    },
     {
       "t": "2026-11-07T16:34:00Z",
       "text": "새 판정 없음(미 동부 7일 오전 11시 34분 확인): 폭스뉴스 하원 화면(같은 시각 갱신)의 마지막 AP 판정은 여전히 6일 오후 8시 46분 캘리포니아 14구로, 민주 254·공화 162(민주가 뒤집은 곳 44, 공화가 뒤집은 곳 2)다. NBC 하원 미판정도 21곳 그대로다. 상원은 미시시피(개표 96.92%, 스콧 콜럼(민) 46만 7930표 대 신디 하이드스미스(공) 46만 5356표)와 알래스카(개표 74.09%, 메리 펠톨라(민) 10만 2962표 대 댄 설리번(공) 10만 2325표)의 숫자가 바뀌지 않아 민주 54·공화 44가 유지된다.",
@@ -4062,11 +4067,6 @@
       "t": "2026-11-06T12:33:00Z",
       "text": "새 판정 없음: 폭스 화면(미 동부 오전 7시 33분)은 상원 민주 54·공화 44, 하원 민주 253·공화 157 그대로다. 알래스카에서는 트럼프 대통령이 동명이인 후보의 표를 \"진짜 댄 설리번\"에게 줘야 한다고 올렸지만, 법무부의 인증 중지 소송 항소심은 답변 기한이 1월 11일로 잡혔다(앵커리지 데일리 뉴스).",
       "text_en": "No new calls: the Fox pages (7:33 a.m. ET) still show the Senate at Democrats 54, Republicans 44 and the House at Democrats 253, Republicans 157. In Alaska, President Trump posted that the namesake candidate's votes should go to the \"REAL Dan Sullivan,\" while the appeal of the Justice Department's suit to stop certification has the state's response due Jan 11 (Anchorage Daily News)."
-    },
-    {
-      "t": "2026-11-06T11:33:00Z",
-      "text": "새 판정 없음: 폭스 상원 화면(미 동부 오전 6시 33분)은 민주 54·공화 44에 미시시피·알래스카 미판정 그대로이고, NBC 하원 판정도 오전 4시 47분 화면에서 바뀌지 않았다. 폭스 하원 화면은 이번에 열지 못해 하원 253·157은 오전 4시 33분 기준이다.",
-      "text_en": "No new calls: the Fox Senate page (6:33 a.m. ET) still shows Democrats 54, Republicans 44 with Mississippi and Alaska uncalled, and NBC's House calls are unchanged from its 4:47 a.m. ET page. The Fox House page could not be opened this time, so the House count of 253-157 is as of 4:33 a.m. ET."
     }
   ],
   "how": [
