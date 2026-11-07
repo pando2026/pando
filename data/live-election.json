@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-07T04:34:00Z",
+  "updatedAt": "2026-11-07T05:33:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -1262,7 +1262,7 @@
     "gop": 162,
     "total": 435,
     "control": 218,
-    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 6일 오후 10시 33분 · 두 당 합계 밖 19석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
+    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 7일 오전 0시 33분 · 두 당 합계 밖 19석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
     "projection": {
       "party": "D",
       "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 259석 전망",
@@ -1271,7 +1271,7 @@
       "short_en": "Dem majority (AP)"
     },
     "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 판정을 이어 가고 있다. 미 동부 6일 오전 11시 23~25분에는 뉴욕 21구(앤서니 콘스탄티노)·콜로라도 3구(제프 허드)·애리조나 5구(마크 램)를 공화당 승리로, 캘리포니아 11구(민주당 후보끼리 맞붙은 곳, 스콧 위너)를 판정했고, 오후 1시 25분에는 애리조나 8구를 공화당 현역 에이브러햄 하마데의 승리로, 오후 4시 34분에는 노스캐롤라이나 8구를 공화당 현역 마크 해리스의 승리로 판정했다(둘 다 공화당이 지킨 곳). 오후 6시 51분에는 사우스캐롤라이나 1구를 민주당 낸시 라코어의 승리로 판정했다(공화당 의석을 민주당이 가져온 곳). 폭스뉴스 결과 화면은 미 동부 6일 오후 7시 34분 기준 민주 254·공화 162, 민주당이 뒤집은 의석 44곳과 공화당이 뒤집은 의석 2곳(텍사스 32구·테네시 9구)을 보여 준다. NBC 화면은 미판정 22곳이다. 판정 기관이 달라 숫자가 다르다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
-    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), 10:33 p.m. ET Nov 6 · 19 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
+    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), 12:33 a.m. ET Nov 7 · 19 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
     "note_en": "TIME reports AP called the House for Democrats early on Nov 4, and AP has kept calling races since. Between 11:23 and 11:25 a.m. ET Nov 6 it called New York's 21st (Anthony Constantino), Colorado's 3rd (Jeff Hurd) and Arizona's 5th (Mark Lamb) for Republicans, and California's 11th, a Democrat-vs-Democrat race, for Scott Wiener; at 1:25 p.m. it called Arizona's 8th for Republican incumbent Abraham Hamadeh and at 4:34 p.m. North Carolina's 8th for Republican incumbent Mark Harris (both Republican holds). At 6:51 p.m. it called South Carolina's 1st for Democrat Nancy Lacore, flipping a Republican seat. The Fox News results page at 7:34 p.m. ET Nov 6 shows Democrats 254, Republicans 162, with 44 seats flipped by Democrats and 2 by Republicans (Texas's 32nd and Tennessee's 9th). NBC's page has 22 races uncalled. The decision desks differ, so the numbers differ. The map counts NBC-called seats by party in each state. Below: flipped seats and key close races.",
     "races": [
       {
@@ -3918,36 +3918,156 @@
     ]
   },
   "feed": [
-    {"t": "2026-11-07T04:34:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 11시 34분): 상원 민주 54·공화 44, 하원 민주 254·공화 162 그대로이고 마지막 AP 하원 판정은 오후 8시 46분 캘리포니아 14구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 2574표 차, 알래스카는 개표 74.09%에서 메리 펠톨라(민) 10만 2962표, 댄 설리번(공) 10만 2325표로 637표 차 그대로다. NBC 화면의 하원 미판정은 21곳으로 변함없다.", "text_en": "No new AP calls (Fox pages, 11:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 254, Republicans 162; the last AP House call was California's 14th at 8:46 p.m. Mississippi is unchanged at 96.92% reporting, Scott Colom (D) 467,930 to Cindy Hyde-Smith (R) 465,356, a 2,574-vote gap, as is Alaska at 74.09% reporting, Mary Peltola (D) 102,962 to Dan Sullivan (R) 102,325, a 637-vote gap. The NBC page still shows 21 House races uncalled."},
-    {"t": "2026-11-07T03:33:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 10시 23~33분): 상원 민주 54·공화 44, 하원 민주 254·공화 162 그대로이고 마지막 AP 하원 판정은 오후 8시 46분 캘리포니아 14구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 2574표 차, 알래스카는 개표 74.09%에서 메리 펠톨라(민) 10만 2962표, 댄 설리번(공) 10만 2325표로 637표 차 그대로다. NBC 화면의 하원 미판정은 21곳으로 변함없다.", "text_en": "No new AP calls (Fox pages, 10:23–10:33 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 254, Republicans 162; the last AP House call was California's 14th at 8:46 p.m. Mississippi is unchanged at 96.92% reporting, Scott Colom (D) 467,930 to Cindy Hyde-Smith (R) 465,356, a 2,574-vote gap, as is Alaska at 74.09% reporting, Mary Peltola (D) 102,962 to Dan Sullivan (R) 102,325, a 637-vote gap. The NBC page still shows 21 House races uncalled."},
-    {"t": "2026-11-07T02:34:00Z", "text": "AP가 미 동부 6일 오후 8시 46분 캘리포니아 14구를 민주당 아이샤 와합의 승리로 판정했다. 민주당 후보 둘이 맞붙은 선거구라 정당 의석은 바뀌지 않으며, NBC 기준 와합 9만 1892표(57.5%), 멜리사 에르난데스(민) 6만 7836표(42.5%)다. 폭스 화면(오후 9시 34분)의 하원 합계는 민주 254·공화 162로 표시돼 있다. 상원은 새 판정 없이 민주 54·공화 44, 미시시피 콜럼(민) 2574표·알래스카 펠톨라(민) 637표 차 그대로다. NBC 화면의 하원 미판정은 21곳이다.", "text_en": "At 8:46 p.m. ET Nov 6, AP called California's 14th for Democrat Aisha Wahab. Both candidates were Democrats, so no seat changes party; NBC has Wahab at 91,892 (57.5%) and Melissa Hernandez (D) at 67,836 (42.5%). The Fox page (9:34 p.m.) still shows the House at Democrats 254, Republicans 162. No new Senate calls: 54-44, with Colom (D) ahead by 2,574 in Mississippi and Peltola (D) by 637 in Alaska. The NBC page shows 21 House races uncalled."},
-    {"t": "2026-11-07T01:34:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 8시 34분): 상원 민주 54·공화 44, 하원 민주 254·공화 162 그대로이고, 하원의 마지막 AP 판정은 오후 6시 51분 사우스캐롤라이나 1구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 2574표 차, 알래스카는 메리 펠톨라(민) 10만 2962표, 댄 설리번(공) 10만 2325표로 637표 차 그대로다. NBC 화면의 하원 미판정은 22곳이다.", "text_en": "No new AP calls (Fox page, 8:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44, and the House at Democrats 254, Republicans 162; the last AP House call was South Carolina's 1st at 6:51 p.m. Mississippi is unchanged at 96.92% reporting, Scott Colom (D) 467,930 to Cindy Hyde-Smith (R) 465,356, a 2,574-vote gap, and so is Alaska, Mary Peltola (D) 102,962 to Dan Sullivan (R) 102,325, a 637-vote gap. The NBC page shows 22 House races uncalled."},
-    {"t": "2026-11-07T00:34:00Z", "text": "AP가 미 동부 6일 오후 6시 51분 사우스캐롤라이나 1구를 민주당 낸시 라코어의 승리로 판정했다. 공화당 의석을 민주당이 가져온 곳으로, NBC 기준 라코어 16만 2103표(49.7%), 제니 코스타 허니컷(공) 15만 8751표(48.6%)다. 폭스 화면(오후 7시 34분) 기준 하원은 민주 254·공화 162, 민주당이 뒤집은 의석은 44곳이다. 상원은 새 판정 없이 민주 54·공화 44, 미시시피 콜럼(민) 2574표·알래스카 펠톨라(민) 637표 차 그대로다.", "text_en": "At 6:51 p.m. ET Nov 6, AP called South Carolina's 1st for Democrat Nancy Lacore, a Republican seat flipped to Democrats; NBC has Lacore at 162,103 (49.7%) and Jenny Costa Honeycutt (R) at 158,751 (48.6%). The Fox page (7:34 p.m.) puts the House at Democrats 254, Republicans 162, with 44 seats flipped by Democrats. No new Senate calls: still 54-44, with Colom (D) ahead by 2,574 in Mississippi and Peltola (D) by 637 in Alaska."},
-    {"t": "2026-11-06T23:33:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 6시 33~34분): 상원 민주 54·공화 44, 하원 민주 253·공화 162 그대로이고, 하원의 마지막 AP 판정은 오후 4시 34분 노스캐롤라이나 8구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 콜럼의 표차가 2574표로 조금 늘었다. 알래스카는 펠톨라(민) 637표 차 그대로다. NBC 화면의 하원 미판정은 23곳이다.", "text_en": "No new AP calls (Fox page, 6:33-6:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44, and the House at Democrats 253, Republicans 162; the last AP House call was North Carolina's 8th at 4:34 p.m. In Mississippi, at 96.92% reporting, Scott Colom (D) has 467,930 to Cindy Hyde-Smith (R) 465,356, nudging his lead up to 2,574. Alaska is unchanged, with Peltola (D) up 637. The NBC page shows 23 House races uncalled."},
-    {"t": "2026-11-06T22:33:00Z", "text": "AP가 미 동부 6일 오후 4시 34분 노스캐롤라이나 8구를 공화당 현역 마크 해리스의 승리로 판정했다(공화당이 지킨 곳, NBC 기준 50.4% 대 48.6%). 폭스 화면(오후 5시 33분) 기준 하원은 민주 253·공화 162, 상원은 새 판정 없이 민주 54·공화 44다. 미시시피는 개표 96.91%에서 스콧 콜럼(민)이 2498표 앞서고, 알래스카는 펠톨라(민) 637표 차 그대로다.", "text_en": "AP called North Carolina's 8th for Republican incumbent Mark Harris at 4:34 p.m. ET Nov 6 (a Republican hold; 50.4% to 48.6% per NBC). On the Fox page (5:33 p.m.) the House is Democrats 253, Republicans 162; the Senate has no new calls and stays at 54-44. In Mississippi, at 96.91% reporting, Scott Colom (D) leads by 2,498; Alaska is unchanged, with Peltola (D) up 637."},
-    {"t": "2026-11-06T21:34:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 4시 34분): 상원 민주 54·공화 44, 하원 민주 253·공화 161 그대로다. 미시시피는 개표 96.90%에서 스콧 콜럼(민) 46만 7829표, 신디 하이드스미스(공) 46만 5336표로 콜럼의 표차가 2493표로 늘었다. NPR(미 동부 6일 오후)은 남은 표가 몇 장인지 아무도 정확히 모른다고 전했다. 알래스카는 펠톨라(민) 637표 차 그대로다.", "text_en": "No new AP calls (Fox page, 4:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44, and the House at Democrats 253, Republicans 161. In Mississippi, at 96.90% reporting, Scott Colom (D) has 467,829 to Cindy Hyde-Smith (R) 465,336, widening his lead to 2,493. NPR (afternoon of Nov 6 ET) reports no one knows exactly how many ballots remain. Alaska is unchanged, with Peltola (D) ahead by 637."},
-    {"t": "2026-11-06T20:39:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 3시 39분): 상원 민주 54·공화 44, 하원 민주 253·공화 161 그대로이고, 하원의 마지막 AP 판정은 오후 1시 25분 애리조나 8구다. 미시시피는 개표 96.77%에서 스콧 콜럼(민) 46만 7153표, 신디 하이드스미스(공) 46만 5124표로 콜럼의 표차가 2029표로 조금 더 늘었다. 알래스카는 펠톨라(민) 637표 차 그대로다. 미시시피 최대 카운티인 힌즈 카운티는 현지 6일 오후 진술서 투표 집계를 시작했다(미시시피 프리 프레스).", "text_en": "No new AP calls (Fox page, 3:39 p.m. ET Nov 6): Senate Democrats 54, Republicans 44; House Democrats 253, Republicans 161, with the last AP House call Arizona's 8th at 1:25 p.m. In Mississippi, with 96.77% reporting, Scott Colom (D) has 467,153 and Cindy Hyde-Smith (R) 465,124, nudging Colom's lead up to 2,029. Alaska is unchanged, with Peltola (D) up 637. Hinds County, Mississippi's largest, began counting affidavit ballots on the afternoon of Nov 6 local time (Mississippi Free Press)."},
-    {"t": "2026-11-06T19:33:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 2시 33분): 상원 민주 54·공화 44, 하원 민주 253·공화 161 그대로다. 미시시피 프리 프레스는 지금까지 집계를 마친 북부 카운티들의 진술서 투표에서 스콧 콜럼(민)이 전체 득표율보다 높은 몫을 얻고 있다고 전했다. 미시시피에서는 우편 투표 도착과 신분증 없이 진술서 투표를 한 유권자의 신분증 제출 마감이 10일, 카운티별 개표 결과 인증 마감이 13일이다.", "text_en": "No new AP calls (Fox page, 2:33 p.m. ET Nov 6): Senate Democrats 54, Republicans 44; House Democrats 253, Republicans 161. The Mississippi Free Press reports Scott Colom (D) is running ahead of his overall share in affidavit ballots in the north Mississippi counties that have finished counting them. In Mississippi, Nov 10 is the deadline for mailed absentee ballots to arrive and for affidavit voters without ID to show it; counties must certify results by Nov 13."},
-    {"t": "2026-11-06T18:34:00Z", "text": "AP가 미 동부 6일 오후 1시 25분 애리조나 8구를 공화당 현역 에이브러햄 하마데의 승리로 판정했다(공화당이 지킨 곳). 폭스 화면(오후 1시 34분) 기준 하원은 민주 253·공화 161, 상원은 새 판정 없이 민주 54·공화 44다. 미시시피(콜럼 2010표 차)와 알래스카(펠톨라 637표 차)의 개표 수치는 지난 확인 때와 같다.", "text_en": "AP called Arizona's 8th for Republican incumbent Abraham Hamadeh at 1:25 p.m. ET Nov 6 (a Republican hold). On the Fox page (1:34 p.m.) the House is Democrats 253, Republicans 161; the Senate has no new calls and stays at 54-44. Mississippi (Colom up 2,010) and Alaska (Peltola up 637) show the same counts as the last check."},
-    {"t": "2026-11-06T17:35:00Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 오후 12시 35분): 상원 민주 54·공화 44, 하원 민주 253·공화 160 그대로다. 미시시피는 개표가 조금 더 진행돼(NBC, 예상 투표의 96.3%) 스콧 콜럼(민)의 표차가 2010표로 늘었다. CNN은 양당 변호인단과 NAACP가 82개 카운티의 진술서 투표 심사를 지켜보고 있으며, 힌즈 카운티에서는 투표구 등록이 맞지 않는 학생 표 일부가 거부됐다고 전했다.", "text_en": "No new AP calls (Fox page, 12:35 p.m. ET): Senate Democrats 54, Republicans 44; House Democrats 253, Republicans 160. Mississippi counting inched ahead (NBC, 96.3% of expected vote), widening Scott Colom's (D) lead to 2,010. CNN reports lawyers from both parties and the NAACP are watching affidavit-ballot reviews across 82 counties, and that some student ballots in Hinds County were rejected for wrong-precinct registration."},
-    {"t": "2026-11-06T16:34:00Z", "text": "AP가 미 동부 6일 오전 11시 23~25분 하원 4곳을 판정했다: 뉴욕 21구(콘스탄티노)·콜로라도 3구(허드)·애리조나 5구(램)는 공화당, 캘리포니아 11구는 민주당끼리 맞붙어 스콧 위너가 이겼다. 폭스 화면 기준 하원은 민주 253·공화 160, 상원은 민주 54·공화 44 그대로다. 미시시피 주 국무장관실은 진술서 투표 6936장을 처리했고 우편 투표 약 3300장이 남았다고 밝혔다(미시시피 프리 프레스).", "text_en": "AP called four House races between 11:23 and 11:25 a.m. ET Nov 6: New York's 21st (Constantino), Colorado's 3rd (Hurd) and Arizona's 5th (Lamb) for Republicans, and California's 11th, a Democrat-vs-Democrat race, for Scott Wiener. On the Fox page the House is Democrats 253, Republicans 160, and the Senate stays 54-44. Mississippi's Secretary of State says 6,936 affidavit ballots have been processed and about 3,300 mail ballots are outstanding (Mississippi Free Press)."},
-    {"t": "2026-11-06T15:33:50Z", "text": "AP 새 판정 없음(폭스 화면, 미 동부 오전 10시 32~33분): 상원 민주 54·공화 44, 하원 민주 253·공화 157 그대로다. 미시시피는 개표가 조금 더 진행돼(NBC, 예상 투표의 95.8%) 스콧 콜럼(민)의 표차가 1813표에서 1936표로 늘었다.", "text_en": "No new AP calls (Fox pages, 10:32-10:33 a.m. ET): the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 253, Republicans 157. In Mississippi a bit more of the vote came in (NBC, 95.8% of expected vote), and Scott Colom's (D) lead grew from 1,813 to 1,936."},
-    {"t": "2026-11-06T14:33:42Z", "text": "AP 기준 새 판정 없음: 폭스 화면(미 동부 오전 9시 33~34분)은 상원 민주 54·공화 44에 미시시피·알래스카 미판정, 하원 민주 253·공화 157 그대로다. NBC는 AP가 앞서 판정한 워싱턴 4구를 공화당 승리로 판정해 민주 249·공화 158, 미판정 28곳이 됐다.", "text_en": "No new AP calls: the Fox pages (9:33-9:34 a.m. ET) still show the Senate at Democrats 54, Republicans 44 with Mississippi and Alaska uncalled, and the House at Democrats 253, Republicans 157. NBC called Washington's 4th for Republicans, which AP had already done, making its count Democrats 249, Republicans 158, with 28 uncalled."},
-    {"t": "2026-11-06T13:30:44Z", "text": "NBC 하원 판정에 변화 없음(미 동부 오전 8시 30분): 민주 249·공화 157에 미판정 29곳이다. 폭스·NBC 상원 화면은 이번에 열지 못해, 상원 54·44와 하원 253·157은 오전 7시 33분 기준이다.", "text_en": "No change in NBC House calls (8:30 a.m. ET): Democrats 249, Republicans 157, 29 uncalled. The Fox and NBC Senate pages could not be opened this time, so the Senate 54-44 and House 253-157 figures are as of 7:33 a.m. ET."},
-    {"t": "2026-11-06T12:33:00Z", "text": "새 판정 없음: 폭스 화면(미 동부 오전 7시 33분)은 상원 민주 54·공화 44, 하원 민주 253·공화 157 그대로다. 알래스카에서는 트럼프 대통령이 동명이인 후보의 표를 \"진짜 댄 설리번\"에게 줘야 한다고 올렸지만, 법무부의 인증 중지 소송 항소심은 답변 기한이 1월 11일로 잡혔다(앵커리지 데일리 뉴스).", "text_en": "No new calls: the Fox pages (7:33 a.m. ET) still show the Senate at Democrats 54, Republicans 44 and the House at Democrats 253, Republicans 157. In Alaska, President Trump posted that the namesake candidate's votes should go to the \"REAL Dan Sullivan,\" while the appeal of the Justice Department's suit to stop certification has the state's response due Jan 11 (Anchorage Daily News)."},
-    {"t": "2026-11-06T11:33:00Z", "text": "새 판정 없음: 폭스 상원 화면(미 동부 오전 6시 33분)은 민주 54·공화 44에 미시시피·알래스카 미판정 그대로이고, NBC 하원 판정도 오전 4시 47분 화면에서 바뀌지 않았다. 폭스 하원 화면은 이번에 열지 못해 하원 253·157은 오전 4시 33분 기준이다.", "text_en": "No new calls: the Fox Senate page (6:33 a.m. ET) still shows Democrats 54, Republicans 44 with Mississippi and Alaska uncalled, and NBC's House calls are unchanged from its 4:47 a.m. ET page. The Fox House page could not be opened this time, so the House count of 253-157 is as of 4:33 a.m. ET."},
-    {"t": "2026-11-06T09:47:52Z", "text": "NBC 판정에 변화 없음(미 동부 오전 4시 47분): 상원 민주 54·공화 44, 하원 민주 249·공화 157에 미판정 29곳. 개표가 이어지며 애리조나 2구는 크레인(공) 3736표 차로 좁혀졌고, 콜로라도 4구는 로배커(민) 3024표 차로 벌어졌다. 폭스 화면은 이번에 열지 못해 하원 253·157은 오전 4시 33분 기준이다.", "text_en": "No change in NBC calls (4:47 a.m. ET): Senate Democrats 54, Republicans 44; House Democrats 249, Republicans 157, with 29 uncalled. As counting goes on, Crane (R) leads Arizona's 2nd by a narrower 3,736, and Laubacher (D) leads Colorado's 4th by a wider 3,024. The Fox page could not be opened this time, so the House count of 253-157 is as of 4:33 a.m. ET."},
-    {"t": "2026-11-06T05:37:00Z", "text": "AP가 유타 4구(마이크 케네디, 미 동부 오후 8시 43분)와 워싱턴 4구(어맨다 매키니, 오후 8시 44분)를 판정해 하원이 민주 253·공화 157이 됐다(폭스 화면, 미 동부 6일 오전 0시 37분). 상원 새 판정은 없고 미시시피·알래스카가 남았다.", "text_en": "AP called Utah's 4th (Mike Kennedy, 8:43 p.m. ET) and Washington's 4th (Amanda McKinney, 8:44 p.m. ET), making the House Democrats 253, Republicans 157 (Fox page, 12:37 a.m. ET Nov 6). No new Senate calls; Mississippi and Alaska remain."},
-    {"t": "2026-11-06T04:33:00Z", "text": "상원 새 판정 없음(폭스 상원 화면, 미 동부 오후 11시 33분). 민주 54·공화 44이고 미시시피·알래스카가 남았다. 하원 결과 화면은 이번에 열지 못해 하원 의석 수는 오후 8시 33분 기준 그대로다.", "text_en": "No new Senate calls (Fox Senate page, 11:33 p.m. ET): Democrats 54, Republicans 44, with Mississippi and Alaska left. The House results page could not be opened this time, so House seats remain as of 8:33 p.m. ET."},
-    {"t": "2026-11-06T01:33:00Z", "text": "새 AP 판정 없음(폭스 화면, 미 동부 오후 8시 33분). 메인 2구에서 던랩(민)이 르페이지(공)에게 패배를 인정했지만 과반이 없어 선호투표 집계가 9일 시작된다. 미시시피에서는 콜럼 캠프가 하이드스미스 측의 진술서 투표 분리 보관 요구에 법적 근거가 없다는 서한을 카운티에 보냈다.", "text_en": "No new AP calls (Fox page, 8:33 p.m. ET). In Maine's 2nd, Dunlap (D) conceded to LePage (R), but with no majority the ranked-choice tabulation starts Nov 9. In Mississippi, the Colom campaign wrote to counties that Hyde-Smith's demand to keep affidavit ballots separate has no legal basis."},
-    {"t": "2026-11-06T00:41:00Z", "text": "새 AP 판정은 확인되지 않았다(결과 화면을 열지 못해 의석 수는 직전 값, 미 동부 5일 오후 6시 33분 기준). 미네소타 1구에서는 323표 뒤진 현역 핀스태드(공)가 재검표를 진행하겠다고 밝혔다(MPR).", "text_en": "No new AP calls confirmed (results pages could not be opened, so seat counts remain as of 6:33 p.m. ET Nov 5). In Minnesota's 1st, Rep. Finstad (R), trailing by 323 votes, said he will let a recount proceed (MPR)."},
-    {"t": "2026-11-05T23:33:00Z", "text": "AP가 뉴욕 17구를 케이트 콘리(민) 승리로 판정해(미 동부 오후 6시 12분) 민주당이 뒤집은 의석이 43곳, 하원이 민주 253·공화 155가 됐다. 상원 새 판정은 없다. 마이크 허스트 미시시피 공화당 의장은 남은 표를 약 2만 장으로 추정했다.", "text_en": "AP called New York's 17th for Cait Conley (D) at 6:12 p.m. ET, making 43 Democratic flips and a House count of 253-155. No new Senate calls. Mississippi GOP chair Mike Hurst estimated about 20,000 ballots remain."},
-    {"t": "2026-11-05T22:33:00Z", "text": "새 AP 판정 없음(폭스 화면, 미 동부 오후 5시 33분). 미시시피 표차는 콜럼(민) 1813표로 벌어졌고, NBC는 하이드스미스가 남은 약 4만 4000표의 51%를 얻어야 따라잡는다고 계산한다. 애리조나 2구는 크레인(공) 5350표 차, 콜로라도 4구는 로배커(민) 2690표 차로 벌어졌다.", "text_en": "No new AP calls (Fox page, 5:33 p.m. ET). Colom (D) now leads Mississippi by 1,813, and NBC calculates Hyde-Smith would need 51% of the roughly 44,000 votes left to catch up. In the House, Crane (R) leads Arizona's 2nd by 5,350 and Laubacher (D) leads Colorado's 4th by 2,690."},
-    {"t": "2026-11-05T21:33:00Z", "text": "AP가 뉴저지 2구를 잭 멀럭(민) 승리로 판정해(미 동부 오후 4시 29분) 민주당이 뒤집은 의석이 42곳, 하원이 민주 252·공화 155가 됐다. 미시시피에서는 하이드스미스 캠프가 82개 카운티에 진술서 투표 분리 보관을 요구했고, 콜럼 측은 \"필사적인 쇼\"라고 반박했다. 상원 새 판정은 없다.", "text_en": "AP called New Jersey's 2nd for Zack Mullock (D) at 4:29 p.m. ET, making 42 Democratic flips and a House count of 252-155. In Mississippi, the Hyde-Smith campaign demanded all 82 counties keep affidavit ballots separate; the Colom side called it \"a desperate stunt.\" No new Senate calls."},
-    {"t": "2026-11-05T20:33:00Z", "text": "AP 하원 집계 민주 251·공화 155로 늘었다(폭스 화면, 미 동부 오후 3시 31분). 5일 새 AP 판정: 노스캐롤라이나 1·6·9·13·14구, 버지니아 1구, 애리조나 1·6구, 몬태나 1구(민주당 승), 콜로라도 5구·오하이오 10구도 민주당이 뒤집었다. 공화당은 테네시 9구(브렌트 테일러)를 뒤집어 뒤집은 의석이 2곳이 됐다. 상원은 미시시피·알래스카 미판정 그대로이고, 미시시피 표차는 콜럼(민) 1724표로 벌어졌다.", "text_en": "The AP House count rises to Democrats 251, Republicans 155 (Fox page, 3:31 p.m. ET). New AP calls on Nov 5: North Carolina's 1st, 6th, 9th, 13th and 14th, Virginia's 1st, Arizona's 1st and 6th, and Montana's 1st for Democrats, who also flipped Colorado's 5th and Ohio's 10th. Republicans flipped Tennessee's 9th (Brent Taylor), their second flip. The Senate's Mississippi and Alaska races remain uncalled; Colom (D) now leads Mississippi by 1,724."},
-    {"t": "2026-11-05T18:11:00Z", "text": "새 AP 판정 없음. AP(미 동부 5일 오후 1시 11분)는 미시시피에서 콜럼(민)의 표차가 96% 개표 기준 1145표로 늘었고 잠정 투표가 승부를 가른다고 전했다. 알래스카 상원은 펠톨라(민)가 637표 앞서고 약 74% 개표로 미판정이다. 하원은 정당이 바뀔 수 있는 35곳이 미판정이다. AP 기준 정당별 합계는 새 화면을 열지 못해 240 대 147 그대로다.", "text_en": "No new AP calls. AP (1:11 p.m. ET Nov. 5) says Colom (D) has grown his Mississippi lead to 1,145 votes with 96% counted and that provisional ballots will be decisive. Alaska Senate remains uncalled, with Peltola (D) up 637 votes and about 74% counted. In the House, 35 races with party control at stake are uncalled. The AP-based party totals stay at 240-147 because no newer results page could be opened."},
-    {"t": "2026-11-05T17:42:00Z", "text": "새 AP 판정 확인 없음. 미시시피는 콜럼(민)이 1138표 앞선 그대로이며, 왓슨 주 국무장관은 카운티 12곳이 아직 비공식 결과를 보고하지 않았다고 밝혔다(WDAM). NBC는 하원 전망을 민주 259석으로 올렸고 미판정은 41곳이다(GV 와이어). NBC·폭스 결과 화면은 이번에도 열리지 않아 AP 기준 240 대 147과 알래스카 표 수는 직전 값 그대로다.", "text_en": "No new AP calls confirmed. Colom (D) still leads by 1,138 in Mississippi, and Secretary of State Michael Watson says 12 counties have yet to report unofficial results (WDAM). NBC now projects 259 House seats for Democrats, with 41 uncalled (GV Wire). The NBC and Fox results pages again did not open, so the AP count of 240-147 and the Alaska vote totals are unchanged."},
-    {"t": "2026-11-05T16:41:00Z", "text": "새 AP 판정 확인 없음. 미시시피는 콜럼(민)이 1138표 앞선 그대로이고, 매그놀리아 트리뷴(현지 5일)은 주 국무장관실 기준 우편 표 약 3600장에 더해 진술서 투표가 최대 1만 8000장이라는 확인되지 않은 보도를 전했다. 미네소타 1구는 MPR(현지 5일) 기준 존슨(민)이 323표 앞서고 AP 판정이 없다. NBC·폭스·AP 결과 화면은 이번에 열리지 않아, AP 기준 하원 240 대 147과 알래스카 표 수는 직전 값 그대로다.", "text_en": "No new AP calls confirmed. Colom (D) still leads by 1,138 in Mississippi; Magnolia Tribune (Nov 5) cites the Secretary of State's office for about 3,600 mail ballots outstanding, plus unconfirmed reports of up to 18,000 affidavit ballots. In MN-1, MPR (Nov 5) has Johnson (D) up 323 with no AP call. The NBC, Fox and AP results pages did not open this time, so the AP House count of 240-147 and the Alaska vote totals are unchanged."}
+    {
+      "t": "2026-11-07T05:33:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 7일 오전 0시 33분): 상원 민주 54·공화 44, 하원 민주 254·공화 162 그대로이고 마지막 AP 하원 판정은 6일 오후 8시 46분 캘리포니아 14구다. 미시시피(개표 96.92%, 스콧 콜럼(민) 2574표 앞섬)와 알래스카(개표 74.09%, 메리 펠톨라(민) 637표 앞섬)도 숫자가 바뀌지 않았다. NBC 화면의 하원 미판정은 21곳이다.",
+      "text_en": "No new AP calls (Fox pages, 12:33 a.m. ET Nov 7): the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 254, Republicans 162; the last AP House call was California's 14th at 8:46 p.m. Nov 6. Mississippi (96.92% reporting, Scott Colom (D) ahead by 2,574) and Alaska (74.09% reporting, Mary Peltola (D) ahead by 637) are unchanged. The NBC page shows 21 House races uncalled."
+    },
+    {
+      "t": "2026-11-07T04:34:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 11시 34분): 상원 민주 54·공화 44, 하원 민주 254·공화 162 그대로이고 마지막 AP 하원 판정은 오후 8시 46분 캘리포니아 14구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 2574표 차, 알래스카는 개표 74.09%에서 메리 펠톨라(민) 10만 2962표, 댄 설리번(공) 10만 2325표로 637표 차 그대로다. NBC 화면의 하원 미판정은 21곳으로 변함없다.",
+      "text_en": "No new AP calls (Fox pages, 11:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 254, Republicans 162; the last AP House call was California's 14th at 8:46 p.m. Mississippi is unchanged at 96.92% reporting, Scott Colom (D) 467,930 to Cindy Hyde-Smith (R) 465,356, a 2,574-vote gap, as is Alaska at 74.09% reporting, Mary Peltola (D) 102,962 to Dan Sullivan (R) 102,325, a 637-vote gap. The NBC page still shows 21 House races uncalled."
+    },
+    {
+      "t": "2026-11-07T03:33:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 10시 23~33분): 상원 민주 54·공화 44, 하원 민주 254·공화 162 그대로이고 마지막 AP 하원 판정은 오후 8시 46분 캘리포니아 14구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 2574표 차, 알래스카는 개표 74.09%에서 메리 펠톨라(민) 10만 2962표, 댄 설리번(공) 10만 2325표로 637표 차 그대로다. NBC 화면의 하원 미판정은 21곳으로 변함없다.",
+      "text_en": "No new AP calls (Fox pages, 10:23–10:33 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 254, Republicans 162; the last AP House call was California's 14th at 8:46 p.m. Mississippi is unchanged at 96.92% reporting, Scott Colom (D) 467,930 to Cindy Hyde-Smith (R) 465,356, a 2,574-vote gap, as is Alaska at 74.09% reporting, Mary Peltola (D) 102,962 to Dan Sullivan (R) 102,325, a 637-vote gap. The NBC page still shows 21 House races uncalled."
+    },
+    {
+      "t": "2026-11-07T02:34:00Z",
+      "text": "AP가 미 동부 6일 오후 8시 46분 캘리포니아 14구를 민주당 아이샤 와합의 승리로 판정했다. 민주당 후보 둘이 맞붙은 선거구라 정당 의석은 바뀌지 않으며, NBC 기준 와합 9만 1892표(57.5%), 멜리사 에르난데스(민) 6만 7836표(42.5%)다. 폭스 화면(오후 9시 34분)의 하원 합계는 민주 254·공화 162로 표시돼 있다. 상원은 새 판정 없이 민주 54·공화 44, 미시시피 콜럼(민) 2574표·알래스카 펠톨라(민) 637표 차 그대로다. NBC 화면의 하원 미판정은 21곳이다.",
+      "text_en": "At 8:46 p.m. ET Nov 6, AP called California's 14th for Democrat Aisha Wahab. Both candidates were Democrats, so no seat changes party; NBC has Wahab at 91,892 (57.5%) and Melissa Hernandez (D) at 67,836 (42.5%). The Fox page (9:34 p.m.) still shows the House at Democrats 254, Republicans 162. No new Senate calls: 54-44, with Colom (D) ahead by 2,574 in Mississippi and Peltola (D) by 637 in Alaska. The NBC page shows 21 House races uncalled."
+    },
+    {
+      "t": "2026-11-07T01:34:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 8시 34분): 상원 민주 54·공화 44, 하원 민주 254·공화 162 그대로이고, 하원의 마지막 AP 판정은 오후 6시 51분 사우스캐롤라이나 1구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 2574표 차, 알래스카는 메리 펠톨라(민) 10만 2962표, 댄 설리번(공) 10만 2325표로 637표 차 그대로다. NBC 화면의 하원 미판정은 22곳이다.",
+      "text_en": "No new AP calls (Fox page, 8:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44, and the House at Democrats 254, Republicans 162; the last AP House call was South Carolina's 1st at 6:51 p.m. Mississippi is unchanged at 96.92% reporting, Scott Colom (D) 467,930 to Cindy Hyde-Smith (R) 465,356, a 2,574-vote gap, and so is Alaska, Mary Peltola (D) 102,962 to Dan Sullivan (R) 102,325, a 637-vote gap. The NBC page shows 22 House races uncalled."
+    },
+    {
+      "t": "2026-11-07T00:34:00Z",
+      "text": "AP가 미 동부 6일 오후 6시 51분 사우스캐롤라이나 1구를 민주당 낸시 라코어의 승리로 판정했다. 공화당 의석을 민주당이 가져온 곳으로, NBC 기준 라코어 16만 2103표(49.7%), 제니 코스타 허니컷(공) 15만 8751표(48.6%)다. 폭스 화면(오후 7시 34분) 기준 하원은 민주 254·공화 162, 민주당이 뒤집은 의석은 44곳이다. 상원은 새 판정 없이 민주 54·공화 44, 미시시피 콜럼(민) 2574표·알래스카 펠톨라(민) 637표 차 그대로다.",
+      "text_en": "At 6:51 p.m. ET Nov 6, AP called South Carolina's 1st for Democrat Nancy Lacore, a Republican seat flipped to Democrats; NBC has Lacore at 162,103 (49.7%) and Jenny Costa Honeycutt (R) at 158,751 (48.6%). The Fox page (7:34 p.m.) puts the House at Democrats 254, Republicans 162, with 44 seats flipped by Democrats. No new Senate calls: still 54-44, with Colom (D) ahead by 2,574 in Mississippi and Peltola (D) by 637 in Alaska."
+    },
+    {
+      "t": "2026-11-06T23:33:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 6시 33~34분): 상원 민주 54·공화 44, 하원 민주 253·공화 162 그대로이고, 하원의 마지막 AP 판정은 오후 4시 34분 노스캐롤라이나 8구다. 미시시피는 개표 96.92%에서 스콧 콜럼(민) 46만 7930표, 신디 하이드스미스(공) 46만 5356표로 콜럼의 표차가 2574표로 조금 늘었다. 알래스카는 펠톨라(민) 637표 차 그대로다. NBC 화면의 하원 미판정은 23곳이다.",
+      "text_en": "No new AP calls (Fox page, 6:33-6:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44, and the House at Democrats 253, Republicans 162; the last AP House call was North Carolina's 8th at 4:34 p.m. In Mississippi, at 96.92% reporting, Scott Colom (D) has 467,930 to Cindy Hyde-Smith (R) 465,356, nudging his lead up to 2,574. Alaska is unchanged, with Peltola (D) up 637. The NBC page shows 23 House races uncalled."
+    },
+    {
+      "t": "2026-11-06T22:33:00Z",
+      "text": "AP가 미 동부 6일 오후 4시 34분 노스캐롤라이나 8구를 공화당 현역 마크 해리스의 승리로 판정했다(공화당이 지킨 곳, NBC 기준 50.4% 대 48.6%). 폭스 화면(오후 5시 33분) 기준 하원은 민주 253·공화 162, 상원은 새 판정 없이 민주 54·공화 44다. 미시시피는 개표 96.91%에서 스콧 콜럼(민)이 2498표 앞서고, 알래스카는 펠톨라(민) 637표 차 그대로다.",
+      "text_en": "AP called North Carolina's 8th for Republican incumbent Mark Harris at 4:34 p.m. ET Nov 6 (a Republican hold; 50.4% to 48.6% per NBC). On the Fox page (5:33 p.m.) the House is Democrats 253, Republicans 162; the Senate has no new calls and stays at 54-44. In Mississippi, at 96.91% reporting, Scott Colom (D) leads by 2,498; Alaska is unchanged, with Peltola (D) up 637."
+    },
+    {
+      "t": "2026-11-06T21:34:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 4시 34분): 상원 민주 54·공화 44, 하원 민주 253·공화 161 그대로다. 미시시피는 개표 96.90%에서 스콧 콜럼(민) 46만 7829표, 신디 하이드스미스(공) 46만 5336표로 콜럼의 표차가 2493표로 늘었다. NPR(미 동부 6일 오후)은 남은 표가 몇 장인지 아무도 정확히 모른다고 전했다. 알래스카는 펠톨라(민) 637표 차 그대로다.",
+      "text_en": "No new AP calls (Fox page, 4:34 p.m. ET Nov 6): the Senate stays at Democrats 54, Republicans 44, and the House at Democrats 253, Republicans 161. In Mississippi, at 96.90% reporting, Scott Colom (D) has 467,829 to Cindy Hyde-Smith (R) 465,336, widening his lead to 2,493. NPR (afternoon of Nov 6 ET) reports no one knows exactly how many ballots remain. Alaska is unchanged, with Peltola (D) ahead by 637."
+    },
+    {
+      "t": "2026-11-06T20:39:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 3시 39분): 상원 민주 54·공화 44, 하원 민주 253·공화 161 그대로이고, 하원의 마지막 AP 판정은 오후 1시 25분 애리조나 8구다. 미시시피는 개표 96.77%에서 스콧 콜럼(민) 46만 7153표, 신디 하이드스미스(공) 46만 5124표로 콜럼의 표차가 2029표로 조금 더 늘었다. 알래스카는 펠톨라(민) 637표 차 그대로다. 미시시피 최대 카운티인 힌즈 카운티는 현지 6일 오후 진술서 투표 집계를 시작했다(미시시피 프리 프레스).",
+      "text_en": "No new AP calls (Fox page, 3:39 p.m. ET Nov 6): Senate Democrats 54, Republicans 44; House Democrats 253, Republicans 161, with the last AP House call Arizona's 8th at 1:25 p.m. In Mississippi, with 96.77% reporting, Scott Colom (D) has 467,153 and Cindy Hyde-Smith (R) 465,124, nudging Colom's lead up to 2,029. Alaska is unchanged, with Peltola (D) up 637. Hinds County, Mississippi's largest, began counting affidavit ballots on the afternoon of Nov 6 local time (Mississippi Free Press)."
+    },
+    {
+      "t": "2026-11-06T19:33:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 6일 오후 2시 33분): 상원 민주 54·공화 44, 하원 민주 253·공화 161 그대로다. 미시시피 프리 프레스는 지금까지 집계를 마친 북부 카운티들의 진술서 투표에서 스콧 콜럼(민)이 전체 득표율보다 높은 몫을 얻고 있다고 전했다. 미시시피에서는 우편 투표 도착과 신분증 없이 진술서 투표를 한 유권자의 신분증 제출 마감이 10일, 카운티별 개표 결과 인증 마감이 13일이다.",
+      "text_en": "No new AP calls (Fox page, 2:33 p.m. ET Nov 6): Senate Democrats 54, Republicans 44; House Democrats 253, Republicans 161. The Mississippi Free Press reports Scott Colom (D) is running ahead of his overall share in affidavit ballots in the north Mississippi counties that have finished counting them. In Mississippi, Nov 10 is the deadline for mailed absentee ballots to arrive and for affidavit voters without ID to show it; counties must certify results by Nov 13."
+    },
+    {
+      "t": "2026-11-06T18:34:00Z",
+      "text": "AP가 미 동부 6일 오후 1시 25분 애리조나 8구를 공화당 현역 에이브러햄 하마데의 승리로 판정했다(공화당이 지킨 곳). 폭스 화면(오후 1시 34분) 기준 하원은 민주 253·공화 161, 상원은 새 판정 없이 민주 54·공화 44다. 미시시피(콜럼 2010표 차)와 알래스카(펠톨라 637표 차)의 개표 수치는 지난 확인 때와 같다.",
+      "text_en": "AP called Arizona's 8th for Republican incumbent Abraham Hamadeh at 1:25 p.m. ET Nov 6 (a Republican hold). On the Fox page (1:34 p.m.) the House is Democrats 253, Republicans 161; the Senate has no new calls and stays at 54-44. Mississippi (Colom up 2,010) and Alaska (Peltola up 637) show the same counts as the last check."
+    },
+    {
+      "t": "2026-11-06T17:35:00Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 오후 12시 35분): 상원 민주 54·공화 44, 하원 민주 253·공화 160 그대로다. 미시시피는 개표가 조금 더 진행돼(NBC, 예상 투표의 96.3%) 스콧 콜럼(민)의 표차가 2010표로 늘었다. CNN은 양당 변호인단과 NAACP가 82개 카운티의 진술서 투표 심사를 지켜보고 있으며, 힌즈 카운티에서는 투표구 등록이 맞지 않는 학생 표 일부가 거부됐다고 전했다.",
+      "text_en": "No new AP calls (Fox page, 12:35 p.m. ET): Senate Democrats 54, Republicans 44; House Democrats 253, Republicans 160. Mississippi counting inched ahead (NBC, 96.3% of expected vote), widening Scott Colom's (D) lead to 2,010. CNN reports lawyers from both parties and the NAACP are watching affidavit-ballot reviews across 82 counties, and that some student ballots in Hinds County were rejected for wrong-precinct registration."
+    },
+    {
+      "t": "2026-11-06T16:34:00Z",
+      "text": "AP가 미 동부 6일 오전 11시 23~25분 하원 4곳을 판정했다: 뉴욕 21구(콘스탄티노)·콜로라도 3구(허드)·애리조나 5구(램)는 공화당, 캘리포니아 11구는 민주당끼리 맞붙어 스콧 위너가 이겼다. 폭스 화면 기준 하원은 민주 253·공화 160, 상원은 민주 54·공화 44 그대로다. 미시시피 주 국무장관실은 진술서 투표 6936장을 처리했고 우편 투표 약 3300장이 남았다고 밝혔다(미시시피 프리 프레스).",
+      "text_en": "AP called four House races between 11:23 and 11:25 a.m. ET Nov 6: New York's 21st (Constantino), Colorado's 3rd (Hurd) and Arizona's 5th (Lamb) for Republicans, and California's 11th, a Democrat-vs-Democrat race, for Scott Wiener. On the Fox page the House is Democrats 253, Republicans 160, and the Senate stays 54-44. Mississippi's Secretary of State says 6,936 affidavit ballots have been processed and about 3,300 mail ballots are outstanding (Mississippi Free Press)."
+    },
+    {
+      "t": "2026-11-06T15:33:50Z",
+      "text": "AP 새 판정 없음(폭스 화면, 미 동부 오전 10시 32~33분): 상원 민주 54·공화 44, 하원 민주 253·공화 157 그대로다. 미시시피는 개표가 조금 더 진행돼(NBC, 예상 투표의 95.8%) 스콧 콜럼(민)의 표차가 1813표에서 1936표로 늘었다.",
+      "text_en": "No new AP calls (Fox pages, 10:32-10:33 a.m. ET): the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 253, Republicans 157. In Mississippi a bit more of the vote came in (NBC, 95.8% of expected vote), and Scott Colom's (D) lead grew from 1,813 to 1,936."
+    },
+    {
+      "t": "2026-11-06T14:33:42Z",
+      "text": "AP 기준 새 판정 없음: 폭스 화면(미 동부 오전 9시 33~34분)은 상원 민주 54·공화 44에 미시시피·알래스카 미판정, 하원 민주 253·공화 157 그대로다. NBC는 AP가 앞서 판정한 워싱턴 4구를 공화당 승리로 판정해 민주 249·공화 158, 미판정 28곳이 됐다.",
+      "text_en": "No new AP calls: the Fox pages (9:33-9:34 a.m. ET) still show the Senate at Democrats 54, Republicans 44 with Mississippi and Alaska uncalled, and the House at Democrats 253, Republicans 157. NBC called Washington's 4th for Republicans, which AP had already done, making its count Democrats 249, Republicans 158, with 28 uncalled."
+    },
+    {
+      "t": "2026-11-06T13:30:44Z",
+      "text": "NBC 하원 판정에 변화 없음(미 동부 오전 8시 30분): 민주 249·공화 157에 미판정 29곳이다. 폭스·NBC 상원 화면은 이번에 열지 못해, 상원 54·44와 하원 253·157은 오전 7시 33분 기준이다.",
+      "text_en": "No change in NBC House calls (8:30 a.m. ET): Democrats 249, Republicans 157, 29 uncalled. The Fox and NBC Senate pages could not be opened this time, so the Senate 54-44 and House 253-157 figures are as of 7:33 a.m. ET."
+    },
+    {
+      "t": "2026-11-06T12:33:00Z",
+      "text": "새 판정 없음: 폭스 화면(미 동부 오전 7시 33분)은 상원 민주 54·공화 44, 하원 민주 253·공화 157 그대로다. 알래스카에서는 트럼프 대통령이 동명이인 후보의 표를 \"진짜 댄 설리번\"에게 줘야 한다고 올렸지만, 법무부의 인증 중지 소송 항소심은 답변 기한이 1월 11일로 잡혔다(앵커리지 데일리 뉴스).",
+      "text_en": "No new calls: the Fox pages (7:33 a.m. ET) still show the Senate at Democrats 54, Republicans 44 and the House at Democrats 253, Republicans 157. In Alaska, President Trump posted that the namesake candidate's votes should go to the \"REAL Dan Sullivan,\" while the appeal of the Justice Department's suit to stop certification has the state's response due Jan 11 (Anchorage Daily News)."
+    },
+    {
+      "t": "2026-11-06T11:33:00Z",
+      "text": "새 판정 없음: 폭스 상원 화면(미 동부 오전 6시 33분)은 민주 54·공화 44에 미시시피·알래스카 미판정 그대로이고, NBC 하원 판정도 오전 4시 47분 화면에서 바뀌지 않았다. 폭스 하원 화면은 이번에 열지 못해 하원 253·157은 오전 4시 33분 기준이다.",
+      "text_en": "No new calls: the Fox Senate page (6:33 a.m. ET) still shows Democrats 54, Republicans 44 with Mississippi and Alaska uncalled, and NBC's House calls are unchanged from its 4:47 a.m. ET page. The Fox House page could not be opened this time, so the House count of 253-157 is as of 4:33 a.m. ET."
+    },
+    {
+      "t": "2026-11-06T09:47:52Z",
+      "text": "NBC 판정에 변화 없음(미 동부 오전 4시 47분): 상원 민주 54·공화 44, 하원 민주 249·공화 157에 미판정 29곳. 개표가 이어지며 애리조나 2구는 크레인(공) 3736표 차로 좁혀졌고, 콜로라도 4구는 로배커(민) 3024표 차로 벌어졌다. 폭스 화면은 이번에 열지 못해 하원 253·157은 오전 4시 33분 기준이다.",
+      "text_en": "No change in NBC calls (4:47 a.m. ET): Senate Democrats 54, Republicans 44; House Democrats 249, Republicans 157, with 29 uncalled. As counting goes on, Crane (R) leads Arizona's 2nd by a narrower 3,736, and Laubacher (D) leads Colorado's 4th by a wider 3,024. The Fox page could not be opened this time, so the House count of 253-157 is as of 4:33 a.m. ET."
+    },
+    {
+      "t": "2026-11-06T05:37:00Z",
+      "text": "AP가 유타 4구(마이크 케네디, 미 동부 오후 8시 43분)와 워싱턴 4구(어맨다 매키니, 오후 8시 44분)를 판정해 하원이 민주 253·공화 157이 됐다(폭스 화면, 미 동부 6일 오전 0시 37분). 상원 새 판정은 없고 미시시피·알래스카가 남았다.",
+      "text_en": "AP called Utah's 4th (Mike Kennedy, 8:43 p.m. ET) and Washington's 4th (Amanda McKinney, 8:44 p.m. ET), making the House Democrats 253, Republicans 157 (Fox page, 12:37 a.m. ET Nov 6). No new Senate calls; Mississippi and Alaska remain."
+    },
+    {
+      "t": "2026-11-06T04:33:00Z",
+      "text": "상원 새 판정 없음(폭스 상원 화면, 미 동부 오후 11시 33분). 민주 54·공화 44이고 미시시피·알래스카가 남았다. 하원 결과 화면은 이번에 열지 못해 하원 의석 수는 오후 8시 33분 기준 그대로다.",
+      "text_en": "No new Senate calls (Fox Senate page, 11:33 p.m. ET): Democrats 54, Republicans 44, with Mississippi and Alaska left. The House results page could not be opened this time, so House seats remain as of 8:33 p.m. ET."
+    },
+    {
+      "t": "2026-11-06T01:33:00Z",
+      "text": "새 AP 판정 없음(폭스 화면, 미 동부 오후 8시 33분). 메인 2구에서 던랩(민)이 르페이지(공)에게 패배를 인정했지만 과반이 없어 선호투표 집계가 9일 시작된다. 미시시피에서는 콜럼 캠프가 하이드스미스 측의 진술서 투표 분리 보관 요구에 법적 근거가 없다는 서한을 카운티에 보냈다.",
+      "text_en": "No new AP calls (Fox page, 8:33 p.m. ET). In Maine's 2nd, Dunlap (D) conceded to LePage (R), but with no majority the ranked-choice tabulation starts Nov 9. In Mississippi, the Colom campaign wrote to counties that Hyde-Smith's demand to keep affidavit ballots separate has no legal basis."
+    },
+    {
+      "t": "2026-11-06T00:41:00Z",
+      "text": "새 AP 판정은 확인되지 않았다(결과 화면을 열지 못해 의석 수는 직전 값, 미 동부 5일 오후 6시 33분 기준). 미네소타 1구에서는 323표 뒤진 현역 핀스태드(공)가 재검표를 진행하겠다고 밝혔다(MPR).",
+      "text_en": "No new AP calls confirmed (results pages could not be opened, so seat counts remain as of 6:33 p.m. ET Nov 5). In Minnesota's 1st, Rep. Finstad (R), trailing by 323 votes, said he will let a recount proceed (MPR)."
+    },
+    {
+      "t": "2026-11-05T23:33:00Z",
+      "text": "AP가 뉴욕 17구를 케이트 콘리(민) 승리로 판정해(미 동부 오후 6시 12분) 민주당이 뒤집은 의석이 43곳, 하원이 민주 253·공화 155가 됐다. 상원 새 판정은 없다. 마이크 허스트 미시시피 공화당 의장은 남은 표를 약 2만 장으로 추정했다.",
+      "text_en": "AP called New York's 17th for Cait Conley (D) at 6:12 p.m. ET, making 43 Democratic flips and a House count of 253-155. No new Senate calls. Mississippi GOP chair Mike Hurst estimated about 20,000 ballots remain."
+    },
+    {
+      "t": "2026-11-05T22:33:00Z",
+      "text": "새 AP 판정 없음(폭스 화면, 미 동부 오후 5시 33분). 미시시피 표차는 콜럼(민) 1813표로 벌어졌고, NBC는 하이드스미스가 남은 약 4만 4000표의 51%를 얻어야 따라잡는다고 계산한다. 애리조나 2구는 크레인(공) 5350표 차, 콜로라도 4구는 로배커(민) 2690표 차로 벌어졌다.",
+      "text_en": "No new AP calls (Fox page, 5:33 p.m. ET). Colom (D) now leads Mississippi by 1,813, and NBC calculates Hyde-Smith would need 51% of the roughly 44,000 votes left to catch up. In the House, Crane (R) leads Arizona's 2nd by 5,350 and Laubacher (D) leads Colorado's 4th by 2,690."
+    },
+    {
+      "t": "2026-11-05T21:33:00Z",
+      "text": "AP가 뉴저지 2구를 잭 멀럭(민) 승리로 판정해(미 동부 오후 4시 29분) 민주당이 뒤집은 의석이 42곳, 하원이 민주 252·공화 155가 됐다. 미시시피에서는 하이드스미스 캠프가 82개 카운티에 진술서 투표 분리 보관을 요구했고, 콜럼 측은 \"필사적인 쇼\"라고 반박했다. 상원 새 판정은 없다.",
+      "text_en": "AP called New Jersey's 2nd for Zack Mullock (D) at 4:29 p.m. ET, making 42 Democratic flips and a House count of 252-155. In Mississippi, the Hyde-Smith campaign demanded all 82 counties keep affidavit ballots separate; the Colom side called it \"a desperate stunt.\" No new Senate calls."
+    },
+    {
+      "t": "2026-11-05T20:33:00Z",
+      "text": "AP 하원 집계 민주 251·공화 155로 늘었다(폭스 화면, 미 동부 오후 3시 31분). 5일 새 AP 판정: 노스캐롤라이나 1·6·9·13·14구, 버지니아 1구, 애리조나 1·6구, 몬태나 1구(민주당 승), 콜로라도 5구·오하이오 10구도 민주당이 뒤집었다. 공화당은 테네시 9구(브렌트 테일러)를 뒤집어 뒤집은 의석이 2곳이 됐다. 상원은 미시시피·알래스카 미판정 그대로이고, 미시시피 표차는 콜럼(민) 1724표로 벌어졌다.",
+      "text_en": "The AP House count rises to Democrats 251, Republicans 155 (Fox page, 3:31 p.m. ET). New AP calls on Nov 5: North Carolina's 1st, 6th, 9th, 13th and 14th, Virginia's 1st, Arizona's 1st and 6th, and Montana's 1st for Democrats, who also flipped Colorado's 5th and Ohio's 10th. Republicans flipped Tennessee's 9th (Brent Taylor), their second flip. The Senate's Mississippi and Alaska races remain uncalled; Colom (D) now leads Mississippi by 1,724."
+    },
+    {
+      "t": "2026-11-05T18:11:00Z",
+      "text": "새 AP 판정 없음. AP(미 동부 5일 오후 1시 11분)는 미시시피에서 콜럼(민)의 표차가 96% 개표 기준 1145표로 늘었고 잠정 투표가 승부를 가른다고 전했다. 알래스카 상원은 펠톨라(민)가 637표 앞서고 약 74% 개표로 미판정이다. 하원은 정당이 바뀔 수 있는 35곳이 미판정이다. AP 기준 정당별 합계는 새 화면을 열지 못해 240 대 147 그대로다.",
+      "text_en": "No new AP calls. AP (1:11 p.m. ET Nov. 5) says Colom (D) has grown his Mississippi lead to 1,145 votes with 96% counted and that provisional ballots will be decisive. Alaska Senate remains uncalled, with Peltola (D) up 637 votes and about 74% counted. In the House, 35 races with party control at stake are uncalled. The AP-based party totals stay at 240-147 because no newer results page could be opened."
+    },
+    {
+      "t": "2026-11-05T17:42:00Z",
+      "text": "새 AP 판정 확인 없음. 미시시피는 콜럼(민)이 1138표 앞선 그대로이며, 왓슨 주 국무장관은 카운티 12곳이 아직 비공식 결과를 보고하지 않았다고 밝혔다(WDAM). NBC는 하원 전망을 민주 259석으로 올렸고 미판정은 41곳이다(GV 와이어). NBC·폭스 결과 화면은 이번에도 열리지 않아 AP 기준 240 대 147과 알래스카 표 수는 직전 값 그대로다.",
+      "text_en": "No new AP calls confirmed. Colom (D) still leads by 1,138 in Mississippi, and Secretary of State Michael Watson says 12 counties have yet to report unofficial results (WDAM). NBC now projects 259 House seats for Democrats, with 41 uncalled (GV Wire). The NBC and Fox results pages again did not open, so the AP count of 240-147 and the Alaska vote totals are unchanged."
+    }
   ],
   "how": [
     "'확정'은 AP가 승자를 발표한 곳, '앞섬'은 개표 중 앞선 쪽이라 뒤집힐 수 있다.",
