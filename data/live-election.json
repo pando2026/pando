@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-07T10:34:00Z",
+  "updatedAt": "2026-11-07T11:36:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3910,7 +3910,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",118735,57.1,1],["Vince George","D",82347,39.6,0],["Belinda Fox-Spencer","CST",6904,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",143756,59.4,1],["Ace Parsi","D",98235,40.6,0]]]],
     "WY":[[1,"won","R",0,96.6,[["Chuck Gray","R",99891,54.5,0],["Lisa Kinney","D",61684,33.7,0],["Shawn Johnson","Lib",13665,7.5,0]]]]
   },
-    "districtsAsOf": "2026-11-07T07:27:11Z",
+    "districtsAsOf": "2026-11-07T11:02:49Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3918,6 +3918,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-07T11:36:00Z",
+      "text": "새 판정 없음(미 동부 7일 오전 6시 36분 확인): 폭스뉴스 상원 판정 목록과 NBC 결과 화면(집계 AP) 모두 새 판정이 없다. 미시시피는 개표 96.9%에서 스콧 콜럼(민) 49.1% 대 신디 하이드스미스(공) 48.8%, 알래스카는 개표 74.1%에서 메리 펠톨라(민) 48.2% 대 댄 설리번(공) 47.9%로 그대로이고, 하원 미판정도 21곳이라 상원 민주 54·공화 44, 하원 민주 254·공화 162가 유지된다.",
+      "text_en": "No new calls (checked 6:36 a.m. ET Nov 7): neither Fox News's Senate call list nor the NBC results page (AP data) shows a new call. Mississippi stays at 96.9% reporting with Scott Colom (D) 49.1% to Cindy Hyde-Smith (R) 48.8%, Alaska at 74.1% with Mary Peltola (D) 48.2% to Dan Sullivan (R) 47.9%, and 21 House races remain uncalled, so the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 254, Republicans 162."
+    },
     {
       "t": "2026-11-07T10:34:00Z",
       "text": "새 판정 없음(미 동부 7일 오전 5시 34분 확인): 폭스뉴스의 AP 판정 목록은 마지막 판정이 6일 오후 8시 46분 캘리포니아 14구 그대로이고, 상원 민주 54·공화 44, 하원 민주 254·공화 162가 유지된다. NBC 결과 화면(집계 AP)도 미 동부 7일 오전 2시 27분 이후 바뀌지 않아 미시시피·알래스카는 판정 전이고 하원 미판정은 21곳이다.",
@@ -4062,11 +4067,6 @@
       "t": "2026-11-06T00:41:00Z",
       "text": "새 AP 판정은 확인되지 않았다(결과 화면을 열지 못해 의석 수는 직전 값, 미 동부 5일 오후 6시 33분 기준). 미네소타 1구에서는 323표 뒤진 현역 핀스태드(공)가 재검표를 진행하겠다고 밝혔다(MPR).",
       "text_en": "No new AP calls confirmed (results pages could not be opened, so seat counts remain as of 6:33 p.m. ET Nov 5). In Minnesota's 1st, Rep. Finstad (R), trailing by 323 votes, said he will let a recount proceed (MPR)."
-    },
-    {
-      "t": "2026-11-05T23:33:00Z",
-      "text": "AP가 뉴욕 17구를 케이트 콘리(민) 승리로 판정해(미 동부 오후 6시 12분) 민주당이 뒤집은 의석이 43곳, 하원이 민주 253·공화 155가 됐다. 상원 새 판정은 없다. 마이크 허스트 미시시피 공화당 의장은 남은 표를 약 2만 장으로 추정했다.",
-      "text_en": "AP called New York's 17th for Cait Conley (D) at 6:12 p.m. ET, making 43 Democratic flips and a House count of 253-155. No new Senate calls. Mississippi GOP chair Mike Hurst estimated about 20,000 ballots remain."
     }
   ],
   "how": [
