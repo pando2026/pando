@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-07T08:39:00Z",
+  "updatedAt": "2026-11-07T09:34:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3919,6 +3919,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-07T09:34:00Z",
+      "text": "새 판정 없음(미 동부 7일 오전 4시 34분 확인): 폭스뉴스의 AP 판정 목록은 마지막 판정이 6일 오후 8시 46분 캘리포니아 14구 그대로이고 하원은 민주 254·공화 162다. NBC 결과 화면(집계 AP)에서 미시시피는 스콧 콜럼(민) 49.1%로 여전히 '판정하기엔 너무 접전', 알래스카는 메리 펠톨라(민) 48.2%로 앞선 채 바뀌지 않았고, 하원 미판정도 21곳 그대로다.",
+      "text_en": "No new calls (checked 4:34 a.m. ET Nov 7): Fox News's AP race-call list still ends with California's 14th at 8:46 p.m. Nov 6, and the House stays at Democrats 254, Republicans 162. On the NBC results page (AP data), Mississippi still shows Scott Colom (D) at 49.1% and 'too close to call', Alaska still has Mary Peltola (D) ahead at 48.2%, and 21 House races remain uncalled."
+    },
+    {
       "t": "2026-11-07T08:39:00Z",
       "text": "새 판정 없음(미 동부 7일 오전 3시 39분 확인): NBC 결과 화면(집계 AP)에서 미시시피는 개표 96.9%, 스콧 콜럼(민) 49.1% 대 신디 하이드스미스(공) 48.8%로 여전히 '판정하기엔 너무 접전'이고, 알래스카는 개표 74.1%, 메리 펠톨라(민) 48.2% 대 댄 설리번(공) 47.9%로 바뀌지 않았다. 하원 미판정도 21곳 그대로라 상원 민주 54·공화 44, 하원 민주 254·공화 162(마지막 확인한 AP 집계)가 유지된다.",
       "text_en": "No new calls (checked 3:39 a.m. ET Nov 7): on the NBC results page (AP data), Mississippi is at 96.9% reporting with Scott Colom (D) 49.1% to Cindy Hyde-Smith (R) 48.8%, still 'too close to call', and Alaska is unchanged at 74.1% reporting with Mary Peltola (D) 48.2% to Dan Sullivan (R) 47.9%. House races uncalled remain at 21, so the Senate stays at Democrats 54, Republicans 44 and the House at Democrats 254, Republicans 162 (last AP tally checked)."
@@ -4062,11 +4067,6 @@
       "t": "2026-11-05T22:33:00Z",
       "text": "새 AP 판정 없음(폭스 화면, 미 동부 오후 5시 33분). 미시시피 표차는 콜럼(민) 1813표로 벌어졌고, NBC는 하이드스미스가 남은 약 4만 4000표의 51%를 얻어야 따라잡는다고 계산한다. 애리조나 2구는 크레인(공) 5350표 차, 콜로라도 4구는 로배커(민) 2690표 차로 벌어졌다.",
       "text_en": "No new AP calls (Fox page, 5:33 p.m. ET). Colom (D) now leads Mississippi by 1,813, and NBC calculates Hyde-Smith would need 51% of the roughly 44,000 votes left to catch up. In the House, Crane (R) leads Arizona's 2nd by 5,350 and Laubacher (D) leads Colorado's 4th by 2,690."
-    },
-    {
-      "t": "2026-11-05T21:33:00Z",
-      "text": "AP가 뉴저지 2구를 잭 멀럭(민) 승리로 판정해(미 동부 오후 4시 29분) 민주당이 뒤집은 의석이 42곳, 하원이 민주 252·공화 155가 됐다. 미시시피에서는 하이드스미스 캠프가 82개 카운티에 진술서 투표 분리 보관을 요구했고, 콜럼 측은 \"필사적인 쇼\"라고 반박했다. 상원 새 판정은 없다.",
-      "text_en": "AP called New Jersey's 2nd for Zack Mullock (D) at 4:29 p.m. ET, making 42 Democratic flips and a House count of 252-155. In Mississippi, the Hyde-Smith campaign demanded all 82 counties keep affidavit ballots separate; the Colom side called it \"a desperate stunt.\" No new Senate calls."
     }
   ],
   "how": [
