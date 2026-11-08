@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-08T07:31:00Z",
+  "updatedAt": "2026-11-08T08:34:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3910,7 +3910,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",118735,57.1,1],["Vince George","D",82347,39.6,0],["Belinda Fox-Spencer","CST",6904,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",143756,59.4,1],["Ace Parsi","D",98235,40.6,0]]]],
     "WY":[[1,"won","R",0,96.6,[["Chuck Gray","R",99891,54.5,0],["Lisa Kinney","D",61684,33.7,0],["Shawn Johnson","Lib",13665,7.5,0]]]]
   },
-    "districtsAsOf": "2026-11-08T03:26:56Z",
+    "districtsAsOf": "2026-11-08T08:16:39Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
