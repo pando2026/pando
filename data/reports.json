@@ -1,6 +1,495 @@
 {
  "reports": [
   {
+   "id": "2026-w45-post-midterm-oil",
+   "kind": "weekly",
+   "date": "2026-11-08",
+   "period": "11월 2~8일",
+   "updated": "",
+   "title": "선거 뒤 브렌트 한 주 16% 폭락…바다는 닫힌 채, 한국 물가는 아직 14.9%",
+   "hook": "호르무즈는 여전히 평소의 7%만 열려 있는데, 왜 유가는 2020년 이후 가장 크게 떨어졌을까?",
+   "summary": "11월 3일 미국 중간선거에서 민주당이 상·하원을 가져가자, 밴스 부통령이 패인으로 이란 전쟁을 꼽았고 시장은 전쟁이 끝날 쪽으로 값을 매겼다. 브렌트유는 10월 30일 12월물 마지막 종가 117.64달러에서 11월 4일 1월물 93.52달러까지 내려 6일 98.32달러로 마감했고, 한 주 낙폭은 2020년 이후 가장 컸다. 그러나 바다는 그대로다. 호르무즈 해협 통항은 하루 4.4척으로 전쟁 전의 7%에도 못 미치고, 8일에는 미 중부사령부가 이란 육로 보급로를 겨냥한 태스크포스까지 만들었다. 한국에서는 10월 소비자물가 상승률 2.8% 가운데 석유류가 0.56%p를 차지했고, 석유 최고가격제 11차 적용 기간이 13일 끝나 정부는 곧 12차 가격을 정해야 한다.",
+   "points": [
+    {
+     "h": "선거가 값을 움직였다",
+     "body": "유가는 선거 결과를 전쟁의 방향으로 읽고 내렸다. 브렌트는 10월 30일 117.64달러(12월물)였다가 11월 3일 103.60달러로 마감했고, 선거 다음 날인 4일에는 한때 8.6% 내려 94.66달러까지 밀리며 9월 4일 이후 최저를 기록했다. 마감가(1월물)는 93.52달러, 하루 낙폭은 9.7%였다. 계기는 공화당 안에서 나온 말이다. 밴스 부통령은 X에 공화당이 진 이유가 전쟁이며 앞으로의 논의도 거기서 시작해야 한다고 썼고, 트럼프 대통령은 폭스뉴스에 패인을 묻자 \"휘발유 가격\"이라고 답했다. 트럼프는 파이낸셜타임스에 당장 이란을 칠 계획이 없다고도 말했다. 6일 브렌트는 98.32달러로 마감해 한 주 동안 16% 넘게 내렸다.",
+     "src": [
+      0,
+      1,
+      3,
+      13
+     ]
+    },
+    {
+     "h": "바다는 닫힌 채다",
+     "body": "가격은 내렸지만 해협의 사정은 달라지지 않았다. IMF 항만 통항 집계(PortWatch)로 10월 26일~11월 1일 호르무즈를 지난 배는 하루 평균 4.4척(유조선 1.4척)으로, 전쟁 전 1~2월 평균 68척의 7%에도 못 미쳤다. 이 집계는 위치 신호를 끈 배를 세지 못한다는 한계가 있다. 영국 해상무역운영센터(UKMTO) 집계로 이번 주 해협 안팎에서 최소 11척이 공격받고 3척이 가라앉았다(알자지라). 6일 밤에는 이란 케슘섬에 투사체 두 발이 떨어졌고 트럼프는 \"사소한 타격\"이라 불렀다. 8일 미 중부사령부는 쿠퍼 사령관의 지시로 이란의 육로 국경과 카스피해를 통한 무기·이중용도 기술 이동을 막는 '태스크포스 아이언 게이트'를 만들었다고 밝히고, 7월 봉쇄 시작 뒤 상선 147척을 돌려보내고 5척을 항행 불능으로 만들었다고 했다.",
+     "src": [
+      7,
+      5,
+      6
+     ]
+    },
+    {
+     "h": "협상은 말만 오간다",
+     "body": "카타르 총리 셰이크 무함마드 빈 압둘라흐만 알사니는 7일 알자지라TV에서 중재에 '상당한 진전'이 있다고 말했다. 같은 날 아바스 아락치 이란 외무장관은 이틀 동안 오만·카타르·사우디·파키스탄 등 외교장관 12명과 협의했다며 해협 재개 조건 7가지를 밝혔다. 이란의 입장은 10월 초와 같다. 이란 측은 이슬라마바드 양해각서에 바탕을 둔 7가지 조건이 충족되기 전에는 해협을 열지 않겠다고 밝혔고, 수석 협상가인 모하마드 바게르 칼리바프 의회의장은 \"이란의 입장은 완전히 분명하고 단호하다\"고 했다. 협상 사정을 아는 한 관리는 쟁점이 조건의 내용보다 이행 순서라고 로이터에 전했다. 합의 발표는 아직 없고, 모즈타바 하메네이 최고지도자는 서면 성명에서 어느 당이 집권하든 미국의 적대는 이어질 것이라고 했다.",
+     "src": [
+      5,
+      15,
+      0
+     ]
+    },
+    {
+     "h": "공급은 생각보다 넉넉하다",
+     "body": "가격을 누른 것은 정치 기대만이 아니다. 맨스필드 에너지가 정리한 JP모건 추정으로 세계 석유 공급은 소비보다 9월 하루 110만 배럴, 10월 140만 배럴 많았고, 골드만삭스는 재고 감소가 9~10월에 멈췄다고 봤다. 바이텍사(Vortexa) 집계로 10월 걸프 수출은 하루 평균 1,710만 배럴로 9월(1,890만 배럴)보다 줄었지만, 골드만삭스는 걸프 수출이 9월 말부터 2025년 평균 수준을 거의 되찾았다고 보았다. 이번 주 유가를 읽을 때 '봉쇄 때문에 석유가 모자란다'보다 '모자랄 수 있다는 걱정이 값에 얼마나 붙어 있나'를 묻는 편이 정확하다.",
+     "src": [
+      4,
+      0,
+      14
+     ]
+    }
+   ],
+   "why": [
+    {
+     "h": "값에 붙은 것은 배럴이 아니라 걱정",
+     "body": "유가가 크게 오르내린 직접 원인은 물량이 아니라 위험 프리미엄(전쟁 때문에 값에 얹히는 웃돈)의 변동이다. 골드만삭스의 다안 스트루이번 원자재 공동 대표는 10월 중순 브렌트에 \"거의 25달러\"의 전쟁 위험 프리미엄이 붙어 있다고 추정했다. 그런데 이 은행은 11월 1일 보고서에서 12월 브렌트 전망을 90달러에서 105달러로 올렸고, \"상당한 공급 하방 위험이 큰 단기 위험 프리미엄을 지속시킬 것\"이라고 썼다. 이틀 뒤 선거 결과로 시장 가격은 이 전망 밑으로 내려왔다. 같은 사실, 곧 닫힌 해협을 놓고 은행은 걱정을 키웠고 시장은 걱정을 덜었다는 뜻이다. 이것이 한 주 만에 16%가 빠진 이유이자 반대로 다시 튈 수 있는 이유다.",
+     "src": [
+      14,
+      2,
+      3
+     ]
+    },
+    {
+     "h": "선거가 전쟁의 비용을 바꿨다",
+     "body": "선거 결과는 트럼프 행정부가 전쟁을 이어 갈 때 치를 정치적 비용을 바꿨다. 민주당이 상·하원을 모두 가져갔고, 공화당 부통령이 공개적으로 전쟁을 패인으로 지목했다. 시장이 이를 협상 쪽 신호로 읽은 이유다. 그러나 반대 신호도 같은 날 나왔다. 에너버스의 칼 래리는 해결 전에 확전이 먼저 올 수 있다고 봤고, 미 관리들은 악시오스에 군이 대규모 전투 준비를 마무리하는 중이라고 말했다(걸프뉴스). 8일 아이언 게이트 발족은 압박의 수단을 바다 밖 육로로 넓히는 일이다.",
+     "src": [
+      0,
+      1,
+      6
+     ]
+    }
+   ],
+   "korea": [
+    {
+     "h": "물가에는 이미 들어왔다",
+     "body": "유가 급락은 아직 한국 물가 통계에 보이지 않는다. 국가데이터처가 3일 발표한 10월 소비자물가는 1년 전보다 2.8% 올라 9월(2.9%)과 비슷했고, 석유류가 14.9% 올라 전체 상승률을 0.56%p 끌어올렸다. 경유는 19.7%, 휘발유는 11.6% 올랐다. 뉴스토마토에 따르면 정부는 석유 최고가격제가 10월 물가를 0.8%p 낮췄고 제도가 없었다면 3.6%였을 것이라고 설명했다. 이지호 한국은행 부총재보는 물가상황 점검회의에서 근원물가의 높은 오름세를 감안하면 11월 상승률도 2%대 후반일 것이라고 했고, 권대영 재정경제부 제1차관은 물가관계차관회의에서 체감물가가 여전히 높다고 말했다.",
+     "src": [
+      8,
+      9
+     ]
+    },
+    {
+     "h": "12차 최고가격과 출구",
+     "body": "가장 가까운 결정은 석유 최고가격제다. 산업통상부는 10월 16일 11차 최고가격을 휘발유 L당 1,784원, 경유 1,773원, 등유 1,380원으로 4주간 동결했고, 이 기간은 13일에 끝난다. 7차(6월 27일)부터 네 번 연속 같은 가격이다. 주유소 휘발유 평균은 11월 첫째 주 1,855.4원으로 25주 연속 내렸지만 0.3원 내린 '제자리걸음'이고, 같은 주 두바이유는 100.3달러로 15.3달러 내렸다(오피넷). 뉴스토마토는 제도를 끝내면 휘발유가 L당 100원 넘게 오를 수 있다는 우려 때문에 정부가 해제에 신중하다고 전했다. 유가가 내린 지금이 출구를 열 기회인지, 전투 재개 가능성이 큰 시기에 풀어도 되는지를 두고 정부가 선택해야 한다. 유류세 인하(휘발유 15%·경유 25%)도 11월 30일에 끝난다.",
+     "src": [
+      11,
+      10,
+      9
+     ]
+    },
+    {
+     "h": "수입 통계는 가장 비싼 달의 것",
+     "body": "산업통상부의 10월 수출입 동향에서 에너지 수입은 1년 전보다 63.1% 늘었고, 전체 수입은 727.8억 달러(+36.0%)였다. 무역수지는 425.0억 달러 흑자로 반도체 수출이 이끌었다. 이는 브렌트가 100달러를 크게 웃돌던 10월의 통계라서 11월 4일 이후의 하락은 담기지 않았다. 11월 통계가 나오는 12월 초에야 이번 주 하락이 수입액에 어떻게 비치는지 볼 수 있다.",
+     "src": [
+      12,
+      13
+     ]
+    }
+   ],
+   "views": [
+    {
+     "who": "다안 스트루이번·율리아 지에스코바 그릭스비(골드만삭스)",
+     "kind": "전망",
+     "text": "11월 1일 보고서에서 12월 브렌트 전망을 105달러, 2027년 평균을 88달러로 올리고 \"상당한 공급 하방 위험이 큰 단기 위험 프리미엄을 지속시킬 것\"이라고 썼다. 걸프 생산이 지난해보다 하루 350만 배럴 적은 채 이어지면 2027년 평균 130달러, 반대로 풀리면 60달러대까지 갈 수 있다고 봤다(블룸버그).",
+     "src": [
+      2
+     ]
+    },
+    {
+     "who": "데니스 키슬러(BOK 파이낸셜)",
+     "kind": "평가",
+     "text": "중동 수출 증가와 트럼프의 발언이 유가를 누르고 있고, 민주당이 의회를 장악하면 미국의 군사 지출에 제동이 걸려 평화 합의가 앞당겨질 수 있다고 봤다.",
+     "src": [
+      0
+     ]
+    },
+    {
+     "who": "칼 래리(에너버스)",
+     "kind": "전망",
+     "text": "이란 상황의 해결에 앞서 확전이 먼저 올 수 있다고 경고했다.",
+     "src": [
+      0
+     ]
+    },
+    {
+     "who": "밥 맥널리(래피단 에너지그룹 창업자)",
+     "kind": "전망",
+     "text": "CNBC에 전투 재개 가능성을 80%로 보고, 재개되면 브렌트와 WTI가 100달러 위로 오를 수 있다고 말했다(FinanceFeeds 재인용).",
+     "src": [
+      3
+     ]
+    }
+   ],
+   "watch": [
+    {
+     "date": "2026-11-10",
+     "text": "미 에너지정보청(EIA) 단기 에너지 전망(STEO) 11월호가 나온다."
+    },
+    {
+     "date": "2026-11-13",
+     "text": "11차 석유 최고가격(휘발유 1,784원·경유 1,773원) 4주 적용이 끝난다. 12차 가격은 이 무렵 발표될 것으로 보인다."
+    },
+    {
+     "date": "2026-11-26",
+     "text": "한국은행 금융통화위원회가 기준금리를 결정한다."
+    },
+    {
+     "date": "2026-11-29",
+     "text": "OPEC+ 7개국이 다음 월례 회의를 연다."
+    },
+    {
+     "date": "2026-11-30",
+     "text": "유류세 인하(휘발유 15%·경유 25%)가 끝나는 시한이다."
+    }
+   ],
+   "open": [
+    "케슘섬과 호르무즈의 폭발·기뢰 피해는 이란 국영 매체와 혁명수비대의 주장이 중심이고, 미국은 기뢰를 이미 제거했다는 입장이라 독립 확인이 없다.",
+    "이란이 내건 7가지 조건의 구체적 내용과 미국이 어디까지 받아들였는지는 공개되지 않았다. 카타르 총리가 말한 '상당한 진전'도 내용이 밝혀지지 않았다.",
+    "12차 최고가격과 11월 말 유류세 인하 연장 여부는 정부가 아직 발표하지 않았다."
+   ],
+   "ripple": [
+    {
+     "track": "energy",
+     "node": "crude",
+     "label": "국제유가"
+    },
+    {
+     "track": "energy",
+     "node": "hormuz",
+     "label": "호르무즈 해협"
+    },
+    {
+     "track": "energy",
+     "node": "shipping",
+     "label": "유조선 운임·보험"
+    },
+    {
+     "track": "energy",
+     "node": "kr_crude",
+     "label": "원유·가스 도입"
+    },
+    {
+     "track": "energy",
+     "node": "kr_prices",
+     "label": "소비자물가"
+    }
+   ],
+   "countries": [
+    "US",
+    "IR",
+    "QA",
+    "KR"
+   ],
+   "method": "국가데이터처·산업통상부의 공식 통계, 미 중부사령부 발표, 이란 정부 인사 발언을 출발점으로 삼고, 통신사·경제 매체 보도와 국제 통항 집계(IMF PortWatch)로 교차 확인했다. 전문가 평가는 서로 다른 시각을 해석 비교용으로만 실었다.",
+   "figures": [
+    {
+     "id": "brent-election",
+     "kind": "line",
+     "after": [
+      "points",
+      0
+     ],
+     "title": "브렌트 선물 종가, 선거 전후",
+     "caption": "10월 30일 값은 12월물 마지막 종가, 11월 4일·6일은 1월물 종가이고 3일은 보도된 종가다. 월물이 바뀐 값이라 단순 비교에는 한계가 있다. 4일 하루 9.7% 내려 93.52달러까지 갔고 6일 98.32달러로 올랐다.",
+     "unit": "달러/배럴",
+     "series": [
+      {
+       "name": "브렌트유(선물)",
+       "points": [
+        [
+         "2026-10-23",
+         116.72
+        ],
+        [
+         "2026-10-30",
+         117.64
+        ],
+        [
+         "2026-11-03",
+         103.6
+        ],
+        [
+         "2026-11-04",
+         93.52
+        ],
+        [
+         "2026-11-06",
+         98.32
+        ]
+       ]
+      }
+     ],
+     "marks": [
+      [
+       "2026-11-03",
+       "미 중간선거"
+      ]
+     ],
+     "src": [
+      [
+       "Investing.com",
+       "Oil hits six-month highs as Hormuz attacks threaten Iran peace efforts (호르무즈 공격이 이란 평화 노력 위협…유가 6개월 최고) · 2026-10-31",
+       "https://ca.investing.com/news/economy-news/oil-hits-sixmonth-highs-as-hormuz-attacks-threaten-iran-peace-efforts-4919701",
+       "press"
+      ],
+      [
+       "Gulf News",
+       "Crude slides toward $93, WTI drops to $87 as Trump rules out immediate Iran strikes (브렌트 93달러대 하락, 3일 종가 103.60달러) · 2026-11-05",
+       "https://gulfnews.com/amp/story/business%2Fenergy%2Fcrude-slides-toward-93-wti-drops-to-87-as-trump-rules-out-immediate-iran-strikes-1.500736498",
+       "press"
+      ],
+      [
+       "FinanceFeeds(CNBC 인용)",
+       "Brent Crude Oil Price: $98.32 After 16% Weekly Drop (브렌트 98.32달러, 한 주 16% 하락) · 2026-11-07",
+       "https://financefeeds.com/brent-crude-oil-price-98-32-saturday-week-ahead-us-iran-deal-bets-cpi-10-november-bull-105-bear-93/",
+       "press"
+      ],
+      [
+       "AP(CBS News 라이브 게재)",
+       "U.S. celebrates 100 days since reinstating blockade on Strait of Hormuz · 2026-10-22 (10월 23일 브렌트 116.72달러는 판도 10월 23일 주간 리포트 기록)",
+       "https://www.cbsnews.com/live-updates/iran-war-trump-us-ceasefire-talks-ongoing/",
+       "press"
+      ]
+     ]
+    },
+    {
+     "id": "hormuz-gap",
+     "kind": "bar",
+     "after": [
+      "points",
+      1
+     ],
+     "title": "호르무즈 하루 통항 척수",
+     "caption": "전쟁 전 1~2월 평균 68척에 비해 10월 26일~11월 1일은 하루 4.4척이다. 위치 신호를 끈 배와 오만만 환적은 이 집계에 잡히지 않는다.",
+     "unit": "척/일",
+     "series": [
+      {
+       "name": "하루 통항",
+       "points": [
+        [
+         "전쟁 전(1~2월 평균)",
+         68
+        ],
+        [
+         "10/26~11/1 평균",
+         4.4
+        ]
+       ]
+      }
+     ],
+     "src": [
+      [
+       "IMF PortWatch",
+       "Daily Chokepoint Transit Calls — Strait of Hormuz (해협 일일 통항 집계) · 2026-11-07 조회",
+       "https://portwatch.imf.org/pages/chokepoints",
+       "research"
+      ]
+     ]
+    },
+    {
+     "id": "week-timeline",
+     "kind": "timeline",
+     "after": [
+      "why",
+      0
+     ],
+     "title": "선거에서 아이언 게이트까지 일주일",
+     "caption": "전망 상향, 선거, 유가 폭락, 군사 압박이 한 주 안에 겹쳤다.",
+     "events": [
+      [
+       "2026-11-01",
+       "골드만삭스, 12월 브렌트 전망 90→105달러로 상향"
+      ],
+      [
+       "2026-11-03",
+       "미국 중간선거. 민주당 상·하원 장악, 브렌트 103.60달러 마감"
+      ],
+      [
+       "2026-11-04",
+       "브렌트 한때 94.66달러, 마감 93.52달러. 밴스 '패인은 전쟁'"
+      ],
+      [
+       "2026-11-06",
+       "케슘섬 투사체 2발, 트럼프 '사소한 타격'. 브렌트 98.32달러"
+      ],
+      [
+       "2026-11-07",
+       "카타르 총리 '상당한 진전', 아락치 7가지 조건 제시"
+      ],
+      [
+       "2026-11-08",
+       "미 중부사령부 아이언 게이트 발족, 상선 147척 회항 집계"
+      ]
+     ],
+     "src": [
+      [
+       "gCaptain(블룸버그 전재)",
+       "Goldman Hikes Oil Forecasts on 'Substantial' Risks to Supply · 2026-11-02",
+       "https://gcaptain.com/goldman-hikes-oil-forecasts-on-substantial-risks-to-supply/",
+       "press"
+      ],
+      [
+       "OilPrice.com",
+       "Oil Crashes 9% as Trump and Vance Blame Iran War for Midterm Rout · 2026-11-04",
+       "https://oilprice.com/Latest-Energy-News/World-News/Oil-Crashes-9-as-Trump-and-Vance-Blame-Iran-War-for-Midterm-Rout.amp.html",
+       "press"
+      ],
+      [
+       "Al Jazeera",
+       "US launches task force to disrupt Iran's land-based supply routes · 2026-11-08",
+       "https://www.aljazeera.com/news/2026/11/8/us-launches-task-force-to-disrupt-irans-land-based-supply-routes",
+       "press"
+      ],
+      [
+       "Al Jazeera",
+       "Qeshm island and Hormuz hit, as mediators try to prevent US-Iran escalation · 2026-11-07",
+       "https://www.aljazeera.com/news/2026/11/7/qeshm-island-and-hormuz-hit-as-mediators-try-to-prevent-us-iran-escalation",
+       "press"
+      ]
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "outlet": "OilPrice.com",
+     "title": "Oil Crashes 9% as Trump and Vance Blame Iran War for Midterm Rout",
+     "titleKo": "트럼프·밴스가 중간선거 참패를 이란 전쟁 탓으로 돌리자 유가 9% 폭락",
+     "date": "2026-11-04",
+     "url": "https://oilprice.com/Latest-Energy-News/World-News/Oil-Crashes-9-as-Trump-and-Vance-Blame-Iran-War-for-Midterm-Rout.amp.html",
+     "tier": "press"
+    },
+    {
+     "outlet": "Gulf News",
+     "title": "Crude slides toward $93, WTI drops to $87 as Trump rules out immediate Iran strikes",
+     "titleKo": "트럼프가 즉각 공격을 배제하자 브렌트 93달러대로 하락",
+     "date": "2026-11-05",
+     "url": "https://gulfnews.com/amp/story/business%2Fenergy%2Fcrude-slides-toward-93-wti-drops-to-87-as-trump-rules-out-immediate-iran-strikes-1.500736498",
+     "tier": "press"
+    },
+    {
+     "outlet": "gCaptain(블룸버그 전재)",
+     "title": "Goldman Hikes Oil Forecasts on 'Substantial' Risks to Supply",
+     "titleKo": "골드만삭스, '상당한' 공급 위험을 이유로 유가 전망 상향",
+     "date": "2026-11-02",
+     "url": "https://gcaptain.com/goldman-hikes-oil-forecasts-on-substantial-risks-to-supply/",
+     "tier": "press"
+    },
+    {
+     "outlet": "FinanceFeeds(CNBC 인용)",
+     "title": "Brent Crude Oil Price: $98.32 After 16% Weekly Drop",
+     "titleKo": "브렌트 98.32달러, 한 주 16% 하락",
+     "date": "2026-11-07",
+     "url": "https://financefeeds.com/brent-crude-oil-price-98-32-saturday-week-ahead-us-iran-deal-bets-cpi-10-november-bull-105-bear-93/",
+     "tier": "press"
+    },
+    {
+     "outlet": "Mansfield Energy",
+     "title": "Week in Review - Oil Prices Retreat on Iran Peace Hopes and Weaker Global Demand",
+     "titleKo": "주간 리뷰: 이란 평화 기대와 수요 약화에 유가 후퇴",
+     "date": "2026-11-06",
+     "url": "https://mansfield.energy/2026/11/06/week-in-review-oil-prices-retreat-on-iran-peace-hopes-and-weaker-global-demand/",
+     "tier": "press"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "Qeshm island and Hormuz hit, as mediators try to prevent US-Iran escalation",
+     "titleKo": "케슘섬·호르무즈 피격, 중재단은 미·이란 확전 막으려 노력",
+     "date": "2026-11-07",
+     "url": "https://www.aljazeera.com/news/2026/11/7/qeshm-island-and-hormuz-hit-as-mediators-try-to-prevent-us-iran-escalation",
+     "tier": "press"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "US launches task force to disrupt Iran's land-based supply routes",
+     "titleKo": "미국, 이란 육로 보급로 차단 태스크포스 발족",
+     "date": "2026-11-08",
+     "url": "https://www.aljazeera.com/news/2026/11/8/us-launches-task-force-to-disrupt-irans-land-based-supply-routes",
+     "tier": "press"
+    },
+    {
+     "outlet": "IMF PortWatch",
+     "title": "Daily Chokepoint Transit Calls — Strait of Hormuz (2026-10-26~11-01)",
+     "titleKo": "해협 일일 통항 집계: 호르무즈",
+     "date": "2026-11-07",
+     "url": "https://portwatch.imf.org/pages/chokepoints",
+     "tier": "research"
+    },
+    {
+     "outlet": "국가데이터처(정책브리핑)",
+     "title": "2026년 10월 소비자물가동향",
+     "titleKo": "2026년 10월 소비자물가동향",
+     "date": "2026-11-03",
+     "url": "https://www.korea.kr/briefing/policyBriefingView.do?newsId=156787698",
+     "tier": "official"
+    },
+    {
+     "outlet": "뉴스토마토",
+     "title": "소비자물가 두 달째 '2%대 ↑'…'석유 최고가격제' 딜레마",
+     "titleKo": "소비자물가 두 달째 2%대…석유 최고가격제 딜레마",
+     "date": "2026-11-03",
+     "url": "https://newstomato.com/ReadNews.aspx?no=1319121",
+     "tier": "press"
+    },
+    {
+     "outlet": "이비엔뉴스(한국석유공사 오피넷 집계)",
+     "title": "전국 주유소 기름값 25주 연속 하락…하락 폭 줄며 사실상 보합세",
+     "titleKo": "전국 주유소 기름값 25주 연속 하락",
+     "date": "2026-11-07",
+     "url": "https://www.ebn.co.kr/news/articleView.html?idxno=1730797",
+     "tier": "press"
+    },
+    {
+     "outlet": "MTN 머니투데이방송",
+     "title": "국제유가 100달러대에도…정부, 석유 최고가격 4차례 연속 동결",
+     "titleKo": "국제유가 100달러대에도 정부, 석유 최고가격 4차례 연속 동결",
+     "date": "2026-10-16",
+     "url": "https://news.mtn.co.kr/article/2026101618441844919",
+     "tier": "press"
+    },
+    {
+     "outlet": "산업통상부(KDI 경제교육·정보센터 게재)",
+     "title": "2026년 10월 수출입 동향",
+     "titleKo": "2026년 10월 수출입 동향",
+     "date": "2026-11-01",
+     "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=288880",
+     "tier": "official"
+    },
+    {
+     "outlet": "Investing.com",
+     "title": "Oil hits six-month highs as Hormuz attacks threaten Iran peace efforts",
+     "titleKo": "호르무즈 공격이 이란 평화 노력 위협…유가 6개월 최고",
+     "date": "2026-10-31",
+     "url": "https://ca.investing.com/news/economy-news/oil-hits-sixmonth-highs-as-hormuz-attacks-threaten-iran-peace-efforts-4919701",
+     "tier": "press"
+    },
+    {
+     "outlet": "investingLive",
+     "title": "Goldman Sachs sees $25 war risk premium in Brent, forecasts $90 in December and $80 in 2027",
+     "titleKo": "골드만삭스, 브렌트에 전쟁 위험 프리미엄 25달러 반영",
+     "date": "2026-10-19",
+     "url": "https://investinglive.com/commodities/goldman-sachs-sees-25-war-risk-premium-in-brent-forecasts-90-in-december-and-80-in-2027/",
+     "tier": "press"
+    },
+    {
+     "outlet": "로이터(Baird Maritime 전재)",
+     "title": "Reopening Strait of Hormuz depends on seven conditions, Iran says",
+     "titleKo": "호르무즈 재개는 7가지 조건에 달렸다, 이란",
+     "date": "2026-10-05",
+     "url": "https://www.bairdmaritime.com/shipping/reopening-strait-of-hormuz-depends-on-seven-conditions-iran-says",
+     "tier": "press"
+    }
+   ]
+  },
+  {
    "id": "2026-w44-rare-earth-nov10",
    "kind": "weekly",
    "date": "2026-11-01",
