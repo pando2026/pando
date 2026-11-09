@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-09T10:35:00Z",
+  "updatedAt": "2026-11-09T11:40:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3919,6 +3919,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-09T11:40:00Z",
+      "text": "새 판정 없음(미 동부 9일 오전 6시 40분 확인): NBC 상원 결과 화면(집계 AP)에서 미시시피는 스콧 콜럼(민) 49.1% 대 신디 하이드스미스(공) 48.8%, 알래스카는 메리 펠톨라(민) 48.2% 대 댄 설리번(공) 47.9%로 직전 확인 때와 같아 민주 54·공화 44가 유지된다. NBC 하원 화면도 미 동부 8일 오후 9시 3분 이후 바뀌지 않아 뒤집힌 선거구 45곳·미판정 21곳 그대로다.",
+      "text_en": "No new calls (checked 6:40 a.m. ET Nov 9): On NBC's Senate results page (AP data), Mississippi has Scott Colom (D) at 49.1% to Cindy Hyde-Smith (R) at 48.8%, and Alaska has Mary Peltola (D) at 48.2% to Dan Sullivan (R) at 47.9%, the same as the previous check, so the Senate stays at Democrats 54, Republicans 44. NBC's House page has not changed since 9:03 p.m. ET Nov 8, still showing 45 flipped districts and 21 uncalled."
+    },
+    {
       "t": "2026-11-09T10:35:00Z",
       "text": "새 판정 없음(미 동부 9일 오전 5시 35분 확인): 폭스뉴스 상원 결과 화면(AP 판정 목록)에서 미시시피는 스콧 콜럼(민) 46만 7930표(49.08%) 대 신디 하이드스미스(공) 46만 5356표(48.81%), 알래스카는 메리 펠톨라(민) 10만 2962표(48.17%) 대 댄 설리번(공) 10만 2325표(47.88%, 74.09% 개표)로 숫자가 그대로라 민주 54·공화 44가 유지된다. 폭스뉴스 하원 화면의 마지막 AP 판정은 여전히 6일 오후 8시 46분 캘리포니아 14구이고, NBC 하원 화면은 미 동부 8일 오후 9시 3분 이후 바뀌지 않아 미판정 21곳이다.",
       "text_en": "No new calls (checked 5:35 a.m. ET Nov 9): On the Fox News Senate results page (AP race calls), Mississippi has Scott Colom (D) at 467,930 (49.08%) to Cindy Hyde-Smith (R) at 465,356 (48.81%), and Alaska has Mary Peltola (D) at 102,962 (48.17%) to Dan Sullivan (R) at 102,325 (47.88%) with 74.09% in. The numbers are unchanged, so the Senate stays at Democrats 54, Republicans 44. The last AP call on the Fox News House page is still California's 14th District at 8:46 p.m. Nov 6, and the NBC House page has not changed since 9:03 p.m. ET Nov 8, with 21 races uncalled."
@@ -4062,11 +4067,6 @@
       "t": "2026-11-08T05:34:00Z",
       "text": "새 판정 없음(미 동부 8일 오전 0시 34분 확인): 폭스뉴스 AP 판정 목록의 마지막 하원 판정은 여전히 6일 오후 8시 46분 캘리포니아 14구이고, 의석은 민주 254·공화 162, NBC 하원 미판정은 21곳 그대로다. 상원은 폭스뉴스 화면(AP 집계)에서 미시시피(스콧 콜럼(민) 46만 7930표 대 신디 하이드스미스(공) 46만 5356표)와 알래스카(메리 펠톨라(민) 10만 2962표 대 댄 설리번(공) 10만 2325표)가 바뀌지 않아 민주 54·공화 44가 유지된다.",
       "text_en": "No new calls (checked 12:34 a.m. ET Nov 8): the last House call on the Fox News AP race-call list is still California's 14th at 8:46 p.m. Nov 6, with Democrats 254, Republicans 162, and NBC still has 21 House races uncalled. In the Senate, the Fox News page (AP data) shows Mississippi (Scott Colom (D) 467,930 vs. Cindy Hyde-Smith (R) 465,356) and Alaska (Mary Peltola (D) 102,962 vs. Dan Sullivan (R) 102,325) unchanged, so the count stays Democrats 54, Republicans 44."
-    },
-    {
-      "t": "2026-11-08T04:34:00Z",
-      "text": "새 판정 없음(미 동부 7일 오후 11시 34분 확인): 폭스뉴스 AP 판정 목록의 마지막 하원 판정은 여전히 6일 오후 8시 46분 캘리포니아 14구이고, NBC 하원 미판정은 21곳 그대로다. 상원은 폭스뉴스 화면(AP 집계)에서 미시시피(스콧 콜럼(민) 46만 7930표 대 신디 하이드스미스(공) 46만 5356표)와 알래스카(메리 펠톨라(민) 10만 2962표 대 댄 설리번(공) 10만 2325표)가 바뀌지 않아 민주 54·공화 44가 유지된다.",
-      "text_en": "No new calls (checked 11:34 p.m. ET Nov 7): the last House call on the Fox News AP race-call list is still California's 14th at 8:46 p.m. Nov 6, and NBC still has 21 House races uncalled. In the Senate, the Fox News page (AP data) shows Mississippi (Scott Colom (D) 467,930 vs. Cindy Hyde-Smith (R) 465,356) and Alaska (Mary Peltola (D) 102,962 vs. Dan Sullivan (R) 102,325) unchanged, so the count stays Democrats 54, Republicans 44."
     }
   ],
   "how": [
