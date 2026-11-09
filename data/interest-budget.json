@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-08",
+ "asOf": "2026-11-09",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -3754,6 +3754,155 @@
     ]
    ],
    "tier": "press"
+  },
+  "HK": {
+   "fiscalYear": "2026-27",
+   "status": "확정 예산",
+   "scope": "자본공사준비기금(CWRF) 정부채권 이자 및 기타 비용 — 정부 총지출(자본지출)에 포함",
+   "interest": {
+    "value": 16.641,
+    "unit": "십억 홍콩달러",
+    "label": "정부채권 이자 및 기타 비용(자본공사준비기금)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 843.416,
+    "unit": "십억 홍콩달러",
+    "label": "정부 총지출"
+   },
+   "share": 2.0,
+   "prev": {
+    "fiscalYear": "2025-26(수정 예산)",
+    "value": 10.556,
+    "unit": "십억 홍콩달러"
+   },
+   "note": "금액은 '이자와 기타 비용'이 묶여 있어 순수 이자만이 아니고 채권 원금 상환(597.1억)은 별도 항목이다. 정부채권 프로그램을 관리하는 채권기금(Bond Fund, 일반 지출 밖)은 이와 별개로 2026-27 채권 이자 21.8억 홍콩달러(전년 수정 49.0억)를 지급할 예정이다.",
+   "sources": [
+    [
+     "홍콩 정부 예산 웹사이트",
+     "Capital Works Reserve Fund 2026-27 Estimates(자본공사준비기금 2026-27 예산) · 2026-02-25",
+     "https://www.budget.gov.hk/2026/eng/pdf/cwrf-00.pdf"
+    ],
+    [
+     "홍콩 정부 예산 웹사이트",
+     "Bond Fund 2026-27 Estimates(채권기금 2026-27 예산) · 2026-02-25",
+     "https://www.budget.gov.hk/2026/eng/pdf/bond.pdf"
+    ],
+    [
+     "홍콩 정부 예산 웹사이트",
+     "The 2026-27 Budget: Budget Speech by the Financial Secretary(2026-27 예산 연설, 재정사 사장 폴 챈) · 2026-02-25",
+     "https://www.budget.gov.hk/2026/eng/pdf/e_budget_speech_2026-27.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "PY": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙행정부 경제재정부 소관 국채 이자(집행계획 715·719·721·722·725·729 항목 합계, 수수료 제외)",
+   "interest": {
+    "value": 8.496,
+    "unit": "조 과라니",
+    "label": "국채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 87.906,
+    "unit": "조 과라니",
+    "label": "중앙행정부 지출(재원조달 포함)"
+   },
+   "share": 9.7,
+   "prev": {
+    "fiscalYear": "2025(집행)",
+    "value": 6.968,
+    "unit": "조 과라니"
+   },
+   "note": "이자는 경제재정부 지출 집행·편성 보고서의 이자 6개 항목을 더한 값이며 기능별 '공공부채 서비스' 17.95조는 원금 상환과 재원조달분을 포함한다. 전체 일반예산 166.3조 대비로는 5.1%이나 분권기관·재원조달이 섞여 있어 비율은 중앙행정부 지출 기준이다.",
+   "sources": [
+    [
+     "경제재정부(MEF)",
+     "Ejecución y Programación de Gastos, Proyecto de Ley 2027 (지출 집행·편성 보고서) · 2026-08-31",
+     "https://www.mef.gov.py/sites/default/files/2026-09/EJECUCION_0.pdf"
+    ],
+    [
+     "경제재정부(MEF)",
+     "Proyecto de Ley que aprueba el Presupuesto General de la Nación para el Ejercicio Fiscal 2027 (2027 회계연도 일반예산 법안) · 2026-09-01",
+     "https://www.mef.gov.py/sites/default/files/2026-09/Proyecto_PGN_2027.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "NI": {
+   "fiscalYear": "2026",
+   "status": "추경 반영",
+   "scope": "중앙정부(Gobierno Central) 갱신 예산 — 1~6월 집행 보고서 기준",
+   "interest": {
+    "value": 10503.2,
+    "unit": "백만 코르도바",
+    "label": "공공부채 이자(국내 1,286.1 + 대외 9,217.1)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 167273.2,
+    "unit": "백만 코르도바",
+    "label": "총지출(갱신 예산)"
+   },
+   "share": 6.3,
+   "note": "2027년 예산안은 국채 서비스·이자 배정액을 공개하지 않아(예산안 전문 미공개) 가장 최신인 2026년 갱신 예산 값을 썼다. 이자·수수료 합계는 13,274.8백만 C$, 원금 상환(19,299.5)까지 합친 국채 서비스는 32,574.3백만 C$이며, 2026년 1~6월 이자 집행은 4,612.6백만 C$(43.9%)다.",
+   "sources": [
+    [
+     "Ministerio de Hacienda y Crédito Público(재무공채부)",
+     "Informe de Ejecución Presupuestaria Enero–Junio 2026(2026년 1~6월 예산 집행 보고서) · 2026-07",
+     "https://www.hacienda.gob.ni/wp-content/uploads/2026/08/Informe-de-Ejecucion-Presupuestaria-Enero-Junio-2026.pdf"
+    ],
+    [
+     "Nicaragua Investiga",
+     "Presupuesto 2027: Ortega cobrará más impuestos y reduce el gasto contra la pobreza(2027 예산 — 세금은 더 걷고 빈곤 지출은 줄인다) · 2026-10-15",
+     "https://nicaraguainvestiga.com/economia/175077-presupuesto-2027-nicaragua-menos-inversion-pobreza/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "CG": {
+   "fiscalYear": "2026(2026.1~12)",
+   "status": "확정 예산",
+   "scope": "일반예산 지출 중 제1편 국채 이자·금융비용(원금 상환은 재정 조달 계정으로 제외)",
+   "interest": {
+    "value": 193.1,
+    "unit": "십억 CFA프랑",
+    "label": "국채 이자·금융비용"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 2139.3,
+    "unit": "십억 CFA프랑",
+    "label": "일반예산 지출"
+   },
+   "share": 9.0,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 311.6,
+    "unit": "십억 CFA프랑"
+   },
+   "note": "2025년 값은 결산 보고의 이자 집행액(3,115.68억)이며 예산이 아닌 실적이다. 7월 개정 재정법은 총지출만 올렸고 이자 개정액과 2027년안의 이자 금액은 공개된 범위에서 확인되지 않았다.",
+   "sources": [
+    [
+     "콩고공화국 관보(Journal officiel)",
+     "Loi n° 42 du 31 décembre 2025 portant loi de finances pour l’année 2026(2026 재정법 제42호) · 2026-01-05",
+     "https://sgg.cg/JO/2026/congo-jo-2026-3-3.pdf"
+    ],
+    [
+     "콩고공화국 정부 총무실(SGG)",
+     "Compte rendu du Conseil des ministres du 7 octobre 2026(2026-10-07 국무회의 기록) · 2026-10-07",
+     "https://sgg.cg/ccm/compte-rendu-cm-07-octobre-2026.pdf"
+    ],
+    [
+     "콩고공화국 정부 총무실(SGG)",
+     "Compte rendu du Conseil des ministres du 30 juin 2026(2026-06-30 국무회의 기록) · 2026-06-30",
+     "https://sgg.cg/ccm/cr-cm-30-juin-2026.pdf"
+    ]
+   ],
+   "tier": "official"
   }
  }
 }
