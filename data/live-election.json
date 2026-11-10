@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-10T12:35:00Z",
+  "updatedAt": "2026-11-10T13:40:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3907,7 +3907,7 @@
     "MO":[[1,"won","D",0,99,[["Wesley Bell","D",189175,81.5,1],["Paul Berry","R",32362,13.9,0],["Tom Schmitz","Lib",10613,4.6,0]]],[2,"won","D",1,99,[["Fred Wellman","D",169477,51.1,0],["Ann Wagner","R",153132,46.2,1],["Brandon Daugherty","Lib",8782,2.7,0]]],[3,"won","R",0,99,[["Bob Onder","R",149268,52.9,1],["Bethany Mann","D",125284,44.4,0],["Jim Higgins","Lib",7702,2.7,0]]],[4,"won","R",0,99,[["Mark Alford","R",154256,61.5,1],["Jordan Herrera","D",89196,35.6,0],["Thomas Holbrook","Lib",7290,2.9,0]]],[5,"won","D",0,99,[["Emanuel Cleaver","D",179256,69.5,1],["Rick Brattin","R",72572,28.1,0],["Randall Langkraehr","Lib",6128,2.4,0]]],[6,"won","R",0,99,[["Chris Stigall","R",151374,58.7,0],["Josh Smead","D",100460,39,0],["Andy Maidment","Lib",6031,2.3,0]]],[7,"won","R",0,99,[["Eric Burlison","R",158413,62.2,1],["Missi Hesketh","D",90186,35.4,0],["Kevin Craig","Lib",6141,2.4,0]]],[8,"won","R",0,99,[["Jason Smith","R",152685,67.7,1],["Chris Reichard","D",65754,29.2,0],["Rebecca Sharpe Lombard","Lib",6997,3.1,0]]]],
     "MS":[[1,"won","R",0,97.9,[["Trent Kelly","R",139794,58.3,1],["Cliff Johnson","D",96470,40.3,0],["Johnny Baucom","Lib",3343,1.4,0]]],[2,"won","D",0,96.7,[["Bennie Thompson","D",165262,67.6,1],["Ron Eller","R",73254,30,0],["Bennie Foster","I",5887,2.4,0]]],[3,"won","R",0,97.1,[["Michael Guest","R",144727,57.5,1],["Michael Chiaradio","D",103823,41.2,0],["Erik Kiehle","Lib",3157,1.3,0]]],[4,"won","R",0,97.8,[["Mike Ezell","R",131243,61.1,1],["Jeffrey Hulum","D",76969,35.8,0],["Carl Boyanton","I",6596,3.1,0]]]],
     "MT":[[1,"won","D",1,98.4,[["Sam Forstag","D",133226,50.4,0],["Aaron Flint","R",123336,46.7,0],["Nick Sheedy","Lib",7593,2.9,0]]],[2,"won","R",0,97.6,[["Troy Downing","R",127354,58.2,1],["Brian Miller","D",70431,32.2,0],["Michael Eisenhauer","I",17079,7.8,0]]]],
-    "NC":[[1,"won","D",0,99,[["Don Davis","D",156572,50.1,1],["Laurie Buckhout","R",146287,46.8,0],["Tom Bailey","Lib",9881,3.2,0]]],[2,"won","D",0,99,[["Deborah Ross","D",245402,75.1,1],["Eugene Douglass","R",76763,23.5,0],["Matthew Laszacs","Lib",4267,1.3,0]]],[3,"lead","R",0,98.8,[["Greg Murphy","R",117583,49.4,1],["Raymond Smith","D",117350,49.3,0],["Daniel Cavender","Lib",2971,1.2,0]]],[4,"won","D",0,98.9,[["Valerie Foushee","D",283255,79.1,1],["Max Ganorkar","R",67799,18.9,0],["Guy Meilleur","Lib",6961,1.9,0]]],[5,"lead","D",0,99,[["Chuck Hubbard","D",139034,48.7,0],["Virginia Foxx","R",138935,48.7,1],["Robert Luffman","Lib",7529,2.6,0]]],[6,"won","D",1,99,[["Cyril Jefferson","D",140001,51.1,0],["Addison McDowell","R",133737,48.9,1]]],[7,"lead","R",0,99,[["David Rouzer","R",159985,49.9,1],["Kimberly Hardy","D",157560,49.1,0],["Maad Abu-Ghazalah","Lib",3135,1,0]]],[8,"won","R",0,98.9,[["Mark Harris","R",147094,50.4,1],["Colby Watson","D",141915,48.6,0],["Bo Whitehead","Grn",2890,1,0]]],[9,"won","D",1,99,[["Richard Ojeda","D",138707,51.1,0],["Richard Hudson","R",132692,48.9,1]]],[10,"won","R",0,99,[["Pat Harrigan","R",146166,49.7,1],["Ashley Bell","D",143137,48.7,0],["Steven Feldman","Lib",4673,1.6,0]]],[11,"won","D",1,99,[["Jamie Ager","D",195627,57.1,0],["Jennifer Balkcom","R",141422,41.3,0],["Travis Groo","Lib",5330,1.6,0]]],[12,"won","D",0,99,[["Alma Adams","D",219672,81.2,1],["Jack Codiga","R",50864,18.8,0]]],[13,"won","D",1,99,[["Paul Barringer","D",159981,50.5,0],["Brad Knott","R",152329,48.1,1],["Steven Swinton","Lib",4479,1.4,0]]],[14,"won","D",1,99,[["Lakesha Womack","D",147388,51.1,0],["Tim Moore","R",140973,48.9,1]]]],
+    "NC":[[1,"won","D",0,99,[["Don Davis","D",156590,50.1,1],["Laurie Buckhout","R",146295,46.8,0],["Tom Bailey","Lib",9881,3.2,0]]],[2,"won","D",0,99,[["Deborah Ross","D",245402,75.1,1],["Eugene Douglass","R",76763,23.5,0],["Matthew Laszacs","Lib",4267,1.3,0]]],[3,"lead","R",0,98.8,[["Greg Murphy","R",117583,49.4,1],["Raymond Smith","D",117350,49.3,0],["Daniel Cavender","Lib",2971,1.2,0]]],[4,"won","D",0,98.9,[["Valerie Foushee","D",283255,79.1,1],["Max Ganorkar","R",67799,18.9,0],["Guy Meilleur","Lib",6961,1.9,0]]],[5,"lead","D",0,99,[["Chuck Hubbard","D",139034,48.7,0],["Virginia Foxx","R",138935,48.7,1],["Robert Luffman","Lib",7529,2.6,0]]],[6,"won","D",1,99,[["Cyril Jefferson","D",140001,51.1,0],["Addison McDowell","R",133737,48.9,1]]],[7,"lead","R",0,99,[["David Rouzer","R",159985,49.9,1],["Kimberly Hardy","D",157560,49.1,0],["Maad Abu-Ghazalah","Lib",3135,1,0]]],[8,"won","R",0,98.9,[["Mark Harris","R",147094,50.4,1],["Colby Watson","D",141915,48.6,0],["Bo Whitehead","Grn",2890,1,0]]],[9,"won","D",1,99,[["Richard Ojeda","D",138707,51.1,0],["Richard Hudson","R",132692,48.9,1]]],[10,"won","R",0,99,[["Pat Harrigan","R",146166,49.7,1],["Ashley Bell","D",143137,48.7,0],["Steven Feldman","Lib",4673,1.6,0]]],[11,"won","D",1,99,[["Jamie Ager","D",195627,57.1,0],["Jennifer Balkcom","R",141422,41.3,0],["Travis Groo","Lib",5330,1.6,0]]],[12,"won","D",0,99,[["Alma Adams","D",219672,81.2,1],["Jack Codiga","R",50864,18.8,0]]],[13,"won","D",1,99,[["Paul Barringer","D",159981,50.5,0],["Brad Knott","R",152329,48.1,1],["Steven Swinton","Lib",4479,1.4,0]]],[14,"won","D",1,99,[["Lakesha Womack","D",147388,51.1,0],["Tim Moore","R",140973,48.9,1]]]],
     "ND":[[1,"won","R",0,98.3,[["Julie Fedorchak","R",134477,57.4,1],["Trygve Hammer","D",85892,36.7,0],["Charles Tuttle","I",9282,4,0]]]],
     "NE":[[1,"won","R",0,96.8,[["Mike Flood","R",127024,50,1],["Chris Backemeyer","D",118141,46.5,0],["Nik Sandman","Lib",4611,1.8,0]]],[2,"won","D",1,96.2,[["Denise Powell","D",143785,56.6,0],["Brinker Harding","R",103494,40.8,0],["Eric Foreman","Lib",6557,2.6,0]]],[3,"won","R",0,98.5,[["Adrian Smith","R",174101,71,1],["Becky Stille","D",48938,20,0],["Mark Cohen","NP",8083,3.3,0]]]],
     "NH":[[1,"won","D",0,99,[["Stefany Shaheen","D",180338,57.1,0],["Anthony DiLorenzo","R",135606,42.9,0]]],[2,"won","D",0,99,[["Maggie Goodlander","D",185845,58.8,1],["Lily Tang Williams","R",122644,38.8,0],["Robbie Mahrou","I",7478,2.4,0]]]],
@@ -3932,7 +3932,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",119040,57.1,1],["Vince George","D",82683,39.6,0],["Belinda Fox-Spencer","CST",6918,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",144056,59.4,1],["Ace Parsi","D",98573,40.6,0]]]],
     "WY":[[1,"won","R",0,96.6,[["Chuck Gray","R",99891,54.5,0],["Lisa Kinney","D",61684,33.7,0],["Shawn Johnson","Lib",13665,7.5,0]]]]
   },
-    "districtsAsOf": "2026-11-10T11:02:47Z",
+    "districtsAsOf": "2026-11-10T13:24:51Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3940,6 +3940,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-10T13:40:00Z",
+      "text": "새 판정 없음(미 동부 10일 오전 8시 40분 확인): 상원 미시시피·알래스카는 여전히 AP 판정이 없다. 미시시피는 우편 투표 도착과 진술서 투표 신분 확인 기한이 오늘(10일)이고 카운티 인증 기한은 13일이며, 알래스카는 주 선거국의 10일 공표를 기다린다. NBC 하원 화면(집계 AP)은 뒤집힌 선거구 45곳·미판정 17곳 그대로다.",
+      "text_en": "No new calls (checked 8:40 a.m. ET Nov 10): the Mississippi and Alaska Senate races still have no AP call. Mississippi's deadline for mail ballots to arrive and for affidavit voters to show ID is today (Nov 10), with county certification due Nov 13; Alaska awaits its election office's Nov 10 update. NBC's House page (AP data) still shows 45 flipped districts and 17 uncalled."
+    },
     {
       "t": "2026-11-10T12:35:00Z",
       "text": "새 판정 없음(미 동부 10일 오전 7시 35분 확인): 상원 미시시피·알래스카는 여전히 AP 판정이 없고, 알래스카 주 선거국의 10일 공표와 미시시피의 진술서 투표 확인 기한(10일)을 기다린다. NBC 하원 화면(집계 AP)은 뒤집힌 선거구 45곳·미판정 17곳 그대로다.",
@@ -4084,11 +4089,6 @@
       "t": "2026-11-09T08:37:00Z",
       "text": "새 판정 없음(미 동부 9일 오전 3시 37분 확인): 폭스뉴스 상원 결과 화면(AP 판정 목록)에서 미시시피는 스콧 콜럼(민) 46만 7930표(49.08%) 대 신디 하이드스미스(공) 46만 5356표(48.81%, 96.92% 개표), 알래스카는 메리 펠톨라(민) 10만 2962표(48.17%) 대 댄 설리번(공) 10만 2325표(47.88%, 74.09% 개표)로 숫자가 그대로라 민주 54·공화 44가 유지된다. 폭스뉴스 하원 화면의 마지막 AP 판정은 여전히 6일 오후 8시 46분 캘리포니아 14구로 민주 254·공화 162이고, NBC 하원 화면은 미 동부 8일 오후 9시 3분 이후 바뀌지 않아 미판정 21곳이다.",
       "text_en": "No new calls (checked 3:37 a.m. ET Nov 9): On the Fox News Senate results page (AP race calls), Mississippi has Scott Colom (D) at 467,930 (49.08%) to Cindy Hyde-Smith (R) at 465,356 (48.81%, 96.92% in), and Alaska has Mary Peltola (D) at 102,962 (48.17%) to Dan Sullivan (R) at 102,325 (47.88%, 74.09% in). The numbers are unchanged, so the Senate stays at Democrats 54, Republicans 44. The last AP call on the Fox News House page is still California's 14th District at 8:46 p.m. Nov 6, leaving Democrats 254, Republicans 162, and the NBC House page has not changed since 9:03 p.m. ET Nov 8, with 21 races uncalled."
-    },
-    {
-      "t": "2026-11-09T07:34:00Z",
-      "text": "새 판정 없음(미 동부 9일 오전 2시 34분 확인): 폭스뉴스 상원 결과 화면(AP 판정 목록)에서 35개 선거 가운데 민주 20·공화 13곳이 판정됐고, 미시시피는 스콧 콜럼(민) 46만 7930표(49.08%) 대 신디 하이드스미스(공) 46만 5356표(48.81%, 96.92% 개표), 알래스카는 메리 펠톨라(민) 10만 2962표(48.17%) 대 댄 설리번(공) 10만 2325표(47.88%, 74.09% 개표)로 숫자가 그대로라 민주 54·공화 44가 유지된다. NBC 하원 화면은 미 동부 8일 오후 9시 3분 이후 바뀌지 않았고 미판정 21곳이다.",
-      "text_en": "No new calls (checked 2:34 a.m. ET Nov 9): On the Fox News Senate results page (AP race calls), Democrats have won 20 of the 35 races and Republicans 13. Mississippi has Scott Colom (D) at 467,930 (49.08%) to Cindy Hyde-Smith (R) at 465,356 (48.81%, 96.92% in), and Alaska has Mary Peltola (D) at 102,962 (48.17%) to Dan Sullivan (R) at 102,325 (47.88%, 74.09% in). The numbers are unchanged, so the Senate stays at Democrats 54, Republicans 44. The NBC House page has not changed since 9:03 p.m. ET Nov 8 and has 21 races uncalled."
     }
   ],
   "how": [
