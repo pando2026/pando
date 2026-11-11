@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-09",
+ "asOf": "2026-11-11",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -4054,6 +4054,120 @@
      "덴마크 재무부(Finansministeriet)",
      "Oversigtstabeller – Forslag til finanslov for finansåret 2027(개요표: 2027 재정법안) · 2026-10-09",
      "https://fm.dk/media/tkjlanfs/oversigtstabeller.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "LR": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 국가예산(역년 회계연도) — 채무 상환 합계",
+   "interest": {
+    "value": 275.5,
+    "unit": "백만 달러",
+    "label": "채무 상환 합계(원리금)"
+   },
+   "principalIncluded": true,
+   "total": {
+    "value": 1538.9,
+    "unit": "백만 달러",
+    "label": "총지출"
+   },
+   "share": 17.9,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 232.0,
+    "unit": "백만 달러"
+   },
+   "note": "2027 정부안은 채무 상환 합계 2억 7,550만 달러만 공개돼 원금이 섞여 있다(이 중 중앙은행 몫 6,500만 달러에 이자 2,240만 달러 포함). 2026 예산서에서는 이자·기타 비용이 5,500만 달러, 원금 1억 7,500만 달러(합계 2억 3,000만 달러)였다.",
+   "sources": [
+    [
+     "FrontPageAfrica",
+     "A US$1.54 Billion Budget, but Lawmakers' Fuel Costs More Than the Nation's Medicines (15.4억 달러 예산, 그러나 의원 연료비가 국가 의약품비보다 많다) · 2026-11 (로드니 시에 분석)",
+     "https://frontpageafricaonline.com/a-us1-54-billion-budget-but-lawmakers-fuel-costs-more-than-the-nations-medicines/"
+    ],
+    [
+     "FrontPageAfrica",
+     "Liberia: Ngafuan Unveils US$1.54B Budget, Announces Salary Adjustments for 17,000 Public Workers (라이베리아: 응가푸안 장관, 15.4억 달러 예산 공개·공무원 1만 7천 명 급여 조정) · 2026-11-10",
+     "https://frontpageafricaonline.com/liberia-ngafuan-unveils-us1-54b-budget-announces-salary-adjustments-for-17000-public-workers/"
+    ],
+    [
+     "라이베리아 재무개발기획부(MFDP)",
+     "National Budget FY2026 (2026 회계연도 국가예산서, 부록 부채 상환 계획) · 2025-11",
+     "https://mfdp.gov.lr/edocman/Draft%20Budget-FY2026.pdf"
+    ]
+   ],
+   "tier": "press"
+  },
+  "FI": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 예산(재무부 초안, 2026-08-04)",
+   "interest": {
+    "value": 4.3,
+    "unit": "십억 유로",
+    "label": "국채 이자(valtionvelan korot)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 92.2,
+    "unit": "십억 유로",
+    "label": "총지출(재무부 초안)"
+   },
+   "share": 4.7,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 3.2,
+    "unit": "십억 유로"
+   },
+   "note": "재무부 초안(총지출 922억 유로) 기준이며, 9월 정부안은 총지출 925억 유로로 이자 4.4십억 유로로 적힌 보도도 있습니다. 전년 값 3.2는 '올해보다 11억 유로 많다'는 Yle 보도에서 역산한 근삿값입니다.",
+   "sources": [
+    [
+     "Yle",
+     "Valtion korkomenot ovat ensi vuonna 4,3 miljardia euroa(국가 이자 지출, 내년 43억 유로) · 2026-08-04",
+     "https://yle.fi/a/74-20239242"
+    ],
+    [
+     "수오멘 마아(Suomen Maa)",
+     "Valtiovarainministeri Purran budjettiesitys on lähes 13 miljardia alijäämäinen(푸라 재무장관의 예산안, 적자 거의 130억 유로) · 2026-08-04",
+     "https://www.suomenmaa.fi/uutiset/valtiovarainministeri-purran-budjettiesitys-on-lahes-13-miljardia-alijaamainen-korkomenoissa-kovaa-kasvua/"
+    ],
+    [
+     "핀란드 재무부(정부 간행물)",
+     "Julkisen talouden suunnitelma 2027–2030(2027–2030 공공재정계획), 표 7 · 2026-04-30",
+     "https://julkaisut.valtioneuvosto.fi/server/api/core/bitstreams/6e8a57bd-821c-465c-94ef-57a15222ddbf/content"
+    ]
+   ],
+   "tier": "press"
+  },
+  "CF": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가 일반예산(재정법 2026), IMF ECF 이자 제외",
+   "interest": {
+    "value": 26.92,
+    "unit": "십억 CFA프랑",
+    "label": "금융비용(부채 이자)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 396.35,
+    "unit": "십억 CFA프랑",
+    "label": "총지출"
+   },
+   "share": 6.8,
+   "prev": null,
+   "note": "2026 재정법의 금융비용 269.17억 CFA프랑이며 원금 상환 381.78억은 별도다. 1분기 부채 상환(이자+원금) 집행은 200.2억이었다.",
+   "sources": [
+    [
+     "중앙아프리카공화국 재무예산부",
+     "Note d'information 2026 sur le marché des titres publics (2026년 국채시장 정보 공시) · 2026-01",
+     "https://finances.gouv.cf/sites/default/files/2026-02/RCA%20NOTE_D'INFORMATION_2026.pdf"
+    ],
+    [
+     "EcoMatin",
+     "RCA : le budget 2026 dépendra à 44% des financements extérieurs (2026 예산, 44%를 해외 재원에 의존) · 2025-12-11",
+     "https://ecomatin.net/rca-le-budget-2026-dependra-a-44-des-financements-exterieurs"
     ]
    ],
    "tier": "official"
