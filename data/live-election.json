@@ -3,11 +3,11 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-11T18:16:00Z",
+  "updatedAt": "2026-11-11T19:21:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "민주당이 상·하원을 모두 가져간 가운데, 상원은 새 판정 없이 민주 54·공화 44로 미시시피와 알래스카만 남았다. AP는 민주당이 1월에 상원 54석을 갖게 되고 한두 석을 더할 수 있다고 전했다. 미시시피는 스콧 콜럼(민)의 표차가 3176표로 늘었고, NBC(집계 AP)는 남은 표를 약 1만 7000표로 잡아 하이드스미스가 그중 58.4%를 얻어야 따라잡는다고 계산한다. 최대 카운티 힌즈는 진술서 투표 3분의 2를 거부하고 11일 인증을 목표로 한다. 13일(금) 카운티 인증 뒤에는 재검표 없이 법정 다툼만 남는다. 알래스카는 메리 펠톨라(민)가 1순위 득표 49% 대 47.2%로 앞서고(개표 84.3%), 13일 공표, 18일 순위선택 집계 순으로 결론이 난다. 하원은 NBC가 사우스캐롤라이나 2구를 공화당 현역 조 윌슨의 승리로 판정해 미판정이 12곳으로 줄었다.",
+  "headline": "민주당이 상·하원을 모두 가져간 가운데, 상원은 새 판정 없이 민주 54·공화 44로 미시시피와 알래스카만 남았다. AP는 민주당이 1월에 상원 54석을 갖게 되고 한두 석을 더할 수 있다고 전했다. 미시시피는 최대 카운티 힌즈의 남은 표가 더해지면서 스콧 콜럼(민)의 표차가 3783표로 늘었고, NBC(집계 AP)는 남은 표를 약 1만 5000표로 잡아 하이드스미스가 그중 61.7%를 얻어야 따라잡는다고 계산한다. 힌즈는 진술서 투표 3분의 2를 거부했고 11일 인증을 목표로 한다. 13일(금) 카운티 인증 뒤에는 재검표 없이 법정 다툼만 남는다. 알래스카는 메리 펠톨라(민)가 1순위 득표 49% 대 47.2%로 앞서고(개표 84.3%), 13일 공표, 18일 순위선택 집계 순으로 결론이 난다. 하원은 NBC가 사우스캐롤라이나 2구를 공화당 현역 조 윌슨의 승리로 판정해 미판정이 12곳으로 줄었다.",
   "senate": {
     "dem": 54,
     "gop": 44,
@@ -853,27 +853,27 @@
               "n": "스콧 콜럼",
               "n_en": "Scott Colom",
               "p": "D",
-              "v": 470309,
+              "v": 471012,
               "pct": 49.1
             },
             {
               "n": "신디 하이드스미스",
               "n_en": "Cindy Hyde-Smith",
               "p": "R",
-              "v": 467133,
+              "v": 467229,
               "pct": 48.8
             },
             {
               "n": "타이 핑킨스",
               "n_en": "Ty Pinkins",
               "p": "I",
-              "v": 20123,
+              "v": 20131,
               "pct": 2.1
             }
           ],
-          "reported": "예상 투표의 98.3% 개표(NBC)",
-          "reported_en": "98.3% of expected vote in (NBC)",
-          "asOf": "2026-11-11T17:27:00Z",
+          "reported": "예상 투표의 98.5% 개표(NBC)",
+          "reported_en": "98.5% of expected vote in (NBC)",
+          "asOf": "2026-11-11T19:21:00Z",
           "src": [
             "NBC 뉴스 미시시피 상원 개표 결과(집계 AP)",
             "https://www.nbcnews.com/politics/2026-elections/mississippi-senate-results",
@@ -884,10 +884,10 @@
         "cand_en": "Scott Colom",
         "vs": "신디 하이드스미스(공·현역)",
         "vs_en": "Sen. Cindy Hyde-Smith (R)",
-        "note": "AP 미판정. 힌즈 카운티는 11일 오전 부재자 투표 스캔을 마치고 진술서 투표 817장을 받아들이고 1609장을 거부했으며(미시시피 프리 프레스), 잭 월리스 순회법원 서기는 이날 인증을 목표로 한다고 말했다. NBC 화면(집계 AP)은 미 동부 11일 낮 12시 27분 기준 콜럼 47만 309표, 하이드스미스 46만 7133표로 표차를 3176표로 보여 준다(1시간 전 3041표). 개표율 추정은 예상 투표의 98.3%, 남은 표는 약 1만 7000표로, 하이드스미스가 따라잡으려면 남은 표의 58.4%가 필요하다고 계산한다(직전 57.5%). AP는 11일 기사에서 화요일 오후 기준 콜럼이 약 2600표 앞섰고, 마이클 왓슨 주 국무장관이 9일 진술서 투표(투표 자격 확인이 필요한 임시 투표) 약 1만 4200장이 처리돼 약 80%가 받아들여졌으며 우편 부재자 투표 약 2700장이 돌아오지 않았다고 밝혔다고 전했다. 카운티들은 진술서 투표까지 포함한 인증 결과를 13일(금)까지 주에 내야 하고 주 인증은 12월 3일이다. 미시시피에는 자동 재검표도, 후보가 요청하는 재검표도 없어 다툼은 법정으로 간다(AP). 하이드스미스 의원은 11일 WLBT에 \"아직 표를 세고 있고, 몇천 표가 남았다\"고 말했고, 콜럼은 자신이 당선자로 발표될 것이라고 자신했다. WLBT는 11일 오전 7시 50분(현지) 표차를 2990표로 전했다.",
-        "note_en": "No AP call. Hinds County finished scanning absentee ballots on the morning of Nov 11 and accepted 817 affidavit ballots while rejecting 1,609 (Mississippi Free Press); Circuit Clerk Zack Wallace said it aims to certify that day. NBC's page (AP data) at 12:27 p.m. ET Nov 11 shows Colom 470,309 and Hyde-Smith 467,133, a 3,176-vote gap (3,041 an hour earlier). It estimates 98.3% of the expected vote is in with about 17,000 left, so Hyde-Smith would need 58.4% of the remaining vote to catch up (up from 57.5%). AP reported Nov 11 that Colom led by about 2,600 votes as of Tuesday afternoon, and that Secretary of State Michael Watson said Monday about 14,200 provisional (affidavit) ballots had been processed, about 80% accepted, and about 2,700 mail-in absentee ballots had not been returned. Counties must submit certified results, including provisional ballots, by Friday, Nov 13; the state certifies Dec 3. Mississippi has no automatic or candidate-requested recount, so any dispute goes to court (AP). Sen. Hyde-Smith told WLBT on Nov 11, \"We are still counting votes, and there are a few 1000,\" while Colom said he was confident he would be declared the winner. WLBT put the gap at 2,990 votes as of 7:50 a.m. local time Nov 11.",
-        "pct": "개표 98.3% · 49.1% 대 48.8%",
-        "pct_en": "98.3% in · 49.1% to 48.8%"
+        "note": "AP 미판정. 힌즈 카운티는 11일 오전 부재자 투표 스캔을 마치고 진술서 투표 817장을 받아들이고 1609장을 거부했으며(미시시피 프리 프레스), 잭 월리스 순회법원 서기는 이날 인증을 목표로 한다고 말했다. NBC 화면(집계 AP)은 미 동부 11일 오후 2시 21분 갱신분에서 콜럼 47만 1012표, 하이드스미스 46만 7229표로 표차를 3783표로 보여 준다(낮 12시 27분 3176표). 힌즈 카운티 집계는 콜럼 6만 2557표, 하이드스미스 1만 4801표로 늘었다. 개표율 추정은 예상 투표의 98.5%, 남은 표는 약 1만 5000표로, 하이드스미스가 따라잡으려면 남은 표의 61.7%가 필요하다고 계산한다(직전 58.4%). 힌즈 카운티가 인증을 마쳤는지는 아직 확인되지 않았다. AP는 11일 기사에서 화요일 오후 기준 콜럼이 약 2600표 앞섰고, 마이클 왓슨 주 국무장관이 9일 진술서 투표(투표 자격 확인이 필요한 임시 투표) 약 1만 4200장이 처리돼 약 80%가 받아들여졌으며 우편 부재자 투표 약 2700장이 돌아오지 않았다고 밝혔다고 전했다. 카운티들은 진술서 투표까지 포함한 인증 결과를 13일(금)까지 주에 내야 하고 주 인증은 12월 3일이다. 미시시피에는 자동 재검표도, 후보가 요청하는 재검표도 없어 다툼은 법정으로 간다(AP). 하이드스미스 의원은 11일 WLBT에 \"아직 표를 세고 있고, 몇천 표가 남았다\"고 말했고, 콜럼은 자신이 당선자로 발표될 것이라고 자신했다. WLBT는 11일 오전 7시 50분(현지) 표차를 2990표로 전했다.",
+        "note_en": "No AP call. Hinds County finished scanning absentee ballots on the morning of Nov 11 and accepted 817 affidavit ballots while rejecting 1,609 (Mississippi Free Press); Circuit Clerk Zack Wallace said it aims to certify that day. NBC's page (AP data), updated 2:21 p.m. ET Nov 11, shows Colom 471,012 and Hyde-Smith 467,229, a 3,783-vote gap (3,176 at 12:27 p.m.). Hinds County's tally rose to Colom 62,557, Hyde-Smith 14,801. It estimates 98.5% of the expected vote is in with about 15,000 left, so Hyde-Smith would need 61.7% of the remaining vote to catch up (up from 58.4%). Whether Hinds County has finished certifying is not yet confirmed. AP reported Nov 11 that Colom led by about 2,600 votes as of Tuesday afternoon, and that Secretary of State Michael Watson said Monday about 14,200 provisional (affidavit) ballots had been processed, about 80% accepted, and about 2,700 mail-in absentee ballots had not been returned. Counties must submit certified results, including provisional ballots, by Friday, Nov 13; the state certifies Dec 3. Mississippi has no automatic or candidate-requested recount, so any dispute goes to court (AP). Sen. Hyde-Smith told WLBT on Nov 11, \"We are still counting votes, and there are a few 1000,\" while Colom said he was confident he would be declared the winner. WLBT put the gap at 2,990 votes as of 7:50 a.m. local time Nov 11.",
+        "pct": "개표 98.5% · 49.1% 대 48.8%",
+        "pct_en": "98.5% in · 49.1% to 48.8%"
       },
       {
         "st": "AL",
@@ -3933,19 +3933,19 @@
     "GA":[[1,"won","R",0,99,[["Jim Kingston","R",140266,51.4,0],["Amanda Hollowell","D",132609,48.6,0]]],[2,"won","D",0,99,[["Sanford Bishop","D",148418,60.8,1],["Matt Day","R",95638,39.2,0]]],[3,"won","R",0,99,[["Brian Jack","R",188629,58.6,1],["Maura Keller","D",133238,41.4,0]]],[4,"won","D",0,99,[["Hank Johnson","D",217340,82.6,1],["Jim Duffie","R",45644,17.4,0]]],[5,"won","D",0,99,[["Nikema Williams","D",274922,90.2,1],["John Salvesen","R",29862,9.8,0]]],[6,"won","D",0,99,[["Lucy McBath","D",264024,80.9,1],["Kevin Martin","R",62379,19.1,0]]],[7,"won","R",0,99,[["Rich McCormick","R",191624,56.2,1],["Tony Kozycki","D",149457,43.8,0]]],[8,"won","R",0,99,[["Austin Scott","R",160170,60.4,1],["Kelly Esti","D",105005,39.6,0]]],[9,"won","R",0,99,[["Andrew Clyde","R",182986,59.3,1],["Caitlyn Gegen","D",125653,40.7,0]]],[10,"won","R",0,99,[["Houston Gaines","R",174841,53.6,0],["Pamela Delancy","D",151110,46.4,0],[" Total Write-ins","Oth",0,0,0]]],[11,"won","R",0,99,[["John Cowan","R",182230,55.4,0],["Chris Harden","D",146967,44.6,0],[" Total Write-ins","Oth",0,0,0]]],[12,"won","R",0,99,[["Rick Allen","R",140896,52.1,1],["Ceretta Smith","D",129621,47.9,0]]],[13,"won","D",0,99,[["Jasmine Clark","D",248071,79.8,0],["Jonathan Chavez","R",62671,20.2,0],[" Total Write-ins","Oth",0,0,0]]],[14,"won","R",0,99,[["Clay Fuller","R",168830,58.8,1],["Shawn Harris","D",118446,41.2,0],[" Total Write-ins","Oth",0,0,0]]]],
     "HI":[[1,"won","D",0,99,[["Ed Case","D",126337,71.8,1],["Adriel Lam","R",40308,22.9,0],["Jordan Conley","Grn",7011,4,0]]],[2,"won","D",0,99,[["Jill Tokuda","D",129931,66.5,1],["Brenton Awa","R",65441,33.5,0]]]],
     "IA":[[1,"won","D",1,99,[["Christina Bohannan","D",184134,53,0],["Mariannette Miller-Meeks","R",150918,43.4,1],["Michael Bridgford","NPA",12654,3.6,0]]],[2,"won","D",1,99,[["Lindsay James","D",171600,49.5,0],["Joe Mitchell","R",157771,45.6,0],["Rick Stewart","Lib",9505,2.7,0]]],[3,"won","D",1,98.9,[["Sarah Trone Garriott","D",189435,53.6,0],["Zach Nunn","R",163687,46.4,1]]],[4,"won","R",0,98.8,[["Chris McGowan","R",178927,59.1,0],["Dave Dawson","D",124012,40.9,0]]]],
-    "ID":[[1,"won","R",0,99,[["Russ Fulcher","R",244717,64.2,1],["Kaylee Peterson","D",110112,28.9,0],["Sarah Zabel","I",23106,6.1,0]]],[2,"won","R",0,99,[["Mike Simpson","R",170899,51.7,1],["Ellie Gilbreath","D",133169,40.3,0],["Tripp Hutchinson","I",11643,3.5,0]]]],
+    "ID":[[1,"won","R",0,99,[["Russ Fulcher","R",244717,64.2,1],["Kaylee Peterson","D",110112,28.9,0],["Sarah Zabel","I",23106,6.1,0]]],[2,"won","R",0,99,[["Mike Simpson","R",170868,51.7,1],["Ellie Gilbreath","D",133156,40.3,0],["Tripp Hutchinson","I",11641,3.5,0]]]],
     "IL":[[1,"won","D",0,95,[["Jonathan Jackson","D",167964,71.9,1],["Christian Maxwell","R",65705,28.1,0]]],[2,"won","D",0,95.2,[["Donna Miller","D",159855,72.7,0],["Michael Noack","R",60037,27.3,0]]],[3,"won","D",0,95.8,[["Delia Ramirez","D",150595,76.9,1],["Angel Oakley","R",45168,23.1,0]]],[4,"won","D",0,95.3,[["Patty Garcia","D",112079,71.1,0],["Lupe Castillo","R",25383,16.1,0],["Chris Getty","I",14566,9.2,0]]],[5,"won","D",0,95.4,[["Mike Quigley","D",204480,76.7,1],["Tommy Hanson","R",61992,23.3,0]]],[6,"won","D",0,97,[["Sean Casten","D",165476,62.7,1],["Niki Conforti","R",98487,37.3,0]]],[7,"won","D",0,95.3,[["La Shawn Ford","D",175091,89.1,0],["Chad Koppie","R",21328,10.9,0]]],[8,"won","D",0,97.1,[["Melissa Bean","D",136863,64.2,0],["Jennifer Davis","R",76466,35.8,0]]],[9,"won","D",0,96.1,[["Daniel Biss","D",194238,76.5,0],["John Elleson","R",59817,23.5,0]]],[10,"won","D",0,96.9,[["Brad Schneider","D",166371,70.2,1],["Carl Lambrecht","R",70704,29.8,0]]],[11,"won","D",0,96.4,[["Bill Foster","D",170985,64.3,1],["Jeff Walter","R",95020,35.7,0]]],[12,"won","R",0,99,[["Mike Bost","R",195813,69.5,1],["Julie Fortier","D",85843,30.5,0]]],[13,"won","D",0,98.4,[["Nikki Budzinski","D",158019,62.7,1],["Jeff Wilson","R",94026,37.3,0]]],[14,"won","D",0,96.9,[["Lauren Underwood","D",153408,62.6,1],["James Marter","R",91758,37.4,0]]],[15,"won","R",0,98.8,[["Mary Miller","R",192711,66.9,1],["Jennifer Todd","D",95350,33.1,0]]],[16,"won","R",0,96.7,[["Darin LaHood","R",173228,58.8,1],["Paul Nolley","D",121383,41.2,0]]],[17,"won","D",0,95.1,[["Eric Sorensen","D",142005,60.2,1],["Dillan Vancil","R",94022,39.8,0]]]],
     "IN":[[1,"won","D",0,99,[["Frank Mrvan","D",142213,63,1],["Barb Regnitz","R",83468,37,0]]],[2,"won","R",0,99,[["Rudy Yakym","R",99148,51.3,1],["Jamee Decio","D",89173,46.1,0],["William Henry","Lib",4908,2.5,0]]],[3,"won","R",0,99,[["Marlin Stutzman","R",109692,54.9,1],["Kelly Thompson","D",90180,45.1,0]]],[4,"won","R",0,99,[["Jim Baird","R",115014,54.2,1],["Drew Cox","D",97142,45.8,0]]],[5,"won","D",1,99,[["J.D. Ford","D",134476,51.7,0],["Victoria Spartz","R",125851,48.3,1]]],[6,"won","R",0,99,[["Jefferson Shreve","R",111116,55.1,1],["Cynthia Wirth","D",90576,44.9,0]]],[7,"won","D",0,99,[["André Carson","D",159211,77,1],["Patrick McAuley","R",42208,20.4,0],["James Sceniak","Lib",5452,2.6,0]]],[8,"won","R",0,99,[["Mark Messmer","R",117667,55.2,1],["Mary Allen","D",95317,44.8,0]]],[9,"won","R",0,99,[["Erin Houchin","R",122326,54,1],["Brad Meyer","D",98480,43.5,0],["Tonya Hudson","Lib",5530,2.4,0]]]],
     "KS":[[1,"won","R",0,98.6,[["Tracey Mann","R",150544,59.4,1],["Lauren Reinhold","D",95911,37.9,0],["Steven Jacob","Lib",6863,2.7,0]]],[2,"won","R",0,98.6,[["Derek Schmidt","R",126002,51.2,1],["Don Coover","D",110772,45,0],["John Hauer","Lib",9218,3.7,0]]],[3,"won","D",0,98.8,[["Sharice Davids","D",201050,59.6,1],["Eric Jenkins","R",129537,38.4,0],["Steven Hohe","Lib",6922,2.1,0]]],[4,"won","R",0,98.3,[["Ron Estes","R",139267,53.5,1],["Katy Tyndell","D",114663,44.1,0],["Drew Cranmer","Lib",6191,2.4,0]]]],
     "KY":[[1,"won","R",0,99,[["James Comer","R",154910,67.6,1],["John Williams","D",74260,32.4,0]]],[2,"won","R",0,99,[["Brett Guthrie","R",145139,62.8,1],["Megan Wingfield","D",81112,35.1,0],["Thomas Loecken","I",4807,2.1,0]]],[3,"won","D",0,99,[["Morgan McGarvey","D",174781,70.3,1],["Maria Rodriguez","R",73719,29.7,0]]],[4,"won","R",0,99,[["Ed Gallrein","R",137623,54.2,0],["Melissa Strange","D",103713,40.9,0],["Jeremy Todd","Lib",12484,4.9,0]]],[5,"won","R",0,99,[["Hal Rogers","R",139808,71.2,1],["Ned Pillersdorf","D",49805,25.4,0],["Mikel Wein","I",4117,2.1,0]]],[6,"won","D",1,99,[["Zach Dembo","D",138777,52.7,0],["Ralph Alvarado","R",114030,43.3,0],["Jay Bowman","I",6710,2.5,0]]]],
     "LA":[[1,"won","R",0,99,[["Steve Scalise","R",159896,60.7,1],["Lauren Jewett","D",89440,34,0],["Randall Arrington","R",9776,3.7,0]]],[2,"won","D",0,99,[["Troy Carter","D",192286,79.9,1],["Peter Williams","R",36369,15.1,0],["Lisa Ballay","Lib",6409,2.7,0]]],[3,"won","R",0,99,[["Clay Higgins","R",129203,55,1],["John Day","D",49163,20.9,0],["Caleb Walker","D",19932,8.5,0]]],[4,"won","R",0,99,[["Mike Johnson","R",134750,58.5,1],["Conrad Cable","D",52899,23,0],["Matt Gromlich","D",32868,14.3,0]]],[5,"lead","D",0,99,[["Patricia Moore","D",40796,17.9,0],["Gabe Firment","R",39131,17.2,0],["Misti Cordell","R",33381,14.6,0]]],[6,"lead","D",0,99,[["Chauna Banks","D",50882,19.4,0],["Blake Miguez","R",50214,19.2,0],["Rick Edmonds","R",49242,18.8,0]]]],
-    "MA":[[1,"won","D",0,99,[["Richard Neal","D",177556,65.4,1],["Nadia Milleron","I",93791,34.6,0]]],[2,"won","D",0,63.1,[["James McGovern","D",198782,100,1]]],[3,"won","D",0,99,[["Lori Trahan","D",173329,67.2,1],["Gary Grossi","R",78297,30.3,0],["Dennis Conlon","Unr",6442,2.5,0]]],[4,"won","D",0,99,[["Jake Auchincloss","D",192770,66.4,1],["Thomas Stalcup","R",97619,33.6,0]]],[5,"won","D",0,89.2,[["Katherine Clark","D",206925,100,1]]],[6,"won","D",0,99,[["Dan Koh","D",206256,63.4,0],["Micah Jones","R",119112,36.6,0]]],[7,"won","D",0,61.8,[["Ayanna Pressley","D",158384,100,1]]],[8,"won","D",0,99,[["Stephen Lynch","D",195606,69.4,1],["Robert Burke","R",75619,26.8,0],["Rasheed Walters","I",10579,3.8,0]]],[9,"won","D",0,99,[["Bill Keating","D",213587,60.9,1],["Tyler Macallister","R",137282,39.1,0]]]],
+    "MA":[[1,"won","D",0,99,[["Richard Neal","D",177556,65.4,1],["Nadia Milleron","I",93791,34.6,0]]],[2,"won","D",0,63.1,[["James McGovern","D",198782,100,1]]],[3,"won","D",0,99,[["Lori Trahan","D",174853,67.2,1],["Gary Grossi","R",78849,30.3,0],["Dennis Conlon","Unr",6488,2.5,0]]],[4,"won","D",0,99,[["Jake Auchincloss","D",192770,66.4,1],["Thomas Stalcup","R",97619,33.6,0]]],[5,"won","D",0,89.2,[["Katherine Clark","D",206925,100,1]]],[6,"won","D",0,99,[["Dan Koh","D",206256,63.4,0],["Micah Jones","R",119112,36.6,0]]],[7,"won","D",0,61.8,[["Ayanna Pressley","D",158384,100,1]]],[8,"won","D",0,99,[["Stephen Lynch","D",195606,69.4,1],["Robert Burke","R",75619,26.8,0],["Rasheed Walters","I",10579,3.8,0]]],[9,"won","D",0,99,[["Bill Keating","D",213587,60.9,1],["Tyler Macallister","R",137282,39.1,0]]]],
     "MD":[[1,"won","R",0,91.9,[["Andy Harris","R",159725,53.4,1],["Dan Schwartz","D",139564,46.6,0]]],[2,"won","D",0,88,[["Johnny Olszewski Jr.","D",170557,63.8,1],["Dave Wallace","R",96777,36.2,0]]],[3,"won","D",0,92.1,[["Sarah Elfreth","D",202080,67.5,1],["Berney Flowers","R",97441,32.5,0]]],[4,"won","D",0,84.6,[["Glenn Ivey","D",164423,89.4,1],["George McDermott","R",11205,6.1,0],["Sam Husseini","Grn",8220,4.5,0]]],[5,"won","D",0,91.9,[["Adrian Boafo","D",213231,70.3,0],["Chris Chaffee","R",89976,29.7,0]]],[6,"won","D",0,90.9,[["April McClain Delaney","D",153701,58.4,1],["Robin Ficker","R",102121,38.8,0],["Moshe Landman","Grn",7201,2.7,0]]],[7,"won","D",0,85.9,[["Kweisi Mfume","D",166991,84.8,1],["Scott Collier","R",29967,15.2,0]]],[8,"won","D",0,80.9,[["Jamie Raskin","D",215689,83.1,1],["Cheryl Riley","R",39424,15.2,0],["Nancy Wallace","Grn",4349,1.7,0]]]],
     "ME":[[1,"won","D",0,99,[["Chellie Pingree","D",250452,65.9,1],["Ronald Russell","R",129617,34.1,0]]],[2,"lead","R",0,97.8,[["Paul LePage","R",170265,49.9,0],["Matthew Dunlap","D",164845,48.3,0],["Gregory Ward (write-in)","I",125,0,0]]]],
     "MI":[[1,"won","R",0,97.7,[["Jack Bergman","R",217728,53.8,1],["Callie Barr","D",179062,44.2,0],["Arnett Satterla","Lib",2765,0.7,0]]],[2,"won","R",0,95.3,[["John Moolenaar","R",220354,61.5,1],["Ben Ambrose","D",132492,37,0],["Charlotte Magoon","Grn",3850,1.1,0]]],[3,"won","D",0,99,[["Hillary Scholten","D",211061,57.1,1],["Terri DeBoer","R",152988,41.4,0],["Joe Jock","Grn",5339,1.4,0]]],[4,"won","D",1,97.4,[["Sean McCann","D",186195,50.1,0],["Bill Huizenga","R",179484,48.3,1],["Shafina Barnett","Grn",5695,1.5,0]]],[5,"won","R",0,94.6,[["Tim Walberg","R",199522,59.1,1],["Christian Vukasovich","D",130085,38.6,0],["Ronald Muszynski","Lib",3463,1,0]]],[6,"won","D",0,99,[["Debbie Dingell","D",274617,67.4,1],["Heather Smiley","R",123423,30.3,0],["Linda Rayburn","WCP",3017,0.7,0]]],[7,"won","D",1,97.9,[["William Lawrence","D",202662,51,0],["Tom Barrett","R",189482,47.7,1],["Shane Dedrick","Grn",4974,1.3,0]]],[8,"won","D",0,98.2,[["Kristen McDonald Rivet","D",195849,55.5,1],["Thomas Smith","R",147851,41.9,0],["Kathy Goodwin","WCP",5169,1.5,0]]],[9,"won","R",0,99,[["Lisa McClain","R",247817,62.6,1],["Ray Pooley","D",137276,34.7,0],["Jim Walkowicz","WCP",4088,1,0]]],[10,"won","D",1,99,[["Christina Hines","D",188078,52.4,0],["Michael Bouchard","R",162347,45.3,0],["Andrea Kirby","WCP",3978,1.1,0]]],[11,"won","D",0,99,[["Jeremy Moss","D",238750,60.9,0],["Ethan Baker","R",144529,36.8,0],["Anil Kumar","NPA",3174,0.8,0]]],[12,"won","D",0,98.5,[["Rashida Tlaib","D",247185,76,1],["James Hooper","R",68960,21.2,0],["Gary Walkowicz","WCP",3776,1.2,0]]],[13,"won","D",0,69.4,[["Donavan McKinney","D",209882,76.5,0],["T.P. Nykoriak","R",54484,19.9,0],["Simone Coleman","WCP",5743,2.1,0]]]],
     "MN":[[1,"lead","D",0,98.8,[["Jake Johnson","D",163054,50,0],["Brad Finstad","R",162733,49.9,1],[" Total Write-ins","Oth",391,0.1,0]]],[2,"won","D",0,98.9,[["Matt Little","D",214254,57.1,0],["Eric Pratt","R",160636,42.8,0],[" Total Write-ins","Oth",335,0.1,0]]],[3,"won","D",0,98.7,[["Kelly Morrison","D",242079,64,1],["Tyler Bass","R",135505,35.8,0],[" Total Write-ins","Oth",413,0.1,0]]],[4,"won","D",0,98.6,[["Betty McCollum","D",245699,73.1,1],["Paul Wikstrom","R",90067,26.8,0],[" Total Write-ins","Oth",477,0.1,0]]],[5,"won","D",0,99,[["Ilhan Omar","D",262702,76.5,1],["John Nagel","R",55765,16.2,0],["DeVelle Jackson","I",24110,7,0]]],[6,"won","R",0,99,[["Tom Emmer","R",204706,55.7,1],["Doug Chapin","D",162213,44.2,0],[" Total Write-ins","Oth",427,0.1,0]]],[7,"won","R",0,98.8,[["Michelle Fischbach","R",214675,64.9,1],["Erik Osberg","D",115825,35,0],[" Total Write-ins","Oth",320,0.1,0]]],[8,"won","R",0,98.8,[["Pete Stauber","R",190669,53,1],["Trina Swanson","D",168427,46.9,0],[" Total Write-ins","Oth",359,0.1,0]]]],
     "MO":[[1,"won","D",0,99,[["Wesley Bell","D",189175,81.5,1],["Paul Berry","R",32362,13.9,0],["Tom Schmitz","Lib",10613,4.6,0]]],[2,"won","D",1,99,[["Fred Wellman","D",169477,51.1,0],["Ann Wagner","R",153132,46.2,1],["Brandon Daugherty","Lib",8782,2.7,0]]],[3,"won","R",0,99,[["Bob Onder","R",149268,52.9,1],["Bethany Mann","D",125284,44.4,0],["Jim Higgins","Lib",7702,2.7,0]]],[4,"won","R",0,99,[["Mark Alford","R",154256,61.5,1],["Jordan Herrera","D",89196,35.6,0],["Thomas Holbrook","Lib",7290,2.9,0]]],[5,"won","D",0,99,[["Emanuel Cleaver","D",179256,69.5,1],["Rick Brattin","R",72572,28.1,0],["Randall Langkraehr","Lib",6128,2.4,0]]],[6,"won","R",0,99,[["Chris Stigall","R",151374,58.7,0],["Josh Smead","D",100460,39,0],["Andy Maidment","Lib",6031,2.3,0]]],[7,"won","R",0,99,[["Eric Burlison","R",158413,62.2,1],["Missi Hesketh","D",90186,35.4,0],["Kevin Craig","Lib",6141,2.4,0]]],[8,"won","R",0,99,[["Jason Smith","R",151524,67.6,1],["Chris Reichard","D",65511,29.2,0],["Rebecca Sharpe Lombard","Lib",6950,3.1,0]]]],
-    "MS":[[1,"won","R",0,98,[["Trent Kelly","R",139986,58.3,1],["Cliff Johnson","D",96685,40.3,0],["Johnny Baucom","Lib",3349,1.4,0]]],[2,"won","D",0,98.3,[["Bennie Thompson","D",165861,67.6,1],["Ron Eller","R",73433,29.9,0],["Bennie Foster","I",5912,2.4,0]]],[3,"won","R",0,98.7,[["Michael Guest","R",145910,57.4,1],["Michael Chiaradio","D",104903,41.3,0],["Erik Kiehle","Lib",3183,1.3,0]]],[4,"won","R",0,98,[["Mike Ezell","R",131554,61.1,1],["Jeffrey Hulum","D",77194,35.8,0],["Carl Boyanton","I",6615,3.1,0]]]],
+    "MS":[[1,"won","R",0,98,[["Trent Kelly","R",139986,58.3,1],["Cliff Johnson","D",96685,40.3,0],["Johnny Baucom","Lib",3349,1.4,0]]],[2,"won","D",0,98.8,[["Bennie Thompson","D",166531,67.7,1],["Ron Eller","R",73515,29.9,0],["Bennie Foster","I",5935,2.4,0]]],[3,"won","R",0,99,[["Michael Guest","R",145910,57.4,1],["Michael Chiaradio","D",104903,41.3,0],["Erik Kiehle","Lib",3183,1.3,0]]],[4,"won","R",0,98,[["Mike Ezell","R",131554,61.1,1],["Jeffrey Hulum","D",77194,35.8,0],["Carl Boyanton","I",6615,3.1,0]]]],
     "MT":[[1,"won","D",1,99,[["Sam Forstag","D",135096,50.5,0],["Aaron Flint","R",124747,46.6,0],["Nick Sheedy","Lib",7719,2.9,0]]],[2,"won","R",0,98.4,[["Troy Downing","R",128148,58.1,1],["Brian Miller","D",71170,32.3,0],["Michael Eisenhauer","I",17196,7.8,0]]]],
     "NC":[[1,"won","D",0,99,[["Don Davis","D",157506,50.1,1],["Laurie Buckhout","R",146706,46.7,0],["Tom Bailey","Lib",9945,3.2,0]]],[2,"won","D",0,99,[["Deborah Ross","D",246476,75.1,1],["Eugene Douglass","R",76980,23.4,0],["Matthew Laszacs","Lib",4298,1.3,0]]],[3,"lead","D",0,99,[["Raymond Smith","D",118488,49.4,0],["Greg Murphy","R",118195,49.3,1],["Daniel Cavender","Lib",3007,1.3,0]]],[4,"won","D",0,99,[["Valerie Foushee","D",284629,79.1,1],["Max Ganorkar","R",68025,18.9,0],["Guy Meilleur","Lib",7005,1.9,0]]],[5,"lead","D",0,99,[["Chuck Hubbard","D",139788,48.7,0],["Virginia Foxx","R",139453,48.6,1],["Robert Luffman","Lib",7579,2.6,0]]],[6,"won","D",1,99,[["Cyril Jefferson","D",140727,51.2,0],["Addison McDowell","R",134108,48.8,1]]],[7,"lead","R",0,99,[["David Rouzer","R",160701,49.9,1],["Kimberly Hardy","D",158431,49.2,0],["Maad Abu-Ghazalah","Lib",3175,1,0]]],[8,"won","R",0,99,[["Mark Harris","R",147687,50.4,1],["Colby Watson","D",142672,48.6,0],["Bo Whitehead","Grn",2909,1,0]]],[9,"won","D",1,99,[["Richard Ojeda","D",139486,51.2,0],["Richard Hudson","R",133196,48.8,1]]],[10,"won","R",0,99,[["Pat Harrigan","R",146594,49.6,1],["Ashley Bell","D",144109,48.8,0],["Steven Feldman","Lib",4711,1.6,0]]],[11,"won","D",1,99,[["Jamie Ager","D",196291,57.1,0],["Jennifer Balkcom","R",141897,41.3,0],["Travis Groo","Lib",5367,1.6,0]]],[12,"won","D",0,99,[["Alma Adams","D",220788,81.2,1],["Jack Codiga","R",51024,18.8,0]]],[13,"won","D",1,99,[["Paul Barringer","D",160839,50.5,0],["Brad Knott","R",152855,48,1],["Steven Swinton","Lib",4510,1.4,0]]],[14,"won","D",1,99,[["Lakesha Womack","D",147935,51.1,0],["Tim Moore","R",141362,48.9,1]]]],
     "ND":[[1,"won","R",0,98.3,[["Julie Fedorchak","R",134477,57.4,1],["Trygve Hammer","D",85892,36.7,0],["Charles Tuttle","I",9282,4,0]]]],
@@ -3972,7 +3972,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",119087,57.1,1],["Vince George","D",82705,39.6,0],["Belinda Fox-Spencer","CST",6921,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",144109,59.4,1],["Ace Parsi","D",98615,40.6,0]]]],
     "WY":[[1,"won","R",0,100,[["Chuck Gray","R",99906,54.2,0],["Lisa Kinney","D",61689,33.5,0],["Shawn Johnson","Lib",13667,7.4,0]]]]
   },
-    "districtsAsOf": "2026-11-11T18:16:16Z",
+    "districtsAsOf": "2026-11-11T19:29:15Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -3980,6 +3980,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-11T19:21:00Z",
+      "text": "새 AP 판정 없음(미 동부 11일 오후 2시 21분 NBC 갱신분): 미시시피 힌즈 카운티 표가 더해져 콜럼 47만 1012표, 하이드스미스 46만 7229표로 표차가 3783표로 늘었다(낮 12시 27분 3176표). NBC(집계 AP)는 예상 투표의 98.5%가 개표돼 약 1만 5000표가 남았고, 하이드스미스가 따라잡으려면 그중 61.7%가 필요하다고 계산한다. AP 판정은 여전히 '접전으로 판정 불가'다. 알래스카(펠톨라 49%·설리번 47.2%, 개표 84.3%)와 하원(뒤집힌 선거구 45곳·미판정 12곳)은 그대로다.",
+      "text_en": "No new AP calls (NBC update at 2:21 p.m. ET Nov 11): With more Hinds County ballots added in Mississippi, Colom has 471,012 to Hyde-Smith's 467,229, widening his lead to 3,783 (3,176 at 12:27 p.m.). NBC (AP data) estimates 98.5% of the expected vote is in with about 15,000 left, and Hyde-Smith would need 61.7% of them to catch up. The race is still too close to call. Alaska (Peltola 49%, Sullivan 47.2%, 84.3% in) and the House (45 flipped districts, 12 uncalled) are unchanged."
+    },
     {
       "t": "2026-11-11T18:16:00Z",
       "text": "새 AP 판정 없음(미 동부 11일 오후 1시 16분 확인): 미시시피 최대 카운티인 힌즈 카운티가 11일 오전 부재자 투표 스캔을 마쳤고(마지막 67장 중 콜럼 61·하이드스미스 3표), 선거관리위원들이 진술서 투표(자격 확인이 필요한 임시 투표) 817장을 받아들이고 1609장을 거부했다(거부율 약 66.3%, 미시시피 프리 프레스). 잭 월리스 힌즈 카운티 순회법원 서기는 '오늘 인증하려 한다'고 말했다. NBC 화면(집계 AP)은 여전히 콜럼 3176표 차·개표 98.3%, 알래스카는 펠톨라 49%·설리번 47.2%(개표 84.3%), 하원은 뒤집힌 선거구 45곳·미판정 12곳 그대로다.",
@@ -4124,11 +4129,6 @@
       "t": "2026-11-10T14:35:00Z",
       "text": "새 판정 없음(미 동부 10일 오전 9시 35분 확인): 상원 미시시피·알래스카는 여전히 AP 판정이 없다. 미시시피는 진술서 투표 신분 확인 기한인 오늘(10일) 하루가 남았고, 알래스카는 주 선거국의 10일 공표를 기다린다. NBC 하원 화면(집계 AP)은 뒤집힌 선거구 45곳·미판정 17곳 그대로다.",
       "text_en": "No new calls (checked 9:35 a.m. ET Nov 10): the Mississippi and Alaska Senate races still have no AP call. Mississippi's affidavit-ballot ID deadline runs through today (Nov 10), and Alaska awaits its election office's Nov 10 update. NBC's House page (AP data) still shows 45 flipped districts and 17 uncalled."
-    },
-    {
-      "t": "2026-11-10T13:40:00Z",
-      "text": "새 판정 없음(미 동부 10일 오전 8시 40분 확인): 상원 미시시피·알래스카는 여전히 AP 판정이 없다. 미시시피는 우편 투표 도착과 진술서 투표 신분 확인 기한이 오늘(10일)이고 카운티 인증 기한은 13일이며, 알래스카는 주 선거국의 10일 공표를 기다린다. NBC 하원 화면(집계 AP)은 뒤집힌 선거구 45곳·미판정 17곳 그대로다.",
-      "text_en": "No new calls (checked 8:40 a.m. ET Nov 10): the Mississippi and Alaska Senate races still have no AP call. Mississippi's deadline for mail ballots to arrive and for affidavit voters to show ID is today (Nov 10), with county certification due Nov 13; Alaska awaits its election office's Nov 10 update. NBC's House page (AP data) still shows 45 flipped districts and 17 uncalled."
     }
   ],
   "how": [
@@ -4138,6 +4138,11 @@
     "개표가 끝나면 이 페이지는 내리고 결과를 미국 의회 구성·국가 화면에 반영한다."
   ],
   "sources": [
+    [
+      "NBC 뉴스 미시시피 상원 개표 결과(집계 AP)",
+      "https://www.nbcnews.com/politics/2026-elections/mississippi-senate-results",
+      "NBC News Mississippi Senate results (AP data)"
+    ],
     [
       "미시시피 2026 상원 선거 개표 라이브 블로그(미시시피 프리 프레스)",
       "https://www.mississippifreepress.org/liveblog-mississippis-2026-u-s-senate-election-results/",
@@ -4154,11 +4159,6 @@
       "Colom's lead grows to just under 3,000 votes as Mississippi Senate count continues (WLBT)"
     ],
     [
-      "NBC 뉴스 미시시피 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/mississippi-senate-results",
-      "NBC News Mississippi Senate results (AP data)"
-    ],
-    [
       "미시시피 상원: 콜럼, 하이드스미스에 3000표 넘게 앞서(야후 뉴스)",
       "https://www.yahoo.com/news/politics/article/mississippi-senate-latest-scott-coloms-lead-over-cindy-hyde-smith-tops-3000-votes-as-deadline-looms-150352218.html",
       "Mississippi Senate latest: Scott Colom's lead over Cindy Hyde-Smith tops 3,000 votes as deadline looms (Yahoo News)"
@@ -4171,7 +4171,7 @@
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "With Democrats winning both chambers, the Senate stands at Democrats 54, Republicans 44 with no new calls, and only Mississippi and Alaska left; AP says Democrats are on track to hold 54 seats in January and could pick up one or two more. In Mississippi, Scott Colom's (D) lead has grown to 3,176 votes, and NBC (AP data) estimates about 17,000 votes left, so Hyde-Smith would need 58.4% of them to catch up. Hinds County, the largest, rejected two-thirds of its affidavit ballots and aims to certify on Nov 11. After counties certify on Friday, Nov 13, only court challenges remain, with no recount. In Alaska, Mary Peltola (D) leads 49% to 47.2% on first-choice votes (84.3% in); the next release is Nov 13 and the ranked-choice tabulation Nov 18. In the House, NBC called South Carolina's 2nd for Republican incumbent Joe Wilson, leaving 12 races uncalled.",
+  "headline_en": "With Democrats winning both chambers, the Senate stands at Democrats 54, Republicans 44 with no new calls, and only Mississippi and Alaska left; AP says Democrats are on track to hold 54 seats in January and could pick up one or two more. In Mississippi, Scott Colom's (D) lead grew to 3,783 votes as more ballots from Hinds, the largest county, were added; NBC (AP data) estimates about 15,000 votes left, so Hyde-Smith would need 61.7% of them to catch up. Hinds rejected two-thirds of its affidavit ballots and aims to certify on Nov 11. After counties certify on Friday, Nov 13, only court challenges remain, with no recount. In Alaska, Mary Peltola (D) leads 49% to 47.2% on first-choice votes (84.3% in); the next release is Nov 13 and the ranked-choice tabulation Nov 18. In the House, NBC called South Carolina's 2nd for Republican incumbent Joe Wilson, leaving 12 races uncalled.",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
