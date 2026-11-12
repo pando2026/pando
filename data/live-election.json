@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-12T08:35:00Z",
+  "updatedAt": "2026-11-12T09:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3982,6 +3982,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-12T09:35:00Z",
+      "text": "새 AP 판정 없음(미 동부 12일 새벽 4시 35분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 펠톨라 12만 1487표(48.9%), 설리번 의원 11만 7512표(47.3%), 예상 투표의 86.2% 개표로 그대로이고 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 13일이다. 하원도 뒤집힌 선거구 45곳·미판정 12곳 그대로다.",
+      "text_en": "No new AP calls (checked 4:35 a.m. ET Nov 12): NBC (AP data) shows Alaska's Senate race unchanged at Peltola 121,487 (48.9%) to Sen. Sullivan 117,512 (47.3%) with 86.2% of the expected vote in, still 'too early to call'. The state election office's next release is Nov 13. The House is unchanged at 45 flipped seats and 12 uncalled."
+    },
+    {
       "t": "2026-11-12T08:35:00Z",
       "text": "새 AP 판정 없음(미 동부 12일 새벽 3시 35분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 펠톨라 12만 1487표(48.9%)로 지난 확인 때와 같고 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 13일이다. 하원도 뒤집힌 선거구 45곳·미판정 12곳 그대로다.",
       "text_en": "No new AP calls (checked 3:35 a.m. ET Nov 12): NBC (AP data) shows Alaska's Senate race unchanged, with Peltola at 121,487 (48.9%), still 'too early to call'. The state election office's next release is Nov 13. The House is unchanged at 45 flipped seats and 12 uncalled."
@@ -4125,11 +4130,6 @@
       "t": "2026-11-11T00:40:00Z",
       "text": "새 판정 없음(미 동부 10일 오후 7시 40분 확인): NBC 상원 화면(집계 AP)은 미시시피(콜럼 49.1%·하이드스미스 48.8%)를 '박빙이라 판정 불가', 알래스카(펠톨라 48.6%·설리번 47.5%, 개표 75.9%)를 '판정하기 이르다'로 그대로 표시한다. WTOK는 미시시피 현지 10일 정오 집계로 콜럼이 46만 8020표 대 46만 5445표, 2575표 앞섰다고 전했다. NBC 하원 화면은 뒤집힌 선거구 45곳·미판정 14곳 그대로다.",
       "text_en": "No new calls (checked 7:40 p.m. ET Nov 10): NBC's Senate page (AP data) still lists Mississippi (Colom 49.1%, Hyde-Smith 48.8%) as too close to call and Alaska (Peltola 48.6%, Sullivan 47.5%, 75.9% in) as too early to call. WTOK reports that as of noon local Nov 10 Colom led 468,020 to 465,445, a 2,575-vote margin. NBC's House page still shows 45 flipped districts and 14 uncalled."
-    },
-    {
-      "t": "2026-11-10T23:40:00Z",
-      "text": "하원 플로리다 27구 판정(미 동부 10일 오후 6시 40분 확인): NBC 하원 화면(집계 AP)이 공화당 현역 마리아 엘비라 살라자르의 승리로 판정했다(50.2% 대 49.8%, 1086표 차). 미판정은 14곳이 됐다. 노스캐롤라이나 5구는 민주당 척 허버드가 13만 9672표로 공화당 현역 버지니아 폭스(13만 9347표)에 325표 앞서 있다. 상원은 새 판정이 없다: NBC 상원 화면은 미시시피(콜럼 49.1%)를 '박빙이라 판정 불가', 알래스카(펠톨라 48.6%·설리번 47.5%)를 '판정하기 이르다'로 그대로 표시하고, 알래스카 선거국의 10일 새 공표 숫자는 아직 확인되지 않았다.",
-      "text_en": "House: Florida's 27th called (checked 6:40 p.m. ET Nov 10). NBC's House page (AP data) called it for Republican incumbent María Elvira Salazar (50.2% to 49.8%, a 1,086-vote margin), leaving 14 uncalled. In North Carolina's 5th, Democrat Chuck Hubbard has 139,672 votes to Republican incumbent Virginia Foxx's 139,347, a 325-vote lead. No new Senate calls: NBC's Senate page still lists Mississippi (Colom 49.1%) as too close to call and Alaska (Peltola 48.6%, Sullivan 47.5%) as too early to call, and numbers from the Alaska Division of Elections' Nov 10 update have not yet been confirmed."
     }
   ],
   "how": [
