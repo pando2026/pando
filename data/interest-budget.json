@@ -4171,6 +4171,161 @@
     ]
    ],
    "tier": "official"
+  },
+  "OM": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 국가 일반예산",
+   "interest": {
+    "value": 911,
+    "unit": "백만 오만 리알",
+    "label": "공공부채 이자(채무 서비스)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 11977,
+    "unit": "백만 오만 리알",
+    "label": "총지출"
+   },
+   "share": 7.6,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 915,
+    "unit": "백만 오만 리알"
+   },
+   "note": "2026 예산(칙령 2026년 제2호)의 경상지출 '공공부채 이자(채무 서비스)' 9억1,100만 리알로, 재무부 안내서는 올해 갚을 기존 대출의 이자 지급 예상액으로 계산했다고 적었다. 원금 상환 17억6,200만 리알은 지출이 아니라 자금 조달표에 따로 있어 포함되지 않는다. 비교값은 2025년 승인 예산이다.",
+   "sources": [
+    [
+     "Ministry of Finance(오만 재무부)",
+     "A Guide to the State's General Budget for the Fiscal Year 2026(2026 회계연도 국가 일반예산 안내서 — 59쪽 예산 표, 65~66쪽 경상지출, 79~86쪽 부문별 배정·자금 조달) · 2026-01-14",
+     "https://www.mof.gov.om/UploadsAll/YearlyBudget/1768378039247A%20Guide%20to%20the%20States%20General%20Budget%20for%20the%20Fiscal%20Year%202026.pdf"
+    ],
+    [
+     "Oman Observer(ONA 전재 — 정부 통신)",
+     "RO 100 million annually set for the job programme(일자리 사업에 해마다 1억 리알 — 재무부 차관 알하르티 기자회견) · 2026-01-01",
+     "https://www.omanobserver.om/article/1182062/oman/ro-100-million-annually-set-for-the-job-programme"
+    ],
+    [
+     "KPMG Middle East(회계법인)",
+     "Analysis of Oman's State Budget 2026(오만 2026 국가예산 분석 — 2025년 예산과 항목별 비교) · 2026-01",
+     "https://assets.kpmg.com/content/dam/kpmgsites/om/pdf/analysis-of-oman-state-budget-2026.pdf.coredownload.inline.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "NZ": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "핵심 정부(core Crown) 금융비용 — 정부·부처·준비은행·연금기금",
+   "interest": {
+    "value": 10.196,
+    "unit": "십억 뉴질랜드달러",
+    "label": "금융비용(국채 등 금융부채 이자 9.841 + 충당금 할인 해제 0.355)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 154.823,
+    "unit": "십억 뉴질랜드달러",
+    "label": "핵심 정부 비용"
+   },
+   "share": 6.6,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 9.057,
+    "unit": "십억 뉴질랜드달러"
+   },
+   "note": "2026 예산 때 재무부 전망치이며, 원금 상환은 들어 있지 않다. 2026-09-29 총선 전 전망(PREFU)은 2026/27 금융비용을 10.291십억으로 올렸고, 전년 값은 2025/26 결산(재무제표)이다.",
+   "sources": [
+    [
+     "뉴질랜드 재무부(The Treasury)",
+     "Budget Economic and Fiscal Update 2026(2026 예산 경제·재정 전망) · 2026-05-28",
+     "https://www.budget.govt.nz/budget/pdfs/befu2026/befu26.pdf"
+    ],
+    [
+     "뉴질랜드 재무부(The Treasury)",
+     "Interim Financial Statements of the Government of New Zealand, three months ended 30 September 2026(정부 중간 재무제표: 2026년 9월 말까지 3개월) · 2026-11-05",
+     "https://www.treasury.govt.nz/sites/default/files/2026-11/fsgnz-3mths-sep26.pdf"
+    ],
+    [
+     "뉴질랜드 재무부(The Treasury)",
+     "Budget Speech 2026(2026 예산 연설, 재무장관 니콜라 윌리스) · 2026-05-28",
+     "https://www.treasury.govt.nz/sites/default/files/2026-05/b26-speech.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "IE": {
+   "fiscalYear": "2025",
+   "status": "집행 실적",
+   "scope": "일반정부 국채 이자 지출(NTMA 최고경영자 발언, 약 수치)",
+   "interest": {
+    "value": 3,
+    "unit": "십억 유로",
+    "label": "국가채무 이자 비용(약)"
+   },
+   "principalIncluded": false,
+   "total": null,
+   "share": null,
+   "note": "2027년 예산 문서(지출 보고서)는 투표 지출 1,255.85억 유로만 다루고, 이자와 EU 분담금이 든 비투표 지출 191억 유로는 합계만 공개해 이자 금액을 따로 확인하지 못했다. 재무부 초안 예산 계획(Draft Budgetary Plan)은 일반정부 이자 지출을 2025년 GDP의 0.5%, 2026년 0.5%, 2027년 0.6%로 전망했고, NTMA 최고경영자 프랭크 오코너(Frank O'Connor)는 2025년 이자 비용 약 30억 유로가 2030년께 두 배인 약 60억 유로가 될 것이라고 밝혔다.",
+   "sources": [
+    [
+     "아일랜드 국가재무관리청(NTMA)",
+     "NTMA publishes 2026 mid-year business update(NTMA, 2026년 중간 사업 보고 발표) · 2026-07-08",
+     "https://www.ntma.ie/news/ntma-publishes-2026-mid-year-business-update"
+    ],
+    [
+     "아일랜드 재무부",
+     "Draft Budgetary Plan 2027(2027 초안 예산 계획) 표 5·7 · 2026-10",
+     "https://economy-finance.ec.europa.eu/document/download/a9386689-559b-43cf-a5a1-c7999fa3649c_en?filename=2027_dbp_ie_en.pdf"
+    ],
+    [
+     "아일랜드 정부(Where Your Money Goes)",
+     "2027 Debt Servicing, EU Payments Expenditure(2027 채무 상환·EU 분담금: 191억 유로) · 2026-10",
+     "https://www.whereyourmoneygoes.gov.ie/en/debt/2027/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "SK": {
+   "fiscalYear": "2027",
+   "status": "확정 예산",
+   "scope": "일반정부(국가예산+사회보험+지방정부 등, 국민계정 ESA 2010) 이자 비용",
+   "interest": {
+    "value": 2.723,
+    "unit": "십억 유로",
+    "label": "일반정부 이자 비용(재산소득 지출 D.41)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 70.786,
+    "unit": "십억 유로",
+    "label": "일반정부 총지출"
+   },
+   "share": 3.8,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 2.42,
+    "unit": "십억 유로"
+   },
+   "note": "원금 상환은 들어 있지 않다. 국가예산만 보면 국채 관리비(국채 이자에서 수입 이자를 뺀 순지출 이전금)가 2027년 24억 4,032만 유로로 2026년 승인 예산(20억 3,914만)보다 약 4억 유로 늘었고, 같은 법의 국채 원금 상환 의무액은 154억 5,366만 유로다. 재무부는 증가 이유를 적자를 메우려 국채를 더 발행해 명목 부채가 커지고 발행 국채의 평균 수익률이 올랐기 때문이라고 밝혔다.",
+   "sources": [
+    [
+     "슬로바키아 재무부(MF SR)",
+     "Návrh rozpočtu verejnej správy na roky 2027 až 2029 – Hlavná kniha(2027~2029 일반정부 예산안 본책) · 2026-10-05",
+     "https://rokovania.gov.sk/RVL/Material/32287/1"
+    ],
+    [
+     "슬로바키아 정부 회의 포털(재무부 제출 자료)",
+     "Návrh zákona o štátnom rozpočte na rok 2027, Príloha č. 3 Výdavky štátneho rozpočtu na rok 2027(2027 국가예산법안과 부표 3: 장별 지출) · 2026-10-05",
+     "https://rokovania.gov.sk/RVL/Material/32287/1"
+    ],
+    [
+     "슬로바키아 정부 회의 포털(재무부 제출 자료)",
+     "Návrh zákona o štátnom rozpočte na rok 2027, §4 Objem záväzkov štátu na splátky istín štátneho dlhu(2027 국가예산법안 §4: 국채 원금 상환 의무) · 2026-10-05",
+     "https://rokovania.gov.sk/RVL/Material/32287/1"
+    ]
+   ],
+   "tier": "official"
   }
  }
 }
