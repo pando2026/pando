@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-12T10:35:00Z",
+  "updatedAt": "2026-11-12T11:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3982,6 +3982,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-12T11:35:00Z",
+      "text": "새 AP 판정 없음(미 동부 12일 새벽 6시 35분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 펠톨라 12만 1487표(48.9%), 설리번 의원 11만 7512표(47.3%), 예상 투표의 86.2% 개표로 그대로이고 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 13일이다. 하원도 뒤집힌 선거구 45곳·미판정 12곳 그대로다.",
+      "text_en": "No new AP calls (checked 6:35 a.m. ET Nov 12): NBC (AP data) shows Alaska's Senate race unchanged at Peltola 121,487 (48.9%) to Sen. Sullivan 117,512 (47.3%) with 86.2% of the expected vote in, still 'too early to call'. The state election office's next release is Nov 13. The House is unchanged at 45 flipped seats and 12 uncalled."
+    },
+    {
       "t": "2026-11-12T10:35:00Z",
       "text": "새 AP 판정 없음(미 동부 12일 새벽 5시 35분 확인): AP는 알래스카를 여전히 '판정하기 이른' 유일한 상원 선거로 보고 있다. 알래스카 고등법원 토머스 매슈스 판사는 11일 거부된 부재자 투표 명부를 달라는 펠톨라 캠프의 요청을 '합리적이지 않다'고 판단했다(AP). 순위선택 집계 목표일은 18일이다. 하원은 뒤집힌 선거구 45곳·미판정 12곳 그대로다.",
       "text_en": "No new AP calls (checked 5:35 a.m. ET Nov 12): AP still lists Alaska as the only Senate race too early to call. Alaska Superior Court Judge Thomas Matthews ruled on Nov 11 that the Peltola campaign's request for a list of rejected absentee ballots was 'not reasonable' (AP). The ranked-choice tabulation is targeted for Nov 18. The House is unchanged at 45 flipped seats and 12 uncalled."
@@ -4125,11 +4130,6 @@
       "t": "2026-11-11T02:35:00Z",
       "text": "새 판정 없음(미 동부 10일 오후 9시 35분 확인): 야후 뉴스는 AP 집계를 인용해 미시시피 콜럼의 표차가 10일 2604표로 벌어졌다고 전했다(개표 97%). NBC 상원 화면은 알래스카(펠톨라 48.6%·설리번 47.5%)를 '판정하기 이르다'로 그대로 표시하고, 알래스카 선거국의 10일 저녁 공표는 아직 나오지 않았다(알래스카스 뉴스 소스는 오후 6시 이후 예정이라고 전했다). NBC 하원 화면은 뒤집힌 선거구 45곳·미판정 13곳 그대로다.",
       "text_en": "No new calls (checked 9:35 p.m. ET Nov 10): Yahoo News, citing AP, reports Colom's Mississippi lead grew to 2,604 votes on Nov 10 (97% in). NBC's Senate page still lists Alaska (Peltola 48.6%, Sullivan 47.5%) as too early to call, and the Alaska Division of Elections' Nov 10 evening release is not out yet (Alaska's News Source said it was expected after 6 p.m.). NBC's House page still shows 45 flipped districts and 13 uncalled."
-    },
-    {
-      "t": "2026-11-11T01:40:00Z",
-      "text": "하원 캘리포니아 7구 판정(미 동부 10일 오후 8시 40분 확인): NBC 하원 화면(집계 AP)이 민주당 후보끼리 맞붙은 이곳을 현역 도리스 마쓰이의 승리로 판정했다(53.3% 대 46.7%, 상대 마이 방). 미판정은 13곳이 됐다. 상원은 새 판정이 없다: NBC 상원 화면은 미시시피(콜럼 49.1%·하이드스미스 48.8%)를 '박빙이라 판정 불가', 알래스카(펠톨라 48.6%·설리번 47.5%, 개표 75.9%)를 '판정하기 이르다'로 그대로 표시하고, 알래스카 선거국의 10일 새 공표 숫자는 아직 확인되지 않았다.",
-      "text_en": "House: CA-7 called (checked 8:40 p.m. ET Nov 10): NBC's House page (AP data) called this Democrat-vs-Democrat race for incumbent Doris Matsui (53.3% to 46.7% over Mai Vang). 13 races remain uncalled. No new Senate calls: NBC's Senate page still lists Mississippi (Colom 49.1%, Hyde-Smith 48.8%) as too close to call and Alaska (Peltola 48.6%, Sullivan 47.5%, 75.9% in) as too early to call; the Alaska Division of Elections' Nov 10 update figures are not yet confirmed."
     }
   ],
   "how": [
