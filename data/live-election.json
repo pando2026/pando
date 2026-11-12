@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-12T06:35:00Z",
+  "updatedAt": "2026-11-12T07:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3981,6 +3981,7 @@
     ]
   },
   "feed": [
+    {"t": "2026-11-12T07:35:00Z", "text": "새 AP 판정 없음(미 동부 12일 새벽 2시 35분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 예상 투표의 86.2% 개표(남은 표 약 4만 표 추정)로 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 13일이다. 하원도 뒤집힌 선거구 45곳·미판정 12곳 그대로다.", "text_en": "No new AP calls (checked 2:35 a.m. ET Nov 12): NBC (AP data) still shows Alaska's Senate race at 86.2% of the expected vote in (about 40,000 votes estimated remaining), 'too early to call'. The state election office's next release is Nov 13. The House is unchanged at 45 flipped seats and 12 uncalled."},
     {
       "t": "2026-11-12T06:35:00Z",
       "text": "새 AP 판정 없음(미 동부 12일 새벽 1시 35분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 펠톨라 12만 1487표(48.9%), 설리번 의원 11만 7512표(47.3%), 예상 투표의 86.2% 개표로 바뀐 것이 없고 여전히 '판정하기 이르다'다. 하원도 뒤집힌 선거구 45곳·미판정 12곳 그대로다.",
@@ -4125,11 +4126,6 @@
       "t": "2026-11-10T22:35:00Z",
       "text": "새 판정 없음(미 동부 10일 오후 5시 35분 확인): NBC 상원 화면(집계 AP)은 미시시피(콜럼 49.1%·하이드스미스 48.8%)를 '박빙이라 판정 불가', 알래스카(펠톨라 48.6%·설리번 47.5%)를 '판정하기 이르다'로 그대로 표시한다. 미시시피는 우편 투표 도착·진술서 투표 신분 확인 기한(현지 오후 5시)이 지나 카운티들이 남은 표를 세기 시작한다. NBC 하원 화면은 뒤집힌 선거구 45곳·미판정 15곳 그대로다.",
       "text_en": "No new calls (checked 5:35 p.m. ET Nov 10): NBC's Senate page (AP data) still lists Mississippi (Colom 49.1%, Hyde-Smith 48.8%) as too close to call and Alaska (Peltola 48.6%, Sullivan 47.5%) as too early to call. Mississippi's 5 p.m. local deadline for mail-ballot arrival and affidavit-voter ID has passed, and counties now turn to counting the remaining ballots. NBC's House page still shows 45 flipped districts and 15 uncalled."
-    },
-    {
-      "t": "2026-11-10T21:35:00Z",
-      "text": "새 판정 없음(미 동부 10일 오후 4시 35분 확인): NBC 상원 화면(집계 AP)은 미시시피(콜럼 49.1%)를 '박빙이라 판정 불가', 알래스카를 '판정하기 이르다'로 그대로 표시한다. 미시시피 우편 투표 도착·진술서 투표 신분 확인 기한은 현지 오후 5시다. NBC 하원 화면은 뒤집힌 선거구 45곳·미판정 15곳 그대로다.",
-      "text_en": "No new calls (checked 4:35 p.m. ET Nov 10): NBC's Senate page (AP data) still lists Mississippi (Colom 49.1%) as too close to call and Alaska as too early to call. Mississippi's deadline for mail-ballot arrival and affidavit-voter ID is 5 p.m. local time. NBC's House page still shows 45 flipped districts and 15 uncalled."
     }
   ],
   "how": [
