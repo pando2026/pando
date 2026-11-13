@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-13T08:34:00Z",
+  "updatedAt": "2026-11-13T09:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3983,6 +3983,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-13T09:35:00Z",
+      "text": "새 AP 판정 없음(미 동부 13일 오전 4시 35분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 예상 투표의 88.2% 개표로 펠톨라(민)가 1순위 득표 49.2% 대 47%로 앞서지만 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 현지 13일, 순위선택 집계는 18일이다. 하원은 뒤집힌 선거구 46곳·미판정 11곳 그대로다.",
+      "text_en": "No new AP calls (checked 4:35 a.m. ET Nov 13): NBC (AP data) shows 88.2% of the expected vote in for Alaska's Senate race, with Peltola (D) ahead 49.2% to 47% in first-choice votes but still too early to call. The state's next release is Nov 13 local time and the ranked-choice tabulation Nov 18. The House is unchanged at 46 flipped seats and 11 uncalled."
+    },
+    {
       "t": "2026-11-13T08:34:00Z",
       "text": "새 AP 판정 없음(미 동부 13일 오전 3시 34분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 예상 투표의 88.2% 개표(남은 표 약 3만 5000표)로 펠톨라(민)가 앞서지만 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 현지 13일, 순위선택 집계는 18일이다. 하원은 뒤집힌 선거구 46곳·미판정 11곳 그대로다.",
       "text_en": "No new AP calls (checked 3:34 a.m. ET Nov 13): NBC (AP data) shows 88.2% of the expected vote in for Alaska's Senate race (about 35,000 left), with Peltola (D) ahead but still too early to call. The state's next release is Nov 13 local time and the ranked-choice tabulation Nov 18. The House is unchanged at 46 flipped seats and 11 uncalled."
@@ -4126,11 +4131,6 @@
       "t": "2026-11-11T22:58:00Z",
       "text": "AP 판정: 미시시피 상원 — 민주당 스콧 콜럼 당선, 공화당 현역 신디 하이드스미스의 의석을 가져왔다(미 동부 11일 오후 6시 직전). 잭슨 카운티가 2173표를 더 공표한 뒤 콜럼은 96만 2237표 중 4669표(0.5%포인트) 앞섰다. 상원은 민주 55·공화 44, 남은 곳은 알래스카뿐이다.",
       "text_en": "AP call: Mississippi Senate — Democrat Scott Colom wins, flipping Republican Sen. Cindy Hyde-Smith's seat (just before 6 p.m. ET Nov 11). After Jackson County reported 2,173 more votes, Colom led by 4,669 out of 962,237 (0.5 points). Senate: Democrats 55, Republicans 44, with only Alaska left."
-    },
-    {
-      "t": "2026-11-11T22:33:00Z",
-      "text": "새 AP 판정 없음(미 동부 11일 오후 5시 33분 확인): NBC 화면(집계 AP)에서 미시시피는 콜럼 47만 2273표, 하이드스미스 46만 7628표로 표차가 4645표로 늘었다(오후 3시 21분 4404표). 남은 표는 약 1만 4000표로 줄었고, 하이드스미스가 따라잡으려면 그중 65.7%가 필요하다. 힌즈 카운티가 인증을 마쳤는지는 아직 확인되지 않았다. 알래스카와 하원(뒤집힌 선거구 45곳·미판정 12곳)은 그대로다.",
-      "text_en": "No new AP calls (checked 5:33 p.m. ET Nov 11): On NBC's page (AP data), Colom has 472,273 to Hyde-Smith's 467,628 in Mississippi, widening his lead to 4,645 (4,404 at 3:21 p.m.). About 14,000 votes remain, and Hyde-Smith would need 65.7% of them to catch up. Whether Hinds County has finished certifying is not yet confirmed. Alaska and the House (45 flipped districts, 12 uncalled) are unchanged."
     }
   ],
   "how": [
