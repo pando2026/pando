@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-11",
+ "asOf": "2026-11-13",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -4326,6 +4326,151 @@
     ]
    ],
    "tier": "official"
+  },
+  "MR": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가 예산 총지출·순대출(일반예산+특별계정) 중 공공부채 이자, 2026-10-21 각료회의 의결 재정법안",
+   "interest": {
+    "value": 4.9,
+    "unit": "십억 MRU(신 우기야)",
+    "label": "공공부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 145.908,
+    "unit": "십억 MRU(신 우기야)",
+    "label": "총지출·순대출"
+   },
+   "share": 3.4,
+   "prev": {
+    "fiscalYear": "2026 추경",
+    "value": 5.0786,
+    "unit": "십억 MRU(신 우기야)"
+   },
+   "note": "이자 49.0억 MRU에는 외채 이자 35.0억이 들어 있고(2026 추경은 50.79억 중 외채 37.79억), 원금 상환은 포함되지 않는다. GDP의 0.82%, 조세수입의 4.7%이며 2025년 결산 이자는 35.9억, 2026년 9월 말까지 지급은 25.2억(연 계획의 49.6%)이다.",
+   "sources": [
+    [
+     "모리타니 재무부",
+     "PLF 2027 제7조 비용 총괄 — 공공부채 이자 4,900,000,000 MRU(2027 재정법안, 이자 49.0억, 외채 이자 35.0억) · 2026-10",
+     "http://finances.gov.mr/sites/default/files/2026-10/PLFI%202027%20FR-1.pdf"
+    ],
+    [
+     "모리타니 재무부",
+     "DPBMT 2027-2029 표 14: 이자 부담 2026~2029(중기 예산 프로그램 문서, 이자 표) · 2026-07",
+     "http://finances.gov.mr/sites/default/files/2026-07/DPBMT%202027-2029%20FR%20Version%20Finale.pdf"
+    ],
+    [
+     "모리타니 재무부",
+     "Rapport économique et financier — annexe 19(경제·재정 보고서: 2026년 9월 말 이자 25.2억, 2025년 결산 35.9억) · 2026-10",
+     "http://finances.gov.mr/sites/default/files/2026-11/RAPPORT%20%C3%89CONOMIQUE%20ET%20FINANCIER%20-%20ANNEXE%2019.pdf"
+    ],
+    [
+     "모리타니 재무부",
+     "LFR 2026 제11조(2026 추경법: 이자 5,078,600,000 MRU) · 2026-08",
+     "http://finances.gov.mr/sites/default/files/2026-08/LFR%202026%20FR.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "CR": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 본예산(국가 예산, 경제 분류 '이자와 수수료')",
+   "interest": {
+    "value": 2.7451,
+    "unit": "조 콜론",
+    "label": "이자 및 수수료(Intereses y comisiones)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 12.4195,
+    "unit": "조 콜론",
+    "label": "2027 예산안 총액(원금 상환 포함)"
+   },
+   "share": 22.1,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 2.5667,
+    "unit": "조 콜론"
+   },
+   "note": "이자·수수료 2,745,096.9백만 콜론(예산의 22.1%)이며 원금 상환 2.2385조 콜론은 따로다. 2026년 값은 당초 예산에 8월까지 수정을 반영한 현행 예산이고, 예산안은 11월 5일 본회의 1차 토론을 통과했으나 2차 토론은 헌법재판소 조치로 보류돼 있다. 재무부 집계 1~8월 실제 이자 지급은 1.64조 콜론이다.",
+   "sources": [
+    [
+     "재무부 예산국(DGPN)",
+     "Proyecto de Ley de Presupuesto Nacional 2027: Presupuesto Ciudadano(2027 예산안: 시민 예산) · 2026-09-01",
+     "https://actualidadtributaria.com/Uploads/Documentos/Folleto_Presupuesto_Nacional_2027.pdf"
+    ],
+    [
+     "Delfino.cr",
+     "Chaves presenta presupuesto de ₡12,4 billones para 2027, un 3,1% menor al de este año(차베스, 올해보다 3.1% 작은 2027 예산 12.4조 콜론 제출) · 2026-09-01",
+     "https://delfino.cr/2026/09/chaves-presenta-presupuesto-de-124-billones-para-2027-un-31-menor-al-de-este-ano"
+    ],
+    [
+     "Delfino.cr",
+     "Ingresos del Gobierno repuntan en agosto, pero recaudación acumulada sigue por debajo de 2025(8월 정부 수입 반등, 누적 세수는 여전히 2025년 이하) · 2026-09-29",
+     "https://delfino.cr/2026/09/ingresos-del-gobierno-repuntan-en-agosto-pero-recaudacion-acumulada-sigue-por-debajo-de-2025"
+    ]
+   ],
+   "tier": "official"
+  },
+  "KW": {
+   "status": "자료 없음",
+   "note": "쿠웨이트 2026/27 예산안은 부채 이자·상환 비용을 따로 떼어 발표하지 않았고(알자리다 칼럼니스트 무함마드 알바글리, 2026-02-12), 재무부 예산 PDF와 영문·아랍어 보도, IMF 2025년 연례협의 보고서에서도 이자 금액이 별도 줄로 나오지 않는다. IMF 표는 쿠웨이트투자청이 내는 정부 부채 이자를 예산 밖에서 '기타 경상지출'에 합산해 추정한다.",
+   "sources": [
+    [
+     "Al-Jarida(알자리다, 무함마드 알바글리 칼럼)",
+     "تقرير اقتصادي: الميزانية الجديدة... مخاطر حاضرة وكرات ثلج قادمة(경제 보고: 새 예산, 눈앞의 위험과 다가오는 눈덩이) · 2026-02-12",
+     "https://www.aljarida.com/article/123034"
+    ],
+    [
+     "IMF",
+     "Kuwait: 2025 Article IV Consultation — Staff Report(쿠웨이트 2025년 연례협의 직원 보고서) · 2026-02-03",
+     "https://www.imf.org/-/media/files/publications/cr/2026/english/1kwtea2026001-source-pdf.pdf"
+    ]
+   ],
+   "tier": "press"
+  },
+  "PA": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 부채 서비스 중 이자(일반예산 총액 대비)",
+   "interest": {
+    "value": 3062.5,
+    "unit": "백만 달러",
+    "label": "공공부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 35111.7,
+    "unit": "백만 달러",
+    "label": "일반예산 총지출"
+   },
+   "share": 8.7,
+   "note": "중앙정부 부채 서비스 5,496.1백만 달러 중 이자 3,062.5, 원금 상환 2,433.6이며 7월 내각 정부안 기준이다. 국회 단계에서 부채 서비스가 약 416.7백만 달러 줄었으나 이자·원금 내역이 공개되지 않아 확정 법률(2026-11-02 공포)의 이자 값은 확인되지 않았고, 재무부는 이자가 전년보다 약 9억 달러 적다고 밝혔다.",
+   "sources": [
+    [
+     "La Prensa",
+     "Presupuesto de Panamá 2027: ¿de dónde saldrán los $35,111 millones y en qué se gastará el dinero?(2027 예산 351억 달러, 어디서 나와 어디에 쓰이나) · 2026-07",
+     "https://www.prensa.com/economia/presupuesto-de-panama-2027-de-donde-saldran-los-35111-millones-y-en-que-se-gastara-el-dinero/"
+    ],
+    [
+     "파나마 경제재무부(MEF)",
+     "Presupuesto General del Estado 2027 prioriza la inversión social y la sostenibilidad fiscal(2027 일반예산, 사회투자와 재정 지속가능성 우선) · 2026-07-30",
+     "https://www.mef.gob.pa/presupuesto-general-del-estado-2027/"
+    ],
+    [
+     "파나마 경제재무부(MEF)",
+     "Aprueban en tercer debate el Presupuesto General del Estado 2027(2027 일반예산, 3차 심의 통과) · 2026-10-30",
+     "https://www.mef.gob.pa/2026/10/aprueban-en-tercer-debate-el-presupuesto-general-del-estado-2027/"
+    ],
+    [
+     "La Prensa",
+     "Estos son los ajustes al presupuesto de 2027; el Gabinete aprueba más fondos para la Asamblea y la Unachi(2027 예산 조정, 내각이 의회·치리키대에 증액) · 2026-10-20",
+     "https://www.prensa.com/economia/ejecutivo-aprueba-ajustes-al-presupuesto-de-2027-por-1868-millones/"
+    ]
+   ],
+   "tier": "press"
   }
  }
 }
