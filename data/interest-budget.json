@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-13",
+ "asOf": "2026-11-14",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -4471,6 +4471,157 @@
     ]
    ],
    "tier": "press"
+  },
+  "GE": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가예산 대외 공공부채 서비스(양자·다자·국가 대외증권)",
+   "interest": {
+    "value": 794.3,
+    "unit": "백만 라리",
+    "label": "대외 채무 이자(양자 86.8 + 다자 638.3 + 국가 대외증권 69.2)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 32713.7,
+    "unit": "백만 라리",
+    "label": "국가예산 세출(수정안, 판도 계산)"
+   },
+   "share": null,
+   "prev": null,
+   "note": "대외 채무 서비스 총 22억 8,430만 라리 가운데 원금 상환이 14억 9,000만 라리, 이자가 7억 9,430만 라리다. 대내 채무(국채) 이자는 최초안 보도에 나오지 않아 포함되지 않았고, 통합예산 총지출 중 이자 규모도 공개 보도에서 확인하지 못해 비율은 적지 않았다.",
+   "sources": [
+    [
+     "인터프레스뉴스",
+     "საგარეო სახელმწიფო ვალდებულებების მომსახურებისა და ვალების დაფარვისათვის 2027 წლის სახელმწიფო ბიუჯეტში 2 284 300 ლარი იქნება გათვალისწინებული(대외 국가채무 서비스·상환에 2027년 예산 2,284,300(천 라리) 반영) · 2026-10-01",
+     "https://www.interpressnews.ge/ka/article/881010-sagareo-saxelmcipo-valdebulebebis-momsaxurebisa-da-valebis-daparvisatvis-2027-clis-saxelmcipo-biujetshi-2-284-300-lari-ikneba-gatvaliscinebuli"
+    ],
+    [
+     "Georgia Today",
+     "Government plans to take ₾2 billion in new external debt in 2027(정부, 2027년 신규 대외 차입 20억 라리 계획) · 2026-10-01",
+     "https://georgiatoday.ge/government-plans-to-take-%E2%82%BE2-billion-in-new-external-debt-in-2027/"
+    ],
+    [
+     "인터프레스뉴스",
+     "ფინანსთა სამინისტრო მომავალი წლის ბიუჯეტის პროექტის ძირითად პარამეტრებთან დაკავშირებით ინფორმაციას ავრცელებს - 2027 წლის ნაერთი ბიუჯეტი 37 მილიარდ 531 მილიონ ლარს შეადგენს(재무부, 내년 예산안 주요 지표 공개: 2027년 통합예산 375억 3,100만 라리) · 2026-09-30",
+     "https://www.interpressnews.ge/ka/article/880963-pinansta-saministro-momavali-clis-biujetis-proektis-ziritad-parametrebtan-dakavshirebit-inpormacias-avrcelebs-2027-clis-naerti-biujeti-37-miliard-531-milion-lars-sheadgens"
+    ]
+   ],
+   "tier": "press"
+  },
+  "HR": {
+   "fiscalYear": "2026",
+   "status": "추경 반영",
+   "scope": "국가예산(중앙정부) 기능분류 01.7 '공공부채 거래' — 국채·차입 이자와 발행 비용",
+   "interest": {
+    "value": 1.149,
+    "unit": "십억 유로",
+    "label": "공공부채 거래 지출(이자 중심)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 40.592,
+    "unit": "십억 유로",
+    "label": "국가예산 총지출"
+   },
+   "share": 2.8,
+   "prev": null,
+   "note": "원금 상환은 들어 있지 않다. 개정 예산에서 이 항목은 개정 전 계획(9억9,160만 유로)보다 1억5,750만 유로 늘었고, 재무부는 국채 관리 이자가 1억6,390만 유로 늘었기 때문이라고 밝혔다. 국가예산의 금융 비용 전체(이자·기타 금융 비용)는 12억4,420만 유로이며, 2025년 결산은 국채 이자 9억4,970만, 차입금 이자 1억4,010만 유로였다.",
+   "sources": [
+    [
+     "크로아티아 재무부(Ministarstvo financija)",
+     "Prijedlog izmjena i dopuna Državnog proračuna RH za 2026. godinu — A3 기능별 지출표·설명서(2026년 국가예산 개정안: 공공부채 거래 항목) · 2026-10-09",
+     "https://vlada.gov.hr/UserDocsImages/2016/Sjednice/2026/Listopad/212_sjednica_VRH/212%20-%201.1.pdf?vel=54267475"
+    ],
+    [
+     "크로아티아 재무부(Ministarstvo financija)",
+     "Prijedlog izmjena i dopuna Državnog proračuna za 2026. godinu(2026년 국가예산 개정안 요약) · 2026-10-09",
+     "https://vlada.gov.hr/UserDocsImages/2016/Sjednice/2026/Listopad/212_sjednica_VRH/Prijedlog_izmjena_i_dopuna_Drzavnog_proracuna_za_2026._godinu.pdf"
+    ],
+    [
+     "크로아티아 재무부 → 사보르 제출",
+     "Godišnji izvještaj o izvršenju Državnog proračuna za 2025. godinu — obrazloženje općeg dijela(2025년 국가예산 결산 설명: 금융 비용) · 2026-05-22",
+     "https://www.sabor.hr/sites/default/files/uploads/sabor/2026-05-22/084816/3_OBRAZLOZENJE_OPCEG_DIJELA_DPRH_2025.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MN": {
+   "fiscalYear": "2027",
+   "status": "확정 예산",
+   "scope": "국가(중앙정부) 예산 재무장관 소관 이자 지급(법 제6조 6.1)",
+   "interest": {
+    "value": 1.57,
+    "unit": "조 투그릭",
+    "label": "정부 채무 이자(Зээлийн хүүгийн төлбөр)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 29.94,
+    "unit": "조 투그릭",
+    "label": "국가예산 지출 총액(법 제7조)"
+   },
+   "share": 5.3,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 1.3,
+    "unit": "조 투그릭"
+   },
+   "note": "이자 1,572.7십억 투그릭은 정부안과 확정 법에서 같고, 원금 상환 3,657.3십억은 따로다(정부안 설명서의 총 채무 상환 5,230.0십억 중 이자 부분). 2026년 값 1,299.2십억은 정부안 설명서의 '2026년 예상 집행'이며 이자 구성은 해외 채권 643.3, 외국 차관 674.0, 국내 채권 255.4십억(2027년)이다. 비율은 법 제7조 지출 총액(29,938.97십억)으로 나눈 값이다.",
+   "sources": [
+    [
+     "몽골 국가대후랄(의회) 법안 포털",
+     "МОНГОЛ УЛСЫН 2027 ОНЫ ТӨСВИЙН ТУХАЙ(몽골 2027년 예산법, 5차 심의 법안 본문) · 2026-11-13",
+     "https://lawforum.parliament.mn/files/18585/?d=1"
+    ],
+    [
+     "몽골 정부(국가대후랄 법안 포털)",
+     "МОНГОЛ УЛСЫН 2027 ОНЫ ТӨСВИЙН ТУХАЙ ХУУЛИЙН ТӨСЛИЙН ДЭЛГЭРЭНГҮЙ ТАНИЛЦУУЛГА(2027년 예산법안 상세 설명서) · 2026-08-31",
+     "https://lawforum.parliament.mn/files/17944/?d=1"
+    ],
+    [
+     "몽골 정부(국가대후랄 법안 포털)",
+     "МОНГОЛ УЛСЫН 2027 ОНЫ ТӨСВИЙН ТУХАЙ хуулийн төсөл(2027년 예산법 정부안) · 2026-08-31",
+     "https://lawforum.parliament.mn/files/17942/?d=1"
+    ],
+    [
+     "몽골 국가대후랄 전자의회(d.parliament.mn)",
+     "МОНГОЛ УЛСЫН 2027 ОНЫ ТӨСВИЙН ТУХАЙ(2027년 예산법 의안 페이지) · 2026-08-31",
+     "https://d.parliament.mn/tusul/e2ce7745-9966-414d-bd53-e9df85b4e2d2"
+    ]
+   ],
+   "tier": "official"
+  },
+  "UY": {
+   "fiscalYear": "2025",
+   "status": "집행 실적",
+   "scope": "국가예산 총집행 중 Inciso 20 '이자 및 기타 부채 비용'(결산 기준)",
+   "interest": {
+    "value": 94598,
+    "unit": "백만 페소",
+    "label": "이자 및 기타 부채 비용"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 997952,
+    "unit": "백만 페소",
+    "label": "총집행"
+   },
+   "share": 9.5,
+   "note": "경제재정부 결산 설명서의 2025년 집행액으로, 실질 증가율은 전년 대비 2.1%다. 같은 문서·부채관리실 보고서는 중앙정부 기준 순이자 지급을 2026년 24.92억 달러, 2027년 25.83억 달러로 전망하지만 현금 기준이고 범위가 달라 위 표와 직접 비교하지 않는다.",
+   "sources": [
+    [
+     "우루과이 경제재정부(MEF)",
+     "Rendición de Cuentas y Balance de Ejecución Presupuestal 2025 – Exposición de motivos(2025 회계연도 결산·예산 정산 보고서 – 제안 설명서) · 2026-06-30",
+     "https://www.gub.uy/ministerio-economia-finanzas/sites/ministerio-economia-finanzas/files/documentos/publicaciones/Exposici%C3%B3n%20de%20Motivos_0.pdf"
+    ],
+    [
+     "우루과이 경제재정부 부채관리실(UGD)",
+     "Reporte de deuda soberana agosto 2026(2026년 8월 국가부채 보고서) · 2026-08",
+     "https://deuda.mef.gub.uy/innovaportal/file/32312/1/reporte-de-deuda-soberana-agosto-2026.pdf"
+    ]
+   ],
+   "tier": "official"
   }
  }
 }
