@@ -3,11 +3,11 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-14T19:35:00Z",
+  "updatedAt": "2026-11-14T20:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "민주당이 상·하원을 모두 가져간 가운데, 상원은 민주 55·공화 44로 알래스카 한 곳만 남았다. 알래스카 주 선거국의 13일 밤 공표에서 메리 펠톨라(민)가 49.84%로 댄 설리번(공, 46.09%)에 1만 412표 앞섰지만, 50%에 조금 못 미친 데다 AP도 아직 판정하지 않아 18일 순위선택 집계에서 결론이 날 수 있다. 하원은 AP 판정 기준 민주 256·공화 169석이고 NBC 기준 미판정은 9곳이다.",
+  "headline": "민주당이 상·하원을 모두 가져간 가운데, 상원은 민주 55·공화 44로 알래스카 한 곳만 남았다. 알래스카 주 선거국의 13일 밤 공표에서 메리 펠톨라(민)가 49.84%로 댄 설리번(공, 46.09%)에 1만 412표 앞섰고, 펠톨라 쪽은 14일 '설리번이 이길 수학적 경로는 없다'며 승리를 주장했다. 다만 득표가 50%에 조금 못 미치고 AP도 아직 판정하지 않아 18일 순위선택 집계에서 결론이 날 수 있다. 하원은 AP 판정 기준 민주 256·공화 169석이고 NBC 기준 미판정은 9곳이다.",
   "senate": {
     "dem": 55,
     "gop": 44,
@@ -3961,7 +3961,7 @@
     },
     "asOf": "2026-11-14T02:35:00Z",
     "districts": {
-    "AK":[[1,"lead","R",0,96,[["Nick Begich","R",132053,47.8,1],["Bill Hill","NP",115220,41.7,0],["Eric Hafner","D",21187,7.7,0]]]],
+    "AK":[[1,"lead","R",0,95.9,[["Nick Begich","R",132053,47.8,1],["Bill Hill","NP",115220,41.7,0],["Eric Hafner","D",21187,7.7,0]]]],
     "AL":[[1,"won","R",0,99,[["Jerry Carl","R",137025,59.1,0],["Clyde Jones","D",94940,40.9,0]]],[2,"won","D",0,99,[["Shomari Figures","D",124422,53.8,1],["Rhett Marques","R",107049,46.2,0]]],[3,"won","R",0,99,[["Mike Rogers","R",141800,64,1],["Lee McInnis","D",79926,36,0]]],[4,"won","R",0,98.9,[["Robert Aderholt","R",160008,74.9,1],["Amanda Pusczek","D",53633,25.1,0]]],[5,"won","R",0,99,[["Dale Strong","R",142080,53.2,1],["Andrew Sneed","D",124763,46.8,0]]],[6,"won","R",0,98.3,[["Gary Palmer","R",149921,57.5,1],["Maurice Mercer","D",110957,42.5,0]]],[7,"won","D",0,99,[["Terri Sewell","D",174823,69.4,1],["Ammie Akin","R",77085,30.6,0]]]],
     "AR":[[1,"won","R",0,99,[["Rick Crawford","R",127100,65.5,1],["Terri Yarbrough Green","D",60150,31,0],["Steve Parsons","Lib",6944,3.6,0]]],[2,"won","R",0,99,[["French Hill","R",127452,50.9,1],["Chris Jones","D",123096,49.1,0]]],[3,"won","R",0,99,[["Steve Womack","R",127304,54.9,1],["Robb Ryerse","D",96211,41.5,0],["Bobby Wilson","Lib",8413,3.6,0]]],[4,"won","R",0,99,[["Bruce Westerman","R",131310,65.5,1],["James Russell","D",69186,34.5,0]]]],
     "AZ":[[1,"won","D",1,99,[["Amish Shah","D",185813,52.4,0],["Jay Feely","R",161118,45.4,0],["Monica Alponte","Lib",7700,2.2,0]]],[2,"won","R",0,99,[["Eli Crane","R",163530,49.6,1],["Jonathan Nez","D",160084,48.6,0],["Curtis Goodwin","Lib",6042,1.8,0]]],[3,"won","D",0,99,[["Yassamin Ansari","D",130716,87.4,1],["Alan Aversa","NoL",9068,6.1,0],["David Redkey","Grn",7782,5.2,0]]],[4,"won","D",0,99,[["Greg Stanton","D",159251,62.4,1],["Zuhdi Jasser","R",89811,35.2,0],["Tisha Benoit","NoL",5986,2.3,0]]],[5,"won","R",0,99,[["Mark Lamb","R",167969,51.7,0],["Elizabeth Lee","D",157036,48.3,0]]],[6,"won","D",1,99,[["JoAnna Mendoza","D",190050,53,0],["Juan Ciscomani","R",160969,44.9,1],["Jereme Peters","Lib",4514,1.3,0]]],[7,"won","D",0,99,[["Adelita Grijalva","D",148173,72,1],["Daniel Butierez","R",57710,28,0]]],[8,"won","R",0,99,[["Abraham Hamadeh","R",147023,51.2,1],["Bernadette Greene-Placentia","D",140203,48.8,0]]],[9,"won","R",0,99,[["Paul Gosar","R",166469,57.5,1],["Danielle Sterbinsky","D",123129,42.5,0],["William Perry (write-in)","I",47,0,0]]]],
@@ -4012,7 +4012,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",119087,57.1,1],["Vince George","D",82705,39.6,0],["Belinda Fox-Spencer","CST",6921,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",144109,59.4,1],["Ace Parsi","D",98615,40.6,0]]]],
     "WY":[[1,"won","R",0,100,[["Chuck Gray","R",99906,54.2,0],["Lisa Kinney","D",61689,33.5,0],["Shawn Johnson","Lib",13667,7.4,0]]]]
   },
-    "districtsAsOf": "2026-11-14T13:36:30Z",
+    "districtsAsOf": "2026-11-14T20:04:54Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -4020,6 +4020,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-14T20:35:00Z",
+      "text": "새 AP 판정 없음(미 동부 14일 오후 3시 35분 확인): 알래스카 상원은 NBC 화면(집계 AP)에서 여전히 '판정하기 이르다'이고 주 선거국 공표 파일도 13일 밤 것(펠톨라 13만 8240표 49.84%·설리번 12만 7828표 46.09%) 그대로다. 그사이 펠톨라 쪽은 14일 새벽 X 계정에 '설리번이 이길 수학적 경로는 없다'고 올려 사실상 승리를 주장했지만(인터내셔널 비즈니스 타임스), 주요 언론은 아직 판정하지 않았고 설리번 쪽 반응은 보도되지 않았다. 하원은 폭스뉴스 결과 화면(14일 오후 3시 34분 갱신)의 AP 판정 집계로 민주 256·공화 169 그대로이고, NBC 기준 뒤집힌 선거구 47곳·미판정 9곳이다.",
+      "text_en": "No new AP calls (checked 3:35 p.m. ET Nov 14): NBC's page (AP data) still lists Alaska's Senate race as too early to call, and the state elections division's summary file is still the Nov 13 evening release (Peltola 138,240, 49.84%; Sullivan 127,828, 46.09%). Meanwhile Peltola's X account posted early Saturday that \"there is no mathematical path for Sullivan to win this race,\" in effect claiming victory (International Business Times), but major outlets have not called the race and no response from Sullivan has been reported. In the House, Fox News's AP race-call tally (updated 3:34 p.m. ET Nov 14) is unchanged at Democrats 256, Republicans 169; per NBC, 47 districts flipped and 9 remain uncalled."
+    },
     {
       "t": "2026-11-14T19:35:00Z",
       "text": "새 AP 판정 없음(미 동부 14일 오후 2시 35분 확인): 알래스카 상원은 NBC 화면(집계 AP)에서 여전히 '판정하기 이르다'이고 펠톨라 49.8%·설리번 46.1%다. 주 선거국 공표 파일도 13일 밤 것 그대로다. 하원은 폭스뉴스 결과 화면(14일 오후 2시 34분 갱신)의 AP 판정 집계로 민주 256·공화 169 그대로이고, NBC 기준 뒤집힌 선거구 47곳·미판정 9곳이다.",
@@ -4164,11 +4169,6 @@
       "t": "2026-11-13T16:13:00Z",
       "text": "새 AP 판정 없음(미 동부 13일 오전 11시 13분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 예상 투표의 88.2% 개표(남은 표 약 3만 5000)로 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 현지 13일, 순위선택 집계는 18일이다. 하원은 뒤집힌 선거구 46곳·미판정 11곳 그대로다.",
       "text_en": "No new AP calls (checked 11:13 a.m. ET Nov 13): NBC (AP data) shows 88.2% of the expected vote in for Alaska's Senate race (about 35,000 votes remaining), still too early to call. The state's next release is Nov 13 local time and the ranked-choice tabulation Nov 18. The House is unchanged at 46 flipped seats and 11 uncalled."
-    },
-    {
-      "t": "2026-11-13T15:17:00Z",
-      "text": "새 AP 판정 없음(미 동부 13일 오전 10시 17분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 예상 투표의 88.2% 개표(남은 표 약 3만 5000)로 여전히 '판정하기 이르다'다. 주 선거국의 다음 공표는 현지 13일, 순위선택 집계는 18일이다. 하원은 뒤집힌 선거구 46곳·미판정 11곳 그대로다.",
-      "text_en": "No new AP calls (checked 10:17 a.m. ET Nov 13): NBC (AP data) shows 88.2% of the expected vote in for Alaska's Senate race (about 35,000 votes remaining), still too early to call. The state's next release is Nov 13 local time and the ranked-choice tabulation Nov 18. The House is unchanged at 46 flipped seats and 11 uncalled."
     }
   ],
   "how": [
@@ -4204,14 +4204,14 @@
       "NBC News House results (AP data)"
     ],
     [
-      "주 정부 '선호투표 집계로 폴 르페이지 승리 확인'(포틀랜드 프레스 헤럴드)",
-      "https://www.pressherald.com/2026/11/12/paul-lepages-victory-confirmed-after-ranked-choice-count-state-says/",
-      "Paul LePage's victory confirmed after ranked-choice count, state says (Portland Press Herald)"
+      "펠톨라, 알래스카 상원 의석에 다가서며 승리 주장(인터내셔널 비즈니스 타임스, 야후 뉴스 전재)",
+      "https://www.yahoo.com/news/politics/articles/democrat-peltola-closes-alaska-senate-115404732.html",
+      "Democrat Peltola Closes In On Alaska Senate Seat. She Is Already Claiming Victory. (International Business Times via Yahoo News)"
     ]
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "With Democrats having won both chambers, the Senate stands at Democrats 55, Republicans 44 with only Alaska left. In Alaska's Nov 13 evening release, Mary Peltola (D) leads Dan Sullivan (R) 49.84% to 46.09%, a 10,412-vote margin, but she is just short of 50% and AP has not called it, so the Nov 18 ranked-choice tabulation may decide it. The House stands at Democrats 256, Republicans 169 by AP calls, with 9 seats uncalled on NBC.",
+  "headline_en": "With Democrats having won both chambers, the Senate stands at Democrats 55, Republicans 44, with only Alaska left. In the state elections division's Nov 13 evening release, Mary Peltola (D) leads Dan Sullivan (R) 49.84% to 46.09%, a margin of 10,412 votes, and her side said on Nov 14 that Sullivan has \"no mathematical path\" to win. But she is just short of 50% and AP has not called the race, so the result may come with the Nov 18 ranked-choice tabulation. In the House, AP calls put Democrats at 256 and Republicans at 169, with 9 races still uncalled per NBC.",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
