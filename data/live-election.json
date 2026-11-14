@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-14T21:35:00Z",
+  "updatedAt": "2026-11-14T22:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -4021,6 +4021,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-14T22:35:00Z",
+      "text": "새 AP 판정 없음(미 동부 14일 오후 5시 35분 확인): 알래스카 상원은 NBC 결과 화면(집계 AP)에서 여전히 '판정하기 이르다'로 펠톨라(민) 49.8%가 앞서 있다. 하원은 폭스뉴스 결과 화면(14일 오후 5시 34분 갱신)의 AP 판정 집계로 민주 256·공화 169 그대로이고 마지막 판정은 13일 오후 8시 25분이다. NBC 기준 뒤집힌 선거구 47곳·미판정 9곳도 그대로다.",
+      "text_en": "No new AP calls (checked 5:35 p.m. ET Nov 14): NBC's results page (AP data) still lists Alaska's Senate race as too early to call, with Peltola (D) ahead at 49.8%. In the House, Fox News's AP race-call tally (updated 5:34 p.m. ET Nov 14) is unchanged at Democrats 256, Republicans 169, with the last call at 8:25 p.m. Nov 13. Per NBC, 47 districts flipped and 9 remain uncalled, also unchanged."
+    },
+    {
       "t": "2026-11-14T21:35:00Z",
       "text": "새 AP 판정 없음(미 동부 14일 오후 4시 35분 확인): NBC 뉴스 디시전 데스크가 오후 3시 52분 알래스카 상원 선거를 '민주당 유력'(펠톨라 승리 확신 95% 이상)으로 분류했다. 판정은 아니어서 NBC 결과 화면은 여전히 미판정이고, NBC는 펠톨라가 이기면 내년 상원이 민주 56 대 공화 44가 된다고 전했다. 주 선거국 공표 파일은 13일 밤 것 그대로다. 하원은 폭스뉴스 결과 화면(14일 오후 4시 34분 갱신)의 AP 판정 집계로 민주 256·공화 169 그대로이고, NBC 기준 뒤집힌 선거구 47곳·미판정 9곳이다.",
       "text_en": "No new AP calls (checked 4:35 p.m. ET Nov 14): at 3:52 p.m. the NBC News Decision Desk characterized Alaska's Senate race as 'likely Democratic' (at least 95% confidence Peltola wins). That is not a call, so NBC's results page still lists it as uncalled; NBC notes that a Peltola win would give Democrats a 56-44 Senate majority next year. The state elections division's summary file is still the Nov 13 evening release. In the House, Fox News's AP race-call tally (updated 4:34 p.m. ET Nov 14) is unchanged at Democrats 256, Republicans 169; per NBC, 47 districts flipped and 9 remain uncalled."
@@ -4164,11 +4169,6 @@
       "t": "2026-11-13T17:35:00Z",
       "text": "새 AP 판정 없음(미 동부 13일 낮 12시 35분 확인): NBC 화면(집계 AP)에서 알래스카 상원은 예상 투표의 88.2% 개표(남은 표 약 3만 5000)로 여전히 '판정하기 이르다'이고, 주 선거국의 다음 공표는 현지 13일, 순위선택 집계는 18일이다. 하원은 NBC 기준 뒤집힌 선거구 46곳·미판정 11곳 그대로다.",
       "text_en": "No new AP calls (checked 12:35 p.m. ET Nov 13): NBC (AP data) shows 88.2% of the expected vote in for Alaska's Senate race (about 35,000 votes remaining), still too early to call; the state's next release is Nov 13 local time and the ranked-choice tabulation Nov 18. The House is unchanged at 46 flipped seats and 11 uncalled, per NBC."
-    },
-    {
-      "t": "2026-11-13T16:43:00Z",
-      "text": "새 AP 판정 없음(미 동부 13일 오전 11시 43분 확인): 알래스카 상원은 아직 AP 판정이 없고, 주 선거국의 다음 공표는 현지 13일, 순위선택 집계는 18일이다. 하원은 NBC 기준 뒤집힌 선거구 46곳·미판정 11곳 그대로다.",
-      "text_en": "No new AP calls (checked 11:43 a.m. ET Nov 13): Alaska's Senate race is still uncalled by AP; the state's next release is Nov 13 local time and the ranked-choice tabulation Nov 18. The House is unchanged at 46 flipped seats and 11 uncalled, per NBC."
     }
   ],
   "how": [
