@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-14",
+ "asOf": "2026-11-15",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -4619,6 +4619,124 @@
      "우루과이 경제재정부 부채관리실(UGD)",
      "Reporte de deuda soberana agosto 2026(2026년 8월 국가부채 보고서) · 2026-08",
      "https://deuda.mef.gub.uy/innovaportal/file/32312/1/reporte-de-deuda-soberana-agosto-2026.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "AM": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가예산(중앙정부) 국가부채 이자",
+   "interest": {
+    "value": 416.8,
+    "unit": "십억 드람",
+    "label": "국가부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 4072.0,
+    "unit": "십억 드람",
+    "label": "국가예산 총지출"
+   },
+   "share": 10.2,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 369,
+    "unit": "십억 드람"
+   },
+   "note": "2027년 부채 상환·이자 합계 988.4십억 드람 중 원금 상환 571.6십억은 빼고 이자 416.8십억 드람만 썼다. 이자는 대부분 국내 국채에 붙고, 달러 표시 유로본드는 2027년 만기가 없어 이자만 낸다. 2026년 값은 Hetq가 '약 369십억'이라고 적은 개략치다.",
+   "sources": [
+    [
+     "Hetq",
+     "Armenia’s Public Debt Projected to Surge to $17.83 Billion in 2027(아르메니아 공공부채 2027년 178억 3천만 달러로 증가 전망) · 2026-10-13",
+     "https://hetq.am/en/article/184654"
+    ],
+    [
+     "Hetq",
+     "Բյուջե 2027. ծախսերի ամենամեծ աճը առողջապահության գծով է(2027 예산: 지출 증가가 가장 큰 곳은 보건) · 2026-11-06",
+     "https://hetq.am/hy/article/185279"
+    ],
+    [
+     "NEWS.am",
+     "Armenia’s state budget expenditure to reach 4.072 trillion drams in 2027(2027년 아르메니아 국가예산 지출 4조 720억 드람) · 2026-11-02",
+     "https://news.am/en/news/1071858"
+    ]
+   ],
+   "tier": "press"
+  },
+  "BA": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가 제도(중앙 공동기관) 예산 + 외채 원리금 — 연방·스릅스카공화국 자체 예산은 별개",
+   "interest": {
+    "value": 978.72,
+    "unit": "백만 KM",
+    "label": "외채 원리금 상환액(원금 포함, 대부분 연방·스릅스카공화국이 부담)"
+   },
+   "principalIncluded": true,
+   "total": {
+    "value": 2559.22,
+    "unit": "백만 KM",
+    "label": "국가기관 지출 15억 8,050만 + 외채 원리금 9억 7,872만 KM"
+   },
+   "share": 38.2,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 1226.77,
+    "unit": "백만 KM"
+   },
+   "note": "법 제4조의 외채 상환액이며 원금과 이자가 섞여 있고 이자만 따로 적은 값은 없다. 국가기관 예산 안의 '이자·수수료' 항목은 45.2만 KM(CEB·사우디 기금 차관)뿐이다. 법 제4조 표는 상환액을 연방(6억 3,649만 KM)·스릅스카공화국(3억 2,350만)·브르치코 구(1,361만) 등 부담 주체별로 나눠 보여 준다. 2025년 상환 계획표(예산 기본문서)에서는 국가 외채 11.68억 KM 중 이자·기타 비용이 2.62억 KM였다.",
+   "sources": [
+    [
+     "보스니아 헤르체고비나 공보(Službeni glasnik BiH 53/26)",
+     "Zakon o budžetu institucija BiH i međunarodnih obaveza BiH za 2026. godinu (2026년 국가 제도·국제 의무 예산법) · 2026-07-27",
+     "https://sluzbenilist.ba/page/akt/Q8CPohz4nh78h77ieUtro="
+    ],
+    [
+     "재무·국고부",
+     "Dokument okvirnog budžeta institucija BiH 2026-2028 (2026~2028 예산 기본문서, 세르비아어판) · 2026-05-25",
+     "https://mft.gov.ba/Content/OpenAttachment?id=540c961d-1ef2-48ff-a4b0-ebb19de836ce&lang=bs"
+    ],
+    [
+     "각료회의(Vijeće ministara BiH)",
+     "Council of Ministers ... Holds its 111th Session (제111차 회의, 2026년 예산 초안 채택) · 2026-05-21",
+     "https://vijeceministara.gov.ba/en/portal/post/council-of-ministers-of-bosnia-and-herzegovina-hols-tis-111st-session-1779792105391"
+    ]
+   ],
+   "tier": "official"
+  },
+  "NA": {
+   "fiscalYear": "2026/27(2026.4~2027.3)",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출(법정 이자 포함)",
+   "interest": {
+    "value": 16.2,
+    "unit": "십억 나미비아 달러",
+    "label": "국채 이자(법정 지출)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 106.0,
+    "unit": "십억 나미비아 달러",
+    "label": "총지출(이자 포함)"
+   },
+   "share": 15.3,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 14.3,
+    "unit": "십억 나미비아 달러"
+   },
+   "note": "2026-02-26 예산 연설의 이자 162억 달러는 세입의 18.1%이고 원금 상환은 포함하지 않는다. 2026-10-22 중간 예산 재검토는 올해 이자를 154억 달러(총세입의 17.5%), 총지출을 1,050억 달러로 낮춰 전망했다.",
+   "sources": [
+    [
+     "나미비아 재무부(에리카 샤푸다 재무장관 의회 연설)",
+     "FY2026/27 Budget Statement 'People, Productivity, Prudence'(2026/27 예산 연설) · 2026-02-26",
+     "https://www.parliament.na/wp-content/uploads/2026/02/BUDGET-STATEMENT-BOOK.pdf"
+    ],
+    [
+     "나미비아 재무부(에리카 샤푸다 재무장관 의회 연설, PwC 나미비아 게시본)",
+     "FY2026/27 Mid-Year Budget Review Statement(2026/27 중간 예산 재검토 연설) · 2026-10-22",
+     "https://www.pwc.com/na/en/assets/pdf/2026-minister-of-finance-mid-year-budget-statement.pdf"
     ]
    ],
    "tier": "official"
