@@ -1,6 +1,481 @@
 {
  "reports": [
   {
+   "id": "2026-w46-capped-at-96",
+   "kind": "weekly",
+   "date": "2026-11-15",
+   "period": "11월 9~15일",
+   "updated": "",
+   "title": "브렌트 95.84달러 2주 연속 하락…바다는 막힌 채, 한국은 12차 최고가격도 동결",
+   "hook": "국제 유가가 6월 말보다 20달러 넘게 높은데, 한국 정부는 왜 이번에도 석유 최고가격을 올리지도 내리지도 않았을까?",
+   "summary": "브렌트유는 13일 95.84달러로 마감해 한 주 전(98.32달러)보다 약 2.5% 내리며 2주 연속 주간 하락했다. 국제에너지기구(IEA)가 이번 분기 처음으로 공급 과잉을 전망했지만, 이란 혁명수비대는 호르무즈 해협에서 유조선이 기뢰에 맞았다는 주장을 12~14일 연달아 내놓았고 미국과 이란은 합의 없이 말만 주고받았다. 한국 산업통상부는 13일 12차 석유 최고가격을 휘발유 1,784원·경유 1,773원으로 또 묶고 14일부터 4주간 적용한다고 발표했다. 정부가 종료 요건으로 든 종전·해협 정상화·유가 90달러대 안착 중 지금 가까운 것은 유가뿐이고, 다음 주 18~19일 중국 선전에서는 트럼프·시진핑·푸틴의 첫 3자 회담이 열린다.",
+   "points": [
+    {
+     "h": "값은 90달러대 중반에서 멈췄다",
+     "body": "지난주 16% 넘게 폭락한 브렌트는 이번 주에는 큰 방향 없이 오르내렸다. 6일 98.32달러였던 1월물은 10일 91.49달러로 8월 이후 가장 낮게 마감했다가 12일 95.82달러로 3.3% 올랐고, 13일에는 2센트 오른 95.84달러로 끝났다(로이터 기반 시황·블룸버그). 같은 날 미국산 WTI는 88.56달러(12월물)였다. 값을 누른 재료는 IEA다. 블룸버그에 따르면 IEA는 13일 이번 분기 시장이 전쟁이 시작된 뒤 처음으로 공급 과잉이라고 밝혔고, 로이터를 인용한 보도는 4분기 세계 공급이 하루 1억 500만 배럴로 예상 수요보다 170만 배럴 많다고 전했다. 한편 석유수출국기구(OPEC)는 11일 OPEC+의 10월 원유 생산이 하루 4,123만 배럴로 전쟁 전 2월의 97% 수준까지 돌아왔다고 밝혔다(로이터 계산, OGME 인용).",
+     "src": [
+      2,
+      0,
+      1
+     ]
+    },
+    {
+     "h": "바다는 여전히 막혀 있고 피격 주장은 이어졌다",
+     "body": "혁명수비대는 12일 초대형 유조선 2척에서 폭발이 있었다고 주장했고, 13일에는 유조선 2척이 레이더를 끄고 '비인가 항로'로 지나다 기뢰에 맞았으며 앞서 LNG 운반선도 기뢰에 맞아 불이 났다고 했다. 14일에는 이란 해군과 혁명수비대가 유조선 3척이 기뢰에 맞아 불탔다고 주장했다. 미군은 이 중 일부를 부인하며 주요 항로는 소해(기뢰 제거)가 끝났다는 입장이다. 이란 측 주장이 중심이라 독립 확인은 없다. 베리스크 메이플크로프트는 10월 걸프·호르무즈·오만만에서 상선 공격이 36건으로 전쟁 이후 월간 최다였다고 집계했고, 유엔은 14일 2월 이후 호르무즈 안팎에서 선원 25명이 숨졌다고 밝혔다. 선박 위치 신호 추적 사이트 hormuz.now는 최근 7일 위치 신호를 켠 유조선이 14척(하루 2.0척, 전쟁 전 47.6척)이라고 집계했는데, 신호를 끈 배는 빠지는 하한값이다.",
+     "src": [
+      1,
+      3,
+      12,
+      4
+     ]
+    },
+    {
+     "h": "미국 정치는 합의도 확전도 아닌 쪽으로 흘렀다",
+     "body": "트럼프 대통령은 12일 트루스소셜에 \"우리는 이란과 합의가 필요 없다\"고 쓰고 JD 밴스 부통령에게 협상 대신 민주당 지역의 \"부패와 범죄\"에 집중하라고 지시했다(NBC). 이란은 이를 협상 중단으로 읽고 강경해졌다. 모하마드 바게르 갈리바프 이란 의회의장은 15일 이란이 \"전쟁도 평화도 아닌\" 상태에 머물지 않겠다며 미국이 \"실수하면\" 분쟁 범위를 넓히겠다고 했고, 이란은 걸프국에 미국의 공격을 돕지 말라고 경고했다(알자지라 라이브). 13일에는 혁명수비대가 바레인 미군 레이더를 파괴했다고 주장했지만 미 중부사령부는 드론 2대를 격추했고 피해는 없다고 부인했다(RFE/RL). IAEA는 13일 이란에 핵시설 사찰을 다시 열라고 촉구했다.",
+     "src": [
+      11,
+      14,
+      13,
+      15
+     ]
+    },
+    {
+     "h": "다음 주 선전에서는 3자 회담이 열린다",
+     "body": "백악관 공보 관계자 올리비아 웨일스는 트럼프 대통령이 시진핑 중국 국가주석·푸틴 러시아 대통령과 핵무기 감축을 논의할 것이라고 밝혔다. 회담은 18~19일 중국 선전 APEC 정상회의 계기이고, 이름을 밝히지 않은 미 고위 당국자는 \"어떤 합의도 기대하지 않는다\"고 했다(The Business Standard). 서울경제는 미국이 핵 감축과 이란 전쟁을 올릴 계획이고 우크라이나는 별도 채널에서 다룬다고 전했다. 크렘린의 드미트리 페스코프 대변인은 14일 3국이 회담에 합의했다고 확인했지만 결과를 남에게 강요할 수 없다고 했다. 이란 전쟁이 의제에 오르는 만큼 해협 재개 협상의 방향이 여기서 갈릴 수 있다.",
+     "src": [
+      10,
+      9
+     ]
+    }
+   ],
+   "why": [
+    {
+     "h": "값은 '남는 석유'와 '막힌 길'이 맞서 90달러대에 묶였다",
+     "body": "브렌트가 큰 폭으로 오르지도 내리지도 않은 직접 원인은 두 힘의 균형이다. 아래로 누르는 쪽은 IEA의 공급 과잉 전망과 OPEC+ 생산 회복이고, 위로 미는 쪽은 피격 주장과 막힌 해협이다. 에너지 업체 스내퍼 크릭의 시드 퍼킨스는 호르무즈가 \"여전히 중대한 우려\"라고 했다(블룸버그). 리스타드 에너지의 호르헤 레온은 29일 OPEC+ 장관급 회의를 \"훨씬 더 중요한 시험\"이라고 했다. 석유가 모자라서가 아니라 모자랄 수 있다는 걱정의 크기가 값을 정한다는 지난주 진단이 이번 주에도 맞았다.",
+     "src": [
+      0,
+      3,
+      2
+     ]
+    },
+    {
+     "h": "한국 정부가 값을 묶은 이유는 '아직 위험이 크다'",
+     "body": "12차 동결의 직접 이유는 중동 불안과 높은 유가·운임이다. 양기욱 산업통상부 산업자원안보실장은 \"최근 국제유가 하락에도 유가가 여전히 높은 수준이며 해상운임 부담도 큰 상황\"이라며 가격 안정 기조를 유지할 필요가 크다고 밝혔다(ZDNet). 아시아경제는 최고가격 산정 기준인 6월 말(브렌트 72달러, 두바이 65달러)보다 12일 브렌트 96달러·두바이 90달러가 훨씬 높다고 전했다. 파이낸셜뉴스는 중동→중국 유조선 운임지수가 6월 26일 295에서 11월 6일 1,202로 올랐다고 했다.",
+     "src": [
+      7,
+      6,
+      5
+     ]
+    }
+   ],
+   "korea": [
+    {
+     "h": "12차 최고가격은 11차와 같다",
+     "body": "산업통상부는 13일 12차 최고가격을 휘발유 리터당 1,784원, 경유 1,773원, 등유 1,380원으로 11차와 같게 묶고 14일 0시부터 4주간 적용한다고 발표했다. 뉴스웨이는 7차에서 150원을 낮춘 뒤 5개월 넘게 같은 값이라고 전했다. 4주를 단순히 세면 12월 11일께 끝나지만 기사에 종료일은 적혀 있지 않다. 아시아경제는 한국 유가가 10월 평균(브렌트 108달러, 두바이 111달러)보다 각각 12달러·21달러 낮아졌다고 정리했다.",
+     "src": [
+      5,
+      6,
+      8
+     ]
+    },
+    {
+     "h": "비용과 출구 조건",
+     "body": "한국개발연구원(KDI)은 12일 최고가격제가 올해 3~10월 석유류 상승률을 월평균 약 12%p, 소비자물가 상승률을 월평균 약 0.6%p 낮췄다고 추정했다(파이낸셜뉴스·아시아경제). 뉴스웨이에 따르면 정부는 목적예비비 4조 2,000억 원과 내년 예산 1조 4,497억 원을 확보했고, 종료 요건으로 종전, 호르무즈 운항 정상화, 국제유가 배럴당 90달러대 안착을 제시했으며 종료 시점과 방식 검토에 들어갔다. 지금 브렌트 96달러는 세 번째 조건에 가깝지만 앞의 둘은 충족되지 않았다.",
+     "src": [
+      5,
+      6,
+      8
+     ]
+    },
+    {
+     "h": "선전 회담은 한국 안보에도 걸린다",
+     "body": "조현 외교부 장관은 13일 베이징에서 왕이 중국 외교부장을 만나 한반도 문제를 한국 없이 논의해선 안 된다는 뜻을 전했다고 서울경제가 보도했다. 한국 외교부 고위 당국자는 14일 3국 회동이 '제2의 얄타회담'이 되어선 안 되고, 북한을 핵보유국으로 인정하거나 한반도 평화체제에 반하는 결정이 나와선 안 된다고 했으며 중국 측이 한국 입장을 이해했다고 말했다(한국 당국자 전언이고 중국 측 확인은 없다). 북한 조용원 노동당 비서는 14일 러시아로 떠났다고 조선중앙통신이 밝혔다.",
+     "src": [
+      9
+     ]
+    }
+   ],
+   "views": [
+    {
+     "who": "한국개발연구원(KDI)",
+     "kind": "평가",
+     "text": "최고가격제로 올해 3~10월 소비자물가 상승률이 월평균 약 0.6%p 낮아진 것으로 추정했다. 산업연구원은 8~9월 한국 휘발유 값 상승률이 11.8%, 11.9%에 머문 반면 주요국은 더 커졌다고 평가했다.",
+     "src": [
+      5,
+      6
+     ]
+    },
+    {
+     "who": "국제에너지기구(IEA)",
+     "kind": "평가",
+     "text": "13일 이번 분기 시장이 전쟁 시작 뒤 처음으로 공급 과잉이고 올해 소비가 크게 줄었다고 밝혔다(블룸버그 보도).",
+     "src": [
+      0,
+      1
+     ]
+    },
+    {
+     "who": "시드 퍼킨스(스내퍼 크릭 에너지)",
+     "kind": "전망",
+     "text": "호르무즈는 \"여전히 중대한 우려\"라고 했다.",
+     "src": [
+      0
+     ]
+    },
+    {
+     "who": "호르헤 레온(리스타드 에너지)",
+     "kind": "전망",
+     "text": "29일 OPEC+ 회의를 \"훨씬 더 중요한 시험\"이라고 했다(FinanceFeeds 인용).",
+     "src": [
+      3
+     ]
+    }
+   ],
+   "watch": [
+    {
+     "date": "2026-11-18",
+     "text": "트럼프·시진핑·푸틴 3자 회담이 중국 선전 APEC 정상회의(18~19일) 계기에 열린다. 보도에 따라 회담일이 19일로 적혀 있다."
+    },
+    {
+     "date": "2026-11-29",
+     "text": "OPEC+ 장관급 회의가 2027년 정책을 정한다."
+    }
+   ],
+   "open": [
+    "혁명수비대의 유조선 기뢰 충돌 주장은 이란 측 발표가 중심이고 선박 이름·피해는 독립 확인되지 않았다. 미군은 주요 항로가 소해됐다는 입장이다.",
+    "정부가 12차 이후 최고가격제를 언제 어떻게 끝낼지는 발표되지 않았다. 검토에 들어갔다는 보도만 있다.",
+    "IEA 4분기 과잉 규모는 보도마다 하루 170만 배럴과 약 200만 배럴로 갈려 IEA 원문으로 확인하지 못했다. 선전 회담의 정확한 날짜와 형식은 중국 정부가 직접 확인한 것을 찾지 못했다."
+   ],
+   "ripple": [
+    {
+     "track": "energy",
+     "node": "crude",
+     "label": "국제유가"
+    },
+    {
+     "track": "energy",
+     "node": "hormuz",
+     "label": "호르무즈 해협"
+    },
+    {
+     "track": "energy",
+     "node": "shipping",
+     "label": "유조선 운임·보험"
+    },
+    {
+     "track": "energy",
+     "node": "kr_prices",
+     "label": "소비자물가"
+    }
+   ],
+   "countries": [
+    "IR",
+    "US",
+    "CN",
+    "RU",
+    "KR"
+   ],
+   "method": "산업통상부 발표를 전한 국내 보도와 IEA·OPEC·KDI 발표를 전한 통신사 보도를 출발점으로 삼고, 시황 보도 3곳과 선박 위치 추적 자료로 값·통항을 대조했다. 이란 측 주장은 미 중부사령부 입장과 나란히 적었고, 1차 원문을 못 연 수치는 전한 매체를 밝혔다.",
+   "figures": [
+    {
+     "id": "brent-w46",
+     "kind": "line",
+     "after": [
+      "points",
+      0
+     ],
+     "title": "브렌트 선물 종가, 지난주 폭락 뒤 이번 주",
+     "caption": "10월 30일은 12월물 마지막 종가이고 11월 6일부터는 1월물이다. 6일 이후 90달러대 중반에서 오르내렸다.",
+     "unit": "달러/배럴",
+     "series": [
+      {
+       "name": "브렌트유(선물)",
+       "points": [
+        [
+         "2026-10-30",
+         117.64
+        ],
+        [
+         "2026-11-06",
+         98.32
+        ],
+        [
+         "2026-11-10",
+         91.49
+        ],
+        [
+         "2026-11-12",
+         95.82
+        ],
+        [
+         "2026-11-13",
+         95.84
+        ]
+       ]
+      }
+     ],
+     "marks": [
+      [
+       "2026-11-10",
+       "8월 이후 최저"
+      ]
+     ],
+     "src": [
+      [
+       "Gate News(로이터 기반 시황)",
+       "브렌트 2주 연속 주간 하락, 95.84달러 마감 · 2026-11-14",
+       "https://www.gate.com/news/detail/brent-crude-settles-9584-after-second-weekly-loss-on-supply-surplus-25618627",
+       "press"
+      ],
+      [
+       "FinanceFeeds",
+       "브렌트 95.84달러, 이란 기뢰 주장 · 2026-11-15",
+       "https://financefeeds.com/brent-crude-oil-price-95-84-sunday-futures-open-week-ahead-iran-mine-claims-bull-98-bear-91/",
+       "press"
+      ],
+      [
+       "Investing.com",
+       "Oil hits six-month highs as Hormuz attacks threaten Iran peace efforts (호르무즈 공격이 이란 평화 노력 위협…유가 6개월 최고) · 2026-10-31",
+       "https://ca.investing.com/news/economy-news/oil-hits-sixmonth-highs-as-hormuz-attacks-threaten-iran-peace-efforts-4919701",
+       "press"
+      ]
+     ]
+    },
+    {
+     "id": "price-gap",
+     "kind": "bar",
+     "after": [
+      "why",
+      1
+     ],
+     "title": "한국 정부가 보는 유가 격차",
+     "caption": "브렌트 기준. 최고가격 산정 기준인 6월 말(72달러)보다 12일(96달러)이 24달러 높고, 10월 평균(108달러)보다는 12달러 낮다.",
+     "unit": "달러/배럴",
+     "series": [
+      {
+       "name": "브렌트유",
+       "points": [
+        [
+         "6월 말",
+         72
+        ],
+        [
+         "10월 평균",
+         108
+        ],
+        [
+         "11월 12일",
+         96
+        ]
+       ]
+      }
+     ],
+     "src": [
+      [
+       "아시아경제",
+       "12차 석유 최고가격 '동결'…\"중동 불안 여전\" · 2026-11-13",
+       "https://view.asiae.co.kr/article/2026111314412229914",
+       "press"
+      ],
+      [
+       "파이낸셜뉴스",
+       "석유 최고가격 12차도 동결…휘발유 1784원·경유 1773원 · 2026-11-13",
+       "https://www.fnnews.com/news/202611131737152220",
+       "press"
+      ]
+     ]
+    },
+    {
+     "id": "week-timeline-46",
+     "kind": "timeline",
+     "after": [
+      "points",
+      2
+     ],
+     "title": "유가·이란·한국 정책이 겹친 한 주",
+     "caption": "값은 횡보했지만 사건은 쉼 없이 이어졌다.",
+     "events": [
+      [
+       "2026-11-10",
+       "브렌트 91.49달러, 8월 이후 최저"
+      ],
+      [
+       "2026-11-12",
+       "트럼프 \"이란과 합의 필요 없다\"·혁명수비대 유조선 폭발 주장·KDI 최고가격제 효과 추정"
+      ],
+      [
+       "2026-11-13",
+       "IEA 이번 분기 공급 과잉 전망·한국 12차 최고가격 동결·바레인 레이더 주장 공방·백악관 3자 회담 확인"
+      ],
+      [
+       "2026-11-14",
+       "유엔 \"호르무즈 선원 25명 사망\"·혁명수비대 유조선 3척 기뢰 주장·12차 가격 적용 시작"
+      ],
+      [
+       "2026-11-15",
+       "갈리바프 \"전쟁도 평화도 아닌 상태 안 머문다\"·걸프국 경고"
+      ]
+     ],
+     "src": [
+      [
+       "NBC News",
+       "트럼프 \"미국은 이란과 합의가 필요 없다\" · 2026-11-12",
+       "https://www.nbcnews.com/politics/donald-trump/us-doesnt-need-peace-deal-iran-vance-corruption-trump-rcna609027",
+       "press"
+      ],
+      [
+       "RFE/RL",
+       "중부사령부, 이란의 바레인 미군 레이더 타격 주장 부인 · 2026-11-13",
+       "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html",
+       "press"
+      ],
+      [
+       "ZDNet Korea",
+       "12차 석유최고가격, 11차 수준 동결…휘발유 1784원, 경유 1773원, 등유 1380원 · 2026-11-13",
+       "https://zdnet.co.kr/view/?no=20261113172556",
+       "press"
+      ],
+      [
+       "Al Jazeera(라이브)",
+       "이란 전쟁 실시간: 이란, 걸프국에 미국 공격 지원 말라 경고 · 2026-11-15",
+       "https://www.aljazeera.com/news/liveblog/2026/11/15/iran-war-live-israel-vows-gaza-offensive-policy-despite-caretaker-status",
+       "press"
+      ]
+     ]
+    }
+   ],
+   "sources": [
+    {
+     "outlet": "Rigzone(블룸버그 전재)",
+     "title": "Crude Fluctuates as Iran Tensions Persist",
+     "titleKo": "이란 긴장 속 유가 등락",
+     "date": "2026-11-13",
+     "url": "https://www.rigzone.com/news/wire/crude_fluctuates_as_iran_tensions_persist-13-nov-2026-185085-article/",
+     "tier": "press"
+    },
+    {
+     "outlet": "Oil & Gas Middle East(블룸버그·로이터 인용)",
+     "title": "Brent crude settles flat at $95.84 as IRGC claims mine hits on tankers and IEA sees Q4 surplus",
+     "titleKo": "브렌트 95.84달러 보합, 혁명수비대 기뢰 주장·IEA 4분기 공급 과잉 전망",
+     "date": "2026-11-14",
+     "url": "https://www.oilandgasmiddleeast.com/news/brent-crude-tanker-attack-uae",
+     "tier": "press"
+    },
+    {
+     "outlet": "Gate News(로이터 기반 시황)",
+     "title": "Brent Crude Settles $95.84 After Second Weekly Loss on Supply Surplus",
+     "titleKo": "브렌트 2주 연속 주간 하락, 95.84달러 마감",
+     "date": "2026-11-14",
+     "url": "https://www.gate.com/news/detail/brent-crude-settles-9584-after-second-weekly-loss-on-supply-surplus-25618627",
+     "tier": "press"
+    },
+    {
+     "outlet": "FinanceFeeds",
+     "title": "Brent Crude Oil Price: $95.84 Sunday Before the Futures Open, Iran Mine Claims",
+     "titleKo": "브렌트 95.84달러, 이란 기뢰 주장",
+     "date": "2026-11-15",
+     "url": "https://financefeeds.com/brent-crude-oil-price-95-84-sunday-futures-open-week-ahead-iran-mine-claims-bull-98-bear-91/",
+     "tier": "press"
+    },
+    {
+     "outlet": "hormuz.now(선박위치신호 추적)",
+     "title": "Strait of Hormuz Oil & LNG: How Much Flows Now vs Before the War",
+     "titleKo": "호르무즈 원유·LNG 통항 현황",
+     "date": "2026-11-14",
+     "url": "https://hormuz.now/oil",
+     "tier": "research"
+    },
+    {
+     "outlet": "파이낸셜뉴스",
+     "title": "석유 최고가격 12차도 동결…휘발유 1784원·경유 1773원",
+     "titleKo": "석유 최고가격 12차도 동결…휘발유 1784원·경유 1773원",
+     "date": "2026-11-13",
+     "url": "https://www.fnnews.com/news/202611131737152220",
+     "tier": "press"
+    },
+    {
+     "outlet": "아시아경제",
+     "title": "12차 석유 최고가격 '동결'…\"중동 불안 여전\"",
+     "titleKo": "12차 석유 최고가격 '동결'…\"중동 불안 여전\"",
+     "date": "2026-11-13",
+     "url": "https://view.asiae.co.kr/article/2026111314412229914",
+     "tier": "press"
+    },
+    {
+     "outlet": "ZDNet Korea",
+     "title": "12차 석유최고가격, 11차 수준 동결…휘발유 1784원, 경유 1773원, 등유 1380원",
+     "titleKo": "12차 석유최고가격, 11차 수준 동결…휘발유 1784원, 경유 1773원, 등유 1380원",
+     "date": "2026-11-13",
+     "url": "https://zdnet.co.kr/view/?no=20261113172556",
+     "tier": "press"
+    },
+    {
+     "outlet": "뉴스웨이",
+     "title": "석유 최고가격제 9개월째 이어져···4주 더 유지",
+     "titleKo": "석유 최고가격제 9개월째 이어져···4주 더 유지",
+     "date": "2026-11-13",
+     "url": "https://newsway.co.kr/news/view?ud=2026111318350078740",
+     "tier": "press"
+    },
+    {
+     "outlet": "서울경제(영문판)",
+     "title": "U.S., China, Russia to Discuss Nuclear Cuts, Iran in Shenzhen",
+     "titleKo": "미·중·러, 선전에서 핵 감축·이란 논의",
+     "date": "2026-11-15",
+     "url": "https://en.sedaily.com/politics/2026/11/15/us-china-russia-to-discuss-nuclear-cuts-iran-in-shenzhen",
+     "tier": "press"
+    },
+    {
+     "outlet": "The Business Standard",
+     "title": "Trump, Xi and Putin to hold first trilateral summit: What to know",
+     "titleKo": "트럼프·시진핑·푸틴 첫 3자 정상회담: 알아야 할 것",
+     "date": "2026-11-15",
+     "url": "https://www.tbsnews.net/explainer/trump-xi-and-putin-hold-first-trilateral-summit-what-know-1602906",
+     "tier": "press"
+    },
+    {
+     "outlet": "NBC News",
+     "title": "Trump says the U.S. doesn't 'need' a deal with Iran",
+     "titleKo": "트럼프 \"미국은 이란과 합의가 필요 없다\"",
+     "date": "2026-11-12",
+     "url": "https://www.nbcnews.com/politics/donald-trump/us-doesnt-need-peace-deal-iran-vance-corruption-trump-rcna609027",
+     "tier": "press"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "UN says 25 seafarers killed in, around Hormuz since US-Israel war on Iran",
+     "titleKo": "유엔 \"2월 이후 호르무즈 안팎에서 선원 25명 숨져\"",
+     "date": "2026-11-14",
+     "url": "https://www.aljazeera.com/news/2026/11/14/un-says-25-seafarers-killed-in-around-hormuz-since-february",
+     "tier": "press"
+    },
+    {
+     "outlet": "RFE/RL",
+     "title": "CENTCOM Denies Iranian Claim It Struck A US Radar In Bahrain",
+     "titleKo": "중부사령부, 이란의 바레인 미군 레이더 타격 주장 부인",
+     "date": "2026-11-13",
+     "url": "https://www.rferl.org/a/iran-us-sirik-bahrain-war-nuclear-talks/33897951.html",
+     "tier": "press"
+    },
+    {
+     "outlet": "Al Jazeera(라이브)",
+     "title": "Iran war live: Iran warns Gulf states against US attack support",
+     "titleKo": "이란 전쟁 실시간: 이란, 걸프국에 미국 공격 지원 말라 경고",
+     "date": "2026-11-15",
+     "url": "https://www.aljazeera.com/news/liveblog/2026/11/15/iran-war-live-israel-vows-gaza-offensive-policy-despite-caretaker-status",
+     "tier": "press"
+    },
+    {
+     "outlet": "Al Jazeera",
+     "title": "UN watchdog calls on Iran to reopen nuclear facilities to inspection",
+     "titleKo": "유엔 감시기구, 이란에 핵시설 사찰 재개 촉구",
+     "date": "2026-11-13",
+     "url": "https://www.aljazeera.com/news/2026/11/13/un-watchdog-calls-on-iran-to-reopen-nuclear-facilities-to-inspection",
+     "tier": "press"
+    }
+   ]
+  },
+  {
    "id": "2026-w45-post-midterm-oil",
    "kind": "weekly",
    "date": "2026-11-08",
