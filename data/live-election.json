@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-15T21:35:00Z",
+  "updatedAt": "2026-11-15T22:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -4012,7 +4012,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",119087,57.1,1],["Vince George","D",82705,39.6,0],["Belinda Fox-Spencer","CST",6921,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",144109,59.4,1],["Ace Parsi","D",98615,40.6,0]]]],
     "WY":[[1,"won","R",0,100,[["Chuck Gray","R",99906,54.2,0],["Lisa Kinney","D",61689,33.5,0],["Shawn Johnson","Lib",13667,7.4,0]]]]
   },
-    "districtsAsOf": "2026-11-15T20:44:34Z",
+    "districtsAsOf": "2026-11-15T22:16:10Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -4020,6 +4020,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-15T22:35:00Z",
+      "text": "새 AP 판정 없음(미 동부 15일 오후 5시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 있어 상원은 민주 55·공화 44 그대로다. 하원도 NBC 기준(15일 오후 5시 16분 갱신) 뒤집힌 선거구 47곳·미판정 9곳으로 변함없고, 민주 256·공화 169도 그대로다.",
+      "text_en": "No new AP calls (checked 5:35 p.m. ET Nov 15): NBC's Senate results page (AP data) still lists Alaska among uncalled races, so the Senate stays Democrats 55, Republicans 44. In the House, per NBC (updated 5:16 p.m. ET Nov 15), 47 districts flipped and 9 remain uncalled, unchanged, and the tally stays Democrats 256, Republicans 169."
+    },
     {
       "t": "2026-11-15T21:35:00Z",
       "text": "새 AP 판정 없음(미 동부 15일 오후 4시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%로 표시하며, 주 선거국 개표 요약도 14일 공표분이 마지막이다. 하원은 폭스뉴스 결과 화면의 마지막 AP 판정이 13일 오후 8시 25분 캘리포니아 4구여서 민주 256·공화 169 그대로이고, NBC 기준(15일 오후 3시 44분 갱신) 뒤집힌 선거구 47곳·미판정 9곳도 변함없다.",
@@ -4164,11 +4169,6 @@
       "t": "2026-11-14T16:35:00Z",
       "text": "새 AP 판정 없음(미 동부 14일 오전 11시 35분 확인): 알래스카 상원은 NBC 화면(집계 AP)에서 여전히 '판정하기 이르다'이고 펠톨라 49.8%·설리번 46.1%(예상 투표의 96.2% 개표)다. 하원은 폭스뉴스 결과 화면(14일 오전 11시 34분 갱신)의 AP 판정 집계로 민주 256·공화 169 그대로이고(마지막 AP 판정은 13일 밤 캘리포니아 4구), NBC 기준 뒤집힌 선거구 47곳·미판정 9곳이다.",
       "text_en": "No new AP calls (checked 11:35 a.m. ET Nov 14): NBC's page (AP data) still lists the Alaska Senate race as too early to call, Peltola 49.8% to Sullivan 46.1% with 96.2% of the expected vote in. In the House, Fox News's AP race-call tally (updated 11:34 a.m. ET Nov 14) is unchanged at Democrats 256, Republicans 169 (the last AP call was California's 4th on the night of Nov 13); per NBC, 47 districts flipped and 9 remain uncalled."
-    },
-    {
-      "t": "2026-11-14T15:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 14일 오전 10시 35분 확인): 알래스카 상원은 NBC 화면(집계 AP)에서 여전히 '판정하기 이르다'이고 펠톨라 49.8%·설리번 46.1%(예상 투표의 96.2% 개표)다. 하원은 폭스뉴스 결과 화면의 AP 판정 집계로 민주 256·공화 169 그대로이고(마지막 AP 판정은 13일 밤 캘리포니아 4구), NBC 기준 뒤집힌 선거구 47곳·미판정 9곳이다.",
-      "text_en": "No new AP calls (checked 10:35 a.m. ET Nov 14): NBC's page (AP data) still rates Alaska's Senate race 'too early to call', with Peltola at 49.8% and Sullivan at 46.1% (96.2% of expected vote in). By AP calls tallied on the Fox News results page, the House remains Democrats 256, Republicans 169 (the latest AP call was California's 4th on the night of Nov 13); NBC shows 47 flipped districts and 9 uncalled."
     }
   ],
   "how": [
