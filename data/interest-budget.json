@@ -4740,6 +4740,160 @@
     ]
    ],
    "tier": "official"
+  },
+  "LT": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부(국가) 부채 이자, 현금 기준 재무부 추정(발생 기준은 약 13억 유로)",
+   "interest": {
+    "value": 1.12,
+    "unit": "십억 유로",
+    "label": "국가 부채 이자(현금 기준)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 27.9,
+    "unit": "십억 유로",
+    "label": "2027 국가예산 지출(EU 자금 포함)"
+   },
+   "share": null,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 0.753,
+    "unit": "십억 유로"
+   },
+   "note": "재무부 추정치로 국가감사원은 2027년을 약 13.8억 유로로 더 높게 본다. 이자 금액이 어느 예산 문서에서 나왔는지와 총지출의 범위가 달라 비율은 적지 않았고, Respublika가 전한 '부채 상환 3억 6,730만 유로'는 범위를 확인하지 못해 쓰지 않았다. 재무부 예산서(finmin.lrv.lt)는 접속이 막혀 열지 못하고 언론 보도의 재무부 수치를 썼다.",
+   "sources": [
+    [
+     "Via Baltica",
+     "Lithuania: Government approves draft budget for 2027 (리투아니아: 정부, 2027 예산안 승인) · 2026-10-16",
+     "https://viabaltica.fi/lithuania-government-approves-draft-budget-for-2027/"
+    ],
+    [
+     "15min",
+     "Į Seimą atkeliauja 2027-ųjų metų biudžeto projektas: didės ne tik pensijos ir išmokos, bet ir deficitas (의회로 오는 2027 예산안: 연금·급여와 함께 적자도 커진다) · 2026-10-20",
+     "https://www.15min.lt/verslas/naujiena/finansai/i-seima-atkeliauja-2027-uju-metu-biudzeto-projektas-dides-ne-tik-pensijos-ir-ismokos-bet-ir-deficitas-662-2788416"
+    ],
+    [
+     "Regionų žinios",
+     "Lietuvos skolos palūkanos 2026 metais viršys milijardą eurų, o iki 2029-ųjų padvigubės (리투아니아 국가부채 이자, 2026년 10억 유로 넘고 2029년까지 두 배) · 2026-10-25",
+     "https://regionuzinios.lt/lietuvos-skolos-palukanos-2026-metais-virsys-milijarda-euru-o-iki-2029-uju-padvigubes/"
+    ]
+   ],
+   "tier": "press"
+  },
+  "JM": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "중앙정부(법정 지출, 하원 통과본)",
+   "interest": {
+    "value": 210.96,
+    "unit": "십억 자메이카 달러",
+    "label": "공채 이자(Public Debt Servicing - Interest Payments)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1441.78,
+    "unit": "십억 자메이카 달러",
+    "label": "중앙정부 순지출(원금 상환 포함)"
+   },
+   "share": 14.6,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 177.53,
+    "unit": "십억 자메이카 달러"
+   },
+   "note": "이자는 원금 상환(1,675.9억)과 따로 적힌 금액이다. 총액은 원금 상환을 포함한 중앙정부 순지출이라 이자 비중은 그 범위로 계산했고, 2025/26 값은 당초 통합 세출예산 기준이다.",
+   "sources": [
+    [
+     "재무·공공서비스부(MOFPS)",
+     "2026-2027 Public Sector Consolidated Estimates of Expenditure, As Passed in the House of Representatives(2026/27 공공부문 통합 세출예산, 하원 통과본) · 2026-03-24",
+     "https://www.mof.gov.jm/wp-content/uploads/2026-2027Public-Sector-Estimates-of-Expenditure-As-Passed.pdf"
+    ],
+    [
+     "재무·공공서비스부(MOFPS)",
+     "The Citizens' Guide to the 2026-2027 Budget(2026-27 예산 시민 안내서) · 2026-04",
+     "https://www.mof.gov.jm/wp-content/uploads/The-Citizens-Guide-to-the-Budget-2026-2027.pdf"
+    ],
+    [
+     "재무·공공서비스부(MOFPS)",
+     "Public Sector Consolidated Estimates of Expenditure 2025/26(2025/26 공공부문 통합 세출예산)",
+     "https://www.mof.gov.jm/wp-content/uploads/Public-Sector-Consolidated-Estimates-of-Expenditure-2025-26.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "PR": {
+   "fiscalYear": "2027",
+   "status": "확정 예산",
+   "scope": "일반회계(Fondo General) 중 재무부 관리 계정의 '채무 상환(Debt service)' 항목",
+   "interest": {
+    "value": 1.040562,
+    "unit": "십억 달러",
+    "label": "채무 상환(신규 GO 채권 5억 8,188만·판매세 CVI 3억 7,430만 등)"
+   },
+   "principalIncluded": true,
+   "total": {
+    "value": 13.174703,
+    "unit": "십억 달러",
+    "label": "일반회계 확정 예산"
+   },
+   "share": 7.9,
+   "note": "감독위원회가 2026년 6월 29일 확정한 예산 결의안의 재무부 관리 계정 '채무 상환' 합계다. 이자와 원금이 함께 든 금액이며 채무조정으로 새로 발행한 일반보증(GO) 채권 상환 5억 8,188만 달러와 판매·사용세 우발가치증권(CVI) 3억 7,430만 달러, 럼세 CVI 1,281만 달러, 시 정부 상환기금 배분 7,157만 달러가 들어 있다. 이자만 따로 적은 금액은 확정 예산 문서에 없다.",
+   "sources": [
+    [
+     "푸에르토리코 관리예산처(OGP) 게시본",
+     "FY27 Certified Budget Resolution and Control Language(2027 회계연도 감독위원회 확정 예산 결의안·통제 문구) · 2026-06-29",
+     "https://docs.pr.gov/files/OGP/Aprobado-2026-2027/Certified-Budget-Resolution-and-Control-Language-June-29-2026.pdf"
+    ],
+    [
+     "푸에르토리코 재정감독관리위원회",
+     "Oversight Board Certifies Fiscal Year 2027 Commonwealth Budget(감독위원회, 2027 회계연도 연방자치령 예산 확정) · 2026-06-29",
+     "https://oversightboard.pr.gov/oversight-board-certifies-fiscal-year-2027-commonwealth-budget/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "GM": {
+   "fiscalYear": "2027",
+   "status": "확정 예산",
+   "scope": "재무경제부 2027 추계(전 재원) 경상지출의 '부채 이자' 항 — 원금 상환 제외",
+   "interest": {
+    "value": 9.072,
+    "unit": "십억 달라시",
+    "label": "부채 이자(Debt interest)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 66.784,
+    "unit": "십억 달라시",
+    "label": "2027 추계 총액(정부 자체재원 48.6 + 보조금 15.9 + 차관 2.2)"
+   },
+   "share": 13.6,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 6.8,
+    "unit": "십억 달라시"
+   },
+   "note": "The Standard는 재무경제부 2027 추계 표에서 부채 이자를 D9.072bn(2026년 D6.8bn)으로 옮겼고, 국회가 통과시킨 세출예산법 50항 '국가 부채 상환'은 이자와 원금을 합친 D16.174bn(정부 자체재원의 33.3%)이다. 비율 13.6%는 판도가 이자 9.072를 총 추계 66.784로 나눈 값이며, IMF 2026년 7월 보고서는 중앙정부 이자를 2026년 D6.90bn·2027년 D6.43bn으로 추정해 정의가 다르다. 재무경제부 원문 추계서는 사이트 접속이 막혀 보도 값을 썼다.",
+   "sources": [
+    [
+     "The Standard(감비아)",
+     "Gov't Tables D66.7 Billion Budget For 2027 (정부, 2027년 667억 달라시 예산 제출) · 2026-09-25",
+     "https://standard.gm/govt-tables-d66-7-billion-budget-for-2027/"
+    ],
+    [
+     "감비아 국회",
+     "Appropriation Bill, 2027 (2027 세출예산법안 — 부록: 부처별 세출액) · 2026-10",
+     "https://assembly.gm/documents/478/download"
+    ],
+    [
+     "국제통화기금(IMF)",
+     "The Gambia: 2026 Article IV Consultation, Fifth Review Under the ECF, IMF Country Report No. 26/175 (감비아 2026 연례협의·ECF 5차 검토, Table 2a 중앙정부 운영) · 2026-07",
+     "https://www.imf.org/-/media/files/publications/cr/2026/english/1gmbea2026001.pdf"
+    ]
+   ],
+   "tier": "press"
   }
  }
 }
