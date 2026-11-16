@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-16T11:35:00Z",
+  "updatedAt": "2026-11-16T12:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -1279,7 +1279,7 @@
     "gop": 169,
     "total": 435,
     "control": 218,
-    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 16일 오전 6시 34분 확인 · 두 당 합계 밖 10석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
+    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 16일 오전 7시 34분 확인 · 두 당 합계 밖 10석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
     "projection": {
       "party": "D",
       "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 259석 전망",
@@ -1288,7 +1288,7 @@
       "short_en": "Dem majority (AP)"
     },
     "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 남은 선거구를 하나씩 판정하고 있다. AP 판정 목록을 함께 싣는 폭스뉴스 결과 화면은 미 동부 13일 오후 9시 35분 확인 기준 민주 256·공화 169석이고, 민주당이 뒤집은 의석이 45곳, 공화당이 뒤집은 의석이 3곳(텍사스 32구·테네시 9구·메인 2구)이다. 최근 판정은 메인 2구 폴 르페이지(공, 12일 오후 1시 31분), 콜로라도 4구 아일린 로배커(민, 13일 오후 2시 53분), 캘리포니아 4구 에릭 존스(민, 13일 오후 8시 25분)다. NBC 화면(집계 AP)은 같은 무렵 미판정 9곳(알래스카 1구·캘리포니아 23구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 3·5·7구·테네시 4구)을 보여 준다. 판정 기관이 달라 숫자가 다를 수 있다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
-    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), checked 6:34 a.m. ET Nov 16 · 10 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
+    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), checked 7:34 a.m. ET Nov 16 · 10 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
     "note_en": "TIME reports AP called the House for Democrats early on Nov 4, and AP has kept calling the remaining races one by one. The Fox News results page, which posts AP's race-call list, shows Democrats 256 and Republicans 169 as checked at 9:35 p.m. ET Nov 13, with 45 seats flipped by Democrats and 3 by Republicans (Texas's 32nd, Tennessee's 9th and Maine's 2nd). Recent calls: Maine's 2nd for Paul LePage (R, 1:31 p.m. Nov 12), Colorado's 4th for Eileen Laubacher (D, 2:53 p.m. Nov 13) and California's 4th for Eric Jones (D, 8:25 p.m. Nov 13). NBC's page (AP data) shows 9 races uncalled at about the same time (Alaska's at-large, California's 23rd, Louisiana's 5th and 6th, Minnesota's 1st, North Carolina's 3rd, 5th and 7th, and Tennessee's 4th). The decision desks differ, so the numbers may differ. The map counts NBC-called seats by party in each state. Below: flipped seats and key close races.",
     "races": [
       {
@@ -4021,6 +4021,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-16T12:35:00Z",
+      "text": "새 AP 판정 없음(미 동부 16일 오전 7시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면(16일 오전 7시 34분 갱신)이 민주 256·공화 169를 그대로 보여 주고(마지막 AP 판정은 13일 오후 8시 25분 캘리포니아 4구), NBC 기준(15일 오후 7시 22분 갱신) 뒤집힌 선거구 47곳·미판정 9곳으로 변함없다.",
+      "text_en": "No new AP calls (checked 7:35 a.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as uncalled, with Peltola (D) at 49.9% and Sullivan (R) at 46%, so the Senate stays Democrats 55, Republicans 44. In the House, the Fox News results page (updated 7:34 a.m. ET Nov 16) still shows Democrats 256, Republicans 169 (the last AP call was California's 4th at 8:25 p.m. ET Nov 13), and NBC (updated 7:22 p.m. ET Nov 15) still has 47 flipped districts and 9 uncalled."
+    },
+    {
       "t": "2026-11-16T11:35:00Z",
       "text": "새 AP 판정 없음(미 동부 16일 오전 6시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면(16일 오전 6시 34분 갱신)이 민주 256·공화 169를 그대로 보여 주고(마지막 AP 판정은 13일 오후 8시 25분 캘리포니아 4구), NBC 기준(15일 오후 7시 22분 갱신) 뒤집힌 선거구 47곳·미판정 9곳으로 변함없다.",
       "text_en": "No new AP calls (checked 6:35 a.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as uncalled, with Peltola (D) at 49.9% and Sullivan (R) at 46%, so the Senate stays Democrats 55, Republicans 44. In the House, the Fox News results page (updated 6:34 a.m. ET Nov 16) still shows Democrats 256, Republicans 169 (the last AP call was California's 4th at 8:25 p.m. ET Nov 13), and NBC (updated 7:22 p.m. ET Nov 15) still has 47 flipped districts and 9 uncalled."
@@ -4164,11 +4169,6 @@
       "t": "2026-11-15T05:35:00Z",
       "text": "새 AP 판정 없음(미 동부 15일 오전 0시 35분 확인): 알래스카 주 선거국의 최신 공표는 여전히 현지 14일 오후 3시 15분 집계(펠톨라 49.94%·설리번 45.96%)이고, NBC 결과 화면(집계 AP)도 상원 선거를 미판정으로 둔다. 하원은 폭스뉴스 결과 화면의 AP 판정 집계로 민주 256·공화 169 그대로이고 마지막 판정은 13일 오후 8시 25분 캘리포니아 4구다. NBC 기준 뒤집힌 선거구 47곳·미판정 9곳도 그대로다.",
       "text_en": "No new AP calls (checked 12:35 a.m. ET Nov 15): Alaska's Division of Elections has not posted a count newer than 3:15 p.m. local on Nov 14 (Peltola 49.94%, Sullivan 45.96%), and NBC's results page (AP data) still has the Senate race uncalled. In the House, Fox News's AP race-call tally is unchanged at Democrats 256, Republicans 169, with the last call California's 4th at 8:25 p.m. Nov 13. Per NBC, 47 districts flipped and 9 remain uncalled, also unchanged."
-    },
-    {
-      "t": "2026-11-15T04:36:00Z",
-      "text": "새 AP 판정 없음(미 동부 14일 오후 11시 36분 확인): 알래스카 주 선거국의 최신 공표는 여전히 현지 14일 오후 3시 15분 집계(펠톨라 49.94%·설리번 45.96%)이고, NBC 결과 화면(집계 AP)도 상원 선거를 미판정으로 둔다. 하원은 폭스뉴스 결과 화면(14일 오후 11시 36분 갱신)의 AP 판정 집계로 민주 256·공화 169 그대로이고 마지막 판정은 13일 오후 8시 25분 캘리포니아 4구다. NBC 기준 뒤집힌 선거구 47곳·미판정 9곳도 그대로다.",
-      "text_en": "No new AP calls (checked 11:36 p.m. ET Nov 14): Alaska's Division of Elections has not posted a count newer than 3:15 p.m. local on Nov 14 (Peltola 49.94%, Sullivan 45.96%), and NBC's results page (AP data) still has the Senate race uncalled. In the House, Fox News's AP race-call tally (updated 11:36 p.m. ET Nov 14) is unchanged at Democrats 256, Republicans 169, with the last call California's 4th at 8:25 p.m. Nov 13. Per NBC, 47 districts flipped and 9 remain uncalled, also unchanged."
     }
   ],
   "how": [
