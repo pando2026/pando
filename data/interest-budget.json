@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-15",
+ "asOf": "2026-11-18",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -5055,6 +5055,161 @@
      "Logos Press",
      "Moldova's 2026 State Budget Deficit Set to Rise to 23.07 Billion Lei (몰도바 2026 국가예산 적자 230.7억 lei로 확대 추진) · 2026-08-29",
      "https://logos-pres.md/en/news/the-2026-state-budget-deficit-will-rise-to-23-07-billion-lei/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "SI": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가예산(중앙정부) 총지출 — 2027년 예산 변경안(2026-10-04 정부 의결, 국민의회 본회의 표결 전)",
+   "interest": {
+    "value": 942,
+    "unit": "백만 유로",
+    "label": "국채 이자 지출"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 19355.043,
+    "unit": "백만 유로",
+    "label": "총지출(예산 사용 기관별 합계)"
+   },
+   "share": 4.9,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 899,
+    "unit": "백만 유로"
+   },
+   "note": "슈첼리 재무장관이 2026-10-06 연설에서 올해 8.99억, 내년 9.42억 유로라고 밝힌 이자 지출이며 원금 상환(2027년 42억 유로)은 따로 말해 포함하지 않았다. 비율은 같은 안의 부처별 지출 합계 19,355.0백만 유로 대비 계산했다.",
+   "sources": [
+    [
+     "슬로베니아 재무부",
+     "Nagovor ministra za finance Andreja Širclja v Državnem zboru(안드레이 슈첼리 재무장관의 국민의회 연설: 2027 예산 변경안·2028 예산안) · 2026-10-06",
+     "https://www.gov.si/assets/ministrstva/MF/Glavno-urednistvo/Novice/DOKUMENTI/Nagovor-drzavna-proracuna-2027-in-2028.docx"
+    ],
+    [
+     "슬로베니아 재무부",
+     "Proračunski razrez 2027 in 2028: Predlog sprememb proračuna RS za leto 2027 in predlog proračuna RS za leto 2028(2027·2028 예산 부처별 지출 배분표, v 000 EUR) · 2026-10-04",
+     "https://www.gov.si/assets/ministrstva/MF/Glavno-urednistvo/Dokumenti/Proracunski-razrez-2027-in-2028.xlsx"
+    ],
+    [
+     "슬로베니아 재무부",
+     "Vlada potrdila državna proračuna za prihodnji dve leti(정부, 향후 2년 국가예산 의결) · 2026-10-04",
+     "https://www.gov.si/novice/2026-10-04-vlada-potrdila-drzavna-proracuna-za-prihodnji-dve-leti/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "LV": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가 기본예산(중앙정부) 지출 중 이자 지출. 사회보험 특별예산에는 이자 항목이 없다",
+   "interest": {
+    "value": 0.5765,
+    "unit": "십억 유로",
+    "label": "국가 기본예산 이자 지출(Procentu izdevumi) 576.5백만 유로"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 13.2596,
+    "unit": "십억 유로",
+    "label": "국가 기본예산 지출(총액 기준)"
+   },
+   "share": 4.3,
+   "prev": null,
+   "note": "2026 예산법 부록 3의 기본예산 이자 지출이다(재무부 573.997백만 유로, 교육과학부 2.5백만 유로). 총지출은 같은 부록의 기본예산 지출(13,259.6백만 유로)이고 사회보험 특별예산(5,073.1백만 유로)을 합친 지출 대비로는 3.1%다. 2027 회계연도 예산안은 새 내각이 아직 내지 않았고, 재무부는 정책을 바꾸지 않으면 2027년 부채 서비스 비용이 약 6억 8,100만 유로에 이를 것으로 전망했다.",
+   "sources": [
+    [
+     "라트비아 의회·법령 포털 likumi.lv",
+     "Par valsts budžetu 2026. gadam un budžeta ietvaru 2026., 2027. un 2028. gadam (2026년 국가예산 및 2026~2028 예산 틀에 관한 법) · 2025-12-18 공포",
+     "https://likumi.lv/ta/id/365272-par-valsts-budzetu-2026-gadam-un-budzeta-ietvaru-2026-2027-un-2028-gadam"
+    ],
+    [
+     "라트비아 의회·법령 포털 likumi.lv",
+     "2026 예산법 3. pielikums: Valsts pamatbudžeta un valsts speciālā budžeta kopsavilkums (부록 3 기본·특별예산 요약) · 2025-12-18",
+     "https://www.likumi.lv/wwwraksti/2025/244/BILDES/L_BUDZETS2026/P03.XLSX"
+    ],
+    [
+     "라트비아 재무부(LV portāls 게재)",
+     "Finanšu ministrs informē Saeimas komisiju par paveikto 2027. gada budžeta sagatavošanā (재무장관, 2027 예산 준비 경과를 사이마 위원회에 보고) · 2026-09-23",
+     "https://lvportals.lv/dienaskartiba/394879-finansu-ministrs-informe-saeimas-komisiju-par-paveikto-2027-gada-budzeta-sagatavosana-2026"
+    ],
+    [
+     "라트비아 재무부",
+     "#Budget2026 adopted – A Budget for a Safer Future (2026 예산 확정 — 더 안전한 미래를 위한 예산) · 2025-12-04",
+     "https://www.fm.gov.lv/en/article/budget2026-adopted-budget-safer-future"
+    ]
+   ],
+   "tier": "official"
+  },
+  "GW": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가예산법 경상지출의 공공부채 이자(국내·대외)",
+   "interest": {
+    "value": 50.734,
+    "unit": "십억 FCFA",
+    "label": "공공부채 이자(국내 43.731, 대외 7.003)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 530.689,
+    "unit": "십억 FCFA",
+    "label": "예산법 지출 총액(부채 원금 상환 242.032 포함)"
+   },
+   "share": 9.6,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 40.5,
+    "unit": "십억 FCFA"
+   },
+   "note": "이자만 따로 적힌 값이다. 지출 총액에는 원금 상환 242.032십억이 들어 있어, 원금 상환을 뺀 지출 288.657십억 대비로는 17.6%다. 2025년 값은 같은 문서의 수정예산(LFR) 수치다.",
+   "sources": [
+    [
+     "기니비사우 재무부",
+     "OGE 2026 · Orçamento Geral do Estado para 2026(2026 국가예산서, 예산법안·DPOEP 2026-2028·PIP 2026 포함) · 2025-12",
+     "https://www.mef.gw/publicacoes/orcamento-geral-do-estado/2026-oge2026/viewdocument/195"
+    ],
+    [
+     "국제통화기금(IMF)",
+     "Guinea-Bissau: Ninth and Tenth Reviews under the ECF Arrangement, IMF Country Report No. 26/83(제9·10차 확대신용제도 점검 보고서) · 2026-04",
+     "https://www.imf.org/-/media/files/publications/cr/2026/english/1gnbea2026001-source-pdf.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "GQ": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가예산 지출 상한 안의 섹션 56(국가 부채) 경상 이자",
+   "interest": {
+    "value": 87.5,
+    "unit": "십억 CFA프랑(FCFA)",
+    "label": "경상 이자(섹션 56)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1294.282,
+    "unit": "십억 CFA프랑(FCFA)",
+    "label": "국가예산 지출 상한"
+   },
+   "share": 6.8,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 80.5,
+    "unit": "십억 CFA프랑(FCFA)"
+   },
+   "note": "예산법 경제 분류에는 이자·금융비용이 860억 FCFA(외채 198억·내채 602억 등)로 잡혀 섹션 56 이자(875억)와 15억 차이가 난다. 국채 원금 상환 3,793억 FCFA는 지출 상한 밖의 재무 거래라 이 금액에 들어 있지 않고, 2027 예산안은 이자를 밝히지 않았다.",
+   "sources": [
+    [
+     "적도기니 정부(예산총국 편집)",
+     "Ley Número 9/2025, de 9 de diciembre, de Presupuestos Generales del Estado, ejercicio 2026 (2025년 12월 9일자 법률 제9/2025호, 2026 회계연도 국가예산법) · 2025-12-09",
+     "https://ahoraeg.com/wp-content/uploads/2026/01/PRESUPUESTOS_GE_2026-PARTE1.pdf"
+    ],
+    [
+     "국제통화기금(IMF)",
+     "Republic of Equatorial Guinea: Staff Report for the 2025 Article IV Consultation and First and Second Reviews Under the Staff-Monitored Program (적도기니 2025년 4조 협의·SMP 1·2차 점검 직원 보고서) · 2025-08-04",
+     "https://www.imf.org/-/media/files/publications/cr/2025/english/1gnqea2025001-source-pdf.pdf"
     ]
    ],
    "tier": "official"
