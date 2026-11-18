@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-18T07:40:00Z",
+  "updatedAt": "2026-11-18T08:34:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -1279,7 +1279,7 @@
     "gop": 171,
     "total": 435,
     "control": 218,
-    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 17일 오후 11시 37분 갱신분 · 두 당 합계 밖 7석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
+    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 18일 오전 3시 34분 갱신분 · 두 당 합계 밖 7석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
     "projection": {
       "party": "D",
       "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 259석 전망",
@@ -1287,9 +1287,9 @@
       "text_en": "AP: Democrats win the House majority (per TIME). NBC expects Democrats to win 259 seats",
       "short_en": "Dem majority (AP)"
     },
-    "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 남은 선거구를 하나씩 판정하고 있다. AP 판정 목록을 함께 싣는 폭스뉴스 결과 화면은 미 동부 17일 오후 11시 37분 갱신 기준 민주 257·공화 171석이고, 민주당이 뒤집은 의석이 46곳, 공화당이 뒤집은 의석이 3곳이다. 가장 최근 판정은 17일 오후 3시 45분 노스캐롤라이나 3구로, 민주당 레이먼드 스미스가 공화당 현역 그레그 머피를 258표 차로 꺾어 공화당 의석을 가져왔다. 그 앞 판정은 16일 오후 8시 29분 캘리포니아 23구 제이 오버놀트(공·현역)다. NBC 화면(집계 AP)은 미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)을 보여 준다. 판정 기관이 달라 숫자가 다를 수 있다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
-    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), updated 11:37 p.m. ET Nov 17 · 7 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
-    "note_en": "TIME reports AP called the House for Democrats early on Nov 4 local time, and AP has kept calling the remaining districts since. The Fox News results page, which carries AP's race-call list, shows Democrats 257 and Republicans 171 as of its 11:37 p.m. ET Nov 17 update, with 46 seats flipped by Democrats and 3 by Republicans. The latest call came at 3:45 p.m. Nov 17 in North Carolina's 3rd, where Democrat Raymond Smith beat Republican incumbent Greg Murphy by 258 votes, flipping the seat. The call before that was California's 23rd for incumbent Republican Jay Obernolte at 8:29 p.m. Nov 16. NBC's page (AP data) shows 6 races still uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th). Counts can differ because the calls come from different desks. The map counts the seats NBC has called in each state by party. The list below shows flipped seats and key close races.",
+    "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 남은 선거구를 하나씩 판정하고 있다. AP 판정 목록을 함께 싣는 폭스뉴스 결과 화면은 미 동부 18일 오전 3시 34분 갱신 기준 민주 257·공화 171석이고, 민주당이 뒤집은 의석이 46곳, 공화당이 뒤집은 의석이 3곳이다. 가장 최근 판정은 17일 오후 3시 45분 노스캐롤라이나 3구로, 민주당 레이먼드 스미스가 공화당 현역 그레그 머피를 258표 차로 꺾어 공화당 의석을 가져왔다. 그 앞 판정은 16일 오후 8시 29분 캘리포니아 23구 제이 오버놀트(공·현역)다. NBC 화면(집계 AP)은 미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)을 보여 준다. 판정 기관이 달라 숫자가 다를 수 있다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
+    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), updated 3:34 a.m. ET Nov 18 · 7 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
+    "note_en": "TIME reports AP called the House for Democrats early on Nov 4 local time, and AP has kept calling the remaining districts since. The Fox News results page, which carries AP's race-call list, shows Democrats 257 and Republicans 171 as of its 3:34 a.m. ET Nov 18 update, with 46 seats flipped by Democrats and 3 by Republicans. The latest call came at 3:45 p.m. Nov 17 in North Carolina's 3rd, where Democrat Raymond Smith beat Republican incumbent Greg Murphy by 258 votes, flipping the seat. The call before that was California's 23rd for incumbent Republican Jay Obernolte at 8:29 p.m. Nov 16. NBC's page (AP data) shows 6 races still uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th). Counts can differ because the calls come from different desks. The map counts the seats NBC has called in each state by party. The list below shows flipped seats and key close races.",
     "races": [
       {
         "d": "NC-9",
@@ -4059,6 +4059,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-18T08:34:00Z",
+      "text": "새 AP 판정 없음(미 동부 18일 오전 3시 34분 확인): 폭스뉴스 하원 결과 화면(오전 3시 34분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구) 그대로이고 민주 257·공화 171석이다. NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다. 알래스카 하원 순위선택 집계는 18일(현지) 예정이다.",
+      "text_en": "No new AP calls (checked 3:34 a.m. ET Nov 18): the AP race-call list on Fox News's House results page (updated 3:34 a.m.) still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd), with Democrats at 257 and Republicans at 171. NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled. Alaska's House ranked-choice tabulation is set for Nov 18 local time."
+    },
+    {
       "t": "2026-11-18T07:40:00Z",
       "text": "새 AP 판정 없음(미 동부 18일 오전 2시 40분 확인): NBC 하원 결과 화면(집계 AP)은 뒤집힌 선거구 48곳·미판정 6곳 그대로다. 미판정인 테네시 4구는 현역 스콧 데잘레이(공)가 16일 페이스북 글로 패배를 인정했으나 AP 판정과 주 인증이 남았고(WRCB), 알래스카 하원은 주 선거국이 18일 순위선택 집계를 한다(뉴스위크). 상원은 민주 56·공화 44로 끝났다.",
       "text_en": "No new AP calls (checked 2:40 a.m. ET Nov 18): NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled. In the uncalled Tennessee 4th, Rep. Scott DesJarlais (R) conceded in a Facebook post on Nov 16, but an AP call and state certification are still pending (WRCB); Alaska's Division of Elections runs its House ranked-choice tabulation on Nov 18 (Newsweek). The Senate is settled at Democrats 56, Republicans 44."
@@ -4202,11 +4207,6 @@
       "t": "2026-11-17T00:35:00Z",
       "text": "새 AP 판정 없음(미 동부 16일 오후 7시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46.0%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면이 민주 256·공화 170을 그대로 보여 주고, 마지막 AP 판정은 오후 3시 54분 노스캐롤라이나 7구다. NBC 기준 뒤집힌 선거구 47곳·미판정 8곳으로 변함없다.",
       "text_en": "No new AP calls (checked 7:35 p.m. ET Nov. 16): NBC's Senate results page (AP data) still lists Alaska as an uncalled race, with Peltola (D) at 49.9% and Sullivan (R) at 46.0%, so the Senate stays at 55 Democrats to 44 Republicans. Fox News's results page still shows the House at 256 Democrats to 170 Republicans, and the latest AP call remains North Carolina's 7th District at 3:54 p.m. Per NBC, 47 districts have flipped and 8 remain uncalled, unchanged."
-    },
-    {
-      "t": "2026-11-16T23:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 16일 오후 6시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46.0%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면이 민주 256·공화 170을 그대로 보여 주고, 마지막 AP 판정은 오후 3시 54분 노스캐롤라이나 7구다. NBC 기준 뒤집힌 선거구 47곳·미판정 8곳으로 변함없다.",
-      "text_en": "No new AP calls (checked 6:35 p.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as an uncalled race, with Peltola (D) at 49.9% and Sullivan (R) at 46.0%, so the Senate stays Democrats 55, Republicans 44. The Fox News House results page still shows Democrats 256, Republicans 170, and the latest AP call remains North Carolina's 7th at 3:54 p.m. NBC still shows 47 flipped districts and 8 uncalled."
     }
   ],
   "how": [
