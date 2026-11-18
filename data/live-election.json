@@ -3,23 +3,23 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-18T01:35:00Z",
+  "updatedAt": "2026-11-18T03:40:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "민주당이 상·하원을 모두 가져간 가운데, 상원은 민주 55·공화 44로 알래스카 한 곳만 남았다. 알래스카 주 선거국이 16일 오후 공표한 비공식 집계에서 메리 펠톨라(민)는 49.98%로 댄 설리번(공, 45.93%)에 1만 1475표 앞섰지만 50%에 0.02%포인트 모자라, AP 판정 없이 18일 순위선택 집계를 기다리고 있다. 하원은 AP 기준 민주 257·공화 171석이고, 17일 오후 노스캐롤라이나 3구에서 레이먼드 스미스(민)가 현역 그레그 머피(공)를 258표 차로 꺾어 민주당이 뒤집은 의석이 46곳으로 늘었다. NBC 기준 미판정은 6곳이며, 노스캐롤라이나 5구는 335표 뒤진 현역 버지니아 폭스(공)의 요청으로 재검표에 들어간다.",
+  "headline": "민주당이 상·하원을 모두 가져갔고, 상원은 민주 56·공화 44로 35개 선거가 모두 판정됐다. AP는 미 동부 17일 밤 마지막 남은 알래스카에서 메리 펠톨라(민)가 1순위 표 50.12%로 과반을 넘겨 현역 댄 설리번(공, 45.80%)을 꺾었다고 판정했고, 민주당이 뒤집은 상원 의석은 9곳이 됐다. 하원은 AP 기준 민주 257·공화 171석(민주당이 뒤집은 의석 46곳)이고, NBC 기준 미판정 6곳 가운데 알래스카 하원은 닉 베기치(공) 47.54%로 과반에 못 미쳐 순위선택 집계를 기다리며, 노스캐롤라이나 5구는 재검표에 들어간다.",
   "senate": {
-    "dem": 55,
+    "dem": 56,
     "gop": 44,
     "other": 0,
     "total": 100,
     "control": 51,
     "change": {
-      "dem": 8,
-      "gop": -8
+      "dem": 9,
+      "gop": -9
     },
     "sub": "100석 · 이번 선거 35석 · 선거 전 공화 53 대 민주 47 · 의석 수는 선거 없는 의석 + 확인된 AP 확정분",
-    "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. AP는 현지 3일 밤 상원을 민주당 다수로 판정했다. 이 화면의 수는 판도가 AP 확정을 확인한 곳만 센 것이고, 아직 판정이 없는 곳은 알래스카 1곳이다(미시시피는 11일 AP가 콜럼 승리로 판정).",
+    "note": "이번에 선거가 없는 의석(민주 34·공화 31)을 합친 수. 민주당 수에는 민주당과 함께 표결하는 무소속 2명(버니 샌더스·앵거스 킹)이 들어 있다. AP는 현지 3일 밤 상원을 민주당 다수로 판정했고, 마지막으로 남았던 알래스카도 미 동부 17일 밤 펠톨라 승리로 판정해 이번 35개 선거가 모두 판정됐다.",
     "races": [
       {
         "st": "NC",
@@ -1156,38 +1156,38 @@
       },
       {
         "st": "AK",
-        "status": "lead",
+        "status": "won",
         "tally": {
           "cands": [
             {
               "n": "메리 펠톨라",
               "n_en": "Mary Peltola",
               "p": "D",
-              "v": 141637,
-              "pct": 49.98
+              "v": 144302,
+              "pct": 50.12
             },
             {
               "n": "댄 설리번",
               "n_en": "Dan Sullivan",
               "p": "R",
-              "v": 130162,
-              "pct": 45.93
+              "v": 131844,
+              "pct": 45.8
             },
             {
               "n": "제럴드 하이크스",
               "n_en": "Gerald Heikes",
               "p": "R",
-              "v": 6020,
+              "v": 6105,
               "pct": 2.12
             }
           ],
-          "reported": "1순위 득표, 개표구 401곳 전부(주 선거국 비공식, 16일 오후 5시 13분), NBC 기준 예상 투표의 97.9%",
-          "reported_en": "First-choice votes, all 401 precincts (state unofficial count, 5:13 p.m. Nov 16); 97.9% of expected vote in per NBC",
-          "asOf": "2026-11-17T02:13:47Z",
+          "reported": "1순위 득표, 개표구 401곳 전부(주 선거국 비공식, 17일 오후 5시 46분)",
+          "reported_en": "First-choice votes, all 401 precincts (state unofficial count, 5:46 p.m. Nov 17)",
+          "asOf": "2026-11-18T02:46:56Z",
           "src": [
-            "알래스카 주 선거국 2026 총선 비공식 개표 요약(11월 16일 오후 5시 13분)",
+            "알래스카 주 선거국 2026 총선 비공식 개표 요약(11월 17일 오후 5시 46분)",
             "https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf",
-            "State of Alaska 2026 General Election Summary Report, unofficial results (Nov 16, 5:13 p.m.)"
+            "State of Alaska 2026 General Election Summary Report, unofficial results (Nov 17, 5:46 p.m.)"
           ]
         },
         "party": "D",
@@ -1195,8 +1195,8 @@
         "cand_en": "Mary Peltola",
         "vs": "댄 설리번(공·현역)",
         "vs_en": "Sen. Dan Sullivan (R)",
-        "note": "AP 미판정. NBC 뉴스 디시전 데스크는 미 동부 14일 오후 3시 52분 기사에서 이 선거를 '민주당 유력(likely)'으로 분류했다. 펠톨라가 이길 확신이 95% 이상이라는 뜻이지만 당선 판정은 아니고, NBC 결과 화면도 아직 미판정으로 둔다. 주 선거국이 현지 16일 오후 5시 13분 공표한 비공식 집계(개표구 401곳 전부)에서 상원 투표 28만 3377표 가운데 펠톨라가 14만 1637표(49.98%), 설리번 의원이 13만 162표(45.93%)로 표차가 1만 1475표로 벌어졌지만, 펠톨라는 여전히 50%에 0.02%포인트 못 미친다. 하이크스는 6020표(2.12%), 댄 J. 설리번 2세는 4684표(1.65%)다. NBC 화면(집계 AP)은 이 숫자에 예상 투표의 97.9% 개표로 표시하고 여전히 미판정이다. 그전에는 주 선거국이 현지 14일 오후 3시 15분 공표한 비공식 집계(개표구 401곳 전부)에서 상원 투표 28만 1587표 가운데 펠톨라가 14만 637표(49.94%), 설리번 의원이 12만 9424표(45.96%)로 표차가 1만 1213표로 조금 더 벌어졌지만, 펠톨라는 여전히 50%에 0.06%포인트 못 미친다. 하이크스는 6002표(2.13%), 댄 J. 설리번 2세는 4652표(1.65%)다. NBC 화면(집계 AP)은 이 숫자에 예상 투표의 97.4% 개표로 표시하고 여전히 미판정이다. 그전에는 주 선거국이 현지 13일 오후 7시 14분 공표한 비공식 집계(개표구 401곳 전부)에서 상원 투표 27만 7368표 가운데 펠톨라가 13만 8240표(49.84%), 설리번 의원이 12만 7828표(46.09%)로 표차가 1만 412표로 벌어졌다. 하이크스는 5885표(2.12%), 댄 J. 설리번 2세는 4560표(1.64%)다. NBC 화면(집계 AP)은 같은 숫자에 예상 투표의 96.2% 개표로 표시하지만 여전히 '판정하기 이르다'이다. 펠톨라가 50%에 조금 못 미쳐, 18일 순위선택 집계로 결론이 날 수 있다. 그전에는 주 선거국이 현지 12일 오후 6시 36분 공표한 비공식 집계(개표구 401곳 전부)에서 상원 투표 25만 6817표 가운데 펠톨라가 12만 5157표(49.08%), 설리번 의원이 11만 9357표(46.80%)로 5800표 앞서 표차가 다시 벌어졌다. 하이크스는 5490표(2.15%), 댄 J. 설리번 2세는 4199표(1.65%)다. 이 공표 뒤 NBC 화면(집계 AP)은 예상 투표의 88.2% 개표, 남은 표 약 3만 5000표로 표시하고 여전히 '판정하기 이르다'이다. 그전에는 NBC 화면(집계 AP)은 미 동부 11일 밤 10시 40분 무렵 펠톨라 12만 1487표(48.9%), 설리번 의원 11만 7512표(47.3%)로 표차 3975표, 전체 24만 8525표(예상 투표의 86.2%), 남은 표 약 4만 표로 표시하며, 새로 더해진 표에는 잠정 투표 1461표(설리번 의원 62%·펠톨라 30%)가 들어 있다. 여전히 '판정하기 이르다'이다. 주 선거국이 현지 10일(화) 2만 4000표 넘게 더 세어 공표하자 펠톨라의 1순위 득표율 우위가 49% 대 47.2%로 다시 벌어졌다(알래스카 퍼블릭 미디어). AP는 전체 투표의 84%가 개표됐다고 추정하고, NBC 화면(집계 AP)은 예상 투표의 84.3%, 전체 24만 2947표, 남은 표 약 4만 6000표로 여전히 '판정하기 이르다'로 표시한다. 다음 공표는 13일(금)이다. 순위대로라면 4위 댄 J. 설리번 2세가 먼저 탈락하는데, 알래스카 퍼블릭 미디어가 분석한 예비 자료로는 그의 지지자 30% 가까이가 펠톨라를 2순위로 적어 설리번 의원보다 훨씬 많았고, 그다음 탈락할 3위 제럴드 하이크스의 2순위는 설리번 의원 쪽이 많다. MIT 선거연구소의 찰스 스튜어트 교수는 주 선거국이 순위선택 집계로 비공식 당선자를 발표하는 18일 전까지는 대부분의 언론이 1순위 득표를 기준으로 신중하게 판정할 것이라고 내다봤다. 주 선거국이 현지 9일(월) 오후 4시 공표한 개표에서 펠톨라가 상원 투표 21만 9342표 가운데 2517표 앞섰다(이날 4947표 추가, 알래스카 비컨). 1순위 득표율은 펠톨라 48.47%, 설리번 47.33%로 지난주 수요일 0.3%포인트였던 격차가 1.14%포인트로 벌어졌고, AP는 전체 투표의 76%가 개표됐다고 추정했다(주노 인디펜던트). 비컨은 10일(화)에 수만 표가 더해질 예정이라 이 공표가 승부를 가를 수 있다고 전했다. 아무도 50%를 넘지 못하면 순위선택 집계로 넘어간다. 밤사이 선두가 바뀌어 펠톨라가 앞서지만 뒤집힐 수 있어, 알래스카 비컨은 '박빙'이라고 표현했다. 9일 공표 전 NBC 화면 기준으로는 펠톨라 10만 2962표, 설리번 10만 2325표(예상 투표의 74.1%)였다. 공화당 제럴드 하이크스가 4846표(2.3%), 이름이 같은 댄 J. 설리번이 3600표(1.7%)를 얻었다(공화당은 민주당이 표를 가르려고 내세운 후보라고 주장했고 펠톨라는 관여를 부인했다, 보스턴25). 세지 않은 부재자·사전 투표가 수천 표 남았고, 비컨은 펠톨라에게 유리할 것으로 보이는 농촌 개표구 일부도 남았다고 전했다. 우편 투표는 선거일 소인이 찍힌 것을 13일까지(해외 발송은 18일까지) 받고, 주 당국은 10·13·18일에 개표를 갱신하며 18일에 선호투표(유권자가 적은 2·3순위 표를 옮겨 세는 방식) 집계 결과를 내고 25일까지 인증을 목표로 한다(뉴스위크). NBC는 약 7만 5000표가 남았다고 추정한다. 더힐은 DDHQ(디시전 데스크 HQ) 집계로 미 동부 4일 오전 11시 무렵 펠톨라 48.2%·설리번 47.9%, 약 500표 차에 예상 투표의 70%가 개표됐고, 대부분의 사전·우편 투표가 집계되는 10일까지 주 당국의 추가 공표가 없다고 전했다. 알래스카 퍼블릭 미디어는 주 당국이 투표 자료 파일을 공개할 예정이어서 AP가 자체 집계로 18일보다 먼저 판정할 수도 있다고 전했다. 도널드 트럼프 대통령은 미 동부 5일 소셜미디어에 동명이인 후보와 또 다른 후보의 표를 \"진짜 댄 설리번\"에게 줘야 한다고 올렸는데, 앵커리지 데일리 뉴스는 이 주장이 주 선거국의 개표와 유권자의 선택을 건너뛰는 것이라고 전했다. 법무부가 낸 인증 중지 소송은 연방 지방법원에서 기각됐고, 항소심인 제9순회항소법원은 주 정부 측 답변 기한을 인증일(25일)과 새 상원의원 취임일(1월 3일)보다 늦은 1월 11일로 잡아 빠른 결정이 나올 가능성은 낮아 보인다. 펠톨라 캠프('메리를 위한 알래스카인들')는 6일 앵커리지 지방법원에 주 선거국과 캐럴 비처 국장, 선거를 관할하는 낸시 달스트롬 부지사를 상대로 소송을 내, 공공기록법에 따라 부재자 투표가 누구의 것이고 왜 거부됐는지 적힌 명부를 달라고 했다. 주 법무부는 이 정보가 잠정적이고 바뀔 수 있으며 해당 유권자도 아직 알 수 없다며 법원에 보호를 요청하겠다고 밝혔고, 설리번 캠프는 9일 이 소송에 참가하겠다는 신청을 냈다(앵커리지 데일리 뉴스·알래스카 퍼블릭 미디어). 알래스카 고등법원의 토머스 매슈스 판사는 11일(현지) 심리 다음 날, 거부된 부재자 투표 명부를 달라는 펠톨라 캠프의 요청이 개표가 이어지는 동안 선거 당국이 시간에 쫓기는 사정을 고려하면 '합리적이지 않다'고 판단했다(AP). 캠프 변호인 아브하 칸나는 앞서 개표를 방해하려는 것이 아니라고 밝혔었다.",
-        "note_en": "No AP call. In an article at 3:52 p.m. ET Nov 14, the NBC News Decision Desk characterized the race as 'likely Democratic', meaning at least 95% confidence that Peltola will win; this is not a projection, and NBC's results page still lists the race as uncalled. In the unofficial count the state Division of Elections posted at 5:13 p.m. local on Nov 16 (all 401 precincts), Peltola leads Sen. Sullivan 141,637 (49.98%) to 130,162 (45.93%) out of 283,377 Senate votes, widening the gap to 11,475, but Peltola is still 0.02 points short of 50%. Heikes has 6,020 (2.12%) and Daniel J. Sullivan Jr. 4,684 (1.65%). NBC's page (AP data) shows these numbers with 97.9% of the expected vote in, still uncalled. Before that, in the unofficial count the state Division of Elections posted at 3:15 p.m. local on Nov 14 (all 401 precincts), Peltola leads Sen. Sullivan 140,637 (49.94%) to 129,424 (45.96%) out of 281,587 Senate votes, a slightly wider gap of 11,213, but Peltola is still 0.06 points short of 50%. Heikes has 6,002 (2.13%) and Daniel J. Sullivan Jr. 4,652 (1.65%). NBC's page (AP data) shows these numbers with 97.4% of the expected vote in, still uncalled. Before that, in the unofficial count the state Division of Elections posted at 7:14 p.m. local on Nov 13 (all 401 precincts), Peltola leads Sen. Sullivan 138,240 (49.84%) to 127,828 (46.09%) out of 277,368 Senate votes, widening the gap to 10,412. Heikes has 5,885 (2.12%) and Daniel J. Sullivan Jr. 4,560 (1.64%). NBC's page (AP data) shows the same numbers with 96.2% of the expected vote in, still 'too early to call'. Peltola is just short of 50%, so the Nov 18 ranked-choice tabulation may decide it. Before that, in the unofficial count the state Division of Elections posted at 6:36 p.m. local on Nov 12 (all 401 precincts reporting), Peltola leads Sen. Sullivan 125,157 (49.08%) to 119,357 (46.80%) out of 256,817 Senate ballots, widening the gap to 5,800. Heikes has 5,490 (2.15%) and Daniel J. Sullivan Jr. 4,199 (1.65%). After this release NBC's page (AP data) shows 88.2% of the expected vote in and about 35,000 votes left, still 'too early to call'. Before that, NBC's page (AP data) around 10:40 p.m. ET Nov 11 shows Peltola 121,487 (48.9%) to Sen. Sullivan's 117,512 (47.3%), a 3,975-vote gap, with 248,525 votes counted (86.2% of the expected vote) and about 40,000 left; the added votes include 1,461 provisional ballots (Sullivan 62%, Peltola 30%). It is still 'too early to call'. After the state Division of Elections counted more than 24,000 more votes on Tuesday, Nov 10 (local), Peltola's first-choice lead widened again to 49% to 47.2% (Alaska Public Media). AP estimates 84% of votes are counted; the NBC page (AP data) shows 84.3% of expected vote in, 242,947 votes in total and about 46,000 remaining, still 'too early to call'. The next release is Friday, Nov 13. If the order holds, fourth-place Daniel J. Sullivan Jr. is eliminated first; preliminary data analyzed by Alaska Public Media show nearly 30% of his voters ranked Peltola second, far more than ranked Sen. Sullivan, while third-place Gerald Heikes's rankings favor Sen. Sullivan. MIT Election Lab's Charles Stewart expects most outlets to call cautiously on first choices until the division tabulates rankings and declares unofficial winners on Nov 18. In the count the Division of Elections posted at 4 p.m. local on Monday, Nov 9, Peltola led by 2,517 of 219,342 Senate votes cast (4,947 ballots added that day, Alaska Beacon). On first choices Peltola has 48.47% to Sullivan's 47.33%, widening a 0.3-point gap from last Wednesday to 1.14 points, and AP estimates 76% of all ballots have been counted (Juneau Independent). The Beacon says tens of thousands of ballots are due to be added on Tuesday, Nov 10, an update that could be decisive. If no one tops 50%, it goes to ranked-choice tabulation. The lead changed overnight and Peltola is ahead, but it could change again; the Alaska Beacon calls the race a tossup. Before the Nov 9 update, NBC's page had Peltola at 102,962 and Sullivan at 102,325, with 74.1% of the expected vote in. Republican Gerald Heikes has 4,846 (2.3%) and a second Dan Sullivan, Dan J. Sullivan, has 3,600 (1.7%); Republicans allege Democrats planted him as a spoiler and Peltola denies involvement (Boston 25). Thousands of absentee and early ballots remain uncounted, and the Beacon says some rural precincts believed to favor Peltola are also out. Mail ballots are accepted for 10 days (15 from overseas). The state plans count updates on Nov 10, 13 and 18, publishes the ranked-choice tabulation on Nov 18, and aims to certify by Nov 25 (Newsweek). NBC estimates about 75,000 votes are left. The Hill, citing Decision Desk HQ, had Peltola 48.2% to Sullivan 47.9% around 11 a.m. ET Nov 4, a gap of about 500 with 70% of the expected vote in, and says Alaska reports no more votes until Nov 10, when most remaining early and mail ballots are counted. Alaska Public Media says the state will release its ballot data file, so AP could run its own tabulation and call the race before Nov 18. President Donald Trump posted on social media on Nov 5 that votes for the namesake candidate and another candidate should be \"given\" to the \"REAL Dan Sullivan\"; the Anchorage Daily News said this would bypass the state's count and voters' choices. A federal district judge dismissed the Justice Department's suit to stop certification, and the 9th Circuit set the state's response for Jan 11, after certification (Nov 25) and the swearing-in of new senators (Jan 3), so a quick decision looks unlikely. The Peltola campaign (Alaskans for Mary) sued the Division of Elections, its director Carol Beecher and Lt. Gov. Nancy Dahlstrom in Anchorage Superior Court on Nov 6 under the Public Records Act, seeking the register showing whose absentee ballots were rejected and why. The state Department of Law said the information is preliminary, subject to change and not yet available to affected voters, and that it will ask the court to protect it; the Sullivan campaign filed a motion to intervene on Nov 9 (Anchorage Daily News, Alaska Public Media). Alaska Superior Court Judge Thomas Matthews ruled on Nov 11, a day after hearing arguments, that the Peltola campaign's request for a list of rejected absentee ballots was 'not reasonable,' particularly given the time crunch election officials face as counting continues (AP). Campaign attorney Abha Khanna had said the campaign was not seeking to disrupt the count.",
+        "note": "공화당 의석을 민주당이 가져옴(AP 확정, 미 동부 17일 밤). 주 선거국이 현지 17일 오후 5시 46분 공표한 비공식 집계(개표구 401곳 전부)에서 펠톨라가 1순위 표 14만 4302표(50.12%)로 과반을 넘겨, 순위선택 집계 없이 승부가 갈렸다. 현역 설리번 의원은 13만 1844표(45.80%), 하이크스 6105표(2.12%), 이름이 같은 댄 J. 설리번 2세 4760표(1.65%)다. 알래스카 퍼블릭 미디어에 따르면 해외 우편 투표는 18일까지 도착할 수 있지만, AP는 투표의 99%가 개표됐다고 추정하고 설리번 의원이 이길 길이 없다고 판단했다. NBC·CBS도 같은 밤 펠톨라 승리를 예측했다. 공화당은 동명이인 후보를 민주당이 내세운 '방해 후보'라고 주장해 왔으나(펠톨라는 관여 부인), 펠톨라가 1순위만으로 과반을 넘겨 그 표는 결과에 영향을 주지 않았다(NBC). 주 정부는 25일까지 인증을 목표로 한다.",
+        "note_en": "Republican seat flipped to Democrats (AP call, night of Nov 17 ET). In the unofficial count the state Division of Elections posted at 5:46 p.m. local on Nov 17 (all 401 precincts), Peltola won 144,302 first-choice votes (50.12%), a majority that settles the race without a ranked-choice tabulation. Incumbent Sen. Sullivan has 131,844 (45.80%), Heikes 6,105 (2.12%) and the namesake Daniel J. Sullivan Jr. 4,760 (1.65%). Alaska Public Media says overseas mail ballots can still arrive through Nov 18, but AP estimates 99% of the vote is counted and has determined Sullivan has no viable path. NBC and CBS also projected Peltola the winner that night. Republicans had called the namesake candidate a Democratic-planted spoiler (Peltola denies involvement), but with Peltola above 50% on first choices those votes did not affect the result (NBC). The state aims to certify by Nov 25.",
         "flip": true
       },
       {
@@ -1271,7 +1271,7 @@
       }
     ],
     "sub_en": "100 seats · 35 up · before: GOP 53, Dem 47 · totals are seats not up + confirmed AP calls",
-    "note_en": "Includes seats not up this year (Democrats 34, Republicans 31). The Democratic total includes two independents who vote with them (Bernie Sanders, Angus King). AP called the Senate for Democrats on the night of Nov 3. Totals count only AP calls Pando has confirmed; only Alaska remains uncalled (AP called Mississippi for Colom on Nov 11).",
+    "note_en": "Includes seats not up this year (Democrats 34, Republicans 31). The Democratic total includes two independents who vote with them (Bernie Sanders, Angus King). AP called the Senate for Democrats on the night of Nov 3, and on the night of Nov 17 ET it called Alaska, the last race left, for Peltola, so all 35 races this year have been called.",
     "asOf": "2026-11-06T15:32:00Z"
   },
   "house": {
@@ -1279,7 +1279,7 @@
     "gop": 171,
     "total": 435,
     "control": 218,
-    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 17일 오후 4시 34분 갱신분 · 두 당 합계 밖 7석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
+    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 17일 오후 10시 40분 갱신분 · 두 당 합계 밖 7석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
     "projection": {
       "party": "D",
       "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 259석 전망",
@@ -1287,9 +1287,9 @@
       "text_en": "AP: Democrats win the House majority (per TIME). NBC expects Democrats to win 259 seats",
       "short_en": "Dem majority (AP)"
     },
-    "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 남은 선거구를 하나씩 판정하고 있다. AP 판정 목록을 함께 싣는 폭스뉴스 결과 화면은 미 동부 17일 오후 4시 34분 갱신 기준 민주 257·공화 171석이고, 민주당이 뒤집은 의석이 46곳, 공화당이 뒤집은 의석이 3곳이다. 가장 최근 판정은 17일 오후 3시 45분 노스캐롤라이나 3구로, 민주당 레이먼드 스미스가 공화당 현역 그레그 머피를 258표 차로 꺾어 공화당 의석을 가져왔다. 그 앞 판정은 16일 오후 8시 29분 캘리포니아 23구 제이 오버놀트(공·현역)다. NBC 화면(집계 AP)은 미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)을 보여 준다. 판정 기관이 달라 숫자가 다를 수 있다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
-    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), updated 4:34 p.m. ET Nov 17 · 7 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
-    "note_en": "TIME reports AP called the House for Democrats early on Nov 4 local time, and AP has kept calling the remaining districts since. The Fox News results page, which carries AP's race-call list, shows Democrats 257 and Republicans 171 as of its 4:34 p.m. ET Nov 17 update, with 46 seats flipped by Democrats and 3 by Republicans. The latest call came at 3:45 p.m. Nov 17 in North Carolina's 3rd, where Democrat Raymond Smith beat Republican incumbent Greg Murphy by 258 votes, flipping the seat. The call before that was California's 23rd for incumbent Republican Jay Obernolte at 8:29 p.m. Nov 16. NBC's page (AP data) shows 6 races still uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th). Counts can differ because the calls come from different desks. The map counts the seats NBC has called in each state by party. The list below shows flipped seats and key close races.",
+    "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 남은 선거구를 하나씩 판정하고 있다. AP 판정 목록을 함께 싣는 폭스뉴스 결과 화면은 미 동부 17일 오후 10시 40분 갱신 기준 민주 257·공화 171석이고, 민주당이 뒤집은 의석이 46곳, 공화당이 뒤집은 의석이 3곳이다. 가장 최근 판정은 17일 오후 3시 45분 노스캐롤라이나 3구로, 민주당 레이먼드 스미스가 공화당 현역 그레그 머피를 258표 차로 꺾어 공화당 의석을 가져왔다. 그 앞 판정은 16일 오후 8시 29분 캘리포니아 23구 제이 오버놀트(공·현역)다. NBC 화면(집계 AP)은 미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)을 보여 준다. 판정 기관이 달라 숫자가 다를 수 있다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
+    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), updated 10:40 p.m. ET Nov 17 · 7 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
+    "note_en": "TIME reports AP called the House for Democrats early on Nov 4 local time, and AP has kept calling the remaining districts since. The Fox News results page, which carries AP's race-call list, shows Democrats 257 and Republicans 171 as of its 10:40 p.m. ET Nov 17 update, with 46 seats flipped by Democrats and 3 by Republicans. The latest call came at 3:45 p.m. Nov 17 in North Carolina's 3rd, where Democrat Raymond Smith beat Republican incumbent Greg Murphy by 258 votes, flipping the seat. The call before that was California's 23rd for incumbent Republican Jay Obernolte at 8:29 p.m. Nov 16. NBC's page (AP data) shows 6 races still uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th). Counts can differ because the calls come from different desks. The map counts the seats NBC has called in each state by party. The list below shows flipped seats and key close races.",
     "races": [
       {
         "d": "NC-9",
@@ -4059,6 +4059,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-18T03:19:00Z",
+      "text": "AP, 알래스카 상원 민주당 메리 펠톨라 승리 판정(미 동부 17일 밤): 주 선거국의 17일 오후 비공식 집계에서 1순위 표 14만 4302표(50.12%)로 과반을 넘겨 현역 댄 설리번(공, 13만 1844표·45.80%)을 꺾었다. 순위선택 집계 없이 결정됐고, 민주당이 공화당 의석을 하나 더 가져와 상원은 민주 56·공화 44로 35개 선거 판정이 모두 끝났다(NPR·알래스카 퍼블릭 미디어). 하원은 새 AP 판정 없이 민주 257·공화 171석(폭스뉴스 결과 화면, 오후 10시 40분 갱신)이고, 알래스카 하원은 AP 미판정이다.",
+      "text_en": "AP calls Alaska's Senate race for Democrat Mary Peltola (night of Nov 17 ET): in the state's unofficial count that afternoon she cleared a majority with 144,302 first-choice votes (50.12%), unseating Sen. Dan Sullivan (R, 131,844, 45.80%). No ranked-choice tabulation was needed; Democrats flip one more Republican seat, and the Senate is settled at Democrats 56, Republicans 44 with all 35 races called (NPR, Alaska Public Media). No new AP House calls: Democrats 257, Republicans 171 (Fox News results page, updated 10:40 p.m.), and AP has not called Alaska's House race."
+    },
+    {
       "t": "2026-11-18T01:35:00Z",
       "text": "새 AP 판정 없음(미 동부 17일 오후 8시 35분 확인): 폭스뉴스 하원 결과 화면(오후 8시 33분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구 레이먼드 스미스) 그대로이고(민주 257·공화 171석), NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다. 상원 알래스카는 주 선거국의 18일 순위선택 집계를 기다린다.",
       "text_en": "No new AP calls (checked 8:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page (updated 8:33 p.m.) still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd, Raymond Smith), with Democrats at 257 and Republicans at 171, and NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled. The Alaska Senate race awaits the state's Nov 18 ranked-choice tabulation."
@@ -4202,11 +4207,6 @@
       "t": "2026-11-16T20:35:00Z",
       "text": "새 AP 판정 없음(미 동부 16일 오후 3시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46.0%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면(16일 오후 3시 34분 갱신)이 민주 256·공화 169를 그대로 보여 주고, NBC 기준(16일 오후 3시 34분) 뒤집힌 선거구 47곳·미판정 9곳으로 변함없다.",
       "text_en": "No new AP calls (checked 3:35 p.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as an uncalled race, with Peltola (D) at 49.9% and Sullivan (R) at 46.0%, so the Senate stays Democrats 55, Republicans 44. In the House, the Fox News results page (updated 3:34 p.m. ET Nov 16) still shows Democrats 256, Republicans 169, and NBC (3:34 p.m. ET Nov 16) still has 47 flipped districts and 9 uncalled."
-    },
-    {
-      "t": "2026-11-16T19:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 16일 오후 2시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46.0%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면(16일 오후 2시 34분 갱신)이 민주 256·공화 169를 그대로 보여 주고, NBC 기준(16일 오후 2시 33분) 뒤집힌 선거구 47곳·미판정 9곳으로 변함없다.",
-      "text_en": "No new AP calls (checked 2:35 p.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as an uncalled race, with Peltola (D) at 49.9% and Sullivan (R) at 46.0%, so the Senate stays Democrats 55, Republicans 44. In the House, the Fox News results page (updated 2:34 p.m. Nov 16) still shows Democrats 256, Republicans 169, and NBC (2:33 p.m. Nov 16) still has 47 flipped districts and 9 uncalled."
     }
   ],
   "how": [
@@ -4217,24 +4217,19 @@
   ],
   "sources": [
     [
-      "WVEC 13뉴스나우: 공화당 그레그 머피 의원 패배 인정",
-      "https://www.13newsnow.com/article/news/politics/elections/republican-congressman-greg-murphy-concedes-nc-03-north-carolina-gop-gerrymander-backfire/291-2c37d3be-ec5f-45ac-9af3-c9921b3709c5",
-      "WVEC 13News Now: Republican Congressman Greg Murphy concedes race"
+      "NPR: 알래스카 상원, 민주당 메리 펠톨라가 공화당 댄 설리번 꺾어(AP 판정)",
+      "https://www.npr.org/2026/11/17/g-s1-151567/alaska-senate-results-peltola-sullivan",
+      "NPR: Alaska Senate: Democrat Mary Peltola tops GOP's Dan Sullivan"
     ],
     [
-      "WBTV: 노스캐롤라이나 연방하원 5구 공화당 의원 재검표 요청",
-      "https://www.wbtv.com/2026/11/17/republican-rep-requests-recount-tight-us-house-race-north-carolina/",
-      "WBTV: Republican rep. requests recount in tight US House race in North Carolina"
+      "알래스카 퍼블릭 미디어: 메리 펠톨라, 알래스카 연방상원 당선",
+      "https://alaskapublic.org/news/politics/elections/2026-11-17/mary-peltola-wins-u-s-senate-seat-in-alaska",
+      "Alaska Public Media: Mary Peltola wins U.S. Senate seat in Alaska"
     ],
     [
-      "알래스카 주 선거국 2026 총선 비공식 개표 요약(11월 16일)",
+      "알래스카 주 선거국 2026 총선 비공식 개표 요약(11월 17일)",
       "https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf",
-      "State of Alaska 2026 General Election Summary Report, unofficial results (Nov 16)"
-    ],
-    [
-      "NBC 뉴스 상원 개표 결과(집계 AP)",
-      "https://www.nbcnews.com/politics/2026-elections/senate-results",
-      "NBC News Senate results (AP data)"
+      "State of Alaska 2026 General Election Summary Report, unofficial results (Nov 17)"
     ],
     [
       "폭스뉴스 하원 개표 결과(AP 판정 목록)",
@@ -4245,11 +4240,16 @@
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
       "NBC News House results (AP data)"
+    ],
+    [
+      "WBTV: 노스캐롤라이나 연방하원 5구 공화당 의원 재검표 요청",
+      "https://www.wbtv.com/2026/11/17/republican-rep-requests-recount-tight-us-house-race-north-carolina/",
+      "WBTV: Republican rep. requests recount in tight US House race in North Carolina"
     ]
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "Democrats have won both chambers; the Senate stands at Democrats 55, Republicans 44 with only Alaska left. In the unofficial count the Alaska Division of Elections posted on the afternoon of Nov 16, Mary Peltola (D) leads Dan Sullivan (R) 49.98% to 45.93%, by 11,475 votes, but is 0.02 points short of 50%, so the race awaits the Nov 18 ranked-choice tabulation without an AP call. The House stands at Democrats 257, Republicans 171 per AP; on the afternoon of Nov 17 Raymond Smith (D) beat incumbent Greg Murphy (R) by 258 votes in North Carolina's 3rd, bringing Democratic flips to 46. NBC shows 6 races uncalled, and North Carolina's 5th heads to a recount requested by incumbent Virginia Foxx (R), who trails by 335 votes.",
+  "headline_en": "Democrats have won both chambers, and the Senate is settled at Democrats 56, Republicans 44 with all 35 races called. On the night of Nov 17 ET, AP called Alaska, the last race left, for Mary Peltola (D), who cleared a majority with 50.12% of first-choice votes to unseat Sen. Dan Sullivan (R, 45.80%), bringing Democratic Senate flips to nine. The House stands at Democrats 257, Republicans 171 per AP (46 Democratic flips); of the 6 races NBC still shows uncalled, Alaska's House seat awaits a ranked-choice tabulation with Nick Begich (R) at 47.54%, short of a majority, and North Carolina's 5th heads to a recount.",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
