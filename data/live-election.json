@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-18T06:35:00Z",
+  "updatedAt": "2026-11-18T07:40:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -3266,8 +3266,8 @@
         "cand_en": "Victoria Broderick",
         "vs": "스콧 데잘레이(현역)",
         "vs_en": "Rep. Scott DesJarlais",
-        "note": "미판정. 개표구가 모두 보고된 상태에서 공화당 현역이 280표 뒤지고, 브로더릭은 승리를 선언했다(스테이트 캐피털 로비스트 집계, 미 동부 5일 오전 8시 30분)",
-        "note_en": "Uncalled. With all precincts reporting the GOP incumbent trails by 280 votes, and Broderick has claimed victory (State Capital Lobbyist tally, 8:30 a.m. ET Nov 5)",
+        "note": "AP 미판정. 테네시 주 국무장관실 집계에서 빅토리아 브로더릭(민)이 48.87%로 현역 스콧 데잘레이(공, 48.73%)를 300표 남짓 앞섰고, 데잘레이는 16일(월) 페이스북 글로 패배를 인정했다. 주의 인증 절차가 남아 있다(WRCB 로컬3 뉴스).",
+        "note_en": "AP has not called it. In the Tennessee Secretary of State's count, Victoria Broderick (D) leads Rep. Scott DesJarlais (R) 48.87% to 48.73%, by just under 300 votes, and DesJarlais conceded in a Facebook post on Monday, Nov 16. State certification is still pending (WRCB Local 3 News).",
         "tally": {
           "cands": [
             {
@@ -4059,6 +4059,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-18T07:40:00Z",
+      "text": "새 AP 판정 없음(미 동부 18일 오전 2시 40분 확인): NBC 하원 결과 화면(집계 AP)은 뒤집힌 선거구 48곳·미판정 6곳 그대로다. 미판정인 테네시 4구는 현역 스콧 데잘레이(공)가 16일 페이스북 글로 패배를 인정했으나 AP 판정과 주 인증이 남았고(WRCB), 알래스카 하원은 주 선거국이 18일 순위선택 집계를 한다(뉴스위크). 상원은 민주 56·공화 44로 끝났다.",
+      "text_en": "No new AP calls (checked 2:40 a.m. ET Nov 18): NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled. In the uncalled Tennessee 4th, Rep. Scott DesJarlais (R) conceded in a Facebook post on Nov 16, but an AP call and state certification are still pending (WRCB); Alaska's Division of Elections runs its House ranked-choice tabulation on Nov 18 (Newsweek). The Senate is settled at Democrats 56, Republicans 44."
+    },
+    {
       "t": "2026-11-18T06:35:00Z",
       "text": "새 판정 없음(미 동부 18일 오전 1시 35분 확인): NBC 하원 결과 화면(집계 AP)은 뒤집힌 선거구 48곳·미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)으로 변함없고, 하원은 직전 확인한 AP 기준 민주 257·공화 171석이다. 상원은 35개 선거 판정이 모두 끝나 민주 56·공화 44다.",
       "text_en": "No new calls (checked 1:35 a.m. ET Nov 18): NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th); the House stands at Democrats 257, Republicans 171 per the last AP count checked. The Senate is settled at Democrats 56, Republicans 44 with all 35 races called."
@@ -4202,11 +4207,6 @@
       "t": "2026-11-16T23:35:00Z",
       "text": "새 AP 판정 없음(미 동부 16일 오후 6시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46.0%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면이 민주 256·공화 170을 그대로 보여 주고, 마지막 AP 판정은 오후 3시 54분 노스캐롤라이나 7구다. NBC 기준 뒤집힌 선거구 47곳·미판정 8곳으로 변함없다.",
       "text_en": "No new AP calls (checked 6:35 p.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as an uncalled race, with Peltola (D) at 49.9% and Sullivan (R) at 46.0%, so the Senate stays Democrats 55, Republicans 44. The Fox News House results page still shows Democrats 256, Republicans 170, and the latest AP call remains North Carolina's 7th at 3:54 p.m. NBC still shows 47 flipped districts and 8 uncalled."
-    },
-    {
-      "t": "2026-11-16T22:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 16일 오후 5시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면(16일 오후 5시 35분 갱신)이 민주 256·공화 170을 그대로 보여 주고, 마지막 AP 판정은 오후 3시 54분 노스캐롤라이나 7구다. NBC 기준 뒤집힌 선거구 47곳·미판정 8곳으로 변함없다.",
-      "text_en": "No new AP calls (checked 5:35 p.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as an uncalled race, with Peltola (D) at 49.9% and Sullivan (R) at 46%, so the Senate stays Democrats 55, Republicans 44. In the House, the Fox News results page (updated 5:35 p.m. ET Nov 16) still shows Democrats 256, Republicans 170, and the latest AP call remains North Carolina's 7th at 3:54 p.m. NBC still has 47 flipped districts and 8 uncalled."
     }
   ],
   "how": [
@@ -4227,11 +4227,6 @@
       "Alaska Public Media: Mary Peltola wins U.S. Senate seat in Alaska"
     ],
     [
-      "알래스카 주 선거국 2026 총선 비공식 개표 요약(11월 17일)",
-      "https://www.elections.alaska.gov/enr/26GENR/results/ElectionSummaryReportRPT.pdf",
-      "State of Alaska 2026 General Election Summary Report, unofficial results (Nov 17)"
-    ],
-    [
       "폭스뉴스 하원 개표 결과(AP 판정 목록)",
       "https://www.foxnews.com/elections/2026/midterm-results/house",
       "Fox News House election results (AP race calls)"
@@ -4245,6 +4240,11 @@
       "WBTV: 노스캐롤라이나 연방하원 5구 공화당 의원 재검표 요청",
       "https://www.wbtv.com/2026/11/17/republican-rep-requests-recount-tight-us-house-race-north-carolina/",
       "WBTV: Republican rep. requests recount in tight US House race in North Carolina"
+    ],
+    [
+      "WRCB 로컬3 뉴스: 테네시 연방하원 4구 빅토리아 브로더릭(민) 승리(주 국무장관실 집계, AP 미판정)",
+      "https://www.local3news.com/local-news/decision-2026-victoria-broderick-d-wins-tennessee-u-s-house-dist-4/article_e18ad914-c394-42c5-93f2-09dbe7561963.html",
+      "WRCB Local 3 News: Victoria Broderick (D) wins Tennessee U.S. House Dist. 4 (Secretary of State count; AP has not called)"
     ]
   ],
   "title_en": "US midterms: live results",
