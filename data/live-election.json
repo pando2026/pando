@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-18T04:40:00Z",
+  "updatedAt": "2026-11-18T05:35:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -4050,7 +4050,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",119087,57.1,1],["Vince George","D",82705,39.6,0],["Belinda Fox-Spencer","CST",6921,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",144109,59.4,1],["Ace Parsi","D",98615,40.6,0]]]],
     "WY":[[1,"won","R",0,100,[["Chuck Gray","R",99906,54.2,0],["Lisa Kinney","D",61689,33.5,0],["Shawn Johnson","Lib",13667,7.4,0]]]]
   },
-    "districtsAsOf": "2026-11-18T04:33:44Z",
+    "districtsAsOf": "2026-11-18T04:42:27Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -4058,6 +4058,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-18T05:35:00Z",
+      "text": "새 판정 없음(미 동부 18일 0시 35분 확인): NBC 하원 결과 화면(집계 AP, 0시 42분 갱신)은 뒤집힌 선거구 48곳·미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)으로 변함없고, 하원은 직전 확인한 AP 기준 민주 257·공화 171석이다. 상원은 35개 선거 판정이 모두 끝나 민주 56·공화 44다.",
+      "text_en": "No new calls (checked 12:35 a.m. ET Nov 18): NBC's House results page (AP data, updated 12:42 a.m.) still shows 48 flipped districts and 6 uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th); the House stands at Democrats 257, Republicans 171 per the last AP count checked. The Senate is settled at Democrats 56, Republicans 44 with all 35 races called."
+    },
     {
       "t": "2026-11-18T04:35:00Z",
       "text": "새 AP 판정 없음(미 동부 17일 오후 11시 35분 확인): 폭스뉴스 하원 결과 화면(오후 11시 37분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구 레이먼드 스미스) 그대로이고(민주 257·공화 171석), NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)으로 변함없다. 상원은 35개 선거 판정이 모두 끝나 민주 56·공화 44다.",
@@ -4202,11 +4207,6 @@
       "t": "2026-11-16T22:35:00Z",
       "text": "새 AP 판정 없음(미 동부 16일 오후 5시 35분 확인): NBC 상원 결과 화면(집계 AP)은 알래스카를 여전히 '미판정 선거'로 두고 펠톨라(민) 49.9%·설리번(공) 46%로 표시해 상원은 민주 55·공화 44 그대로다. 하원도 폭스뉴스 결과 화면(16일 오후 5시 35분 갱신)이 민주 256·공화 170을 그대로 보여 주고, 마지막 AP 판정은 오후 3시 54분 노스캐롤라이나 7구다. NBC 기준 뒤집힌 선거구 47곳·미판정 8곳으로 변함없다.",
       "text_en": "No new AP calls (checked 5:35 p.m. ET Nov 16): NBC's Senate results page (AP data) still lists Alaska as an uncalled race, with Peltola (D) at 49.9% and Sullivan (R) at 46%, so the Senate stays Democrats 55, Republicans 44. In the House, the Fox News results page (updated 5:35 p.m. ET Nov 16) still shows Democrats 256, Republicans 170, and the latest AP call remains North Carolina's 7th at 3:54 p.m. NBC still has 47 flipped districts and 8 uncalled."
-    },
-    {
-      "t": "2026-11-16T21:35:00Z",
-      "text": "AP, 노스캐롤라이나 7구 데이비드 라우저(공·현역) 당선 판정(미 동부 16일 오후 3시 54분): NBC 화면(집계 AP) 기준 라우저 49.9%·킴벌리 하디(민) 49.1%로 2311표 차이다. 공화당이 지킨 의석이라 뒤집힘은 아니며, 폭스뉴스 결과 화면(16일 오후 4시 34분 갱신)의 하원 의석은 민주 256·공화 170이 됐고 NBC 기준 미판정은 8곳으로 줄었다. 상원은 알래스카가 여전히 미판정(펠톨라 49.9%·설리번 46.0%)이라 민주 55·공화 44 그대로다.",
-      "text_en": "AP calls North Carolina's 7th for incumbent David Rouzer (R) (3:54 p.m. ET Nov 16): NBC's page (AP data) shows Rouzer at 49.9% and Kimberly Hardy (D) at 49.1%, a 2,311-vote gap. It is a Republican hold, not a flip; the Fox News results page (updated 4:34 p.m. Nov 16) now shows the House at Democrats 256, Republicans 170, and NBC's uncalled count falls to 8. In the Senate, Alaska remains uncalled (Peltola 49.9%, Sullivan 46.0%), so it stays Democrats 55, Republicans 44."
     }
   ],
   "how": [
