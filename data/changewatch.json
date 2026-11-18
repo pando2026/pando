@@ -1,5 +1,59 @@
 [
  {
+  "code": "IR",
+  "topic": "쿠웨이트·바레인 드론 공격·케슘섬 타격",
+  "status": "쿠웨이트 \"주권 침해\"",
+  "title": "미군 이란 케슘섬 타격…이란 \"쿠웨이트 미군 기지 공격\"·쿠웨이트 \"적대 드론 요격\"",
+  "detail": "미군은 17일 저녁 이란 케슘섬의 미사일 발사 시설을 쳤고(미 당국자, 알자지라), 이란 쪽 부지사는 피해가 없다고 했다. 18일 쿠웨이트는 이란의 드론 공격을 \"주권의 명백한 침해\"라 규탄했고 이란은 쿠웨이트의 미군 기지를 공격했다고 주장했다. 중부사령부는 바레인 기지를 겨냥한 드론이 요격돼 피해가 없다고 했다.",
+  "date": "2026-11-18",
+  "url": "https://www.aljazeera.com/news/2026/11/17/kuwait-reports-drone-attacks-as-iran-us-trade-attacks-on-qeshm-and-bahrain"
+ },
+ {
+  "code": "UA",
+  "topic": "크림대교 도로 구간 붕괴·복구 논란",
+  "status": "크렘린 \"더 좋게 복구\"",
+  "title": "크림대교 도로 구간 붕괴 확인…SBU \"일부 해저에\"·페스코프 \"더 좋게 복구\", 콜비 \"장거리 타격은 종전에 효과 없어\"",
+  "detail": "우크라이나 보안국은 다리 일부가 해저에 있다고 했고 크렘린 대변인 페스코프는 복구를 약속했다. 우크라이나 전문가는 1년 이상 걸릴 수 있다고 봤다. 17일 브뤼셀에서 미 국방차관 콜비가 우크라이나의 러시아 내 장거리 타격이 종전에 효과적이지 않았다고 했고 독일·영국 국방장관이 반박했다.",
+  "date": "2026-11-18",
+  "url": "https://kyivindependent.com/russia-says-the-crimean-bridge-will-come-back-even-better-that-may-take-a-while/"
+ },
+ {
+  "code": "CN",
+  "topic": "시진핑–푸틴 양자 회담·APEC",
+  "status": "\"다극 세계\" 함께 이끌자",
+  "title": "시진핑·푸틴 선전 양자 회담 \"다극 세계\"…시진핑 APEC서 자유무역 호소, 19일 3자 회담",
+  "detail": "시진핑은 푸틴과의 18일 회담에서 중·러가 다극 세계로 가는 흐름을 이끌어야 한다고 했고, 푸틴은 서방을 \"과거의 패권국\"이라 불렀다. 시진핑은 APEC 연설에서 WTO 중심의 자유무역을 지키겠다고 했다. 트럼프는 필리핀에서 선전으로 이동 중이며 19일 3자 회담이 열린다.",
+  "date": "2026-11-18",
+  "url": "https://www.aljazeera.com/news/2026/11/18/president-xi-says-russia-and-china-should-lead-push-to-multipolar-world"
+ },
+ {
+  "code": "IL",
+  "topic": "크네세트 의장 교체",
+  "status": "카하나 66표",
+  "title": "크네세트, 아이젠코트 측근 마탄 카하나를 의장으로 선출(66 대 52)",
+  "detail": "17일 표결에서 아이젠코트 진영과 아랍계 정당이 함께 카하나를 뽑았고 리쿠드 후보 카츠는 52표였다. 알자지라는 카하나가 네타냐후의 사법 개편을 되돌리기 시작할 것으로 예상했다.",
+  "date": "2026-11-18",
+  "url": "https://www.aljazeera.com/news/2026/11/17/israel-parliament-elects-gadi-eisenkot-ally-matan-kahana-as-new-speaker"
+ },
+ {
+  "code": "PS",
+  "topic": "평화위원회 안보리 보고서",
+  "status": "\"휴전 붕괴 위기\"",
+  "title": "평화위원회 \"가자 휴전, 즉시 이행 없으면 붕괴 위기\"…이스라엘·하마스 모두 약속 미달",
+  "detail": "평화위원회는 17일 유엔 안보리 보고서에서 눈에 보이는 성과가 없는 휴전은 유지될 수 없다고 경고하고, 이스라엘이 기술 관료 행정기구를 막고 민간 경찰 결정을 미루고 있다고 지적했다. 이스라엘·하마스 반응은 보도에 없다.",
+  "date": "2026-11-18",
+  "url": "https://www.aljazeera.com/news/2026/11/18/board-of-peace-warns-gaza-ceasefire-faces-imminent-collapse-without-action"
+ },
+ {
+  "code": "IQ",
+  "topic": "주르프알나스르 철수 시한",
+  "status": "금요일 시한",
+  "title": "이란 쿠드스군 사령관 이라크 방문…알자이디 총리, 카타이브 헤즈볼라에 금요일 철수 시한",
+  "detail": "카니 쿠드스군 사령관이 알자이디 총리와 조정 프레임워크를 만났다고 이라크 관리가 알자지라에 말했다. 알자이디는 주르프알나스르에 병력을 늘렸고, 카타이브 헤즈볼라 지휘관은 \"죽어도\" 철수하지 않겠다고 했다.",
+  "date": "2026-11-18",
+  "url": "https://www.aljazeera.com/news/2026/11/18/top-irgc-commander-in-iraq-for-talks-amid-kataib-hezbollah-tensions"
+ },
+ {
   "code": "UA",
   "topic": "크림대교 이틀 연속 공격·최대 드론전",
   "status": "러시아 \"1,441대 격추\"",
