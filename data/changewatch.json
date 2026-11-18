@@ -1,5 +1,50 @@
 [
  {
+  "code": "PS",
+  "topic": "가자 중부 이스라엘군 새 작전",
+  "status": "3명 사망·하마스 \"명백한 위반\"",
+  "title": "이스라엘군 가자 중부 새 작전…3명 사망, 알자지라 \"휴전 뒤 첫 광범위 지상 공세\"",
+  "detail": "이스라엘군은 18일 누세이라트·부레이지·마가지·데이르알발라 일대에서 옐로 라인 일대의 위협을 없애려는 작전을 시작했고 병원 관계자들은 3명이 숨졌다고 했다. 하마스는 휴전의 명백한 위반이며 강제 퇴거는 전쟁범죄라고 했다. 하루 전 평화위원회는 안보리에 휴전 붕괴 위기를 경고했다.",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/news/2026/11/18/palestinians-flee-refugee-camp-as-israel-begins-operation-in-central-gaza"
+ },
+ {
+  "code": "YE",
+  "topic": "연합군 후티 60곳 타격·후티 아덴 진격",
+  "status": "60곳 정밀 타격 발표",
+  "title": "사우디 연합군 \"후티 군사 표적 60곳 정밀 타격\"…후티 아덴 진격·정부군 두바브 공항 철수",
+  "detail": "연합군 대변인 투르키 알말리키는 17일 사나·호데이다·암란·사다의 후티 표적 60곳을 쳤다고 했다. 정부군은 두바브 공항·바브엘만데브에서 철수해 아덴을 지키고, 라헤즈 투르알바하에서 교전이 재개됐다. 연합군은 18일 리야드행 순항미사일 2발을 요격했고 후티는 송유 펌프장·레이더를 공격했다고 주장했다.",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/news/2026/11/18/houthis-advance-on-aden-as-saudi-coalition-targets-military-sites"
+ },
+ {
+  "code": "CN",
+  "topic": "트럼프 선전 도착·19일 정상 회담",
+  "status": "시진핑이 공항 영접",
+  "title": "트럼프 선전 도착…19일 시진핑 양자·푸틴 단독·3자 회담, 분석가 \"기대 낮다\"",
+  "detail": "트럼프는 18일 선전에 도착했고 시진핑이 공항에서 맞았다. 미 당국자는 19일 트럼프–푸틴 단독 회담을 확인했다. 분석가들은 구체적 합의가 적을 것으로 보며, 무역 휴전은 2027년 1월 10일 만료되고 중국의 미국행 희토류 수출은 평소보다 약 75% 적다(CSIS).",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/economy/2026/11/18/as-trump-arrives-in-china-low-expectations-for-breakthroughs-in-rivalry"
+ },
+ {
+  "code": "VE",
+  "topic": "미 국방장관 카라카스 방문",
+  "status": "국방 협력 재개",
+  "title": "헤그세스 미 국방장관 카라카스 깜짝 방문…베네수엘라 임시정부와 국방 협력 재개",
+  "detail": "헤그세스는 18일 로드리게스 임시 대통령과 정보 공유·합동 훈련을 담은 협력을 발표하며 베네수엘라가 \"순응적인 안보 파트너가 됐다\"고 했다. 합의 조항·기간은 보도에 없다.",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/news/2026/11/18/us-defence-secretary-announces-military-partnership-on-trip-to-venezuela"
+ },
+ {
+  "code": "IR",
+  "topic": "호르무즈 보험료·통항",
+  "status": "6,400만 달러(미검증)",
+  "title": "미 해군장관 대행 \"호르무즈 1회 통과 보험료 6,400만 달러\"…통항 전쟁 전보다 약 65% 적어",
+  "detail": "헝 카오 대행은 18일 상원 청문회에서 이렇게 말했지만 알자지라는 독립 확인되지 않았고 이례적으로 높다고 전했다. UKMTO는 11일까지 7일간 통항이 308회라고 했다.",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/news/2026/11/18/us-official-says-hormuz-insurance-hits-64m-is-the-strait-really-open"
+ },
+ {
   "code": "IR",
   "topic": "쿠웨이트·바레인 드론 공격·케슘섬 타격",
   "status": "쿠웨이트 \"주권 침해\"",
