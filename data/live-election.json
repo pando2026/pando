@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-19T11:41:00Z",
+  "updatedAt": "2026-11-19T12:40:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -4059,6 +4059,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-19T12:40:00Z",
+      "text": "새 AP 판정 없음(미 동부 19일 오전 7시 40분 확인): AP 판정을 싣는 폭스뉴스 결과 화면(19일 오전 7시 35분 갱신)은 민주 257·공화 172석 그대로이고, 가장 최근 판정은 18일 오후 9시 27분 알래스카 전역구다. 테네시 4구는 주 국무장관실 집계로 빅토리아 브로더릭(민)이 현역 스콧 데자를레이(공)를 300표가 안 되는 차로 앞섰고 데자를레이가 16일 패배를 인정했지만, AP는 아직 판정하지 않았다(WRCB 로컬3 뉴스). 이번에 받은 NBC 결과 화면은 앞선 시각(19일 01:46 UTC) 자료라 선거구 표는 이전 값을 두었다.",
+      "text_en": "No new AP calls (checked 7:40 a.m. ET, Nov 19): Fox News' results page, which lists AP calls (updated 7:35 a.m. ET Nov 19), still shows Democrats 257, Republicans 172, with the latest call at 9:27 p.m. ET Nov 18 in Alaska's at-large seat. In Tennessee's 4th, the Secretary of State's count has Victoria Broderick (D) ahead of Rep. Scott DesJarlais (R) by fewer than 300 votes and DesJarlais conceded on Nov 16, but AP has not yet called the race (WRCB Local 3 News). The NBC results page fetched this hour served older data (01:46 UTC Nov 19), so the district table keeps its previous values."
+    },
+    {
       "t": "2026-11-19T11:41:00Z",
       "text": "새 AP 판정 없음(미 동부 19일 오전 6시 41분 확인): 하원은 민주 257·공화 172석, 미판정 5곳 그대로다. 테네시 4구는 WRCB 로컬3 뉴스 17일 갱신 기사 기준으로 AP가 아직 판정하지 않았고, 노스캐롤라이나 5구는 버지니아 폭스(공)가 17일 재검표를 요청했으며, 미네소타 1구는 오늘 오후 주 개표심사위원회 인증을 기다린다. 이번에 받은 NBC 결과 화면은 앞선 시각(19일 01:46 UTC)의 자료라 선거구 표는 이전 값을 두었다.",
       "text_en": "No new AP calls (checked 6:41 a.m. ET, Nov 19): the House stands at Democrats 257, Republicans 172, with 5 uncalled. In Tennessee's 4th, WRCB Local 3 News said in its Nov 17 update that AP had not yet called the race; in North Carolina's 5th, Rep. Virginia Foxx (R) requested a recount on Nov 17; and Minnesota's 1st awaits State Canvassing Board certification this afternoon. The NBC results page fetched this hour served older data (01:46 UTC Nov 19), so the district table keeps its previous values."
@@ -4202,11 +4207,6 @@
       "t": "2026-11-18T06:35:00Z",
       "text": "새 판정 없음(미 동부 18일 오전 1시 35분 확인): NBC 하원 결과 화면(집계 AP)은 뒤집힌 선거구 48곳·미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)으로 변함없고, 하원은 직전 확인한 AP 기준 민주 257·공화 171석이다. 상원은 35개 선거 판정이 모두 끝나 민주 56·공화 44다.",
       "text_en": "No new calls (checked 1:35 a.m. ET Nov 18): NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th); the House stands at Democrats 257, Republicans 171 per the last AP count checked. The Senate is settled at Democrats 56, Republicans 44 with all 35 races called."
-    },
-    {
-      "t": "2026-11-18T04:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 17일 오후 11시 35분 확인): 폭스뉴스 하원 결과 화면(오후 11시 37분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구 레이먼드 스미스) 그대로이고(민주 257·공화 171석), NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)으로 변함없다. 상원은 35개 선거 판정이 모두 끝나 민주 56·공화 44다.",
-      "text_en": "No new AP calls (checked 11:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page (updated 11:37 p.m.) still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd, Raymond Smith), with Democrats at 257 and Republicans at 171, and NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th). The Senate is settled at Democrats 56, Republicans 44 with all 35 races called."
     }
   ],
   "how": [
