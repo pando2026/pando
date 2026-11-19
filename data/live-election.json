@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-19T02:34:41Z",
+  "updatedAt": "2026-11-19T03:34:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -15689,6 +15689,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-19T03:34:00Z",
+      "text": "새 AP 판정 없음(미 동부 18일 오후 10시 34분 확인): 폭스뉴스 하원 결과 화면의 AP 판정 목록은 마지막 판정이 18일 오후 9시 27분(알래스카 전역구) 그대로이고 민주 257·공화 172석이다. NBC 하원 결과 화면(집계 AP)은 아직 갱신되지 않아 미판정 6곳(알래스카 전역구 포함)으로 나온다. 남은 곳은 루이지애나 5·6구, 재검표 중인 미네소타 1구·노스캐롤라이나 5구, 현역이 패배를 인정했지만 AP 판정이 없는 테네시 4구다.",
+      "text_en": "No new AP calls (checked 10:34 p.m. ET Nov 18): the AP race-call list on Fox News's House results page still ends with the 9:27 p.m. Nov 18 call (Alaska at-large), with Democrats at 257 and Republicans at 172. NBC's House results page (AP data) has not yet updated and still shows 6 uncalled races, including Alaska at-large. Still open: Louisiana's 5th and 6th, Minnesota's 1st and North Carolina's 5th (both in recounts), and Tennessee's 4th, where the incumbent has conceded but AP has not called the race."
+    },
+    {
       "t": "2026-11-19T02:27:11Z",
       "text": "AP 판정: 알래스카 하원 전역구 닉 베기치(공·현역) 재선(미 동부 18일 오후 9시 27분). 순위선택 집계가 끝난 날 무소속 빌 힐을 꺾어 공화당이 의석을 지켰다. 폭스뉴스 하원 결과 화면(AP 판정 목록) 기준 민주 257·공화 172석, 남은 의석 6곳.",
       "text_en": "AP call: Alaska's at-large House seat goes to incumbent Nick Begich (R) (9:27 p.m. ET Nov 18). He beat independent Bill Hill on the day the ranked-choice tabulation finished, holding the seat for Republicans. Per the AP race-call list on Fox News's House results page: Democrats 257, Republicans 172, 6 seats remaining."
@@ -15832,11 +15837,6 @@
       "t": "2026-11-17T19:35:00Z",
       "text": "새 AP 판정 없음(미 동부 17일 오후 2시 35분 확인): 폭스뉴스 하원 결과 화면의 AP 판정 목록은 마지막 판정이 16일 오후 8시 29분(캘리포니아 23구 제이 오버놀트) 그대로이고, NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 47곳·미판정 7곳으로 변함없다. 상원 알래스카에 대한 AP 판정 보도는 찾지 못했고, 알래스카는 18일 순위선택 집계를 기다리고 있다.",
       "text_en": "No new AP calls (checked 2:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page still ends with the 8:29 p.m. Nov 16 call (California's 23rd, Jay Obernolte), and NBC's House results page (AP data) is unchanged at 47 flipped districts and 7 uncalled. No report of an AP call in Alaska's Senate race was found; Alaska awaits the Nov 18 ranked-choice tabulation."
-    },
-    {
-      "t": "2026-11-17T18:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 17일 오후 1시 35분 확인): 폭스뉴스 하원 결과 화면의 AP 판정 목록은 마지막 판정이 16일 오후 8시 29분(캘리포니아 23구 제이 오버놀트) 그대로이고, NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 47곳·미판정 7곳으로 변함없다. 상원 알래스카에 대한 AP 판정 보도는 찾지 못했고, 알래스카는 18일 순위선택 집계를 기다리고 있다.",
-      "text_en": "No new AP calls (checked 1:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page still ends with the 8:29 p.m. Nov 16 call (California's 23rd, Jay Obernolte), and NBC's House results page (AP data) is unchanged at 47 flipped districts and 7 uncalled. No report of an AP call in Alaska's Senate race was found; Alaska awaits the Nov 18 ranked-choice tabulation."
     }
   ],
   "how": [
