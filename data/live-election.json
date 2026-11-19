@@ -3,11 +3,11 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-19T01:34:00Z",
+  "updatedAt": "2026-11-19T02:34:41Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "민주당이 상·하원을 모두 가져갔고, 상원은 민주 56·공화 44로 35개 선거가 모두 판정됐다. AP는 미 동부 17일 밤 마지막 남은 알래스카에서 메리 펠톨라(민)가 1순위 표 50.12%로 과반을 넘겨 현역 댄 설리번(공, 45.80%)을 꺾었다고 판정했고, 민주당이 뒤집은 상원 의석은 9곳이 됐다. 하원은 AP 기준 민주 257·공화 171석(민주당이 뒤집은 의석 46곳)이고, NBC 기준 미판정 6곳 가운데 알래스카 하원은 닉 베기치(공) 47.54%로 과반에 못 미쳐 순위선택 집계를 기다리며, 노스캐롤라이나 5구는 재검표에 들어간다.",
+  "headline": "민주당이 상·하원을 모두 가져갔고, 상원은 민주 56·공화 44로 35개 선거가 모두 판정됐다(17일 밤 알래스카 메리 펠톨라(민) 승리로 민주당이 뒤집은 의석 9곳). 하원은 AP 기준 민주 257·공화 172석이다. AP는 미 동부 18일 오후 9시 27분, 순위선택 집계를 마친 알래스카 전역구에서 현역 닉 베기치(공)가 무소속 빌 힐을 꺾고 재선했다고 판정했다. 남은 6곳 가운데 노스캐롤라이나 5구는 재검표에 들어갔고, 미네소타 1구도 재검표가 진행 중이다.",
   "senate": {
     "dem": 56,
     "gop": 44,
@@ -1276,10 +1276,10 @@
   },
   "house": {
     "dem": 257,
-    "gop": 171,
+    "gop": 172,
     "total": 435,
     "control": 218,
-    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 18일 오후 5시 33분 갱신분 · 두 당 합계 밖 7석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
+    "sub": "435석 전부 · 과반 218석 · 선거 전 공화 218 대 민주 214 · 정당별 의석은 폭스뉴스 결과 화면(AP 판정 목록 함께 게시), 미 동부 18일 오후 9시 34분 갱신분 · 두 당 합계 밖 6석 · 주별 지도는 NBC 뉴스 디시전 데스크 판정(집계 자료 AP)이라 합계와 다를 수 있음",
     "projection": {
       "party": "D",
       "text": "AP: 민주당 하원 과반 판정(타임 보도). NBC는 민주당 259석 전망",
@@ -1287,9 +1287,9 @@
       "text_en": "AP: Democrats win the House majority (per TIME). NBC expects Democrats to win 259 seats",
       "short_en": "Dem majority (AP)"
     },
-    "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 남은 선거구를 하나씩 판정하고 있다. AP 판정 목록을 함께 싣는 폭스뉴스 결과 화면은 미 동부 18일 오후 5시 33분 갱신 기준 민주 257·공화 171석이고, 민주당이 뒤집은 의석이 46곳, 공화당이 뒤집은 의석이 3곳이다. 가장 최근 판정은 17일 오후 3시 45분 노스캐롤라이나 3구로, 민주당 레이먼드 스미스가 공화당 현역 그레그 머피를 258표 차로 꺾어 공화당 의석을 가져왔다. 그 앞 판정은 16일 오후 8시 29분 캘리포니아 23구 제이 오버놀트(공·현역)다. NBC 화면(집계 AP)은 미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)을 보여 준다. 판정 기관이 달라 숫자가 다를 수 있다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
-    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), updated 5:33 p.m. ET Nov 18 · 7 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
-    "note_en": "TIME reports AP called the House for Democrats early on Nov 4 local time, and AP has kept calling the remaining districts since. The Fox News results page, which carries AP's race-call list, shows Democrats 257 and Republicans 171 as of its 5:33 p.m. ET Nov 18 update, with 46 seats flipped by Democrats and 3 by Republicans. The latest call came at 3:45 p.m. Nov 17 in North Carolina's 3rd, where Democrat Raymond Smith beat Republican incumbent Greg Murphy by 258 votes, flipping the seat. The call before that was California's 23rd for incumbent Republican Jay Obernolte at 8:29 p.m. Nov 16. NBC's page (AP data) shows 6 races still uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th). Counts can differ because the calls come from different desks. The map counts the seats NBC has called in each state by party. The list below shows flipped seats and key close races.",
+    "note": "AP는 현지 4일 새벽 하원을 민주당 다수로 판정했고(타임), 그 뒤에도 남은 선거구를 하나씩 판정하고 있다. AP 판정 목록을 함께 싣는 폭스뉴스 결과 화면은 미 동부 18일 오후 9시 34분 갱신 기준 민주 257·공화 172석이고, 민주당이 뒤집은 의석이 46곳, 공화당이 뒤집은 의석이 3곳이다. 가장 최근 판정은 18일 오후 9시 27분 알래스카 전역구로, 순위선택 집계가 끝난 날 AP가 현역 닉 베기치(공)의 재선을 판정해 공화당이 의석을 지켰다. 그 앞 판정은 17일 오후 3시 45분 노스캐롤라이나 3구로, 민주당 레이먼드 스미스가 공화당 현역 그레그 머피를 258표 차로 꺾어 공화당 의석을 가져왔다. NBC 화면(집계 AP)은 미판정 6곳(알래스카 1구·루이지애나 5·6구·미네소타 1구·노스캐롤라이나 5구·테네시 4구)을 보여 준다. 판정 기관이 달라 숫자가 다를 수 있다. 지도는 주마다 NBC가 판정한 의석을 정당별로 센 것이다. 아래 목록은 뒤집힌 의석과 주요 접전 선거구다.",
+    "sub_en": "All 435 seats · majority 218 · before: GOP 218, Dem 214 · party seats from the Fox News results page (posted with its AP race-call list), updated 9:34 p.m. ET Nov 18 · 6 seats outside the two totals · state map uses NBC News Decision Desk calls (AP data) and may differ from the totals",
+    "note_en": "TIME reports AP called the House for Democrats early on Nov 4 local time, and AP has kept calling the remaining districts since. The Fox News results page, which carries AP's race-call list, shows Democrats 257 and Republicans 172 as of its 9:34 p.m. ET Nov 18 update, with 46 seats flipped by Democrats and 3 by Republicans. The latest call came at 9:27 p.m. Nov 18 in Alaska's at-large seat: on the day the ranked-choice tabulation finished, AP called the race for incumbent Republican Nick Begich, holding the seat for the GOP. The call before that came at 3:45 p.m. Nov 17 in North Carolina's 3rd, where Democrat Raymond Smith beat Republican incumbent Greg Murphy by 258 votes, flipping the seat. NBC's page (AP data) shows 6 races still uncalled (Alaska at-large, Louisiana 5th and 6th, Minnesota 1st, North Carolina 5th, Tennessee 4th). Counts can differ because the calls come from different desks. The map counts the seats NBC has called in each state by party. The list below shows flipped seats and key close races.",
     "races": [
       {
         "d": "NC-9",
@@ -4010,21 +4010,21 @@
             [
               "Nick Begich",
               "R",
-              136215,
+              136337,
               47.5,
               1
             ],
             [
               "Bill Hill",
               "NP",
-              119689,
+              119826,
               41.8,
               0
             ],
             [
               "Eric Hafner",
               "D",
-              22669,
+              22715,
               7.9,
               0
             ]
@@ -15680,7 +15680,7 @@
         ]
       ]
     },
-    "districtsAsOf": "2026-11-19T01:16:26Z",
+    "districtsAsOf": "2026-11-19T01:46:25Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -15688,6 +15688,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-19T02:27:11Z",
+      "text": "AP 판정: 알래스카 하원 전역구 닉 베기치(공·현역) 재선(미 동부 18일 오후 9시 27분). 순위선택 집계가 끝난 날 무소속 빌 힐을 꺾어 공화당이 의석을 지켰다. 폭스뉴스 하원 결과 화면(AP 판정 목록) 기준 민주 257·공화 172석, 남은 의석 6곳.",
+      "text_en": "AP call: Alaska's at-large House seat goes to incumbent Nick Begich (R) (9:27 p.m. ET Nov 18). He beat independent Bill Hill on the day the ranked-choice tabulation finished, holding the seat for Republicans. Per the AP race-call list on Fox News's House results page: Democrats 257, Republicans 172, 6 seats remaining."
+    },
     {
       "t": "2026-11-19T01:34:00Z",
       "text": "새 AP 판정 없음(미 동부 18일 오후 8시 34분 확인): 폭스뉴스 하원 결과 화면의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구) 그대로이고 민주 257·공화 171석이다. NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다.",
@@ -15832,11 +15837,6 @@
       "t": "2026-11-17T18:35:00Z",
       "text": "새 AP 판정 없음(미 동부 17일 오후 1시 35분 확인): 폭스뉴스 하원 결과 화면의 AP 판정 목록은 마지막 판정이 16일 오후 8시 29분(캘리포니아 23구 제이 오버놀트) 그대로이고, NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 47곳·미판정 7곳으로 변함없다. 상원 알래스카에 대한 AP 판정 보도는 찾지 못했고, 알래스카는 18일 순위선택 집계를 기다리고 있다.",
       "text_en": "No new AP calls (checked 1:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page still ends with the 8:29 p.m. Nov 16 call (California's 23rd, Jay Obernolte), and NBC's House results page (AP data) is unchanged at 47 flipped districts and 7 uncalled. No report of an AP call in Alaska's Senate race was found; Alaska awaits the Nov 18 ranked-choice tabulation."
-    },
-    {
-      "t": "2026-11-17T17:34:00Z",
-      "text": "노스캐롤라이나 5구 재검표 요청: 현역 버지니아 폭스(공)가 16일(월) 척 허버드(민)에게 335표 뒤진 결과(13일 주 최종 집계, WBTV)에 대해 재검표를 공식 요청했고, 주 선관위는 기계 재검표를 23일까지 마친다(디 애팔래치언). 새 AP 판정은 확인하지 못했고, NBC 하원 결과 화면(집계 AP)은 미 동부 17일 낮 12시 34분 기준 뒤집힌 선거구 47곳·미판정 7곳으로 변함없다.",
-      "text_en": "Recount requested in North Carolina's 5th: incumbent Republican Virginia Foxx formally requested a recount on Monday, Nov 16, after trailing Democrat Chuck Hubbard by 335 votes in the state's final tally of Nov 13 (WBTV); the state board says a machine recount will be done by Nov 23 (The Appalachian). No new AP calls were found, and NBC's House results page (AP data) is unchanged as of 12:34 p.m. ET Nov 17 at 47 flipped districts and 7 uncalled."
     }
   ],
   "how": [
@@ -15847,14 +15847,14 @@
   ],
   "sources": [
     [
+      "캐나디언 프레스·AP: 공화당 닉 베기치, 알래스카 연방하원 전역구 재선",
+      "https://panow.com/2026/11/18/republican-nick-begich-wins-reelection-to-u-s-house-in-alaskas-at-large-congressional-district/",
+      "The Canadian Press/AP: Republican Nick Begich wins reelection to U.S. House in Alaska's at-large Congressional District"
+    ],
+    [
       "테네시 룩아웃: 데잘레이, 테네시 연방하원 4구에서 민주당 빅토리아 브로더릭에게 패배 인정",
       "https://tennesseelookout.com/2026/11/16/desjarlais-concedes-tennessee-4th-congressional-district-to-democrat-victoria-broderick/",
       "Tennessee Lookout: DesJarlais concedes Tennessee 4th Congressional District to Democrat Victoria Broderick"
-    ],
-    [
-      "NPR: 알래스카 상원, 민주당 메리 펠톨라가 공화당 댄 설리번 꺾어(AP 판정)",
-      "https://www.npr.org/2026/11/17/g-s1-151567/alaska-senate-results-peltola-sullivan",
-      "NPR: Alaska Senate: Democrat Mary Peltola tops GOP's Dan Sullivan"
     ],
     [
       "알래스카 퍼블릭 미디어: 메리 펠톨라, 알래스카 연방상원 당선",
@@ -15879,7 +15879,7 @@
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "Democrats have won both chambers, and the Senate is settled at Democrats 56, Republicans 44 with all 35 races called. On the night of Nov 17 ET, AP called Alaska, the last race left, for Mary Peltola (D), who cleared a majority with 50.12% of first-choice votes to unseat Sen. Dan Sullivan (R, 45.80%), bringing Democratic Senate flips to nine. The House stands at Democrats 257, Republicans 171 per AP (46 Democratic flips); of the 6 races NBC still shows uncalled, Alaska's House seat awaits a ranked-choice tabulation with Nick Begich (R) at 47.54%, short of a majority, and North Carolina's 5th heads to a recount.",
+  "headline_en": "Democrats have won both chambers, and the Senate is settled at Democrats 56, Republicans 44 with all 35 races called (Mary Peltola's (D) win in Alaska on the night of Nov 17 made nine Democratic flips). The House stands at Democrats 257, Republicans 172 per AP. At 9:27 p.m. ET Nov 18, after Alaska finished its ranked-choice tabulation, AP called the at-large seat for incumbent Nick Begich (R) over independent Bill Hill. Of the 6 seats left, North Carolina's 5th has gone to a recount, and a recount is also under way in Minnesota's 1st.",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
