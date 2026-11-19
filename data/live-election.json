@@ -3,11 +3,11 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-19T09:36:00Z",
+  "updatedAt": "2026-11-19T10:36:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
-  "headline": "민주당이 상·하원을 모두 가져갔고, 상원은 민주 56·공화 44로 35개 선거가 모두 판정됐다(17일 밤 알래스카 메리 펠톨라(민) 승리로 민주당이 뒤집은 의석 9곳). 하원은 AP 기준 민주 257·공화 172석이다. AP는 미 동부 18일 오후 9시 27분, 순위선택 집계를 마친 알래스카 전역구에서 현역 닉 베기치(공)가 무소속 빌 힐을 꺾고 재선했다고 판정했다. 남은 6곳 가운데 노스캐롤라이나 5구는 재검표에 들어갔고, 미네소타 1구도 재검표가 진행 중이다.",
+  "headline": "민주당이 상·하원을 모두 가져갔고, 상원은 민주 56·공화 44로 35개 선거가 모두 판정됐다(17일 밤 알래스카 메리 펠톨라(민) 승리로 민주당이 뒤집은 의석 9곳). 하원은 AP 기준 민주 257·공화 172석이다. AP는 미 동부 18일 오후 9시 27분, 순위선택 집계를 마친 알래스카 전역구에서 현역 닉 베기치(공)가 무소속 빌 힐을 꺾고 재선했다고 판정했다. 남은 5곳 가운데 노스캐롤라이나 5구는 재검표에 들어갔고, 미네소타 1구는 19일(현지) 주 개표심사위원회 인증 뒤 재검표로 갈 전망이다.",
   "senate": {
     "dem": 56,
     "gop": 44,
@@ -2727,8 +2727,8 @@
             "NBC News House results (AP data)"
           ]
         },
-        "note": "AP 판정은 확인하지 못했다. 현역 핀스태드(공)가 323표 뒤진 채(주 국무장관실 집계, 표차 0.1% 미만) 현지 5일 오후 이메일 성명으로 재검표를 진행하겠다고 밝혔다. 미네소타는 재검표가 자동이 아니어서 후보가 요청해야 하고, 표차가 0.25% 안이면 공금으로 치른다. 스티브 사이먼 주 국무장관은 카운티별로 한곳에 모여 손으로 다시 세고, 그 결과를 주 개표심사위원회가 인증하며, 인증 결과에는 어느 쪽이든 소송을 낼 수 있다고 설명했다. 재검표는 며칠에서 몇 주까지 걸릴 수 있다. 존슨(민)은 4일 밤 로체스터에서 승리를 선언했다. 래리 제이컵스 미네소타대 정치학자는 \"미네소타에서는 표차가 수백 표면 대체로 결과가 유지된다\"고 말했다(MPR).",
-        "note_en": "No AP call confirmed. Trailing by 323 votes (Secretary of State tabulation, under 0.1%), Rep. Brad Finstad (R) said in an emailed statement on the afternoon of Nov 5 that he will let the recount process proceed. Minnesota recounts are not automatic: a candidate must request one, and it is taxpayer-funded if the margin is within 0.25%. Secretary of State Steve Simon said counties hand-count at a central location, the state canvassing board certifies, and any party can contest the certified result in court. It can take days or weeks. Jake Johnson (D) declared victory in Rochester on the night of Nov 4. University of Minnesota political scientist Larry Jacobs said that generally in Minnesota, if the margin is in the hundreds, the race stands (MPR)."
+        "note": "AP 판정은 확인하지 못했다. 현역 핀스태드(공)가 323표 뒤진 채(주 국무장관실 집계, 표차 0.1% 미만) 현지 5일 오후 이메일 성명으로 재검표를 진행하겠다고 밝혔다. 미네소타는 재검표가 자동이 아니어서 후보가 요청해야 하고, 표차가 0.25% 안이면 공금으로 치른다. 스티브 사이먼 주 국무장관은 카운티별로 한곳에 모여 손으로 다시 세고, 그 결과를 주 개표심사위원회가 인증하며, 인증 결과에는 어느 쪽이든 소송을 낼 수 있다고 설명했다. 재검표는 며칠에서 몇 주까지 걸릴 수 있다. 존슨(민)은 4일 밤 로체스터에서 승리를 선언했다. 래리 제이컵스 미네소타대 정치학자는 \"미네소타에서는 표차가 수백 표면 대체로 결과가 유지된다\"고 말했다(MPR). 주 개표심사위원회는 선거 뒤 16일째인 19일(목) 오후 세인트폴에서 결과를 인증한다. 재검표 요청은 인증 뒤 영업일 이틀 안에 뒤진 후보만 할 수 있고, 주 국무장관실은 재검표가 11월 30일이 낀 주에 21개 카운티에서 손으로 치러질 것으로 본다. KTTC가 16일 전한 표차는 322표다.",
+        "note_en": "No AP call confirmed. Trailing by 323 votes (Secretary of State tabulation, under 0.1%), Rep. Brad Finstad (R) said in an emailed statement on the afternoon of Nov 5 that he will let the recount process proceed. Minnesota recounts are not automatic: a candidate must request one, and it is taxpayer-funded if the margin is within 0.25%. Secretary of State Steve Simon said counties hand-count at a central location, the state canvassing board certifies, and any party can contest the certified result in court. It can take days or weeks. Jake Johnson (D) declared victory in Rochester on the night of Nov 4. University of Minnesota political scientist Larry Jacobs said that generally in Minnesota, if the margin is in the hundreds, the race stands (MPR). The State Canvassing Board meets in St. Paul on the afternoon of Thursday, Nov 19, the 16th day after the election, to certify results. Only the trailing candidate can request a recount, within two business days after certification, and the Secretary of State's office expects hand recounts in the 21 counties the week of Nov 30. KTTC reported the margin as 322 votes on Nov 16."
       },
       {
         "d": "FL-25",
@@ -4059,6 +4059,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-19T10:36:00Z",
+      "text": "새 AP 판정 없음(미 동부 19일 오전 5시 36분 확인): NBC 하원 결과 화면(집계 AP)은 18일 오후 9시 30분 자료 그대로 민주 257·공화 172석, 미판정 5곳이다. 미네소타 1구는 아직 재검표 전이다. KTTC에 따르면 주 개표심사위원회가 19일(목) 오후 결과를 인증한 뒤에야 현역 브래드 핀스태드(공)가 재검표를 요청할 수 있고, 재검표는 11월 30일이 낀 주로 예상된다.",
+      "text_en": "No new AP calls (checked 5:36 a.m. ET, Nov 19): NBC's House results page (AP data) is unchanged from its 9:30 p.m. Nov 18 data, with Democrats 257, Republicans 172 and 5 uncalled. Minnesota's 1st has not yet gone to a recount: per KTTC, Rep. Brad Finstad (R) can request one only after the State Canvassing Board certifies results on the afternoon of Thursday, Nov 19, and the recount is expected the week of Nov 30."
+    },
+    {
       "t": "2026-11-19T09:36:00Z",
       "text": "새 AP 판정 없음(미 동부 19일 오전 4시 36분 확인): NBC 하원 결과 화면(집계 AP)은 18일 오후 9시 30분 자료 그대로 민주 257·공화 172석, 미판정 5곳(결선으로 가는 루이지애나 5·6구, 재검표 중인 미네소타 1구·노스캐롤라이나 5구, 테네시 4구)이다. 테네시 4구는 현역 스콧 데잘레이(공)가 16일 패배를 인정했지만, WRCB 로컬3 뉴스는 17일 갱신 기사에서도 AP가 아직 판정하지 않았다고 전했다.",
       "text_en": "No new AP calls (checked 4:36 a.m. ET, Nov 19): NBC's House results page (AP data) is unchanged from its 9:30 p.m. Nov 18 data, with Democrats 257 and Republicans 172 and 5 uncalled (the Louisiana 5th and 6th, headed to runoffs; the Minnesota 1st and North Carolina 5th, in recounts; and Tennessee's 4th). In Tennessee's 4th, Rep. Scott DesJarlais (R) conceded on Nov 16, but WRCB Local 3 News said in its Nov 17 update that AP had still not called the race."
@@ -4202,11 +4207,6 @@
       "t": "2026-11-18T03:19:00Z",
       "text": "AP, 알래스카 상원 민주당 메리 펠톨라 승리 판정(미 동부 17일 밤): 주 선거국의 17일 오후 비공식 집계에서 1순위 표 14만 4302표(50.12%)로 과반을 넘겨 현역 댄 설리번(공, 13만 1844표·45.80%)을 꺾었다. 순위선택 집계 없이 결정됐고, 민주당이 공화당 의석을 하나 더 가져와 상원은 민주 56·공화 44로 35개 선거 판정이 모두 끝났다(NPR·알래스카 퍼블릭 미디어). 하원은 새 AP 판정 없이 민주 257·공화 171석(폭스뉴스 결과 화면, 오후 10시 40분 갱신)이고, 알래스카 하원은 AP 미판정이다.",
       "text_en": "AP calls Alaska's Senate race for Democrat Mary Peltola (night of Nov 17 ET): in the state's unofficial count that afternoon she cleared a majority with 144,302 first-choice votes (50.12%), unseating Sen. Dan Sullivan (R, 131,844, 45.80%). No ranked-choice tabulation was needed; Democrats flip one more Republican seat, and the Senate is settled at Democrats 56, Republicans 44 with all 35 races called (NPR, Alaska Public Media). No new AP House calls: Democrats 257, Republicans 171 (Fox News results page, updated 10:40 p.m.), and AP has not called Alaska's House race."
-    },
-    {
-      "t": "2026-11-18T01:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 17일 오후 8시 35분 확인): 폭스뉴스 하원 결과 화면(오후 8시 33분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구 레이먼드 스미스) 그대로이고(민주 257·공화 171석), NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다. 상원 알래스카는 주 선거국의 18일 순위선택 집계를 기다린다.",
-      "text_en": "No new AP calls (checked 8:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page (updated 8:33 p.m.) still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd, Raymond Smith), with Democrats at 257 and Republicans at 171, and NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled. The Alaska Senate race awaits the state's Nov 18 ranked-choice tabulation."
     }
   ],
   "how": [
@@ -4242,14 +4242,14 @@
       "NBC News House results (AP data)"
     ],
     [
-      "WBTV: 노스캐롤라이나 연방하원 5구 공화당 의원 재검표 요청",
-      "https://www.wbtv.com/2026/11/17/republican-rep-requests-recount-tight-us-house-race-north-carolina/",
-      "WBTV: Republican rep. requests recount in tight US House race in North Carolina"
+      "KTTC: 미네소타 주 개표심사위원회 19일 선거 결과 인증",
+      "https://www.kttc.com/2026/11/16/state-canvassing-board-certify-minnesota-election-results-thursday/",
+      "KTTC: State Canvassing Board to certify Minnesota election results Thursday"
     ]
   ],
   "title_en": "US midterms: live results",
   "subtitle_en": "Voting on Nov 3 (local time) · 35 of 100 Senate seats (incl. 2 specials), all 435 House seats, 36 governorships. A midterm verdict on Trump's second term.",
-  "headline_en": "Democrats have won both chambers, and the Senate is settled at Democrats 56, Republicans 44 with all 35 races called (Mary Peltola's (D) win in Alaska on the night of Nov 17 made nine Democratic flips). The House stands at Democrats 257, Republicans 172 per AP. At 9:27 p.m. ET Nov 18, after Alaska finished its ranked-choice tabulation, AP called the at-large seat for incumbent Nick Begich (R) over independent Bill Hill. Of the 6 seats left, North Carolina's 5th has gone to a recount, and a recount is also under way in Minnesota's 1st.",
+  "headline_en": "Democrats have won both chambers, and the Senate is settled at Democrats 56, Republicans 44 with all 35 races called (Mary Peltola's (D) win in Alaska on the night of Nov 17 made nine Democratic flips). The House stands at Democrats 257, Republicans 172 per AP. At 9:27 p.m. ET Nov 18, after Alaska finished its ranked-choice tabulation, AP called the at-large seat for incumbent Nick Begich (R) over independent Bill Hill. Of the 5 seats left, North Carolina's 5th has gone to a recount, and Minnesota's 1st is expected to head to a recount after the State Canvassing Board certifies results on Nov 19.",
   "how_en": [
     "'Called' means AP has declared a winner; 'leading' means ahead in the count and can still change.",
     "Senate totals include seats not up this year.",
