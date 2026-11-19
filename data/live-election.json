@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-19T08:36:00Z",
+  "updatedAt": "2026-11-19T09:36:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -4059,6 +4059,11 @@
   },
   "feed": [
     {
+      "t": "2026-11-19T09:36:00Z",
+      "text": "새 AP 판정 없음(미 동부 19일 오전 4시 36분 확인): NBC 하원 결과 화면(집계 AP)은 18일 오후 9시 30분 자료 그대로 민주 257·공화 172석, 미판정 5곳(결선으로 가는 루이지애나 5·6구, 재검표 중인 미네소타 1구·노스캐롤라이나 5구, 테네시 4구)이다. 테네시 4구는 현역 스콧 데잘레이(공)가 16일 패배를 인정했지만, WRCB 로컬3 뉴스는 17일 갱신 기사에서도 AP가 아직 판정하지 않았다고 전했다.",
+      "text_en": "No new AP calls (checked 4:36 a.m. ET, Nov 19): NBC's House results page (AP data) is unchanged from its 9:30 p.m. Nov 18 data, with Democrats 257 and Republicans 172 and 5 uncalled (the Louisiana 5th and 6th, headed to runoffs; the Minnesota 1st and North Carolina 5th, in recounts; and Tennessee's 4th). In Tennessee's 4th, Rep. Scott DesJarlais (R) conceded on Nov 16, but WRCB Local 3 News said in its Nov 17 update that AP had still not called the race."
+    },
+    {
       "t": "2026-11-19T08:36:00Z",
       "text": "새 AP 판정 없음(미 동부 19일 오전 3시 36분 확인): 폭스뉴스 하원 결과 화면의 AP 판정 목록은 마지막 판정이 18일 오후 9시 27분(알래스카 전역구) 그대로이고 민주 257·공화 172석이다. NBC 하원 결과 화면(집계 AP)도 18일 오후 9시 30분 자료(미판정 5곳: 결선으로 가는 루이지애나 5·6구, 재검표 중인 미네소타 1구·노스캐롤라이나 5구, 테네시 4구)에서 바뀌지 않았다.",
       "text_en": "No new AP calls (checked 3:36 a.m. ET, Nov 19): the AP call list on Fox News' House results page still shows the last call at 9:27 p.m. on Nov 18 (Alaska at-large), with Democrats 257 and Republicans 172. NBC's House results page (AP data) is also unchanged from its 9:30 p.m. Nov 18 data (5 uncalled: the Louisiana 5th and 6th, headed to runoffs; the Minnesota 1st and North Carolina 5th, in recounts; and Tennessee's 4th)."
@@ -4202,11 +4207,6 @@
       "t": "2026-11-18T01:35:00Z",
       "text": "새 AP 판정 없음(미 동부 17일 오후 8시 35분 확인): 폭스뉴스 하원 결과 화면(오후 8시 33분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구 레이먼드 스미스) 그대로이고(민주 257·공화 171석), NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다. 상원 알래스카는 주 선거국의 18일 순위선택 집계를 기다린다.",
       "text_en": "No new AP calls (checked 8:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page (updated 8:33 p.m.) still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd, Raymond Smith), with Democrats at 257 and Republicans at 171, and NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled. The Alaska Senate race awaits the state's Nov 18 ranked-choice tabulation."
-    },
-    {
-      "t": "2026-11-18T00:35:00Z",
-      "text": "새 AP 판정 없음(미 동부 17일 오후 7시 35분 확인): 폭스뉴스 하원 결과 화면의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구 레이먼드 스미스) 그대로이고(민주 257·공화 171석), NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다. 상원 알래스카는 주 선거국의 18일 순위선택 집계를 기다린다.",
-      "text_en": "No new AP calls (checked 7:35 p.m. ET Nov 17): the AP race-call list on Fox News's House results page still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd, Raymond Smith), with Democrats at 257 and Republicans at 171, and NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled. The Alaska Senate race awaits the state's Nov 18 ranked-choice tabulation."
     }
   ],
   "how": [
