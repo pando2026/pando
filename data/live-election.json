@@ -4060,8 +4060,8 @@
   "feed": [
     {
       "t": "2026-11-19T04:34:00Z",
-      "text": "새 AP 판정 없음(미 동부 18일 오후 11시 34분 확인): NBC 하원 결과 화면(집계 AP)이 미 동부 18일 오후 9시 30분 자료로 갱신돼 알래스카 전역구 판정이 반영됐고, 미판정은 5곳(루이지애나 5·6구, 미네소타 1구, 노스캐롤라이나 5구, 테네시 4구)이다. 새 판정을 전한 기사는 찾지 못했고, 민주 257·공화 172석 그대로다.",
-      "text_en": "No new AP calls (checked 11:34 p.m. ET Nov 18): NBC's House results page (AP data) has updated to its 9:30 p.m. ET Nov 18 data, now reflecting the Alaska at-large call, and shows 5 uncalled races (Louisiana's 5th and 6th, Minnesota's 1st, North Carolina's 5th, Tennessee's 4th). No reports of new calls were found; Democrats remain at 257 seats and Republicans at 172."
+      "text": "새 AP 판정 없음(미 동부 18일 오후 11시 34분 확인): NBC 하원 결과 화면(집계 AP)은 한 번은 미 동부 18일 오후 9시 30분 자료(알래스카 전역구 판정 반영, 미판정 5곳)로, 다시 받았을 때는 오후 8시 46분 자료(미판정 6곳)로 나와 선거구 표는 마지막으로 받은 자료를 따른다. 새 판정을 전한 기사는 찾지 못했고, 민주 257·공화 172석 그대로다. 남은 곳은 루이지애나 5·6구, 미네소타 1구, 노스캐롤라이나 5구, 테네시 4구다.",
+      "text_en": "No new AP calls (checked 11:34 p.m. ET Nov 18): NBC's House results page (AP data) returned its 9:30 p.m. ET Nov 18 data once (Alaska at-large call included, 5 uncalled) and its 8:46 p.m. data (6 uncalled) on later downloads, so the district table follows the last download. No reports of new calls were found; Democrats remain at 257 seats and Republicans at 172. Still open: Louisiana's 5th and 6th, Minnesota's 1st, North Carolina's 5th and Tennessee's 4th."
     },
     {
       "t": "2026-11-19T03:34:00Z",
