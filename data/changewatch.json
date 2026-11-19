@@ -1,5 +1,41 @@
 [
  {
+  "code": "MM",
+  "topic": "ICJ 로힝야 학살 판결",
+  "status": "학살 책임 인정",
+  "title": "ICJ, 미얀마의 로힝야 학살 책임 9대 6 인정…수사·재발 방지·배상 명령",
+  "detail": "이와사와 유지 ICJ 소장은 19일 미얀마 안보군이 최소 1만 명을 죽였다는 증거를 짚고 학살 책임을 인정했다. 미얀마는 학살을 막고 처벌하는 데도 실패했다고 판단했다. 배상액은 정하지 않았고 2년 안에 이행을 보고해야 한다. 영국은 미얀마 국방무관 추방을 발표했다. 미얀마 정부의 대응은 읽은 보도에 없다(알자지라·유엔뉴스).",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/news/2026/11/19/un-top-court-finds-myanmar-killed-10000-rohingya-as-it-rules-on-genocide"
+ },
+ {
+  "code": "KR",
+  "topic": "한덕수 내란 사건 대법원",
+  "status": "9대 3 파기환송",
+  "title": "대법원 전원합의체, 한덕수 내란 중요임무 종사 사건 파기환송…\"국무회의 소집 건의는 정당한 직무\"",
+  "detail": "19일 다수의견 9명은 선포 전 국무회의 소집 건의에 국헌 문란 목적이 있었다고 단정하기 어렵다고 봤고, 오경미·신숙희·김성수 대법관 3명은 12·3 계엄이 \"친위 쿠데타\"라며 반대했다. 사건은 서울고법에서 다시 재판하며 구속은 이어진다(법률신문·경향신문).",
+  "date": "2026-11-19",
+  "url": "https://www.lawtimes.co.kr/news/articleView.html?idxno=229754"
+ },
+ {
+  "code": "SO",
+  "topic": "UAE 대사 추방",
+  "status": "72시간 내 출국",
+  "title": "소말리아, UAE 대사 72시간 내 추방·자국 대사 소환…\"사실상 침공\"",
+  "detail": "압디파타 카심 모하무드 정보장관은 19일 UAE가 주권을 침해하고 있다며 이같이 발표했다. 하산 셰이크 모하무드 대통령은 18일 UAE가 연방정부 아닌 지역 정부와 베르베라·보사소·키스마요 항구 협정을 맺었다고 비난했다. UAE 외교부는 조치를 규탄했다(알자지라).",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/news/2026/11/19/somalia-expels-uae-ambassador-accuses-abu-dhabi-of-violating-sovereignty"
+ },
+ {
+  "code": "DK",
+  "topic": "그린란드 안보 협정 비준",
+  "status": "덴마크 의회 만장일치",
+  "title": "덴마크 의회, 미국·그린란드와 안보 협정 비준…미군 기지 2곳·역외국 투자 차단",
+  "detail": "19일 출석 의원 109명이 모두 찬성했다. 협정은 독립 뒤에도 유효하고, 덴마크 외무부가 외교 공한으로 절차 완료를 알리면 발효된다(알자지라).",
+  "date": "2026-11-19",
+  "url": "https://www.aljazeera.com/news/2026/11/19/denmark-parliament-approves-security-deal-with-greenland-and-us"
+ },
+ {
   "code": "US",
   "topic": "엔비디아 3분기 실적·이사회",
   "status": "황 복귀 없다",
