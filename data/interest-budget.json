@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-18",
+ "asOf": "2026-11-19",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -5213,6 +5213,155 @@
     ]
    ],
    "tier": "official"
+  },
+  "BH": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 일반예산(경상+프로젝트 지출)",
+   "interest": {
+    "value": 1.155,
+    "unit": "십억 바레인 디나르",
+    "label": "정부 부채 이자(فوائد الدين الحكومي)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 4.537,
+    "unit": "십억 바레인 디나르",
+    "label": "총지출"
+   },
+   "share": 25.5,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 1.031,
+    "unit": "십억 바레인 디나르"
+   },
+   "note": "법률 제11호(2025) 부속 표 1의 2026년 '정부 부채 이자' 11억 5,500만 디나르이며 원금 상환은 포함하지 않는다. 감사원에 따르면 2025년 실제 이자 지급은 10억 5,200만 디나르(정부 수입의 39%)였다.",
+   "sources": [
+    [
+     "바레인 관보",
+     "법률 제11호(2025) 2025·2026 회계연도 국가 일반예산 승인에 관한 법(قانون رقم 11 لسنة 2025 باعتماد الميزانية العامة للدولة للسنتين الماليتين 2025 و2026) · 2025-03-27",
+     "https://lloc.gov.bh/PDF/K1125.pdf"
+    ],
+    [
+     "News of Bahrain",
+     "Debt interest hits 39pc of state revenue(부채 이자, 국가 수입의 39%) · 2026-11-16",
+     "https://www.newsofbahrain.com/en/article/debt-interest-hits-39pc-of-state-revenue.md"
+    ]
+   ],
+   "tier": "official"
+  },
+  "CY": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 국가예산(Κρατικός Προϋπολογισμός)",
+   "interest": {
+    "value": 711.4,
+    "unit": "백만 유로",
+    "label": "국채 이자(τόκοι)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 14406.6,
+    "unit": "백만 유로",
+    "label": "총지출(대출 원금 상환 25.2억 포함)"
+   },
+   "share": 4.9,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 665.2,
+    "unit": "백만 유로"
+   },
+   "note": "2027년 국가예산안의 이자 7억 1,140만 유로는 대출 원금 상환(약 25.2억 유로)과 따로 적힌 금액이며 폴리티스 보도로 확인했다. 유럽위원회 제출 예산계획의 일반정부 이자(4억 3,930만 유로)는 산정 범위가 달라 직접 비교할 수 없다.",
+   "sources": [
+    [
+     "폴리티스(Politis, 키프로스 일간지)",
+     "Τι θα ξοδέψει το κράτος το 2027(2027년 국가가 쓸 돈) · 2026-09-30",
+     "https://www.politis.com.cy/politis-news/oikonomia/1039785/ti-tha-ksodepsei-to-kratos-to-2027"
+    ],
+    [
+     "CyprusNews.eu(머니매터스 전재)",
+     "Προϋπολογισμός Κύπρου 2027: Πού πάνε τα €14,4 δισ. και γιατί η κυβέρνηση μιλά για €11,16 δισ.(키프로스 2027 예산: 144억 유로는 어디로 가고 정부는 왜 111.6억 유로를 말하나) · 2026-10-01",
+     "https://cyprusnews.eu/moneymatters-cy/proypologismos-kyprou-2027-pou-pane-ta-e144-dis-kai-giati-i-kyvernisi-mila-gia-e1116-dis/"
+    ],
+    [
+     "키프로스 재무부(Stockwatch 게재본)",
+     "Cyprus Draft Budgetary Plan 2027(키프로스 2027년 예산계획 초안, 유럽위원회 제출용) · 2026-10",
+     "https://www.stockwatch.com.cy/storage/library/6add70774ea8c.pdf"
+    ]
+   ],
+   "tier": "press"
+  },
+  "MK": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 예산(경제 분류 45 이자 지급)",
+   "interest": {
+    "value": 24.923,
+    "unit": "십억 데나르",
+    "label": "이자 지급(외국 채권자 12.445 + 국내 채권자 12.478)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 440.44,
+    "unit": "십억 데나르",
+    "label": "총지출"
+   },
+   "share": 5.7,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 21.094,
+    "unit": "십억 데나르"
+   },
+   "note": "2027년 예산안 표 1의 이자 지급이다. 원금 상환(외채 465.3억·내채 181.4억 데나르)은 포함하지 않았고, 이자만 보면 2026년 개정·본예산 모두 210.94억이었다.",
+   "sources": [
+    [
+     "북마케도니아 재무부",
+     "Предлог на Буџетот на Република Северна Македонија за 2027 година(북마케도니아 2027년 예산안) · 2026-10-30 정부 의결",
+     "https://portal.mdt.gov.mk/post-body-files/budzet-finansii-file-GW3Z.pdf"
+    ],
+    [
+     "Публикум",
+     "Предлог-буџет за 2027 од 7,16 милијарди евра: Рекордна потрошувачка, камати од 405 милиони евра и нови задолжувања(71.6억 유로 2027 예산안: 사상 최대 지출, 이자 4.05억 유로, 신규 차입) · 2026-11-13",
+     "https://www.publikum.mk/predlog-budzet-2027-analiza-dolgovi-kamati/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "XK": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "코소보 공화국 예산 총지출(지방정부 보조금 포함)",
+   "interest": {
+    "value": 55.0,
+    "unit": "백만 유로",
+    "label": "공공부채 이자(interesi i borxhit publik)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 4268.7,
+    "unit": "백만 유로",
+    "label": "총지출"
+   },
+   "share": 1.3,
+   "note": "헤쿠란 무라티 재무장관이 2026년 11월 11일 예산위원회에서 밝힌 경제 성질별 항목 중 ‘공공부채 이자 5,500만 유로’이며 원금 상환은 들어 있지 않다. 2027 예산법안 본문(재무부 PDF)은 열리지 않아 언론이 옮긴 장관 발언을 근거로 했고, 2026년 이자 예산액은 확인하지 못해 전년 비교는 적지 않았다.",
+   "sources": [
+    [
+     "KosovaNews",
+     "Murati prezanton projektbuxhetin 2027 në vlerë prej 4.27 miliardë eurosh(무라티, 42.7억 유로 2027 예산안 설명 — 예산위원회 1차 심의) · 2026-11-11",
+     "https://kosovanews.net/murati-prezanton-projektbuxhetin-2027-ne-vlere-prej-4-27-miliarde-eurosh/"
+    ],
+    [
+     "Arbresh.info",
+     "Murati prezanton buxhetin për vitin 2027, parashihen mbi 4.2 miliardë euro shpenzime(무라티, 2027 예산 설명 — 42억 유로 넘는 지출) · 2026-11-11",
+     "https://www.arbresh.info/lajmet/murati-prezanton-buxhetin-per-vitin-2027-parashihen-mbi-4-2-miliarde-euro-shpenzime/"
+    ],
+    [
+     "Zëri",
+     "Miratohet Projektligji për Buxhetin e vitit 2027(2027 예산법안 의결) · 2026-11-02",
+     "https://zeri.info/ekonomia/644305/miratohet-projektligji-per-buxhetin-e-vitit-2027/"
+    ]
+   ],
+   "tier": "press"
   }
  }
 }
