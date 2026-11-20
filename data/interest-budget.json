@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-19",
+ "asOf": "2026-11-20",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -5362,6 +5362,180 @@
     ]
    ],
    "tier": "press"
+  },
+  "EE": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가예산(중앙정부) 지출 전체 — 정부 확정안(2026-09-28), 의회 2독회 통과·최종 표결 12월 9일 예정",
+   "interest": {
+    "value": 365.6,
+    "unit": "백만 유로",
+    "label": "이자 비용과 기타 금융비용"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 20163.1,
+    "unit": "백만 유로",
+    "label": "국가예산 지출 합계"
+   },
+   "share": 1.8,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 260.9,
+    "unit": "백만 유로"
+   },
+   "note": "이자와 기타 금융비용은 설명서 표 7·재무부 소관 표 기준이며 거의 전부(3억 6,563만 유로)가 재무부 소관입니다. 정부가 빌린 돈의 이자와 건강보험기금·실업보험기금 계좌 잔액에 주는 이자를 포함하고 원금 상환은 포함하지 않으며, 2025년 결산 2.2억 유로에서 2026년 2.6억, 2027년 3.7억 유로로 늘었습니다. 재정위원회는 향후 4년 국채 이자에 거의 20억 유로가 든다고 추산했습니다.",
+   "sources": [
+    [
+     "에스토니아 재무부(Rahandusministeerium)",
+     "2027. aasta riigieelarve seaduse eelnõu seletuskiri koos lisadega(2027년 국가예산법안 설명서와 부속서) · 2026-10",
+     "https://fin.ee/sites/default/files/documents/2026-10/2027.%20aasta%20riigieelarve%20seaduse%20eeln%C3%B5u%20seletuskiri%20koos%20lisadega.pdf"
+    ],
+    [
+     "에스토니아 재무부(Rahandusministeerium)",
+     "2027. aasta riigieelarve seaduse eelnõu(2027년 국가예산법안) · 2026-09",
+     "https://fin.ee/sites/default/files/documents/2026-09/2027.%20aasta%20riigieelarve%20seaduse%20eeln%C3%B5u_2.pdf"
+    ],
+    [
+     "ERR",
+     "Eelarvenõukogu: riigil pole plaani, kuidas kaitsekulusid laenurahata katta(재정위원회: 차입 없이 국방비를 감당할 계획이 없다) · 2026-09-28",
+     "https://www.err.ee/1610150647/eelarvenoukogu-riigil-pole-plaani-kuidas-kaitsekulusid-laenurahata-katta"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MU": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출(경상+자본, 이자는 발생주의 법정 지출)",
+   "interest": {
+    "value": 30.1,
+    "unit": "십억 루피(MUR)",
+    "label": "공공부채 이자 지급(Interest Payments)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 266.7,
+    "unit": "십억 루피(MUR)",
+    "label": "중앙정부 총지출"
+   },
+   "share": 11.3,
+   "prev": {
+    "fiscalYear": "2025/26 수정 추정",
+    "value": 26.9,
+    "unit": "십억 루피(MUR)"
+   },
+   "note": "예산서의 '정부 운영 계산서'와 프로그램별 지출 요약이 법정 지출 항목 '이자 지급'을 Rs 30.1십억(2025/26 당초 Rs 26.1십억)으로 올렸고, 원금 상환(Capital Repayment Rs 35.2십억)은 따로 적혀 있다. 람굴람 총리 겸 재무장관은 2026-08-07 서면 답변에서 공공부문 부채 이자를 2026/27 Rs 29.2십억으로 밝혔는데, 범위(공공부문 부채 이자)가 달라 예산서 수치와 다르다.",
+   "sources": [
+    [
+     "모리셔스 재무부",
+     "Summary of Expenditure by Programmes 2026/27(프로그램별 지출 요약) · 2026-06-19",
+     "https://nationalbudget2026.govmu.org/documents/2026_27_sumExpbyProg.pdf"
+    ],
+    [
+     "모리셔스 재무부",
+     "Statement of Government Operations 2026/27(정부 운영 계산서) · 2026-06-19",
+     "https://nationalbudget2026.govmu.org/documents/2026_27_GovOperations.pdf"
+    ],
+    [
+     "모리셔스 국민의회(재무부)",
+     "Budget Speech 2026-2027(2026/27 예산 연설) · 2026-06-19",
+     "https://mauritiusassembly.govmu.org/mauritiusassembly/wp-content/uploads/2026/06/SPEECH-2026_2027.pdf"
+    ],
+    [
+     "L'Express(allAfrica 전재)",
+     "Rs 683,4 milliards de dette publique au 30 juin 2026(2026년 6월 30일 공공부채 Rs 6,834억) · 2026-08-07",
+     "https://fr.allafrica.com/stories/202608070315.html"
+    ]
+   ],
+   "tier": "official"
+  },
+  "TL": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙행정부(Administração Central) 경제분류 '이자(Juros, 코드 50306)' — 공공이전 범주 안의 외채 이자 지급, 원금 제외",
+   "interest": {
+    "value": 10.51,
+    "unit": "백만 달러",
+    "label": "이자(Juros)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 2487.43,
+    "unit": "백만 달러",
+    "label": "중앙행정부 총지출"
+   },
+   "share": 0.4,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 8.03,
+    "unit": "백만 달러"
+   },
+   "note": "동티모르는 국채를 발행하지 않고 지출의 대부분을 석유기금 인출(2027년 18억 9,088만 달러, 연결 총지출의 약 74% — 판도 계산)로 충당하며, 이자는 아시아개발은행(ADB)·세계은행·일본국제협력단(JICA)의 양허성 차관에서 나온다. 재무부 전망표는 2027년 부채 상환을 원금 2,042만 + 이자 1,094만(ADB 907만·세계은행 168만·JICA 19만) = 3,140만 달러로 보며, 외채 잔액은 2026년 말 3억 714만 달러(국내총생산의 15.0%)에서 2027년 17.0%로 늘어난다. 재무부 전망표 합계(1,094만)와 예산 항목(1,051만)은 약 43만 달러 차이가 난다. 2026년 값은 추경 반영 예산이고 상반기 집행액은 377만 달러(47%)였다. 법안은 최대 16억 달러·만기 40년까지 차입 계약 권한을 요청하나 2027년 실제 차관 인출 계획은 7,500만 달러다.",
+   "sources": [
+    [
+     "동티모르 재무부(예산 개발서, La'o Hamutuk 게시본)",
+     "Desenvolvimentos Orçamentais: Despesas dos Serviços e Entidades por Classificação Económica(예산 개발서: 경제분류별 지출) · 2026-09-30",
+     "https://laohamutuk.org/econ/OGE27/prop%20books/Budget%20Book%20Expenditure%202027KlasifikasaunPt_Optimized.pdf"
+    ],
+    [
+     "동티모르 재무부(예산 보고서, La'o Hamutuk 게시본)",
+     "Orçamento Geral do Estado 2027, Livro do Relatório Orçamental — 표 47·48 외채 지표와 부채 상환 전망(2027 예산 보고서) · 2026-09-30",
+     "https://laohamutuk.org/econ/OGE27/prop%20books/BB%202027RelatorioPt.pdf"
+    ],
+    [
+     "동티모르 재무부(분기 집행 보고서, La'o Hamutuk 게시본)",
+     "Relatório de Execução Orçamental, Segundo Trimestre 2026 — 표 18 이전 지출 중 이자(2026 2분기 집행 보고서) · 2026-08-27",
+     "https://laohamutuk.org/econ/OGE26/exec/260827MFRelExec2q26.pdf"
+    ],
+    [
+     "동티모르 정부(각의 의결 제안 이유서, La'o Hamutuk 비공식 영어 번역본)",
+     "Statement of Reasons, Draft General State Budget Law for 2027(2027 일반국가예산법안 제안 이유서) · 2026-09-30",
+     "https://laohamutuk.org/econ/OGE27/prop%20books/260930OJE2027ExpMotEn.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "TT": {
+   "fiscalYear": "2027",
+   "status": "확정 예산",
+   "scope": "중앙정부 일반회계(공공부채 제19항 경상분, 이자만)",
+   "interest": {
+    "value": 6.61,
+    "unit": "십억 TT달러",
+    "label": "공채 이자(국내 4.216 + 해외 2.394, 발행·관리비 제외)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 63.24,
+    "unit": "십억 TT달러",
+    "label": "총지출(경상+개발사업, 원금 상환 제외)"
+   },
+   "share": 10.5,
+   "prev": {
+    "fiscalYear": "2026(수정 예산)",
+    "value": 6.25,
+    "unit": "십억 TT달러"
+   },
+   "note": "세출예산서 제19항 '부채 상환' 표의 이자(Total Interest) 66.11억 달러이며 발행·관리비 0.62억, 원금 상환·감채기금 102.99억 달러는 뺐다. 항목 합계 166.99억 달러까지 합치면 원금이 섞인다. 총지출은 같은 문서의 경상·개발사업 합계다.",
+   "sources": [
+    [
+     "재무부(Ministry of Finance)",
+     "Draft Estimates of Expenditure for the Financial Year 2027(2027 회계연도 세출예산안) · 2026-10",
+     "https://www.finance.gov.tt/wp-content/uploads/2026/10/Draft-Estimates-of-Expenditure-for-the-Financial-Year-2027.pdf"
+    ],
+    [
+     "재무부(Ministry of Finance)",
+     "Budget Statement 2027: A People-Centred Approach(2027 예산 연설: 사람 중심 접근) · 2026-10-12",
+     "https://www.finance.gov.tt/wp-content/uploads/2026/10/Budget-Statement-2027.pdf"
+    ],
+    [
+     "의회 재정감시국(Financial Scrutiny Unit)",
+     "Guide to the Budget 2027(2027 예산 안내서) · 2026-10",
+     "https://www.ttparliament.org/wp-content/uploads/2026/11/Guide-To-The-Budget-2027.pdf"
+    ]
+   ],
+   "tier": "official"
   }
  }
 }
