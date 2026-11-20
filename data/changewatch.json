@@ -2,11 +2,47 @@
   {
     "code": "UA",
     "topic": "러시아의 키이우 다리 공습",
-    "status": "전역 대공습",
-    "title": "러시아, 키이우 다리 3곳 타격…순항미사일 84발·드론 404대 발사, 최소 8명 사망",
-    "detail": "우크라이나 공군은 20일 새벽 순항미사일 84발과 드론 404대 등이 발사됐고 순항미사일 79발·드론 380대를 격추했다고 밝혔다. 키이우 드니프로강 다리 3곳이 피격됐고 키이우 인디펜던트는 최소 8명이 숨졌다고 전했다. 푸틴 대통령은 전날 크림대교 공격에 \"훨씬 더 고통스러운 보복\"을 예고했다. 러시아 국방부 입장은 읽은 보도에 없다(키이우 인디펜던트·AP).",
+    "status": "전국 12명 사망·82명 부상",
+    "title": "러시아, 키이우 다리 3곳 타격…전국 하루 12명 사망·82명 부상, 크리비리흐 이중 타격, 폴란드에 미사일 추락",
+    "detail": "우크라이나 공군은 순항미사일 84발·드론 404대 등 가운데 462기를 막았고 23곳이 피격됐다고 밝혔다. 코레츠키 총리는 키이우에서 최소 6명이 숨졌다고 했고 키이우 인디펜던트는 전국 12명 사망·82명 부상으로 집계했다. 러시아 국방부는 군 수송에 쓰는 키이우 다리와 방위산업·에너지 시설을 쳤다고 했다. 폴란드에는 Kh-101 미사일 2발과 드론 1대가 떨어졌다(알자지라·키이우 인디펜던트).",
     "date": "2026-11-20",
-    "url": "https://kyivindependent.com/russia-launches-mass-missile-attack-against-ukraine-after-putin-vows-revenge/"
+    "url": "https://kyivindependent.com/russian-attacks-kill-12-injure-82-across-ukraine-over-past-day-as-country-reels-from-mass-overnight-strike/"
+  },
+  {
+    "code": "GB",
+    "topic": "영국–EU 정상회담",
+    "status": "3개 분야 합의·서명 아직",
+    "title": "영국·EU 브뤼셀 정상회담, 식품 검역·배출권 연계·청년 이동 합의…서명은 아직",
+    "detail": "버넘 총리는 영국 GDP가 0.5% 늘 수 있다고 봤다. 대학 등록금은 6개월 안에 협상하고, 리폼UK 패라지 대표는 \"재가입 논쟁이 시작됐다\"고 비판했다(알자지라).",
+    "date": "2026-11-20",
+    "url": "https://www.aljazeera.com/news/2026/11/20/uk-eu-deal-what-we-know-so-far"
+  },
+  {
+    "code": "IQ",
+    "topic": "주르프알사크르 진입",
+    "status": "정부군 진입·한 달 안 철수 타협",
+    "title": "이라크군, 주르프알사크르 진입…카타이브 헤즈볼라와 한 달 안 철수 타협",
+    "detail": "알자이디 총리는 \"전쟁을 하러 간 것이 아니다\"라고 했고, 연방경찰이 운영하는 통제 본부가 마을에 세워졌다. 철수가 실제 시작됐는지는 확인되지 않았다(알자지라).",
+    "date": "2026-11-20",
+    "url": "https://www.aljazeera.com/news/2026/11/20/iraqi-forces-deploy-to-jurf-al-sakhar-after-deal-with-iran-backed-group"
+  },
+  {
+    "code": "SA",
+    "topic": "후티 항구 위협",
+    "status": "홍해 항구 폭격 위협 맞섬",
+    "title": "사우디 연합군 호데이다·사나 타격 발표…후티 \"제다 등 사우디 홍해 항구 표적\"",
+    "detail": "연합군은 호데이다 항구 시설과 사나의 미사일·드론 시설을 쳤다고 했고, 후티는 호데이다가 맞으면 사우디 홍해 항구와 슈카이크 발전소를 치겠다며 항공사에 사우디 영공 회피를 경고했다(알자지라).",
+    "date": "2026-11-20",
+    "url": "https://www.aljazeera.com/news/2026/11/20/saudi-coalition-and-houthis-exchange-threats-to-bomb-key-ports"
+  },
+  {
+    "code": "EE",
+    "topic": "러시아 접경 검문소 폐쇄",
+    "status": "12월 1일부터 6개월 폐쇄 의결",
+    "title": "에스토니아 정부, 러시아 육로 검문소 12월 1일부터 6개월 폐쇄 의결…러시아 \"새 철의 장막\"",
+    "detail": "차프나 외무장관은 인력 모집·사보타주·제재 우회를 줄이겠다고 했고, 러시아 외무부 대변인 자하로바는 필요한 정치·외교 조치를 예고했다. 화물 철도는 폐쇄 대상이 아니다(알자지라).",
+    "date": "2026-11-20",
+    "url": "https://www.aljazeera.com/news/2026/11/20/russia-complains-of-new-iron-curtain-as-estonia-shuts-its-borders"
   },
   {
     "code": "BD",

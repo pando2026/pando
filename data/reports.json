@@ -1,6 +1,309 @@
 {
  "reports": [
   {
+   "id": "2026-11-20-shenzhen-trilateral",
+   "kind": "flash",
+   "date": "2026-11-20",
+   "period": "",
+   "updated": "",
+   "title": "미·중·러 첫 3자 회담은 4개 항 선언만 남겼다…서울이 겁낸 '제2의 얄타'는 일단 오지 않았다",
+   "hook": "한국은 자리에 없었는데, 왜 서울은 회담 일주일 전부터 '한반도가 거래될까' 걱정했을까?",
+   "summary": "트럼프 미국 대통령, 시진핑 중국 국가주석, 푸틴 러시아 대통령은 19일 중국 선전에서 사상 처음 3자 정상회담을 열고 4개 항 공동 선언을 냈다. 핵전쟁은 이길 수 없고 치러서도 안 된다는 원칙 확인, 핵 위험 감축과 확산 방지 대화 지속, 유엔 개혁·국제형사재판소(ICC) 관할권·석유제품 공급이 골자로, 구체 이행 계획은 없었다. 한국 정부는 북한 핵이 한국을 빼고 '군축' 문제로 다뤄질까 봐 회담 전부터 경계했지만, 이번에 확인한 보도에는 북한·한반도·비핵화 언급이 없다. 선언 원문은 열어 보지 못해, '언급이 없었다'가 아니라 '확인된 보도에 없다'가 현재까지의 정확한 상태다.",
+   "points": [
+    {
+     "h": "회담은 80분 넘게 열렸고, 결과는 '큰 원칙'뿐이었다",
+     "body": "더헤럴드 경제에 따르면 회담은 19일(현지시간) 선전 외곽 치린산좡에서 블룸버그·월스트리트저널 집계로 80분 넘게 이어졌다. 트럼프는 \"역사를 만들고 있다\", 시진핑은 \"긍정적이고 건설적\", 푸틴은 \"유익하고 실질적\"이라고 평했다. 4개 항 선언은 핵전쟁은 이길 수 없고 치러서도 안 된다는 점을 재확인하고, 핵 위험 감축과 확산 방지 대화를 계속하며, 유엔 개혁·ICC 관할권·석유제품 공급 확대에 보조를 맞춘다는 것이다. 이 기사는 선언이 \"넓은 원칙 정도\"이고 이행 계획이 없다고 평가했다.",
+     "src": [
+      7
+     ]
+    },
+    {
+     "h": "핵 숫자가 말해 주는 한계: 중국은 아직 자리에 앉을 이유가 약하다",
+     "body": "같은 기사는 미국과 러시아가 각각 핵탄두를 5,000개 넘게 가진 것으로 추정되는 반면 중국은 600개 넘게 가진 것으로 알려졌다고 적었다. 전직 미국 중앙정보국(CIA) 중국 분석관 데니스 와일더는 파이낸셜타임스에 베이징이 미·러와 비슷한 규모가 되기 전에는 군축 회담에 들어오기 어렵다고 말했다. 회담 전 더헤럴드 경제도 중국이 자국 핵전력이 작다는 이유로 군축 논의를 꺼린다고 전했다. 그래서 핵 '감축'이 아니라 '위험 감축'이라는 약한 표현이 선언에 들어갔다고 읽을 수 있지만, 이 연결은 판도의 해석이며 당사자가 밝힌 것은 아니다.",
+     "src": [
+      7,
+      6
+     ]
+    },
+    {
+     "h": "우크라이나와 이란은 자리에 없었다",
+     "body": "더헤럴드 경제는 트럼프가 우크라이나 전쟁 종식을 촉구했지만 눈에 띄는 진전은 없었다고 전했다. CNN은 우크라이나와 이란이 협상장에 없는 상태에서는 논의가 어렵다고 평가했다. BBC는 트럼프가 \"내세울 것이 거의 없는 채\" 회담장을 떠난 것 같다고 했고, CNN은 \"회담 자체가 성과물\"이라고 했다. 시진핑은 3자 회담이 \"제도화돼야 한다\"고 했고, 우신보 푸단대 미국연구센터 소장은 \"이번이 마지막이 아닐 것\"이라고 말했다(모두 더헤럴드 경제 인용).",
+     "src": [
+      7
+     ]
+    },
+    {
+     "h": "서울이 걱정한 시나리오는 '한국 없는 북핵 논의'였다",
+     "body": "한국 외교부 박윤주 1차관은 국회에서 \"미·중·러 동향을 면밀히 보고 있다\"며 한반도 문제가 논의될 가능성을 배제할 수 없다고 했다(코리아헤럴드, 16일). 외교부 고위 당국자는 베이징에서 기자들에게 회담이 '제2의 얄타 회담'이 돼서는 안 된다고 했고, 북한을 사실상 핵보유국으로 인정하는 거래에 반대한다고 전해졌다. 이름을 밝히지 않은 청와대 관계자는 \"우리는 협상 테이블에 없으니 우리와 관련된 문제가 어떻게 다뤄질지 관심을 가질 수밖에 없다\"고 했다(코리아타임스, 19일). 야당 나경원 의원은 '제2의 얄타'가 현실이 되고 있다고 비판했다.",
+     "src": [
+      1,
+      0
+     ]
+    }
+   ],
+   "why": [
+    {
+     "h": "북한이 회담 직전 중·러에 사람을 보냈고, 트럼프는 '비핵화를 말하겠다'고 했다",
+     "body": "김정은의 측근 조용원 노동당 비서는 14일 모스크바에 도착했고, 김성남 노동당 국제부 간부는 3~7일 중국을 방문해 왕이 외교부장 등을 만났다(코리아헤럴드). 트럼프는 출국 전 \"비핵화를 이야기할 것이다. 어려운 주제\"라고 했고 김정은과도 \"만날 수 있다, 시진핑에게 달렸다\"고 했다. 반면 이름을 밝히지 않은 미국 고위 당국자는 \"북한과 접촉할 계획은 전혀 없다\"고 했고, 마르코 루비오 국무장관은 \"내일 회동이 있다고 말하는 것은 아니다\"라고 했다(코리아타임스·더헤럴드 경제). 박원곤 이화여대 교수는 협상이 핵 군축으로 흘러 북핵의 '사실상 인정'으로 이어질 위험을 꼽았다.",
+     "src": [
+      1,
+      3,
+      6
+     ]
+    },
+    {
+     "h": "서울이 직접 부른 변수: 시진핑과 한 번, 일본과 한 번",
+     "body": "이재명 대통령은 18일 시진핑과 정상회담에서 \"한반도의 평화와 안정이 보장돼야 전략적 협력 동반자 관계가 성숙한다\"고 했다. 17일에는 다카이치 사나에 일본 총리와 마닐라에서 만나 \"전략적 소통이 어느 때보다 중요하다\"는 데 뜻을 모았다고 대통령실 김성완 대변인이 밝혔다. 즉 한국은 테이블 밖에서 중국·일본 정상과 따로 만나 한반도 안정과 소통을 강조했다.",
+     "src": [
+      4,
+      5
+     ]
+    }
+   ],
+   "korea": [
+    {
+     "h": "지금까지 확인된 직접 영향은 '북핵 거래 없음'이라는 부재뿐이다",
+     "body": "한국 정부가 가장 경계한 것은 북한 핵을 군축 협상의 대상으로 옮겨 사실상 인정하는 합의였다. 확인한 결과 보도 어디에도 그런 합의나 북한 언급이 없다. 다만 선언 원문과 미·중·러 공식 자료를 열지 못했고, 백악관·크렘린·중국 외교부의 설명과 대조하지 못했다. 한국 정부의 회담 뒤 공식 반응은 아직 확인하지 못했다. 이 부재가 의도된 것인지, 아직 안 나온 것인지는 가릴 수 없다.",
+     "src": [
+      7
+     ]
+    },
+    {
+     "h": "경제 쪽 연결: 이 대통령은 '공급망 파편화'를 경고했다",
+     "body": "더헤럴드 경제는 한국·호주·캐나다 같은 중견국이 이번 회담을 경계했고, 이재명 대통령이 세계 경제 파편화 위험을 경고하며 핵심광물·에너지 공급에 대한 공동 대응을 촉구했다고 전했다(기사 요약이며 직접 인용은 아니다). 같은 날 한·중 정상회담에서 시진핑은 세계 산업·공급망이 안정적으로 돌아가도록 한국과 조율하겠다고 했고, 이 대통령은 올해 상반기 한·중 교역이 전년 대비 50% 가까이 늘었다고 말했다(중앙데일리).",
+     "src": [
+      7,
+      4
+     ]
+    }
+   ],
+   "views": [
+    {
+     "who": "박원곤(이화여대 북한학 교수)",
+     "kind": "전망",
+     "text": "트럼프–김정은 만남은 가능하지만 \"가까운 시일은 아니다\". 핵 군축 협상으로 흐르면 북핵의 \"사실상 인정\"으로 이어질 수 있다고 경고했다.",
+     "src": [
+      3
+     ]
+    },
+    {
+     "who": "임을출(경남대 극동문제연구소 교수)",
+     "kind": "평가",
+     "text": "조용원의 모스크바행은 트럼프의 러시아·북한 접근법을 가늠하려는 간접적 전략 소통일 수 있다고 봤다. 미 의회 구성은 2027년 1월 3일 바뀐다고 짚었다.",
+     "src": [
+      1,
+      3
+     ]
+    },
+    {
+     "who": "우신보(푸단대 미국연구센터 소장)",
+     "kind": "전망",
+     "text": "\"이번이 마지막이 아닐 것\"이며 세 나라의 상호작용은 각국의 국익에 부합한다고 말했다.",
+     "src": [
+      7
+     ]
+    },
+    {
+     "who": "데니스 와일더(전 CIA 중국 분석관, 파이낸셜타임스 인용)",
+     "kind": "평가",
+     "text": "중국은 미·러와 비슷한 규모의 핵전력을 갖추기 전에는 군축 회담에 들어오기 어렵다고 봤다.",
+     "src": [
+      7
+     ]
+    }
+   ],
+   "watch": [
+    {
+     "date": "2027-01-03",
+     "text": "새 미 의회 개원. 임을출 교수가 북미 합의에 의회 승인이 필요하다는 맥락에서 이 시점을 짚었다."
+    }
+   ],
+   "open": [
+    "4개 항 선언의 원문과 북한·한반도 관련 문구 여부는 확인하지 못했다. 이번에 연 보도에는 언급이 없다.",
+    "한국 정부의 회담 뒤 공식 반응(외교부·대통령실)은 확인한 기사에 나오지 않았다.",
+    "트럼프–김정은 접촉이 이번 방중 일정에서 실제로 있었는지는 확인한 기사에 없다."
+   ],
+   "ripple": [],
+   "countries": [
+    "US",
+    "CN",
+    "RU",
+    "KR",
+    "KP",
+    "JP"
+   ],
+   "method": "회담 결과는 국내 영문 매체 한 곳의 종합 보도로 확인했다(블룸버그·월스트리트저널·BBC·CNN 인용분이라 원문 대조 전). 한국 정부 입장은 회담 전 국내 영문 매체 다섯 곳의 보도를 교차했고, 선언 원문과 미·중·러 당사자 발표는 열지 못했다.",
+   "sources": [
+    {
+     "outlet": "Korea Times",
+     "title": "Seoul closely watches how Korean Peninsula issues may be handled at US-China-Russia summit",
+     "titleKo": "서울, 미·중·러 정상회담에서 한반도 문제가 어떻게 다뤄질지 예의주시",
+     "date": "2026-11-19",
+     "url": "https://www.koreatimes.co.kr/foreignaffairs/20261119/seoul-closely-watches-how-korean-peninsula-issues-may-be-handled-at-us-china-russia-summit",
+     "tier": "press"
+    },
+    {
+     "outlet": "The Korea Herald",
+     "title": "Concerns grow over S. Korea's role as US, China, Russia prepare for landmark summit",
+     "titleKo": "미·중·러 역사적 정상회담 앞두고 한국 역할 우려 커져",
+     "date": "2026-11-16",
+     "url": "https://www.koreaherald.com/article/10938944",
+     "tier": "press"
+    },
+    {
+     "outlet": "JoongAng Daily",
+     "title": "U.S.-China-Russia summit must not become another Yalta Conference",
+     "titleKo": "미·중·러 정상회담이 또 하나의 얄타가 돼서는 안 된다(사설)",
+     "date": "2026-11-16",
+     "url": "https://www.koreajoongangdaily.com/opinion/uschinarussia-summit-must-not-become-another-yalta-conference/12973672",
+     "tier": "press"
+    },
+    {
+     "outlet": "Korea Times",
+     "title": "Trump floats Kim summit in China, but experts see no signs of preparation",
+     "titleKo": "트럼프, 중국에서 김정은 회담 거론…전문가는 준비 징후 없다고 봐",
+     "date": "2026-11-17",
+     "url": "https://www.koreatimes.co.kr/foreignaffairs/20261117/trump-floats-kim-summit-in-china-but-experts-see-no-signs-of-preparation",
+     "tier": "press"
+    },
+    {
+     "outlet": "JoongAng Daily",
+     "title": "Lee tells Xi that peace on Korean Peninsula serves shared interests",
+     "titleKo": "이 대통령, 시진핑에 '한반도 평화는 공동 이익'",
+     "date": "2026-11-18",
+     "url": "https://www.koreajoongangdaily.com/korea/lee-tells-xi-thatnbsppeace-on-korean-peninsula-serves-shared-interestsnbsp/12978564",
+     "tier": "press"
+    },
+    {
+     "outlet": "JoongAng Daily",
+     "title": "Korea, Japan stress 'strategic communication' as concerns mount over a 'Second Yalta' in Shenzhen",
+     "titleKo": "한일, '제2의 얄타' 우려 속 '전략적 소통' 강조",
+     "date": "2026-11-17",
+     "url": "https://www.koreajoongangdaily.com/korea/korea-japan-stress-strategic-communication-as-concerns-mount-over-a-second-yalta-innbspshenzhen/12976930",
+     "tier": "press"
+    },
+    {
+     "outlet": "The Herald Business",
+     "title": "US, China, Russia hold first-ever trilateral summit amid nuclear, AI talks",
+     "titleKo": "미·중·러, 핵·AI 의제 속 사상 첫 3자 정상회담",
+     "date": "2026-11-19",
+     "url": "https://mbiz.heraldcorp.com/article/10941947",
+     "tier": "press"
+    },
+    {
+     "outlet": "The Herald Business",
+     "title": "Dreaming of a 'second Yalta,' leaders leave with little to show",
+     "titleKo": "'제2의 얄타'를 꿈꿨지만 정상들은 내세울 것 없이 떠났다",
+     "date": "2026-11-20",
+     "url": "https://mbiz.heraldcorp.com/article/10943657",
+     "tier": "press"
+    }
+   ],
+   "figures": [
+    {
+     "id": "road-to-shenzhen",
+     "kind": "timeline",
+     "after": [
+      "points",
+      3
+     ],
+     "title": "회담 일주일: 서울의 움직임",
+     "caption": "회담 사흘 전부터 한국은 북·일·중 사이에서 연쇄적으로 움직였다.",
+     "unit": "",
+     "events": [
+      [
+       "2026-11-14",
+       "조용원 북한 노동당 비서 모스크바 도착"
+      ],
+      [
+       "2026-11-16",
+       "박윤주 외교부 1차관 '면밀히 주시'·'제2의 얄타 안 된다'"
+      ],
+      [
+       "2026-11-17",
+       "한일 정상, 전략적 소통 강조(마닐라)"
+      ],
+      [
+       "2026-11-18",
+       "한·중 정상회담(선전)"
+      ],
+      [
+       "2026-11-19",
+       "미·중·러 3자 회담, 4개 항 선언"
+      ],
+      [
+       "2026-11-20",
+       "'내세울 것 없다'는 평가 이어져"
+      ]
+     ],
+     "src": [
+      [
+       "The Korea Herald",
+       "Concerns grow over S. Korea's role as US, China, Russia prepare for landmark summit (미·중·러 역사적 정상회담 앞두고 한국 역할 우려 커져) · 2026-11-16",
+       "https://www.koreaherald.com/article/10938944",
+       "press"
+      ],
+      [
+       "JoongAng Daily",
+       "Korea, Japan stress 'strategic communication' as concerns mount over a 'Second Yalta' in Shenzhen (한일, '제2의 얄타' 우려 속 '전략적 소통' 강조) · 2026-11-17",
+       "https://www.koreajoongangdaily.com/korea/korea-japan-stress-strategic-communication-as-concerns-mount-over-a-second-yalta-innbspshenzhen/12976930",
+       "press"
+      ],
+      [
+       "JoongAng Daily",
+       "Lee tells Xi that peace on Korean Peninsula serves shared interests (이 대통령, 시진핑에 '한반도 평화는 공동 이익') · 2026-11-18",
+       "https://www.koreajoongangdaily.com/korea/lee-tells-xi-thatnbsppeace-on-korean-peninsula-serves-shared-interestsnbsp/12978564",
+       "press"
+      ],
+      [
+       "The Herald Business",
+       "Dreaming of a 'second Yalta,' leaders leave with little to show ('제2의 얄타'를 꿈꿨지만 정상들은 내세울 것 없이 떠났다) · 2026-11-20",
+       "https://mbiz.heraldcorp.com/article/10943657",
+       "press"
+      ]
+     ]
+    },
+    {
+     "id": "warheads",
+     "kind": "bar",
+     "after": [
+      "points",
+      1
+     ],
+     "title": "핵탄두 추정 규모(최소치)",
+     "caption": "더헤럴드 경제가 전한 추정이다. 막대는 '이상'의 하한이며 정확한 보유 수가 아니다.",
+     "unit": "개",
+     "series": [
+      {
+       "name": "추정 핵탄두(이상)",
+       "points": [
+        [
+         "미국",
+         5000
+        ],
+        [
+         "러시아",
+         5000
+        ],
+        [
+         "중국",
+         600
+        ]
+       ]
+      }
+     ],
+     "src": [
+      [
+       "The Herald Business",
+       "Dreaming of a 'second Yalta,' leaders leave with little to show ('제2의 얄타'를 꿈꿨지만 정상들은 내세울 것 없이 떠났다) · 2026-11-20",
+       "https://mbiz.heraldcorp.com/article/10943657",
+       "press"
+      ]
+     ]
+    }
+   ]
+  },
+  {
    "id": "2026-11-17-ai-chip-remote-access",
    "kind": "flash",
    "date": "2026-11-17",
