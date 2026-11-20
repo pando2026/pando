@@ -3,7 +3,7 @@
   "id": "us-midterms-2026",
   "title": "미국 중간선거 실시간 개표",
   "subtitle": "11월 3일(현지) 투표 · 상원 100석 중 35석(보궐 2곳 포함), 하원 435석 전부, 주지사 36곳. 트럼프 2기 중간 평가.",
-  "updatedAt": "2026-11-19T23:36:00Z",
+  "updatedAt": "2026-11-20T00:33:00Z",
   "source": {
     "name": "AP · Fox News · NBC News"
   },
@@ -4050,7 +4050,7 @@
     "WV":[[1,"won","R",0,99,[["Carol Miller","R",119087,57.1,1],["Vince George","D",82705,39.6,0],["Belinda Fox-Spencer","CST",6921,3.3,0]]],[2,"won","R",0,99,[["Riley Moore","R",144109,59.4,1],["Ace Parsi","D",98615,40.6,0]]]],
     "WY":[[1,"won","R",0,100,[["Chuck Gray","R",99906,54.2,0],["Lisa Kinney","D",61689,33.5,0],["Shawn Johnson","Lib",13667,7.4,0]]]]
   },
-    "districtsAsOf": "2026-11-19T22:42:10Z",
+    "districtsAsOf": "2026-11-19T23:36:00Z",
     "districtsSrc": [
       "NBC 뉴스 하원 개표 결과(집계 AP)",
       "https://www.nbcnews.com/politics/2026-elections/house-results",
@@ -4058,6 +4058,11 @@
     ]
   },
   "feed": [
+    {
+      "t": "2026-11-20T00:33:00Z",
+      "text": "새 AP 판정 없음(미 동부 19일 오후 7시 33분 확인): AP 판정을 싣는 폭스뉴스 하원 결과 화면(19일 오후 7시 33분 갱신)은 민주 257·공화 172석 그대로이고, 가장 최근 판정은 18일 오후 9시 27분 알래스카 전역구(닉 베기치(공))다. 테네시 4구·미네소타 1구·노스캐롤라이나 5구는 아직 AP 판정이 없고, 루이지애나 5·6구는 결선으로 간다. NBC 결과 화면(19일 23:36 UTC 자료)도 뒤집힌 선거구 48곳·미판정 5곳으로 변함없다.",
+      "text_en": "No new AP calls (checked 7:33 p.m. ET Nov 19): the Fox News House results page, which carries AP's race calls (updated 7:33 p.m. ET Nov 19), still shows Democrats 257, Republicans 172, with the latest call at 9:27 p.m. Nov 18 in Alaska's at-large district (Nick Begich, R). Tennessee's 4th, Minnesota's 1st and North Carolina's 5th remain uncalled by AP, and Louisiana's 5th and 6th head to runoffs. NBC's results page (data as of 23:36 UTC Nov 19) also still shows 48 flipped districts and 5 uncalled."
+    },
     {
       "t": "2026-11-19T23:36:00Z",
       "text": "새 AP 판정 없음(미 동부 19일 오후 6시 36분 확인): AP 판정을 싣는 폭스뉴스 하원 결과 화면(19일 오후 6시 36분 갱신)은 민주 257·공화 172석 그대로이고, 가장 최근 판정은 18일 오후 9시 27분 알래스카 전역구(닉 베기치(공))다. 테네시 4구·미네소타 1구·노스캐롤라이나 5구는 아직 AP 판정이 없고, 루이지애나 5·6구는 결선으로 간다. NBC 결과 화면(19일 22:42 UTC 자료)도 뒤집힌 선거구 48곳·미판정 5곳으로 변함없다.",
@@ -4202,11 +4207,6 @@
       "t": "2026-11-18T17:34:00Z",
       "text": "새 AP 판정 없음(미 동부 18일 낮 12시 34분 확인): 폭스뉴스 하원 결과 화면(낮 12시 34분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구) 그대로이고 민주 257·공화 171석, 민주당이 뒤집은 의석 46곳·공화당이 뒤집은 의석 3곳이다. NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다.",
       "text_en": "No new AP calls (checked 12:34 p.m. ET Nov 18): the AP race-call list on Fox News's House results page (updated 12:34 p.m.) still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd), with Democrats at 257 and Republicans at 171, 46 seats flipped by Democrats and 3 by Republicans. NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled."
-    },
-    {
-      "t": "2026-11-18T16:34:00Z",
-      "text": "새 AP 판정 없음(미 동부 18일 오전 11시 34분 확인): 폭스뉴스 하원 결과 화면(오전 11시 33분 갱신)의 AP 판정 목록은 마지막 판정이 17일 오후 3시 45분(노스캐롤라이나 3구) 그대로이고 민주 257·공화 171석, 민주당이 뒤집은 의석 46곳·공화당이 뒤집은 의석 3곳이다. NBC 하원 결과 화면(집계 AP)도 뒤집힌 선거구 48곳·미판정 6곳으로 변함없다.",
-      "text_en": "No new AP calls (checked 11:34 a.m. ET Nov 18): the AP race-call list on Fox News's House results page (updated 11:33 a.m.) still ends with the 3:45 p.m. Nov 17 call (North Carolina's 3rd), with Democrats at 257 and Republicans at 171, 46 seats flipped by Democrats and 3 by Republicans. NBC's House results page (AP data) still shows 48 flipped districts and 6 uncalled."
     }
   ],
   "how": [
