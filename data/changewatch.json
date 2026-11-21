@@ -1,5 +1,32 @@
 [
   {
+    "code": "FI",
+    "topic": "핀란드만 러시아 선박 피격",
+    "status": "드론 피격·화재",
+    "title": "핀란드만서 러시아 화물선 스파르타 2호 드론 2대 피격…핀란드 국방군 \"우크라이나 소행 가능성\"",
+    "detail": "핀란드 국방부가 국제 해역에서 공격을 탐지했고 선원은 대피했다. 오르포 총리는 우크라이나에 반격할 권리가 있다고 했고 해캐넨 국방장관은 배를 밤에 영해 밖으로 끌어내겠다고 했다. 우크라이나의 공식 입장은 읽은 보도에 없다(알자지라).",
+    "date": "2026-11-21",
+    "url": "https://www.aljazeera.com/news/2026/11/21/russia-says-kaliningrad-bound-ship-struck-by-drones-in-gulf-of-finland"
+  },
+  {
+    "code": "BH",
+    "topic": "이란 공습 주장",
+    "status": "공격 요격·화재",
+    "title": "IRGC 바레인 미군 기지 공격 주장…바레인 \"공중 공격 여러 건 요격, 산업 시설 화재·부상 없음\"",
+    "detail": "IRGC는 패트리엇 레이더 2기를 파괴했다고 주장했고 바레인은 시설 이름을 밝히지 않았다. IRNA는 요격미사일 추락 화재라고 달리 전했다(알자지라).",
+    "date": "2026-11-21",
+    "url": "https://www.aljazeera.com/news/2026/11/21/bahrain-says-iranian-attack-causes-fire-at-industrial-facility"
+  },
+  {
+    "code": "MX",
+    "topic": "카르텔 두목 체포",
+    "status": "체포 발표",
+    "title": "멕시코군, 시날로아 과사베서 \"차포 이시드로\" 체포…FBI 10대 수배자",
+    "detail": "멕시코 국방부 발표로 20일 밤 다른 2명과 붙잡혔다. 미국이 인도를 요구하는 인물이다(알자지라).",
+    "date": "2026-11-21",
+    "url": "https://www.aljazeera.com/news/2026/11/21/who-is-el-chapo-isidro-the-alleged-cartel-boss-arrested-in-mexico"
+  },
+  {
     "code": "US",
     "topic": "중간선거 최종 결과",
     "status": "민주 양원 장악",
