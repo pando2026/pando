@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-20",
+ "asOf": "2026-11-21",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -5533,6 +5533,124 @@
      "의회 재정감시국(Financial Scrutiny Unit)",
      "Guide to the Budget 2027(2027 예산 안내서) · 2026-10",
      "https://www.ttparliament.org/wp-content/uploads/2026/11/Guide-To-The-Budget-2027.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "DJ": {
+   "fiscalYear": "2026",
+   "status": "추정",
+   "scope": "중앙정부 재정운영(IMF 2026 전망, 국내·대외 이자 합계)",
+   "interest": {
+    "value": 2.036,
+    "unit": "십억 FDJ",
+    "label": "이자 지출"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 174.296,
+    "unit": "십억 FDJ",
+    "label": "중앙정부 총지출(IMF 전망)"
+   },
+   "share": 1.2,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 2.132,
+    "unit": "십억 FDJ"
+   },
+   "note": "지부티 정부의 본예산(172.30십억)·추경(168.476십억) 발표문에는 이자 지출이 따로 나오지 않아, 2025년 6월 협의를 바탕으로 한 IMF 중앙정부 재정운영표(Table 2a)의 전망치를 썼다. 정부는 2026 본예산에서 채무서비스(원금 포함)가 12% 늘었다고만 밝혔고, IMF는 중국 수출입은행의 2024~2027 상환 유예가 철도·수도 사업 이자를 제한한다고 적었다.",
+   "sources": [
+    [
+     "국제통화기금(IMF)",
+     "Djibouti: 2025 Article IV Consultation, Staff Report, IMF Country Report No. 25/276(지부티 2025 연례협의 보고서, Table 2a 중앙정부 재정운영) · 2025-09-22",
+     "https://www.imf.org/en/publications/cr/issues/2025/09/22/djibouti-2025-article-iv-consultation-press-release-and-staff-report-570614"
+    ],
+    [
+     "La Nation",
+     "Lancement du Budget 2026 : Le ministre du Budget détaille une vision d'équilibre et de transformation(2026 예산 출범: 예산부 장관이 밝힌 균형·전환 비전) · 2026-01-06",
+     "https://www.lanation.dj/lancement-du-budget-2026-le-ministre-du-budget-detaille-une-vision-dequilibre-et-de-transformation/"
+    ],
+    [
+     "AidData(윌리엄앤메리대)",
+     "China Eximbank suspends 2024-2027 debt service payments under 2013 buyer's credit loan for the Ali Sabieh–Nagad railway section(중국 수출입은행, 알리사비에~나가드 철도 구간 차관 2024~27 상환 유예) · 2023-10",
+     "https://china.aiddata.org/projects/107064"
+    ]
+   ],
+   "tier": "research"
+  },
+  "FJ": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출 — 공공부채 비용(Head 52)의 이자 지급, 원금 상환 제외",
+   "interest": {
+    "value": 572.0,
+    "unit": "백만 피지달러",
+    "label": "국내외 대출 이자(국내 448.6 + 해외 123.4)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 4869.8,
+    "unit": "백만 피지달러",
+    "label": "총지출"
+   },
+   "share": 11.7,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 534.5,
+    "unit": "백만 피지달러"
+   },
+   "note": "공공부채 비용 5억 9,630만 가운데 이자가 5억 7,200만이고 나머지 2,440만은 단기 차입 이자·수수료·채무보증 불이행 대비금이다. 원금 상환 4억 3,630만은 총지출이 아니라 총 자금 조달 필요액에 잡히며, 전년 값은 예산서의 2025-26 수정 추계다. 9월 말까지 이자 1억 1,300만을 냈다고 재무장관이 의회에서 밝혔다.",
+   "sources": [
+    [
+     "피지 재무부(Ministry of Finance)",
+     "Budget Estimates 2026-2027, Head 52 Charges on Account of Public Debt(2026-27 예산 추계서, 제52 머리글 공공부채 비용) · 2026-06-26",
+     "https://www.finance.gov.fj/wp-content/uploads/2026/06/2026-2027-Budget-Estimates.pdf"
+    ],
+    [
+     "피지 재무부(Ministry of Finance)",
+     "2026-2027 National Budget Address, Theme: A responsible budget for sustainable future(2026-27 예산 연설 「지속 가능한 미래를 위한 책임 있는 예산」, 재무장관 에스롬 이마누엘) · 2026-06-26",
+     "https://www.finance.gov.fj/wp-content/uploads/2026/06/2026-2027-Budget-Address.pdf"
+    ],
+    [
+     "The Fiji Times",
+     "Fiji debt hits $11.6bn(피지 부채 116억 달러 도달) · 2026-11-10",
+     "https://www.fijitimes.com.fj/fiji-debt-hits-11-6bn/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "KM": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "연방정부 일반예산(성질별 총지출, 외부 재원 공공투자계획 포함)",
+   "interest": {
+    "value": 2.0855,
+    "unit": "십억 코모로프랑",
+    "label": "부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 139.0585,
+    "unit": "십억 코모로프랑",
+    "label": "총지출"
+   },
+   "share": 1.5,
+   "prev": {
+    "fiscalYear": "2025 추경",
+    "value": 2.363,
+    "unit": "십억 코모로프랑"
+   },
+   "note": "법 제3조의 '부채 이자' 20.855억 프랑이며 원금 상환(59.05억 프랑)은 지출 총액이 아니라 재정 수요 표에 따로 있다. 제6조·제12조는 이자를 20.805억 프랑(대외 20.155억+국내 0.65억)으로 적어 5백만 프랑 차이가 나고, 법은 이자가 GDP의 0.26%라고 밝혔다. 2026년 1분기 실제 이자 지급은 3.47억 프랑이다.",
+   "sources": [
+    [
+     "코모로 재무·예산·금융부문부",
+     "Loi N°25-020/AU du 26 décembre 2025 portant Loi de Finances 2026, promulguée par le Décret N°26-003/PR du 16 janvier 2026(2026 재정법 제25-020/AU호, 2025-12-26 채택·2026-01-16 공포) · 2026-01-16",
+     "https://finances.gouv.km/wp-content/uploads/2026/01/Decret-N°26-003PR-du-16-jan-2026-portant-Prom-Loi-25-020AU-portant-Loi-de-Finan.pdf"
+    ],
+    [
+     "코모로 재무·예산·금융부문부 공공부채국(DDP)",
+     "Bulletin statistique de la dette publique, mars 2026(공공부채 통계 보고서, 2026년 3월 말 기준) · 2026-08-17",
+     "https://finances.gouv.km/wp-content/uploads/2026/08/Bulletin-statistique-T1-2026-DDP.pdf"
     ]
    ],
    "tier": "official"
