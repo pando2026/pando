@@ -1,5 +1,50 @@
 [
   {
+    "code": "UA",
+    "topic": "키이우주 아파트 드론 피격",
+    "status": "14명 매몰 우려·전국 30명 부상",
+    "title": "러시아 드론, 키이우주 디메르 5층 아파트 타격…젤렌스키 \"14명 매몰 가능\"",
+    "detail": "우크라이나 공군은 22일 새벽 드론 186대 중 161대를 격추했다고 밝혔다. 트카첸코 키이우주 군사행정부 수반은 22세 여성과 아이가 다쳤다고 했고 하루 새 전국 부상자는 지방 당국 발표 합계 30명이다. 21일에는 영국과 우크라이나가 영국 내 타격 드론 생산에 합의했다(키이우 인디펜던트).",
+    "date": "2026-11-22",
+    "url": "https://kyivindependent.com/apartment-building-destroyed-in-kyiv-oblast-following-russian-drone-attack/"
+  },
+  {
+    "code": "TR",
+    "topic": "COP31 기후총회",
+    "status": "새 초안 공개·채택 시도",
+    "title": "COP31 새 합의문 초안 공개…1.5도 초과 첫 인정, 화석연료 문구는 여전히 빠져",
+    "detail": "쿠룸 의장은 22일 오전 전체회의를 열어 채택하겠다고 했고 바르뷔 프랑스 장관은 \"후퇴\"라고 했다. 시민단체 100곳은 21일 유엔 역사상 가장 실망스러운 총회가 될 수 있다고 경고했다(알자지라).",
+    "date": "2026-11-22",
+    "url": "https://www.aljazeera.com/news/2026/11/22/fossil-fuel-impasse-pushes-cop31-climate-talks-into-second-day-of-overtime"
+  },
+  {
+    "code": "MX",
+    "topic": "카르텔 두목 체포",
+    "status": "작전 중 11명 사망",
+    "title": "\"차포 이시드로\" 체포 작전서 군인 4명·용의자 7명 사망…측근 2명도 체포",
+    "detail": "국방부는 부두목 \"세라핀\"과 재정 담당자도 잡아 세 사람을 멕시코시티로 옮겼다고 밝혔다. 미국 DEA와 론 존슨 주멕시코 대사는 작전을 환영했다(알자지라).",
+    "date": "2026-11-22",
+    "url": "https://www.aljazeera.com/news/2026/11/22/eleven-killed-in-burst-of-violence-during-mexican-cartel-leaders-capture"
+  },
+  {
+    "code": "KR",
+    "topic": "반도체",
+    "status": "소프트뱅크 \"적극 검토 안 해\"",
+    "title": "더인포메이션 \"손정의, 월가에 SK하이닉스 1조 달러 인수 자금 문의\"…소프트뱅크 \"이 건은 더는 적극 검토하지 않아\"",
+    "detail": "익명 소식통을 인용한 보도다. SK하이닉스는 보도 내용을 알지 못하며 외국 기업 인수에는 한국 법에 따라 사전 정부 승인이 필요하다고 했다. 시가총액은 약 777조 원으로 거론된 금액(약 1,346조 원)보다 작다(로이터·JKN).",
+    "date": "2026-11-20",
+    "url": "https://www.thestar.com.my/tech/tech-news/2026/11/21/softbanks-son-explored-1-trillion-buyout-of-sk-hynix-the-information-reports"
+  },
+  {
+    "code": "JP",
+    "topic": "선전 APEC",
+    "status": "낮은 의전·양자 회담 불발",
+    "title": "다카이치, 선전 공항서 퇴직 대사 영접만…시진핑과는 만찬장 악수·미소뿐, 중일 정상회담 없이 귀국",
+    "detail": "18일 공항에서 장치웨 전 대사(외교부 의전 담당 대사 자격)가 맞았고 교도통신은 환영 의식·꽃다발이 없었다고 전했다. 궈자쿤 외교부 대변인은 19일 \"국제 관례에 따라 모든 참가자에게 적절한 의전을 마련했다\"고 했다. 다카이치는 4개 정치 문서가 바뀌지 않았다며 대화를 이어 가자고 했다(SCMP·더스탠더드·중국 외교부).",
+    "date": "2026-11-19",
+    "url": "https://www.scmp.com/news/china/diplomacy/article/3374944/xi-greets-takaichi-smile-no-words-china-japan-freeze-lingers"
+  },
+  {
     "code": "FI",
     "topic": "핀란드만 러시아 선박 피격",
     "status": "드론 피격·화재",

@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-21",
+ "asOf": "2026-11-22",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -5651,6 +5651,145 @@
      "코모로 재무·예산·금융부문부 공공부채국(DDP)",
      "Bulletin statistique de la dette publique, mars 2026(공공부채 통계 보고서, 2026년 3월 말 기준) · 2026-08-17",
      "https://finances.gouv.km/wp-content/uploads/2026/08/Bulletin-statistique-T1-2026-DDP.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "GY": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출(2026년 예산 연설 부록 중앙정부 재정 운영표)",
+   "interest": {
+    "value": 34.7,
+    "unit": "십억 가이아나 달러",
+    "label": "이자 지출(대외 22.6·국내 12.1)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1519.4,
+    "unit": "십억 가이아나 달러",
+    "label": "중앙정부 총지출"
+   },
+   "share": 2.3,
+   "prev": {
+    "fiscalYear": "2025(수정 예산)",
+    "value": 23.4,
+    "unit": "십억 가이아나 달러"
+   },
+   "note": "예산 연설 부록은 이자를 원금 상환과 따로 두고 2026년 347억 4,100만 달러(대외 226억 1,750만·국내 121억 2,350만)로 잡았으며, 중간 보고서도 연간 값을 그대로 유지하고 상반기에 137억 6,460만 달러를 썼다고 밝혔다(전년 같은 기간 90억 1,270만). 총지출 15,194억 달러는 예산법 총액 1조 5,580억 달러와 범위가 다르다.",
+   "sources": [
+    [
+     "가이아나 재무부",
+     "Budget Speech 2026 — Putting People First(2026년 예산 연설, 애쉬니 싱 재무 담당 선임장관) · 2026-01-26",
+     "https://finance.gov.gy/wp-content/uploads/2026/01/Budget_Speech_2026.pdf"
+    ],
+    [
+     "가이아나 재무부",
+     "Mid-Year Report 2026(2026년 중간 보고서) · 2026-09-14",
+     "https://finance.gov.gy/wp-content/uploads/2026/09/Mid-Year-Report-2026.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BT": {
+   "fiscalYear": "2026-27",
+   "status": "확정 예산",
+   "scope": "중앙정부 총세출(경상·자본·원금 상환·대출 포함)",
+   "interest": {
+    "value": 11078.844,
+    "unit": "백만 눌트럼",
+    "label": "이자 지출(국내 1,606.4 + 외부 9,472.4)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 153296.213,
+    "unit": "백만 눌트럼",
+    "label": "총 세출(원금 상환 포함)"
+   },
+   "share": 7.2,
+   "prev": {
+    "fiscalYear": "2025-26(승인 예산)",
+    "value": 10907.932,
+    "unit": "백만 눌트럼"
+   },
+   "note": "재무부 표 6.3의 이자 지급액이며 원금 상환 16,682.9백만 눌트럼은 따로 있다. 이자는 외부 채무 중 인도 정부에 7,382.1백만, 아시아개발은행에 1,053.3백만이다. 비율은 원금 상환·대출을 포함한 총 세출 기준이고, 지출만 보면(135,564.8백만) 8.2%다.",
+   "sources": [
+    [
+     "재무부(Ministry of Finance)",
+     "National Budget Report FY 2026-27(2026-27 회계연도 국가예산 보고서) · 2026-05-15",
+     "https://mof.gov.bt/wp-content/uploads/2026/05/Budget-Report-FY-2026-27-English-1.pdf"
+    ],
+    [
+     "재무부(Ministry of Finance)",
+     "National Budget Report FY 2025-26(2025-26 회계연도 국가예산 보고서, 승인 예산 기준)",
+     "https://mof.gov.bt/wp-content/uploads/2025/10/Budget-English-2025-26-6-1.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "LU": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가(중앙정부) 예산법안 — 만기 도래 공공부채 이자(경상지출)",
+   "interest": {
+    "value": 512.5,
+    "unit": "백만 유로",
+    "label": "만기 도래 공공부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 32957.2,
+    "unit": "백만 유로",
+    "label": "경상+자본 지출(제3자 계정·금융거래 제외)"
+   },
+   "share": 1.6,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 312.5,
+    "unit": "백만 유로"
+   },
+   "note": "재무부 해설서는 2026년 3억 1,250만 유로에서 2027년 5억 1,250만 유로로 +64.0% 늘었다며 국채 차환과 시장 금리 상승 때문이라고 밝혔다. 공공부채 부문 전체(발행 부대비용 포함)는 5억 2,610만 유로이고, 국채 원금 상환은 금융거래 지출에 있어 이 금액에 들어가지 않는다.",
+   "sources": [
+    [
+     "룩셈부르크 정부",
+     "Projet de loi concernant le budget des recettes et des dépenses de l'État pour l'exercice 2027, 법안 8800 (2027 회계연도 국가 수입·지출 예산법안, 예산 해설서 포함) · 2026-10-07",
+     "https://wdocs-pub.chd.lu/docs/Dossier_Projet_de_loi8800/20261007_Depot.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "SB": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "국가채무 상환(National Debt Servicing) 법정 지출 — 이자와 원금 구분",
+   "interest": {
+    "value": 92.4,
+    "unit": "백만 솔로몬 제도 달러",
+    "label": "이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 6021.2,
+    "unit": "백만 솔로몬 제도 달러",
+    "label": "총지출(정부 재원+도너 예산지원, 원안)"
+   },
+   "share": 1.5,
+   "note": "국가채무 상환 357.2백만 SBD 중 이자 92.4, 원금 264.8로 표에서 구분돼 있다. 2027년 예산 전략 문서의 전망은 이자 112.2, 원금 252.8백만 SBD다. 같은 전략 문서의 '2025 실적' 이자 185.8은 예산 연설의 2025년 1~10월 이자 지급 53.1과 맞지 않아 전년 값(prev)은 싣지 않았다.",
+   "sources": [
+    [
+     "솔로몬 제도 정부 재무부",
+     "2026 Mid-Year Budget Review Report(2026 중간 예산 점검 보고서) · 2026-08",
+     "https://solomons.gov.sb/wp-content/uploads/2026/09/2026-MYBR-Report_28092026.pdf"
+    ],
+    [
+     "솔로몬 제도 정부 재무부",
+     "2027 Budget Strategy & Operational Rules(2027 예산 전략·운영 규칙) · 2026-10-09",
+     "https://solomons.gov.sb/wp-content/uploads/2026/10/2027-Budget-Strategy-Paper.pdf"
+    ],
+    [
+     "솔로몬 제도 정부 재무부",
+     "2026 Budget Speech(2026 예산 연설, 렉슨 라모파피아 재무장관) · 2025-11-24",
+     "https://solomons.gov.sb/wp-content/uploads/2026/01/2026-Budget-Speech.pdf"
     ]
    ],
    "tier": "official"
