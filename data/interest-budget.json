@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-22",
+ "asOf": "2026-11-23",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -5790,6 +5790,190 @@
      "솔로몬 제도 정부 재무부",
      "2026 Budget Speech(2026 예산 연설, 렉슨 라모파피아 재무장관) · 2025-11-24",
      "https://solomons.gov.sb/wp-content/uploads/2026/01/2026-Budget-Speech.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "ME": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 예산(국가·사회보험 기금) 총지출, 채무 원금 상환 포함",
+   "interest": {
+    "value": 174.83,
+    "unit": "백만 유로",
+    "label": "국채·차입 이자(kamate)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 3788.51,
+    "unit": "백만 유로",
+    "label": "총지출(채무 상환 388.84 포함)"
+   },
+   "share": 4.6,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 159.52,
+    "unit": "백만 유로"
+   },
+   "note": "의회 예산처 해설 표 13의 경제성질별 '이자(kamate)' 174.83백만 유로이며, 채무 원금 상환 388.84백만 유로는 별도 항목이다. 정부가 2026-11-05 확정한 추경안은 이자를 174백만에서 197백만 유로로 늘리는 것으로 언론이 보도했으나 공식 표는 확인하지 못했다(그 경우 비율은 약 5%).",
+   "sources": [
+    [
+     "몬테네그로 의회 예산처(Parlamentarna budžetska kancelarija)",
+     "Prikaz Predloga zakona o budžetu Crne Gore za 2026. godinu(2026년 예산법안 해설) · 2025-12",
+     "https://pbk.skupstina.me/wp-content/uploads/2025/12/Prikaz-Predloga-zakona-o-budzetu-Crne-Gore-za-2026.-godinu.pdf"
+    ],
+    [
+     "RTCG(몬테네그로 공영방송)",
+     "Vuković: Rast BDP-a do kraja godine projektovan na četiri odsto, rebalansom više novca za zdravstvo, penzije i prosvjetu(부코비치: 연말까지 성장률 4% 전망, 추경으로 보건·연금·교육 증액) · 2026-11-16",
+     "https://rtcg.me/vijesti/ekonomija/903417/vukovic-rast-bdp-a-do-kraja-godine-projektovan-na-cetiri-odsto-rebalansom-vise-novca-za-zdravstvo-penzije-i-prosvjetu-.html"
+    ],
+    [
+     "Mondo.me",
+     "Rebalansom budžeta deficit raste na 348 miliona eura(추경으로 재정적자 3억 4,800만 유로로 증가) · 2026-11-16",
+     "https://mondo.me/info/Ekonomija/a1404899/Rebalansom-budzeta-deficit-raste-na-348-miliona-eura.html"
+    ],
+    [
+     "유럽연합 집행위원회(Council 문서 ST-8124/26)",
+     "Economic Reform Programme of Montenegro (2026-2028): Commission Assessment, SWD(2026) 104(몬테네그로 경제개혁프로그램 2026~2028 집행위 평가) · 2026-04-01",
+     "https://data.consilium.europa.eu/doc/document/ST-8124-2026-INIT/en/pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "IS": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가(A1) 사업 영역 33.10 국채 이자(Vaxtagjöld ríkissjóðs)",
+   "interest": {
+    "value": 136.085,
+    "unit": "십억 크로나",
+    "label": "국채 이자 지출"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1765.0818,
+    "unit": "십억 크로나",
+    "label": "35개 사업 영역 총배정액"
+   },
+   "share": 7.7,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 129.369,
+    "unit": "십억 크로나"
+   },
+   "note": "정부안 33.10 이자 지출은 1,360.85억 크로나로 2026년 예산 1,293.69억보다 67.2억(5.2%) 많다. 이 가운데 약 283억은 물가연동 채권의 원금 조정분이고 현금 이자 지급은 약 1,078억(GDP의 1.9%)이다. GFS 기준 이자 비용은 1,549억(GDP의 2.8%, 적립되지 않은 연금채무의 가상 이자 약 190억 포함)이며 이자 수입은 605억이다. 2026년은 GFS 이자 1,689억으로 예산 1,482억보다 207억 많을 전망이고, 2025년 결산은 1,666.9억으로 예산 1,201.5억을 넘겼다.",
+   "sources": [
+    [
+     "재무·경제부",
+     "Frumvarp til fjárlaga fyrir árið 2027 (2027년 예산안) · 2026-09-08",
+     "https://www.stjornarradid.is/library/?itemid=6d41488b-6385-438f-8ae7-0eedddffe8fe"
+    ],
+    [
+     "아이슬란드 재정청",
+     "Ríkisreikningur 2025 kominn út (2025년 국가결산 발간) · 2026-07-03",
+     "https://island.is/s/fjarsyslan/frett/rikisreikningur-2025-kominn-ut"
+    ],
+    [
+     "재무·경제부",
+     "Fjárlög fyrir árið 2027 (2027년 예산 개요 페이지) · 2026-09",
+     "https://www.stjornarradid.is/verkefni/opinber-fjarmal/fjarlog/fjarlog-fyrir-arid-2027/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MT": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 경상지출 중 공공부채 이자(Interest on Public Debt)",
+   "interest": {
+    "value": 335.9,
+    "unit": "백만 유로",
+    "label": "공공부채 이자"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 9272.6,
+    "unit": "백만 유로",
+    "label": "총지출(경상 81억 4,912만 + 자본 11억 2,351만)"
+   },
+   "share": 3.6,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 296.6,
+    "unit": "백만 유로"
+   },
+   "note": "2026 본예산(2025-12-16 가결)의 이자 3억 3,594만 유로는 국채 원금 상환(공공부채 서비스 vote의 직접 대출 상환 9억 5,847만 유로)과 따로 적힌 금액이다. 실적으로는 2026년 1~9월 이자 지출이 전년보다 11.5% 늘어 2억 4,680만 유로였다. 2027 재정 추계(2026-10-26 제출)는 문서를 열지 못해 2027년 이자 금액은 확인하지 못했다.",
+   "sources": [
+    [
+     "몰타 재무부",
+     "Financial Estimates 2026(2026 재정 추계·부처별 세출 예산서) · 2026-01",
+     "https://finance.gov.mt/wp-content/uploads/2026/01/Financial-Estimates-2026.pdf"
+    ],
+    [
+     "TVMnews",
+     "Parliament approves 2026 Budget with 38 votes in favour and 33 against(의회, 찬성 38 대 반대 33으로 2026 예산 승인) · 2025-12-16",
+     "https://tvmnews.mt/en/news/parliament-approves-2026-budget-with-38-votes-in-favour-and-33-against/"
+    ],
+    [
+     "Newsbook",
+     "Deficit doubles to €484.8 million as national debt nears €12 billion(적자 4억 8,480만 유로로 두 배, 국가부채 120억 유로 육박) · 2026-10-30",
+     "https://newsbook.com.mt/en/deficit-doubles-to-e484-8-million-as-national-debt-nears-e12-billion/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "MV": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 총예산(재무부 '채무 서비스 지출'=이자·금융 비용, 원금 상환 별도)",
+   "interest": {
+    "value": 4988.7,
+    "unit": "백만 루피야(MVR)",
+    "label": "채무 서비스 지출(국채·대출 이자와 금융 비용)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 59704.4,
+    "unit": "백만 루피야(MVR)",
+    "label": "총예산(원금 상환·출자·대출 포함)"
+   },
+   "share": 8.4,
+   "prev": {
+    "fiscalYear": "2026 수정 추계",
+    "value": 4508.7,
+    "unit": "백만 루피야(MVR)"
+   },
+   "note": "2027 정부안 예산표 4.1의 경제 분류 '채무 서비스 지출'로 원금 상환 4,461.9는 따로 있다. 표 4.1은 2026년 수정 추계를 4,508.7(표 4.2는 4,514.6)로 적었다. 2026년 확정 예산서는 같은 항목을 5,557.3으로 잡았고 단기 재무증권 할인액을 이자에 포함했다. 2027 구성 세부는 확인하지 못했다. 2027 정부안은 2026-11-19 예산검토위원회를 수정 없이 통과했고 본회의 표결 전이다.",
+   "sources": [
+    [
+     "재무·공기업부(Ministry of Finance and Public Enterprises)",
+     "2027 Proposed Budget Tables (PDF) 표 2.2 예산 요약·4.1 경제 분류·4.2 기능 분류(2027 정부안 예산 표, 디베히어 원문) · 2026-10-29",
+     "https://www.finance.gov.mv/public/attachments/2AM47sVanNx6ziAkOOJbkfi5eC0yERxugEgEi9wj.zip"
+    ],
+    [
+     "재무·공기업부(Ministry of Finance and Public Enterprises)",
+     "MVR 59.7 Billion State Budget for 2027 Presented to Parliament(2027년 예산 597억 루피야 의회 제출) · 2026-10-29",
+     "https://www.finance.gov.mv/media/news/mvr-597-billion-state-budget-for-2027-presented-to-parliament"
+    ],
+    [
+     "Maldives Independent",
+     "After the sukuk: the 2027 budget in numbers(수쿠크 이후: 숫자로 본 2027 예산) · 2026-11-02",
+     "https://maldivesindependent.com/economy/after-the-sukuk-the-2027-budget-in-numbers-507e"
+    ],
+    [
+     "Atoll Times",
+     "MMA warns rising domestic borrowing poses risks to Maldives' financial stability(중앙은행, 국내 차입 확대가 금융 안정에 위험 경고) · 2026-11-10",
+     "https://atolltimes.mv/post/business/17662"
+    ],
+    [
+     "재무·공기업부(Ministry of Finance and Public Enterprises)",
+     "Government Budget 2026 (English)(2026 정부 예산서 영어판) · 2025-11",
+     "https://www.finance.gov.mv/public/attachments/KgMGbVnKSJAmXCxOnKnF6uoW6gTAFx3p9JWP4pwE.pdf"
+    ],
+    [
+     "재무·공기업부(Ministry of Finance and Public Enterprises)",
+     "Weekly Fiscal Developments as at 12 November 2026(주간 재정 동향) · 2026-11-12",
+     "https://www.finance.gov.mv/public/attachments/cewlMUzhe2vLMEAngezGeAF34VH5opDi1g5oHR2l.pdf"
     ]
    ],
    "tier": "official"
