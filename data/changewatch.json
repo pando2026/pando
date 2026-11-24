@@ -1,5 +1,59 @@
 [
  {
+  "code": "CN",
+  "topic": "천지닝 정치국원 조사",
+  "status": "신화통신 보도(24일)",
+  "title": "중국, 정치국원·상하이 당서기 천지닝 '심각한 기율·법률 위반' 혐의 조사…이번 임기 네 번째 정치국원 낙마",
+  "detail": "장유샤·허웨이둥·마싱루이에 이어 네 번째다. 구체적 혐의와 본인 입장은 알려지지 않았다. 유라시아그룹 분석가 밍다 추는 '전례 없는 양상'이라고 평했다(알자지라).",
+  "date": "2026-11-24",
+  "url": "https://www.aljazeera.com/news/2026/11/24/xis-anti-corruption-campaign-targets-shanghai-party-chief-chen-jining"
+ },
+ {
+  "code": "SA",
+  "topic": "후티 리야드 타워 공격",
+  "status": "부상 11명(24일)",
+  "title": "후티 드론, 리야드 금융지구 타워 타격…연합군 \"단호한 대응\" 경고",
+  "detail": "사우디 민방위국은 부상자가 사우디 2·인도 2·네팔 3·이집트 4명이라고 했다. 후티의 범행 주장은 보도에 없다. 영국은 같은 날 후티와 간부 4명 제재를 발표했다(알자지라·AFP).",
+  "date": "2026-11-24",
+  "url": "https://www.aljazeera.com/news/2026/11/24/saudi-led-coalition-condemns-terrorist-attack-on-tower-in-riyadh"
+ },
+ {
+  "code": "IQ",
+  "topic": "쿠르드 지역 유전 접수 지시",
+  "status": "총리실 지시(24일)",
+  "title": "알자이디 총리, 쿠르드 보안 통제 지역 유전·검문소 연방 접수 지시…바르자니 \"연방제 훼손\"",
+  "detail": "디얄라·키르쿠크·살라후딘·니네베주 유전을 연방 석유부가 관리하고, 북부석유회사 국장 등은 직무정지됐다(알자지라, 로이터 인용).",
+  "date": "2026-11-24",
+  "url": "https://www.aljazeera.com/news/2026/11/24/iraq-orders-takeover-of-oilfields-in-areas-under-kurdish-control"
+ },
+ {
+  "code": "PS",
+  "topic": "하마스 내부보안국장 사살",
+  "status": "이스라엘 드론 공격(24일)",
+  "title": "이스라엘 드론, 하마스 내부보안국장 나임 아부나흘 사살…하마스 \"전쟁범죄\"",
+  "detail": "이스라엘군·신베트는 이름 없이 '고위 하마스 인물을 공격했다'고 했고 칸이 표적이 아부나흘이라고 보도했다. 하마스는 휴전 보증국의 개입을 촉구했다(알자지라).",
+  "date": "2026-11-24",
+  "url": "https://www.aljazeera.com/news/2026/11/24/israeli-air-strike-kills-senior-hamas-military-official-in-gaza"
+ },
+ {
+  "code": "RU",
+  "topic": "푸틴 정유소 공격 보복 예고",
+  "status": "크렘린 회의 발언(24일)",
+  "title": "푸틴 \"우크라이나가 트럼프 요청 무시하고 정유소 공격, 보복 불가피\"",
+  "detail": "로이터가 업계 소식통을 인용해 추산한 바로는 10월 말 이후 러시아 정유소 원유 처리량이 합쳐서 45% 줄었다(알자지라, 로이터 인용).",
+  "date": "2026-11-24",
+  "url": "https://www.aljazeera.com/news/2026/11/24/putin-says-kyiv-hit-russian-oil-plants-despite-trump-plea-vows-retaliation"
+ },
+ {
+  "code": "LY",
+  "topic": "하프타르 첫 튀르키예 방문",
+  "status": "앙카라 방문(24일)",
+  "title": "리비아 동부 하프타르, 러시아 군함 타격 이틀 뒤 첫 튀르키예 방문",
+  "detail": "바이락타로을루 합참의장이 공항에서 영접했고 공식 발표문은 없다. 로이터는 에르도안 대통령과 만날 예정이라고 전했다(알자지라).",
+  "date": "2026-11-24",
+  "url": "https://www.aljazeera.com/news/2026/11/24/libyas-haftar-visits-turkiye-days-after-ukraine-hits-russian-warship"
+ },
+ {
   "code": "US",
   "topic": "엔비디아 젠슨 황 CEO 복귀",
   "status": "이사회 만장일치 복귀(23일)",
