@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#050607"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270%200%2040%2040%27%3E%3Crect%20width=%2740%27%20height=%2740%27%20rx=%277%27%20fill=%27%23050607%27/%3E%3Ccircle%20cx=%2720%27%20cy=%2720%27%20r=%2712.5%27%20fill=%27none%27%20stroke=%27%23e9edf0%27%20stroke-width=%272%27/%3E%3Cellipse%20cx=%2720%27%20cy=%2720%27%20rx=%275.5%27%20ry=%2712.5%27%20fill=%27none%27%20stroke=%27%23e9edf0%27%20stroke-width=%271.3%27%20opacity=%27.6%27/%3E%3Cpath%20d=%27M7.5%2020h25%27%20stroke=%27%23e9edf0%27%20stroke-width=%271.3%27%20opacity=%27.6%27/%3E%3Cpath%20d=%27M20%202v5M20%2033v5M2%2020h5M33%2020h5%27%20stroke=%27%23ff2a36%27%20stroke-width=%272.6%27/%3E%3Ccircle%20cx=%2720%27%20cy=%2720%27%20r=%272.8%27%20fill=%27%23ff2a36%27/%3E%3C/svg%3E"><meta property="og:title" content="판도 · 세계 브리핑"><meta property="og:description" content="세계의 정치·경제·군사 판도와 분쟁을 한국어로 읽는 국제 브리핑">
-<script>(function(){var B="f19f325fc8";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
+<script>(function(){var B="035882f8de";function chk(auto){try{fetch("data/build.json?t="+Date.now(),{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){if(!d||!d.b||d.b===B)return;var u=new URL(location.href);u.searchParams.set("v",d.b);if(auto){var k="pando.reload."+d.b;if(sessionStorage.getItem(k))return;sessionStorage.setItem(k,"1");location.replace(u.toString());return}if(document.getElementById("pando-new"))return;var n=document.createElement("button");n.id="pando-new";n.type="button";n.textContent="판도가 새로 고쳐졌어요 · 눌러서 새 판 보기";n.style.cssText="position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:10000;background:#c41230;color:#fff;border:0;border-radius:20px;padding:10px 18px;font:700 14px system-ui,sans-serif;box-shadow:0 4px 16px rgba(0,0,0,.25);cursor:pointer";n.onclick=function(){location.replace(u.toString())};document.body.appendChild(n)}).catch(function(){})}catch(e){}}chk(true);setInterval(function(){chk(false)},120000);document.addEventListener("visibilitychange",function(){if(!document.hidden)chk(false)});window.addEventListener("focus",function(){chk(false)})})();</script><title>판도 · 세계 브리핑</title>
 <script>(function(){var d=document.documentElement,t=null,s=null;try{t=localStorage.getItem("pando.theme");s=sessionStorage.getItem("pando.intro")}catch(e){}if(t!=="light")d.classList.add("noir");var q=location.search,force=/[?&]intro=1/.test(q);var rm=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;if(force||(!s&&!rm&&!navigator.webdriver&&!/=/.test(location.hash)))d.classList.add("pd-intro-on")})();</script>
 <meta name="description" content="판도(PANDO) — 세계의 정치·경제·군사 판도와 분쟁을 출처와 기준 시점과 함께 읽는 한국어 국제 브리핑">
 <style>
@@ -498,6 +498,8 @@ html,body{overflow-x:clip}
 .chamber-dates dd{margin:2px 0 0;font-size:13px;font-weight:800;color:#15232d}
 .chamber-dates dd small{display:block;margin-top:2px;font-size:11px;font-weight:600;color:#6a7c88;line-height:1.4}
 .chamber-dates dd.next-soon{color:#b8202b}
+.chamber-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(380px,100%),1fr));gap:0 12px;align-items:start}.chamber-pair .chamber-chart{min-width:0}
+.chamber-pair+.data-caption{margin:2px 0 12px}
 .chamber-source{margin:0 0 10px;font-size:11px;color:#7a8a95}
 .seat-legend li span strong{display:block;line-height:1.35;overflow-wrap:anywhere}
 .party-abbr{font-style:normal;font-weight:700;font-size:10.5px;color:#6a7c88;margin-left:5px;padding:0 4px;border:1px solid #d5dee4;border-radius:2px}
@@ -4578,24 +4580,30 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
  }
  function partyFights(data){
   const f=data.fights;if(!f||(!Array.isArray(f.items)||!f.items.length)&&!f.note)return "";
-  const groups={};(data.civics?.parliament?.chambers||[]).forEach(c=>(c.groups||[]).forEach(g=>{if(!groups[g[0]])groups[g[0]]=g}));
-  const names=data.partyNames||{};
-  const chip=label=>{const g=groups[label],col=g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3",n=names[label];
-   return '<button type="button" class="fight-party" data-party-open="'+esc(label)+'"'+(n&&n.orig&&n.orig!==label?' title="'+esc(n.orig)+'"':"")+'><i style="background:'+col+'"></i>'+esc(label)+(g?'<small>'+number(g[1],0)+'석</small>':"")+'</button>'};
   const chambers=data.civics?.parliament?.chambers||[];
+  // 선거가 끝난 의회: 해산된 의회(dissolved)거나 새 의회가 이미 출범했으면 당선 의석(elected)을, 아니면 지금 의석을 쓴다. 쟁점 항목에 seats:"elected"가 있으면 그 항목만 당선 의석으로 센다.
+  const past=d=>{const t=Date.parse(String(d||"").length===7?d+"-28":d);return Number.isFinite(t)&&t<=Date.now()};
+  const pAsOf=String(data.civics?.parliament?.asOf||"");
+  const seatsOf=(c,el)=>{const E=c.elected&&Array.isArray(c.elected.groups)&&c.elected.groups.length&&!(c.elected.seated&&pAsOf&&pAsOf>=String(c.elected.seated))?c.elected.groups:null;return E&&(el||c.dissolved||(c.elected.seated&&past(c.elected.seated)))?E:(c.groups||[])};
+  const gmap=el=>{const m={};chambers.forEach(c=>seatsOf(c,el).forEach(g=>{if(!m[g[0]])m[g[0]]=g}));return m};
+  const G={cur:gmap(false),el:gmap(true)};
+  const names=data.partyNames||{};
+  const chip=(label,groups)=>{const g=groups[label],col=g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3",n=names[label];
+   return '<button type="button" class="fight-party" data-party-open="'+esc(label)+'"'+(n&&n.orig&&n.orig!==label?' title="'+esc(n.orig)+'"':"")+'><i style="background:'+col+'"></i>'+esc(label)+(g?'<small>'+number(g[1],0)+'석</small>':"")+'</button>'};
   // Seat tally per side: sum the seats of each side's parties in the chamber that holds most of them.
-  const tally=it=>{const labels=it.sides.flatMap(sd=>sd.parties||[]);if(!labels.length)return null;
-   const ch=chambers.map(c=>({c,hit:labels.filter(l=>(c.groups||[]).some(g=>g[0]===l)).length})).sort((x,y)=>y.hit-x.hit)[0];if(!ch||!ch.hit)return null;
-   const seat=l=>{const g=(ch.c.groups||[]).find(g=>g[0]===l);return g&&Number.isFinite(+g[1])?+g[1]:0};
-   const total=(ch.c.groups||[]).reduce((n,g)=>n+(Number.isFinite(+g[1])?+g[1]:0),0);
+  const tally=(it,el)=>{const labels=it.sides.flatMap(sd=>sd.parties||[]);if(!labels.length)return null;
+   const ch=chambers.map(c=>({c,gs:seatsOf(c,el)})).map(o=>({...o,hit:labels.filter(l=>o.gs.some(g=>g[0]===l)).length})).sort((x,y)=>y.hit-x.hit)[0];if(!ch||!ch.hit)return null;
+   const seat=l=>{const g=ch.gs.find(g=>g[0]===l);return g&&Number.isFinite(+g[1])?+g[1]:0};
+   const total=ch.gs.reduce((n,g)=>n+(Number.isFinite(+g[1])?+g[1]:0),0);
    const sums=it.sides.map(sd=>(sd.parties||[]).reduce((n,l)=>n+seat(l),0));if(sums.filter(Boolean).length<2||!total)return null;
+   const groups=el?G.el:G.cur;
    const cols=it.sides.map(sd=>{const g=groups[(sd.parties||[])[0]];return g&&/^#[\da-f]{6}$/i.test(g[2])?g[2]:"#9ca7a3"});
    return {sums,total,maj:Math.floor(total/2)+1,name:ch.c.name||"",cols}};
   const tallyBar=t=>'<div class="fight-tally"><p>'+t.sums.map((n,i)=>'<b style="color:'+t.cols[i]+'">'+n+'석</b>').join('<span>vs</span>')+'<small>'+(t.name?'<span>'+esc(t.name)+'</span> ':"")+'<span>'+t.total+'석 중</span> · <span>과반 '+t.maj+'석</span></small></p><div class="fight-tally-bar'+(t.sums.length===2?' fight-tally-bar--2':'')+'">'+t.sums.map((n,i)=>'<span style="width:'+(100*n/t.total).toFixed(2)+'%;background:'+t.cols[i]+'"></span>').join("")+'<i style="left:'+(100*t.maj/t.total).toFixed(2)+'%" title="과반"></i></div></div>';
-  const items=(f.items||[]).filter(it=>it&&it.topic&&Array.isArray(it.sides)&&it.sides.length).map(it=>{const t=tally(it);return ''+
+  const items=(f.items||[]).filter(it=>it&&it.topic&&Array.isArray(it.sides)&&it.sides.length).map(it=>{const el=it.seats==="elected",t=tally(it,el),groups=el?G.el:G.cur;return ''+
    '<article class="fight"><header>'+(it.kind?'<span class="fight-kind">'+esc(it.kind)+'</span>':"")+'<h5>'+esc(it.topic)+'</h5></header>'+
    (it.summary?'<p class="fight-summary">'+esc(it.summary)+'</p>':"")+(t?tallyBar(t):"")+
-   '<div class="fight-sides'+(it.sides.length>2?" fight-sides--multi":"")+'">'+it.sides.map((sd,i)=>(i?'<span class="fight-vs" aria-hidden="true">VS</span>':"")+'<div class="fight-side">'+(t&&t.sums[i]?'<span class="fight-total">합계 <b>'+t.sums[i]+'석</b></span>':"")+'<div class="fight-parties">'+(sd.parties||[]).map(chip).join("")+(sd.label&&!(sd.parties||[]).length?'<b class="fight-camp">'+esc(sd.label)+'</b>':"")+'</div>'+(sd.stance?'<p>'+esc(sd.stance)+'</p>':"")+'</div>').join("")+'</div>'+
+   '<div class="fight-sides'+(it.sides.length>2?" fight-sides--multi":"")+'">'+it.sides.map((sd,i)=>(i?'<span class="fight-vs" aria-hidden="true">VS</span>':"")+'<div class="fight-side">'+(t&&t.sums[i]?'<span class="fight-total">합계 <b>'+t.sums[i]+'석</b></span>':"")+'<div class="fight-parties">'+(sd.parties||[]).map(l=>chip(l,groups)).join("")+(sd.label&&!(sd.parties||[]).length?'<b class="fight-camp">'+esc(sd.label)+'</b>':"")+'</div>'+(sd.stance?'<p>'+esc(sd.stance)+'</p>':"")+'</div>').join("")+'</div>'+
    (it.status?'<p class="fight-status"><b>지금</b>'+esc(it.status)+'</p>':"")+
    (Array.isArray(it.sources)&&it.sources.length?'<small class="fight-source">출처 '+it.sources.map(s=>sourceLink(s[2],(s[0]||"")+(s[1]?" · "+s[1]:""))).join(" · ")+'</small>':"")+'</article>'}).join("");
   return '<section class="fights"><div class="fights-head"><h4>정당 간 쟁점</h4>'+(f.asOf?'<span>'+esc(f.asOf)+' 기준</span>':"")+'</div>'+(f.note?'<p class="fights-note">'+esc(f.note)+'</p>':"")+items+'</section>';
@@ -5033,12 +5041,25 @@ const caseStore=()=>once("cases",()=>json("data/cases.json")).catch(()=>({}));
   const civHasSeats=civChambers.some(c=>Array.isArray(c.groups)&&c.groups.length);
   const dateText=d=>{if(!d)return "";const m=String(d).match(/^(\d{4})(?:-(\d{2}))?(?:-(\d{2}))?/);return m?m[1]+"년"+(m[2]?" "+Number(m[2])+"월":"")+(m[3]?" "+Number(m[3])+"일":""):String(d)};
   const upcoming=d=>{const t=Date.parse(String(d||"").length===7?d+"-28":d);return Number.isFinite(t)&&t>Date.now()};
+  const civSrc=Array.isArray(civ?.sources)&&civ.sources.length?civ.sources:civ?.source?[civ.source]:[];
   const electionCards=civChambers.length?'<div class="chamber-cards">'+civChambers.map(c=>'<article class="chamber-card"><header><h4>'+esc(c.name||"의회")+'</h4>'+(c.seats?'<span>'+number(c.seats,0)+'석</span>':"")+'</header>'+
     (c.method?'<p class="chamber-method">'+esc(c.method)+'</p>':"")+
     '<dl class="chamber-dates">'+(c.term?'<div><dt>임기</dt><dd>'+esc(c.term)+'</dd></div>':"")+(c.lastElection?'<div><dt>지난 선거</dt><dd>'+esc(dateText(c.lastElection))+'</dd></div>':"")+
+    (c.elected&&c.elected.seated&&upcoming(c.elected.seated)?'<div><dt>새 의회 출범</dt><dd class="next-soon">'+esc(dateText(c.elected.seated))+'</dd></div>':"")+
     '<div><dt>다음 선거</dt><dd'+(upcoming(c.nextElection)?' class="next-soon"':"")+'>'+(c.nextElection?esc(dateText(c.nextElection)):"미정")+(c.nextNote?'<small>'+esc(c.nextNote)+'</small>':"")+'</dd></div></dl></article>').join("")+'</div>'+
-    (civ.source?'<p class="chamber-source">의회 자료 '+(civ.asOf?esc(civ.asOf)+' 기준 · ':"")+sourceLink(civ.source[2],civ.source[0]||"원문")+'</p>':""):"";
-  const civSeats=civHasSeats?civChambers.filter(c=>Array.isArray(c.groups)&&c.groups.length).map(c=>hemicycle({name:c.name,label:(civ.asOf?civ.asOf+" 기준":"현재 의석"),entity:"정당·교섭단체",groups:c.groups,partyNames:data.partyNames})).join(""):"";
+    (civSrc.length?'<p class="chamber-source">의회 자료 '+(civ.asOf?esc(civ.asOf)+' 기준 · ':"")+civSrc.map(s=>sourceLink(s[2],s[0]||"원문")).join(" · ")+'</p>':""):"";
+  // 선거는 끝났지만 새 의회가 아직 출범하지 않았을 때(c.elected): 선거 결과와 지금 의석을 나란히 그린다. 출범일이 지나면 선거 결과만.
+  const civSeats=civHasSeats?civChambers.filter(c=>Array.isArray(c.groups)&&c.groups.length).map(c=>{
+   const cur=lab=>hemicycle({name:c.name+(lab?" · "+(c.groupsTitle||"지금 의석"):""),label:c.groupsLabel||(civ.asOf?civ.asOf+" 기준":"현재 의석")+(lab||""),entity:"정당·교섭단체",groups:c.groups,partyNames:data.partyNames});
+   const E0=c.elected&&Array.isArray(c.elected.groups)&&c.elected.groups.length?c.elected:null;
+   // 새 의회 출범일 뒤에 의석(groups)을 다시 확인해 asOf를 고쳤으면 선거 결과(elected)는 지난 자료다.
+   const E=E0&&!(E0.seated&&civ.asOf&&String(civ.asOf)>=String(E0.seated))?E0:null;
+   if(!E)return cur("");
+   const cap=E.note||E.source?'<p class="data-caption">'+(E.note?esc(E.note)+' ':"")+(E.source?sourceLink(E.source[2],E.source[0]||"원문"):"")+'</p>':"";
+   const res=nm=>hemicycle({name:nm,label:E.label||dateText(E.date)+" 선거 결과",entity:"정당별 당선 의석",groups:E.groups,partyNames:data.partyNames});
+   if(E.seated&&!upcoming(E.seated))return res(c.name)+cap;
+   return '<div class="chamber-pair">'+res(c.name+" · 선거 결과")+cur(E.seated?" · "+dateText(E.seated)+" 새 의회 출범 전까지":" · 새 의회 출범 전까지")+'</div>'+cap;
+  }).join(""):"";
   const seats=civSeats?civSeats:chambers.length?chambers.map(c=>hemicycle({...c,partyNames:data.partyNames})).join("")+(data.code==="US"?'<p class="data-caption">하원·상원 공식 의석은 '+sourceLink(p.source,"2026년 10월 1일 명부")+' · 무소속의 상원 코커스 소속은 '+sourceLink(p.caucusSource,"상원 취재단 현황")+'</p>':""):"";
   const orientation=chambers.some(chamber=>/정당|정치그룹/.test(chamber.entity||"")&&!/아님/.test(chamber.entity||""))&&data.code!=="US"?'<p>정당 성향은 해당 시기의 강령·정책과 의회 분류를 바탕으로 한 간략한 설명이며, 이념 범위의 확정적 판정이 아닙니다. '+sourceLink(p.orientationSource||p.source||links.ipu,"정당 성향 근거")+'</p>':"";
   const decisions=data.decisions?decisionBlock(data.decisions):Array.isArray(p.decision)&&p.decision.length?'<section class="section"><h3>의사결정의 흐름</h3><ol class="decision-steps">'+p.decision.map(t=>'<li>'+esc(t)+'</li>').join("")+'</ol></section>':"";
