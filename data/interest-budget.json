@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-23",
+ "asOf": "2026-11-24",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -5974,6 +5974,146 @@
      "재무·공기업부(Ministry of Finance and Public Enterprises)",
      "Weekly Fiscal Developments as at 12 November 2026(주간 재정 동향) · 2026-11-12",
      "https://www.finance.gov.mv/public/attachments/cewlMUzhe2vLMEAngezGeAF34VH5opDi1g5oHR2l.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BN": {
+   "status": "자료 없음",
+   "note": "브루나이 2026/27 예산 문서(예산 발표 원고·시민예산서·입법회 속기록)에는 국채 이자 항목이 없고, IMF는 2024년 연례협의 보고서의 재정 표 각주에서 '정부 부채와 이자 지급이 없어 종합수지가 곧 기초수지'라고 밝혔다.",
+   "sources": [
+    [
+     "국제통화기금(IMF)",
+     "Brunei Darussalam: 2024 Article IV Consultation—Press Release; and Staff Report(브루나이 2024년 연례협의 보도자료·직원 보고서), IMF Country Report No. 24/301 · 2024-09",
+     "https://www.imf.org/-/media/files/publications/cr/2024/english/1brnea2024001-print-pdf.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "SR": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 총지출(원금 상환 등 포함)",
+   "interest": {
+    "value": 6.3,
+    "unit": "십억 SRD",
+    "label": "이자 지출"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 80.9,
+    "unit": "십억 SRD",
+    "label": "총지출"
+   },
+   "share": 7.8,
+   "prev": {
+    "fiscalYear": "2026",
+    "value": 7.802,
+    "unit": "십억 SRD"
+   },
+   "note": "이자 약 SRD 6.3십억은 2027 재무연간계획서를 인용한 언론 보도 수치이며 원금 상환은 포함하지 않는다. 총지출 80.9십억에는 원금 상환 등이 들어 있어 비율은 그 전체 대비이고, 전년 값은 2026 정부안(2025-09-30 제출)이다.",
+   "sources": [
+    [
+     "스타르니우스(Starnieuws)",
+     "Regering dient begroting 2027 in met tekort van SRD 10,8 miljard (정부, 2027 예산안을 적자 SRD 108억으로 제출) · 2026-09-30",
+     "https://www.starnieuws.com/index.php/welcome/index/nieuwsitem/94143"
+    ],
+    [
+     "컬처루(Culturu)",
+     "Regering dient ontwerpbegroting 2027 van SRD 80,9 miljard in (정부, SRD 809억 2027 예산안 제출) · 2026-09-30",
+     "https://www.culturu.com/nieuws/suriname/regering-dient-ontwerpbegroting-2027-van-srd-809-miljard-in/"
+    ],
+    [
+     "수리남 재무기획부",
+     "Financieel Jaarplan 2026 (2026 재무연간계획서) · 2025-09-30",
+     "https://www.dna.sr/media/z5zhm5ph/2026-financieel-jaarplan-final.pdf"
+    ],
+    [
+     "수리남 국민의회(대통령 Jennifer Geerlings-Simons 연설)",
+     "Jaarrede van de President over het dienstjaar 2027 (2027 회계연도 대통령 연례 연설) · 2026-09-30",
+     "https://www.dna.sr/media/2uaeldkp/finale-versie-drukker-van-de-jaarrede-voor-het-dienstjaar-2027.pdf"
+    ]
+   ],
+   "tier": "press"
+  },
+  "CV": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 국가예산 지출(경제적 성격별 분류 '이자 및 기타 비용')",
+   "interest": {
+    "value": 6488,
+    "unit": "백만 CVE",
+    "label": "이자 및 기타 비용"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 101728,
+    "unit": "백만 CVE",
+    "label": "총지출"
+   },
+   "share": 6.4,
+   "prev": {
+    "fiscalYear": "2026(추경)",
+    "value": 6967,
+    "unit": "백만 CVE"
+   },
+   "note": "재무부는 2027 이자·기타 비용을 2026 추경보다 4.79억 CVE 낮게 추정하며 부채 구성과 시장 조건 때문이라고만 밝혔다. 같은 예산안의 기능별 표 '공공부채 거래'는 6,475백만 CVE, 보고서 제220항은 국내·대외 부채 서비스와 기타 비용을 6,476백만 CVE로 적는다(원금 상환은 별도).",
+   "sources": [
+    [
+     "카보베르데 재무부(DNOCP)",
+     "Anexo Informativo do OE 2027(2027 예산안 부속 설명서) · 2026-10-01",
+     "https://www.mf.gov.cv/documents/198414/6566427/ANEXO+INFORMATIVO_OE_2027.pdf/89d65322-3c2a-1bf9-72b4-79f7f01f9ab1?version=1.0&t=1790963286840&download=true"
+    ],
+    [
+     "카보베르데 재무부(DNOCP)",
+     "Mapa IV – Despesas por Natureza de Programa segundo a Classificação Funcional(기능별 분류에 따른 지출표) · 2026-09-30",
+     "https://www.mf.gov.cv/documents/198414/7219423/Mapa4.pdf/256624bf-4cea-9b77-bd70-704fdca25282?version=1.0&t=1790962870698&download=true"
+    ],
+    [
+     "카보베르데 재무부(DNOCP)",
+     "Relatório de Enquadramento OE 2027(2027 예산안 기본 보고서) · 2026-10-01",
+     "https://www.mf.gov.cv/documents/198414/6566427/RELATORIO+OE+2027.pdf/583e7297-b125-f9d3-9a07-65ad8979255c?version=1.0&t=1790963083583&download=true"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BS": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출(경상+자본)",
+   "interest": {
+    "value": 732.2,
+    "unit": "백만 바하마 달러(B$)",
+    "label": "공공부채 이자·기타 비용(Head 26)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 4139.8,
+    "unit": "백만 바하마 달러(B$)",
+    "label": "총지출(경상 3,724.0 + 자본 415.8)"
+   },
+   "share": 17.7,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 689.5,
+    "unit": "백만 바하마 달러(B$)"
+   },
+   "note": "이자 7억 1,120만 달러(비거주자 3억 6,720만, 거주자 3억 4,400만)와 헤지 수수료 2,100만 달러를 합친 값이며 원금 상환은 재무부가 금융 거래로 보아 제외했다. 7억 3,220만은 5월 정부 초안 수치이고 세출법에는 이 법정 지출이 포함되지 않는다.",
+   "sources": [
+    [
+     "바하마 재무부",
+     "FY2026/2027 Draft Estimates of Revenue & Expenditure (2026/27 세입·세출 예산 초안) · 2026-05",
+     "https://bahamasbudget.gov.bs/media/filer_public/1a/e2/1ae24929-b92b-4a5b-9b46-1cb0d32e7607/budgetbook-2026-final-digital.pdf"
+    ],
+    [
+     "바하마 재무부",
+     "Monthly Fiscal Summary Report, June 2026 (2026년 6월 월간 재정 요약 보고서; 표 3 기능별 지출·표 4 경제성질별 지출) · 2026-06",
+     "https://bahamasbudget.gov.bs/media/filer_public/2f/f5/2ff508c2-d284-4d03-aa58-afa5c38cb65f/mof-monthylyfiscalreport-jun26-portrait-annex-final.pdf"
+    ],
+    [
+     "바하마 재무부(마이클 핼키티스 장관)",
+     "2026/2027 Budget Communication: A Budget That Builds On Progress (2026/27 예산 연설: 진보 위에 쌓는 예산) · 2026-05-27",
+     "https://bahamasbudget.gov.bs/media/filer_public/81/9d/819d8c82-6e4c-471e-bf84-2e0965620327/final_budget_communication_fiscal_year_20262027-_a_budget_that_build_on_progress_.pdf"
     ]
    ],
    "tier": "official"
