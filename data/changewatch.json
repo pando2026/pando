@@ -1,5 +1,50 @@
 [
  {
+  "code": "US",
+  "topic": "무역법 301조 과잉생산 관세",
+  "status": "제안·의견 수렴(25일)",
+  "title": "USTR, EU·중국·한국 등 14개 경제권에 301조 관세 제안…EU 15%·중국 최대 20%, 의견 마감 2027년 1월 5일",
+  "detail": "그리어 대표는 CNBC에 \"다 합치면 몇 퍼센트포인트 더하는 수준\"이며 몇 달 안에는 발효하지 않을 것이라고 했다. 공청회는 1월 25일이다(USTR·CNBC).",
+  "date": "2026-11-25",
+  "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-makes-determinations-and-proposes-actions-14-section-301-investigations-relating-structural"
+ },
+ {
+  "code": "KR",
+  "topic": "미국 301조 과잉생산 관세",
+  "status": "최대 15% 제안(25일, 미국 현지)",
+  "title": "USTR, 한국에 자동차·반도체·석유화학 겨냥 최대 15% 관세 제안…한국 정부는 7월 \"합쳐 15% 상한\" 입장",
+  "detail": "이번 제안에 대한 한국 정부의 공식 반응은 확인하지 못했다. 7월 24일 발효한 강제노동 301조 관세 12.5%가 이미 붙어 있다(USTR·코리아타임스).",
+  "date": "2026-11-25",
+  "url": "https://ustr.gov/about/policy-offices/press-office/press-releases/2026/november/ustr-makes-determinations-and-proposes-actions-14-section-301-investigations-relating-structural"
+ },
+ {
+  "code": "CN",
+  "topic": "미국 301조 과잉생산 관세",
+  "status": "최대 20% 제안(25일)",
+  "title": "중국 외교부 \"과잉생산은 가짜 의제\"…USTR, 중국에 최대 20% 관세 제안",
+  "detail": "궈자쿤 대변인은 \"관세전쟁·무역전쟁은 누구에게도 이롭지 않다\"며 대화를 촉구했다. 미중 무역 휴전은 2027년 1월 10일 만료된다(알자지라·유로뉴스).",
+  "date": "2026-11-25",
+  "url": "https://www.aljazeera.com/economy/2026/11/25/world-reacts-to-trumps-new-tariffs-as-us-stocks-tumble"
+ },
+ {
+  "code": "UA",
+  "topic": "정유소 공방·러시아 드론 공격",
+  "status": "정유소 3곳 타격·최소 7명 사망(25일)",
+  "title": "우크라이나, 사마라·로스토프 정유소 3곳과 사바슬레이카 공군기지 타격…러시아 드론 112대에 최소 7명 사망",
+  "detail": "나프토가스 폴타바 가스 생산 시설이 맞아 가동이 멈췄다. 공군기지 항공기 5대 손상은 우크라이나군 총참모부 주장이다(유로뉴스).",
+  "date": "2026-11-25",
+  "url": "https://www.euronews.com/2026/11/25/russian-strikes-kill-seven-in-ukraine-as-kyiv-hits-three-refineries"
+ },
+ {
+  "code": "IR",
+  "topic": "미국 이란 가상 대사관 경보",
+  "status": "\"즉시 이란 떠나라\"(25일)",
+  "title": "미국, 자국민에 \"즉시 이란을 떠나라\" 보안 경보…\"적대 행위가 빠르게 번질 수 있다\"",
+  "detail": "이란·후티·이란 편 무장세력이 역내 미국 이익을 노릴 수 있다고 경고했다. 이란 내 미국 이익대표부는 스위스 대사관이 맡는다(유로뉴스).",
+  "date": "2026-11-25",
+  "url": "https://www.euronews.com/2026/11/25/us-tells-citizens-to-leave-iran-warns-hostilities-could-escalate-fast"
+ },
+ {
   "code": "IL",
   "topic": "야샤르·이스라엘 베이테누 연정 합의",
   "status": "서명(24일)",
