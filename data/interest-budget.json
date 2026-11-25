@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-24",
+ "asOf": "2026-11-25",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -6114,6 +6114,165 @@
      "바하마 재무부(마이클 핼키티스 장관)",
      "2026/2027 Budget Communication: A Budget That Builds On Progress (2026/27 예산 연설: 진보 위에 쌓는 예산) · 2026-05-27",
      "https://bahamasbudget.gov.bs/media/filer_public/81/9d/819d8c82-6e4c-471e-bf84-2e0965620327/final_budget_communication_fiscal_year_20262027-_a_budget_that_build_on_progress_.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BZ": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출(경상+자본, 원금 상환 제외)",
+   "interest": {
+    "value": 189.711,
+    "unit": "백만 벨리즈 달러(BZ$)",
+    "label": "공공부채 이자·기타 비용"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1902.93,
+    "unit": "백만 벨리즈 달러(BZ$)",
+    "label": "총지출"
+   },
+   "share": 10.0,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 147.983,
+    "unit": "백만 벨리즈 달러(BZ$)"
+   },
+   "note": "예산서 표의 '이자 및 기타 비용'은 1억 8,971만 달러로 국내 이자 4,344만, 해외 이자 1억 3,962만, 수수료·약정 수수료 등 665만 달러를 합친 값이며 원금 상환(1억 4,068만 달러)은 따로다. 총리 연설은 이자를 '약 1억 8,910만 달러'로 적었고 이자 부담을 지출 1달러당 9센트 미만(14쪽)과 11센트(42쪽)로 다르게 말했으며, 표의 총지출 대비는 10.0%다. 2025/26 실적 추정은 1억 3,181만 달러, 2026년 4~6월 실제 지급은 5,328만 달러(연 예산의 28.1%)다.",
+   "sources": [
+    [
+     "벨리즈 총리실 언론실(존 브리세뇨 총리 겸 재무장관 연설)",
+     "Budget Speech for Fiscal Year 2026/2027: Budgeting for Belizean Prosperity (2026/27 회계연도 예산 연설) · 2026-03-10",
+     "https://www.pressoffice.gov.bz/wp-content/uploads/2026/03/PM-Budget-Speech-Fiscal-Year-2026-2027.pdf"
+    ],
+    [
+     "벨리즈 재무부",
+     "Draft Estimates of Revenue and Expenditure for FY 2026/2027 (2026/27 세입·세출 예산안) · 2026-03",
+     "https://mof.gov.bz/wp-content/uploads/2026/03/DRAFT-ESTIMATES-OF-REVENUE-AND-EXPENDITURE-FY-2026-2027.pdf"
+    ],
+    [
+     "벨리즈 중앙은행",
+     "Monthly Economic Highlights, August 2026 (2026년 8월 월간 경제 요약, 표 A.21 중앙정부 세입·세출) · 2026-08",
+     "https://www.centralbank.org.bz/detail-pages/publication/monthly-economic-highlights---august-2026"
+    ]
+   ],
+   "tier": "official"
+  },
+  "VU": {
+   "fiscalYear": "2027",
+   "status": "확정 예산",
+   "scope": "중앙정부 세출법 승인 총액(정부 재원 + 현금 보조·현물 원조, 원금 상환 포함)",
+   "interest": {
+    "value": 6110.774,
+    "unit": "백만 바투",
+    "label": "공공부채 충당금(Public Debt Provisions, 이자·원금 상환 합산)"
+   },
+   "principalIncluded": true,
+   "total": {
+    "value": 93139.342,
+    "unit": "백만 바투",
+    "label": "세출법 승인 총액"
+   },
+   "share": 6.6,
+   "prev": {
+    "fiscalYear": "2026(본예산)",
+    "value": 5035.398,
+    "unit": "백만 바투"
+   },
+   "note": "법안 일정표에는 공공부채 충당금 한 줄(61.1억 바투)만 있어 이자와 원금 상환을 나눌 수 없다. 2026년 본예산서는 이 항목 50.4억을 '이자 등 15.2억 + 대출 원금 상환 34.8억'으로 나눴고, 2026년 예산서 재정전략보고서는 이자 지출을 2026년 15.4억, 2027년 10.3억 바투로 전망했다(정부 재원 기준 전망이며 2027 확정 예산이 아니다).",
+   "sources": [
+    [
+     "의회(Parliament of Vanuatu)",
+     "Parliamentary Amendment to the Appropriation (2027) Bill(2027년 세출법안 의회 수정안, 총액 931.39억 바투의 수정 일정표) · 2026-11-09",
+     "https://parliament.gov.vu/bills-laws/27/files/amendments"
+    ],
+    [
+     "재무국(Department of Finance and Treasury)",
+     "2026 Budget Book Volume 2(2026년 예산서 2권, 본예산 세출법 일정표)",
+     "https://doft.gov.vu/uploads/2026_Budget_Book_Volume_2_11b8369220.pdf"
+    ],
+    [
+     "재무국(Department of Finance and Treasury)",
+     "2026 Budget Book Volume 1 — Fiscal Strategy Report(2026년 예산서 1권, 재정전략보고서)",
+     "https://doft.gov.vu/uploads/2026_Budget_Book_Volume_1_English_acbf7bb2ff.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "BB": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "중앙정부 총지출(발생주의, 경상·자본, 원금 상환 포함)",
+   "interest": {
+    "value": 714.57,
+    "unit": "백만 바베이도스 달러(Bds$)",
+    "label": "국가채무 이자(Interest Expense)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 5875.12,
+    "unit": "백만 바베이도스 달러(Bds$)",
+    "label": "총지출(원금 상환 781.8 포함, 발생주의)"
+   },
+   "share": 12.2,
+   "prev": {
+    "fiscalYear": "2025/26(수정예산)",
+    "value": 724.65,
+    "unit": "백만 바베이도스 달러(Bds$)"
+   },
+   "note": "예산서 표 6의 이자 지출 714.57백만 달러만 쓴 값이며 대출 수수료 11.58백만과 원금 상환 781.76백만은 뺐다. 비율은 같은 표의 발생주의 총지출(5,875.12백만)로 나눴고, 현금 기준 총지출 5,666.65백만으로 나누면 12.6%다. 표 8의 전년 수정 이자는 724.33백만으로 표 6과 0.3백만 차이가 난다.",
+   "sources": [
+    [
+     "바베이도스 의회(재무부 작성 예산서)",
+     "Barbados Estimates 2026-2027 (Revised), Memorandum and Tables 5-8 (바베이도스 2026-27 수정 세입·세출 예산서: 해설문·표 5~8) · 2026-03",
+     "https://www.barbadosparliament.com/uploads/document/c3d84654bac93d67233f441ee5749877.pdf"
+    ],
+    [
+     "바베이도스 투데이",
+     "Estimates of Expenditure and Revenue for the financial year 2026-2027 laid in Parliament (2026-27 세입·세출 예산서 의회 제출) · 2026-02-24",
+     "https://barbadostoday.bb/2026/02/24/estimates-of-expenditure-and-revenue-for-the-financial-year-2026-2027-laid-in-parliament/"
+    ],
+    [
+     "PwC 바베이도스",
+     "Budget insights 2026: 2025년 4~12월 이자 지출 544.1백만 달러(전년 대비 0.9% 감소) 서술 · 2026-03",
+     "https://www.pwc.com/bb/en/publications/assets/barbados-2026-2027-budget.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "ST": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 국가예산법(OGE 2026) 경상지출의 공공부채 이자(대외·대내·기타 부채 비용)",
+   "interest": {
+    "value": 211.259,
+    "unit": "백만 STN(상투메 도브라)",
+    "label": "공공부채 이자(대외 133.144, 대내 70.315, 은행 수수료 등 7.800)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 5709.0,
+    "unit": "백만 STN(상투메 도브라)",
+    "label": "예산법 지출 총액(부채 원금 상환 954.065 포함)"
+   },
+   "share": 3.7,
+   "prev": {
+    "fiscalYear": "2025",
+    "value": 221.0,
+    "unit": "백만 STN(상투메 도브라)"
+   },
+   "note": "이자만 따로 적힌 값이다. 지출 총액에는 원금 상환 954.065백만이 들어 있어 원금을 뺀 지출(4,755백만)로 나누면 4.4%다. 2025년 값은 당초 예산 221이고, 같은 문서의 2025년 추정 집행은 180이다(IMF 제2차 점검 보고서의 2025년 이자 추정도 180, 2026년 211).",
+   "sources": [
+    [
+     "상투메 프린시페 공보(Diário da República I Série 제18호, cipstp.st 게시본)",
+     "Lei n.º 3/2026 · Orçamento Geral do Estado para o ano económico de 2026(2026 회계연도 국가예산법, 부속 예산 설명서 포함) · 2026-03-23",
+     "https://cipstp.st/wp-content/uploads/2026/05/Lei-OGE-2026_23-marco-2026.pdf"
+    ],
+    [
+     "국제통화기금(IMF)",
+     "Republic of São Tomé and Príncipe: Second Review Under the Extended Credit Facility Arrangement, IMF Country Report No. 25/347(상투메 프린시페 확대신용제도 제2차 점검 보고서) · 2025-12-23",
+     "https://www.imf.org/-/media/files/publications/cr/2025/english/1stpea2025004-source-pdf.pdf"
     ]
    ],
    "tier": "official"
