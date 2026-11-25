@@ -1,5 +1,41 @@
 [
  {
+  "code": "IL",
+  "topic": "야샤르·이스라엘 베이테누 연정 합의",
+  "status": "서명(24일)",
+  "title": "아이젠코트 야샤르, 리베르만 이스라엘 베이테누와 총선 뒤 첫 연정 합의…민주당은 협상 중단",
+  "detail": "조건은 공개되지 않았다. 헤브라이어 매체는 이스라엘 베이테누가 국방부·이민흡수부를 맡을 것으로 전했다. 정부 구성 시한은 12월 6일이다(타임스오브이스라엘·알자지라).",
+  "date": "2026-11-25",
+  "url": "https://www.timesofisrael.com/democrats-party-declares-suspension-of-coalition-talks-with-yashar-amid-stalemate/"
+ },
+ {
+  "code": "BD",
+  "topic": "의류 노동자 최저임금 인상",
+  "status": "임금위원회 다수 동의(25일)",
+  "title": "방글라데시 의류 최저임금 36% 인상…1만 2,500→1만 7,500타카, 요구 3만 타카에는 못 미쳐",
+  "detail": "12월 시행·1월 지급이다. 노동자 대표는 \"완전히 만족하진 않지만 아주 나쁘지도 않다\"고 했고 수용 여부는 불분명하다(알자지라).",
+  "date": "2026-11-25",
+  "url": "https://www.aljazeera.com/news/2026/11/25/bangladesh-garment-workers-win-36-pay-rise-after-weeks-of-protest"
+ },
+ {
+  "code": "PS",
+  "topic": "하마스 내부보안 간부 사망",
+  "status": "하마스 발표(25일)",
+  "title": "하마스 \"북부 가자 내부보안 책임자 샤티 난민촌 공습으로 가족과 함께 사망\"",
+  "detail": "전날 내부보안국장 아부나흘 사망에 이은 것이다. 이스라엘군은 입장을 내지 않았다(타임스오브이스라엘 라이브).",
+  "date": "2026-11-25",
+  "url": "https://www.timesofisrael.com/liveblog-november-25-2026/"
+ },
+ {
+  "code": "YE",
+  "topic": "호데이다 항구 타격",
+  "status": "연합군 발표(25일)",
+  "title": "사우디 주도 연합군, 호데이다 항구 작전 능력 타격 발표…후티 보복 예고",
+  "detail": "인명 피해는 보도되지 않았다(타임스오브이스라엘 라이브).",
+  "date": "2026-11-25",
+  "url": "https://www.timesofisrael.com/liveblog-november-25-2026/"
+ },
+ {
   "code": "CN",
   "topic": "천지닝 정치국원 조사",
   "status": "신화통신 보도(24일)",
