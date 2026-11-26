@@ -1,5 +1,5 @@
 {
- "asOf": "2026-11-25",
+ "asOf": "2026-11-26",
  "countries": {
   "AE": {
    "fiscalYear": "2026",
@@ -160,27 +160,31 @@
   },
   "CA": {
    "fiscalYear": "2026-27",
-   "status": "추정",
+   "status": "정부안",
    "scope": "연방정부",
    "interest": {
-    "value": 58.7,
+    "value": 60.2,
     "unit": "십억 캐나다달러",
     "label": "공공채무 비용(public debt charges)"
    },
    "principalIncluded": false,
-   "total": null,
-   "share": null,
-   "note": "2026 봄 경제 업데이트의 2026-27년 전망치로 GDP의 1.7%. 2025 예산의 같은 해 전망은 540억 캐나다달러였다(BMO 로버트 캅치치 분석).",
+   "total": {
+    "value": 602.9,
+    "unit": "십억 캐나다달러",
+    "label": "총지출(보험계리 손익 제외)"
+   },
+   "share": 10.0,
+   "prev": {
+    "fiscalYear": "2025-26",
+    "value": 53.5,
+    "unit": "십억 캐나다달러"
+   },
+   "note": "2026년 11월 5일 제출된 예산(Budget 2026)의 재정 전망 표다. 공공채무 비용은 GDP의 1.8%이고 2030-31년 855억 달러까지 늘어난다고 적혀 있다. 이 예산의 정책 동의안은 11월 19일 하원을 통과했다.",
    "sources": [
     [
      "캐나다 재무부",
-     "Annex 3: Debt management strategy | Spring Economic Update 2026(부록 3: 국채 관리 전략 · 2026 봄 경제 업데이트) · 2026-04-28",
-     "https://budget.canada.ca/update-miseajour/2026/report-rapport/anx3-en.html"
-    ],
-    [
-     "Policy Magazine",
-     "The Spring Economic Update: Canada Strong, Deficits Long(봄 경제 업데이트: 강한 캐나다, 긴 적자) · 2026-04-29",
-     "https://www.policymagazine.ca/the-spring-economic-update-canada-strong-deficits-long/"
+     "Budget 2026, Annex 1: Details of economic and fiscal projections(2026 예산 부록 1: 경제·재정 전망 상세) · 2026-11-05",
+     "https://budget.canada.ca/2026/report-rapport/anx1-en.html"
     ]
    ],
    "tier": "official"
@@ -2590,42 +2594,32 @@
    "tier": "official"
   },
   "TD": {
-   "fiscalYear": "2026",
-   "status": "확정 예산",
-   "scope": "국가 일반예산(중앙정부) 지출",
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "국가 일반예산(중앙정부) 지출, 국회 가결·상원 심의 대기",
    "interest": {
-    "value": 125.5,
+    "value": 134.0,
     "unit": "십억 CFA프랑",
-    "label": "부채 금융비용(charges financières de la dette)"
+    "label": "부채 금융비용(국내 채무 약 105십억 포함)"
    },
    "principalIncluded": false,
    "total": {
-    "value": 2531.5,
+    "value": 3007.0,
     "unit": "십억 CFA프랑",
-    "label": "총지출"
+    "label": "총지출(르 페이 차드 표기)"
    },
-   "share": 5.0,
+   "share": 4.5,
    "prev": {
-    "fiscalYear": "2025",
-    "value": 149,
+    "fiscalYear": "2026",
+    "value": 125.5,
     "unit": "십억 CFA프랑"
    },
-   "note": "2026 재정법 지출 2조 5,315억 CFA프랑 중 금융비용이 1,255억으로 전년보다 16% 줄었다. 전년 값 1,490억은 법안 단계 보도 기준이며, 법안 단계의 이자 1,450억(국내 1,140억·대외 310억) 수치는 최종안에서 바뀌었다.",
+   "note": "르 페이 차드가 전한 2027 재정법안은 이자 1,340억 CFA프랑(국내 채무 약 1,050억)이고 2026년을 1,250억으로 적었다. 같은 보도의 총지출 3조 70억은 다른 보도(3조 20억)와 조금 달라 비율은 근사값이며, 최종 조문은 상원 심의 뒤 확정된다.",
    "sources": [
     [
-     "알위하 인포(Alwihda Info)",
-     "Tchad : Budget 2026, recettes en baisse, dépenses en hausse, déficit à financer(차드: 2026 예산, 세입 감소·지출 증가, 적자 조달 과제) · 2025-12",
-     "https://www.alwihdainfo.com/tchad-budget-2026-recettes-en-baisse-depenses-en-hausse-deficit-a-financer-a146732/"
-    ],
-    [
-     "에코마탱(EcoMatin)",
-     "Recettes, dépenses, dette, salaires… : les grandes lignes du budget 2026 du Tchad(세입·지출·부채·급여: 차드 2026 예산의 큰 줄기) · 2025-12-09",
-     "https://ecomatin.net/recettes-depenses-dette-salaires-les-grandes-lignes-du-budget-2026-du-tchad"
-    ],
-    [
      "르 페이 차드(Journal Le Pays)",
-     "Un million de FCFA pour comprendre les milliards du Tchad(수십억 CFA프랑을 이해하기 위한 100만 CFA프랑) · 2026-10-26",
-     "https://www.lepaystchad.com/un-million-de-fcfa-pour-comprendre-les-milliards-du-tchad/"
+     "Tchad : l'Assemblée nationale adopte le projet de loi de finance 2027(차드: 국회, 2027 재정법안 채택) · 2026-11-23",
+     "https://www.lepaystchad.com/tchad-lassemblee-nationale-adopte-le-projet-de-loi-de-finance-2027/"
     ]
    ],
    "tier": "press"
@@ -2801,41 +2795,36 @@
   },
   "GT": {
    "fiscalYear": "2027",
-   "status": "정부안",
-   "scope": "국가 일반예산(행정부) 세출 — 의회 재정위 심사 중",
+   "status": "확정 예산",
+   "scope": "국가 일반예산 세출 — 의회 가결(결정 32-2026), 대통령 서명·거부 대기",
    "interest": {
-    "value": 18717.0,
+    "value": 17717.0,
     "unit": "백만 케찰",
     "label": "공공부채 이자·수수료"
    },
    "principalIncluded": false,
    "total": {
-    "value": 192045.1,
+    "value": 172420.9,
     "unit": "백만 케찰",
-    "label": "예산안 세출 총액"
+    "label": "가결 예산 세출 총액"
    },
-   "share": 9.7,
-   "note": "공공부채 서비스 24,601.1백만 케찰(총액의 12.8%) 중 이자·수수료만 18,717.0이고 나머지 약 5,884.1은 원금 상환이다. 이자·수수료는 예상 조세수입(131,635.9)의 14.2%이며 보건부 예산(18,615.5)보다 크다. ASIES는 이자 지출이 전년보다 5.4% 늘어난다고 계산했다.",
+   "share": 10.3,
+   "note": "공공부채 서비스 21,001.1백만 케찰(총액의 12.2%) 중 이자·수수료 17,717.0, 원금 상환 3,284.1이다. 정부안(이자·수수료 18,717.0, 서비스 24,601.1)보다 이자는 1,000.0, 서비스는 3,600.0 줄었고, 2026 예산의 부채 서비스 20,998.9와는 거의 같다.",
    "sources": [
     [
-     "Prensa Libre",
-     "Presupuesto 2027: analistas alertan por déficit fiscal de 4.4% y mayor deuda pública(2027 예산: 분석가들, 적자 4.4%·부채 증가 경고) · 2026-09-03",
-     "https://www.prensalibre.com/economia/presupuesto-2027-analistas-alertan-por-deficit-fiscal-de-4-4-y-mayor-deuda-publica/"
+     "라 오라(La Hora)",
+     "Presupuesto 2027: 65% de los Q172 mil 420.9 millones se concentra en funcionamiento y compromisos del Estado(2027 예산: 1,724.2억 케찰의 65%가 운영비와 국가 의무에 몰려) · 2026-11-25",
+     "https://lahora.gt/lh-economia/esmith/2026/11/25/presupuesto-2027-65-de-los-q172-mil-420-9-millones-se-concentra-en-funcionamiento-y-compromisos-del-estado/"
     ],
     [
-     "El Siglo",
-     "Pedir prestado para pagar la operación(운영비를 갚으려 빚을 내다, 칼럼) · 2026-10-28",
-     "https://elsiglo.com.gt/pedir-prestado-para-pagar-la-operacion/"
+     "레푸블리카(República)",
+     "Congreso reduce déficit, pero mantiene gasto elevado(의회, 적자는 줄였으나 지출은 높게 유지) · 2026-11-25",
+     "https://republica.com/economia/congreso-reduce-deficit-pero-mantiene-gasto-elevado-2026112512350"
     ],
     [
-     "La Hora",
-     "MINFIN presenta al Congreso de la República un presupuesto de Q192 mil millones para 2027(재무부, 의회에 2027년 1,920억 케찰 예산안 제출) · 2026-09-02",
-     "https://lahora.gt/nacionales/kjordan/2026/09/02/minfin-presenta-al-congreso-de-la-republica-un-presupuesto-de-q192-mil-millones-para-2027/"
-    ],
-    [
-     "La Hora",
-     "Presupuesto 2027: Q192 mil millones de gasto y un déficit cercano a niveles de la pandemia, dice ASIES(2027 예산: 1,920억 케찰 지출·팬데믹 수준에 가까운 적자, ASIES) · 2026-09-27",
-     "https://lahora.gt/lh-economia/esmith/2026/09/27/presupuesto-2027-q192-mil-millones-de-gasto-y-un-deficit-cercano-a-niveles-de-la-pandemia-dice-asies-now/"
+     "프렌사 리브레(Prensa Libre)",
+     "Congreso aprueba presupuesto del 2027 por Q172 mil 420 millones: así quedaron las asignaciones y los recortes(의회, 1,724억 케찰 2027 예산 승인: 배정과 삭감 내역) · 2026-11-25",
+     "https://www.prensalibre.com/economia/congreso-aprueba-presupuesto-del-2027-por-q172-mil-420-millones-asi-quedaron-las-asignaciones-y-los-recortes/"
     ]
    ],
    "tier": "press"
@@ -6273,6 +6262,160 @@
      "국제통화기금(IMF)",
      "Republic of São Tomé and Príncipe: Second Review Under the Extended Credit Facility Arrangement, IMF Country Report No. 25/347(상투메 프린시페 확대신용제도 제2차 점검 보고서) · 2025-12-23",
      "https://www.imf.org/-/media/files/publications/cr/2025/english/1stpea2025004-source-pdf.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "GD": {
+   "fiscalYear": "2026",
+   "status": "확정 예산",
+   "scope": "중앙정부 세출예산 총액(공공부채 제122항 이자 프로그램, 원금 제외)",
+   "interest": {
+    "value": 80.55,
+    "unit": "백만 동카리브 달러(EC$)",
+    "label": "공공부채 이자(대외 57.54 + 국내 23.01)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1960.01,
+    "unit": "백만 동카리브 달러(EC$)",
+    "label": "총지출(원금 상환 313.16 포함)"
+   },
+   "share": 4.1,
+   "prev": {
+    "fiscalYear": "2025(결산)",
+    "value": 139.61,
+    "unit": "백만 동카리브 달러(EC$)"
+   },
+   "note": "세출예산서 제122항 '이자 프로그램' 80,551,401달러만 쓴 값이고 원금 상환 313,164,848달러는 뺐다. 비율은 같은 문서의 총지출 1,960,013,910달러(원금 포함)로 나눴다. 2025년 값은 재무부 중간 평가의 결산치이며 세출예산서의 잠정 실적은 152.7백만 달러다. 2026년 추경(310.9백만 달러)에는 이자 항목이 따로 알려지지 않았고, 상반기 이자 지급은 25.1백만 달러(연간 추정 78.7백만)다.",
+   "sources": [
+    [
+     "그레나다 재무부",
+     "Estimates of Revenue and Expenditure 2026-2028, Vote 122 Charges on Account of Public Debt(2026~2028 세입·세출 예산서, 제122항 공공부채 비용) · 2025-12-01",
+     "https://www.finance.gd/docs/2025/Final_Estimates_of_Revenue_and_Expenditure--2026-2028.pdf"
+    ],
+    [
+     "그레나다 재무부",
+     "Medium-Term Economic and Fiscal Strategy Report 2026-2028, Table 15(2026~2028 중기 경제·재정 전략 보고서, 표 15) · 2025-12-01",
+     "https://www.finance.gd/docs/2025/MTEFSR-2026-2028.pdf"
+    ],
+    [
+     "그레나다 재무부",
+     "2026 Mid-Year Economic Review, Tables 7-8(2026 중간 경제 평가, 표 7·8) · 2026-08",
+     "https://www.finance.gd/docs/2026/Mid_Year_Review_Report_2026.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "LC": {
+   "fiscalYear": "2026/27",
+   "status": "정부안",
+   "scope": "중앙정부 총지출(경상·자본·원금 상환 포함, GFS 기준)",
+   "interest": {
+    "value": 251.02,
+    "unit": "백만 동카리브 달러(EC$)",
+    "label": "이자 비용(Interest Expense)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 2188.77,
+    "unit": "백만 동카리브 달러(EC$)",
+    "label": "총지출(공공부채 원금 상환 1억 4,000만 포함)"
+   },
+   "share": 11.5,
+   "prev": {
+    "fiscalYear": "2025/26(승인액)",
+    "value": 236.75,
+    "unit": "백만 동카리브 달러(EC$)"
+   },
+   "note": "예산서의 정부 재정 요약표(Summary of Government Operations and Financing) 이자 비용 2억 5,102만 2,935달러만 썼고, 공공부채 원금 상환 1억 4,000만은 뺐다. 비율은 같은 표의 총지출 21억 8,876만 5,900달러로 나눈 값이다. 2026/27 예산서는 3월 24일 의회에 제출됐고 하원·상원 최종 표결 기록은 찾지 못해 ‘정부안’으로 표시했다.",
+   "sources": [
+    [
+     "세인트루시아 재무부",
+     "Estimates of Revenue and Expenditure 2026–2027 (2026/27 세입·세출 예산서; 2026-03-24 의회 제출, 재무부 누리집 게시 2026-07-28) · 2026-07-28",
+     "https://www.finance.gov.lc/resources/download/2258/.pdf"
+    ],
+    [
+     "Saint Lucia Daily Post",
+     "Government Spends $606.9M on Wages as Pierre Details Key Allocations in 2025-2026 Estimates (정부, 임금에 6억 690만 달러 지출…피에르가 2025/26 추정치 주요 배정 설명) · 2026-03-25",
+     "https://www.saintluciadailypost.com/2026/03/25/government-spends-606-9m-on-wages-as-pierre-details-key-allocations-in-2025-2026-estimates/"
+    ]
+   ],
+   "tier": "official"
+  },
+  "SC": {
+   "fiscalYear": "2027",
+   "status": "정부안",
+   "scope": "중앙정부 지출·순대출(예산서 표 23, 국민의회 심사 중)",
+   "interest": {
+    "value": 817.7,
+    "unit": "백만 세이셸 루피",
+    "label": "이자 지급(외채 520.9 + 내채 296.9)"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 13503.3,
+    "unit": "백만 세이셸 루피",
+    "label": "지출·순대출"
+   },
+   "share": 6.1,
+   "prev": {
+    "fiscalYear": "2026 연말 추정",
+    "value": 849.4,
+    "unit": "백만 세이셸 루피"
+   },
+   "note": "이자만 따로 적은 값이라 원금 상환은 들어 있지 않다. 비율 6.1%는 예산서가 같은 표의 지출·순대출 총액에서 이자가 차지하는 몫으로 제시한 값이다.",
+   "sources": [
+    [
+     "세이셸 재무부",
+     "2027 Budget Book Part 2: Assumptions and Objectives of the 2027 Budget (2027 예산서 2부: 2027 예산의 가정과 목표) · 2026-11",
+     "https://www.finance.gov.sc/wp-content/uploads/2026/11/2027-BUDGET-BOOK-PART-2-ASSUMPTIONS-AND-OBJECTIVES-OF-THE-2027-BUDGET.pdf"
+    ],
+    [
+     "세이셸 재무부(피에르 라포르트 장관)",
+     "Budget Address 2027 (2027 예산 연설) · 2026-11-12",
+     "https://www.finance.gov.sc/wp-content/uploads/2026/11/Budget-Address-2027-English-Version.pdf"
+    ]
+   ],
+   "tier": "official"
+  },
+  "WS": {
+   "fiscalYear": "2026/27",
+   "status": "확정 예산",
+   "scope": "중앙정부 현금 기준 총지출 — 법정 지출 중 외채·내채 이자와 수수료, 원금 상환 제외",
+   "interest": {
+    "value": 8.19,
+    "unit": "백만 탈라",
+    "label": "외채 이자·수수료 8.10 + 내채 이자·수수료 0.09"
+   },
+   "principalIncluded": false,
+   "total": {
+    "value": 1500.58,
+    "unit": "백만 탈라",
+    "label": "총지출(개발 지출·예비비 포함)"
+   },
+   "share": 0.5,
+   "prev": {
+    "fiscalYear": "2025/26",
+    "value": 11.81,
+    "unit": "백만 탈라"
+   },
+   "note": "법정 지출의 '목적별' 예산에서 이자·수수료는 819만 탈라이고, 외채·내채 원금 상환 8,177만 탈라는 제외했다. 전년 값은 2025/26 결산(외채 919만 + 내채 262만)이다. 정부 재정통계(GFS) 기준 재정전략서는 2026/27 이자를 840만 탈라, 원금 포함 채무 상환액을 9,060만 탈라(일반 수입의 9.0%)로 잡았다. 차관은 모두 고정금리다.",
+   "sources": [
+    [
+     "사모아 재무부(Ministry of Finance)",
+     "Quarterly Statement of Receipts and Payments, 3 months ended 30 September 2026, unaudited(2026년 9월 30일 끝난 3개월 수입·지출 분기 보고서, 미감사) · 2026-09-30",
+     "https://cdn.prod.website-files.com/67a155f272e2c5aeb2caf892/6aebdca28a6465627ddea13d_QS%201%202027%20%20Unaudited.pdf"
+    ],
+    [
+     "사모아 재무부(Ministry of Finance)",
+     "Fiscal Strategy Statement FY2026/27(2026/27 재정전략서) · 2026-05-26",
+     "https://cdn.prod.website-files.com/67a155f272e2c5aeb2caf892/6a15fef9e56cceba95caf71d_ENG%20FS%20FY26-27.pdf"
+    ],
+    [
+     "사모아 재무부(Ministry of Finance)",
+     "Budget Address 2026/2027(2026/27 예산 연설) · 2026-05-26",
+     "https://cdn.prod.website-files.com/67a155f272e2c5aeb2caf892/6a57e560c24e67787d6adba5_Budget%20Address%202026-27%20english.pdf"
     ]
    ],
    "tier": "official"
