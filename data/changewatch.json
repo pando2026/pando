@@ -1,5 +1,77 @@
 [
  {
+  "code": "DE",
+  "topic": "EU 장기예산(2028~2034)",
+  "status": "특별 정상회의 무합의 종료(27일)",
+  "title": "EU 특별 정상회의, 14시간 협상에도 장기예산 합의 실패…우크라이나 450억 유로 대출은 12월로 연기",
+  "detail": "코스타 상임의장의 1조 7,800억 유로 절충안에 독일·네덜란드 등 7개국이 반발해 불참했고 메르츠 총리는 \"더 많은 빚은 안 된다\"고 했다. 12월 17일 재협상한다(유로뉴스·알자지라).",
+  "date": "2026-11-27",
+  "url": "https://www.euronews.com/2026/11/27/the-art-of-no-deal-an-eu-summit-of-spectacular-dysfunction"
+ },
+ {
+  "code": "HU",
+  "topic": "EU 장기예산·우크라이나 대출",
+  "status": "합의 가능성 \"사실상 0\"",
+  "title": "머저르 헝가리 총리, EU 장기예산 합의 가능성 \"사실상 0\"…슬로바키아·체코·불가리아와 우크라이나 대출 불참",
+  "detail": "26일 정상회의에서 크리스마스까지도 합의가 어렵다고 했다(알자지라·유로뉴스).",
+  "date": "2026-11-27",
+  "url": "https://www.aljazeera.com/economy/2026/11/26/eu-leaders-struggle-to-agree-on-long-term-budget-more-money-for-ukraine"
+ },
+ {
+  "code": "US",
+  "topic": "나토 공동 성명",
+  "status": "트럼프 수정본 게시(26일)",
+  "title": "트럼프, 나토 공동 성명의 러시아 대상 전쟁 확대 경고에 우크라이나를 추가해 게시…나토 당국자 \"일방적 수정\"",
+  "detail": "백악관은 폴리티코 논평 요청에 응하지 않았다. 12월 2일 브뤼셀 나토 외무장관 회의가 열린다(키이우 인디펜던트).",
+  "date": "2026-11-27",
+  "url": "https://kyivindependent.com/trump-adds-ukraine-to-warning-against-expanding-war-diverging-from-joint-nato-statement/"
+ },
+ {
+  "code": "NZ",
+  "topic": "총선 최종 결과",
+  "status": "우파 연정 65석(과반 66석)",
+  "title": "뉴질랜드 선관위 총선 최종 결과 확정…국민당 40·노동당 36·녹색당 17·ACT 13·뉴질랜드 제일당 12·기회당 7·마오리당 5",
+  "detail": "기회당이 연정의 열쇠를 쥐었고 합의가 안 되면 재선거 가능성이 있다. 정당 득표율은 노동당 29.88%, 국민당 28.35%다(알자지라·더 스핀오프).",
+  "date": "2026-11-27",
+  "url": "https://thespinoff.co.nz/politics/27-11-2026/who-won-the-2026-nz-election"
+ },
+ {
+  "code": "AM",
+  "topic": "러시아 국경수비대",
+  "status": "몇 년 안에 전면 철수 계획(26일 발표)",
+  "title": "파시냔 아르메니아 총리 \"러시아 국경수비대, 앞으로 몇 년 안에 전면 철수\"",
+  "detail": "시한은 밝히지 않았고 러시아 반응은 보도에 없다. 즈바르트노츠 공항과 이란·튀르키예 접경 검문소 2곳은 이미 아르메니아 단독 관리다(키이우 인디펜던트).",
+  "date": "2026-11-27",
+  "url": "https://kyivindependent.com/armenia-plans-full-withdrawal-of-russian-border-guards-in-coming-years-prime-minister-says/"
+ },
+ {
+  "code": "AR",
+  "topic": "중앙은행법·예비선거 중지",
+  "status": "하원 최종 통과(141대 0)·상원 PASO 중지법 43대 29",
+  "title": "아르헨티나 하원, 중앙은행의 정부 지출용 화폐 발행 금지법 최종 통과",
+  "detail": "같은 날 상원은 예비선거(PASO) 중지법안을 처리했고 하원 표결이 남았다. 키실로프 주지사는 재선에 유리한 규칙 변경이라고 비판했다(알자지라).",
+  "date": "2026-11-27",
+  "url": "https://www.aljazeera.com/news/2026/11/27/argentina-bars-central-bank-from-printing-money-to-fund-government-spending"
+ },
+ {
+  "code": "KR",
+  "topic": "코스피",
+  "status": "4,915.68(+4.34%, 27일)",
+  "title": "코스피 4.34% 급등 마감…시장안정 대책 기대에 삼성전자·SK하이닉스 4~5%대 올라",
+  "detail": "외국인이 1조 1,300억 원 순매수했고 원·달러 환율은 1,337.9원으로 내렸다. 다음 주 시장안정기금 10조 원 확대 논의가 예정돼 있다(코리아헤럴드).",
+  "date": "2026-11-27",
+  "url": "https://www.koreaherald.com/article/10952169"
+ },
+ {
+  "code": "IR",
+  "topic": "호르무즈 유조선",
+  "status": "이란 해군 \"미군이 훔친 유조선 2척 탈환\"(27일 주장)",
+  "title": "샤람 이라니 이란 해군 사령관 \"선원이 자는 사이 올라타 되찾았다\"…시점·장소·미국 반응은 보도에 없어",
+  "detail": "트럼프는 26일 \"승리가 눈앞\"이라면서도 재공격하면 \"곡괭이산\"을 타격하겠다고 했다(알자지라 라이브·AFP).",
+  "date": "2026-11-27",
+  "url": "https://www.aljazeera.com/news/liveblog/2026/11/27/iran-war-live-irans-araghchi-calls-deadly-kuwait-attack-suspicious"
+ },
+ {
   "code": "KW",
   "topic": "쿠웨이트 방공 기지 공격",
   "status": "이탈리아인 2명 사망(26일)",
